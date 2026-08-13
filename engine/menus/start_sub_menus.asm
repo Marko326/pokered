@@ -651,6 +651,9 @@ StartMenu_Option::
 	ldh [hAutoBGTransferEnabled], a
 	call ClearScreen
 	call UpdateSprites
+	; Bit 7 set = Options opened from the in-game Start menu.
+	ld a, $80
+	ld [wOptionsMenuPage], a
 	callfar DisplayOptionMenu
 	call LoadScreenTilesFromBuffer2
 	call LoadTextBoxTilePatterns

@@ -142,6 +142,42 @@ PlaySound::
 	push de
 	push bc
 	ld b, a
+
+	; Music Off filters only actual BGM IDs. Some SFX (Poké Flute, elevator,
+	; Safari PA, Pokédex rating) intentionally use PlayMusic, so classify the
+	; ID with the same per-audio-bank MAX_SFX_ID boundary as the sound engines.
+	ld a, [wOptions]
+	bit BIT_MUSIC_OFF, a
+	jr z, .musicOptionChecked
+	ld a, b
+	cp SFX_STOP_ALL_MUSIC
+	jr z, .musicOptionChecked
+	ld a, [wAudioROMBank]
+	cp BANK(Audio1_PlaySound)
+	jr z, .checkAudio1Music
+	cp BANK(Audio2_PlaySound)
+	jr z, .checkAudio2Music
+	ld a, b
+	cp MAX_SFX_ID_3 + 1
+	jr c, .musicOptionChecked
+	jr .suppressMusic
+.checkAudio1Music
+	ld a, b
+	cp MAX_SFX_ID_1 + 1
+	jr c, .musicOptionChecked
+	jr .suppressMusic
+.checkAudio2Music
+	ld a, b
+	cp MAX_SFX_ID_2 + 1
+	jr c, .musicOptionChecked
+.suppressMusic
+	; Do not start the requested BGM. Clear pending music/fade state so callers
+	; that wait on a one-shot tune immediately see that no music was started.
+	xor a
+	ld [wNewSoundID], a
+	ld [wAudioFadeOutControl], a
+	jp .done
+.musicOptionChecked
 	ld a, [wNewSoundID]
 	and a
 	jr z, .next

@@ -9,6 +9,13 @@ MainMenu:
 	jr nc, .mainMenuLoop
 
 	predef TryLoadSaveFile
+	; wOptions is part of the normal save data. If Music Off was saved, stop
+	; the title BGM now, after the regular save loader has restored WRAM.
+	ld a, [wOptions]
+	bit BIT_MUSIC_OFF, a
+	jr z, .mainMenuLoop
+	ld a, SFX_STOP_ALL_MUSIC
+	call PlaySound
 
 .mainMenuLoop
 	ld c, 20
@@ -84,6 +91,9 @@ MainMenu:
 	jr z, .choseContinue
 	cp 1
 	jp z, StartNewGame
+	; Bit 7 clear = Options opened from the title/main menu.
+	xor a
+	ld [wOptionsMenuPage], a
 	call DisplayOptionMenu
 	ld a, TRUE
 	ld [wOptionsInitialized], a
@@ -441,6 +451,231 @@ SaveScreenInfoText:
 	next "TIME@"
 
 DisplayOptionMenu:
+	ld hl, wOptionsMenuPage
+	res 0, [hl] ; always open on page 1; keep bit 7 (caller source)
+	call .drawPage1
+	xor a
+	ld [wCurrentMenuItem], a
+	ld [wLastMenuItem], a
+	ASSERT BIT_FAST_TEXT_DELAY == 0
+	inc a ; 1 << BIT_FAST_TEXT_DELAY
+	ld [wLetterPrintingDelayFlags], a
+	call SetCursorPositionsFromOptions
+	; Open the menu on the Page selector.
+	ld a, 16
+	ld [wTopMenuItemY], a
+	ld a, 1
+	ld [wTopMenuItemX], a
+	ld a, $01
+	ldh [hAutoBGTransferEnabled], a
+	call Delay3
+.loop
+	call PlaceMenuCursor
+	call SetOptionsFromCursorPositions
+.getJoypadStateLoop
+	call JoypadLowSensitivity
+	ldh a, [hJoy5]
+	ld b, a
+	and ~PAD_SELECT ; any key besides select pressed?
+	jr z, .getJoypadStateLoop
+	bit B_PAD_B, b
+	jr nz, .exitMenu
+	bit B_PAD_START, b
+	jr nz, .exitMenu
+	bit B_PAD_A, b
+	jr z, .checkDirectionKeys
+	; A does not activate Page; B or Start exits the options menu.
+	jp .loop
+.exitMenu
+	ld a, SFX_PRESS_AB
+	call PlaySound
+	ret
+.eraseOldMenuCursor
+	ld [wTopMenuItemX], a
+	call EraseMenuCursor
+	jp .loop
+.checkDirectionKeys
+	ld a, [wOptionsMenuPage]
+	bit 0, a
+	jp nz, .checkPage2DirectionKeys
+
+; Page 1: Text Speed, Battle Animation, Battle Style, Page.
+	ld a, [wTopMenuItemY]
+	bit B_PAD_DOWN, b
+	jr nz, .page1DownPressed
+	bit B_PAD_UP, b
+	jr nz, .page1UpPressed
+	cp 8
+	jr z, .cursorInBattleAnimation
+	cp 13
+	jr z, .cursorInBattleStyle
+	cp 16
+	jr z, .cursorOnPage1Selector
+.cursorInTextSpeed
+	bit B_PAD_LEFT, b
+	jp nz, .pressedLeftInTextSpeed
+	jp .pressedRightInTextSpeed
+.page1DownPressed
+	cp 3
+	jr z, .page1SelectBattleAnimation
+	cp 8
+	jr z, .page1SelectBattleStyle
+	cp 13
+	jr z, .page1SelectPage
+	jr .page1SelectTextSpeed
+.page1UpPressed
+	cp 3
+	jr z, .page1SelectPage
+	cp 8
+	jr z, .page1SelectTextSpeed
+	cp 13
+	jr z, .page1SelectBattleAnimation
+	jr .page1SelectBattleStyle
+.page1SelectTextSpeed
+	ld a, 3
+	ld [wTopMenuItemY], a
+	ld a, [wOptionsTextSpeedCursorX]
+	jr .storePage1CursorX
+.page1SelectBattleAnimation
+	ld a, 8
+	ld [wTopMenuItemY], a
+	ld a, [wOptionsBattleAnimCursorX]
+	jr .storePage1CursorX
+.page1SelectBattleStyle
+	ld a, 13
+	ld [wTopMenuItemY], a
+	ld a, [wOptionsBattleStyleCursorX]
+	jr .storePage1CursorX
+.page1SelectPage
+	ld a, 16
+	ld [wTopMenuItemY], a
+	ld a, 1
+.storePage1CursorX
+	ld [wTopMenuItemX], a
+	call PlaceUnfilledArrowMenuCursor
+	jp .loop
+.cursorInBattleAnimation
+	ld a, [wOptionsBattleAnimCursorX]
+	xor 1 ^ 10
+	ld [wOptionsBattleAnimCursorX], a
+	jp .eraseOldMenuCursor
+.cursorInBattleStyle
+	ld a, [wOptionsBattleStyleCursorX]
+	xor 1 ^ 10
+	ld [wOptionsBattleStyleCursorX], a
+	jp .eraseOldMenuCursor
+.cursorOnPage1Selector
+	bit B_PAD_RIGHT, b
+	jp nz, .showPage2
+	jp .loop
+.pressedLeftInTextSpeed
+	ld a, [wOptionsTextSpeedCursorX]
+	cp 1
+	jr z, .updateTextSpeedXCoord
+	cp 7
+	jr nz, .fromSlowToMedium
+	sub 6
+	jr .updateTextSpeedXCoord
+.fromSlowToMedium
+	sub 7
+	jr .updateTextSpeedXCoord
+.pressedRightInTextSpeed
+	ld a, [wOptionsTextSpeedCursorX]
+	cp 14
+	jr z, .updateTextSpeedXCoord
+	cp 7
+	jr nz, .fromFastToMedium
+	add 7
+	jr .updateTextSpeedXCoord
+.fromFastToMedium
+	add 6
+.updateTextSpeedXCoord
+	ld [wOptionsTextSpeedCursorX], a
+	jp .eraseOldMenuCursor
+
+; Page 2: Music and Page. Left/right on Music toggles On/Off.
+; Left on the Page selector returns to page 1.
+.checkPage2DirectionKeys
+	ld a, [wTopMenuItemY]
+	bit B_PAD_DOWN, b
+	jr nz, .page2DownPressed
+	bit B_PAD_UP, b
+	jr nz, .page2UpPressed
+	cp 16
+	jr z, .cursorOnPage2Selector
+.cursorInMusic
+	ld a, [wOptionsMusicCursorX]
+	xor 1 ^ 10
+	ld [wOptionsMusicCursorX], a
+	jp .eraseOldMenuCursor
+.page2DownPressed
+	cp 3
+	jr nz, .page2SelectMusic
+	ld a, 16
+	ld [wTopMenuItemY], a
+	ld a, 1
+	ld [wTopMenuItemX], a
+	call PlaceUnfilledArrowMenuCursor
+	jp .loop
+.page2UpPressed
+	cp 16
+	jr nz, .page2SelectPage
+.page2SelectMusic
+	ld a, 3
+	ld [wTopMenuItemY], a
+	ld a, [wOptionsMusicCursorX]
+	ld [wTopMenuItemX], a
+	call PlaceUnfilledArrowMenuCursor
+	jp .loop
+.page2SelectPage
+	ld a, 16
+	ld [wTopMenuItemY], a
+	ld a, 1
+	ld [wTopMenuItemX], a
+	call PlaceUnfilledArrowMenuCursor
+	jp .loop
+.cursorOnPage2Selector
+	bit B_PAD_LEFT, b
+	jp nz, .showPage1
+	jp .loop
+
+.showPage2
+	ld hl, wOptionsMenuPage
+	set 0, [hl]
+	; Build the new page in wTileMap before re-enabling auto transfer to avoid
+	; a blank-frame flash during ClearScreen.
+	xor a
+	ldh [hAutoBGTransferEnabled], a
+	call ClearScreen
+	call .drawPage2
+	call .placePage2Arrows
+	ld a, 16
+	ld [wTopMenuItemY], a
+	ld a, 1
+	ld [wTopMenuItemX], a
+	ld a, 1
+	ldh [hAutoBGTransferEnabled], a
+	call Delay3
+	jp .loop
+
+.showPage1
+	ld hl, wOptionsMenuPage
+	res 0, [hl]
+	xor a
+	ldh [hAutoBGTransferEnabled], a
+	call ClearScreen
+	call .drawPage1
+	call SetCursorPositionsFromOptions
+	ld a, 16
+	ld [wTopMenuItemY], a
+	ld a, 1
+	ld [wTopMenuItemX], a
+	ld a, 1
+	ldh [hAutoBGTransferEnabled], a
+	call Delay3
+	jp .loop
+
+.drawPage1
 	hlcoord 0, 0
 	ld b, 3
 	ld c, 18
@@ -463,136 +698,45 @@ DisplayOptionMenu:
 	ld de, BattleStyleOptionText
 	call PlaceString
 	hlcoord 2, 16
-	ld de, OptionMenuCancelText
+	ld de, OptionMenuPageText
 	call PlaceString
-	xor a
-	ld [wCurrentMenuItem], a
-	ld [wLastMenuItem], a
-	ASSERT BIT_FAST_TEXT_DELAY == 0
-	inc a ; 1 << BIT_FAST_TEXT_DELAY
-	ld [wLetterPrintingDelayFlags], a
-	ld [wOptionsCancelCursorX], a
-	ld a, 3 ; text speed cursor Y coordinate
-	ld [wTopMenuItemY], a
-	call SetCursorPositionsFromOptions
-	ld a, [wOptionsTextSpeedCursorX] ; text speed cursor X coordinate
-	ld [wTopMenuItemX], a
-	ld a, $01
-	ldh [hAutoBGTransferEnabled], a ; enable auto background transfer
-	call Delay3
-.loop
-	call PlaceMenuCursor
-	call SetOptionsFromCursorPositions
-.getJoypadStateLoop
-	call JoypadLowSensitivity
-	ldh a, [hJoy5]
-	ld b, a
-	and ~PAD_SELECT ; any key besides select pressed?
-	jr z, .getJoypadStateLoop
-	bit B_PAD_B, b
-	jr nz, .exitMenu
-	bit B_PAD_START, b
-	jr nz, .exitMenu
-	bit B_PAD_A, b
-	jr z, .checkDirectionKeys
-; A was pressed
-	ld a, [wTopMenuItemY]
-	cp 16 ; is the cursor on Cancel?
-	jr nz, .loop
-.exitMenu
-	ld a, SFX_PRESS_AB
-	call PlaySound
-	ret
-.eraseOldMenuCursor
-	ld [wTopMenuItemX], a
-	call EraseMenuCursor
-	jp .loop
-.checkDirectionKeys
-	ld a, [wTopMenuItemY]
-	bit B_PAD_DOWN, b
-	jr nz, .downPressed
-	bit B_PAD_UP, b
-	jr nz, .upPressed
-	cp 8 ; cursor in Battle Animation section?
-	jr z, .cursorInBattleAnimation
-	cp 13 ; cursor in Battle Style section?
-	jr z, .cursorInBattleStyle
-	cp 16 ; cursor on Cancel?
-	jr z, .loop
-; cursor in Text Speed
-	bit B_PAD_LEFT, b
-	jp nz, .pressedLeftInTextSpeed
-	jp .pressedRightInTextSpeed
-.downPressed
-	cp 16
-	ld b, -13
-	ld hl, wOptionsTextSpeedCursorX
-	jr z, .updateMenuVariables
-	ld b, 5
-	cp 3
-	inc hl
-	jr z, .updateMenuVariables
-	cp 8
-	inc hl
-	jr z, .updateMenuVariables
+	hlcoord 16, 16
+	ld de, OptionMenuPage1Text
+	jp PlaceString
+
+.drawPage2
+	hlcoord 0, 0
 	ld b, 3
-	inc hl
-	jr .updateMenuVariables
-.upPressed
-	cp 8
-	ld b, -5
-	ld hl, wOptionsTextSpeedCursorX
-	jr z, .updateMenuVariables
-	cp 13
-	inc hl
-	jr z, .updateMenuVariables
-	cp 16
-	ld b, -3
-	inc hl
-	jr z, .updateMenuVariables
-	ld b, 13
-	inc hl
-.updateMenuVariables
-	add b
-	ld [wTopMenuItemY], a
-	ld a, [hl]
-	ld [wTopMenuItemX], a
-	call PlaceUnfilledArrowMenuCursor
-	jp .loop
-.cursorInBattleAnimation
-	ld a, [wOptionsBattleAnimCursorX] ; battle animation cursor X coordinate
-	xor 1 ^ 10 ; toggle between 1 and 10
-	ld [wOptionsBattleAnimCursorX], a
-	jp .eraseOldMenuCursor
-.cursorInBattleStyle
-	ld a, [wOptionsBattleStyleCursorX] ; battle style cursor X coordinate
-	xor 1 ^ 10 ; toggle between 1 and 10
-	ld [wOptionsBattleStyleCursorX], a
-	jp .eraseOldMenuCursor
-.pressedLeftInTextSpeed
-	ld a, [wOptionsTextSpeedCursorX] ; text speed cursor X coordinate
-	cp 1
-	jr z, .updateTextSpeedXCoord
-	cp 7
-	jr nz, .fromSlowToMedium
-	sub 6
-	jr .updateTextSpeedXCoord
-.fromSlowToMedium
-	sub 7
-	jr .updateTextSpeedXCoord
-.pressedRightInTextSpeed
-	ld a, [wOptionsTextSpeedCursorX] ; text speed cursor X coordinate
-	cp 14
-	jr z, .updateTextSpeedXCoord
-	cp 7
-	jr nz, .fromFastToMedium
-	add 7
-	jr .updateTextSpeedXCoord
-.fromFastToMedium
-	add 6
-.updateTextSpeedXCoord
-	ld [wOptionsTextSpeedCursorX], a ; text speed cursor X coordinate
-	jp .eraseOldMenuCursor
+	ld c, 18
+	call TextBoxBorder
+	hlcoord 0, 5
+	ld b, 3
+	ld c, 18
+	call TextBoxBorder
+	hlcoord 0, 10
+	ld b, 3
+	ld c, 18
+	call TextBoxBorder
+	hlcoord 1, 1
+	ld de, MusicOptionText
+	call PlaceString
+	hlcoord 2, 16
+	ld de, OptionMenuPageText
+	call PlaceString
+	hlcoord 16, 16
+	ld de, OptionMenuPage2Text
+	jp PlaceString
+
+.placePage2Arrows
+	hlcoord 0, 3
+	ld a, [wOptionsMusicCursorX]
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld [hl], '▷'
+	hlcoord 1, 16
+	ld [hl], '▷'
+	ret
 
 TextSpeedOptionText:
 	db   "TEXT SPEED"
@@ -606,13 +750,27 @@ BattleStyleOptionText:
 	db   "BATTLE STYLE"
 	next " SHIFT    SET@"
 
-OptionMenuCancelText:
-	db "CANCEL@"
+MusicOptionText:
+	db   "MUSIC"
+	next " ON       OFF@"
 
-; sets the options variable according to the current placement of the menu cursors in the options menu
+OptionMenuPageText:
+	db "PAGE@"
+
+OptionMenuPage1Text:
+	db "1/2@"
+
+OptionMenuPage2Text:
+	db "2/2@"
+
+; sets wOptions according to the current cursor positions
 SetOptionsFromCursorPositions:
+	ld a, [wOptions]
+	and 1 << BIT_MUSIC_OFF
+	ld e, a ; remember old Music state so transitions run only once
+
 	ld hl, TextSpeedOptionData
-	ld a, [wOptionsTextSpeedCursorX] ; text speed cursor X coordinate
+	ld a, [wOptionsTextSpeedCursorX]
 	ld c, a
 .loop
 	ld a, [hli]
@@ -623,7 +781,7 @@ SetOptionsFromCursorPositions:
 .textSpeedMatchFound
 	ld a, [hl]
 	ld d, a
-	ld a, [wOptionsBattleAnimCursorX] ; battle animation cursor X coordinate
+	ld a, [wOptionsBattleAnimCursorX]
 	dec a
 	jr z, .battleAnimationOn
 ; battle animation Off
@@ -632,53 +790,96 @@ SetOptionsFromCursorPositions:
 .battleAnimationOn
 	res BIT_BATTLE_ANIMATION, d
 .checkBattleStyle
-	ld a, [wOptionsBattleStyleCursorX] ; battle style cursor X coordinate
+	ld a, [wOptionsBattleStyleCursorX]
 	dec a
 	jr z, .battleStyleShift
 ; battle style Set
 	set BIT_BATTLE_SHIFT, d
-	jr .storeOptions
+	jr .checkMusic
 .battleStyleShift
 	res BIT_BATTLE_SHIFT, d
+.checkMusic
+	ld a, [wOptionsMusicCursorX]
+	dec a
+	jr z, .musicOn
+.musicOff
+	set BIT_MUSIC_OFF, d
+	jr .storeOptions
+.musicOn
+	res BIT_MUSIC_OFF, d
 .storeOptions
 	ld a, d
 	ld [wOptions], a
-	ret
+	and 1 << BIT_MUSIC_OFF
+	cp e
+	ret z
+	and a
+	jr z, .enableMusic
+; Stop the currently playing BGM once. While Music Off remains active,
+; Home/PlaySound filters future BGM requests but still lets SFX through.
+	xor a
+	ld [wAudioFadeOutControl], a
+	dec a ; SFX_STOP_ALL_MUSIC
+	jp PlaySound
+.enableMusic
+	; From the title/main menu, restart the title music. From the in-game
+	; Start menu, restart the correct map/bike/surf music.
+	ld a, [wOptionsMenuPage]
+	bit 7, a
+	jr nz, .enableInGameMusic
+	ld c, BANK(Music_TitleScreen)
+	ld a, MUSIC_TITLE_SCREEN
+	jp PlayMusic
+.enableInGameMusic
+	xor a
+	ld [wLastMusicSoundID], a
+	jp PlayDefaultMusic
 
-; reads the options variable and places menu cursors in the correct positions within the options menu
+; reads wOptions and places menu cursors in the correct positions
 SetCursorPositionsFromOptions:
 	ld hl, TextSpeedOptionData + 1
 	ld a, [wOptions]
+	and TEXT_DELAY_MASK
 	ld c, a
-	and $3f
-	push bc
 	ld de, 2
 	call IsInArray
-	pop bc
 	dec hl
 	ld a, [hl]
-	ld [wOptionsTextSpeedCursorX], a ; text speed cursor X coordinate
+	ld [wOptionsTextSpeedCursorX], a
 	hlcoord 0, 3
 	call .placeUnfilledRightArrow
-	sla c
-	ld a, 1 ; On
-	jr nc, .storeBattleAnimationCursorX
-	ld a, 10 ; Off
+
+	ld a, [wOptions]
+	bit BIT_BATTLE_ANIMATION, a
+	ld a, 1
+	jr z, .storeBattleAnimationCursorX
+	ld a, 10
 .storeBattleAnimationCursorX
-	ld [wOptionsBattleAnimCursorX], a ; battle animation cursor X coordinate
+	ld [wOptionsBattleAnimCursorX], a
 	hlcoord 0, 8
 	call .placeUnfilledRightArrow
-	sla c
+
+	ld a, [wOptions]
+	bit BIT_BATTLE_SHIFT, a
 	ld a, 1
-	jr nc, .storeBattleStyleCursorX
+	jr z, .storeBattleStyleCursorX
 	ld a, 10
 .storeBattleStyleCursorX
-	ld [wOptionsBattleStyleCursorX], a ; battle style cursor X coordinate
+	ld [wOptionsBattleStyleCursorX], a
 	hlcoord 0, 13
 	call .placeUnfilledRightArrow
-; cursor in front of Cancel
-	hlcoord 0, 16
+
+	ld a, [wOptions]
+	bit BIT_MUSIC_OFF, a
 	ld a, 1
+	jr z, .storeMusicCursorX
+	ld a, 10
+.storeMusicCursorX
+	ld [wOptionsMusicCursorX], a
+
+	hlcoord 1, 16
+	ld [hl], '▷'
+	ret
 .placeUnfilledRightArrow
 	ld e, a
 	ld d, 0

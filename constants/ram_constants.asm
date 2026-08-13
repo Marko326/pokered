@@ -31,6 +31,7 @@ DEF BIT_FONT_LOADED EQU 0
 
 ; wOptions
 DEF TEXT_DELAY_MASK EQU %111
+DEF BIT_MUSIC_OFF EQU 5 ; 0 = background music on, 1 = background music off
 	const_def 6
 	const BIT_BATTLE_SHIFT     ; 6
 	const BIT_BATTLE_ANIMATION ; 7

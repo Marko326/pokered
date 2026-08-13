@@ -73,7 +73,11 @@ wAudioSavedROMBank:: db
 wFrequencyModifier:: db
 wTempoModifier:: db
 
-	ds 13
+; Options menu state. Bit 0 selects page 2; bit 7 means the menu was
+; opened from the in-game Start menu. Reuse existing audio padding so all
+; following WRAM addresses remain unchanged.
+wOptionsMenuPage:: db
+	ds 12
 
 
 SECTION "Sprite State Data", WRAM0
@@ -787,7 +791,7 @@ NEXTU
 wOptionsTextSpeedCursorX:: db
 wOptionsBattleAnimCursorX:: db
 wOptionsBattleStyleCursorX:: db
-wOptionsCancelCursorX:: db
+wOptionsMusicCursorX:: db
 
 NEXTU
 ; tile ID of the badge number being drawn
