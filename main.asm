@@ -368,3 +368,7 @@ INCLUDE "engine/menus/quantity_menu_helpers.asm"
 ; ROM-1.0.4: Keep decimal formatting core out of HOME.
 SECTION "Number Printing", ROMX
 INCLUDE "engine/number_printing.asm"
+
+; ROM-1.0.5: Relocate stat calculations out of HOME.
+SECTION "Calc Stats", ROMX
+INCLUDE "engine/pokemon/calc_stats.asm"

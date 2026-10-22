@@ -185,6 +185,7 @@ ROMX $2D
 	"Quantity Menu Helpers"
 ; ROM-1.0.4: Keep the decimal formatter in the same spare bank.
 	"Number Printing"
+	"Calc Stats"
 WRAM0
 	"Audio RAM"
 	org $c100
