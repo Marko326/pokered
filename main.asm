@@ -205,6 +205,10 @@ SECTION "Battle Core", ROMX
 INCLUDE "engine/battle/core.asm"
 INCLUDE "engine/battle/effects.asm"
 
+; ROM-1.0.3: Keep list rendering in bank $0F for the Old Man list pointer.
+SECTION "List Menu Helpers", ROMX
+INCLUDE "engine/menus/list_menu_helpers.asm"
+
 
 SECTION "bank10", ROMX
 
@@ -356,3 +360,7 @@ INCLUDE "data/battle_anims/frame_blocks.asm"
 INCLUDE "engine/movie/evolution.asm"
 INCLUDE "engine/overworld/elevator.asm"
 INCLUDE "engine/items/tm_prices.asm"
+
+; ROM-1.0.3: Keep quantity-selection implementation out of HOME.
+SECTION "Quantity Menu Helpers", ROMX
+INCLUDE "engine/menus/quantity_menu_helpers.asm"

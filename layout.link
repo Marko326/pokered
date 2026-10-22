@@ -86,8 +86,10 @@ ROMX $D
 	"Slot Machines"
 ROMX $E
 	"Battle Engine 7"
+; ROM-1.0.3: Keep list rendering in bank $0F with OldManItemList.
 ROMX $F
 	"Battle Core"
+	"List Menu Helpers"
 ROMX $10
 	"bank10"
 ROMX $11
@@ -178,6 +180,9 @@ ROMX $2B
 	"Pokédex Text"
 ROMX $2C
 	"Move Names"
+; ROM-1.0.3: Use an unused bank for the quantity-menu implementation.
+ROMX $2D
+	"Quantity Menu Helpers"
 WRAM0
 	"Audio RAM"
 	org $c100
