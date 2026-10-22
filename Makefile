@@ -5,6 +5,8 @@ roms := \
 patches := \
 	pokered.patch \
 	pokeblue.patch
+# CMD-1.0.2: Linker-generated maps for the release ROMs.
+release_maps := pokered.map pokeblue.map
 
 rom_obj := \
 	audio.o \
@@ -57,7 +59,9 @@ RGBGFXFLAGS  ?= -Weverything
 	blue_debug \
 	red_vc \
 	blue_vc \
+	map \
 	clean \
+	cleanpic \
 	tidy \
 	compare \
 	tools
@@ -68,6 +72,18 @@ blue:       pokeblue.gbc
 blue_debug: pokeblue_debug.gbc
 red_vc:     pokered.patch
 blue_vc:    pokeblue.patch
+
+# CMD-1.0.2: The existing ROM linker emits maps; no extra linker path.
+map: red blue
+	@for file in $(release_maps); do \
+		if test ! -s "$$file"; then \
+			printf 'Missing %s; use make -B red blue to rebuild maps.\n' "$$file" >&2; \
+			exit 1; \
+		fi; \
+	done
+
+# CMD-1.0.2: Target clean already removes generated .pic files and maps.
+cleanpic: clean
 
 clean: tidy
 	find gfx \
@@ -120,7 +136,7 @@ rgbdscheck.o: rgbdscheck.asm
 
 # Build tools when building the rom.
 # This has to happen before the rules are processed, since that's when scan_includes is run.
-ifeq (,$(filter clean tidy tools,$(MAKECMDGOALS)))
+ifeq (,$(filter clean cleanpic tidy tools,$(MAKECMDGOALS)))
 
 $(info $(shell $(MAKE) -C tools))
 

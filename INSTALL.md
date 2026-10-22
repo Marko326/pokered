@@ -151,6 +151,34 @@ To build **pokered.gbc** and **pokeblue.gbc**:
 make
 ```
 
+### Common build commands (CMD-1.0.2)
+
+This Music Off target uses **RGBDS 1.0.3**, not the source project's
+RGBDS 0.5.2. Run these commands from the project root:
+
+| Command | Purpose |
+| --- | --- |
+| `make` | Build Red, Blue and Blue Debug ROMs. |
+| `make red` | Build `pokered.gbc`, also emitting `.map` / `.sym`. |
+| `make blue` | Build `pokeblue.gbc`, also emitting `.map` / `.sym`. |
+| `make blue_debug` | Build `pokeblue_debug.gbc`. |
+| `make map` | Build Red and Blue if needed, then check both `.map` files. |
+| `make tidy` | Remove built outputs, keeping generated graphics. |
+| `make clean` | Run `tidy` and remove generated `.1bpp`, `.2bpp`, `.pic`. |
+| `make cleanpic` | Compatible alias for this project's `make clean`. |
+| `make compare` | Compare against original ROM hashes; modified ROMs normally differ. |
+
+The standard ROM link rule generates maps. If a ROM is already current but its
+`.map` was manually removed, `make map` fails with a clear message; run
+`make -B red blue` to regenerate maps (this can rebuild other outputs too).
+The `pokered.map` shipped with the export may be stale.
+
+To use a local RGBDS installation, for example:
+
+```sh
+make RGBDS=rgbds-1.0.3/ red
+```
+
 ### Build with a local rgbds version
 
 If you have different projects that require different versions of `rgbds`, it might not be convenient to install rgbds 1.0.3 globally. Instead, you can put its files in a directory within pokered, such as `pokered/rgbds-1.0.3/`. Then specify it when you run `make`:
