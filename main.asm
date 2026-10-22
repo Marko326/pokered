@@ -364,3 +364,7 @@ INCLUDE "engine/items/tm_prices.asm"
 ; ROM-1.0.3: Keep quantity-selection implementation out of HOME.
 SECTION "Quantity Menu Helpers", ROMX
 INCLUDE "engine/menus/quantity_menu_helpers.asm"
+
+; ROM-1.0.4: Keep decimal formatting core out of HOME.
+SECTION "Number Printing", ROMX
+INCLUDE "engine/number_printing.asm"
