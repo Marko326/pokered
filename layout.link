@@ -33,6 +33,7 @@ ROM0
 	"Header"
 	org $150
 	"Home"
+	"Game Version"
 ROMX $1
 	"bank1"
 ROMX $2

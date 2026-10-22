@@ -57,6 +57,8 @@ MainMenu:
 	ld de, NewGameText
 	call PlaceString
 .next2
+	; VER-1.0.1: Keep the version visible at the lower left of the main menu.
+	call DrawMainMenuVersionText
 	ld hl, wStatusFlags5
 	res BIT_NO_TEXT_DELAY, [hl]
 	call UpdateSprites
@@ -94,11 +96,15 @@ MainMenu:
 	; Bit 7 clear = Options opened from the title/main menu.
 	xor a
 	ld [wOptionsMenuPage], a
+	; VER-1.0.1: Clear the main-menu version before entering Options.
+	call ClearMainMenuVersionText
 	call DisplayOptionMenu
 	ld a, TRUE
 	ld [wOptionsInitialized], a
 	jp .mainMenuLoop
 .choseContinue
+	; VER-1.0.1: Keep the Continue info overlay free of the version label.
+	call ClearMainMenuVersionText
 	call DisplayContinueGameInfo
 	ld hl, wCurrentMapScriptFlags
 	set BIT_CUR_MAP_LOADED_1, [hl]
@@ -444,6 +450,27 @@ PrintPlayTime:
 	lb bc, LEADING_ZEROES | 1, 2
 	jp PrintNumber
 
+; VER-1.0.1: Both displays share a single ROM0 version string.
+DrawMainMenuVersionText:
+	hlcoord 1, 17
+	ld de, GameVersionText
+	jp PlaceString
+
+ClearMainMenuVersionText:
+	; Clear the row to support longer version labels in future releases.
+	hlcoord 0, 17
+	ld b, 1
+	ld c, SCREEN_WIDTH
+	jp ClearScreenArea
+
+; Show the version between PAGE and the right-aligned page count, on row 16.
+; 20 columns: [1] cursor, [2-5] PAGE, [6] space,
+; [7-15] version (9 chars), [16] space, [17-19] page count.
+DrawOptionMenuVersionText:
+	hlcoord 7, 16
+	ld de, GameVersionText
+	jp PlaceString
+
 SaveScreenInfoText:
 	db   "PLAYER"
 	next "BADGES    "
@@ -697,10 +724,11 @@ DisplayOptionMenu:
 	hlcoord 1, 11
 	ld de, BattleStyleOptionText
 	call PlaceString
+	call DrawOptionMenuVersionText
 	hlcoord 2, 16
 	ld de, OptionMenuPageText
 	call PlaceString
-	hlcoord 16, 16
+	hlcoord 17, 16
 	ld de, OptionMenuPage1Text
 	jp PlaceString
 
@@ -720,10 +748,11 @@ DisplayOptionMenu:
 	hlcoord 1, 1
 	ld de, MusicOptionText
 	call PlaceString
+	call DrawOptionMenuVersionText
 	hlcoord 2, 16
 	ld de, OptionMenuPageText
 	call PlaceString
-	hlcoord 16, 16
+	hlcoord 17, 16
 	ld de, OptionMenuPage2Text
 	jp PlaceString
 
