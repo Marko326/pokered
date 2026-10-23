@@ -55,14 +55,14 @@ RedisplayStartMenu::
 	ld [wBattleAndStartSavedMenuItem], a ; save current menu selection
 	ld a, b
 	and PAD_B | PAD_START ; was the Start button or B button pressed?
-	jp nz, CloseStartMenu
+	jr nz, CloseStartMenu
 	CheckEvent EVENT_GOT_POKEDEX
 	ld a, [wCurrentMenuItem]
 	jr nz, .displayMenuItem
 	inc a ; adjust position to account for missing pokedex menu item
 .displayMenuItem
 	cp 6 ; MEN-1.10: EXIT is a direct close, not a submenu.
-	jp z, CloseStartMenu
+	jr z, CloseStartMenu
 	push af
 	ld a, 1
 	ld [wStartMenuFullRestoreFlag], a

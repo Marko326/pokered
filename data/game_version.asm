@@ -3,4 +3,4 @@ SECTION "Game Version", ROM0
 ; One shared read-only build version for menu displays.
 ; ROM0 lets ROMX menu code read this text without bank switching.
 GameVersionText::
-	db "MEN-1.10@"
+	db "ROM-1.10A@"

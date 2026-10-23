@@ -372,3 +372,9 @@ INCLUDE "engine/number_printing.asm"
 ; ROM-1.0.5: Relocate stat calculations out of HOME.
 SECTION "Calc Stats", ROMX
 INCLUDE "engine/pokemon/calc_stats.asm"
+
+
+; ROM-1.10A: offload the START fast-close work from ROM0.
+SECTION "START Fast Close", ROMX
+
+INCLUDE "engine/menus/close_start_menu_fast.asm"
