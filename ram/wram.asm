@@ -253,7 +253,10 @@ wPlayerMonNumber:: db
 ; the address of the menu cursor's current location within wTileMap
 wMenuCursorLocation:: dw
 
-	ds 2
+; MEN-1.10: START-only temporary flag in existing unsaved menu padding.
+; No WRAM address offsets or SRAM save layout are changed.
+wStartMenuFullRestoreFlag:: db
+wStartMenuPartialSpriteRestore:: db ; MEN-1.10: use existing menu padding byte
 
 ; how many times should HandleMenuInput poll the joypad state before it returns?
 wMenuJoypadPollCount:: db

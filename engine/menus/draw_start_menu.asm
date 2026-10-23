@@ -1,5 +1,9 @@
 ; function that displays the start menu
 DrawStartMenu::
+	; MEN-1.10: snapshot overworld only on first START draw.
+	ld a, [wStartMenuFullRestoreFlag]
+	and a
+	call z, SaveScreenTilesToBuffer2
 	CheckEvent EVENT_GOT_POKEDEX
 ; menu with pokedex
 	hlcoord 10, 0

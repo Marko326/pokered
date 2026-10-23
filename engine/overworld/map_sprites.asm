@@ -203,7 +203,9 @@ LoadMapSpriteTilePatterns:
 	set 3, h ; add $800 ($80 tiles) to hl (1 << 3 == $8)
 	ld b, a
 	swap c
-	call CopyVideoData ; load tile pattern data for sprite when walking
+	; MEN-1.10: when START only touched a few font glyphs,
+	; restore only the corresponding walking sprite tiles.
+	call RestoreStartMenuSpriteTiles
 .skipSecondLoad
 	pop hl
 	pop bc
@@ -250,6 +252,63 @@ ReadSpriteSheetData:
 	ld b, a
 	ld a, [hli]
 	ret
+
+; MEN-1.10: Only direct START close sets this transient mode.
+; Font glyph tile indices (relative to vFont/vNPCSprites2): A-Z 0..25,
+; optional lowercase 32..57, e-acute 58, cursor 108..109,
+; and optional Safari/digits 113..127 (last 8 are not sprite slots).
+; All other sprite graphics are unchanged by the START font subset.
+RestoreStartMenuSpriteTiles:
+	ld a, [wStartMenuPartialSpriteRestore]
+	bit 0, a
+	jp z, CopyVideoData ; full-font fallback or other text
+	ldh a, [hVRAMSlot]
+	cp 3
+	jp c, CopyVideoData ; slots 1 and 2: 12 tiles each
+	jr nz, .afterSlot3
+; slot 3: A-Z uses its first two tiles, lowercase uses the whole slot
+	ld a, [wStartMenuPartialSpriteRestore]
+	bit 1, a
+	jp nz, CopyVideoData
+	ld c, 2
+	jp CopyVideoData
+.afterSlot3
+	cp 4
+	jr nz, .afterSlot4
+	ld a, [wStartMenuPartialSpriteRestore]
+	bit 1, a
+	jp nz, CopyVideoData
+	ret
+.afterSlot4
+	cp 5
+	jr nz, .afterSlot5
+	ld a, [wStartMenuPartialSpriteRestore]
+	bit 1, a
+	jr z, .accentOnly
+	ld c, 11 ; lowercase (48..57) and e-acute (58)
+	jp CopyVideoData
+.accentOnly
+	; e-acute occupies only tile 58: slot 5 offset 10
+	push bc
+	ld bc, 10 tiles
+	add hl, bc
+	pop bc
+	ld a, e
+	add 10 * TILE_SIZE
+	ld e, a
+	jr nc, .accentReady
+	inc d
+.accentReady
+	ld c, 1
+	jp CopyVideoData
+.afterSlot5
+	cp 10
+	ret nz ; slots 6-9 and 11+ are not touched
+	ld a, [wStartMenuPartialSpriteRestore]
+	bit 2, a
+	jp nz, CopyVideoData ; digits/Safari also touch part of slot 10
+	ld c, 2 ; cursor glyphs only
+	jp CopyVideoData
 
 ; Loads sprite set for outside maps (cities and routes) and sets VRAM slots.
 ; sets carry if the map is a city or route, unsets carry if not

@@ -56,12 +56,23 @@ RedisplayStartMenu::
 	ld a, b
 	and PAD_B | PAD_START ; was the Start button or B button pressed?
 	jp nz, CloseStartMenu
-	call SaveScreenTilesToBuffer2 ; copy background from wTileMap to wTileMapBackup2
 	CheckEvent EVENT_GOT_POKEDEX
 	ld a, [wCurrentMenuItem]
 	jr nz, .displayMenuItem
 	inc a ; adjust position to account for missing pokedex menu item
 .displayMenuItem
+	cp 6 ; MEN-1.10: EXIT is a direct close, not a submenu.
+	jp z, CloseStartMenu
+	push af
+	ld a, 1
+	ld [wStartMenuFullRestoreFlag], a
+	call SaveScreenTilesToBuffer2 ; preserve START for submenu returns
+	; MEN-1.10: full font is required by Options and other
+	; submenus. This cost is paid only after entering a submenu.
+	xor a
+	ld [wStartMenuPartialSpriteRestore], a
+	call LoadFontTilePatterns
+	pop af
 	cp 0
 	jp z, StartMenu_Pokedex
 	cp 1
@@ -81,5 +92,15 @@ CloseStartMenu::
 	ldh a, [hJoyPressed]
 	bit B_PAD_A, a
 	jr nz, CloseStartMenu
+	; MEN-1.10: no submenu: BG0 is intact; restore WRAM tilemap and
+	; only overwritten sprite patterns. Skip full map-view reconstruction.
+	ld a, [wStartMenuFullRestoreFlag]
+	and a
+	jr nz, .fullRestore
+	call LoadScreenTilesFromBuffer2DisableBGTransfer
+	jp CloseTextDisplayFastStart
+.fullRestore
+	xor a
+	ld [wStartMenuFullRestoreFlag], a
 	call LoadTextBoxTilePatterns
 	jp CloseTextDisplay

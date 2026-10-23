@@ -16,6 +16,13 @@ HandleMenuInput_::
 	ld [wAnimCounter], a ; counter for pokemon shaking animation
 	call PlaceMenuCursor
 	call Delay3
+	; MEN-1.10: reveal START after existing tilemap transfer;
+	; do not add another waiting frame.
+	ldh a, [hWY]
+	cp $91
+	jr nz, .loop2
+	xor a
+	ldh [hWY], a
 .loop2
 	push hl
 	ld a, [wPartyMenuAnimMonEnabled]
