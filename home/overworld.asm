@@ -2013,7 +2013,19 @@ LoadMapHeader::
 	ld [wCurMapTileset], a
 	ldh [hPreviousTileset], a
 	bit BIT_NO_PREVIOUS_MAP, b
-	ret nz
+	jr z, .readROMMapHeader
+	; SAV-1.0.8: Saved tileset pointers may refer to the previous ROM layout.
+	; Rebuild them from the current ROM without moving the saved map position.
+	; Temporarily suppress dungeon warp positioning during restoration.
+	ld a, [wDestinationWarpID]
+	push af
+	ld a, $ff
+	ld [wDestinationWarpID], a
+	predef LoadTilesetHeader
+	pop af
+	ld [wDestinationWarpID], a
+	ret
+.readROMMapHeader
 	ld hl, MapHeaderPointers
 	ld a, [wCurMap]
 	sla a
