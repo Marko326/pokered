@@ -12,9 +12,10 @@ ChangeBGPalColor0_4Frames:
 	ret
 
 PredefShakeScreenVertically:
-; Moves the window down and then back in a sequence of progressively smaller
-; numbers of pixels, starting at b.
+; GFX-1.0.7: keep the original 3-frame shake, but update WY during VBlank.
 	call GetPredefRegisters
+	ldh a, [hWY]
+	push af
 	ld a, 1
 	ld [wDisableVBlankWYUpdate], a
 	xor a
@@ -25,6 +26,9 @@ PredefShakeScreenVertically:
 	dec b
 	ld a, b
 	jr nz, .loop
+; GFX-1.0.7: restore the caller's WY instead of assuming it was zero.
+	pop af
+	ldh [hWY], a
 	xor a
 	ld [wDisableVBlankWYUpdate], a
 	ret
@@ -33,8 +37,22 @@ PredefShakeScreenVertically:
 	ldh a, [hMutateWY]
 	xor b
 	ldh [hMutateWY], a
-	ldh [rWY], a
 	ld c, 3
+	jp .SetWYForFrames
+
+.SetWYForFrames
+; GFX-1.0.7: latch via hWY for one VBlank, then hold for two frames.
+	ldh [hWY], a
+	push bc
+	xor a
+	ld [wDisableVBlankWYUpdate], a
+	ld c, 1
+	call DelayFrames
+	ld a, 1
+	ld [wDisableVBlankWYUpdate], a
+	pop bc
+	dec c
+	ret z
 	jp DelayFrames
 
 PredefShakeScreenHorizontally:
