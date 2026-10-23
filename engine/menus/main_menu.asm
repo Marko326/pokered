@@ -1,14 +1,30 @@
 MainMenu:
 ; Check save file
+	; ROM-1.0.6: Keep Options chosen in this session when returning from
+	; the title screen. A cold start still uses saved options.
+	ld a, [wOptionsInitialized]
+	and a
+	jr nz, .optionsReady
 	call InitOptions
-	xor a
-	ld [wOptionsInitialized], a
-	inc a
+.optionsReady
+	ld a, 1
 	ld [wSaveFileStatus], a
 	call CheckForPlayerNameInSRAM
 	jr nc, .mainMenuLoop
 
+	ld a, [wOptionsInitialized]
+	and a
+	jr z, .loadSaveFile
+	; TryLoadSaveFile reloads wOptions; preserve unsaved menu choices.
+	ld a, [wOptions]
+	push af
 	predef TryLoadSaveFile
+	pop af
+	ld [wOptions], a
+	jr .saveLoaded
+.loadSaveFile
+	predef TryLoadSaveFile
+.saveLoaded
 	; wOptions is part of the normal save data. If Music Off was saved, stop
 	; the title BGM now, after the regular save loader has restored WRAM.
 	ld a, [wOptions]
@@ -143,7 +159,10 @@ MainMenu:
 InitOptions:
 	ld a, 1 << BIT_FAST_TEXT_DELAY
 	ld [wLetterPrintingDelayFlags], a
-	ld a, TEXT_DELAY_MEDIUM
+	; ROM-1.0.6: Preserve the startup-loaded Music Off bit.
+	ld a, [wOptions]
+	and 1 << BIT_MUSIC_OFF
+	or TEXT_DELAY_MEDIUM
 	ld [wOptions], a
 	ret
 

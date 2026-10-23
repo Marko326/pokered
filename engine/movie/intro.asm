@@ -6,6 +6,8 @@
 DEF ANIMATION_END EQU 80
 
 PlayIntro:
+	; ROM-1.0.6: Restore saved Music Off before any intro or title BGM.
+	call LoadStartupMusicOption
 	xor a
 	ldh [hJoyHeld], a
 	inc a
@@ -18,6 +20,40 @@ PlayIntro:
 	ldh [hAutoBGTransferEnabled], a
 	call ClearSprites
 	call DelayFrame
+	ret
+
+; ROM-1.0.6: Only the Music Off bit is needed at startup. Read it from
+; SRAM without loading the full save; leave intro SFX unaffected.
+LoadStartupMusicOption:
+	push bc
+	push hl
+	di
+	ld a, RAMG_SRAM_ENABLE
+	ld [rRAMG], a
+	ld a, BMODE_ADVANCED
+	ld [rBMODE], a
+	ASSERT BANK(sPlayerName) == BMODE_ADVANCED
+	ld [rRAMB], a
+	ld hl, sPlayerName
+	ld b, NAME_LENGTH
+.checkPlayerName
+	ld a, [hli]
+	cp '@'
+	jr z, .loadMusicOption
+	dec b
+	jr nz, .checkPlayerName
+	jr .closeSRAM
+.loadMusicOption
+	ld a, [sMainData + (wOptions - wMainDataStart)]
+	and 1 << BIT_MUSIC_OFF
+	ld [wOptions], a
+.closeSRAM
+	xor a
+	ld [rBMODE], a
+	ld [rRAMG], a
+	ei
+	pop hl
+	pop bc
 	ret
 
 PlayIntroScene:
