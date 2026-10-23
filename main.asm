@@ -374,7 +374,11 @@ SECTION "Calc Stats", ROMX
 INCLUDE "engine/pokemon/calc_stats.asm"
 
 
-; ROM-1.10A: offload the START fast-close work from ROM0.
+; MOV-1.11: offload the START fast-close work from ROM0.
 SECTION "START Fast Close", ROMX
 
 INCLUDE "engine/menus/close_start_menu_fast.asm"
+
+; MOV-1.11: B-button running and automatic faster bicycle steps.
+SECTION "Player Speed Steps", ROMX
+INCLUDE "engine/overworld/player_speed.asm"

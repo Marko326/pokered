@@ -1,4 +1,4 @@
-; ROM-1.10A: ROMX implementation of MEN-1.10 direct START close.
+; MOV-1.11: ROMX implementation of MEN-1.10 direct START close.
 ; Keep VRAM restoration and all special movement-state checks unchanged.
 ; ROM0 wrapper handles the original saved bank and UpdateSprites tail.
 CloseTextDisplayFastStartBanked::

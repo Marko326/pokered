@@ -139,7 +139,7 @@ CloseTextDisplay::
 	ld [rROMB], a
 	jp UpdateSprites
 
-; ROM-1.10A: keep only the START close bank bridge in ROM0.
+; MOV-1.11: keep only the START close bank bridge in ROM0.
 ; The banked routine returns here before restoring DisplayTextID's stack.
 CloseTextDisplayFastStart::
 	ld a, [wCurMap]

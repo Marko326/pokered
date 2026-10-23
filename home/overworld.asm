@@ -277,15 +277,8 @@ OverworldLoopLessDelay::
 .moveAhead2
 	ld hl, wMiscFlags
 	res BIT_TURNING, [hl]
-	ld a, [wWalkBikeSurfState]
-	dec a ; riding a bike?
-	jr nz, .normalPlayerSpriteAdvancement
-	ld a, [wMovementFlags]
-	bit BIT_LEDGE_OR_FISHING, a
-	jr nz, .normalPlayerSpriteAdvancement
-	call DoBikeSpeedup
-.normalPlayerSpriteAdvancement
-	call AdvancePlayerSprite
+	; MOV-1.11: speed-specific pixel updates run in ROMX to preserve ROM0.
+	farcall AdvancePlayerAtSpeed
 	ld a, [wWalkCounter]
 	and a
 	jp nz, CheckMapConnections ; it seems like this check will never succeed (the other place where CheckMapConnections is run works)
