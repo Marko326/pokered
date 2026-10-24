@@ -69,7 +69,7 @@ Init::
 	ldh a, [rOBP1]
 	cpl
 	ldh [hCGBOBP1], a
-	call InitCGBDefaultPalette
+	farcall InitCGBDefaultPalette ; CGB-1.13: Cold-start palette data lives in ROMX.
 
 	call ClearSprites
 

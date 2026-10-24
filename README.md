@@ -29,3 +29,11 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 [tools]: https://github.com/pret/gb-asm-tools
 [ci]: https://github.com/pret/pokered/actions
 [ci-badge]: https://github.com/pret/pokered/actions/workflows/main.yml/badge.svg
+
+## Project-specific development notes
+
+This branch uses `PROJECT_DELIVERY_RULES.md` for patch and closeout rules,
+`RPP_DEVELOPMENT_PITFALLS.md` for recurring engineering risks,
+`TODO.md` for the migration roadmap, and `docs/CGB_ROM0_OFFLOAD_ACCEPTANCE.md`
+for the current CGB/ROM0 acceptance boundary. `RPP_PROJECT_CONTEXT/` is
+exported by RPP Mobile and is not a durable replacement for these files.

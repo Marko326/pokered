@@ -382,3 +382,7 @@ INCLUDE "engine/menus/close_start_menu_fast.asm"
 ; MOV-1.11: B-button running and automatic faster bicycle steps.
 SECTION "Player Speed Steps", ROMX
 INCLUDE "engine/overworld/player_speed.asm"
+
+; CGB-1.13: Keep one-time palette init and RGB555 remap out of ROM0.
+SECTION "CGB Palette Compatibility", ROMX
+INCLUDE "engine/gfx/cgb_palette_bank.asm"

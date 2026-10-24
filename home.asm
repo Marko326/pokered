@@ -83,5 +83,5 @@ INCLUDE "home/predef.asm"
 INCLUDE "home/hidden_events.asm"
 INCLUDE "home/predef_text.asm"
 
-; CGB-1.12: Minimal native CGB speed, palette and OAM compatibility.
+; CGB-1.13: Keep speed switching, VBlank palette gate and OAM fix in ROM0.
 INCLUDE "home/cgb_mode.asm"
