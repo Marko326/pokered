@@ -1,4 +1,5 @@
 SoftReset::
+	call GBCSetCPU1xSpeed ; CGB-1.12: Keep reset audio and fades at normal speed.
 	call StopAllSounds
 	call GBPalWhiteOut
 	ld c, 32
@@ -7,6 +8,7 @@ SoftReset::
 
 Init::
 ;  Program init.
+	call GBCSetCPU1xSpeed ; CGB-1.12: Also normalize direct jumps to Init.
 	di
 
 	xor a
@@ -40,11 +42,34 @@ Init::
 	or c
 	jr nz, .loop
 
+	; CGB-1.12: Restore the hardware flag after clearing WRAM.
+	ldh a, [hCGB]
+	ld [wOnCGB], a
+	and a
+	jr z, .vramReady
+	; Clear CGB attribute bank, then return to the DMG-compatible tile bank.
+	ld a, 1
+	ldh [rVBK], a
+	call ClearVram
+	xor a
+	ldh [rVBK], a
+.vramReady
 	call ClearVram
 
 	ld hl, STARTOF(HRAM)
-	ld bc, SIZEOF(HRAM)
+	ld bc, SIZEOF(HRAM) - 1 ; CGB-1.12: Preserve hCGB at the end.
 	call FillMemory
+	; CGB-1.12: Cache invalidation, including the all-black palette case.
+	ldh a, [rBGP]
+	cpl
+	ldh [hCGBBGP], a
+	ldh a, [rOBP0]
+	cpl
+	ldh [hCGBOBP0], a
+	ldh a, [rOBP1]
+	cpl
+	ldh [hCGBOBP1], a
+	call InitCGBDefaultPalette
 
 	call ClearSprites
 

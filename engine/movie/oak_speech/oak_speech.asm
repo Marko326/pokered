@@ -40,6 +40,7 @@ PrepareOakSpeech:
 	jp CopyData
 
 OakSpeech:
+	call GBCSetCPU1xSpeed ; CGB-1.12: Preserve Oak speech timing.
 	ld a, SFX_STOP_ALL_MUSIC
 	call PlaySound
 	ld a, BANK(Music_Routes2)

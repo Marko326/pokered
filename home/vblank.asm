@@ -8,6 +8,9 @@ VBlank::
 	ldh a, [hLoadedROMBank]
 	ld [wVBlankSavedROMBank], a
 
+	; CGB-1.12: Reflect DMG fade registers in native CGB palettes.
+	call UpdateCGBDmgPalettes
+
 	ldh a, [hSCX]
 	ldh [rSCX], a
 	ldh a, [hSCY]
@@ -26,6 +29,7 @@ VBlank::
 	call VBlankCopy
 	call VBlankCopyDouble
 	call UpdateMovingBgTiles
+	call CGBFixOAMPalettes ; CGB-1.12: Map DMG OBJ1 selection to CGB palette 1.
 	call hDMARoutine
 	ld a, BANK(PrepareOAMData)
 	ldh [hLoadedROMBank], a

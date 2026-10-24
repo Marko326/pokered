@@ -21,6 +21,7 @@ HallOfFameNoopScript:
 	ret
 
 HallOfFameResetEventsAndSaveScript:
+	call GBCSetCPU1xSpeed ; CGB-1.12: Preserve Hall of Fame timing.
 	call Delay3
 	ld a, [wLetterPrintingDelayFlags]
 	push af

@@ -37,6 +37,7 @@ VermilionDock_Script:
 	ret
 
 VermilionDockSSAnneLeavesScript:
+	call GBCSetCPU1xSpeed ; CGB-1.12: Preserve ship animation timing.
 	SetEventForceReuseHL EVENT_SS_ANNE_LEFT
 	ld a, SFX_STOP_ALL_MUSIC
 	ld [wJoyIgnore], a

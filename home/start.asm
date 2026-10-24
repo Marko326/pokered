@@ -4,7 +4,7 @@ _Start::
 	xor a
 	jr .ok
 .cgb
-	ld a, FALSE
+	ld a, TRUE ; CGB-1.12: Enable native CGB hardware identification.
 .ok
-	ld [wOnCGB], a
+	ldh [hCGB], a ; CGB-1.12: Retain the boot flag across WRAM initialization.
 	jp Init

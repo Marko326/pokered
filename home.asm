@@ -82,3 +82,6 @@ INCLUDE "home/random.asm"
 INCLUDE "home/predef.asm"
 INCLUDE "home/hidden_events.asm"
 INCLUDE "home/predef_text.asm"
+
+; CGB-1.12: Minimal native CGB speed, palette and OAM compatibility.
+INCLUDE "home/cgb_mode.asm"

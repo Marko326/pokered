@@ -397,6 +397,11 @@ hJoyInput:: db
 
 hDisableJoypadPolling:: db
 
-	ds 5
+	; CGB-1.12: Reuse reserved HRAM; keep the boot flag as the final byte.
+	ds 1
+hCGBBGP:: db
+hCGBOBP0:: db
+hCGBOBP1:: db
+hCGB:: db
 
 ENDSECTION

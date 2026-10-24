@@ -392,6 +392,10 @@ SendSGBPacket:
 LoadSGB:
 	xor a
 	ld [wOnSGB], a
+	; CGB-1.12: Native CGB does not require SGB packet probing.
+	ld a, [wOnCGB]
+	and a
+	ret nz
 	call CheckSGB
 	ret nc
 	ld a, 1
@@ -565,39 +569,11 @@ Wait7000:
 SendSGBPackets:
 	ld a, [wOnCGB]
 	and a
-	jr z, .notCGB
-	push de
-	call InitCGBPalettes
-	pop hl
-	call EmptyFunc3
-	ret
-.notCGB
+	ret nz ; CGB-1.12: Use built-in Red/Blue palettes, not SGB PAL_SET.
 	push de
 	call SendSGBPacket
 	pop hl
 	jp SendSGBPacket
-
-InitCGBPalettes:
-	ld a, $80 ; index 0 with auto-increment
-	ldh [rBGPI], a
-	inc hl
-	ld c, $20
-.loop
-	ld a, [hli]
-	inc hl
-	add a
-	add a
-	add a
-	ld de, SuperPalettes
-	add e
-	jr nc, .noCarry
-	inc d
-.noCarry
-	ld a, [de]
-	ldh [rBGPD], a
-	dec c
-	jr nz, .loop
-	ret
 
 EmptyFunc3:
 	ret

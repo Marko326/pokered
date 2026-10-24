@@ -1045,7 +1045,7 @@ wScriptedNPCWalkCounter:: db
 
 	ds 1
 
-; always 0 since full CGB support was not implemented
+; CGB-1.12: Hardware flag restored after clearing WRAM at boot.
 wOnCGB:: db
 
 ; if running on SGB, it's 1, else it's 0
