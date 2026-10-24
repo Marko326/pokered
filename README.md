@@ -34,6 +34,9 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 
 This branch uses `PROJECT_DELIVERY_RULES.md` for patch and closeout rules,
 `RPP_DEVELOPMENT_PITFALLS.md` for recurring engineering risks,
-`TODO.md` for the migration roadmap, and `docs/CGB_ROM0_OFFLOAD_ACCEPTANCE.md`
-for the current CGB/ROM0 acceptance boundary. `RPP_PROJECT_CONTEXT/` is
-exported by RPP Mobile and is not a durable replacement for these files.
+`TODO.md` for the migration roadmap, `docs/CGB_ROM0_OFFLOAD_ACCEPTANCE.md`
+for the CGB/ROM0 acceptance boundary, `docs/BICYCLE_IMPLEMENTATIONS.md`
+for the bicycle implementation comparison, and
+`docs/FEATURE_MIGRATION_ROADMAP.md` for the feature gap/priority list.
+`RPP_PROJECT_CONTEXT/` is exported by RPP Mobile and is not a durable
+replacement for these files.

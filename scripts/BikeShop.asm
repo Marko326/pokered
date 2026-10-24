@@ -11,7 +11,7 @@ BikeShopClerkText:
 	text_asm
 	CheckEvent EVENT_GOT_BICYCLE
 	jr z, .dontHaveBike
-	ld hl, BikeShopClerkHowDoYouLikeYourBicycleText
+	ld hl, BikeShopClerkHowDoYouLikeYourBicycleText ; BIKE-1.13A: includes SELECT hint with normal text paging
 	call PrintText
 	jp .Done
 .dontHaveBike

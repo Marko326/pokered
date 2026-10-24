@@ -42,6 +42,12 @@ _BikeShopClerkHowDoYouLikeYourBicycleText::
 	para "You can take it"
 	line "on CYCLING ROAD"
 	cont "and in caves!"
+
+	para "Press SELECT to" ; BIKE-1.13A: SELECT hint only on later visits; require A/B to page
+	line "ride your BICYCLE."
+
+	para "Press SELECT again"
+	line "to get off!"
 	done
 
 _BikeShopBagFullText::

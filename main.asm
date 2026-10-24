@@ -383,6 +383,10 @@ INCLUDE "engine/menus/close_start_menu_fast.asm"
 SECTION "Player Speed Steps", ROMX
 INCLUDE "engine/overworld/player_speed.asm"
 
+; BIKE-1.13A: SELECT bicycle shortcut and its sound hooks stay in ROMX.
+SECTION "SELECT Bicycle Shortcut", ROMX
+INCLUDE "engine/overworld/bike_shortcut.asm"
+
 ; CGB-1.13: Keep one-time palette init and RGB555 remap out of ROM0.
 SECTION "CGB Palette Compatibility", ROMX
 INCLUDE "engine/gfx/cgb_palette_bank.asm"

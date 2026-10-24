@@ -81,7 +81,13 @@ OverworldLoopLessDelay::
 	jp .displayDialogue
 .startButtonNotPressed
 	bit B_PAD_A, a
+	jr nz, .aButtonPressed
+	bit B_PAD_SELECT, a
 	jp z, .checkIfDownButtonIsPressed
+	; BIKE-1.13A: keep SELECT handling in a small ROM0-to-ROMX bridge.
+	farcall SelectBicycleShortcut
+	jp OverworldLoop
+.aButtonPressed
 ; if A is pressed
 	ld a, [wStatusFlags5]
 	bit BIT_UNKNOWN_5_2, a
