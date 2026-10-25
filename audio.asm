@@ -77,7 +77,7 @@ INCLUDE "audio/sfx/push_boulder_1.asm"
 INCLUDE "audio/sfx/ss_anne_horn_1.asm"
 INCLUDE "audio/sfx/withdraw_deposit_1.asm"
 INCLUDE "audio/sfx/safari_zone_pa.asm"
-INCLUDE "audio/sfx/unused_cry_1.asm"
+; VOL-1.18D: the unreferenced cry is offloaded to a floating bank.
 INCLUDE "audio/sfx/cry09_1.asm"
 INCLUDE "audio/sfx/cry23_1.asm"
 INCLUDE "audio/sfx/cry24_1.asm"
@@ -311,7 +311,7 @@ INCLUDE "audio/sfx/slots_stop_wheel.asm"
 INCLUDE "audio/sfx/slots_reward.asm"
 INCLUDE "audio/sfx/slots_new_spin.asm"
 INCLUDE "audio/sfx/shooting_star.asm"
-INCLUDE "audio/sfx/unused_cry_3.asm"
+; VOL-1.18D: the unreferenced cry is offloaded to a floating bank.
 INCLUDE "audio/sfx/cry09_3.asm"
 INCLUDE "audio/sfx/cry23_3.asm"
 INCLUDE "audio/sfx/cry24_3.asm"
@@ -445,3 +445,11 @@ INCLUDE "audio/music/surfing.asm"
 INCLUDE "audio/music/jigglypuffsong.asm"
 INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/credits.asm"
+
+; VOL-1.18D: unreferenced cry samples moved intact to free the fixed
+; music-engine banks 2 and 1f for the volume hooks.
+SECTION "Unused Cry 1 (Volume Offload)", ROMX
+INCLUDE "audio/sfx/unused_cry_1.asm"
+
+SECTION "Unused Cry 3 (Volume Offload)", ROMX
+INCLUDE "audio/sfx/unused_cry_3.asm"

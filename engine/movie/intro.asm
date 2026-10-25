@@ -47,6 +47,13 @@ LoadStartupMusicOption:
 	ld a, [sMainData + (wOptions - wMainDataStart)]
 	and 1 << BIT_MUSIC_OFF
 	ld [wOptions], a
+	; VOL-1.18D: load only valid encoded volumes; old saves use 10.
+	ld a, [sMainData + (wBGMVolume - wMainDataStart)]
+	cp $a0
+	jr c, .closeSRAM
+	cp $ab
+	jr nc, .closeSRAM
+	ld [wBGMVolume], a
 .closeSRAM
 	xor a
 	ld [rBMODE], a

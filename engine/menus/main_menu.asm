@@ -18,17 +18,20 @@ MainMenu:
 	; TryLoadSaveFile reloads wOptions; preserve unsaved menu choices.
 	ld a, [wOptions]
 	push af
+	ld a, [wBGMVolume]
+	push af
 	predef TryLoadSaveFile
+	pop af
+	ld [wBGMVolume], a
 	pop af
 	ld [wOptions], a
 	jr .saveLoaded
 .loadSaveFile
 	predef TryLoadSaveFile
 .saveLoaded
-	; wOptions is part of the normal save data. If Music Off was saved, stop
-	; the title BGM now, after the regular save loader has restored WRAM.
-	ld a, [wOptions]
-	bit BIT_MUSIC_OFF, a
+	; VOL-1.18D: honour either Music Off or volume 0 after save load.
+	call GetEffectiveMusicMuteState
+	and a
 	jr z, .mainMenuLoop
 	ld a, SFX_STOP_ALL_MUSIC
 	call PlaySound
@@ -497,6 +500,8 @@ SaveScreenInfoText:
 	next "TIME@"
 
 DisplayOptionMenu:
+	; VOL-1.18D: old-save values become a safe editable level 10.
+	call NormalizeBGMVolumeOption
 	ld hl, wOptionsMenuPage
 	res 0, [hl] ; always open on page 1; keep bit 7 (caller source)
 	call .drawPage1
@@ -519,9 +524,46 @@ DisplayOptionMenu:
 	call PlaceMenuCursor
 	call SetOptionsFromCursorPositions
 .getJoypadStateLoop
+	; VOL-1.18D R2: Enable the built-in delayed hold-repeat only while
+	; the BGM volume row is selected. Preserve the caller's hJoy7 mode.
+	; Only left/right may auto-repeat; other menu keys remain edge-triggered.
+	ld a, [wOptionsMenuPage]
+	bit 0, a
+	jr z, .pollNormalJoypad
+	ld a, [wTopMenuItemY]
+	cp 8
+	jr nz, .pollNormalJoypad
+	ldh a, [hJoy7]
+	push af
+	ld a, 1
+	ldh [hJoy7], a
+	call JoypadLowSensitivity
+	pop af
+	ldh [hJoy7], a
+	ldh a, [hJoy5]
+	and PAD_LEFT | PAD_RIGHT
+	ld b, a
+	ldh a, [hJoyPressed]
+	and PAD_UP | PAD_DOWN | PAD_A | PAD_B | PAD_START | PAD_SELECT
+	or b
+	ld b, a
+	ldh a, [hJoyPressed]
+	and a
+	jr nz, .buttonsReady
+	ld a, b
+	and PAD_LEFT | PAD_RIGHT
+	jr z, .buttonsReady
+	; The original repeat period is 5 frames (12 changes/sec).
+	; Use 10 frames (about 6/sec) after the initial 30-frame delay.
+	ld a, 10
+	ldh [hFrameCounter], a
+	jr .buttonsReady
+.pollNormalJoypad
 	call JoypadLowSensitivity
 	ldh a, [hJoy5]
 	ld b, a
+.buttonsReady
+	ld a, b
 	and ~PAD_SELECT ; any key besides select pressed?
 	jr z, .getJoypadStateLoop
 	bit B_PAD_B, b
@@ -639,8 +681,7 @@ DisplayOptionMenu:
 	ld [wOptionsTextSpeedCursorX], a
 	jp .eraseOldMenuCursor
 
-; Page 2: Music and Page. Left/right on Music toggles On/Off.
-; Left on the Page selector returns to page 1.
+; VOL-1.18D: Page 2 now has Music, BGM Volume and Page.
 .checkPage2DirectionKeys
 	ld a, [wTopMenuItemY]
 	bit B_PAD_DOWN, b
@@ -648,35 +689,65 @@ DisplayOptionMenu:
 	bit B_PAD_UP, b
 	jr nz, .page2UpPressed
 	cp 16
-	jr z, .cursorOnPage2Selector
+	jp z, .cursorOnPage2Selector
+	cp 8
+	jr z, .cursorInBGMVolume
 .cursorInMusic
 	ld a, [wOptionsMusicCursorX]
 	xor 1 ^ 10
 	ld [wOptionsMusicCursorX], a
 	jp .eraseOldMenuCursor
+.cursorInBGMVolume
+	call GetEffectiveMusicMuteState
+	ld e, a ; previous effective mute state
+	call GetBGMVolumeLevel
+	bit B_PAD_LEFT, b
+	jr nz, .decreaseBGMVolume
+	bit B_PAD_RIGHT, b
+	jp z, .loop
+	cp 10
+	jp z, .loop
+	inc a
+	jr .storeBGMVolume
+.decreaseBGMVolume
+	and a
+	jp z, .loop
+	dec a
+.storeBGMVolume
+	add $a0
+	ld [wBGMVolume], a
+	push de
+	call DrawBGMVolumeOptionValue
+	pop de
+	call ApplyOptionsMusicChange
+	jp .loop
 .page2DownPressed
 	cp 3
-	jr nz, .page2SelectMusic
-	ld a, 16
-	ld [wTopMenuItemY], a
-	ld a, 1
-	ld [wTopMenuItemX], a
-	call PlaceUnfilledArrowMenuCursor
-	jp .loop
+	jr z, .page2SelectVolume
+	cp 8
+	jr z, .page2SelectPage
+	jr .page2SelectMusic
 .page2UpPressed
 	cp 16
-	jr nz, .page2SelectPage
+	jr z, .page2SelectVolume
+	cp 8
+	jr z, .page2SelectMusic
+	jr .page2SelectPage
 .page2SelectMusic
 	ld a, 3
 	ld [wTopMenuItemY], a
 	ld a, [wOptionsMusicCursorX]
-	ld [wTopMenuItemX], a
-	call PlaceUnfilledArrowMenuCursor
-	jp .loop
+	jr .storePage2CursorX
+.page2SelectVolume
+	ld a, 8
+	ld [wTopMenuItemY], a
+	ld a, 1
+	jr .storePage2CursorX
 .page2SelectPage
 	ld a, 16
 	ld [wTopMenuItemY], a
 	ld a, 1
+.storePage2CursorX
 	ld [wTopMenuItemX], a
 	call PlaceUnfilledArrowMenuCursor
 	jp .loop
@@ -760,13 +831,13 @@ DisplayOptionMenu:
 	ld b, 3
 	ld c, 18
 	call TextBoxBorder
-	hlcoord 0, 10
-	ld b, 3
-	ld c, 18
-	call TextBoxBorder
 	hlcoord 1, 1
 	ld de, MusicOptionText
 	call PlaceString
+	hlcoord 1, 6
+	ld de, BGMVolumeOptionText
+	call PlaceString
+	call DrawBGMVolumeOptionValue
 	call DrawOptionMenuVersionText
 	hlcoord 2, 16
 	ld de, OptionMenuPageText
@@ -781,6 +852,8 @@ DisplayOptionMenu:
 	ld e, a
 	ld d, 0
 	add hl, de
+	ld [hl], '▷'
+	hlcoord 1, 8
 	ld [hl], '▷'
 	hlcoord 1, 16
 	ld [hl], '▷'
@@ -802,6 +875,10 @@ MusicOptionText:
 	db   "MUSIC"
 	next " ON       OFF@"
 
+BGMVolumeOptionText:
+	; VOL-1.18D R3: Same label and compact value row as the reference menu.
+	db "Music Volume:@"
+
 OptionMenuPageText:
 	db "PAGE@"
 
@@ -813,9 +890,8 @@ OptionMenuPage2Text:
 
 ; sets wOptions according to the current cursor positions
 SetOptionsFromCursorPositions:
-	ld a, [wOptions]
-	and 1 << BIT_MUSIC_OFF
-	ld e, a ; remember old Music state so transitions run only once
+	call GetEffectiveMusicMuteState
+	ld e, a ; VOL-1.18D: old Music Off OR volume-zero state
 
 	ld hl, TextSpeedOptionData
 	ld a, [wOptionsTextSpeedCursorX]
@@ -858,20 +934,22 @@ SetOptionsFromCursorPositions:
 .storeOptions
 	ld a, d
 	ld [wOptions], a
-	and 1 << BIT_MUSIC_OFF
+	jp ApplyOptionsMusicChange
+
+; VOL-1.18D: common transition for Music On/Off and volume crossing 0.
+; E is the old effective mute value; the Music option bit remains independent.
+ApplyOptionsMusicChange:
+	call GetEffectiveMusicMuteState
 	cp e
 	ret z
 	and a
 	jr z, .enableMusic
-; Stop the currently playing BGM once. While Music Off remains active,
-; Home/PlaySound filters future BGM requests but still lets SFX through.
+	; Use the original Music Off stop path (no silent channel playback).
 	xor a
 	ld [wAudioFadeOutControl], a
 	dec a ; SFX_STOP_ALL_MUSIC
 	jp PlaySound
 .enableMusic
-	; From the title/main menu, restart the title music. From the in-game
-	; Start menu, restart the correct map/bike/surf music.
 	ld a, [wOptionsMenuPage]
 	bit 7, a
 	jr nz, .enableInGameMusic
@@ -882,6 +960,36 @@ SetOptionsFromCursorPositions:
 	xor a
 	ld [wLastMusicSoundID], a
 	jp PlayDefaultMusic
+
+NormalizeBGMVolumeOption:
+	ld a, [wBGMVolume]
+	cp $a0
+	jr c, .default
+	cp $ab
+	ret c
+.default
+	ld a, $aa
+	ld [wBGMVolume], a
+	ret
+
+DrawBGMVolumeOptionValue:
+	; VOL-1.18D R3: Match the reference's x=2..3 value field.
+	; Always overwrite both tiles so 10 -> 9 cannot leave a stale '1'.
+	call GetBGMVolumeLevel
+	hlcoord 2, 8
+	cp 10
+	jr z, .drawTen
+	ld [hl], ' '
+	inc hl
+	add '0'
+	ld [hl], a
+	ret
+.drawTen
+	ld a, '1'
+	ld [hli], a
+	ld a, '0'
+	ld [hl], a
+	ret
 
 ; reads wOptions and places menu cursors in the correct positions
 SetCursorPositionsFromOptions:

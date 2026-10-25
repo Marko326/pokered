@@ -614,7 +614,7 @@ Audio2_sfx_note:
 	ld d, a
 	ld b, REG_VOLUME_ENVELOPE
 	call Audio2_GetRegisterPointer
-	ld [hl], d
+	call WriteScaledMusicVolume ; VOL-1.18D: handle music-sourced drum SFX
 	call Audio2_GetNextMusicByte
 	ld e, a
 	ld a, c
@@ -694,6 +694,8 @@ Audio2_note:
 	jr nz, .skipDnote
 	ld a, d
 	call Audio2_PlaySound
+	ld a, 1
+	ld [wBGMDrumSFX], a ; VOL-1.18D: channel 8 belongs to BGM drum
 .skipDnote
 	pop bc
 	pop de
@@ -832,7 +834,7 @@ Audio2_note_pitch:
 	ld d, [hl]
 	ld b, REG_VOLUME_ENVELOPE
 	call Audio2_GetRegisterPointer
-	ld [hl], d
+	call WriteScaledMusicVolume ; VOL-1.18D: channels 1-4 plus music drums
 	call Audio2_ApplyDutyCycleAndSoundLength
 	call Audio2_EnableChannelOutput
 	pop de
@@ -1394,6 +1396,10 @@ Audio2_CalculateFrequency:
 
 Audio2_PlaySound::
 	ld [wSoundID], a
+	push af
+	xor a
+	ld [wBGMDrumSFX], a
+	pop af
 	cp SFX_STOP_ALL_MUSIC
 	jp z, .stopAllAudio
 	cp MAX_SFX_ID_2

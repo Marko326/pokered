@@ -9,8 +9,7 @@ InitPlayerData2:
 	ldh a, [hRandomAdd]
 	ld [wPlayerID + 1], a
 
-	ld a, $ff
-	ld [wUnusedPlayerDataByte], a
+	; VOL-1.18D: retain the selected BGM volume across New Game.
 
 	ld hl, wPartyCount
 	call InitializeEmptyList

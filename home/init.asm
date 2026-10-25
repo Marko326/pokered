@@ -42,6 +42,10 @@ Init::
 	or c
 	jr nz, .loop
 
+	; VOL-1.18D: initialise volume before the intro accesses saved music.
+	ld a, $aa ; 10/10, also the fallback for old saves
+	ld [wBGMVolume], a
+
 	; CGB-1.12: Restore the hardware flag after clearing WRAM.
 	ldh a, [hCGB]
 	ld [wOnCGB], a

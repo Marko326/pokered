@@ -146,8 +146,8 @@ PlaySound::
 	; Music Off filters only actual BGM IDs. Some SFX (Poké Flute, elevator,
 	; Safari PA, Pokédex rating) intentionally use PlayMusic, so classify the
 	; ID with the same per-audio-bank MAX_SFX_ID boundary as the sound engines.
-	ld a, [wOptions]
-	bit BIT_MUSIC_OFF, a
+	call GetEffectiveMusicMuteState ; VOL-1.18D: Music Off OR volume 0
+	and a
 	jr z, .musicOptionChecked
 	ld a, b
 	cp SFX_STOP_ALL_MUSIC
@@ -248,3 +248,128 @@ PlaySound::
 	pop de
 	pop hl
 	ret
+
+; VOL-1.18D: global ROM0 helpers for all three separate audio engines.
+; $a0-$aa are the only valid levels. No save layout expansion is needed.
+GetBGMVolumeLevel::
+	ld a, [wBGMVolume]
+	cp $a0
+	jr c, .default
+	cp $ab
+	jr nc, .default
+	sub $a0
+	ret
+.default
+	ld a, 10
+	ret
+
+GetEffectiveMusicMuteState::
+	ld a, [wOptions]
+	bit BIT_MUSIC_OFF, a
+	jr nz, .muted
+	ld a, [wBGMVolume]
+	cp $a0
+	jr z, .muted
+	xor a
+	ret
+.muted
+	ld a, 1 << BIT_MUSIC_OFF
+	ret
+
+; On entry HL points to the selected hardware envelope/NR32 register;
+; D is the existing envelope or wave output level, C is the 0-7 software
+; channel. Preserve all registers except AF, so the engine note path is intact.
+WriteScaledMusicVolume::
+	push bc
+	push de
+	push hl
+	ld a, c
+	cp CHAN5
+	jr c, .music
+	cp CHAN8
+	jp nz, .unchanged
+	ld a, [wBGMDrumSFX]
+	and a
+	jp z, .unchanged
+.music
+	call GetBGMVolumeLevel
+	cp 10
+	jp z, .unchanged ; exact original volume at 10
+	and a
+	jp z, .zero ; normally suppressed before note generation
+	ld b, a
+	ld a, c
+	cp CHAN3
+	jr z, .wave
+	; Pulse and music-spawned noise: compensate small envelope amplitudes.
+	ld hl, .gainTable
+	ld c, b
+	ld b, 0
+	add hl, bc
+	ld c, [hl]
+	ld a, d
+	and $f0
+	swap a
+	and $0f
+	jp z, .unchanged
+	ld b, a
+	xor a
+.multiply
+	add b
+	dec c
+	jr nz, .multiply
+	add 8
+	swap a
+	and $0f
+	jr nz, .haveGain
+	inc a ; avoid turning an audible envelope into DAC-off
+.haveGain
+	swap a
+	ld b, a
+	ld a, d
+	and $0f ; preserve the original envelope sweep exactly
+	or b
+	jr .write
+.wave
+	; Hardware NR32 has only full/half/quarter volume.
+	; Never change wave RAM, which is shared with cries and SFX.
+	ld a, d
+	and $60
+	cp $20
+	jr z, .fullWave
+	cp $40
+	jp nz, .unchanged ; already at quarter or silent
+	ld a, b
+	cp 8
+	jr nc, .unchanged
+	ld a, $60 ; half -> quarter
+	jr .waveWrite
+.fullWave
+	ld a, b
+	cp 8
+	jr nc, .unchanged
+	cp 4
+	ld a, $40 ; 4-7: full -> half
+	jr nc, .waveWrite
+	ld a, $60 ; 1-3: full -> quarter
+.waveWrite
+	ld b, a
+	ld a, d
+	and $9f
+	or b
+	jr .write
+.zero
+	ld a, d
+	and $0f
+	jr .write
+.unchanged
+	ld a, d
+.write
+	pop hl
+	ld [hl], a
+	pop de
+	pop bc
+	ret
+.gainTable
+	; Levels 1-9, numerator of /16, with extra low-end loudness.
+	db 0, 5, 6, 8, 9, 10, 11, 12, 14, 15, 16

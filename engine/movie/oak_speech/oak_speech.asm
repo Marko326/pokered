@@ -10,6 +10,9 @@ PrepareOakSpeech:
 	; In non-debug builds, the instructions can be removed.
 	ld a, [wStatusFlags6]
 	push af
+	; VOL-1.18D: keep audio volume when New Game clears saved WRAM.
+	ld a, [wBGMVolume]
+	push af
 	ld hl, wPlayerName
 	ld bc, wBoxDataEnd - wPlayerName
 	xor a
@@ -18,6 +21,8 @@ PrepareOakSpeech:
 	ld bc, wSpriteDataEnd - wSpriteDataStart
 	xor a
 	call FillMemory
+	pop af
+	ld [wBGMVolume], a
 	pop af
 	ld [wStatusFlags6], a
 	pop af

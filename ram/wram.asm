@@ -77,7 +77,10 @@ wTempoModifier:: db
 ; opened from the in-game Start menu. Reuse existing audio padding so all
 ; following WRAM addresses remain unchanged.
 wOptionsMenuPage:: db
-	ds 12
+; VOL-1.18D: flag for Channel 8 percussion spawned by music Channel 4.
+wBGMDrumSFX:: db
+; VOL-1.18D R3: The 2-digit display no longer needs a scratch byte.
+	ds 11
 
 
 SECTION "Sprite State Data", WRAM0
@@ -2092,8 +2095,9 @@ wLastBlackoutMap:: db
 ; destination map (for certain types of special warps, not ordinary walking)
 wDestinationMap:: db
 
-; initialized to $ff, but nothing ever reads it
-wUnusedPlayerDataByte:: db
+; VOL-1.18D: reuse the old unread $ff byte for $a0-$aa BGM volume.
+; Remains at the original save offset; older saves default to 10.
+wBGMVolume:: db
 
 ; used to store the tile in front of the boulder when trying to push a boulder
 ; also used to store the result of the collision check ($ff for a collision and $00 for no collision)
