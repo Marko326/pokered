@@ -79,10 +79,13 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ld l, $60
 	call SetScrollXForSlidingPlayerBodyLeft ; end background scrolling on line $60
 	call SlidePlayerHeadLeft
+	; Advance the BG scroll before publishing the next frame's
+	; hSCX value, matching the head's just-completed 2-pixel movement. This
+	; also leaves hSCX at zero when the final step reaches the battle layout.
+	dec c
+	dec c
 	ld a, c
 	ldh [hSCX], a
-	dec c
-	dec c
 	jr nz, .slideSilhouettesLoop
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
@@ -90,12 +93,17 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ldh [hStartTileID], a
 	hlcoord 1, 5
 	predef CopyUncompressedPicToTilemap
+	; Transfer all thirds of the battle window tilemap
+	; while the window is hidden. Showing WY=0 before the three-frame
+	; transfer exposes incomplete BGMap1 for the first two frames.
+	ld a, HIGH(vBGMap1)
+	ldh [hAutoBGTransferDest + 1], a
+	ld a, 1
+	ldh [hAutoBGTransferEnabled], a
+	call Delay3
 	xor a
 	ldh [hWY], a
 	ldh [rWY], a
-	inc a
-	ldh [hAutoBGTransferEnabled], a
-	call Delay3
 	ld b, SET_PAL_BATTLE
 	call RunPaletteCommand
 	call HideSprites
