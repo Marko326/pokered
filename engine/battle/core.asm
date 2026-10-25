@@ -6241,7 +6241,23 @@ LoadPlayerBackPic:
 	ld [hli], a ; OAM tile number
 	inc a ; increment tile number
 	ldh [hOAMTile], a
-	inc hl
+	; Do not inherit the previous overworld sprite's palette.
+	; On CGB, the regular player head uses palette 1 to match its BG7 body;
+	; keep DMG and the old-man tutorial on palette 0.
+	ld a, [wBattleType]
+	cp BATTLE_TYPE_OLD_MAN
+	jr z, .defaultHeadPalette
+	ldh a, [hCGB]
+	and a
+	ld a, 0
+	jr z, .setHeadPalette
+	; DMG bit 4 is translated to CGB palette index 1 by CGBFixOAMPalettes.
+	ld a, OAM_PAL1
+	jr .setHeadPalette
+.defaultHeadPalette
+	xor a
+.setHeadPalette
+	ld [hli], a ; OAM attributes
 	dec c
 	jr nz, .innerLoop
 	ldh a, [hOAMTile]

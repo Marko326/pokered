@@ -7,7 +7,7 @@
 | 顺序 | 功能 | 当前判断 | 参考依据/入口 | 移植边界 |
 |---|---|---|---|---|
 | 01 | SELECT 快捷骑车与车店提示 | CGB-1.13A 候选，待手机实测 | Red++ `engine/overworld/bike_shortcut.asm`；PureRGB `engine/overworld/select_button_functionality.asm` | 仅后续问老板才显示 SELECT 说明；按 A/B 翻页，无专用音效，骑行自动 4 帧/格 |
-| 02 | 入战转场前两项闪烁修复 | CGB-1.15 开屏修复 + CGB-1.16 窗口预传输/滚动末帧同步；头部 OAM 修复留待下一提交 | Red++ `#437 / fdcca2b6`；`SlidePlayerAndEnemySilhouettesOnScreen` | 窗口隐藏期间完成三段传输；不改变正常遇敌渐变动画 |
+| 02 | 入战转场三项修复 | CGB-1.15 开屏白闪、CGB-1.16 归位后窗口闪帧、CGB-1.17 玩家头部异色；用户提供的 1.14C 视频确认组合效果 | Red++ `#437 / fdcca2b6`；`SlidePlayerAndEnemySilhouettesOnScreen`、`LoadPlayerBackPic` | 不删除正常遇敌渐变动画；蓝版、训练师战、DMG 等仍需回归 |
 | 03 | 战斗受击闪烁次数 6→4 | 尚未移植 | 个人历史 `#436`；`engine/battle/animations.asm:AnimationBlinkMon` | 只改受击闪烁次数，不与入战白闪混改 |
 | 04 | 对话框出现后的空等待 | 未见同等优化 | 个人历史 `#428`；参考 `home/text.asm` | 保留 CGB VBlank/逐字显示时序 |
 | 05 | 存档完成冗余等待 | 未见同等优化 | 个人历史 `#425` | 只缩短可见等待，不改变 SRAM 写入/校验 |
