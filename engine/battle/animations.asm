@@ -1360,7 +1360,8 @@ AnimationBlinkEnemyMon:
 AnimationBlinkMon:
 ; Make the mon's sprite blink on and off for a second or two.
 	push af
-	ld c, 6
+	; QOL-1.18A: use four cycles for this shared blink animation.
+	ld c, 4
 .loop
 	push bc
 	call AnimationHideMonPic

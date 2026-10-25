@@ -85,6 +85,8 @@ ENDM
 	dict2 TX_SCRIPT_CABLE_CLUB_RECEPTIONIST, callfar CableClubNPC
 
 	call PrintText_NoCreatingTextBox
+; QOL-1.18C: reuse the standard no-wait check for nurse Cancel.
+CheckForNoWaitAfterDisplayingTextID::
 	ld a, [wDoNotWaitForButtonPressAfterDisplayingText]
 	and a
 	jr nz, HoldTextDisplayOpen
@@ -189,7 +191,8 @@ DisplayPokemonCenterDialogue::
 
 	inc hl
 	homecall DisplayPokemonCenterDialogue_
-	jp AfterDisplayingTextID
+	; QOL-1.18C: Cancel may close without another mandatory keypress.
+	jp CheckForNoWaitAfterDisplayingTextID
 
 DisplaySafariGameOverText::
 	callfar PrintSafariGameOverText

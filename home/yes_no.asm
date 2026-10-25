@@ -19,7 +19,10 @@ InitYesNoTextBoxParameters::
 	ret
 
 YesNoChoicePokeCenter::
-	call SaveScreenTilesToBuffer1
+	; QOL-1.18C: caller already saved Buffer1; keep ROM0 size unchanged.
+	nop
+	nop
+	nop
 	ld a, HEAL_CANCEL_MENU
 	ld [wTwoOptionMenuID], a
 	hlcoord 11, 6

@@ -110,11 +110,12 @@ DisplayTextIDInit::
 	ldh [hWY], a
 	jr .startTransfer
 .regularText
+	; QOL-1.18A: load the font before exposing the normal dialogue window.
+	call LoadFontTilePatterns
 	ld b, HIGH(vBGMap1)
 	call CopyScreenTileBufferToVRAM
 	xor a
 	ldh [hWY], a
-	call LoadFontTilePatterns
 .startTransfer
 	ld a, $01
 	ldh [hAutoBGTransferEnabled], a ; enable continuous WRAM to VRAM transfer each V-blank

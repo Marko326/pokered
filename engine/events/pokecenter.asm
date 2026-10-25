@@ -39,10 +39,10 @@ DisplayPokemonCenterDialogue_::
 	call DelayFrames
 	jr .done
 .declinedHealing
-	call LoadScreenTilesFromBuffer1 ; restore screen
+	; QOL-1.18C: the Yes/No helper already restored the original screen.
+	call DisableWaitingAfterTextDisplay
 .done
-	ld hl, PokemonCenterFarewellText
-	call PrintText
+	; QOL-1.18C: skip the redundant farewell dialogue after healing or cancel.
 	jp UpdateSprites
 
 PokemonCenterWelcomeText:
@@ -62,7 +62,3 @@ PokemonFightingFitText:
 	text_far _PokemonFightingFitText
 	text_end
 
-PokemonCenterFarewellText:
-	text_pause
-	text_far _PokemonCenterFarewellText
-	text_end

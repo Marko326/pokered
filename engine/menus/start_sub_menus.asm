@@ -61,6 +61,9 @@ StartMenu_Pokemon::
 	ld [hli], a ; menu watched keys
 	xor a
 	ld [hl], a
+	; QOL-1.18C: party action menu wraps between its first item and Cancel.
+	inc a
+	ld [wMenuWrappingEnabled], a
 	call HandleMenuInput
 	push af
 	call LoadScreenTilesFromBuffer1

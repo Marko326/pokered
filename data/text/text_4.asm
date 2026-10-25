@@ -22,10 +22,6 @@ _RepelWoreOffText::
 	line "wore off."
 	done
 
-_PokemartBuyingGreetingText::
-	text "Take your time."
-	done
-
 _PokemartTellBuyPriceText::
 	text_ram wStringBuffer
 	text "?"
@@ -158,13 +154,10 @@ _HMCantDeleteText::
 	prompt
 
 _PokemonCenterWelcomeText::
+	; QOL-1.18C: keep the welcome short before the existing healing question.
 	text "Welcome to our"
 	line "#MON CENTER!"
-
-	para "We heal your"
-	line "#MON back to"
-	cont "perfect health!"
-	prompt
+	done
 
 _ShallWeHealYourPokemonText::
 	text "Shall we heal your"
@@ -180,11 +173,7 @@ _PokemonFightingFitText::
 	text "Thank you!"
 	line "Your #MON are"
 	cont "fighting fit!"
-	prompt
-
-_PokemonCenterFarewellText::
-	text "We hope to see"
-	line "you again!"
+	; QOL-1.18C: this is the last message; no extra scroll prompt.
 	done
 
 _CableClubNPCAreaReservedFor2FriendsLinkedByCableText::

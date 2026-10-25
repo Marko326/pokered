@@ -128,8 +128,7 @@ DisplayPokemartDialogue_::
 	ld [wInitListType], a
 	callfar InitList
 
-	ld hl, PokemartBuyingGreetingText
-	call PrintText
+	; QOL-1.18C: enter the purchase list without the extra greeting box.
 	call SaveScreenTilesToBuffer1
 .buyMenuLoop
 	call LoadScreenTilesFromBuffer1
@@ -226,10 +225,6 @@ DisplayPokemartDialogue_::
 	ld a, [wSavedListScrollOffset]
 	ld [wListScrollOffset], a
 	ret
-
-PokemartBuyingGreetingText:
-	text_far _PokemartBuyingGreetingText
-	text_end
 
 PokemartTellBuyPriceText:
 	text_far _PokemartTellBuyPriceText

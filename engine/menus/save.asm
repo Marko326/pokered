@@ -164,14 +164,7 @@ SaveMenu:
 	ret nz
 .save
 	call SaveGameData
-	hlcoord 1, 13
-	lb bc, 4, 18
-	call ClearScreenArea
-	hlcoord 1, 14
-	ld de, NowSavingString
-	call PlaceString
-	ld c, 120
-	call DelayFrames
+	; QOL-1.18B: skip the redundant "Now saving..." screen and fixed 120-frame wait.
 	ld hl, GameSavedText
 	call PrintText
 	ld a, SFX_SAVE
@@ -179,9 +172,6 @@ SaveMenu:
 	call WaitForSoundToFinish
 	ld c, 30
 	jp DelayFrames
-
-NowSavingString:
-	db "Now saving...@"
 
 SaveTheGame_YesOrNo:
 	call PrintText
