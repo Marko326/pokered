@@ -7,7 +7,7 @@
 | 顺序 | 功能 | 当前判断 | 参考依据/入口 | 移植边界 |
 |---|---|---|---|---|
 | 01 | SELECT 快捷骑车与车店提示 | CGB-1.13A 候选，待手机实测 | Red++ `engine/overworld/bike_shortcut.asm`；PureRGB `engine/overworld/select_button_functionality.asm` | 仅后续问老板才显示 SELECT 说明；按 A/B 翻页，无专用音效，骑行自动 4 帧/格 |
-| 02 | 入战后异常白帧 | 缺少参考项目的同等处理 | Red++ 个人历史 `#437 / fdcca2b6`；入战 LCD/调色板与 HUD 图块加载路径 | 单独处理 LCD 关闭期间的 CGB 调色板和重复加载；不承诺解决所有偶发闪帧 |
+| 02 | 入战转场第一次闪烁（开屏白帧） | CGB-1.15 已实现；后两项尚未纳入本提交阶段 | Red++ `#437 / fdcca2b6`；入战 LCD/调色板与 HUD 图块加载路径 | 保留 BG6/BG7 色源；不删除正常遇敌渐变动画 |
 | 03 | 战斗受击闪烁次数 6→4 | 尚未移植 | 个人历史 `#436`；`engine/battle/animations.asm:AnimationBlinkMon` | 只改受击闪烁次数，不与入战白闪混改 |
 | 04 | 对话框出现后的空等待 | 未见同等优化 | 个人历史 `#428`；参考 `home/text.asm` | 保留 CGB VBlank/逐字显示时序 |
 | 05 | 存档完成冗余等待 | 未见同等优化 | 个人历史 `#425` | 只缩短可见等待，不改变 SRAM 写入/校验 |

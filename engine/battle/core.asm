@@ -15,6 +15,8 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	lb bc, 3, 7
 	call ClearScreenArea
 	call DisableLCD
+	; Clear display palettes while preserving BG6/BG7 color sources.
+	farcall CGBBlackBattlePalettesLCDOff
 	call LoadFontTilePatterns
 	call LoadHudAndHpBarAndStatusTilePatterns
 	ld hl, vBGMap0
@@ -46,7 +48,6 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 .noCarry
 	dec b
 	jr nz, .copyRowLoop
-	call EnableLCD
 	ld a, $90
 	ldh [hWY], a
 	ldh [rWY], a
@@ -55,18 +56,19 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ldh [hSCY], a
 	dec a
 	ld [wUpdateSpritesEnabled], a
-	call Delay3
+	; Keep the blank tilemap hidden until all display state is ready.
 	xor a
 	ldh [hAutoBGTransferEnabled], a
 	ld b, $70
 	ld c, $90
 	ld a, c
 	ldh [hSCX], a
-	call DelayFrame
 	ld a, %11100100 ; inverted palette for silhouette effect
 	ldh [rBGP], a
 	ldh [rOBP0], a
 	ldh [rOBP1], a
+	; Enable LCD only after scroll and DMG palette registers are initialized.
+	call EnableLCD
 .slideSilhouettesLoop ; slide silhouettes of the player's pic and the enemy's pic onto the screen
 	ld h, b
 	ld l, $40
@@ -6163,7 +6165,8 @@ DoBattleTransitionAndInitBattleVariables:
 .next
 	call DelayFrame
 	predef BattleTransition
-	callfar LoadHudAndHpBarAndStatusTilePatterns
+	; The same HUD graphics are loaded with LCD off in
+	; SlidePlayerAndEnemySilhouettesOnScreen; avoid the earlier VBlank copy.
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
 	ld a, $ff

@@ -108,3 +108,37 @@ UpdateCGBDmgPalettesBanked::
 	dec d
 	jr nz, .colorLoop
 	ret
+
+; Prime display palettes to black while LCD is disabled.
+; Unlike Red++, BG6/BG7 are the immutable Red/Blue RGB555 shade sources here,
+; so clear BG0-BG5 and all OBJ slots, but preserve BG6/BG7.
+; Keep the software cache synchronized with the current DMG registers: forcing
+; a VBlank remap here can immediately repaint the just-cleared palette with the
+; old white shade before the silhouette palette is installed.
+CGBBlackBattlePalettesLCDOff::
+	ldh a, [hCGB]
+	and a
+	ret z
+	ld a, $80
+	ldh [rBGPI], a
+	xor a
+	ld b, 48 ; BG0-BG5; BG6/BG7 contain the Red/Blue source colors.
+.bgLoop
+	ldh [rBGPD], a
+	dec b
+	jr nz, .bgLoop
+	ld a, $80
+	ldh [rOBPI], a
+	xor a
+	ld b, 64 ; all eight OBJ palettes, matching the reference initialization.
+.objLoop
+	ldh [rOBPD], a
+	dec b
+	jr nz, .objLoop
+	ldh a, [rBGP]
+	ldh [hCGBBGP], a
+	ldh a, [rOBP0]
+	ldh [hCGBOBP0], a
+	ldh a, [rOBP1]
+	ldh [hCGBOBP1], a
+	ret
