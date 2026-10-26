@@ -43,3 +43,9 @@ src/roms/rb/.DS_Store
 src/roms/rgb/.DS_Store
 .DS_Store
 src/rgbds-cn/
+
+# Temporary CHS make staging directories
+.chs-build-stage-*/
+
+# Local Python virtual environment
+.venv/
