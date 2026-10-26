@@ -153,8 +153,7 @@ DisplayPokemartDialogue_::
 	ld [wInitListType], a
 	callfar InitList
 
-	ld hl, PokemartBuyingGreetingText
-	call PrintText
+	; Skip the buying greeting; retain the CHS menu cleanup.
 	call ClearDialogueCHS
 	call ClearBuySellMenuCHS ;CHS_Fix
 	call SaveScreenTilesToBuffer1

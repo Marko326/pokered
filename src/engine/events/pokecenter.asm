@@ -1,7 +1,13 @@
 DisplayPokemonCenterDialogue_::
 	call SaveScreenTilesToBuffer1 ; save screen
+	; The welcome text's <PROMPT> character is handled by PromptText.
+	; Skip its A/B press only for this nurse, then display the usual question.
+	ld a, $02
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	ld hl, PokemonCenterWelcomeText
 	call PrintText
+	xor a
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	ld hl, wd72e
 	bit 2, [hl]
 	set 1, [hl]

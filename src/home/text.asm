@@ -344,6 +344,10 @@ PlaceDexEnd::
 	ret
 
 PromptText::
+	; Only the PokeCenter nurse's welcome text skips its closing A/B prompt.
+	ld a, [wDoNotWaitForButtonPressAfterDisplayingText]
+	cp $02
+	jr z, DoneText
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	jp z, .ok
