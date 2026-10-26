@@ -38,10 +38,25 @@ make red
 - `src/` 是唯一需要编辑、提交到 Git 的汇编代码及资源目录。
 - 翻译表请编辑 `src/xlsx/*.xlsx`，因为生成时翻译导入会覆盖相应汇编文本。
 - 不要在 `buildRB/` 内做长期修改；目录是自动生成的、被 `.gitignore` 忽略。
-- `make` 会检查整个 `src/` 的内容指纹；没有变更时跳过 Excel 导入，
-  直接交给 `src/Makefile` 的 RGBDS 增量规则；变更时才重新生成 `buildRB/`。
-- 预处理失败不会破坏现有 `buildRB/`。每次预处理重建时不保留原目录的
-  目标文件（`.o`），以确保不会使用过期编译产物。
+- `make` 会检查 `src/` 的内容及权限指纹。普通 ASM、图片及其他源码补丁仅同步
+  有变化的文件到 `buildRB/`；未变化的文件维持原有时间戳，保留 `.o` 和 ROM。
+- 修改 `src/xlsx/`、导入用 Python 脚本或导入器所管理的 ASM 时，会在临时目录
+  重新生成汉化文件；**只有内容变化的输出**才复制到 `buildRB/`，不删除
+  无关的 `.o`。导入程序报错时不会覆盖现有工作目录。
+- `src/Makefile` 会通过依赖规则只重编引用了被改动内容的目标文件，并在必要时
+  重新链接 ROM。公共 `includes.asm`、宏定义或 `src/Makefile` 等修改会令许多
+  目标文件确实失效，此时大量重编是正确行为。
+- 根目录 ROM 和 `.patch` 只有当编译生成的文件内容不同才覆盖，重复执行
+  `make red` 不会无条件刷新根目录 ROM 的时间戳。
+- **官方 RGBDS 编译请从仓库根目录运行 `make red`、`make blue` 或 `make`。**
+  `_prepare.command` 的默认官方 RGBDS 路径也会委托给根目录 `make`；
+  `src/_build.command` 保留旧版 `--always-make`：它支持切换不同 RGBDS 和
+  字符参数，同名 `.o` 缓存不能直接跨编译模式复用。
+  `_prepare-win32.sh` 和 `_prepare.command` 的 `option=2` 仍属于旧版单独导入
+  路径，不保证增量构建。不要再手动删除 `buildRB/` 来“清理补丁”。
+- 首次构建（没有历史 `.o`）及显式 `make rebuild` 仍会完整编译。旧版状态
+  文件首次迁移时会重新导入汉化，但已有 `.o` 将保留。补丁应用到 `src/`
+  后执行 `make red` 即可验证；不需要重新运行旧式导入脚本。
 
 ## Git 维护流程
 
@@ -49,8 +64,8 @@ make red
 
 ```sh
 git switch -c my-chs-maintenance
-git add Makefile scripts/prepare_build.py MAINTAINER_BUILD.md .gitignore
-git commit -m "Build CHS ROM via root Makefile"
+git add Makefile scripts/prepare_build.py src/Makefile _prepare.command MAINTAINER_BUILD.md TODO.md docs/CHS_INCREMENTAL_BUILD_ACCEPTANCE.md
+git commit  # 使用交付的 commit-message.txt 中的中文提交日志
 ```
 
 上游有更新时：

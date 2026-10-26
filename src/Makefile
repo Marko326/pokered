@@ -124,7 +124,7 @@ $(info $(shell $(MAKE) -C tools))
 # It doesn't look like $(shell) can be deferred so there might not be a better way.
 preinclude_deps := includes.asm $(shell tools/scan_includes includes.asm)
 define DEP
-$1: $2 $$(shell tools/scan_includes $2) $(preinclude_deps) | rgbdscheck.o
+$1: $2 $$(shell tools/scan_includes $2) $(preinclude_deps) Makefile | rgbdscheck.o
 	$$(RGBASM) $$(RGBASMFLAGS) -o $$@ $$<
 endef
 

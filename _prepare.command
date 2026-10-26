@@ -1,4 +1,12 @@
 #!/bin/bash
+# Official RGBDS CHS build: use the incremental root Makefile.
+# The old importer path below is retained for option=2 (rgbds-cn).
+if [ "${option:-1}" = "1" ]; then
+    filepath=$(cd "$(dirname "$0")"; pwd)
+    cd "$filepath" || exit 1
+    exec make all
+fi
+
 filepath=$(cd "$(dirname "$0")"; pwd)
 cd "$filepath"
 # mkdir tmp

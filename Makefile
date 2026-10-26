@@ -11,7 +11,7 @@ PATCHES := pokered.patch pokeblue.patch
 # The upstream build system uses shared temporary files/tools. Avoid races
 # between separate recursive makes, especially with `make -j all`.
 .NOTPARALLEL:
-.PHONY: all prepare red blue red_debug blue_debug red_vc blue_vc clean rebuild help
+.PHONY: all prepare red blue red_debug blue_debug red_vc blue_vc clean rebuild help FORCE
 
 prepare:
 	$(PYTHON) scripts/prepare_build.py
@@ -26,12 +26,14 @@ blue_debug: pokeblue_debug.gbc
 red_vc: pokered.patch pokered_vc.gbc
 blue_vc: pokeblue.patch pokeblue_vc.gbc
 
-# The phony preparation step always runs, so src/ edits trigger a fresh
-# build even if a root-level ROM already exists. The importer itself skips
-# work when the source fingerprint has not changed.
-$(ROMS) $(PATCHES): prepare
+# Always ask the nested make to check incremental dependencies: changes in
+# src/ must be noticed even when a root-level ROM already exists.
+# Use an order-only prepare step so it runs before the nested make.
+FORCE:
+
+$(ROMS) $(PATCHES): FORCE | prepare
 	+$(MAKE) -C $(BUILD_DIR) $@
-	cp "$(BUILD_DIR)/$@" "$@"
+	@if ! cmp -s "$(BUILD_DIR)/$@" "$@"; then cp "$(BUILD_DIR)/$@" "$@"; fi
 
 clean:
 	$(RM) $(ROMS) $(PATCHES)
