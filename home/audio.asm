@@ -176,6 +176,10 @@ PlaySound::
 	xor a
 	ld [wNewSoundID], a
 	ld [wAudioFadeOutControl], a
+	; MUTE-BANK-1.18E: a cancelled fade cannot copy the saved map bank.
+	; Restore it now so overworld SFX use the right sound header table.
+	ld a, [wAudioSavedROMBank]
+	ld [wAudioROMBank], a
 	jp .done
 .musicOptionChecked
 	ld a, [wNewSoundID]

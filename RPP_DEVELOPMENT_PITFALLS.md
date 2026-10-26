@@ -59,3 +59,10 @@
 
 - 参考项目的音量数字不在选项文字尾部，而是画在第二框底行的固定两格（x=2–3, y=8）；只有 0–9 时十位必须显式绘空格，10 才占满两格。不要使用会留下残字的 `PrintNumber` 前导零省略模式。
 - 参考项目 `Music Volume:` 后不带多余的按键提示；复用它的固定坐标时应同步清除旧文案，否则会产生多余 UI 和视觉错位。移除已无调用者的临时 WRAM 字节时维持保留区总长度不变。
+
+## QOL-1.18E：Music Off 取消 Fade 时必须同步音频 Bank
+
+- 音频 Bank 与背景音乐是否实际发声是两回事。地图 BGM 目标的 `wAudioSavedROMBank` 通常在跨 Bank 淡出完成后才复制到 `wAudioROMBank`。
+- Music Off 拦截 BGM 并清零 `wAudioFadeOutControl` 会跳过 `FadeOutAudio` 的正常收尾；若没同步 Bank，野生战斗返回地图后会把地图音效 ID 按战斗音效表解析，导致存档、碰撞、跳台音异常，Start／菜单音可因两表同号音效而看似正常。
+- 正式修复为 `home/audio.asm` 的 `.suppressMusic` 同步 `wAudioSavedROMBank`→`wAudioROMBank`；用户已在 GBC 验证 Music Off 战斗逃跑后的音效恢复正常；不要为了掩盖问题改动 SFX 音符。
+- Music Off 入战闪烁前的瞬态爆破音属于**独立未解决问题**；`PlayBattleMusic` 调用 `SFX_STOP_ALL_MUSIC` 时会在声音引擎里重置 `rAUDTERM`、音量包络等硬件寄存器，可能是声道路由瞬态，不能未经实机验证就改变整个音频引擎。

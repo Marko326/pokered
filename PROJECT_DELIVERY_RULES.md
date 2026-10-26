@@ -27,6 +27,8 @@
 
 ## 当前基线说明
 
-- 导出原始源码：`CGB-1.12`，HEAD `2a7930684b82d7b000932929c0b0a5b31e335cd1`，来源为用户上传的 `feat(cgb)__增加CGB原生双倍速与红蓝版配色支持.zip`。
-- 本次 ROM0 优化：上一轮测试补丁 `rom0-cgb-palette-offload-112A-20261024-R1`；用户反馈要求范围已测，无新增游戏功能改动。
-- 本次拟提交版本：`CGB-1.13`；**仅准备提交，不代表已经实际 Git Commit 或 Push**。详见 `docs/CGB_ROM0_OFFLOAD_ACCEPTANCE.md`。
+- 本轮导出：`QOL-1.18D`，分支 `备份`，已提交 HEAD `c013f62c25ea2fac9a57a84569851a8beb6b6b25`；ZIP 工作区已包含已测 A1 音频 Bank 恢复修复（未提交）。
+- 本次拟正式收口：`QOL-1.18E`，仅包含 A1 的 `home/audio.asm` Bank 同步、游戏版本更新及长期验收文档；爆破音分析另案处理，不混入未实测代码。
+- 增量补丁基于上述已测 A1 工作区；全量补丁基于逆向剥离 A1 后的 `c013f62c` 干净源码。二者不能叠加。
+- 用户已确认 A1 在 GBC 实机下修复 Music Off 战斗后音效错乱；未声明完整回归或新版本编译已通过。Git Commit/Push 由用户在 RPP Mobile 中完成。
+- 专项验收见 `docs/QOL_1.18E_MUSIC_OFF_BANK_ACCEPTANCE.md`。

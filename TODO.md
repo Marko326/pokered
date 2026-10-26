@@ -62,3 +62,12 @@
 - [x] R3 收口：按参考项目将 `Music Volume:` 标签及 0–10 两格数字对齐至第二页 x=2–3，删除右侧快捷键提示；移除不再使用的 WRAM 数字缓存。
 - [ ] 用户本地汇编和 RPP Mobile 实机验证：红／蓝、音乐 0–10、开关交互、音效／叫声、旧存档、新游戏及存取重进。
 - [ ] 本次未编译 ROM、未生成新 MAP、未 Git Commit；新增空间需在链接后复核。
+
+## QOL-1.18E：Music Off 战斗退出后音频 Bank 错乱（拟正式收口）
+
+- [x] A1 已由用户在 GBC 实机验证：一号路 Music Off，野生战斗直接逃跑后，存档、碰撞及跳崖等音效已恢复正确。
+- [x] 在 `.suppressMusic` 取消淡出时，立即将 `wAudioSavedROMBank` 写回 `wAudioROMBank`，不更改 SFX 音符、SRAM 格式或声音引擎。
+- [x] 完成拟提交版本 `QOL-1.18E` 的游戏内版本号和项目文档收口；静态双向补丁校验单独报告。
+- [ ] 用户在 RPP Mobile 执行 Git Commit/Push，提交后更新实际 HEAD；本次辅助准备不等于已提交。
+- [ ] 补测红/蓝、Music On/Off、BGM 音量 0，以及连续战斗、切地图、存档与音效／叫声。
+- [ ] **独立后续：Music Off 入战前瞬态爆破音**。先抓到精确声音时点，再分析 `PlayBattleMusic`→`SFX_STOP_ALL_MUSIC` 的 NR51／包络重置，禁止在本版混入未经实测的修复。
