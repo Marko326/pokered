@@ -2027,7 +2027,18 @@ LoadMapHeader::
 	ld [wCurMapTileset], a
 	ldh [hPreviousTileset], a
 	bit 7, b
-	ret nz
+	jr z, .readROMMapHeader
+	; 旧存档保留的图块集指针可能不匹配当前 ROM。
+	; 重载图块集内部指针，临时禁用地牢传送定位，保留存档坐标。
+	ld a, [wDestinationWarpID]
+	push af
+	ld a, $ff
+	ld [wDestinationWarpID], a
+	predef LoadTilesetHeader
+	pop af
+	ld [wDestinationWarpID], a
+	ret
+.readROMMapHeader
 	ld hl, MapHeaderPointers
 	ld a, [wCurMap]
 	sla a

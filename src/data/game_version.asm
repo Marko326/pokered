@@ -3,4 +3,4 @@
 SECTION "Game Version", ROM0
 
 GameVersionText::
-	db "QOL-1.1@"
+	db "SAV-1.2@"
