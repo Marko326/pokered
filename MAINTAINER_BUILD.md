@@ -91,7 +91,9 @@ Makefile 的工具定位 ROM。`make red` 会先在 `buildRB/` 内编译，随�
 把本次构建成功的 ROM 复制到仓库根目录 `pokered.gbc`。不要在
 `buildRB/` 或根目录生成的 ROM 文件上进行长期修改。
 
-**版本号显示是独立的配置问题**：该 CHS_Mod 项目没有
-`data/game_version.asm`。如果 RPP 提示缺少此文件，应在 RPP
-版本号设置中关闭版本识别或配置项目实际拥有的版本文件；
-不要为消除提示而伪造游戏版本或擅自改动游戏汇编代码。
+**主菜单版本号**：在 `src/data/game_version.asm` 中统一编辑
+`GameVersionText`（正式版标识 `VER-1.0`）。游戏内只在主菜单左下角
+显示该标识，进入 Options 或 Continue 前会清除；不会在 Options
+增加版本号。该文件由 `src/main.asm` 引用并链接到 ROM0。修改版本
+标识后，正常运行根目录 `make red` / `make blue` 即可增量汇编；
+ROM 是否有足够空间仍须以本地 RGBDS 链接结果为准。

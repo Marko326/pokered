@@ -50,6 +50,8 @@ MainMenu:
 	ld de, NewGameText
 	call PlaceString
 .next2
+	; 主菜单左下角显示版本号。
+	call DrawMainMenuVersionText
 	ld hl, wd730
 	res 6, [hl]
 	call UpdateSprites
@@ -84,11 +86,15 @@ MainMenu:
 	jr z, .choseContinue
 	cp 1
 	jp z, StartNewGame
+	; Options 不显示主菜单版本号。
+	call ClearMainMenuVersionText
 	call DisplayOptionMenu
 	ld a, 1
 	ld [wOptionsInitialized], a
 	jp .mainMenuLoop
 .choseContinue
+	; Continue 信息页不保留主菜单版本号。
+	call ClearMainMenuVersionText
 	call DisplayContinueGameInfo
 	ld hl, wCurrentMapScriptFlags
 	set 5, [hl]
@@ -466,6 +472,18 @@ PrintPlayTime:
 	ld de, wPlayTimeMinutes
 	lb bc, LEADING_ZEROES | 1, 2
 	jp PrintNumber
+
+; 菜单代码位于 ROMX Bank 1，版本文字在 ROM0。
+DrawMainMenuVersionText:
+	hlcoord 1, 17
+	ld de, GameVersionText
+	jp PlaceString
+
+ClearMainMenuVersionText:
+	hlcoord 0, 17
+	ld b, 1
+	ld c, SCREEN_WIDTH
+	jp ClearScreenArea
 
 SaveScreenInfoText:
 	db   "PLAYER"
