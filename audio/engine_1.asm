@@ -1571,6 +1571,33 @@ Audio1_PlaySound::
 	jp .sfxChannelLoop
 
 .stopAllAudio
+	; POP-1.18F: Music Off/volume 0 must not reinitialize active APU
+	; registers at every silent music transition. Preserve the full reset
+	; for Music On and for sound hardware that is not enabled yet.
+	call GetEffectiveMusicMuteState
+	and a
+	jr z, .resetHardware
+	ldh a, [rAUDENA]
+	bit 7, a
+	jr z, .resetHardware
+	; If no software channel is playing, leave the hardware untouched.
+	; This avoids a click even if an expired SFX left output routed.
+	ld hl, wChannelSoundIDs
+	ld b, NUM_CHANNELS
+.checkMutedChannels
+	ld a, [hli]
+	and a
+	jr nz, .silenceMutedAudio
+	dec b
+	jr nz, .checkMutedChannels
+	jr .clearAudioState
+.silenceMutedAudio
+	; Still stop any live SFX/cry or music when switching to Off.
+	; Only disconnect the output; do not retrigger the APU envelopes.
+	xor a
+	ldh [rAUDTERM], a
+	jr .clearAudioState
+.resetHardware
 	ld a, AUDENA_ON
 	ldh [rAUDENA], a ; sound hardware on
 	ldh [rAUD3ENA], a ; wave playback on
@@ -1588,6 +1615,7 @@ Audio1_PlaySound::
 	ldh [rAUD4GO], a
 	ld a, $77
 	ldh [rAUDVOL], a ; full volume
+.clearAudioState
 	xor a
 	ld [wUnusedMusicByte], a
 	ld [wDisableChannelOutputWhenSfxEnds], a
