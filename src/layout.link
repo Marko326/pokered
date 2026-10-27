@@ -184,6 +184,7 @@ ROMX $2C
 ROMX $2D
 	"Quantity Menu Helpers"
 	"Number Printing"
+	"Player Speed Steps"
 
 ROMX $3C
 	"CGB Native Color"

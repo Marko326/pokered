@@ -540,3 +540,7 @@ INCLUDE "engine/menus/quantity_menu_helpers.asm"
 
 SECTION "Number Printing", ROMX
 INCLUDE "engine/number_printing.asm"
+
+; MOV-1.7A: B-button running and automatic bicycle acceleration in ROMX.
+SECTION "Player Speed Steps", ROMX
+INCLUDE "engine/overworld/player_speed.asm"

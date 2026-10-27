@@ -278,15 +278,8 @@ OverworldLoopLessDelay::
 .moveAhead2
 	ld hl, wFlags_0xcd60
 	res 2, [hl]
-	ld a, [wWalkBikeSurfState]
-	dec a ; riding a bike?
-	jr nz, .normalPlayerSpriteAdvancement
-	ld a, [wd736]
-	bit 6, a ; jumping a ledge?
-	jr nz, .normalPlayerSpriteAdvancement
-	call DoBikeSpeedup
-.normalPlayerSpriteAdvancement
-	call AdvancePlayerSprite
+	; MOV-1.7A: speed selection runs in ROMX to save ROM0.
+	farcall AdvancePlayerAtSpeed
 	ld a, [wWalkCounter]
 	and a
 	jp nz, CheckMapConnections ; it seems like this check will never succeed (the other place where CheckMapConnections is run works)
@@ -374,20 +367,6 @@ NewBattle::
 .noBattle
 	and a
 	ret
-
-; function to make bikes twice as fast as walking
-DoBikeSpeedup::
-	ld a, [wNPCMovementScriptPointerTableNum]
-	and a
-	ret nz
-	ld a, [wCurMap]
-	cp ROUTE_17 ; Cycling Road
-	jr nz, .goFaster
-	ldh a, [hJoyHeld]
-	and D_UP | D_LEFT | D_RIGHT
-	ret nz
-.goFaster
-	jp AdvancePlayerSprite
 
 ; check if the player has stepped onto a warp after having not collided
 CheckWarpsNoCollision::
