@@ -392,6 +392,10 @@ SendSGBPacket:
 LoadSGB:
 	xor a
 	ld [wOnSGB], a
+	; Native CGB uses its own color register path, not SGB packets.
+	ld a, [wGBC]
+	and a
+	ret nz
 	call CheckSGB
 	ret nc
 	ld a, 1

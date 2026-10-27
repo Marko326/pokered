@@ -399,4 +399,9 @@ hJoyInput:: db
 
 hDisableJoypadPolling:: db
 
-	ds 5
+	; Reuse reserved bytes; no WRAM/SRAM changes.
+	ds 1
+hCGBBGP:: db
+hCGBOBP0:: db
+hCGBOBP1:: db
+hCGB:: db

@@ -27,6 +27,17 @@ home2_ret::
 	ld a, BANK(WriteDMACodeToHRAM)
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a
+	; Unlike QOL, CHS home2 has ALREADY enabled LCD here. Native
+	; RGB555 palette RAM is inaccessible in LCD mode 3; initialize
+	; the source palettes with LCD safely disabled, then restore it.
+	ldh a, [hCGB]
+	and a
+	jr z, .skipCGBPaletteInit
+	call DisableLCD
+	farcall InitCGBDefaultPalette
+	ld a, rLCDC_DEFAULT
+	ldh [rLCDC], a
+.skipCGBPaletteInit
 
 	; xor a
 	; ldh [rIF], a

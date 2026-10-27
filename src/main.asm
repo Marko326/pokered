@@ -361,6 +361,10 @@ INCLUDE "engine/movie/evolution.asm"
 INCLUDE "engine/overworld/elevator.asm"
 INCLUDE "engine/items/tm_prices.asm"
 
+; Native CGB color remapping is deliberately isolated in ROMX.
+SECTION "CGB Native Color", ROMX
+INCLUDE "engine/gfx/cgb_palette_bank.asm"
+
 SECTION "Home 2", ROMX
 
 INCLUDE "home2.asm"

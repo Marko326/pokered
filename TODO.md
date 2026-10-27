@@ -70,3 +70,14 @@
 - [ ] 用户生成正式版红蓝 MAP 后核对 ROM0 余量。
 
 验收记录：`docs/CHS_FPS_1_4_ACCEPTANCE.md`。
+
+## CGB 原生配色（CGB-1.5，用户已测试）
+
+- [x] 在 `FPS-1.4` 基础上移植 CGB 原生 RGB555 配色及 DMG 灰阶映射。
+- [x] 适配汉化版 `home2.asm` 的 LCD 初始化时序，保留已有 DMG 60 FPS。
+- [x] 保持 CGB CPU 原速，本轮不加入双倍速。
+- [x] 用户反馈 DMG、CGB 两种模式颜色正常，CGB 无明显偏色；队伍、战斗及战斗返回正常。
+- [x] 去除 `CGB-1.5A` 测试后缀并整理正式版补丁。
+- [ ] 由用户在本地核对红蓝版正式 MAP、ROM0 余量；提交后再独立研究 CGB CPU 双倍速。
+
+验收记录：`docs/CHS_CGB_1_5_ACCEPTANCE.md`。

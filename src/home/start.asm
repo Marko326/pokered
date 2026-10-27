@@ -4,7 +4,7 @@ _Start::
 	xor a
 	jr .ok
 .gbc
-	ld a, FALSE
+	ld a, TRUE ; CGB-1.5A: hardware flag from boot ROM.
 .ok
-	ld [wGBC], a
+	ldh [hCGB], a ; home2 clears WRAM; preserve the flag in HRAM.
 	jp Init

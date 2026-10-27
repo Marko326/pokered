@@ -3,4 +3,4 @@
 SECTION "Game Version", ROM0
 
 GameVersionText::
-	db "FPS-1.4@"
+	db "CGB-1.5@"

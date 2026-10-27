@@ -31,11 +31,35 @@ Init_home2::
 	or c
 	jr nz, .loop
 
+	; Restore boot-mode detection AFTER CHS clears $C000-$DFFF.
+	ldh a, [hCGB]
+	ld [wGBC], a
+	and a
+	jr z, .vramReady
+	; In CGB mode VRAM bank 1 contains tile attributes. Clear it
+	; before returning to the original tile-data bank 0.
+	ld a, 1
+	ldh [rVBK], a
+	call ClearVram
+	xor a
+	ldh [rVBK], a
+.vramReady
 	call ClearVram
 
 	ld hl, $ff80
+	; Preserve hCGB at $FFFE while clearing the rest of HRAM.
 	ld bc, $fffe - $ff80
 	call FillMemory
+	; Force a refresh of the DMG shade registers on the first VBlank.
+	ldh a, [rBGP]
+	cpl
+	ldh [hCGBBGP], a
+	ldh a, [rOBP0]
+	cpl
+	ldh [hCGBOBP0], a
+	ldh a, [rOBP1]
+	cpl
+	ldh [hCGBOBP1], a
 
 
 	ld a, SRAM_ENABLE
