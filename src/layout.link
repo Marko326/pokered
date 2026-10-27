@@ -90,6 +90,7 @@ ROMX $E
 	"MissingNoData"
 ROMX $F
 	"Battle Core"
+	"List Menu Helpers"
 ROMX $10
 	"bank10"
 ROMX $11
@@ -180,6 +181,9 @@ ROMX $2B
 	"Pokédex Text"
 ROMX $2C
 	"Move Names"
+ROMX $2D
+	"Quantity Menu Helpers"
+	"Number Printing"
 
 ROMX $40
 	"Home 2"

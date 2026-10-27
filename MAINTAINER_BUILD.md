@@ -92,8 +92,15 @@ Makefile 的工具定位 ROM。`make red` 会先在 `buildRB/` 内编译，随�
 `buildRB/` 或根目录生成的 ROM 文件上进行长期修改。
 
 **主菜单版本号**：在 `src/data/game_version.asm` 中统一编辑
-`GameVersionText`（当前正式标识 `SAV-1.2`）。游戏内只在主菜单左下角
+`GameVersionText`（当前正式标识 `ROM-1.3`）。游戏内只在主菜单左下角
 显示该标识，进入 Options 或 Continue 前会清除；不会在 Options
 增加版本号。该文件由 `src/main.asm` 引用并链接到 ROM0。修改版本
 标识后，正常运行根目录 `make red` / `make blue` 即可增量汇编；
 ROM 是否有足够空间仍须以本地 RGBDS 链接结果为准。
+
+## ROM0 空间维护约定
+
+- 新增低频、非中断、可跨 Bank 调用的功能，优先放在 ROMX；ROM0 尽可能只保留必要的入口、时序敏感代码与硬件中断例程。
+- 迁移时核对调用方 Bank、返回寄存器、跳转/返回路径与数据所在 Bank，不能仅以补丁套用成功判定安全。
+- 不要随意迁移高频中断代码；红蓝版都须以新生成的 MAP 和实际运行结果验收。
+- `ROM-1.3A` 候选 MAP 的 ROM0 剩余为红、蓝版各 884 字节；正式版 `ROM-1.3` 仅缩短了主菜单版本字符串，仍须以正式版 MAP 确定最终余量。

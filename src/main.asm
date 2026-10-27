@@ -205,6 +205,10 @@ SECTION "Battle Core", ROMX
 INCLUDE "engine/battle/core.asm"
 INCLUDE "engine/battle/effects.asm"
 
+; ROM-1.3: List painter remains with OldManItemList in bank $0F.
+SECTION "List Menu Helpers", ROMX
+INCLUDE "engine/menus/list_menu_helpers.asm"
+
 
 SECTION "bank10", ROMX
 
@@ -526,3 +530,9 @@ SECTION "MISC", ROMX
 INCLUDE "engine/menus/naming_screen_util.asm"
 SECTION "IMECodeTable", ROMX
 INCLUDE "dfs/IMECodeTable.asm"
+; ROM-1.3: Quantity picker and number formatter are in spare bank $2D.
+SECTION "Quantity Menu Helpers", ROMX
+INCLUDE "engine/menus/quantity_menu_helpers.asm"
+
+SECTION "Number Printing", ROMX
+INCLUDE "engine/number_printing.asm"
