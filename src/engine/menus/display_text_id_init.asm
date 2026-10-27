@@ -8,11 +8,9 @@ DisplayTextIDInit::
 	ldh a, [hSpriteIndexOrTextID] ; text ID (or sprite ID)
 	and a
 	jr nz, .notStartMenu
-; if text ID is 0 (i.e. the start menu)
-; Note that the start menu text border is also drawn in the function directly
-; below this, so this seems unnecessary.
-	; CHS_Fix 16 start menu fix
-IF DEF(_DEBUG) 
+; QOL-1.11: START border is drawn by DrawStartMenu.
+; Keep the CHS debug hook, but skip the redundant early border.
+IF DEF(_DEBUG)
 	push af
 	call DebugPressedOrHeldB
 	jr z, .bIsNotPressed
@@ -22,31 +20,7 @@ IF DEF(_DEBUG)
 .bIsNotPressed
 	pop af
 ENDC
-	ld a, 7 ;
-	cp a, $6 ;
-	jr c, .normalStartMenu ;
-	CheckEvent EVENT_GOT_POKEDEX
-; start menu with pokedex
-	hlcoord 10, 0
-	ld b, $0e
-	ld c, $08
-	jr nz, .drawTextBoxBorder
-; start menu without pokedex
-	hlcoord 10, 0
-	ld b, $0c
-	ld c, $08
-	jr .drawTextBoxBorder
-; if text ID is not 0 (i.e. not the start menu) then do a standard dialogue text box
-.normalStartMenu ; CHS_Fix 16
-; start menu with pokedex ; CHS_Fix 16
-	CheckEvent EVENT_GOT_POKEDEX ; CHS_Fix 16
-	hlcoord 12, 0 ; CHS_Fix 16
-	lb bc, 14, 6 ; CHS_Fix 16
-	jr nz, .drawTextBoxBorder ; CHS_Fix 16
-; start menu without pokedex
-	hlcoord 12, 0 ; CHS_Fix 16
-	lb bc, 12, 6 ; CHS_Fix 16
-	jr .drawTextBoxBorder ; CHS_Fix 16
+	jr .skipDrawingTextBoxBorder
 .notStartMenu
 	hlcoord 0, 12
 	ld b, $04
@@ -93,22 +67,24 @@ ENDC
 	add hl, de
 	dec c
 	jr nz, .spriteStandStillLoop
-	; QOL-1.10: preload the font before the normal dialogue window copy.
-	; Keep the original START menu transfer order unchanged.
+	; QOL-1.11: keep START offscreen while CHS text is prepared.
+	; The completed START window is copied once by RedisplayStartMenu.
 	ldh a, [hSpriteIndexOrTextID]
 	and a
-	jr z, .copyWindowTiles
+	jr z, .startMenu
+	; QOL-1.10 regular dialogue: unchanged font preloading and transfer.
 	call LoadFontTilePatterns
-.copyWindowTiles
-	ld b, $9c ; window background address
-	call CopyScreenTileBufferToVRAM ; transfer background in WRAM to VRAM
-	ldh a, [hSpriteIndexOrTextID]
-	and a
-	jr nz, .fontReady
-	call LoadFontTilePatterns ; unchanged START menu path
-.fontReady
+	ld b, $9c
+	call CopyScreenTileBufferToVRAM
 	xor a
-	ldh [hWY], a ; put the window on the screen
-	ld a, $01
-	ldh [hAutoBGTransferEnabled], a ; enable continuous WRAM to VRAM transfer each V-blank
+	ldh [hWY], a
+	ld a, 1
+	ldh [hAutoBGTransferEnabled], a
+	ret
+.startMenu
+	ld a, $90
+	ldh [hWY], a
+	xor a
+	ldh [hAutoBGTransferEnabled], a
+	call LoadFontTilePatterns ; full CHS font/cache handling stays intact
 	ret

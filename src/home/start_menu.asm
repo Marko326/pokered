@@ -8,9 +8,26 @@ DisplayStartMenu::
 	call PlaySound
 
 RedisplayStartMenu::
+	; QOL-1.11: prevent progressive CHS menu drawing from reaching the LCD.
+	ld a, $90
+	ldh [hWY], a
+	xor a
+	ldh [hAutoBGTransferEnabled], a
+	call DelayFrame ; finish hiding before touching the menu's glyph tiles
 	farcall DrawStartMenu
 	farcall PrintSafariZoneSteps ; print Safari Zone info, if in Safari Zone
+	; QOL-1.11: mark NPC sprites behind the finished menu as hidden
+	; before the three VBlanks used to transfer the window tilemap.
+	; OAM will be refreshed before the window is revealed.
 	call UpdateSprites
+	; Copy the finished window once, then reveal it. This replaces the
+	; redundant 3-frame empty-window copy on initial START opening.
+	ld b, $9c
+	call CopyScreenTileBufferToVRAM
+	xor a
+	ldh [hWY], a
+	inc a
+	ldh [hAutoBGTransferEnabled], a
 .loop
 	call HandleMenuInput
 	ld b, a
