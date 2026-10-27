@@ -92,7 +92,7 @@ Makefile 的工具定位 ROM。`make red` 会先在 `buildRB/` 内编译，随�
 `buildRB/` 或根目录生成的 ROM 文件上进行长期修改。
 
 **主菜单版本号**：在 `src/data/game_version.asm` 中统一编辑
-`GameVersionText`（当前正式标识 `CGB-1.5`）。游戏内只在主菜单左下角
+`GameVersionText`（当前正式标识 `CPU-1.6`）。游戏内只在主菜单左下角
 显示该标识，进入 Options 或 Continue 前会清除；不会在 Options
 增加版本号。该文件由 `src/main.asm` 引用并链接到 ROM0。修改版本
 标识后，正常运行根目录 `make red` / `make blue` 即可增量汇编；

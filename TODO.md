@@ -81,3 +81,14 @@
 - [ ] 由用户在本地核对红蓝版正式 MAP、ROM0 余量；提交后再独立研究 CGB CPU 双倍速。
 
 验收记录：`docs/CHS_CGB_1_5_ACCEPTANCE.md`。
+
+## CGB CPU 双倍速（CPU-1.6，用户已测试）
+
+- [x] 基于已提交的 CGB-1.5，增加 CGB 野外 CPU 2x／战斗及开场 CPU 1x 切换代码。
+- [x] 保留原有 CGB 颜色、DMG 60 FPS、存档和音乐相关逻辑。
+- [x] KEY1 临时诊断：用户截图确认 CGB 野外 `2X`、DMG `1X (NO KEY1)`。
+- [x] 正式清理测试版后缀及 START+SELECT 临时诊断功能，不将测试工具提交到正式源码。
+- [ ] 本地链接红蓝版新 MAP，核对 ROM0 实际剩余空间。
+- [ ] 如需严格验证战斗 CPU 已恢复 1X，应在战斗期间另行测量 KEY1。
+
+验收记录：`docs/CHS_CPU_1_6_ACCEPTANCE.md`。

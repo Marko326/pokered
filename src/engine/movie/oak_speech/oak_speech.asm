@@ -34,6 +34,7 @@ PrepareOakSpeech:
 	jp CopyData
 
 OakSpeech:
+	call GBCSetCPU1xSpeed ; keep the opening sequence at original CPU timing
 	ld a, SFX_STOP_ALL_MUSIC
 	call PlaySound
 	ld a, BANK(Music_Routes2)

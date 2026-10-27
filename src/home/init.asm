@@ -1,4 +1,5 @@
 SoftReset::
+	call GBCSetCPU1xSpeed ; restore normal audio and fade timing on reset
 	call StopAllSounds
 	call GBPalWhiteOut
 	ld c, 32
@@ -7,6 +8,7 @@ SoftReset::
 
 Init::
 ;  Program init.
+	call GBCSetCPU1xSpeed ; also normalize direct jumps to Init
 
 DEF rLCDC_DEFAULT EQU %11100011
 ; * LCD enabled

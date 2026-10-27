@@ -42,6 +42,7 @@ OverworldLoop::
 	; FPS-1.4: One VBlank wait per overworld update.
 OverworldLoopLessDelay::
 	call DelayFrame
+	call GBCSetCPU2xSpeed ; CGB-only: do not change the established 60 FPS loop
 	call LoadGBPal
 	ld a, [wd736]
 	bit 6, a ; jumping down a ledge?
