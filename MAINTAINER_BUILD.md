@@ -58,13 +58,19 @@ make red
   文件首次迁移时会重新导入汉化，但已有 `.o` 将保留。补丁应用到 `src/`
   后执行 `make red` 即可验证；不需要重新运行旧式导入脚本。
 
+## 文档维护约定
+
+- 历史版本变更、用户实测与静态验收统一追加至 `docs/CHS_ACCEPTANCE_HISTORY.md`，**不再为每个新版本新建一份验收文件**。
+- 未完成事项只放根目录 `TODO.md`；构建说明保留在此文件。历史记录完整保留，不能把静态检查写成 ROM 实测。
+- 版本更新时同步更新统一验收文档及 `TODO.md`，不改 `RPP_PROJECT_CONTEXT/` 下的自动导出索引。
+
 ## Git 维护流程
 
 补丁应用成功后，建议建立自己的维护分支并提交补丁：
 
 ```sh
 git switch -c my-chs-maintenance
-git add Makefile scripts/prepare_build.py src/Makefile _prepare.command MAINTAINER_BUILD.md TODO.md docs/CHS_INCREMENTAL_BUILD_ACCEPTANCE.md
+git add -A -- TODO.md MAINTAINER_BUILD.md docs/  # 本次文档整理；功能代码变更应另行 add
 git commit  # 使用交付的 commit-message.txt 中的中文提交日志
 ```
 
