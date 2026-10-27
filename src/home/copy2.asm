@@ -110,64 +110,24 @@ CopyVideoData::
 	ld c, a
 	jr .loop
 
+; Shared 1bpp VBlank transfer. Keep the common 8-tile path's original
+; frame count and bank restore behavior; only the guarded CGB START caller
+; requests 20 tiles/VBlank (its cache is already cleared by DFS).
 CopyVideoDataDouble::
-; Wait for the next VBlank, then copy c 1bpp
-; tiles from b:de to hl, 8 tiles at a time.
-; This takes c/8 frames.
-	ldh a, [hAutoBGTransferEnabled]
-	push af
-	xor a ; disable auto-transfer while copying
-	ldh [hAutoBGTransferEnabled], a
-	ldh a, [hLoadedROMBank]
-	ldh [hROMBankTemp], a
-
-	ld a, b
-	ldh [hLoadedROMBank], a
-	ld [MBC1RomBank], a
-
-	ld a, e
-	ldh [hVBlankCopyDoubleSource], a
-	ld a, d
-	ldh [hVBlankCopyDoubleSource + 1], a
-
-	ld a, l
-	ldh [hVBlankCopyDoubleDest], a
-	ld a, h
-	ldh [hVBlankCopyDoubleDest + 1], a
-
-.loop
-	ld a, c
-	cp 8
-	jr nc, .keepgoing
-
-.done
-	ldh [hVBlankCopyDoubleSize], a
-	call DelayFrame
-	ldh a, [hROMBankTemp]
-	ldh [hLoadedROMBank], a
-	ld [MBC1RomBank], a
-	pop af
-	ldh [hAutoBGTransferEnabled], a
-	ret
-
-.keepgoing
 	ld a, 8
-	ldh [hVBlankCopyDoubleSize], a
-	call DelayFrame
-	ld a, c
-	sub 8
-	ld c, a
-	jr .loop
+	jr CopyVideoDataDoubleCore
 
-
-; START-only transfer: preserve the tested DMG limit of 12 tiles/VBlank.
-; On CGB in actual double-speed mode, transfer 20 tiles/VBlank.
-; This still copies all 128 base glyphs; it NEVER assumes sprite-overlaid
-; font VRAM is cached or valid. All other font transfers are unchanged.
+; START-only entry. Caller verifies native CGB + active double speed,
+; a safe redraw state and exactly 20 fixed 1bpp font tiles.
+; No second ROM0 bank-switch/VRAM-transfer implementation is needed.
 CopyVideoDataDoubleStartMenu::
+	ld a, 20
+CopyVideoDataDoubleCore:
+	push de ; preserve the original font source pointer for callers
+	push af ; save transfer batch size through the VRAM setup
 	ldh a, [hAutoBGTransferEnabled]
 	push af
-	xor a
+	xor a ; disable auto BG transfer while copying
 	ldh [hAutoBGTransferEnabled], a
 	ldh a, [hLoadedROMBank]
 	ldh [hROMBankTemp], a
@@ -184,16 +144,15 @@ CopyVideoDataDoubleStartMenu::
 	ldh [hVBlankCopyDoubleDest], a
 	ld a, h
 	ldh [hVBlankCopyDoubleDest + 1], a
-	; A CGB may have been switched back to 1x for a special scene.
-	; Require both native CGB mode and KEY1's *active* double-speed bit.
-	ld d, 12
-	ldh a, [hCGB]
-	and a
-	jr z, .loop
-	ldh a, [rKEY1]
-	bit 7, a
-	jr z, .loop
-	ld d, 20
+
+	; Keep the saved auto-BG flag on the stack, and put the batch
+	; size into D after storing the source address in HRAM.
+	pop af ; original BG-transfer flag
+	ld e, a
+	pop af ; requested batch size
+	ld d, a
+	ld a, e
+	push af
 .loop
 	ld a, c
 	cp d
@@ -201,11 +160,13 @@ CopyVideoDataDoubleStartMenu::
 .done
 	ldh [hVBlankCopyDoubleSize], a
 	call DelayFrame
+.restore
 	ldh a, [hROMBankTemp]
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a
 	pop af
 	ldh [hAutoBGTransferEnabled], a
+	pop de
 	ret
 .keepgoing
 	ld a, d
@@ -214,7 +175,13 @@ CopyVideoDataDoubleStartMenu::
 	ld a, c
 	sub d
 	ld c, a
-	jr .loop
+	jr nz, .loop
+	; Preserve the normal 8-tile routine's zero-size final frame.
+	; The START-only 20-tile path finishes without an empty frame.
+	ld a, d
+	cp 8
+	jr z, .loop
+	jr .restore
 
 ClearScreenArea::
 ; Clear tilemap area cxb at hl.

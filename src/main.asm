@@ -548,3 +548,7 @@ INCLUDE "engine/overworld/player_speed.asm"
 ; MOV-1.8: SELECT toggle without any changes to the movement speed path.
 SECTION "SELECT Bicycle Shortcut", ROMX
 INCLUDE "engine/overworld/bike_shortcut.asm"
+
+; QOL-1.14A: floating ROMX helper, no extra ROM0 transfer code.
+SECTION "START Window Transfer Fast", ROMX
+INCLUDE "engine/menus/start_window_fast.asm"

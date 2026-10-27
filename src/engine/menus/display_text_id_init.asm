@@ -86,10 +86,9 @@ ENDC
 	ldh [hWY], a
 	xor a
 	ldh [hAutoBGTransferEnabled], a
-	; Keep CHS glyph-cache invalidation, and upload the SAME 128 base
-	; glyphs with RPP's 12-tiles/VBlank START-only transfer when safe.
-	; Auto-text maps, ongoing BG redraws, and LCD-off paths stay on
-	; the original 8-tiles/VBlank/font initialization path.
+	; Keep CHS glyph-cache invalidation. In CGB 2x, DFS regenerates
+	; dynamic glyph slots; only the fixed tail needs uploading.
+	; DMG and all guarded states keep the original full font path.
 	ld a, [wAutoTextBoxDrawingControl]
 	bit 0, a
 	jr nz, .normalStartFont
@@ -102,10 +101,24 @@ ENDC
 	ldh a, [rLCDC]
 	bit 7, a
 	jr z, .normalStartFont
+	; QOL-1.14: only native CGB at active 2x speed uses the
+	; DFS-owned tile optimization; DMG/1x keep the tested full load.
+	ldh a, [hCGB]
+	and a
+	jr z, .normalStartFont
+	ldh a, [rKEY1]
+	bit 7, a
+	jr z, .normalStartFont
+	; The Chinese DFS renderer dynamically fills tiles $80-$EB
+	; (54 cache entries, two tiles each) while drawing the menu.
+	; Only the fixed $EC-$FF symbols and digits must be uploaded.
+	; Keep cache invalidation: omitting it caused earlier garbled text.
+	ASSERT (FontGraphicsEnd - FontGraphics) == $80 * $8
+	ASSERT $80 + $36 * 2 == $EC
 	callfar dfsClearCache
-	ld de, FontGraphics
-	ld hl, vFont
-	lb bc, BANK(FontGraphics), (FontGraphicsEnd - FontGraphics) / $8
+	ld de, FontGraphics + $6c * $8
+	ld hl, vFont + $6c * $10
+	lb bc, BANK(FontGraphics), $14
 	call CopyVideoDataDoubleStartMenu
 	ret
 .normalStartFont

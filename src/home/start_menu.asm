@@ -39,8 +39,9 @@ RedisplayStartMenu::
 	call UpdateSprites
 	; Copy the finished window once, then reveal it. This replaces the
 	; redundant 3-frame empty-window copy on initial START opening.
-	ld b, $9c
-	call CopyScreenTileBufferToVRAM
+	; QOL-1.14A: CGB double-speed transfers the finished START window
+	; in two 9-row VBlanks; DMG and special cases keep three.
+	farcall CopyStartMenuWindowFast
 	xor a
 	ldh [hWY], a
 	inc a
