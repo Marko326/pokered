@@ -68,6 +68,9 @@ UpdatePlayerSprite:
 	ld l, a
 	ld a, [hl]
 	inc a
+	; FPS-1.4: Animate player sprite at the original half-frame rate.
+	call ToggleSprite60FPSPhase
+	sub b
 	ld [hl], a
 	cp 4
 	jr nz, .calcImageIndex
@@ -306,7 +309,11 @@ UpdateSpriteInWalkingAnimation:
 	ld l, a
 	ld a, [hl]                       ; x#SPRITESTATEDATA1_INTRAANIMFRAMECOUNTER
 	inc a
-	ld [hl], a                       ; [x#SPRITESTATEDATA1_INTRAANIMFRAMECOUNTER]++
+	; FPS-1.4: Each sprite uses its unused c2xA byte as a per-sprite phase.
+	call ToggleSprite60FPSPhase
+	push bc
+	sub b
+	ld [hl], a                       ; advance on alternate rendered frames
 	cp $4
 	jr nz, .noNextAnimationFrame
 	xor a
@@ -320,6 +327,11 @@ UpdateSpriteInWalkingAnimation:
 	ldh a, [hCurrentSpriteOffset]
 	add $3
 	ld l, a
+	pop bc
+	push bc
+	ld a, b
+	and a
+	jr nz, .skipPositionUpdate
 	ld a, [hli]                      ; x#SPRITESTATEDATA1_YSTEPVECTOR
 	ld b, a
 	ld a, [hl]                       ; x#SPRITESTATEDATA1_YPIXELS
@@ -330,10 +342,13 @@ UpdateSpriteInWalkingAnimation:
 	ld a, [hl]                       ; x#SPRITESTATEDATA1_XPIXELS
 	add b
 	ld [hl], a                       ; update [x#SPRITESTATEDATA1_XPIXELS]
+.skipPositionUpdate
 	ldh a, [hCurrentSpriteOffset]
 	ld l, a
 	inc h
 	ld a, [hl]                       ; x#SPRITESTATEDATA2_WALKANIMATIONCOUNTER
+	pop bc
+	add b                           ; FPS-1.4: Repeat frame without consuming tick.
 	dec a
 	ld [hl], a                       ; update walk animation counter
 	ret nz
@@ -374,6 +389,24 @@ UpdateSpriteInWalkingAnimation:
 	ld [hl], a                       ; [x#SPRITESTATEDATA1_XSTEPVECTOR] = 0
 	ret
 
+; FPS-1.4: Toggle a sprite-local phase for 60 Hz render / 30 Hz logic.
+; Returns b = 0 for a movement tick, b = 1 for an intervening rendered frame.
+; Uses the currently unused c2xA byte; preserves AF and HL.
+ToggleSprite60FPSPhase:
+	push hl
+	push af
+	ld h, HIGH(wSpriteStateData2)
+	ldh a, [hCurrentSpriteOffset]
+	add SPRITESTATEDATA2_0A
+	ld l, a
+	ld a, [hl]
+	xor $01
+	ld [hl], a
+	ld b, a
+	pop af
+	pop hl
+	ret
+
 ; update [x#SPRITESTATEDATA2_MOVEMENTDELAY] for sprites in the delayed state (x#SPRITESTATEDATA1_MOVEMENTSTATUS)
 UpdateSpriteMovementDelay:
 	ld h, HIGH(wSpriteStateData2)
@@ -388,6 +421,11 @@ UpdateSpriteMovementDelay:
 	ld [hl], $0
 	jr .moving
 .tickMoveCounter
+	; FPS-1.4: Count movement delays in the original 30 Hz ticks.
+	ld a, [hl]
+	call ToggleSprite60FPSPhase
+	add b
+	ld [hl], a
 	dec [hl]                ; x#SPRITESTATEDATA2_MOVEMENTDELAY
 	jr nz, notYetMoving
 .moving
@@ -743,6 +781,11 @@ DoScriptedNPCMovement:
 	ld a, [wd730]
 	bit 7, a
 	ret z
+	; FPS-1.4: advance the shared scripted movement in one-pixel frames.
+	ld de, $0000
+	call ToggleSprite60FPSPhase
+	ld e, b
+	ld d, $01
 	ld hl, wd72e
 	bit 7, [hl]
 	set 7, [hl]
@@ -761,6 +804,7 @@ DoScriptedNPCMovement:
 	call GetSpriteScreenYPointer
 	ld c, SPRITE_FACING_UP
 	ld a, -2
+	add d
 	jr .move
 .checkIfMovingDown
 	cp NPC_MOVEMENT_DOWN
@@ -768,6 +812,7 @@ DoScriptedNPCMovement:
 	call GetSpriteScreenYPointer
 	ld c, SPRITE_FACING_DOWN
 	ld a, 2
+	sub d
 	jr .move
 .checkIfMovingLeft
 	cp NPC_MOVEMENT_LEFT
@@ -775,6 +820,7 @@ DoScriptedNPCMovement:
 	call GetSpriteScreenXPointer
 	ld c, SPRITE_FACING_LEFT
 	ld a, -2
+	add d
 	jr .move
 .checkIfMovingRight
 	cp NPC_MOVEMENT_RIGHT
@@ -782,6 +828,7 @@ DoScriptedNPCMovement:
 	call GetSpriteScreenXPointer
 	ld c, SPRITE_FACING_RIGHT
 	ld a, 2
+	sub d
 	jr .move
 .noMatch
 	cp $ff
@@ -798,6 +845,10 @@ DoScriptedNPCMovement:
 	ld [hl], a ; facing direction
 	call AnimScriptedNPCMovement
 	ld hl, wScriptedNPCWalkCounter
+	; FPS-1.4: Preserve scripted movement duration after frame-rate doubling.
+	ld a, [hl]
+	add e
+	ld [hl], a
 	dec [hl]
 	ret nz
 	ld a, 8
@@ -875,6 +926,8 @@ AdvanceScriptedNPCAnimFrameCounter:
 	ld l, a
 	ld a, [hl] ; intra-animation frame counter
 	inc a
+	; FPS-1.4: Use current scripted NPC phase to preserve animation speed.
+	sub e
 	ld [hl], a
 	cp 4
 	ret nz

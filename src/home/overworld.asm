@@ -39,7 +39,7 @@ EnterMap::
 	ld [wJoyIgnore], a
 
 OverworldLoop::
-	call DelayFrame
+	; FPS-1.4: One VBlank wait per overworld update.
 OverworldLoopLessDelay::
 	call DelayFrame
 	call LoadGBPal
@@ -261,7 +261,8 @@ OverworldLoopLessDelay::
 	jp c, OverworldLoop
 
 .noCollision
-	ld a, $08
+	; FPS-1.4: 16 one-pixel updates per tile, same 16-frame step duration.
+	ld a, $10
 	ld [wWalkCounter], a
 	jr .moveAhead2
 
@@ -1462,7 +1463,8 @@ AdvancePlayerSprite::
 	ld [wXCoord], a
 .afterUpdateMapCoords
 	ld a, [wWalkCounter] ; walking animation counter
-	cp $07
+	; FPS-1.4: redraw at the first of 16 one-pixel steps.
+	cp $0f
 	jp nz, .scrollBackgroundAndSprites
 ; if this is the first iteration of the animation
 	ld a, c
@@ -1609,8 +1611,7 @@ AdvancePlayerSprite::
 	ld b, a
 	ld a, [wSpritePlayerStateData1XStepVector]
 	ld c, a
-	sla b
-	sla c
+	; FPS-1.4: Scroll one pixel per update; no doubling of deltas.
 	ldh a, [hSCY]
 	add b
 	ldh [hSCY], a ; update background scroll Y

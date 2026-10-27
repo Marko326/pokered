@@ -37,9 +37,17 @@ PewterGuys:
 	ret z
 	ld [de], a
 	inc de
-	ld a, [wSimulatedJoypadStatesIndex]
-	inc a
-	ld [wSimulatedJoypadStatesIndex], a
+	; FPS-1.4: Repeat pause markers to preserve Pewter scripted wait.
+	push hl
+	ld hl, wSimulatedJoypadStatesIndex
+	and a
+	jr nz, .notWaitIndicator
+	ld [de], a
+	inc de
+	inc [hl]
+.notWaitIndicator
+	inc [hl]
+	pop hl
 	jr .copyMovementDataLoop
 .nextEntry1
 	inc hl
