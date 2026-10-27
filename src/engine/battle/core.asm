@@ -15,6 +15,8 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	lb bc, 3, 7
 	call ClearScreenArea
 	call DisableLCD
+	; Clear transient CGB colors while LCD is disabled; keep BG6/BG7 color sources.
+	farcall CGBBlackBattlePalettesLCDOff
 	call LoadFontTilePatterns
 	call LoadHudAndHpBarAndStatusTilePatterns
 	ld hl, vBGMap0
@@ -46,7 +48,6 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 .noCarry
 	dec b
 	jr nz, .copyRowLoop
-	call EnableLCD
 	ld a, $90
 	ldh [hWY], a
 	ldh [rWY], a
@@ -55,18 +56,18 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ldh [hSCY], a
 	dec a
 	ld [wUpdateSpritesEnabled], a
-	call Delay3
+	; Keep the blank tilemap hidden until scroll and DMG palettes are ready.
 	xor a
 	ldh [hAutoBGTransferEnabled], a
 	ld b, $70
 	ld c, $90
 	ld a, c
 	ldh [hSCX], a
-	call DelayFrame
 	ld a, %11100100 ; inverted palette for silhouette effect
 	ldh [rBGP], a
 	ldh [rOBP0], a
 	ldh [rOBP1], a
+	call EnableLCD
 .slideSilhouettesLoop ; slide silhouettes of the player's pic and the enemy's pic onto the screen
 	ld h, b
 	ld l, $40
@@ -77,10 +78,11 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ld l, $60
 	call SetScrollXForSlidingPlayerBodyLeft ; end background scrolling on line $60
 	call SlidePlayerHeadLeft
+	; Publish the scroll after moving the silhouette, so the final value is zero.
+	dec c
+	dec c
 	ld a, c
 	ldh [hSCX], a
-	dec c
-	dec c
 	jr nz, .slideSilhouettesLoop
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
@@ -88,12 +90,15 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ldh [hStartTileID], a
 	hlcoord 1, 5
 	predef CopyUncompressedPicToTilemap
+	; Finish all BGMap1 transfer slices before revealing the battle window.
+	ld a, HIGH(vBGMap1)
+	ldh [hAutoBGTransferDest + 1], a
+	ld a, $1
+	ldh [hAutoBGTransferEnabled], a
+	call Delay3
 	xor a
 	ldh [hWY], a
 	ldh [rWY], a
-	inc a
-	ldh [hAutoBGTransferEnabled], a
-	call Delay3
 	ld b, SET_PAL_BATTLE
 	call RunPaletteCommand
 	call HideSprites
@@ -1281,6 +1286,15 @@ SevenSpacesText:
 SlideTrainerPicOffScreen:
 	ldh [hSlideAmount], a
 	ld c, a
+	; Only the player's exit needs an atomic tilemap update.
+	; The regular 6-row auto-transfer exposes different parts of the
+	; 7-row trainer pic on different frames (visible as a torn head).
+	cp 9
+	jr nz, .slideStepLoop
+	ldh a, [hAutoBGTransferEnabled]
+	push af
+	xor a
+	ldh [hAutoBGTransferEnabled], a
 .slideStepLoop ; each iteration, the trainer pic is slid one tile left/right
 	push bc
 	push hl
@@ -1310,12 +1324,38 @@ SlideTrainerPicOffScreen:
 	add hl, de
 	dec b
 	jr nz, .rowLoop
+	ldh a, [hSlideAmount]
+	cp 9
+	jr nz, .normalTransfer
+	; Send the complete 7-row player pic to BGMap in one VBlank.
+	; The source enable byte is written last to avoid a partial setup.
+	hlcoord 0, 5
+	ld a, h
+	ldh [hVBlankCopyBGSource + 1], a
+	ld a, 5 * 32
+	ldh [hVBlankCopyBGDest], a
+	ldh a, [hAutoBGTransferDest + 1]
+	ldh [hVBlankCopyBGDest + 1], a
+	ld a, 7
+	ldh [hVBlankCopyBGNumRows], a
+	ld a, l
+	ldh [hVBlankCopyBGSource], a
+	call DelayFrame
+	ld c, 1 ; preserve the original 2-frame step cadence
+	jr .wait
+.normalTransfer
 	ld c, 2
+.wait
 	call DelayFrames
 	pop hl
 	pop bc
 	dec c
-	jr nz, .slideStepLoop
+	jp nz, .slideStepLoop
+	ldh a, [hSlideAmount]
+	cp 9
+	ret nz
+	pop af
+	ldh [hAutoBGTransferEnabled], a
 	ret
 
 ; send out a trainer's mon
@@ -6480,7 +6520,7 @@ DoBattleTransitionAndInitBattleVariables:
 .next
 	call DelayFrame
 	predef BattleTransition
-	callfar LoadHudAndHpBarAndStatusTilePatterns
+	; HUD/HP/status graphics are loaded with LCD off in the silhouette setup.
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
 	ld a, $ff
@@ -6547,7 +6587,20 @@ LoadPlayerBackPic:
 	ld [hli], a ; OAM tile number
 	inc a ; increment tile number
 	ldh [hOAMTile], a
-	inc hl
+	; Set the head palette explicitly instead of inheriting overworld OAM data.
+	ld a, [wBattleType]
+	cp BATTLE_TYPE_OLD_MAN
+	jr z, .defaultHeadPalette
+	ldh a, [hCGB]
+	and a
+	ld a, 0
+	jr z, .setHeadPalette
+	ld a, OAM_OBP1 ; CGBFixOAMPalettes maps DMG bit 4 to native palette 1.
+	jr .setHeadPalette
+.defaultHeadPalette
+	xor a
+.setHeadPalette
+	ld [hli], a ; OAM attributes
 	dec c
 	jr nz, .innerLoop
 	ldh a, [hOAMTile]

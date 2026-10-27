@@ -108,3 +108,34 @@ UpdateCGBDmgPalettesBanked::
 	dec d
 	jr nz, .colorLoop
 	ret
+
+; Clear transient display palettes before the battle intro while LCD is off.
+; BG6/BG7 are preserved because they hold the Red/Blue RGB555 shade sources.
+; Sync the software cache so VBlank does not repaint cleared palettes with old shades.
+CGBBlackBattlePalettesLCDOff::
+	ldh a, [hCGB]
+	and a
+	ret z
+	ld a, $80
+	ldh [rBGPI], a
+	xor a
+	ld b, 48 ; BG0-BG5: six palettes, two bytes per color.
+.bgLoop
+	ldh [rBGPD], a
+	dec b
+	jr nz, .bgLoop
+	ld a, $80
+	ldh [rOBPI], a
+	xor a
+	ld b, 64 ; Clear all eight OBJ palettes.
+.objLoop
+	ldh [rOBPD], a
+	dec b
+	jr nz, .objLoop
+	ldh a, [rBGP]
+	ldh [hCGBBGP], a
+	ldh a, [rOBP0]
+	ldh [hCGBOBP0], a
+	ldh a, [rOBP1]
+	ldh [hCGBOBP1], a
+	ret
