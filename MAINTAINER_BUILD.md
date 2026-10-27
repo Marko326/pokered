@@ -97,12 +97,13 @@ Makefile 的工具定位 ROM。`make red` 会先在 `buildRB/` 内编译，随�
 把本次构建成功的 ROM 复制到仓库根目录 `pokered.gbc`。不要在
 `buildRB/` 或根目录生成的 ROM 文件上进行长期修改。
 
-**主菜单版本号**：在 `src/data/game_version.asm` 中统一编辑
-`GameVersionText`（当前正式标识 `CPU-1.6`）。游戏内只在主菜单左下角
-显示该标识，进入 Options 或 Continue 前会清除；不会在 Options
-增加版本号。该文件由 `src/main.asm` 引用并链接到 ROM0。修改版本
-标识后，正常运行根目录 `make red` / `make blue` 即可增量汇编；
-ROM 是否有足够空间仍须以本地 RGBDS 链接结果为准。
+**游戏内版本号**：在 `src/data/game_version.asm` 中统一编辑
+`GameVersionText`（当前正式标识 `QOL-1.12`）。主菜单左下角和设置界面右上角
+使用同一版本文字；进入 Options 或 Continue 前仍先清除主菜单底部版本号，
+Options 自行绘制右上角版本标识。该字符串目前长度为 8 字符；后续如增加
+字符，须同时检查 Options 的显示起点与边框覆盖。该文件由 `src/main.asm`
+引用并链接到 ROM0。修改版本后可由用户执行 `make red` / `make blue`
+增量汇编；空间仍以本地链接得到的新 MAP 为准。
 
 ## ROM0 空间维护约定
 

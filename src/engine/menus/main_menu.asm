@@ -504,8 +504,9 @@ DisplayOptionMenu:
 	ld b, 3
 	ld c, 18
 	call TextBoxBorder
-	hlcoord 16, 0
-	ld de, Vertext
+	; 与主菜单共用版本号，不再显示原汉化版的静态版本标签。
+	hlcoord 11, 0 ; 8 字符版本号位置，保留右上角边框。
+	ld de, GameVersionText
 	call PlaceString
 	hlcoord 1, 1
 	ld de, TextSpeedOptionText
@@ -790,8 +791,6 @@ DisplayName:
 	call PlaceString
 	ret 
 
-Vertext:
-	db "ver@"
 PMNamesPointerTable:
 	dw ChsText
 	dw EngText
