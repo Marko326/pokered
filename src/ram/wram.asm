@@ -2050,7 +2050,10 @@ wObtainedHiddenCoinsFlags:: flag_array 16
 ; $02 = surfing
 wWalkBikeSurfState:: db
 
-	ds 10
+; MOV-1.8: one-frame SELECT taps during an active tile step.
+; Uses one byte of existing unnamed padding (keeps WRAM layout fixed).
+wBikeSelectPending:: db
+	ds 9
 
 wTownVisitedFlag:: flag_array NUM_CITY_MAPS
 

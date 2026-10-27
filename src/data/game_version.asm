@@ -3,4 +3,4 @@
 SECTION "Game Version", ROM0
 
 GameVersionText::
-	db "MOV-1.7@"
+	db "MOV-1.8@"

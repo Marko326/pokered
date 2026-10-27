@@ -42,6 +42,12 @@ _BikeShopText_1d82f::
 	para "You can take it"
 	line "on CYCLING ROAD"
 	cont "and in caves!"
+
+	para "Press SELECT to" ; MOV-1.8: page normally after receiving the bicycle
+	line "ride your BICYCLE."
+
+	para "Press SELECT again"
+	line "to get off!"
 	done
 
 _BikeShopText_1d834::

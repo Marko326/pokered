@@ -4,7 +4,9 @@ HandleMidJump::
 	farjp _HandleMidJump
 
 EnterMap::
-; Load a new map.
+; Load a new map. Discard any SELECT tap queued in the previous map.
+	xor a
+	ld [wBikeSelectPending], a
 	ld a, $ff
 	ld [wJoyIgnore], a
 	call LoadMapData
@@ -65,6 +67,15 @@ OverworldLoopLessDelay::
 	ld a, [wCurOpponent]
 	and a
 	jp nz, .newBattle
+	; MOV-1.8: honor a SELECT tap from within the previous walking step.
+	ld a, [wBikeSelectPending]
+	and a
+	jr z, .noQueuedSelect
+	xor a
+	ld [wBikeSelectPending], a
+	farcall SelectBicycleShortcut ; all location / script restrictions still apply
+	jp OverworldLoop
+.noQueuedSelect
 	ld a, [wd730]
 	bit 7, a ; are we simulating button presses?
 	jr z, .notSimulating
@@ -81,7 +92,13 @@ OverworldLoopLessDelay::
 	jp .displayDialogue
 .startButtonNotPressed
 	bit BIT_A_BUTTON, a
+	jr nz, .aButtonPressed
+	bit BIT_SELECT, a
 	jp z, .checkIfDownButtonIsPressed
+	; MOV-1.8: SELECT shortcut; keep the bike rules in ROMX.
+	farcall SelectBicycleShortcut
+	jp OverworldLoop
+.aButtonPressed
 ; if A is pressed
 	ld a, [wd730]
 	bit 2, a
@@ -273,12 +290,30 @@ OverworldLoopLessDelay::
 	jr z, .noSpinning
 	farcall LoadSpinnerArrowTiles
 .noSpinning
+	; MOV-1.8: hJoyPressed is an edge, normally missed during a tile step.
+	; Poll it while moving and queue the action until the step is complete.
+	; Do not change scripted / door / ledge movement input.
+	call IsPlayerCharacterBeingControlledByGame
+	jr nz, .skipSelectPoll
+	ld a, [wd736]
+	bit 6, a
+	jr nz, .skipSelectPoll
+	ld a, [wd730]
+	bit 2, a
+	jr nz, .skipSelectPoll
+	call Joypad
+	ldh a, [hJoyPressed]
+	and SELECT
+	jr z, .skipSelectPoll
+	ld a, 1
+	ld [wBikeSelectPending], a
+.skipSelectPoll
 	call UpdateSprites
 
 .moveAhead2
 	ld hl, wFlags_0xcd60
 	res 2, [hl]
-	; MOV-1.7A: speed selection runs in ROMX to save ROM0.
+	; MOV-1.7: speed selection runs in ROMX to save ROM0.
 	farcall AdvancePlayerAtSpeed
 	ld a, [wWalkCounter]
 	and a

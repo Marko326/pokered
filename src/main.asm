@@ -544,3 +544,7 @@ INCLUDE "engine/number_printing.asm"
 ; MOV-1.7A: B-button running and automatic bicycle acceleration in ROMX.
 SECTION "Player Speed Steps", ROMX
 INCLUDE "engine/overworld/player_speed.asm"
+
+; MOV-1.8: SELECT toggle without any changes to the movement speed path.
+SECTION "SELECT Bicycle Shortcut", ROMX
+INCLUDE "engine/overworld/bike_shortcut.asm"
