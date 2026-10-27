@@ -2273,7 +2273,10 @@ wUnusedDA38:: db
 ; mostly copied from map-specific map script pointer and written back later
 wCurMapScript:: db
 
-	ds 7
+; START-only transient state (0: fast; 1: full).
+; Splits existing padding without moving any WRAM/save addresses.
+wStartMenuCloseMode:: db
+	ds 6
 
 wPlayTimeHours:: db
 wPlayTimeMaxed:: db

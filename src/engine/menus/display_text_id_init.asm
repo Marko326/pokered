@@ -86,5 +86,28 @@ ENDC
 	ldh [hWY], a
 	xor a
 	ldh [hAutoBGTransferEnabled], a
-	call LoadFontTilePatterns ; full CHS font/cache handling stays intact
+	; Keep CHS glyph-cache invalidation, and upload the SAME 128 base
+	; glyphs with RPP's 12-tiles/VBlank START-only transfer when safe.
+	; Auto-text maps, ongoing BG redraws, and LCD-off paths stay on
+	; the original 8-tiles/VBlank/font initialization path.
+	ld a, [wAutoTextBoxDrawingControl]
+	bit 0, a
+	jr nz, .normalStartFont
+	ldh a, [hRedrawRowOrColumnMode]
+	and a
+	jr nz, .normalStartFont
+	ldh a, [hVBlankCopyBGSource]
+	and a
+	jr nz, .normalStartFont
+	ldh a, [rLCDC]
+	bit 7, a
+	jr z, .normalStartFont
+	callfar dfsClearCache
+	ld de, FontGraphics
+	ld hl, vFont
+	lb bc, BANK(FontGraphics), (FontGraphicsEnd - FontGraphics) / $8
+	call CopyVideoDataDoubleStartMenu
+	ret
+.normalStartFont
+	call LoadFontTilePatterns
 	ret

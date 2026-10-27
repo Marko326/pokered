@@ -4,6 +4,23 @@ DisplayStartMenu::
 	ld [MBC1RomBank], a
 	ld a, [wWalkBikeSurfState] ; walking/biking/surfing
 	ld [wWalkBikeSurfStateCopy], a
+	; QOL-1.13A: preserve the overworld for a direct B/START/EXIT close.
+	; Any pending redraw/special text state uses the original full close.
+	ld a, 1
+	ld [wStartMenuCloseMode], a
+	ld a, [wAutoTextBoxDrawingControl]
+	bit 0, a
+	jr nz, .startSound
+	ldh a, [hRedrawRowOrColumnMode]
+	and a
+	jr nz, .startSound
+	ldh a, [hVBlankCopyBGSource]
+	and a
+	jr nz, .startSound
+	xor a
+	ld [wStartMenuCloseMode], a
+	call SaveScreenTilesToBuffer2
+.startSound
 	ld a, SFX_START_MENU
 	call PlaySound
 
@@ -73,12 +90,19 @@ RedisplayStartMenu::
 	ld a, b
 	and B_BUTTON | START ; was the Start button or B button pressed?
 	jp nz, CloseStartMenu
-	call SaveScreenTilesToBuffer2 ; copy background from wTileMap to wTileMapBackup2
 	CheckEvent EVENT_GOT_POKEDEX
 	ld a, [wCurrentMenuItem]
 	jr nz, .displayMenuItem
 	inc a ; adjust position to account for missing pokedex menu item
 .displayMenuItem
+	cp 6 ; EXIT: do not overwrite the preserved overworld snapshot
+	jp z, CloseStartMenu
+	; Entering a submenu invalidates the direct-close shortcut.
+	push af
+	ld a, 1
+	ld [wStartMenuCloseMode], a
+	call SaveScreenTilesToBuffer2 ; preserve START for submenu return
+	pop af
 	cp 0
 	jp z, StartMenu_Pokedex
 	cp 1
@@ -98,5 +122,17 @@ CloseStartMenu::
 	ldh a, [hJoyPressed]
 	bit BIT_A_BUTTON, a
 	jr nz, CloseStartMenu
+	ld a, [wStartMenuCloseMode]
+	and a
+	jr nz, .fullClose
+	; BG map is untouched by the START window. Restore its WRAM tilemap
+	; instead of rebuilding the map from block graphics on direct close.
+	call LoadScreenTilesFromBuffer2DisableBGTransfer
+	ld a, 2
+	ld [wStartMenuCloseMode], a
+	; QOL-1.13E: direct close already restored the map tilemap.
+	; Skip LoadCurrentMapView; submenu/special close keeps full restore.
+	jp CloseTextDisplayFastStart
+.fullClose
 	call LoadTextBoxTilePatterns
 	jp CloseTextDisplay

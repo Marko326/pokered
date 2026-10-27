@@ -102,6 +102,12 @@ HoldTextDisplayOpen::
 	jr nz, HoldTextDisplayOpen
 
 CloseTextDisplay::
+	xor a ; regular text always rebuilds the map
+	jr CloseTextDisplayCore
+CloseTextDisplayFastStart::
+	ld a, 1 ; START direct close already restored the map tilemap
+CloseTextDisplayCore::
+	push af ; mode; the outer saved ROM bank stays below it on stack
 	ld a, [wCurMap]
 	call SwitchToMapRomBank
 	ld a, $90
@@ -131,7 +137,9 @@ CloseTextDisplay::
 	ld a, [wd732]
 	bit 3, a ; used fly warp
 	call z, LoadPlayerSpriteGraphics
-	call LoadCurrentMapView
+	pop af ; close mode, keep DisplayTextID's saved bank on stack
+	and a
+	call z, LoadCurrentMapView
 	pop af
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a

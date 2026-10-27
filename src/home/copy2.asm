@@ -159,6 +159,63 @@ CopyVideoDataDouble::
 	ld c, a
 	jr .loop
 
+
+; START-only transfer: preserve the tested DMG limit of 12 tiles/VBlank.
+; On CGB in actual double-speed mode, transfer 20 tiles/VBlank.
+; This still copies all 128 base glyphs; it NEVER assumes sprite-overlaid
+; font VRAM is cached or valid. All other font transfers are unchanged.
+CopyVideoDataDoubleStartMenu::
+	ldh a, [hAutoBGTransferEnabled]
+	push af
+	xor a
+	ldh [hAutoBGTransferEnabled], a
+	ldh a, [hLoadedROMBank]
+	ldh [hROMBankTemp], a
+
+	ld a, b
+	ldh [hLoadedROMBank], a
+	ld [MBC1RomBank], a
+
+	ld a, e
+	ldh [hVBlankCopyDoubleSource], a
+	ld a, d
+	ldh [hVBlankCopyDoubleSource + 1], a
+	ld a, l
+	ldh [hVBlankCopyDoubleDest], a
+	ld a, h
+	ldh [hVBlankCopyDoubleDest + 1], a
+	; A CGB may have been switched back to 1x for a special scene.
+	; Require both native CGB mode and KEY1's *active* double-speed bit.
+	ld d, 12
+	ldh a, [hCGB]
+	and a
+	jr z, .loop
+	ldh a, [rKEY1]
+	bit 7, a
+	jr z, .loop
+	ld d, 20
+.loop
+	ld a, c
+	cp d
+	jr nc, .keepgoing
+.done
+	ldh [hVBlankCopyDoubleSize], a
+	call DelayFrame
+	ldh a, [hROMBankTemp]
+	ldh [hLoadedROMBank], a
+	ld [MBC1RomBank], a
+	pop af
+	ldh [hAutoBGTransferEnabled], a
+	ret
+.keepgoing
+	ld a, d
+	ldh [hVBlankCopyDoubleSize], a
+	call DelayFrame
+	ld a, c
+	sub d
+	ld c, a
+	jr .loop
+
 ClearScreenArea::
 ; Clear tilemap area cxb at hl.
 	ld a, CHARVAL(" ") ; blank tile
