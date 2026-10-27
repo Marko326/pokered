@@ -93,11 +93,22 @@ ENDC
 	add hl, de
 	dec c
 	jr nz, .spriteStandStillLoop
+	; QOL-1.10: preload the font before the normal dialogue window copy.
+	; Keep the original START menu transfer order unchanged.
+	ldh a, [hSpriteIndexOrTextID]
+	and a
+	jr z, .copyWindowTiles
+	call LoadFontTilePatterns
+.copyWindowTiles
 	ld b, $9c ; window background address
 	call CopyScreenTileBufferToVRAM ; transfer background in WRAM to VRAM
+	ldh a, [hSpriteIndexOrTextID]
+	and a
+	jr nz, .fontReady
+	call LoadFontTilePatterns ; unchanged START menu path
+.fontReady
 	xor a
 	ldh [hWY], a ; put the window on the screen
-	call LoadFontTilePatterns
 	ld a, $01
 	ldh [hAutoBGTransferEnabled], a ; enable continuous WRAM to VRAM transfer each V-blank
 	ret
