@@ -75,6 +75,7 @@ StartMenuReadyToDraw::
 	ldh [hWY], a
 	inc a
 	ldh [hAutoBGTransferEnabled], a
+StartMenuInputLoop::
 .loop
 	call HandleMenuInput
 	ld b, a

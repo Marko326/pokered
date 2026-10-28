@@ -1,10 +1,11 @@
 StartMenu_Pokedex::
 	predef ShowPokedexMenu
-	call LoadScreenTilesFromBuffer2 ; restore saved screen
-	call Delay3
-	call LoadGBPal
-	call UpdateSprites
-	jp RedisplayStartMenu
+	; QOL-1.16A submenu-return V1: the Pokédex already exits through a white
+	; palette. Keep that white cover while rebuilding the Chinese START menu
+	; completely, then reveal it only after WY and the Window transfer are done.
+	call LoadScreenTilesFromBuffer2DisableBGTransfer ; restore saved screen off-screen
+	farcall RestoreStartMenuFromPokedexWhite
+	jp StartMenuInputLoop
 
 StartMenu_Pokemon::
 	ld a, [wPartyCount]
@@ -28,8 +29,11 @@ StartMenu_Pokemon::
 	; call ReloadMapData ; CHS_Fix 28 eloadMapData
 	call ReloadTilesetTilePatterns
 	call RestoreScreenTilesAndReloadTilePatterns
-	call LoadGBPal
-	jp RedisplayStartMenu
+	; QOL-1.16B: keep the Party return under white while rebuilding the complete
+	; Chinese START menu. Do not reveal the restored tilemap and then hide/redraw it
+	; again through RedisplayStartMenu.
+	farcall RestoreStartMenuFromPartyWhite
+	jp StartMenuInputLoop
 .chosePokemon
 	call SaveScreenTilesToBuffer1
 	ld a, FIELD_MOVE_MON_MENU
@@ -344,11 +348,34 @@ StartMenu_Item::
 	ld [wBagSavedMenuItem], a
 	jr nc, .choseItem
 .exitMenu
-	call LoadScreenTilesFromBuffer2 ; restore saved screen
+	; QOL-1.16F: simply opening Bag still uses the 1.16C no-white fast return.
+	; Once the player has opened an item's USE/TOSS flow, translated prompt text
+	; may have reused the DFS tiles that the saved START tilemap points at.  Bag
+	; is an overlay menu, so keep it visible while START/DFS are rebuilt off-screen
+	; and reveal the repaired parent directly; do not add a full-screen white flash.
+	ld a, [wStartMenuClosePending]
+	and a
+	jr nz, .exitMenuDirtyDFS
+.fastExitMenu
+	call LoadScreenTilesFromBuffer2 ; restore saved START screen
+	farcall RestoreStartMenuInputStateFromSaved
 	call LoadTextBoxTilePatterns
 	call UpdateSprites
-	jp RedisplayStartMenu
+	jp StartMenuInputLoop
+.exitMenuDirtyDFS
+	xor a
+	ld [wStartMenuClosePending], a
+	call LoadScreenTilesFromBuffer2DisableBGTransfer ; restore parent screen in RAM only
+	call LoadTextBoxTilePatterns
+	farcall RestoreStartMenuFromItemNoWhite
+	jp StartMenuInputLoop
 .choseItem
+	; Any item interaction opens translated USE/TOSS or item-result text and can
+	; repurpose the CHS DFS cache.  wStartMenuInputCapture is disabled while a
+	; submenu is active, so its paired pending byte is safe as a temporary dirty
+	; latch until Bag returns to START.
+	ld a, 1
+	ld [wStartMenuClosePending], a
 ; erase menu cursor (blank each tile in front of an item name)
 	ld a, CHARVAL(" ")
 	ldcoord_a 5, 4
@@ -425,6 +452,10 @@ StartMenu_Item::
 	ld a, [wActionResultOrTookBattleTurn]
 	and a
 	jp z, ItemMenuLoop
+	; This item closes START instead of returning to the parent menu; do not leave
+	; the Bag-only DFS dirty latch armed for the next START session.
+	xor a
+	ld [wStartMenuClosePending], a
 	jp CloseStartMenu
 .useItem_partyMenu
 	ld a, [wUpdateSpritesEnabled]
@@ -519,10 +550,14 @@ StartMenu_TrainerInfo::
 	and a ;
 	call z, Delay3;
 
-	call LoadGBPal
+	; QOL-1.16C: keep the Trainer Card's existing white cover until the complete
+	; Chinese START menu has been rebuilt and transferred. The old tail restored
+	; the palette first and then hid/redrew START, exposing the overworld between
+	; the two screens.
+	farcall RestoreStartMenuFromTrainerWhite
 	pop af
 	ldh [hTileAnimations], a
-	jp RedisplayStartMenu
+	jp StartMenuInputLoop
 
 ; loads tile patterns and draws everything except for gym leader faces / badges
 DrawTrainerInfo:
@@ -698,15 +733,24 @@ StartMenu_SaveReset::
 	jp HoldTextDisplayOpen
 
 StartMenu_Option::
+	; QOL-1.16D: Options reuses the CHS DFS glyph slots. If its glyphs are
+	; generated while the old START window is still visible, the START labels
+	; briefly turn into Options text/garbage. Cover both directions with the
+	; existing white transition and only reveal a fully transferred screen.
+	call GBPalWhiteOutWithDelay3
 	xor a
 	ldh [hAutoBGTransferEnabled], a
 	call ClearScreen
 	call UpdateSprites
-	callfar DisplayOptionMenu
-	call LoadScreenTilesFromBuffer2 ; restore saved screen
+	callfar DisplayStartMenuOptionMenu
+	; The Options screen is now stable. Hide it before restoring START glyphs,
+	; then rebuild the parent menu under white just like the proven Party/Trainer
+	; returns. Do not pass through RedisplayStartMenu (which would expose map).
+	call GBPalWhiteOutWithDelay3
+	call LoadScreenTilesFromBuffer2DisableBGTransfer ; restore saved START screen
 	call LoadTextBoxTilePatterns
-	call UpdateSprites
-	jp RedisplayStartMenu
+	farcall RestoreStartMenuFromOptionsWhite
+	jp StartMenuInputLoop
 
 SwitchPartyMon::
 	call SwitchPartyMon_InitVarOrSwapData ; swap data

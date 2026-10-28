@@ -491,7 +491,18 @@ SaveScreenInfoText:
 	next "#DEX    "
 	next "TIME@"
 
+; QOL-1.16D: START-only entry. A=1 is kept on the stack across initial
+; construction so the completed Options screen can restore the palette only
+; after its normal three BG-transfer frames. Other callers use A=0 and retain
+; their original behavior.
+DisplayStartMenuOptionMenu::
+	ld a, 1
+	jr DisplayOptionMenu.entry
+
 DisplayOptionMenu:
+	xor a
+.entry
+	push af
 	hlcoord 0, 0
 	ld b, 3
 	ld c, 18
@@ -505,7 +516,7 @@ DisplayOptionMenu:
 	ld c, 18
 	call TextBoxBorder
 	; 与主菜单共用版本号，不再显示原汉化版的静态版本标签。
-	hlcoord 11, 0 ; QOL-1.15 正式标记为 8 字符，右对齐至第 18 列。
+	hlcoord 11, 0 ; QOL-1.16 正式标记为 8 字符，右对齐至第 18 列。
 	ld de, GameVersionText
 	call PlaceString
 	hlcoord 1, 1
@@ -536,6 +547,9 @@ DisplayOptionMenu:
 	ld a, $01
 	ldh [hAutoBGTransferEnabled], a ; enable auto background transfer
 	call Delay3
+	pop af
+	and a
+	call nz, LoadGBPal ; START entry was held white until the complete Options screen is visible
 .loop
 	call PlaceMenuCursor
 	call SetOptionsFromCursorPositions

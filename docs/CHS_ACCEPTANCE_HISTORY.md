@@ -468,3 +468,80 @@
 - 与清理前的 QOL-1.15 红版 MAP（ROM0 287 B、Bank `$01` 3 B）相比，清理后 ROM0 回收 **34 B**，Bank `$01` 回收 **162 B**。Bank `$01` 的空间险情因此缓解；但 ROM0 仍只有 321 B，未来继续加代码需要控制常驻空间。
 - 用户表示 DMG/CGB 菜单速度和连按跟手性已满意，要求结束 START 性能优化并正式整理三件套。此前用户确认 1.15E 各主菜单跳转恢复正确；本轮空间布局调整之后，未收到同一 ROM 的逐项回归视频。应区分此前的功能验收和本轮新构建的 MAP 结果。
 - 仍待：蓝版 RGBDS 1.0.4 编译及 MAP、Options `QOL-1.15` 的位置、中文姓名、Safari、室内外、骑行/冲浪、NPC/OAM、传送/战斗、子菜单返回与旧存档的集中回归。用户尚未执行本轮 Git Commit（截至本次交接）；助手未接触用户实际 Git 工作树、未执行 Git Commit/Push，也未取得红蓝 MAP 原文件。
+
+## QOL-1.16A — 图鉴返回 START 白屏安全恢复（测试候选；后续调整验收口径）
+
+- **基线**：正式 `QOL-1.15`；开始独立的 START 二级菜单返回显示优化，不继续追求 START 打开性能。
+- **版本标记**：游戏内 `QOL-1.16A`；9 字符测试标记在 Options 右上角从 `(11,0)` 左移至 `(10,0)`。
+- **范围**：只改图鉴返回 START；公共 `RedisplayStartMenu` 与 Party / Item / Trainer / Save / Options 原路径不变。
+- **实现**：图鉴退出后恢复保存画面/DFS，再在白屏下重画完整中文 START、更新 Safari 信息/OAM、传输 Window，最后 `LoadGBPal`，直接进入 START 输入循环。
+- **录像边界更正**：用户明确说明 `1.16A图鉴退出到菜单.mp4` 只有 DMG；不能据此宣称 1.16A 的 CGB 已通过。直接 160×144 帧捕获中可见单帧水平 palette split / START 中间态。
+- **后续对照**：用户提供 My OldBoy 手机内录并反馈 GBP / My OldBoy 正常播放时未观察到明显异常；白屏结束直接出现完整 START。英文参考版 `1.18F` 的直接帧捕获也出现类似单帧扫描线分割，说明它不是中文 DFS 独有问题。
+- **当前决定**：QOL-1.16A 消除了原 QOL-1.15 返回时多帧裸地图的主要问题。单帧 scanline palette split 作为非阻断观察项接受，不额外同步、不修改全局 palette 函数；不再为此开发 DMG 专用版本。
+- **交付边界**：源码/补丁静态校验不等于 ROM 编译；当前环境无项目要求的 RGBDS 1.0.4。CGB 对应的 1.16A 专项录像仍未收到。
+
+## QOL-1.16B — Party 返回 START 白屏恢复（测试候选）
+
+- **基线与交付**：累计候选以正式 `QOL-1.15` 为基线，包含 QOL-1.16A 图鉴返回方案并新增 Party 返回方案；本轮只交一个补丁压缩包，不与旧的 A 补丁叠加。
+- **版本标记**：游戏内 `QOL-1.16B`；9 字符版本标记在 Options 右上角起始列保持 `(10,0)`。
+- **范围**：Party 入口、Party 内部选择/操作及公共 `RedisplayStartMenu` 不改。只调整 Party 退出后最后的返回阶段。
+- **实现**：保留原有 `GBPalWhiteOutWithDelay3`、`ReloadTilesetTilePatterns`、`RestoreScreenTilesAndReloadTilePatterns` 以恢复地图图块、精灵、玩家图形、文本框与 DFS；不再先 `LoadGBPal` 再进入 `RedisplayStartMenu`，改为白屏下统一重画 START、完整传输 Window、最后恢复 palette，然后直接进入 `StartMenuInputLoop`。
+- **静态验证**：`verify_start_return_v2_static.py` 与既有 `verify_qol115e_static.py` 均 PASS；`git diff --check` 通过；累计补丁正向应用、反向检查/撤销及 9 个受影响文件的字节一致性均 PASS。`make red` 已实际执行，但在 RGBDS 检查阶段因环境缺少 `rgbasm` 失败；未编译 ROM。
+- **运行验收**：用户后续分别提供 CGB / DMG 的 QOL-1.16B Party 往返录像。正常速度及逐帧抽查均未再出现多帧裸地图、错误中文、缺边框或半个 START Window；DMG 只保留此前已接受的单帧 palette scanline 特征。按当前项目验收口径，Party 返回记为 **PASS**。
+- **构建边界**：若当前环境缺 RGBDS 1.0.4，必须明确记录未编译 Red/Blue ROM，不得把静态检查等同于编译或模拟器验收。
+
+
+## QOL-1.16C — 道具 + RED/Trainer 返回 START（测试候选）
+
+- **基线**：用户已实测通过的 QOL-1.16B 工作树；本版改为一轮同时处理两个菜单，减少迭代次数。
+- **版本标记**：游戏内 `QOL-1.16C`，Options 右上角仍从 `(10,0)` 绘制。
+- **Bag 返回**：保留无白屏语义。恢复进入 Bag 前保存的 START 后，不再进入会隐藏 Window 的 `RedisplayStartMenu`；新增轻量状态恢复，仅重建菜单 watched keys、当前/最后选项、最大项、光标地址和实心光标，再直接进入 `StartMenuInputLoop`。不重新 `DrawStartMenu`，避免无白屏状态下额外 churn DFS。
+- **Trainer 返回**：保留原有 `GBPalWhiteOut`、字体/地图恢复和 DMG `Delay3` 防护；最后改为在白屏下调用共享 START 重建/Window 传输 helper，palette 最后恢复，然后直接进入输入循环，不再露地图后再次重画。
+- **未改**：Bag/Trainer 的入口主体、道具使用逻辑、Trainer Card 内容、Save、Options、公共 `RedisplayStartMenu`、全局 palette 函数。
+- **静态边界**：源码守卫只能证明控制流结构，不等于 ROM/模拟器验收。仍需用户分别提供 CGB / DMG 的 Bag 与 Trainer 往返录像。
+
+## QOL-1.16D — Options 进入/返回 DFS 安全切换（候选）
+- **前置验收**：用户提供 1.16C 的 CGB/DMG 道具与 RED/Trainer 视频并反馈“没啥问题”；逐帧抽查未见新的多帧裸地图、明显错字或半窗口，Bag/Trainer 暂记通过。
+- **范围**：同时处理 Options 进入与返回。进入前先白化，Options 完成原有三帧 BG 传输后才恢复 palette，避免旧 START 使用中的 DFS tile 被新 Options 字形提前覆盖；退出时先白化，再恢复/重画完整 START 并直接回 `StartMenuInputLoop`。
+- **版本标记**：`QOL-1.16D`，Options 右上角起点保持 `(10,0)`。
+- **未改**：Save 的退出语义、公共 `RedisplayStartMenu`、全局 palette 函数，以及 Pokédex/Party/Bag/Trainer 已有返回实现。
+- **待实测**：CGB/DMG 各录一次 START→Options→START，重点确认无混合字/乱码、无裸地图、无半窗口；白化时长是否可接受可在通过后再单独压缩。
+
+## QOL-1.16E — Bag 道具交互后的 DFS 恢复（候选）
+
+- **前置验收**：用户确认 QOL-1.16D 的 Options 在 CGB / DMG 往返均“没什么问题”，按当前口径记为 **PASS**；Save 仍维持原有退出语义，不纳入本轮。
+- **新回归**：QOL-1.16C 的 Bag 快速返回在“仅打开 Bag 后直接 B 返回”时正常；但一旦进入某个道具的 USE/TOSS / 结果提示流程（用户示例：在地图上使用精灵球，出现“现在不能使用”提示），随后退出 Bag 时 START 文字会显示为其他汉字/乱码。截图显示菜单框与 tile 位置正确，异常集中在中文字形内容。
+- **根因**：1.16C 为保持 Bag 无白屏返回，只恢复进入 Bag 前保存的 START tilemap 并重建输入状态，不重新 `DrawStartMenu`。中文提示会复用 CHS DFS 动态字形槽，导致保存 tilemap 中的旧 tile ID 仍在，但对应 VRAM 字形已被道具提示覆盖。
+- **修复策略**：保留正常 Bag→B 的 1.16C 无白屏快路径；只要玩家进入过某个道具的 USE/TOSS 流程，就把本次 Bag 会话标记为 DFS dirty。退出时 dirty 分支先短白化，再离屏恢复父 START、加载文本框图块并走共享 `RestoreStartMenuFromItemWhite` 完整重画/传输 START；最后恢复 palette。这样不牺牲单纯浏览 Bag 的快速返回。
+- **临时标志**：复用 `wStartMenuClosePending` 作为 Bag 子菜单期间的 dirty latch；进入真实子菜单前 `wStartMenuInputCapture=0`，因此该 pending 字节不会被当作 START 输入消费。返回 START 前必须清零；会直接关闭 START 的成功道具路径也显式清零，避免状态泄漏到下一次 START 会话。
+- **版本标记**：`QOL-1.16E`，仍为 9 字符，Options 右上角起点保持 `(10,0)`。
+- **待验收**：CGB / DMG 各测试两条：① START→Bag→直接 B（应保持无白屏快返）；② START→Bag→选择地图上不能使用的道具→关闭提示→B 返回（START 中文必须恢复正确；允许 dirty 分支短白屏，不允许乱码、裸地图或半窗口）。
+
+
+## QOL-1.16F — Bag dirty 无白屏返回（候选）
+
+- **1.16E 结论调整**：功能上已修复提示后的 START 乱码，但用户录像确认 dirty 返回会增加约 12 帧整屏白闪；由于 Bag 是覆盖式菜单而非独立全屏子菜单，该方案被判定为视觉不合格，不作为最终实现。
+- **修复方向**：保留 dirty 检测，但移除 Bag dirty 分支的 `GBPalWhiteOutWithDelay3` 和 white-return helper。退出时先在 RAM 恢复父 START，保持当前 Bag 画面继续显示；随后关闭 AutoBG，在后台重新 `DrawStartMenu` 生成被提示污染的中文 DFS 字形、恢复菜单输入/光标状态，最后通过 `CopyStartMenuWindowFast` 一次进入既有 VBlank 传输流程。
+- **模式策略**：CGB/DMG 共用同一 Bag overlay 返回结构；不新增 DMG palette 等待，因为该路径不再主动切换 palette。
+- **版本标记**：`QOL-1.16F`，Options 右上角起点继续保持 `(10,0)`。
+- **待验收**：CGB/DMG 各测试 clean Bag exit 和“不能使用道具→提示→返回 Bag→B”。dirty 路径目标是无白闪、无错字、无多帧裸地图；正常 Bag 快返不得因本修复变慢。
+
+
+## QOL-1.16 — START 二级菜单进入/返回显示优化（正式版）
+
+### 最终范围
+- 基线为正式 `QOL-1.15`；测试候选 A→F 依次处理 Pokédex、Party、Bag、Trainer/RED、Options 以及 Bag 道具提示污染 DFS 后的无白闪恢复。
+- 公共 `RedisplayStartMenu`、Save/记录原有关闭菜单语义、全局 palette 函数均未被改成新的统一大路径；各子菜单按其视觉结构分别恢复。
+- Pokédex / Party / Trainer 在原有白屏阶段完成父 START 重建后直接回 `StartMenuInputLoop`；Options 用白屏覆盖 START/Options 共用 DFS 的字形切换；Bag 作为覆盖式菜单保持无白屏返回，dirty 分支在当前 Bag 可见时后台重建 START/DFS 后再提交 Window。
+
+### 最终用户验收
+- 用户提供最新 `QOL-1.16F` 项目工作区和“使用无法使用道具提示后，返回菜单栏，即全菜单栏功能回归”录像，并明确反馈已回顾本轮所有修改，CGB / DMG 两种模式均未发现新的明显问题，要求正式清理三件套。
+- 最新录像抽查可见 Bag 中选择不能使用的道具、提示结束后返回 START 时不再出现 QOL-1.16E 的约 12 帧整屏白闪，START 中文标签也未再发生 DFS 错字；RED/Trainer、Options 等返回画面未见明显裸地图或残缺 Window。
+- 此前 Party CGB/DMG 专项录像、Bag/Trainer CGB/DMG 专项录像与 Options 双模式录像均已分别获得用户确认。Save/记录仍按原版语义结束 START，不纳入“返回 START”通过项。
+- DMG 精确逐帧捕获偶见单帧 palette scanline split；英文参考版也可复现，且用户在 GBP / My OldBoy 正常播放未观察到明显异常，因此正式版列为非阻断硬件/模拟器时序特征，不再追加全局 palette 等待。
+
+### 正式清理与交付边界
+- 正式标识由 `QOL-1.16F` 清理为 `QOL-1.16`；字符串由 9 字符恢复为 8 字符，Options 右上角起点同步从 `(10,0)` 恢复到 `(11,0)`。二级菜单 A～F 已测试执行逻辑不再修改。
+- 用户最新工作区缺少中间候选的 `scripts/verify_start_return_v5_static.py`。该文件只用于补丁静态守卫，不被根 Makefile、`prepare_build.py` 或 ROM 运行时引用，未应用不会影响 ROM 功能。正式收口用 `scripts/verify_qol116_static.py` 取代过期的候选守卫。
+- 最新工作区的 `build-check.log` 显示用户 Termux 环境执行了 `make`，复用现有 `buildRB/pokered.gbc` 并复制到根目录；本记录不等于 AI 独立编译，也没有新蓝版 MAP。正式三件套的增量与全量补丁须分别在对应基线做正向、反向和最终文件一致性验证，二者不可叠加。
+- Git Commit / Push 仍由用户在自己的工作区执行。
