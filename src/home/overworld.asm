@@ -4,9 +4,8 @@ HandleMidJump::
 	farjp _HandleMidJump
 
 EnterMap::
-; Load a new map. Discard any SELECT tap queued in the previous map.
-	xor a
-	ld [wBikeSelectPending], a
+; A queued START/SELECT belongs only to the current controllable tile step.
+	call ClearStartMenuInputState
 	ld a, $ff
 	ld [wJoyIgnore], a
 	call LoadMapData
@@ -67,15 +66,23 @@ OverworldLoopLessDelay::
 	ld a, [wCurOpponent]
 	and a
 	jp nz, .newBattle
-	; MOV-1.8: honor a SELECT tap from within the previous walking step.
-	ld a, [wBikeSelectPending]
+	; QOL-1.15B: a quick START press during the preceding walking
+	; animation must not disappear when the button is released before
+	; the next idle joypad poll. Only replay it once movement is complete.
+	ld a, [wStartMenuPending]
 	and a
-	jr z, .noQueuedSelect
+	jr z, .noQueuedStart
 	xor a
-	ld [wBikeSelectPending], a
-	farcall SelectBicycleShortcut ; all location / script restrictions still apply
-	jp OverworldLoop
-.noQueuedSelect
+	ld [wStartMenuPending], a
+	call IsPlayerCharacterBeingControlledByGame
+	jr nz, .noQueuedStart ; scripts/doors never inherit a queued START
+	ld a, [wd730]
+	bit 2, a
+	jr nz, .noQueuedStart
+	ld a, [wd736]
+	bit 6, a
+	jr z, .startButtonPressed
+.noQueuedStart
 	ld a, [wd730]
 	bit 7, a ; are we simulating button presses?
 	jr z, .notSimulating
@@ -86,16 +93,36 @@ OverworldLoopLessDelay::
 .checkIfStartIsPressed
 	bit BIT_START, a
 	jr z, .startButtonNotPressed
-; if START is pressed
+.startButtonPressed
+	; START takes priority over any SELECT queued on the same step.
 	xor a ; TEXT_START_MENU
+	ld [wBikeSelectPending], a
+	ld [wStartMenuPending], a
 	ldh [hSpriteIndexOrTextID], a
 	jp .displayDialogue
 .startButtonNotPressed
+	; MOV-1.8: replay SELECT if no START is requested.
+	ld a, [wBikeSelectPending]
+	and a
+	jr z, .noQueuedSelect
+	xor a
+	ld [wBikeSelectPending], a
+	farcall SelectBicycleShortcut ; location/script restrictions still apply
+	jp OverworldLoop
+.noQueuedSelect
+	; The queued SELECT test clobbered A. Reload the live key edge.
+	ld a, [wd730]
+	bit 7, a
+	jr z, .notSimulatingAfterSelect
+	ldh a, [hJoyHeld]
+	jr .checkOtherKeys
+.notSimulatingAfterSelect
+	ldh a, [hJoyPressed]
+.checkOtherKeys
 	bit BIT_A_BUTTON, a
 	jr nz, .aButtonPressed
 	bit BIT_SELECT, a
 	jp z, .checkIfDownButtonIsPressed
-	; MOV-1.8: SELECT shortcut; keep the bike rules in ROMX.
 	farcall SelectBicycleShortcut
 	jp OverworldLoop
 .aButtonPressed
@@ -290,24 +317,31 @@ OverworldLoopLessDelay::
 	jr z, .noSpinning
 	farcall LoadSpinnerArrowTiles
 .noSpinning
-	; MOV-1.8: hJoyPressed is an edge, normally missed during a tile step.
-	; Poll it while moving and queue the action until the step is complete.
-	; Do not change scripted / door / ledge movement input.
+	; MOV-1.8 / QOL-1.15B: poll one-frame START and SELECT taps
+	; during a tile step. Never interrupt an in-progress sprite move;
+	; replay START at the next safe idle point before SELECT.
+	; Do not alter simulated/scripted movement, doors or ledges.
 	call IsPlayerCharacterBeingControlledByGame
-	jr nz, .skipSelectPoll
+	jr nz, .skipStepButtonPoll
 	ld a, [wd736]
 	bit 6, a
-	jr nz, .skipSelectPoll
+	jr nz, .skipStepButtonPoll
 	ld a, [wd730]
 	bit 2, a
-	jr nz, .skipSelectPoll
+	jr nz, .skipStepButtonPoll
 	call Joypad
 	ldh a, [hJoyPressed]
+	bit BIT_START, a
+	jr z, .noStepStart
+	ld a, 1
+	ld [wStartMenuPending], a
+.noStepStart
+	ldh a, [hJoyPressed]
 	and SELECT
-	jr z, .skipSelectPoll
+	jr z, .skipStepButtonPoll
 	ld a, 1
 	ld [wBikeSelectPending], a
-.skipSelectPoll
+.skipStepButtonPoll
 	call UpdateSprites
 
 .moveAhead2
@@ -354,6 +388,8 @@ OverworldLoopLessDelay::
 	res 2, [hl] ; standing on warp flag
 	jp nc, CheckWarpsNoCollision ; check for warps if there was no battle
 .battleOccurred
+	; A battle takes ownership of the controls; discard walking button taps.
+	call ClearStartMenuInputState
 	ld hl, wd72d
 	res 6, [hl]
 	ld hl, wFlags_D733
@@ -2486,4 +2522,15 @@ LoadDestinationWarpPosition::
 	pop af
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a
+	ret
+
+
+; Clear transient START/SELECT input state when map/battle ownership changes.
+; Shared by EnterMap and the battle handoff to reduce duplicated ROM0 code.
+ClearStartMenuInputState::
+	xor a
+	ld [wBikeSelectPending], a
+	ld [wStartMenuPending], a
+	ld [wStartMenuInputCapture], a
+	ld [wStartMenuClosePending], a
 	ret

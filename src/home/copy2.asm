@@ -94,6 +94,7 @@ CopyVideoData::
 .done
 	ldh [hVBlankCopySize], a
 	call DelayFrame
+	call CaptureStartMenuInputIfEnabled
 	ldh a, [hROMBankTemp]
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a
@@ -105,21 +106,26 @@ CopyVideoData::
 	ld a, 8
 	ldh [hVBlankCopySize], a
 	call DelayFrame
+	call CaptureStartMenuInputIfEnabled
 	ld a, c
 	sub 8
 	ld c, a
 	jr .loop
 
-; Shared 1bpp VBlank transfer. Keep the common 8-tile path's original
-; frame count and bank restore behavior; only the guarded CGB START caller
-; requests 20 tiles/VBlank (its cache is already cleared by DFS).
+; Shared 1bpp VBlank transfer. Ordinary font loading stays at
+; 8 tiles/frame (including its original final empty frame).
 CopyVideoDataDouble::
 	ld a, 8
 	jr CopyVideoDataDoubleCore
 
-; START-only entry. Caller verifies native CGB + active double speed,
-; a safe redraw state and exactly 20 fixed 1bpp font tiles.
-; No second ROM0 bank-switch/VRAM-transfer implementation is needed.
+; QOL-1.15A safe START 1x path (DMG and CGB 1x): the 12-tile
+; VBlank limit was already tested for QOL-1.13. The caller uploads
+; exactly 20 fixed tiles, so this takes two non-empty frames.
+CopyVideoDataDoubleStartMenu1x::
+	ld a, 12
+	jr CopyVideoDataDoubleCore
+
+; Guarded START CGB 2x path: 20 fixed tiles in one frame.
 CopyVideoDataDoubleStartMenu::
 	ld a, 20
 CopyVideoDataDoubleCore:
@@ -160,6 +166,7 @@ CopyVideoDataDoubleCore:
 .done
 	ldh [hVBlankCopyDoubleSize], a
 	call DelayFrame
+	call CaptureStartMenuInputIfEnabled
 .restore
 	ldh a, [hROMBankTemp]
 	ldh [hLoadedROMBank], a
@@ -172,12 +179,13 @@ CopyVideoDataDoubleCore:
 	ld a, d
 	ldh [hVBlankCopyDoubleSize], a
 	call DelayFrame
+	call CaptureStartMenuInputIfEnabled
 	ld a, c
 	sub d
 	ld c, a
 	jr nz, .loop
 	; Preserve the normal 8-tile routine's zero-size final frame.
-	; The START-only 20-tile path finishes without an empty frame.
+	; Both START-only paths finish without an empty frame.
 	ld a, d
 	cp 8
 	jr z, .loop
@@ -211,16 +219,20 @@ CopyScreenTileBufferToVRAM::
 	decoord 0, 6 * 0
 	call .setup
 	call DelayFrame
+	call CaptureStartMenuInputIfEnabled
 
 	ld hl, $600 * 1
 	decoord 0, 6 * 1
 	call .setup
 	call DelayFrame
+	call CaptureStartMenuInputIfEnabled
 
 	ld hl, $600 * 2
 	decoord 0, 6 * 2
 	call .setup
-	jp DelayFrame
+	call DelayFrame
+	call CaptureStartMenuInputIfEnabled
+	ret
 
 .setup
 	ld a, d

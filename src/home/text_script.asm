@@ -113,6 +113,7 @@ CloseTextDisplayCore::
 	ld a, $90
 	ldh [hWY], a ; move the window off the screen
 	call DelayFrame
+	call CaptureStartMenuInputIfEnabled
 	call LoadGBPal
 	xor a
 	ldh [hAutoBGTransferEnabled], a ; disable continuous WRAM to VRAM transfer each V-blank
@@ -143,6 +144,22 @@ CloseTextDisplayCore::
 	pop af
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a
+	; QOL-1.15D: a distinct START press during closing reopens the menu
+	; once the overworld loop is safe to accept it again.
+	ld a, [wStartMenuInputCapture]
+	and a
+	jr z, .doneStartMenuInput
+	ld a, [wStartMenuClosePending]
+	and a
+	jr z, .clearStartMenuInput
+	xor a
+	ld [wStartMenuClosePending], a
+	ld a, 1
+	ld [wStartMenuPending], a
+.clearStartMenuInput
+	xor a
+	ld [wStartMenuInputCapture], a
+.doneStartMenuInput
 	jp UpdateSprites
 
 DisplayPokemartDialogue::

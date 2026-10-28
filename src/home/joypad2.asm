@@ -52,6 +52,48 @@ JoypadLowSensitivity::
 	ldh [hFrameCounter], a
 	ret
 
+; QOL-1.15D: sample START during the menu's VBlank waits. The original
+; opening START edge has already updated hJoyLast, so only a distinct
+; release/re-press is queued. Preserve registers because callers use them
+; as transfer counters/pointers.
+CaptureStartMenuInput::
+	push af
+	push bc
+	push de
+	push hl
+	call Joypad
+	ldh a, [hJoyPressed]
+	bit BIT_START, a
+	jr z, .done
+	ld a, 1
+	ld [wStartMenuClosePending], a
+.done
+	pop hl
+	pop de
+	pop bc
+	pop af
+	ret
+
+; Shared ROM0 gate for VBlank wait sites. Replacing repeated
+; load/test/conditional-call sequences saves code without changing when
+; Joypad is sampled or which registers/flags return to each caller.
+CaptureStartMenuInputIfEnabled::
+	ld a, [wStartMenuInputCapture]
+	and a
+	ret z
+	jp CaptureStartMenuInput
+
+; START-menu-only replacement for Delay3. Polling once per VBlank prevents
+; a quick START tap during the cursor settle delay from disappearing.
+StartMenuInputDelay3::
+	ld c, 3
+.loop
+	call DelayFrame
+	call CaptureStartMenuInput
+	dec c
+	jr nz, .loop
+	ret
+
 WaitForTextScrollButtonPress::
 	ldh a, [hDownArrowBlinkCount1]
 	push af

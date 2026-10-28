@@ -15,8 +15,29 @@ HandleMenuInput_::
 	xor a
 	ld [wAnimCounter], a ; counter for pokemon shaking animation
 	call PlaceMenuCursor
+	ld a, [wStartMenuInputCapture]
+	and a
+	jr z, .normalDelay3
+	; QOL-1.15E: NEVER skip the cursor settle / visible window wait.
+	; A queued second START is consumed only after the full menu and
+	; cursor have appeared for the normal three VBlanks.
+	call StartMenuInputDelay3
+	jr .loop2
+.normalDelay3
 	call Delay3
 .loop2
+	ld a, [wStartMenuInputCapture]
+	and a
+	jr z, .pollJoypad
+	ld a, [wStartMenuClosePending]
+	and a
+	jr z, .pollJoypad
+	xor a
+	ld [wStartMenuClosePending], a
+	ld a, START
+	ldh [hJoy5], a
+	jr .keyPressed
+.pollJoypad
 	push hl
 	ld a, [wPartyMenuAnimMonEnabled]
 	and a ; is it a pokemon selection menu?

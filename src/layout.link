@@ -185,6 +185,9 @@ ROMX $2D
 	"Quantity Menu Helpers"
 	"Number Printing"
 	"Player Speed Steps"
+	; START helpers were floating into nearly-full Bank $01. They are
+	; far-called from ROM0 and can live in this spare helper bank.
+	"START Window Transfer Fast"
 
 ROMX $3C
 	"CGB Native Color"

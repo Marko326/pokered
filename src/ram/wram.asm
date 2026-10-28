@@ -2051,9 +2051,14 @@ wObtainedHiddenCoinsFlags:: flag_array 16
 wWalkBikeSurfState:: db
 
 ; MOV-1.8: one-frame SELECT taps during an active tile step.
-; Uses one byte of existing unnamed padding (keeps WRAM layout fixed).
+; QOL-1.15B: capture START taps during the same step as well.
+; QOL-1.15D: retain a second START edge while the menu opens/closes.
+; All transient flags split existing padding; no WRAM/save address shifts.
 wBikeSelectPending:: db
-	ds 9
+wStartMenuPending:: db
+wStartMenuInputCapture:: db
+wStartMenuClosePending:: db
+	ds 6
 
 wTownVisitedFlag:: flag_array NUM_CITY_MAPS
 

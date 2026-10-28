@@ -549,6 +549,7 @@ INCLUDE "engine/overworld/player_speed.asm"
 SECTION "SELECT Bicycle Shortcut", ROMX
 INCLUDE "engine/overworld/bike_shortcut.asm"
 
-; QOL-1.14A: floating ROMX helper, no extra ROM0 transfer code.
+; QOL-1.15 space cleanup: layout.link places this far-called helper
+; section in spare ROMX Bank $2D, not the nearly-full fixed Bank $01.
 SECTION "START Window Transfer Fast", ROMX
 INCLUDE "engine/menus/start_window_fast.asm"
