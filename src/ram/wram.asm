@@ -938,7 +938,11 @@ wHPBarOldHP:: dw
 wHPBarNewHP:: dw
 wHPBarDelta:: db
 wHPBarTempHP:: dw
-	ds 11
+; QOL-1.17: scratch while the battle HP animation is running only.
+; 0 = original cadence, 1 = 1 px/frame, 2 = 2 px/frame, 3 = 4 px/frame.
+wHPBarDamageSpeed:: db
+wHPBarDamagePhase:: db
+	ds 9
 wHPBarHPDifference:: dw
 
 NEXTU

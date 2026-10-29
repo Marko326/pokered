@@ -188,6 +188,7 @@ ROMX $2D
 	; START helpers were floating into nearly-full Bank $01. They are
 	; far-called from ROM0 and can live in this spare helper bank.
 	"START Window Transfer Fast"
+	"Battle Damage HP Animation"
 
 ROMX $3C
 	"CGB Native Color"

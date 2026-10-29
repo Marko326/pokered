@@ -98,7 +98,7 @@ Makefile 的工具定位 ROM。`make red` 会先在 `buildRB/` 内编译，随�
 `buildRB/` 或根目录生成的 ROM 文件上进行长期修改。
 
 **游戏内版本号**：在 `src/data/game_version.asm` 中统一编辑
-`GameVersionText`（当前正式标识 `QOL-1.16`）。主菜单左下角和设置界面右上角
+`GameVersionText`（当前正式标识 `QOL-1.17`）。主菜单左下角和设置界面右上角
 使用同一版本文字；进入 Options 或 Continue 前仍先清除主菜单底部版本号，
 Options 自行绘制右上角版本标识。该字符串目前长度为 8 字符，Options 右上角从 `(11,0)` 开始绘制；后续如增加
 字符，须同时检查 Options 的显示起点与边框覆盖。该文件由 `src/main.asm`

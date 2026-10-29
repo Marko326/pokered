@@ -21,8 +21,8 @@ options = block(sub, 'StartMenu_Option::', 'SwitchPartyMon::')
 save = block(sub, 'StartMenu_SaveReset::', 'StartMenu_Option::')
 
 checks = [
-    ('formal version', 'db "QOL-1.16@"' in ver and 'QOL-1.16F@' not in ver),
-    ('formal Options alignment', 'hlcoord 11, 0 ; QOL-1.16 正式标记为 8 字符' in main),
+    ('formal version', 'db "QOL-1.17@"' in ver and all(f'QOL-1.17{suffix}@' not in ver for suffix in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')),
+    ('formal Options alignment', 'hlcoord 11, 0 ; QOL-1.17 正式标记为 8 字符' in main),
     ('Pokédex safe return', 'RestoreStartMenuFromPokedexWhite' in pokedex and 'jp StartMenuInputLoop' in pokedex and 'RedisplayStartMenu' not in pokedex),
     ('Party safe return', 'RestoreStartMenuFromPartyWhite' in party and 'jp StartMenuInputLoop' in party),
     ('Bag clean fast return', '.fastExitMenu' in item and 'RestoreStartMenuInputStateFromSaved' in item),
@@ -41,5 +41,5 @@ for name, ok in checks:
     if not ok:
         failed.append(name)
 if failed:
-    raise SystemExit('QOL-1.16 static verification failed: ' + ', '.join(failed))
-print('PASS: QOL-1.16 final START submenu return structure')
+    raise SystemExit('QOL-1.17 static verification failed: ' + ', '.join(failed))
+print('PASS: QOL-1.17 final START submenu return structure')

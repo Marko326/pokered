@@ -5080,10 +5080,11 @@ ApplyDamageToEnemyPokemon:
 	ld [wHPBarNewHP+1], a
 	ld a, [hl]
 	ld [wHPBarNewHP], a
-	hlcoord 2, 2
 	xor a
 	ld [wHPBarType], a
-	predef UpdateHPBar2 ; animate the HP bar shortening
+	; QOL-1.17: direct opposing attacks use HP-loss tiers; self-hits and
+	; small damage keep the original animation inside this wrapper.
+	callfar UpdateAttackDamageHPBar
 ApplyAttackToEnemyPokemonDone:
 	jp DrawHUDsAndHPBars
 
@@ -5198,10 +5199,9 @@ ApplyDamageToPlayerPokemon:
 	ld [wHPBarMaxHP+1], a
 	ld a, [hl]
 	ld [wHPBarMaxHP], a
-	hlcoord 10, 9
 	ld a, $01
 	ld [wHPBarType], a
-	predef UpdateHPBar2 ; animate the HP bar shortening
+	callfar UpdateAttackDamageHPBar
 ApplyAttackToPlayerPokemonDone:
 	jp DrawHUDsAndHPBars
 

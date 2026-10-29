@@ -553,3 +553,7 @@ INCLUDE "engine/overworld/bike_shortcut.asm"
 ; section in spare ROMX Bank $2D, not the nearly-full fixed Bank $01.
 SECTION "START Window Transfer Fast", ROMX
 INCLUDE "engine/menus/start_window_fast.asm"
+
+; QOL-1.17: isolated direct-attack damage animation in helper Bank $2D.
+SECTION "Battle Damage HP Animation", ROMX
+INCLUDE "engine/battle/damage_hp_animation.asm"

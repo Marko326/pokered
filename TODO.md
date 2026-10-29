@@ -1,15 +1,19 @@
-# CHS_Mod 当前待办（QOL-1.16 正式）
+# CHS_Mod 当前待办（QOL-1.17 正式源码）
 
-只记录仍未确认的事项；已完成改动、用户实际反馈、失败实验及验收边界统一见 [`docs/CHS_ACCEPTANCE_HISTORY.md`](docs/CHS_ACCEPTANCE_HISTORY.md)。START 打开性能与本轮二级菜单返回显示优化均已收口；此文档不代表已执行 Git Commit/Push。
+只记录仍未确认的事项；已完成改动、用户反馈、失败实验及验收边界统一见 [`docs/CHS_ACCEPTANCE_HISTORY.md`](docs/CHS_ACCEPTANCE_HISTORY.md)。START 打开性能与二级菜单返回显示优化已在 QOL-1.16 收口；本次 HP 分档移植已按用户决定整理为 QOL-1.17。
 
-## QOL-1.16 正式收口后的必要验证
+## QOL-1.17 发布后待验证
 
-- [x] **START 二级菜单返回集中回归**：用户以 QOL-1.16F 工作区分别回顾 CGB / DMG，本轮改过的 Pokédex、Party、Bag、Trainer/RED、Options 均未再发现明显裸地图、错误中文、残缺 Window 或 Bag dirty 白闪；最新录像中“不能使用道具→提示→回 Bag→B”返回 START 正常。
-- [x] **Bag DFS dirty 回归**：普通 Bag→B 继续无白屏快返；进入 USE/TOSS / “不能使用”提示后返回 START，中文 DFS 恢复正常且不再使用 1.16E 的整屏白化遮罩。
-- [x] **Options 进入/返回**：用户确认 CGB / DMG 均无明显乱码或混合字；本轮正式版仅把 9 字符测试标识 `QOL-1.16F` 清理为 8 字符 `QOL-1.16`，Options 起点 `(10,0)` 恢复为 `(11,0)`。
-- [ ] **蓝版与新 MAP**：用户环境用 RGBDS 1.0.4 执行 `make blue`，检查 `buildRB/pokeblue.map`，并重新记录 QOL-1.16 的 ROM0、Bank `$01`、Bank `$2D` 空间。当前最新包只带用户侧红版增量构建日志，不带新 MAP 原文件。
-- [ ] **更广场景回归**：中文玩家名、无图鉴存档、Safari 左上角计数、骑行/冲浪、室内外、NPC/OAM、剧情移动、传送/战斗状态清缓存与旧存档仍可按需集中复核；本轮没有修改这些逻辑。
-- [ ] 用户完成 Git Commit 后自行核实分支、HEAD 与远端 Push 状态。AI 未在用户仓库执行 Commit/Push。
+- [ ] **红/蓝 ROM 与新 MAP**：本次交付环境没有官方 RGBDS 1.0.4，未编译本次源码、未取得新 MAP。用户本地按 `README.build.md` 执行 `make red`、`make blue`，核对 `buildRB/pokered.map`、`buildRB/pokeblue.map` 及 Bank `$2D` 空间。静态检查不代表 ROM 已编译。
+- [ ] **最小游戏验收**：普通敌我攻击抽查四档伤害比例、致死归零、HP 数字同步、混乱自伤/反伤和回血原路径；不要求全场景回归。细节见 [`docs/HP_DAMAGE_SPEED_PORT.md`](docs/HP_DAMAGE_SPEED_PORT.md)。
+- [ ] **中英文默认物种名的旧档兼容（独立需求，本次不改代码）**：双语默认名随设置显示、自定义昵称原样保留、进化判断一致；见 [`docs/NAME_LANGUAGE_COMPATIBILITY.md`](docs/NAME_LANGUAGE_COMPATIBILITY.md)。
+- [ ] **进出房门的异常闪烁（独立 TODO，本次不改代码）**：后续针对门口地图切换与画面遮罩/调色板时序做最小复现，区分 DMG/CGB；不纳入本轮 HP 移植验收。
+- QOL-1.16 已由用户确认 Push；本次 QOL-1.17 是从该正式基线形成的工作树交付，助手未在用户仓库执行 Commit/Push。
+
+## QOL-1.16 历史基线与非本轮回归
+
+- [x] QOL-1.16 红/蓝 MAP 已由用户提供；它们仅是旧版空间基线，不代表 QOL-1.17 新构建的 MAP。
+- 历史 START 菜单验证已记录在统一验收历史；本轮不修改 START 菜单，不将旧版本的完整回归清单重复列作 HP 移植门槛。
 
 ## 已接受的非阻断现象
 
@@ -22,7 +26,7 @@
 - 图鉴列表上下首尾循环属于另一独立功能，**本轮未修改、未验收**。
 - DMG 在精确逐帧捕获中偶见的单帧 palette scanline split：用户反馈 GBP / My OldBoy 正常播放无明显异常，当前按非阻断现象处理；不全局修改 `GBPalWhiteOut` / `LoadGBPal`。
 
-## 尚未完成的回归测试
+## 历史遗留回归条目（按需取用，不作为本轮必测清单）
 
 - [ ] **QOL-1.13**：用户提供的 CGB/DMG 对比视频中 START 菜单开关及返回地图显示正常、未见明显乱码或撕裂；关闭速度提升有限。仍需红/蓝版测试直接 B/START/结束关闭、进入各子菜单后的返回、连续开关、骑行/室内/Safari、中文姓名及旧存档。
 
@@ -42,7 +46,7 @@
 
 ## 空间与文档维护
 
-- 用户红版 MAP（同以 QOL-1.14 为基线）：ROM0 603 B → **321 B**（−282 B）；Bank `$01` 88 B → **165 B**（+77 B）；Bank `$2D` 约 15.4 KB → **15.3 KB**（−154 B）；总剩余约 1.28 MB、布局约 834.9 KB，整体额外占用 **359 B**。Bank `$2D` 的 KB 值为显示四舍五入，不据此反算精确字节。
+- QOL-1.16 用户提供的 MAP 基线：红版 ROM0 **321 B**、Bank `$01` **154 B**、Bank `$2D` **15,508 B**；蓝版 ROM0 **766 B**、Bank `$01` **194 B**、Bank `$2D` **15,813 B**。旧交接文档的红版 Bank `$01` 165 B 属历史记录，不能当作这次原始 MAP 的数据。QOL-1.17 源码修改后空间以**重新编译获得的新 MAP**为准。
 - 之前的 QOL-1.15 未空间清理候选曾出现 ROM0 287 B、Bank `$01` 3 B；空间清理后红版实测余量回升至 321 B / 165 B。清理包含将 START 辅助段放到 Bank `$2D` 和 ROM0 共享采样/状态清理。**不要再套旧的空间优化补丁**；QOL-1.16 正式三件套同样只需按代码基线选择增量或全量，二者不可叠加。
-- 蓝版本轮 MAP、红蓝特殊场景完整回归、提交及 Push 状态仍待用户确认；本轮文档收尾不改任何 ASM 执行代码。
+- QOL-1.16 红/蓝 MAP 已由用户补齐，QOL-1.16 Push 已由用户确认。QOL-1.17 已完成源码收口，但尚无本次修改后的 ROM/MAP 或模拟器验收；不要把历史 QOL-1.16 MAP 当成本次构建结果。
 - 统一验收历史继续追加在 `docs/CHS_ACCEPTANCE_HISTORY.md`；不按测试字母新建验收文件。
