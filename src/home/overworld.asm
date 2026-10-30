@@ -752,7 +752,12 @@ PlayMapChangeSound::
 	ld a, [wMapPalOffset]
 	and a
 	ret nz
-	jp GBFadeOutToBlack
+	; DOR-1.17D: do not alter the validated CGB doorway rhythm.
+	ldh a, [hCGB]
+	and a
+	jp nz, GBFadeOutToBlack
+	; DMG alone queues each shade change for the next VBlank.
+	jp GBDoorFadeOutToBlackVBlank
 
 CheckIfInOutsideMap::
 ; If the player is in an outside map (a town or route), set the z flag
@@ -2371,7 +2376,17 @@ CopyMapConnectionHeader::
 LoadMapData::
 	ldh a, [hLoadedROMBank]
 	push af
-	call DisableLCD
+	; DOR-1.17B: Shin-style safe VRAM updates with LCD still enabled.
+	; If LCD is already off (e.g. unusual startup), use the fast copy
+	; and enable it at the end as the original flow did.
+	xor a
+	ldh [hMapLoadVRAMSafeFlag], a
+	ldh a, [rLCDC]
+	bit 7, a
+	jr z, .lcdAlreadyOff
+	ld a, 1
+	ldh [hMapLoadVRAMSafeFlag], a
+.lcdAlreadyOff
 	ld a, $98
 	ld [wMapViewVRAMPointer + 1], a
 	xor a
@@ -2393,13 +2408,10 @@ LoadMapData::
 	ld de, vBGMap0
 	ld b, SCREEN_HEIGHT
 .vramCopyLoop
-	ld c, SCREEN_WIDTH
-.vramCopyInnerLoop
-	ld a, [hli]
-	ld [de], a
-	inc e
-	dec c
-	jr nz, .vramCopyInnerLoop
+	push bc
+	ld bc, SCREEN_WIDTH
+	call CopyData ; safe for LCD-on; original fast copy for LCD-off
+	pop bc
 	ld a, BG_MAP_WIDTH - SCREEN_WIDTH
 	add e
 	ld e, a
@@ -2408,9 +2420,20 @@ LoadMapData::
 .noCarry
 	dec b
 	jr nz, .vramCopyLoop
+	; The map BG tiles are copied, but DMG must not resume normal
+	; VBlank map/OAM writes until the player gfx are also ready.
+	; Preserve DOR-1.17B's earlier release for CGB.
+	ldh a, [hCGB]
+	and a
+	jr z, .keepDMGMapGuard
+	xor a
+	ldh [hMapLoadVRAMSafeFlag], a
+.keepDMGMapGuard
 	ld a, $01
 	ld [wUpdateSpritesEnabled], a
-	call EnableLCD
+	ldh a, [rLCDC]
+	bit 7, a
+	call z, EnableLCD
 	ld b, SET_PAL_OVERWORLD
 	call RunPaletteCommand
 	call LoadPlayerSpriteGraphics
@@ -2423,6 +2446,10 @@ LoadMapData::
 	call UpdateMusic6Times
 	call PlayDefaultMusicFadeOutCurrent
 .restoreRomBank
+	; DMG: release the protected black-frame load only after the final
+	; player tile transfer. CGB was released at its original point.
+	xor a
+	ldh [hMapLoadVRAMSafeFlag], a
 	pop af
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a

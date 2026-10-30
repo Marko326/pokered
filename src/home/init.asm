@@ -26,6 +26,11 @@ DEF rLCDC_DEFAULT EQU %11100011
 	ld [MBC1RomBank], a
 	jp Init_home2
 home2_ret::
+	; DOR-1.17D: the VBlank handler reads these on each interrupt;
+	; initialize before interrupts resume even on soft reset.
+	xor a
+	ld [wDoorFadePending], a
+	ld [wDoorFadeRestore], a
 	ld a, BANK(WriteDMACodeToHRAM)
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a

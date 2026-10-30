@@ -399,8 +399,9 @@ hJoyInput:: db
 
 hDisableJoypadPolling:: db
 
-	; Reuse reserved bytes; no WRAM/SRAM changes.
-	ds 1
+	; DOR-1.17B: use the existing reserved HRAM byte (no layout change).
+	; Nonzero only during LCD-on overworld map loading.
+hMapLoadVRAMSafeFlag:: db
 hCGBBGP:: db
 hCGBOBP0:: db
 hCGBOBP1:: db

@@ -2383,7 +2383,14 @@ wc0f4:: ds 1
 ; wc0f5:: ds 11
 wBillPCTilemapMark:: ds 1
 wBillPCEnteredViewStats:: ds 1
-ds 24	
+; DOR-1.17D: five bytes from existing unused WRAM padding; layout stable.
+; These flags are used only on DMG normal doorway fades/restores.
+wDoorFadePending:: db
+wDoorFadeBGP:: db
+wDoorFadeOBP0:: db
+wDoorFadeOBP1:: db
+wDoorFadeRestore:: db
+ds 19
 
 wIfPartyMenuOpenedDuringBattle:: ds 1
 wTempSpace:: ds 1

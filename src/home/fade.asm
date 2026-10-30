@@ -10,6 +10,23 @@ LoadGBPal::
 	jr nc, .ok
 	dec h
 .ok
+	; After a normal doorway warp, restore new-map shades at VBlank too.
+	; Regular overworld LoadGBPal calls stay on the original fast path.
+	ld a, [wDoorFadeRestore]
+	and a
+	jr z, .immediate
+	xor a
+	ld [wDoorFadeRestore], a
+	ld a, [hli]
+	ld [wDoorFadeBGP], a
+	ld a, [hli]
+	ld [wDoorFadeOBP0], a
+	ld a, [hli]
+	ld [wDoorFadeOBP1], a
+	ld a, 1
+	ld [wDoorFadePending], a
+	ret
+.immediate
 	ld a, [hli]
 	ldh [rBGP], a
 	ld a, [hli]
@@ -38,6 +55,29 @@ GBFadeIncCommon:
 	call DelayFrames
 	dec b
 	jr nz, GBFadeIncCommon
+	ret
+
+; DMG doorway-only fade. Each shade step commits in VBlank;
+; CGB keeps the DOR-1.17B original fade unchanged.
+GBDoorFadeOutToBlackVBlank::
+	ld hl, FadePal4 + 2
+	ld b, 4
+.loop
+	ld a, [hld]
+	ld [wDoorFadeOBP1], a
+	ld a, [hld]
+	ld [wDoorFadeOBP0], a
+	ld a, [hld]
+	ld [wDoorFadeBGP], a
+	ld a, 1
+	ld [wDoorFadePending], a
+	ld c, 8
+	call DelayFrames
+	dec b
+	jr nz, .loop
+	; One scheduled restoration in LoadGBPal after the new map is ready.
+	ld a, 1
+	ld [wDoorFadeRestore], a
 	ret
 
 GBFadeOutToBlack::
