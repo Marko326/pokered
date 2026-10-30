@@ -11,7 +11,8 @@ DEF OAM_Y_FLIP    EQU 6
 DEF OAM_PRIORITY  EQU 7 ; 0: OBJ above BG, 1: OBJ behind BG (colors 1-3)
 
 ; OAM attribute masks
-DEF OAM_OBP1      EQU 1 << OAM_OBP_NUM  ; OBJ palette 1
+; DMG uses bit 4; CGB uses palette bit 0. Set both at creation time.
+DEF OAM_OBP1      EQU (1 << OAM_OBP_NUM) | %00000001 ; DMG/CGB OBJ palette 1
 DEF OAM_HFLIP     EQU 1 << OAM_X_FLIP   ; horizontal flip
 DEF OAM_VFLIP     EQU 1 << OAM_Y_FLIP   ; vertical flip
 DEF OAM_BEHIND_BG EQU 1 << OAM_PRIORITY ; behind bg (except color 0)

@@ -1,5 +1,5 @@
 ShowPokedexMenu:
-	call GBPalWhiteOut
+	farcall CoverFullScreenWithWhite
 	call ClearScreen
 	call UpdateSprites
 	ld a, [wListScrollOffset]
@@ -40,7 +40,7 @@ ShowPokedexMenu:
 	ld [wOverrideSimulatedJoypadStatesMask], a
 	pop af
 	ld [wListScrollOffset], a
-	call GBPalWhiteOutWithDelay3
+	farcall CoverFullScreenWithWhiteDelay3
 	call RunDefaultPaletteCommand
 	jp ReloadMapData
 .goToSideMenu
@@ -341,7 +341,7 @@ HandlePokedexListMenu:
 	ld a, 01
 	ldh [hAutoBGTransferEnabled], a
 	call Delay3
-	call GBPalNormal
+	farcall RevealFullScreenGBPalNormal
 	call HandleMenuInput
 	bit BIT_B_BUTTON, a
 	jp nz, .buttonBPressed

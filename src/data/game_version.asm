@@ -3,4 +3,4 @@
 SECTION "Game Version", ROM0
 
 GameVersionText::
-	db "DOR-1.18@"
+	db "DOR-1.19@"

@@ -520,7 +520,7 @@ INCLUDE "data/items/use_party.asm"
 INCLUDE "data/items/use_overworld.asm"
 
 StartMenu_TrainerInfo::
-	call GBPalWhiteOut
+	farcall CoverFullScreenWithWhite
 	call ClearScreen
 	call UpdateSprites
 	ldh a, [hTileAnimations]
@@ -535,11 +535,13 @@ StartMenu_TrainerInfo::
 	; PKMNRB_Fix 03 Trainer Card transition screens can show brief garbage on DMG
 	ld a, [wOnSGB] ;
 	and a ;
-	call z, Delay3 ; 
-	
-	call GBPalNormal
+	call z, Delay3 ;
+
+	; The full-screen Trainer card is complete. DMG must reveal it from
+	; scanline 0, not after part of the frame was already scanned.
+	farcall RevealFullScreenGBPalNormal
 	call WaitForTextScrollButtonPress ; wait for button press
-	call GBPalWhiteOut
+	farcall CoverFullScreenWithWhite
 	call LoadFontTilePatterns
 	call LoadScreenTilesFromBuffer2 ; restore saved screen
 	call RunDefaultPaletteCommand
@@ -733,11 +735,9 @@ StartMenu_SaveReset::
 	jp HoldTextDisplayOpen
 
 StartMenu_Option::
-	; QOL-1.16D: Options reuses the CHS DFS glyph slots. If its glyphs are
-	; generated while the old START window is still visible, the START labels
-	; briefly turn into Options text/garbage. Cover both directions with the
-	; existing white transition and only reveal a fully transferred screen.
-	call GBPalWhiteOutWithDelay3
+	; DOR-1.19: synchronize DMG's white cover at the scanline boundary.
+	; Keep the established QOL-1.16D off-screen CHS glyph rebuilding.
+	farcall CoverFullScreenWithWhiteDelay3
 	xor a
 	ldh [hAutoBGTransferEnabled], a
 	call ClearScreen
@@ -745,8 +745,8 @@ StartMenu_Option::
 	callfar DisplayStartMenuOptionMenu
 	; The Options screen is now stable. Hide it before restoring START glyphs,
 	; then rebuild the parent menu under white just like the proven Party/Trainer
-	; returns. Do not pass through RedisplayStartMenu (which would expose map).
-	call GBPalWhiteOutWithDelay3
+	; returns. Keep the DMG white cover whole-frame, then rebuild START.
+	farcall CoverFullScreenWithWhiteDelay3
 	call LoadScreenTilesFromBuffer2DisableBGTransfer ; restore saved START screen
 	call LoadTextBoxTilePatterns
 	farcall RestoreStartMenuFromOptionsWhite

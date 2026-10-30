@@ -12,7 +12,7 @@ assert mapload.index("call LoadPlayerSpriteGraphics") < mapload.index(".restoreR
 assert ".keepDMGMapGuard" in mapload
 fade=get("src/home/fade.asm")
 assert "ld c, 8" in fade.split("GBDoorFadeOutToBlackVBlank::",1)[1].split("GBFadeOutToBlack::",1)[0]
-assert "DOR-1.18@" in get("src/data/game_version.asm")
-assert "hlcoord 11, 0 ; DOR-1.18" in get("src/engine/menus/main_menu.asm")
+assert any(x in get("src/data/game_version.asm") for x in ("DOR-1.18@", "DOR-1.19@"))
+assert any(x in get("src/engine/menus/main_menu.asm") for x in ("hlcoord 11, 0 ; DOR-1.18", "hlcoord 11, 0 ; DOR-1.19"))
 assert "wDoorFadePending:: db\nwDoorFadeBGP:: db\nwDoorFadeOBP0:: db\nwDoorFadeOBP1:: db\nwDoorFadeRestore:: db\nds 19" in get("src/ram/wram.asm")
 print("PASS DOR-1.18: DMG-only VBlank fade, delayed DMG map guard, 4x8-frame fade, version alignment")

@@ -23,6 +23,6 @@ assert vbl.index('ldh [rBGP], a') < vbl.index('call UpdateCGBDmgPalettes')
 assert vbl.index('ldh [rOBP0], a') < vbl.index('call UpdateCGBDmgPalettes')
 assert vbl.index('ldh [rOBP1], a') < vbl.index('call UpdateCGBDmgPalettes')
 assert 'wDoorFadePending:: db\nwDoorFadeBGP:: db\nwDoorFadeOBP0:: db\nwDoorFadeOBP1:: db\nwDoorFadeRestore:: db\nds 19' in wr
-assert any(v in get('src/data/game_version.asm') for v in ('DOR-1.17C@','DOR-1.17D@','DOR-1.18@'))
-assert any(v in get('src/engine/menus/main_menu.asm') for v in ('hlcoord 10, 0 ; DOR-1.17C','hlcoord 10, 0 ; DOR-1.17D','hlcoord 11, 0 ; DOR-1.18'))
+assert any(v in get('src/data/game_version.asm') for v in ('DOR-1.17C@','DOR-1.17D@','DOR-1.18@','DOR-1.19@'))
+assert any(v in get('src/engine/menus/main_menu.asm') for v in ('hlcoord 10, 0 ; DOR-1.17C','hlcoord 10, 0 ; DOR-1.17D','hlcoord 11, 0 ; DOR-1.18','hlcoord 11, 0 ; DOR-1.19'))
 print('PASS: DOR-1.17C door fade VBlank commit, palette restoration, unchanged stage count, version and WRAM padding')

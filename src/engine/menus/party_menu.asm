@@ -286,6 +286,38 @@ RedrawPartyMenu_::
 	ld a, 1
 	ldh [hAutoBGTransferEnabled], a
 	call Delay3
+	; DOR-1.19: CGB-1.5 changed palette reveal from an immediate DMG
+	; register write to a banked conversion deferred until VBlank. In a
+	; battle at 1x this extra work can overlap the first visible scanlines
+	; and OAM DMA. Finish palette mapping and OAM commit with the LCD off
+	; *after* both the icon OAM and background have been prepared.
+	; Only the first battle->party reveal needs this; field/DMG unchanged.
+	ld a, [wIsInBattle]
+	and a
+	jr z, .normalReveal
+	ldh a, [hCGB]
+	and a
+	jr z, .normalReveal
+	call DisableLCD
+	call GBPalNormal
+	call UpdateCGBDmgPalettes
+	call hDMARoutine
+	call EnableLCD
+	ret
+.normalReveal
+	; DOR-1.19: DMG palette registers take effect immediately. A direct
+	; GBPalNormal here can change shades after scanline 0 has already been
+	; drawn, revealing the first party-menu frame with a white top strip.
+	; Commit while LCD is off at VBlank, then start the first visible
+	; frame with the final palette. Leave CGB field path unchanged.
+	ldh a, [hCGB]
+	and a
+	jr nz, .cgbFieldReveal
+	call DisableLCD
+	call GBPalNormal
+	call EnableLCD
+	ret
+.cgbFieldReveal
 	jp GBPalNormal
 .printItemUseMessage
 	and $0F

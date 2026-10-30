@@ -130,9 +130,15 @@ PrepareOAMData::
 	or [hl]
 .skipPriority
 	inc hl
+	; The low bits in overworld sprite tables are internal end/mask flags.
+	; Native CGB interprets those bits as OBJ palette and VRAM bank.
+	; Test the sentinel before stripping the internal flags.
+	bit 0, a ; OAMFLAG_ENDOFDATA (sets Z for the loop decision)
+	push af
+	and %11110000
 	ld [de], a
 	inc e
-	bit 0, a ; OAMFLAG_ENDOFDATA
+	pop af
 	jr z, .tileLoop
 
 	ld a, e

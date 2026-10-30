@@ -50,7 +50,8 @@ VBlank::
 	ldh a, [hMapLoadVRAMSafeFlag]
 	and a
 	call z, UpdateMovingBgTiles
-	call CGBFixOAMPalettes
+	; Native CGB attributes are now formed by their writers; do not
+	; rescan 40 OBJ entries in this time-critical interrupt.
 	; Defer OAM DMA and sprite construction until the new map is ready.
 	ldh a, [hMapLoadVRAMSafeFlag]
 	and a

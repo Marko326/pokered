@@ -73,10 +73,50 @@ RestoreStartMenuFromWhite::
 	call CopyStartMenuWindowFast
 	ld a, 1
 	ldh [hAutoBGTransferEnabled], a
-	; CGB consumes the mapped palette on VBlank. A one-frame DMG scanline split
-	; was visible in direct frame capture but not in GBP/MyOldBoy normal playback;
-	; this is accepted for now. Do not add a global palette wait for that artifact.
-	jp LoadGBPal
+	; DOR-1.19: returning from full-screen submenus is a real DMG
+	; palette-reveal boundary. Do not let LoadGBPal restore shades part-way
+	; down the first visible scanline frame. Leave CGB's VBlank mapping alone.
+	jp RevealFullScreenLoadGBPal
+
+; Both transitions are used ONLY by the full-screen START children below.
+; DMG registers take effect instantly; CGB has its own palette path.
+RevealFullScreenLoadGBPal::
+	ldh a, [hCGB]
+	and a
+	jp nz, LoadGBPal
+	call DisableLCD
+	call LoadGBPal
+	jp EnableLCD
+
+; Avoid needless LCD restarts when the current DMG palette is already normal
+; (e.g. scrolling within the Pokedex list). Always keep the CGB path intact.
+RevealFullScreenGBPalNormal::
+	ldh a, [hCGB]
+	and a
+	jp nz, GBPalNormal
+	ldh a, [rBGP]
+	cp %11100100
+	jp z, GBPalNormal
+	call DisableLCD
+	call GBPalNormal
+	jp EnableLCD
+
+; Synchronize a white cover too: a mid-frame GBPalWhiteOut creates the
+; inverse split (old menu on top, white below). Do not affect CGB.
+CoverFullScreenWithWhite::
+	ldh a, [hCGB]
+	and a
+	jp nz, GBPalWhiteOut
+	ldh a, [rBGP]
+	and a
+	jp z, GBPalWhiteOut
+	call DisableLCD
+	call GBPalWhiteOut
+	jp EnableLCD
+
+CoverFullScreenWithWhiteDelay3::
+	call CoverFullScreenWithWhite
+	jp Delay3
 
 ; QOL-1.16B: Party's existing RestoreScreenTilesAndReloadTilePatterns helper
 ; finishes with AutoBG transfer enabled. Disable it before the shared START draw;
