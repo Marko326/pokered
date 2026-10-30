@@ -635,3 +635,56 @@
 - **视频验收口径**：对原 `1.18E.mp4`（2465 帧）和用户 `DOR1.18F.mp4`（2240 帧）使用同一检测规则：画面顶部 y=0–7 几乎全白、下方 y=8–47 已显著非白的帧，前者检出 4 帧，后者检出 0 帧。该指标支持首帧顶带问题已改善，不能替代硬件寄存器追踪或所有游戏路径的逐项实测。视频有正常的全屏白色过渡，不等于残留顶带。
 - **源码验证与限制**：新正式版 `scripts/verify_dor119_static.py` 检查菜单结构与修复范围；交付时分别验证增量/全量补丁正向、反向和内容一致性，且必须保持源码指令与 1.18F 一致（除版本字面量和显示坐标外）。此环境没有 RGBDS 1.0.4，未独立编译红蓝 ROM、未取得正式 1.19 MAP，不能视为编译或所有场景实测通过。
 - **提交方式**：增量以干净 DOR-1.18 HEAD `c62ae7ba` 为基线；全量以已提交 QOL-1.17 HEAD `96e915af` 为基线；**二选一，不可叠加**，不再使用 1.18A–F 候选补丁。中文 Conventional Commit 日志随补丁交付，由用户执行 `git commit` / `git push`。
+
+
+## DOR-1.19A — Party 操作菜单 B 返回闪烁修复（测试候选，待实机验收）
+
+- **问题来源**：用户在 DOR-1.19 实测发现，野外或战斗 Party 中对宝可梦按 A 打开操作小菜单后，再按 B 返回 Party 列表会出现全屏/框体闪烁；此前一次错误候选曾在战斗造成花屏、野外造成死机，已明确废弃且不作为本候选基线。
+- **参考依据**：交接资料 `CHS_Mod_QOL-1.14_已提交版交接资料包_无嵌套.zip` 内 RPP 历史提交 `19f3b60a`（`fix(party): 修复队伍菜单返回时的窗口闪烁`）。该提交针对同一路径，在 Party 重绘开始及战斗操作框清除前关闭 AutoBG，完整重建后沿用既有重新开启与 `Delay3`。
+- **本次基线**：严格从用户重新上传的 `DOR-1.19.zip` 解压修改，不叠加此前错误的 DOR-1.19A 尝试。
+- **最小移植**：`src/engine/menus/party_menu.asm` 的 `RedrawPartyMenu_` 开头执行 `xor a / ldh [hAutoBGTransferEnabled], a`；`src/engine/battle/core.asm` 的 `.partyMonDeselected` 在清除操作菜单区域前同样关闭 AutoBG。其余 Party 状态机、Buffer、DFS、光标、Bank 和返回路径不改。
+- **现有收尾复用**：DOR-1.19 的 `RedrawPartyMenu_` 结尾已在最终界面完成后写 `hAutoBGTransferEnabled = 1` 并调用 `Delay3`，故不新增局部 VRAM 提交或栈操作。
+- **版本标记**：测试版本改为 `DOR-1.19A`；Options 版本文字因 9 字符由 `(11,0)` 调整为 `(10,0)`。正式基线仍为 `DOR-1.19`。
+- **不包含**：不处理 DMG 逃跑/胜利返回 overworld 的战斗菜单残留；不修改 DOR-1.19 已验收的 Party 直接 B 返回、START 全屏子菜单、门口显示、HP 动画等逻辑。
+- **验证边界**：按用户要求未编译项目、未生成 ROM/MAP。仅执行源码差异审查、参考提交对应性检查、补丁正向/反向应用和目标文件一致性检查；运行时效果必须由用户在 DMG/CGB 实机/模拟器确认。
+
+
+## DOR-1.19B — Party 操作菜单 B 返回整屏白闪修复（测试候选）
+
+- **1.19A 用户反馈**：四个“Party 中对宝可梦按 A 打开操作菜单，再按 B 返回列表”场景中，仅 CGB 野外正常；CGB 战斗、DMG 野外、DMG 战斗仍会在返回瞬间整屏闪白，但 1.19A 已经消除了下方/右侧操作框的独立重绘闪烁。
+- **视频逐帧证据**：用户 `1.19A， Pokemon Party中打开菜单后返回.mp4` 中，失败场景在操作菜单消失后出现约 1–2 帧接近纯白的整屏画面，随后完整 Party 列表恢复；该现象与 tilemap 中间态不同。
+- **与参考提交的关系**：RPP `19f3b60a` 只通过关闭 AutoBG 隐藏 Party 重绘中间态，方向正确且继续保留。当前额外白闪来自 CHS/DOR 后续为首次 Party 揭屏加入的 LCD-off palette 同步，不是参考补丁本身的问题。
+- **根因定位**：`RedrawPartyMenu_` 完成 `Delay3` 后，DOR-1.19 会在 CGB 战斗以及全部 DMG 路径执行 `DisableLCD → GBPalNormal → EnableLCD`。这对首次从白屏进入 Party 是首帧保护，但内部操作菜单 B 返回时 palette 已经正常，重复关闭 LCD 会直接制造白帧；CGB 野外使用不关 LCD 的 `.cgbFieldReveal`，与用户唯一通过的场景完全对应。
+- **修复策略**：把 `rBGP == 0` 作为“真实首次白屏揭屏”的现有状态判据。AutoBG 重新开启并完成三帧 BG 传输后，若 `rBGP != 0` 则说明是 Party 内部 redraw，直接返回；只有白 palette 才继续走 DOR-1.19 的 CGB 战斗 / DMG LCD-off 首次揭屏逻辑。无需新增 WRAM、缓存、返回 helper 或新的状态机。
+- **版本与范围**：测试标记 `DOR-1.19B`，Options 仍按 9 字符从 `(10,0)` 右对齐。只修 Party 内部 A→操作菜单→B 的整屏白闪，不处理 DMG 逃跑/胜利回 overworld 的战斗菜单残留。
+- **验证边界**：本候选按用户要求不编译 ROM、不生成 MAP；交付前仅执行源码差异审查、补丁正向/反向与目标文件一致性检查，以及 DOR-1.19 / HP 既有静态守卫。
+
+## PTY-1.20 — Party 返回显示修复（未提交的中间收口）
+
+- **版本与基线**：上一已提交正式版本为 `DOR-1.19`。当时曾按 Party/队伍菜单主题整理为 `PTY-1.20`（8 字符，Options `(11,0)`），但用户后续明确说明该版本并未单独 Git 提交，因此它只作为已验收的工作区中间状态保留在历史中。
+- **正式纳入的直接返回修复**：用户提供的 `DOR-1.19.zip` 相对正式 HEAD `9d6a90cd` 含一段未提交 worktree 修改，用于战斗中 Party 直接 B 返回时在白屏下重建 CHS DFS 战斗 HUD/命令菜单，并等待完整三段 BG 传输后揭屏。正式增量从 DOR-1.19 HEAD 生成，因此该已测试路径一并纳入 PTY-1.20。
+- **操作菜单框体闪烁**：参考交接资料中的 RPP 提交 `19f3b60a`。`RedrawPartyMenu_` 开始时关闭 AutoBG；战斗 `.partyMonDeselected` 清操作菜单框前同样关闭 AutoBG。原 Party 状态机完整重画后沿用既有重新开启 AutoBG 与 `Delay3`，不暴露中间 tilemap。
+- **三个场景整屏白闪的 CHS 适配**：DOR-1.19 的首次 Party 揭屏保护在 CGB 战斗及 DMG 路径会关闭 LCD；内部操作菜单 B 返回复用 `RedrawPartyMenu_` 时不应重复执行。现以已有 `rBGP == 0` 白 palette 状态限定首次揭屏：内部 redraw 在三段 BG 提交后直接返回，首次真实进入 Party 仍保留原 CGB/DMG 安全揭屏。
+- **用户验收**：用户对四个组合均完成实测——CGB 野外、CGB 战斗、DMG 野外、DMG 战斗；确认 Party 中对宝可梦按 A 打开子菜单后按 B 返回均正常。此前 1.19A 仅 CGB 野外通过、其余三场景白闪；1.19B 修正后四场景均通过。用户同时确认本次两种模式均已测试。
+- **保持不变**：不修改 Party 的功能分发、换位/能力/取消语义、DFS 数据结构、HP 动画、DOR-1.19 首次 Party 揭屏保护和 START 全屏子菜单逻辑。DMG 逃跑/胜利返回 overworld 的旧战斗菜单残留不属于本版。
+- **验证与交付边界**：当时按用户要求未由助手编译 ROM、未生成新 MAP，并生成过 PTY 三件套；但由于用户未提交 PTY-1.20，最终 Git 收口改由后续 `FLH-1.20` 从 DOR-1.19 正式 HEAD 直接包含这部分改动。
+
+## BAT-1.21A — DMG 战斗结束返回 overworld 旧 Window 残留修复（测试候选）
+
+- **正式基线**：`PTY-1.20`。本轮主题为战斗退场显示，测试标记改为 `BAT-1.21A`；9 字符版本在 Options 从 `(10,0)` 绘制。
+- **问题范围**：仅 DMG。用户此前录像显示战斗结束白屏后、overworld 完整恢复前会短暂出现旧战斗菜单/Window 与新地图混合的一帧；CGB 无该问题。逃跑与正常胜利均经过 `EndOfBattle`，因此共用同一修复点。
+- **根因**：DOR/PTY 的普通地图优化让 `LoadMapData` 在 LCD 已开启时保持 LCD 常开；但 `EnterMap` 是先 `LoadMapData`、后 `ClearVariablesOnEnterMap`。战斗 Window 在 `EndOfBattle` 结束时仍位于 `WY=0`，DMG 因而可能在地图加载期间暴露旧 BGMap1 内容。
+- **修复**：在 `EndOfBattle` 已调用 `GBPalWhiteOut` 后，仅当 `hCGB == 0` 时把 `hWY` 与 `rWY` 设为 `SCREEN_HEIGHT_PX`。画面此时已白化，隐藏 Window 本身不可见；随后地图 LCD-on 加载期间旧战斗 Window 始终在屏外。CGB 跳过新增逻辑。
+- **保持不变**：不增加额外 Delay，不改 `LoadMapData`、`MapEntryAfterBattle`、fade、战斗结果、逃跑判定、Party/START、门口显示或 HP 动画。
+- **参考边界**：现有 RPP 历史没有直接覆盖 DMG 战斗结束回地图残留；`c6685bf5` 主要解决 CGB 入战异常闪帧和玩家退场人物图像撕裂，不能直接套用。
+- **验证边界**：本候选不编译 ROM、不生成 MAP；交付前只执行 PTY-1.20 既有结构守卫、新增 BAT 静态守卫、补丁正向/反向与文件一致性检查。
+
+## FLH-1.20 — 闪烁问题合并正式收口
+
+- **Git 基线**：用户明确说明 `PTY-1.20` 未单独提交；其上传的 `BAT-1.21A.patch` 标记 `RPP-BASE: 9d6a90cdce384582b5b3da319e461b67b7afeca2`，即 DOR-1.19 正式 HEAD，并完整包含此前 Party 修复与本次 DMG 战斗返回修复。因此正式增量直接定义为 `DOR-1.19 → FLH-1.20`。
+- **正式命名**：本轮合并处理多处“闪烁/flicker”显示问题，按用户要求定版为 `FLH-1.20`。版本字符串 8 字符，Options 右上角从 `(11,0)` 绘制；不再使用未提交的 `PTY-1.20` 或测试标记 `BAT-1.21A`。
+- **Party 返回修复**：纳入已验收的战斗 Party 直接 B 返回修复；参考 RPP `19f3b60a` 在 Party redraw 与战斗操作框清除前关闭 AutoBG，完整重建后再提交；并以 `rBGP != 0` 区分内部 redraw，避免重复执行首次 Party 的 LCD-off 揭屏。用户已实测 CGB 野外、CGB 战斗、DMG 野外、DMG 战斗四种 A→操作菜单→B 返回均正常。
+- **DMG 战斗返回地图修复**：在 `EndOfBattle` 已 `GBPalWhiteOut` 后，仅 DMG (`hCGB == 0`) 把 `hWY/rWY` 设置为 `SCREEN_HEIGHT_PX`，在 PTY/DOR 的 LCD 常开地图加载期间提前把旧 Battle Window 移出屏幕；CGB 明确跳过新增逻辑。
+- **用户验收**：用户提供 `从对战中回到野外的时候DMG模式下闪烁修复.mp4` 并明确确认“已经修好了”。该视频覆盖 DMG 逃跑返回 overworld，未再出现旧战斗菜单残留闪帧；胜利同样经过 `EndOfBattle`，代码修复点共用，但本次没有单独胜利录像。
+- **保持不变**：不增加额外 Delay，不改 `LoadMapData`、`MapEntryAfterBattle`、地图渐变、普通房门、战斗结果/逃跑判定、HP 动画或 START 功能；CGB 战斗返回不执行新增 Window 隐藏。
+- **正式交付**：增量补丁从 DOR-1.19 正式 HEAD `9d6a90cd` 起；全量补丁从 QOL-1.17 已提交 HEAD `96e915af` 起；二者互斥。按用户要求不由助手编译 ROM、不生成 MAP。补丁执行正向、反向和最终文件一致性验证；Git Commit / Push 由用户执行。

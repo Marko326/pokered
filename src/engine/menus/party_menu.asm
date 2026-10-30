@@ -58,6 +58,8 @@ DrawPartyMenu_::
 	call UpdateSprites
 	farcall LoadMonPartySpriteGfxWithLCDDisabled ; load pokemon icon graphics
 RedrawPartyMenu_::
+	xor a
+	ldh [hAutoBGTransferEnabled], a ; FLH-1.20: keep redraw off-screen until complete
 	ld a, [wPartyMenuTypeOrMessageID]
 	cp SWAP_MONS_PARTY_MENU
 	jp z, .printMessage
@@ -286,6 +288,14 @@ RedrawPartyMenu_::
 	ld a, 1
 	ldh [hAutoBGTransferEnabled], a
 	call Delay3
+	; FLH-1.20: RedrawPartyMenu_ also runs when closing the per-mon action
+	; menu. That redraw already has a visible normal palette, so do not repeat
+	; DOR-1.19's first-entry LCD-off reveal. The real DisplayPartyMenu entry
+	; starts from GBPalWhiteOutWithDelay3 (rBGP == 0); internal redraws can
+	; return after the completed three-part BG transfer.
+	ldh a, [rBGP]
+	and a
+	ret nz
 	; DOR-1.19: CGB-1.5 changed palette reveal from an immediate DMG
 	; register write to a banked conversion deferred until VBlank. In a
 	; battle at 1x this extra work can overlap the first visible scanlines

@@ -21,8 +21,8 @@ options = block(sub, 'StartMenu_Option::', 'SwitchPartyMon::')
 save = block(sub, 'StartMenu_SaveReset::', 'StartMenu_Option::')
 
 checks = [
-    ('formal version', ('db "QOL-1.17@"' in ver or 'db "DOR-1.19@"' in ver)),
-    ('formal Options alignment', ('hlcoord 11, 0 ; QOL-1.17 正式标记为 8 字符' in main or 'hlcoord 11, 0 ; DOR-1.19 正式标记为 8 字符' in main)),
+    ('formal version', ('db "QOL-1.17@"' in ver or 'db "DOR-1.19@"' in ver or 'db "FLH-1.20@"' in ver)),
+    ('formal Options alignment', ('hlcoord 11, 0 ; QOL-1.17 正式标记为 8 字符' in main or 'hlcoord 11, 0 ; DOR-1.19 正式标记为 8 字符' in main or 'hlcoord 11, 0 ; FLH-1.20 正式标记为 8 字符' in main)),
     ('Pokédex safe return', 'RestoreStartMenuFromPokedexWhite' in pokedex and 'jp StartMenuInputLoop' in pokedex and 'RedisplayStartMenu' not in pokedex),
     ('Party safe return', 'RestoreStartMenuFromPartyWhite' in party and 'jp StartMenuInputLoop' in party),
     ('Bag clean fast return', '.fastExitMenu' in item and 'RestoreStartMenuInputStateFromSaved' in item),

@@ -2134,6 +2134,9 @@ CenterMonName:
 	ret  ;
 
 DisplayBattleMenu::
+	call .drawBattleMenu
+	jr .battleMenuDrawn
+.drawBattleMenu
 	call LoadScreenTilesFromBuffer1 ; restore saved screen
 	ld a, [wBattleType]
 	and a
@@ -2150,6 +2153,8 @@ DisplayBattleMenu::
 .menuselected
 	ld [wTextBoxID], a
 	call DisplayTextBoxID
+	ret
+.battleMenuDrawn
  ; handle menu input if it's not the old man tutorial
 	ld a, [wBattleType]
 	dec a
@@ -2473,12 +2478,18 @@ PartyMenuOrRockOrRun:
 	call ClearSprites
 	call GBPalWhiteOut
 	call LoadHudTilePatterns
-	call LoadScreenTilesFromBuffer2
 	call RunDefaultPaletteCommand
-	call ReloadMonPic ; Fix Battle Party Menu
+	call ReloadMonPic ; keep CHS battle picture restore hidden by the white palette
+	; Party text reuses CHS DFS glyph slots. Rebuild the complete battle HUD/menu
+	; while still white, then wait for all three BG-map thirds before revealing it.
+	; This avoids both the first-return mixed HUD frame and the command-box redraw flash.
+	call DisplayBattleMenu.drawBattleMenu
+	call Delay3
 	call GBPalNormal
-	jp DisplayBattleMenu
+	jp DisplayBattleMenu.handleBattleMenuInput
 .partyMonDeselected
+	xor a
+	ldh [hAutoBGTransferEnabled], a ; FLH-1.20: hide clear/rebuild intermediate frames
 	hlcoord 11, 10 ; CHS_Fix 06
 	ld bc, 9 ; CHS_Fix 06
 	ld a, CHARVAL(" ") ; CHS_Fix 06

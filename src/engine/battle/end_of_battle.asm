@@ -70,6 +70,16 @@ EndOfBattle:
 	set 0, [hl]
 	call WaitForSoundToFinish
 	call GBPalWhiteOut
+	; FLH-1.20: DOR-1.19 keeps the LCD on while rebuilding the overworld.
+	; On DMG, hide the old battle Window while the screen is already white so
+	; the first map-loading frame cannot expose the stale battle menu.
+	ldh a, [hCGB]
+	and a
+	jr nz, .battleWindowHidden
+	ld a, SCREEN_HEIGHT_PX
+	ldh [hWY], a
+	ldh [rWY], a
+.battleWindowHidden
 	ld a, $ff
 	ld [wDestinationWarpID], a
 	ret
