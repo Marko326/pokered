@@ -1,6 +1,14 @@
 # CHS_Mod 历史变更与验收记录
 
 
+## ROM-1.21 — RPP 参考提交第六批（151～180）资料审查（仅文档）
+
+- **参考依据**：`ROM-1.21.zip` 已提交 HEAD `70549f63`，对照 RPP `individual/151～180` 全部 30 笔原始补丁；详见 `docs/RPP_REFERENCE_PORT_AUDIT_151-180.md`。
+- **已实现 / 部分实现**：#172 列表和数量菜单主体已移出 ROM0；#171 HOME 已有部分 section 区分；#173 十进制 `PrintNumber` 已在切 Bank 前读取输入，但 BCD 仍需 caller-bank 指针专项审计。
+- **具体代码疑点（未修复）**：#177 CHS 红蓝老虎机 24-tile 第二素材被两个 loader 按 28 tiles 复制，已确认静态长度不符；#180 站立-only NPC 的 walking 资源越界仍需逐项确认 CHS 自身 SpriteSheetPointerTable 与素材大小。没有新的运行复现结论。
+- **参考依赖**：#151～159 MoveDex 扩展动画，#174 Snowy，#175 分类背包，#176 新双页 Options，#178 subanimation 压缩均不可直接移植；#161～170 涉 Bank `$0F` / `$03` 与规则/AI，须另做专项评估。
+- **仅文档交付**：更新第六批详细审核、索引、统一历史、TODO；未修改 `src/`、`scripts/`、ROM、版本标识（仍 `ROM-1.21`），未编译 ROM 或代用户执行 Commit/Push。
+
 ## ROM-1.21 — RPP 参考提交第五批（121～150）资料审查（仅文档）
 
 - **参考依据**：以已提交 `ROM-1.21` HEAD `70549f63` 对照 RPP 参考分支 `individual/121～150` 的 30 笔实际补丁；逐笔评估在 `docs/RPP_REFERENCE_PORT_AUDIT_121-150.md`。
