@@ -186,6 +186,10 @@ DisplayPartyMenu::
 	jp HandlePartyMenuInput
 
 GoBackToPartyMenu::
+	; ROM-1.21C: sub-menu / item / battle returns must not inherit an
+	; old swap-only name cache mode. The real swap path bypasses this.
+	xor a
+	ld [wPartySwapRedrawPending], a
 	ldh a, [hTileAnimations]
 	push af
 	xor a
@@ -228,6 +232,23 @@ PartyMenuInit::
 	ld [wForcePlayerToChooseMon], a
 	inc a ; a = A_BUTTON
 .next
+	; Only the ordinary START Party list watches SELECT. Other callers (battle,
+	; items, name rater, daycare, trades, etc.) retain their existing keys.
+	push bc
+	ld b, a
+	; Never weaken wForcePlayerToChooseMon's A-only input constraint.
+	cp A_BUTTON | B_BUTTON
+	jr nz, .storeWatchedKeys
+	ld a, [wIsInBattle]
+	and a
+	jr nz, .storeWatchedKeys
+	ld a, [wPartyMenuTypeOrMessageID]
+	cp START_PARTY_MENU
+	jr nz, .storeWatchedKeys
+	set BIT_SELECT, b
+.storeWatchedKeys
+	ld a, b
+	pop bc
 	ld [hli], a ; menu watched keys
 	pop af
 	ld [hl], a ; old menu item ID
@@ -241,6 +262,39 @@ HandlePartyMenuInput::
 	call HandleMenuInput_
 	call PlaceUnfilledArrowMenuCursor
 	ld b, a
+	; Shortcut belongs to the START Party list, not other party pickers.
+	; Use the physical key edge: low-sensitivity joypad can repeat held SELECT.
+	bit BIT_SELECT, b
+	jr z, .noQuickSelect
+	ld a, [wPartyMenuTypeOrMessageID]
+	cp START_PARTY_MENU
+	jr nz, .noQuickSelect
+	ldh a, [hJoyPressed]
+	bit BIT_SELECT, a
+	jr z, .heldQuickSelect
+	ld a, [wIsInBattle]
+	and a
+	jr nz, .noQuickSelect
+	ld a, [wCurrentMenuItem]
+	and a
+	jr z, .quickSelectDone ; first Pokémon: no-op
+	ld [wPartyAndBillsPCSavedMenuItem], a
+	xor a
+	ld [wPartyMenuAnimMonEnabled], a ; match the existing swap path
+	ld a, 1 ; SwitchPartyMon expects one-based lead slot here
+	ld [wMenuItemToSwap], a
+	farcall SwitchPartyMon ; reuse species, stats, OT, nickname, gfx and sound
+	; The existing swap routine resets the menu type to NORMAL_PARTY_MENU.
+	ld a, START_PARTY_MENU
+	ld [wPartyMenuTypeOrMessageID], a
+.quickSelectDone
+	jp HandlePartyMenuInput ; stay in Party; keep the animation stack intact
+.heldQuickSelect
+	; Ignore auto-repeat; a fresh A/B press is still handled normally.
+	ld a, b
+	and A_BUTTON | B_BUTTON
+	jp z, HandlePartyMenuInput
+.noQuickSelect
 	xor a
 	ld [wPartyMenuAnimMonEnabled], a
 	ld a, [wCurrentMenuItem]
@@ -282,18 +336,29 @@ HandlePartyMenuInput::
 	ld [wMenuItemToSwap], a
 	ld [wPartyMenuTypeOrMessageID], a
 	call RedrawPartyMenu
-	jr HandlePartyMenuInput
+	jr .restoreStartPartyShortcut
 .handleSwap
 	ld a, [wCurrentMenuItem]
 	ld [wWhichPokemon], a
 	farcall SwitchPartyMon
-	jr HandlePartyMenuInput
+.restoreStartPartyShortcut
+	; The traditional Switch submenu is only entered from START -> Pokémon.
+	; After completing/cancelling it, restore SELECT without leaving Party.
+	ld a, START_PARTY_MENU
+	ld [wPartyMenuTypeOrMessageID], a
+	ld hl, wMenuWatchedKeys
+	set BIT_SELECT, [hl]
+	jp HandlePartyMenuInput
 
 DrawPartyMenu::
 	ld hl, DrawPartyMenu_
 	jr DrawPartyMenuCommon
 
 RedrawPartyMenu::
+	; ROM-1.21C: explicit redraw calls are normal redraws, not swaps.
+	; Only SwitchPartyMon -> RedrawPartyMenu_ may reuse nickname tiles.
+	xor a
+	ld [wPartySwapRedrawPending], a
 	ld hl, RedrawPartyMenu_
 
 DrawPartyMenuCommon::

@@ -47,8 +47,8 @@ main=read('src/main.asm')
 for section,part in [('BCD Printing Helpers','engine/menus/print_bcd_helpers.asm'),('Trainer Music Helpers','engine/audio/trainer_music_helpers.asm'),('Machine Name Helpers','engine/items/machine_name_helpers.asm')]:
  assert f'"{section}"' in layout and f'SECTION "{section}", ROMX' in main
  assert f'INCLUDE "{part}"' in main
-assert 'db "ROM-1.21@"' in read('src/data/game_version.asm')
-assert 'hlcoord 11, 0 ; ROM-1.21 正式标记为 8 字符' in read('src/engine/menus/main_menu.asm')
+assert 'db "ROM-1.22@"' in read('src/data/game_version.asm')
+assert 'hlcoord 11, 0 ; ROM-1.22 正式标记为 8 字符' in read('src/engine/menus/main_menu.asm')
 # Generic wrapper's SP+9: 4 saved result register pairs, then old bank AF.
 for bank in (1,8,15,0x2d,0x3c):
  stack=[0x25,0xc0,0x52,0x31,0x96,0xd2,0xf0,0x77,0x00,bank]

@@ -169,7 +169,12 @@ wSerialPartyMonsPatchList:: ds 200
 wSerialEnemyMonsPatchList:: ds 200
 ENDU
 
-	ds 80
+	; Party swap reuses visible nickname glyph tiles while performing the
+	; original clear / sound / full-list refresh.  Reserve inside the existing
+	; 80-byte gap so all later WRAM addresses stay EXACTLY unchanged.
+wPartySwapNameTileCache:: ds 2 * 2 * 8 ; two 2-row, 8-column name regions
+wPartySwapRedrawPending:: db
+	ds 80 - (2 * 2 * 8 + 1)
 
 
 SECTION "Overworld Map", WRAM0

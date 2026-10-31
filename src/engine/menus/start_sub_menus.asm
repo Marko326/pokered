@@ -13,13 +13,16 @@ StartMenu_Pokemon::
 	jp z, RedisplayStartMenu
 	xor a
 	ld [wMenuItemToSwap], a
-	ld [wPartyMenuTypeOrMessageID], a
 	ld [wUpdateSpritesEnabled], a
+	; SELECT shortcut is enabled only at this START -> Pokémon entry.
+	ld a, START_PARTY_MENU
+	ld [wPartyMenuTypeOrMessageID], a
 	call DisplayPartyMenu
 	jr .checkIfPokemonChosen
 .loop
 	xor a
 	ld [wMenuItemToSwap], a
+	ld a, START_PARTY_MENU
 	ld [wPartyMenuTypeOrMessageID], a
 	call GoBackToPartyMenu
 .checkIfPokemonChosen
@@ -753,12 +756,84 @@ StartMenu_Option::
 	jp StartMenuInputLoop
 
 SwitchPartyMon::
-	call SwitchPartyMon_InitVarOrSwapData ; swap data
+	call SwitchPartyMon_InitVarOrSwapData ; swap data (unchanged)
+	; ROM-1.21B: keep the original swap animation, but preserve the two
+	; already-staticized 2x8 nickname glyph indices *before* clearing rows.
+	; This never reuses/remaps glyph VRAM while the old screen is visible.
+	call SwitchPartyMon_SaveNameTiles
 	ld a, [wSwappedMenuItem]
 	call SwitchPartyMon_ClearGfx
 	ld a, [wCurrentMenuItem]
 	call SwitchPartyMon_ClearGfx
+	; The normal complete redraw still refreshes HP, level, OAM, messages,
+	; palette and 3-part BG transfer. Only name painting/DFSStaticize is
+	; bypassed; the two name tile regions are restored at their new slots.
+	ld a, 1
+	ld [wPartySwapRedrawPending], a
 	jp RedrawPartyMenu_
+
+SwitchPartyMon_SaveNameTiles:
+	ld a, [wSwappedMenuItem]
+	ld de, wPartySwapNameTileCache
+	call .save
+	ld a, [wCurrentMenuItem]
+	ld de, wPartySwapNameTileCache + 16
+.save
+	; Name glyphs on the existing Party screen: x=2..9, y=index*2..+1.
+	ld hl, wTileMap + 2
+	ld bc, 2 * SCREEN_WIDTH
+	call AddNTimes
+	ld b, 2
+.row
+	ld c, 8
+.col
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .col
+	ld c, SCREEN_WIDTH - 8
+.skip
+	inc hl
+	dec c
+	jr nz, .skip
+	dec b
+	jr nz, .row
+	ret
+
+RestorePartySwapNameTiles::
+	; The two cache blocks follow the MONS before the data swap, so write
+	; each block to the *opposite* position after the normal redraw.
+	ld a, [wCurrentMenuItem]
+	ld de, wPartySwapNameTileCache
+	call .restore
+	ld a, [wSwappedMenuItem]
+	ld de, wPartySwapNameTileCache + 16
+	call .restore
+	xor a
+	ld [wPartySwapRedrawPending], a
+	ret
+.restore
+	ld hl, wTileMap + 2
+	ld bc, 2 * SCREEN_WIDTH
+	call AddNTimes
+	ld b, 2
+.row
+	ld c, 8
+.col
+	ld a, [de]
+	ld [hli], a
+	inc de
+	dec c
+	jr nz, .col
+	ld c, SCREEN_WIDTH - 8
+.skip
+	inc hl
+	dec c
+	jr nz, .skip
+	dec b
+	jr nz, .row
+	ret
 
 SwitchPartyMon_ClearGfx:
 	push af

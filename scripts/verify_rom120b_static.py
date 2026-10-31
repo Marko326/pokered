@@ -27,8 +27,8 @@ assert 'SECTION "Stat Calculation Helpers", ROMX' in read('src/main.asm')
 assert 'INCLUDE "engine/pokemon/calc_stats_helpers.asm"' in read('src/main.asm')
 bank = read('src/layout.link').split('ROMX $2D', 1)[1].split('ROMX $3C', 1)[0]
 assert '"Stat Calculation Helpers"' in bank
-assert 'db "ROM-1.21@"' in read('src/data/game_version.asm')
-assert 'hlcoord 11, 0 ; ROM-1.21 正式标记为 8 字符' in read('src/engine/menus/main_menu.asm')
+assert 'db "ROM-1.22@"' in read('src/data/game_version.asm')
+assert 'hlcoord 11, 0 ; ROM-1.22 正式标记为 8 字符' in read('src/engine/menus/main_menu.asm')
 # SP offset proof: bytes at saved positions: resultAF, oldBankAF, originalBC, originalHL.
 for bank_id in (1, 5, 0x0f, 0x2d, 0x3c):
     for returned_af in (0x0080, 0x05c0, 0xe731, 0xfff0):

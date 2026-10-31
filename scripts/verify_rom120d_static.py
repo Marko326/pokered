@@ -31,6 +31,6 @@ assert expected in part
 assert part.index('ld a, BANK(MapHeaderPointers)') < part.index('ld a, [hli]') < part.index('\tpop de')
 assert w.index('call SwitchToMapRomBank',w.index('LoadMapHeader::'))<start
 assert '\tld de, wCurMapTileset' in w[end:end+220], 'caller DE must be overwritten after restoring bank'
-assert 'db "ROM-1.21@"' in read('src/data/game_version.asm')
-assert 'hlcoord 11, 0 ; ROM-1.21' in read('src/engine/menus/main_menu.asm')
+assert 'db "ROM-1.22@"' in read('src/data/game_version.asm')
+assert 'hlcoord 11, 0 ; ROM-1.22' in read('src/engine/menus/main_menu.asm')
 print('PASS ROM-1.20D: 248 original 16-bit pointers in $2D; lookup restores map bank before dereference (static only)')

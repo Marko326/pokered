@@ -320,7 +320,7 @@
 | #286 `8c4b2eb4ca` | feat(battle): 重做吸取系动画节奏并恢复回流重力感 | 需评估 | 需求待选 | [271-300.md](RPP_REFERENCE_PORT_AUDIT_271-300.md) |
 | #287 `6a7e59b3d5` | feat(battle): 完善分段动画桥接并修复 Acid 切换 | 依赖暂缓 | 成组暂缓 | [271-300.md](RPP_REFERENCE_PORT_AUDIT_271-300.md) |
 | #288 `7bd9c65d3d` | feat(battle): 实现 Shadow Punch 跨阶段残留与命中特效同步 | 依赖暂缓 | 成组暂缓 | [271-300.md](RPP_REFERENCE_PORT_AUDIT_271-300.md) |
-| #289 `c3c8aeffd1` | feat(menu): 新增 Party 与 Bag 菜单快捷操作 | 需评估 | 需求待选 | [271-300.md](RPP_REFERENCE_PORT_AUDIT_271-300.md) |
+| #289 `c3c8aeffd1` | feat(menu): 新增 Party 与 Bag 菜单快捷操作 | 需评估 | 第二、三轮显示交换候选失败或未通过；ROM-1.21A 恢复原始全表刷新、字形写入期间增加调色板保护，待编译和白场观感用户确认；Bag 未选（2026-10-31） | [271-300.md](RPP_REFERENCE_PORT_AUDIT_271-300.md)；第四轮白色遮罩用户反馈失败，ROM-1.21B 改为旧式清行+整页刷新、仅重用可见昵称图块索引去异常白闪；源码候选待红蓝/DMG/CGB验证（2026-10-31） |
 | #290 `5d6c4d456f` | feat(battle): 补充 Fly / Dig 半无敌状态特殊招式交互 | 需评估 | 需求待选 | [271-300.md](RPP_REFERENCE_PORT_AUDIT_271-300.md) |
 | #291 `1e6a5eac78` | fix(battle): 修复 Fly / Dig 特殊命中后的异常显形 | 当前不适用 | 不直接适用 | [271-300.md](RPP_REFERENCE_PORT_AUDIT_271-300.md) |
 | #292 `82ce72f94d` | refactor(battle): 拆分暴击、特殊伤害与中毒效果逻辑 | 需评估 | 需求待选 | [271-300.md](RPP_REFERENCE_PORT_AUDIT_271-300.md) |
@@ -483,3 +483,11 @@
 - **待核验**绝不等于存在确定故障；CHS 没有 Crystal Audio 等前置系统时，不为 RPP 衍生 Bug 引入该系统。
 - 这份表是“选择与追踪索引”，**不取代**每笔报告的源码证据、风险及依赖链；后续发现误判时先更新所属分批原文，再更新汇总状态。
 - 本次是纯文档整理；不更改 `src/`、游戏内版本号 `ROM-1.21`、MAP、ROM 或 Git 历史；不存在“已移植全部 442 笔”的结论。
+
+### ROM-1.21C 第六轮：首次打开昵称缺失的独立回归记录（2026-10-31）
+
+用户截图确认 ROM-1.21B 第五轮首次进入 START Party 时全部昵称缺失；A 菜单返回后部分恢复，Summary 返回后正常。该反馈属于**实机已复现的第五轮回归**；不能把 v5 的静态检查通过当成最终验收。源码锁定 `wPartySwapRedrawPending` 没有在首次 `DrawPartyMenu_` 初始化，非零旧值会误跳过全部 `PlaceString` 与 `DFSStaticize`，再写入无效旧缓存。ROM-1.21C 在首次 Party 入口、`GoBackToPartyMenu` 与通用 `RedrawPartyMenu` 三处明确清零，仅 `SwitchPartyMon` 的内部重绘保留缓存复用；原有音效、清行、整页重绘、SELECT 生效范围不变，无白色遮罩。**目前仅静态候选；仍需实测确认首次进入、A/SELECT 调换及子菜单/Summary 返回的昵称均正确。**
+
+### ROM-1.22 运行验收与正式收口补记（2026-10-31）
+
+用户反馈第六轮 `ROM-1.21C` 的“两种模式”均正常，未再发现额外白色闪烁或字体乱码，且上传了 SELECT 交换录像；反馈未逐项限定所有场景的组合。RPP #289 的 START Party 部分作为 CHS 体验功能收口，**不改变其他入口隔离**。正式标记 `ROM-1.22`，只清理版本文字、Options 对齐、静态守卫和维护记录。保留 RPP 442 笔既有静态分类，不将其他编号误标为已移植。正式构建/MAP 仍待补齐；两种模式的用户反馈不代表红蓝全平台穷尽测试。

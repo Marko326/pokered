@@ -52,7 +52,11 @@ HandleDFS:
 	ret
 
 DrawPartyMenu_::
+	; ROM-1.21C: a first entry is ALWAYS a full name/DFS draw, never
+	; a continuation of SwitchPartyMon. This scratch WRAM flag is not
+	; guaranteed to be zero when the party menu opens.
 	xor a
+	ld [wPartySwapRedrawPending], a
 	ldh [hAutoBGTransferEnabled], a
 	call ClearScreen
 	call UpdateSprites
@@ -83,6 +87,12 @@ RedrawPartyMenu_::
 	push bc
 	push de
 	push hl
+	; The swap path keeps already-printed glyph tiles stable in VRAM.
+	; Leave the unmodified rows intact; restore only the swapped names
+	; after the usual HP/level/icon/full-message redraw.
+	ld a, [wPartySwapRedrawPending]
+	and a
+	jp nz, .skipNamePaintForSwap
 	ld a, c
 	push hl
 	ld hl, wPartyMonNicks
@@ -109,6 +119,7 @@ RedrawPartyMenu_::
 	pop hl
 	call PlaceString ; print the pokemon's name
 	call DecreaseDFSStack
+.skipNamePaintForSwap
 	farcall WriteMonPartySpriteOAMByPartyIndex ; place the appropriate pokemon icon
 	ldh a, [hPartyMonIndex]
 	ld [wWhichPokemon], a
@@ -180,6 +191,9 @@ RedrawPartyMenu_::
 	ld bc, 7
 	add hl, bc
 	call PrintLevel
+	ld a, [wPartySwapRedrawPending]
+	and a
+	jr nz, .skipNameStaticizeForSwap
 	ld hl, sp+5
 	ld a, [hl] ; DFSStaticize Char
 	pop hl
@@ -189,6 +203,10 @@ RedrawPartyMenu_::
 	lb bc, 2, 8
 	call DFSStaticize
 	pop hl
+	jr .nameStaticizeDone
+.skipNameStaticizeForSwap
+	pop hl
+.nameStaticizeDone
 	pop de
 	inc de
 	ld bc, 2 * 20
@@ -261,6 +279,9 @@ RedrawPartyMenu_::
 .notAbleToEvolveText
 	db "NOT ABLE@"
 .afterDrawingMonEntries
+	ld a, [wPartySwapRedrawPending]
+	and a
+	call nz, RestorePartySwapNameTiles
 	ld b, SET_PAL_PARTY_MENU
 	call RunPaletteCommand
 .printMessage
@@ -365,6 +386,7 @@ PartyMenuMessagePointers:
 	dw PartyMenuUseTMText
 	dw PartyMenuSwapMonText
 	dw PartyMenuItemUseText
+	dw PartyMenuNormalText ; START_PARTY_MENU, no new text
 
 PartyMenuNormalText:
 	text_far _PartyMenuNormalText

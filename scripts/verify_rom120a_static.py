@@ -29,8 +29,8 @@ assert 'SECTION "Yes No Dialog Helpers", ROMX' in main
 assert 'SECTION "Sprite Reset Helpers", ROMX' in main
 bank = layout.split('ROMX $2D', 1)[1].split('ROMX $3C', 1)[0]
 assert all(x in bank for x in ('"Yes No Dialog Helpers"', '"Sprite Reset Helpers"'))
-assert any(x in get('src/data/game_version.asm') for x in ('db "ROM-1.20A@"', 'db "ROM-1.20B@"', 'db "ROM-1.21@"'))
-assert any(x in get('src/engine/menus/main_menu.asm') for x in ('hlcoord 10, 0 ; ROM-1.20A 测试标记为 9 字符', 'hlcoord 10, 0 ; ROM-1.20B 测试标记为 9 字符', 'hlcoord 11, 0 ; ROM-1.21 正式标记为 8 字符'))
+assert any(x in get('src/data/game_version.asm') for x in ('db "ROM-1.20A@"', 'db "ROM-1.20B@"', 'db "ROM-1.22@"'))
+assert any(x in get('src/engine/menus/main_menu.asm') for x in ('hlcoord 10, 0 ; ROM-1.20A 测试标记为 9 字符', 'hlcoord 10, 0 ; ROM-1.20B 测试标记为 9 字符', 'hlcoord 11, 0 ; ROM-1.22 正式标记为 8 字符'))
 assert 'INCLUDE "home/reset_player_sprite.asm"' in get('src/home.asm')
 assert 'INCLUDE "home/yes_no.asm"' in get('src/home.asm')
 print('PASS ROM-1.20A: exact ASM-body preservation, ROM0 entry points, ROMX $2D layout (static only)')
