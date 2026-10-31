@@ -1,6 +1,15 @@
 # CHS_Mod 历史变更与验收记录
 
 
+## ROM-1.21 — RPP 参考提交第十一批（301～330）资料审查（仅文档）
+
+- **来源**：以已提交 ROM-1.21 HEAD `70549f63` 为 CHS 对照，逐笔核对 RPP `individual/301～330` 共 30 笔提交；详细参见 `docs/RPP_REFERENCE_PORT_AUDIT_301-330.md`。
+- **需维护者决策的玩法调整**：#310 Spark 替换 Razor Wind、#311 Egg Bomb 命中/属性/附加效果改变；均不认作 CHS 现有 Bug，且可能影响旧存档。
+- **可选视觉增强**：#326 Bone Club/Bonemerang Gold 骨棒动画；原版 CHS 有对应技能，但参考素材和特殊轨迹未移植。
+- **部分实现**：#328 START 菜单加速、快速关闭与二级菜单返回的体验目标在 QOL-1.11～1.16 已部分实现；参考 VRAM 常驻/bit7 状态复用不适合直接照搬 CHS 汉化 DFS。
+- **参考专属依赖**：#301～#325、#327 多数是 RPP 新增技能、扩展动画、VBlank/STAT 效果和 Crystal Audio 的后续改动；#329～330 依赖地区形态存储/联机系统，CHS 无同一前提，不登记为已复现 Bug。
+- **交付范围**：只更新审核文档、索引、统一历史和 TODO；不改游戏功能及版本 `ROM-1.21`，没有 ROM 构建、运行验收或执行 Commit/Push。
+
 ## ROM-1.21 — RPP 参考提交第十批（271～300）资料审查（仅文档）
 
 - **来源**：以已提交 ROM-1.21 HEAD `70549f63` 为 CHS 对照，核对 RPP `individual/271～300` 30 笔原始提交；详见 `docs/RPP_REFERENCE_PORT_AUDIT_271-300.md`。
