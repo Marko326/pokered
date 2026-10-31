@@ -1,6 +1,15 @@
 # CHS_Mod 历史变更与验收记录
 
 
+## ROM-1.21 — RPP 参考提交第七批（181～210）资料审查（仅文档）
+
+- **来源/范围**：以已提交 `ROM-1.21` HEAD `70549f63` 为基线，逐笔对照 RPP `individual/181～210` 共 30 笔；详情见 `docs/RPP_REFERENCE_PORT_AUDIT_181-210.md`。
+- **已实现**：#201～202 有 CHS `QOL-1.17` 有效伤害比例 HP 速度档及 tile-only VBlank 专用 HUD 刷新证据，不重复移植。
+- **待核验真实路径**：#195 玩家 PC Deposit 对 HM 缺少单独拒绝分支，虽 `IsKeyItem_` 认 HM 为 Key Item，数量控制不等于存入保护；#207 Thrash/Petal Dance 命中失败提前解除锁招需实测。均**未在本批改代码、未宣称运行 Bug 已复现**。
+- **参考专属/依赖暂缓**：#181～184 MoveDex 和名称压缩，#190 MoveDex 光标，#194 分类背包，#203 RPP packed name 解码覆盖 HRAM 引发商店价格错乱，不能标为当前 CHS 自有故障；#205/206 与 #208/209 为整体战斗规则链。
+- **QoL 候选**：#189 图鉴会话光标、#191 START Party 独立光标、#200 开战剪影过场速度；是否移植由维护者另行决定。
+- **仅文档交付**：新增第七批审查、更新索引/统一历史/TODO；版本 `ROM-1.21` 不变，不修改 ASM、WRAM、存档和音频引擎；未编译、未 Commit/Push。
+
 ## ROM-1.21 — RPP 参考提交第六批（151～180）资料审查（仅文档）
 
 - **参考依据**：`ROM-1.21.zip` 已提交 HEAD `70549f63`，对照 RPP `individual/151～180` 全部 30 笔原始补丁；详见 `docs/RPP_REFERENCE_PORT_AUDIT_151-180.md`。
