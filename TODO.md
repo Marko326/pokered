@@ -12,7 +12,8 @@
 - [x] 001～030 第一批：`docs/RPP_REFERENCE_PORT_AUDIT_001-030.md`。
 - [x] 031～060 第二批：`docs/RPP_REFERENCE_PORT_AUDIT_031-060.md`；Crystal Audio 专属问题不作为 CHS 当前 Bug。
 - [x] **061～090 第三批：29 笔实际提交已静态审查，#072 缺号**；详细证据和建议写在 `docs/RPP_REFERENCE_PORT_AUDIT_061-090.md`，总体索引在 `docs/RPP_REFERENCE_PORT_AUDIT_INDEX.md`。
-- [ ] **091～120 下一批待审**；当前仅做文档审核，不修改游戏功能/版本号。是否移植 #073～076 Bill PC 连续操作、#083 START 光标、#084 重复钓鱼或大型分类背包/特殊 Fly，待用户选定。
+- [x] **091～120 第四批已完成静态对照**：见 `docs/RPP_REFERENCE_PORT_AUDIT_091-120.md`；依赖链不移植，待用户选择候选。
+- [ ] **121～150 第五批待审**；继续区分已实现功能、参考系统独有 Bug 与真正的 CHS 复现项。
 
 ## ROM-1.21 正式源码收口（已完成开发；待用户 Git 提交）
 
