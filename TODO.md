@@ -13,7 +13,8 @@
 - [x] 031～060 第二批：`docs/RPP_REFERENCE_PORT_AUDIT_031-060.md`；Crystal Audio 专属问题不作为 CHS 当前 Bug。
 - [x] **061～090 第三批：29 笔实际提交已静态审查，#072 缺号**；详细证据和建议写在 `docs/RPP_REFERENCE_PORT_AUDIT_061-090.md`，总体索引在 `docs/RPP_REFERENCE_PORT_AUDIT_INDEX.md`。
 - [x] **091～120 第四批已完成静态对照**：见 `docs/RPP_REFERENCE_PORT_AUDIT_091-120.md`；依赖链不移植，待用户选择候选。
-- [ ] **121～150 第五批待审**；继续区分已实现功能、参考系统独有 Bug 与真正的 CHS 复现项。
+- [x] **121～150 第五批已完成静态评估**：见 `docs/RPP_REFERENCE_PORT_AUDIT_121-150.md`；#130/#133 已有同目标实现，#132 波浪动画滚动值列待复现，扩展动画/Crystal Audio 依赖不直接移植。
+- [ ] **151～180 第六批待审**；先分析参考功能依赖，再与 CHS 源码和历史记录对照。
 
 ## ROM-1.21 正式源码收口（已完成开发；待用户 Git 提交）
 
