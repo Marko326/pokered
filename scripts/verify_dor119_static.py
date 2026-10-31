@@ -10,8 +10,9 @@ vblank = get('src/home/vblank.asm')
 win = get('src/engine/menus/start_window_fast.asm')
 sub = get('src/engine/menus/start_sub_menus.asm')
 pokedex = get('src/engine/menus/pokedex.asm')
-assert ('db "DOR-1.19@"' in version or 'db "FLH-1.20@"' in version)
-assert ('hlcoord 11, 0 ; DOR-1.19 正式标记为 8 字符' in main or 'hlcoord 11, 0 ; FLH-1.20 正式标记为 8 字符' in main)
+assert ('db "DOR-1.19@"' in version or 'db "FLH-1.20@"' in version or ('db "ROM-1.20B@"' in version or 'db "ROM-1.21@"' in version))
+assert ('hlcoord 11, 0 ; DOR-1.19 正式标记为 8 字符' in main or 'hlcoord 11, 0 ; FLH-1.20 正式标记为 8 字符' in main or
+        ('hlcoord 10, 0 ; ROM-1.20B 测试标记为 9 字符' in main or 'hlcoord 11, 0 ; ROM-1.21 正式标记为 8 字符' in main))
 # CGB sprite OAM attribute encoding, no extra 40-object VBlank scan.
 assert 'DEF OAM_OBP1      EQU (1 << OAM_OBP_NUM) | %00000001' in get('src/constants/oam_constants.asm')
 assert 'and %11110000\n\tld [de], a' in get('src/engine/gfx/sprite_oam.asm')

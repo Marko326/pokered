@@ -189,6 +189,13 @@ ROMX $2D
 	; far-called from ROM0 and can live in this spare helper bank.
 	"START Window Transfer Fast"
 	"Battle Damage HP Animation"
+	"Yes No Dialog Helpers"
+	"Sprite Reset Helpers"
+	"Stat Calculation Helpers"
+	"BCD Printing Helpers"
+	"Trainer Music Helpers"
+	"Machine Name Helpers"
+	"Map Header Pointer Table"
 
 ROMX $3C
 	"CGB Native Color"

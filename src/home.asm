@@ -16,7 +16,8 @@ SECTION "Home", ROM0
 INCLUDE "home/start.asm"
 INCLUDE "home/joypad.asm"
 
-INCLUDE "data/maps/map_header_pointers.asm"
+; ROM-1.21: map header pointer table lives in ROMX $2D.
+; LoadMapHeader restores the current map bank before dereferencing it.
 
 INCLUDE "home/overworld.asm"
 INCLUDE "home/pokemon.asm"

@@ -12,66 +12,27 @@
 ; Note that bits 5 and 7 are modified during execution. The above reflects
 ; their meaning at the beginning of the functions's execution.
 PrintBCDNumber::
-	ld b, c ; save flags in b
-	res 7, c
-	res 6, c
-	res 5, c ; c now holds the length
-	bit 5, b
-	jr z, .loop
-	bit 7, b
-	jr nz, .loop
-	ld [hl], CHARVAL("¥")
-	inc hl
-.loop
-	ld a, [de]
-	swap a
-	call PrintBCDDigit ; print upper digit
-	ld a, [de]
-	call PrintBCDDigit ; print lower digit
-	inc de
-	dec c
-	jr nz, .loop
-	bit 7, b ; were any non-zero digits printed?
-	jr z, .done ; if so, we are done
-.numberEqualsZero ; if every digit of the BCD number is zero
-	bit 6, b ; left or right alignment?
-	jr nz, .skipRightAlignmentAdjustment
-	dec hl ; if the string is right-aligned, it needs to be moved back one space
-.skipRightAlignmentAdjustment
-	bit 5, b
-	jr z, .skipCurrencySymbol
-	ld [hl], CHARVAL("¥")
-	inc hl
-.skipCurrencySymbol
-	ld [hl], CHARVAL("0")
-	call PrintLetterDelay
-	inc hl
-.done
-	ret
-
-PrintBCDDigit::
-	and $f
-	and a
-	jr z, .zeroDigit
-.nonzeroDigit
-	bit 7, b ; have any non-space characters been printed?
-	jr z, .outputDigit
-; if bit 7 is set, then no numbers have been printed yet
-	bit 5, b ; print the currency symbol?
-	jr z, .skipCurrencySymbol
-	ld [hl], CHARVAL("¥")
-	inc hl
-	res 5, b
-.skipCurrencySymbol
-	res 7, b ; unset 7 to indicate that a nonzero digit has been reached
-.outputDigit
-	add CHARVAL("0")
-	ld [hli], a
-	jp PrintLetterDelay
-.zeroDigit
-	bit 7, b ; either printing leading zeroes or already reached a nonzero digit?
-	jr z, .outputDigit ; if so, print a zero digit
-	bit 6, b ; left or right alignment?
-	ret nz
-	inc hl ; if right-aligned, "print" a space by advancing the pointer
+; ROM-1.20C: BCD numbers are read from RAM; uses PrintLetterDelay in ROM0.
+; Original routine takes no arguments in A; HL/BC/DE are passed through
+; untouched, and ALL result registers/flags are restored after bank switch.
+	ldh a, [hLoadedROMBank]
+	push af
+	ld a, BANK(PrintBCDNumber_Banked)
+	ldh [hLoadedROMBank], a
+	ld [MBC1RomBank], a
+	call PrintBCDNumber_Banked
+	push af
+	push bc
+	push de
+	push hl
+	ld hl, sp + 9 ; saved caller bank (A in saved AF)
+	ld a, [hl]
+	ldh [hLoadedROMBank], a
+	ld [MBC1RomBank], a
+	pop hl
+	pop de
+	pop bc
+	pop af
+	inc sp ; discard saved caller bank AF; does not change flags
+	inc sp
 	ret

@@ -554,6 +554,34 @@ INCLUDE "engine/overworld/bike_shortcut.asm"
 SECTION "START Window Transfer Fast", ROMX
 INCLUDE "engine/menus/start_window_fast.asm"
 
+; ROM-1.20A: non-interrupt Yes/No drawing routines live in spare Bank $2D.
+SECTION "Yes No Dialog Helpers", ROMX
+INCLUDE "engine/menus/yes_no_helpers.asm"
+
+; ROM-1.20A: sprite reset is used only at new-game/map-entry initialization.
+SECTION "Sprite Reset Helpers", ROMX
+INCLUDE "engine/overworld/reset_player_sprite_helpers.asm"
+
+; ROM-1.20B: banked stat calculation, with register-preserving ROM0 entries.
+SECTION "Stat Calculation Helpers", ROMX
+INCLUDE "engine/pokemon/calc_stats_helpers.asm"
+
+; ROM-1.20C: fixed-bank formatting, encounter music, and TM/HM labels.
+; ROM-1.21: ROM0-only 496-byte map-pointer lookup table.
+; Values are 16-bit addresses in the map's own ROM bank, not banked
+; far pointers; LoadMapHeader must restore the map bank before use.
+SECTION "Map Header Pointer Table", ROMX
+INCLUDE "data/maps/map_header_pointers.asm"
+
+SECTION "BCD Printing Helpers", ROMX
+INCLUDE "engine/menus/print_bcd_helpers.asm"
+
+SECTION "Trainer Music Helpers", ROMX
+INCLUDE "engine/audio/trainer_music_helpers.asm"
+
+SECTION "Machine Name Helpers", ROMX
+INCLUDE "engine/items/machine_name_helpers.asm"
+
 ; QOL-1.17: isolated direct-attack damage animation in helper Bank $2D.
 SECTION "Battle Damage HP Animation", ROMX
 INCLUDE "engine/battle/damage_hp_animation.asm"

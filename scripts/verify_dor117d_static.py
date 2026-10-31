@@ -21,6 +21,6 @@ init=get('src/home/init.asm'); assert 'ld [wDoorFadePending], a' in init.split('
 assert 'ld [wDoorFadeRestore], a' in init.split('home2_ret::',1)[1].split('\tei',1)[0]
 wr=get('src/ram/wram.asm')
 assert 'wDoorFadePending:: db\nwDoorFadeBGP:: db\nwDoorFadeOBP0:: db\nwDoorFadeOBP1:: db\nwDoorFadeRestore:: db\nds 19' in wr
-assert any(v in get('src/data/game_version.asm') for v in ('DOR-1.18@', 'DOR-1.19@', 'FLH-1.20@'))
-assert any(v in get('src/engine/menus/main_menu.asm') for v in ('hlcoord 11, 0 ; DOR-1.18', 'hlcoord 11, 0 ; DOR-1.19', 'hlcoord 11, 0 ; FLH-1.20'))
+assert any(v in get('src/data/game_version.asm') for v in ('DOR-1.18@', 'DOR-1.19@', 'FLH-1.20@', 'ROM-1.20B@', 'ROM-1.21@'))
+assert any(v in get('src/engine/menus/main_menu.asm') for v in ('hlcoord 11, 0 ; DOR-1.18', 'hlcoord 11, 0 ; DOR-1.19', 'hlcoord 11, 0 ; FLH-1.20', 'hlcoord 10, 0 ; ROM-1.20B', 'hlcoord 11, 0 ; ROM-1.21'))
 print('PASS DOR-1.18: retained DOR-1.17D DMG fade route, delayed map guard, VBlank reveal, boot state, formal version')

@@ -8,8 +8,9 @@ main = get("src/engine/menus/main_menu.asm")
 end = get("src/engine/battle/end_of_battle.asm")
 party = get("src/engine/menus/party_menu.asm")
 battle = get("src/engine/battle/core.asm")
-assert 'db "FLH-1.20@"' in version
-assert 'hlcoord 11, 0 ; FLH-1.20 正式标记为 8 字符' in main
+assert any(v in version for v in ('db "FLH-1.20@"', 'db "ROM-1.20B@"', 'db "ROM-1.21@"'))
+assert ('hlcoord 11, 0 ; FLH-1.20 正式标记为 8 字符' in main or
+        ('hlcoord 10, 0 ; ROM-1.20B 测试标记为 9 字符' in main or 'hlcoord 11, 0 ; ROM-1.21 正式标记为 8 字符' in main))
 # Party redraw stays hidden until the complete BG is ready.
 redraw = party.split('RedrawPartyMenu_::', 1)[1].split('PartyMenuItemUseMessagePointers:', 1)[0]
 assert redraw.lstrip().startswith('xor a\n\tldh [hAutoBGTransferEnabled], a')

@@ -2107,9 +2107,21 @@ LoadMapHeader::
 	jr nc, .noCarry2
 	inc h
 .noCarry2
+	; The table is 496 bytes of 16-bit pointers in Bank $2D. Save the
+	; active map bank (already selected by SwitchToMapRomBank), read the
+	; pointer, then restore the MAP BANK before reading [hl] as map data.
+	ldh a, [hLoadedROMBank]
+	push af
+	ld a, BANK(MapHeaderPointers)
+	ldh [hLoadedROMBank], a
+	ld [MBC1RomBank], a
 	ld a, [hli]
 	ld h, [hl]
-	ld l, a ; hl = base of map header
+	ld l, a ; hl = base of map header in the original map bank
+	pop de ; saved bank in D; DE is reset by the header-copy loop below
+	ld a, d
+	ldh [hLoadedROMBank], a
+	ld [MBC1RomBank], a
 ; copy the first 10 bytes (the fixed area) of the map data to D367-D370
 	ld de, wCurMapTileset
 	ld c, $0a

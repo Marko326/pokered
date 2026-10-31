@@ -1,40 +1,10 @@
-; displays yes/no choice
-; yes -> set carry
+; ROM-1.20A: stable ROM0 interfaces for banked script/event callers.
+; Both entry points have no register arguments and callers inspect
+; wCurrentMenuItem (not the return value of A/HL/BC).
+; Bankswitch restores the original caller bank before returning; LD
+; instructions in the return stub do not alter the callee's flags.
 YesNoChoice::
-	call SaveScreenTilesToBuffer1
-	call InitYesNoTextBoxParameters
-	jr DisplayYesNoChoice
-
-TwoOptionMenu:: ; unreferenced
-	ld a, TWO_OPTION_MENU
-	ld [wTextBoxID], a
-	call InitYesNoTextBoxParameters
-	jp DisplayTextBoxID
-
-InitYesNoTextBoxParameters::
-	xor a ; YES_NO_MENU
-	ld [wTwoOptionMenuID], a
-	hlcoord 14, 7
-	lb bc, 8, 15
-	ret
+	farjp YesNoChoice_
 
 YesNoChoicePokeCenter::
-	call SaveScreenTilesToBuffer1
-	ld a, HEAL_CANCEL_MENU
-	ld [wTwoOptionMenuID], a
-	hlcoord 11, 7 ;hlcoord 11, 6
-	lb bc, 8, 12
-	jr DisplayYesNoChoice
-
-; WideYesNoChoice:: ; unused
-	; call SaveScreenTilesToBuffer1
-	; ld a, WIDE_YES_NO_MENU
-	; ld [wTwoOptionMenuID], a
-	; hlcoord 12, 7
-	; lb bc, 8, 13
-
-DisplayYesNoChoice::
-	ld a, TWO_OPTION_MENU
-	ld [wTextBoxID], a
-	call DisplayTextBoxID
-	jp LoadScreenTilesFromBuffer1
+	farjp YesNoChoicePokeCenter_
