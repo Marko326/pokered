@@ -1,6 +1,15 @@
 # CHS_Mod 历史变更与验收记录
 
 
+## ROM-1.21 — RPP 参考提交第十四批（391～420）资料审查（仅文档）
+
+- **基线及范围**：已提交 `ROM-1.21` HEAD `70549f63`；参考包 `individual/391～420` 共 30 笔实际提交。详情、证据、状态、风险见 `docs/RPP_REFERENCE_PORT_AUDIT_391-420.md`。
+- **优先待复现**：#417 中战斗 PP 道具成功后剩余库存/回合消耗的判断路径与 CHS `ItemUsePPRestore`、`wActionResultOrTookBattleTurn` 对应；CHS 未运行复现，不当作已确认 Bug，也不直接套用 RPP 菜单返回代码。
+- **部分同目标实现**：#406 参考主菜单/Continue 复用字体缓存；CHS 既有 START 与汉化 DFS 的加载优化，但 MainMenu 仍有字体重载，需先测量再决定是否实施；Mateo 开场为参考专属。
+- **参考新系统依赖**：#393～405 地区形态独立图鉴、#418～420 第二招式表与存档身份、#410～416 扩展招式/按物种名称映射，均不能因 RPP 的后续修复而当作 CHS 现存 Bug；#407～408 Crystal Audio 音效等待和 #409 Volt Tackle 当前不直接适用。
+- **可选美术**：#391 双针专用动画与 #392 参考图像更新不是必须修复，不修改现有 CHS 资源。
+- **交付边界**：仅修改 `docs/` 与 `TODO.md`；游戏内仍是 `ROM-1.21`，没有修改 `src/`、存档、Bank、ROM，也没有独立构建、运行或执行 Git Commit/Push。
+
 ## ROM-1.21 — RPP 参考提交第十三批（361～390）资料审查（仅文档）
 
 - **基线及范围**：已提交 ROM-1.21 HEAD `70549f63`，审查 RPP `individual/361～390` 共 30 笔；每笔证据、状态及依赖记录于 `docs/RPP_REFERENCE_PORT_AUDIT_361-390.md`。
