@@ -1,6 +1,15 @@
 # CHS_Mod 历史变更与验收记录
 
 
+## ROM-1.21 — RPP 参考提交第十二批（331～360）资料审查（仅文档）
+
+- **基线及范围**：已提交 ROM-1.21 HEAD `70549f63`，逐笔审查 RPP `individual/331～360` 30 笔；证据、状态、依赖与建议记录在 `docs/RPP_REFERENCE_PORT_AUDIT_331-360.md`。
+- **已实现**：#334 Transform 后捕获物种错误，CHS 既有 `PKMNRB_Fix 10` 已关闭把敌方变身视为 Ditto 的旧逻辑。
+- **优先核查的 CHS 代码差异**：#336 玩家 Transform 目标 Fly/Dig 的 `wEnemyBattleStatus1` 值被 `hWhoseTurn` 覆盖；#331 名人堂 PC 返回 tile 图形是否真的出现污染需实测；#356 Substitute 多段击破和反伤结算属于高回归边界，未实机复现。
+- **可选功能差异**：#332 名人堂轮播局部刷新，#346～347 连续消耗道具及 PP/TM 返回，#358～359 黄版/金银图标与动态加载均未完整实现；菜单改动不得回退 CHS 已验收 DFS/Party 防闪。
+- **参考依赖**：#333、#337～343 地区形态；#348～353、#357 扩展招式/Crystal Audio；#360 第二世代特定物种。它们不属于已确认 CHS 缺陷。
+- **仅文档交付**：不更改 `src/`、游戏版本号 `ROM-1.21`、存档或构建输出，未由助手运行 ROM 或执行 Commit/Push。
+
 ## ROM-1.21 — RPP 参考提交第十一批（301～330）资料审查（仅文档）
 
 - **来源**：以已提交 ROM-1.21 HEAD `70549f63` 为 CHS 对照，逐笔核对 RPP `individual/301～330` 共 30 笔提交；详细参见 `docs/RPP_REFERENCE_PORT_AUDIT_301-330.md`。
