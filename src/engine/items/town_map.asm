@@ -7,7 +7,7 @@ DisplayTownMap:
 	push af
 	ld [hl], $ff
 	push hl
-	ld a, $1
+	ld a, JOY_REPEAT_MODE_LONG_LIST
 	ldh [hJoy7], a
 	ld a, [wCurMap]
 	push af

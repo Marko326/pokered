@@ -1,6 +1,6 @@
-; ROM-1.22 正式版标识；主菜单与设置界面共用。
-; 由已通过测试的 ROM-1.21C 正式收口，不改 Party 可执行流程。
+; ROM-1.23 正式标识；主菜单与设置界面共用。
+; 从 ROM-1.22M 收口菜单输入和可编辑长按速度表；不改游戏数据结构。
 SECTION "Game Version", ROM0
 
 GameVersionText::
-	db "ROM-1.22@"
+	db "ROM-1.23@"

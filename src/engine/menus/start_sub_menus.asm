@@ -356,6 +356,9 @@ StartMenu_Item::
 	; may have reused the DFS tiles that the saved START tilemap points at.  Bag
 	; is an overlay menu, so keep it visible while START/DFS are rebuilt off-screen
 	; and reveal the repaired parent directly; do not add a full-screen white flash.
+	ld a, [wItemListRedrawDirty]
+	and a
+	jr nz, .exitMenuDirtyDFS
 	ld a, [wStartMenuClosePending]
 	and a
 	jr nz, .exitMenuDirtyDFS
@@ -368,6 +371,7 @@ StartMenu_Item::
 .exitMenuDirtyDFS
 	xor a
 	ld [wStartMenuClosePending], a
+	ld [wItemListRedrawDirty], a
 	call LoadScreenTilesFromBuffer2DisableBGTransfer ; restore parent screen in RAM only
 	call LoadTextBoxTilePatterns
 	farcall RestoreStartMenuFromItemNoWhite

@@ -67,7 +67,9 @@ MainMenu:
 	ld [wMenuWatchedKeys], a
 	ld a, [wSaveFileStatus]
 	ld [wMaxMenuItem], a
-	call HandleMenuInput
+	ld a, 1
+	ld [wMenuWrappingEnabled], a ; title Continue/New Game/Options edge wrapping
+	call HandleMenuInput ; clears wrap on exit
 	bit BIT_B_BUTTON, a
 	jp nz, DisplayTitleScreen ; if so, go back to the title screen
 	ld c, 20
@@ -516,7 +518,7 @@ DisplayOptionMenu:
 	ld c, 18
 	call TextBoxBorder
 	; 与主菜单共用版本号，不再显示原汉化版的静态版本标签。
-	hlcoord 11, 0 ; ROM-1.22 正式标记为 8 字符，右对齐至第 18 列。
+	hlcoord 11, 0 ; ROM-1.23 正式标记为 8 字符，右对齐至第 18 列。
 	ld de, GameVersionText
 	call PlaceString
 	hlcoord 1, 1

@@ -18,3 +18,12 @@ DEF D_RIGHT  EQU 1 << BIT_D_RIGHT
 DEF D_LEFT   EQU 1 << BIT_D_LEFT
 DEF D_UP     EQU 1 << BIT_D_UP
 DEF D_DOWN   EQU 1 << BIT_D_DOWN
+
+; JoypadLowSensitivity repeat-speed selectors (hJoy7).
+; 0 keeps edge-only input; nonzero values select MenuRepeatDelayTable.
+DEF JOY_REPEAT_MODE_LONG_LIST   EQU 1
+DEF JOY_REPEAT_MODE_PARTY       EQU 2
+DEF JOY_REPEAT_MODE_PC_BOX      EQU 3
+DEF JOY_REPEAT_MODE_POKEDEX_SIDE EQU 4
+DEF JOY_REPEAT_MODE_START_MENU  EQU 5
+DEF JOY_REPEAT_MODE_COUNT       EQU 5

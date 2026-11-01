@@ -362,7 +362,19 @@ ChangeBox::
 	call UpdateSprites
 	ld hl, hUILayoutFlags
 	set 1, [hl]
+	; Use the editable PC-box repeat-speed row; restore hJoy7 on exit.
+	; HandleMenuInput clears wrapping itself.
+	ldh a, [hJoy7]
+	push af
+	ld a, JOY_REPEAT_MODE_PC_BOX
+	ldh [hJoy7], a
+	ld a, 1
+	ld [wMenuWrappingEnabled], a
 	call HandleMenuInput
+	ld b, a
+	pop af
+	ldh [hJoy7], a
+	ld a, b
 	ld hl, hUILayoutFlags
 	res 1, [hl]
 	bit BIT_B_BUTTON, a

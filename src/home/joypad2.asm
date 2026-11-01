@@ -1,24 +1,28 @@
-; this function is used when lower button sensitivity is wanted (e.g. menus)
-; OUTPUT: [hJoy5] = pressed buttons in usual format
-; there are two flags that control its functionality, [hJoy6] and [hJoy7]
-; there are essentially three modes of operation
-; 1. Get newly pressed buttons only
-;    ([hJoy7] == 0, [hJoy6] == any)
-;    Just copies [hJoyPressed] to [hJoy5].
-; 2. Get currently pressed buttons at low sample rate with delay
-;    ([hJoy7] == 1, [hJoy6] != 0)
-;    If the user holds down buttons for more than half a second,
-;    report buttons as being pressed up to 12 times per second thereafter.
-;    If the user holds down buttons for less than half a second,
-;    report only one button press.
-; 3. Same as 2, but report no buttons as pressed if A or B is held down.
-;    ([hJoy7] == 1, [hJoy6] == 0)
+; This function applies the configurable menu repeat speeds below.
+; OUTPUT: [hJoy5] = pressed buttons in usual format.
+; hJoy7 = 0 keeps edge-only input; 1..5 select a row in MenuRepeatDelayTable.
+; hJoy6 retains its original behavior: when zero, A/B held suppresses repeats.
+; A fresh direction press still waits 30 frames before the first repeat.
 JoypadLowSensitivity::
 	call Joypad
-	ldh a, [hJoy7] ; flag
-	and a ; get all currently pressed buttons or only newly pressed buttons?
+	ldh a, [hJoy7] ; edge-only or repeat-speed mode?
+	and a
 	ldh a, [hJoyPressed] ; newly pressed buttons
 	jr z, .storeButtonState
+	ldh a, [hJoy7]
+	cp JOY_REPEAT_MODE_START_MENU
+	jr nz, .allHeldButtons
+	; START menu repeats only Up/Down. A/B/START remain edge-triggered,
+	; so holding START to open the menu cannot immediately close it again.
+	push bc
+	ldh a, [hJoyHeld]
+	and D_UP | D_DOWN
+	ld b, a
+	ldh a, [hJoyPressed]
+	or b
+	pop bc
+	jr .storeButtonState
+.allHeldButtons
 	ldh a, [hJoyHeld] ; all currently pressed buttons
 .storeButtonState
 	ldh [hJoy5], a
@@ -48,7 +52,30 @@ JoypadLowSensitivity::
 	xor a
 	ldh [hJoy5], a
 .setShortDelay
-	ld a, 5 ; 1/12 of a second delay
+	; hJoy7 is a 1-based speed-table selector while repeat is enabled.
+	; Keep DE/HL intact because JoypadLowSensitivity is a shared helper.
+	push hl
+	push de
+	ldh a, [hJoy7]
+	and a
+	jr z, .defaultRepeatDelay
+	cp JOY_REPEAT_MODE_COUNT + 1
+	jr nc, .defaultRepeatDelay
+	ld e, a
+	ld d, 0
+	ld hl, MenuRepeatDelayTable - 1
+	add hl, de
+	ld a, [hl]
+	and a
+	jr nz, .restoreRepeatDelay
+	; A zero table value is invalid; use the safe 5-frame fallback.
+	ld a, 5
+	jr .restoreRepeatDelay
+.defaultRepeatDelay
+	ld a, 5 ; safe fallback for edge-only/unknown modes
+.restoreRepeatDelay
+	pop de
+	pop hl
 	ldh [hFrameCounter], a
 	ret
 
@@ -136,3 +163,24 @@ ManualTextScroll::
 .inLinkBattle
 	ld c, 65
 	jp DelayFrames
+
+; =============================================================================
+; USER-EDITABLE MENU REPEAT SPEED TABLE
+; Values are frames between repeated Up/Down moves at 60 Hz:
+;   5 frames  = about 12 repeats/second (faster)
+;  10 frames  = about  6 repeats/second (slower)
+; The first repeat still waits 30 frames (0.5 seconds) after a fresh press.
+; Change the numbers only; the row order is defined by JOY_REPEAT_MODE_*
+; in constants/input_constants.asm. Values must be 1..255 (0 falls back
+; to a safe 5-frame interval).
+;
+;   Menu / context                         Frames
+MenuRepeatDelayTable::
+	db 5  ; 1: Long lists (Bag, shop, Pokédex left list, Town Map)
+	db 10 ; 2: Pokémon Party (including traditional SWITCH selection)
+	db 10 ; 3: Bill's PC 12-box selector
+	db 10 ; 4: Pokédex right-side DATA / CRY / AREA / QUIT menu
+	db 10 ; 5: In-game START menu (opened with START on the overworld)
+
+MenuRepeatDelayTableEnd::
+ASSERT MenuRepeatDelayTableEnd - MenuRepeatDelayTable == JOY_REPEAT_MODE_COUNT

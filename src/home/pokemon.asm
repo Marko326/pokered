@@ -259,7 +259,27 @@ HandlePartyMenuInput::
 	ld [wMenuWrappingEnabled], a
 	ld a, $40
 	ld [wPartyMenuAnimMonEnabled], a
+	; Use the Party speed-table row only for field START Party and its SWITCH target.
+	; Save hJoy7: battle/item/PC Party selectors are unchanged.
+	ldh a, [hJoy7]
+	push af
+	ld a, [wPartyMenuTypeOrMessageID]
+	cp START_PARTY_MENU
+	jr z, .fieldPartyInput
+	cp SWAP_MONS_PARTY_MENU ; traditional START -> Party -> SWITCH target
+	jr nz, .partyInput
+.fieldPartyInput
+	ld a, [wIsInBattle]
+	and a
+	jr nz, .partyInput
+	ld a, JOY_REPEAT_MODE_PARTY ; configured in MenuRepeatDelayTable
+	ldh [hJoy7], a
+.partyInput
 	call HandleMenuInput_
+	ld b, a
+	pop af
+	ldh [hJoy7], a
+	ld a, b
 	call PlaceUnfilledArrowMenuCursor
 	ld b, a
 	; Shortcut belongs to the START Party list, not other party pickers.

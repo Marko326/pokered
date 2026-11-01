@@ -85,10 +85,13 @@ HandleMenuInput_::
 .alreadyAtTop
 	ld a, [wMenuWrappingEnabled]
 	and a ; is wrapping around enabled?
-	jr z, .noWrappingAround
+	jp z, .noWrappingAround
+	ldh a, [hJoyPressed]
+	bit BIT_D_UP, a ; held Up stops at the boundary until a fresh press
+	jr z, .checkOtherKeys
 	ld a, [wMaxMenuItem]
 	ld [wCurrentMenuItem], a ; wrap to the bottom of the menu
-	jr .checkOtherKeys
+	jr .verticalWrap
 .checkIfDownPressed
 	bit BIT_D_DOWN, a
 	jr z, .checkOtherKeys
@@ -102,11 +105,29 @@ HandleMenuInput_::
 .alreadyAtBottom
 	ld a, [wMenuWrappingEnabled]
 	and a ; is wrapping around enabled?
-	jr z, .noWrappingAround
+	jp z, .noWrappingAround
+	ldh a, [hJoyPressed]
+	bit BIT_D_DOWN, a ; held Down stops at the boundary until a fresh press
+	jr z, .checkOtherKeys
 	ld c, $00 ; wrap from bottom to top
+	ld a, c
+	ld [wCurrentMenuItem], a
+	jr .verticalWrap
 .notAtBottom
 	ld a, c
 	ld [wCurrentMenuItem], a
+	jr .checkOtherKeys
+.verticalWrap
+	; Show the destination cursor before waiting; a held key cannot keep moving it.
+	call PlaceMenuCursor
+	call Delay3
+.waitForVerticalRelease
+	call DelayFrame
+	call Joypad
+	ldh a, [hJoyHeld]
+	and D_UP | D_DOWN
+	jr nz, .waitForVerticalRelease
+	jp .loop2
 .checkOtherKeys
 	ld a, [wMenuWatchedKeys]
 	and b ; does the menu care about any of the pressed keys?

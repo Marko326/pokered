@@ -2290,7 +2290,9 @@ wCurMapScript:: db
 ; START-only transient state (0: fast; 1: full).
 ; Splits existing padding without moving any WRAM/save addresses.
 wStartMenuCloseMode:: db
-	ds 6
+; Transient list-repaint flag in existing padding (no WRAM address changes).
+wItemListRedrawDirty:: db
+	ds 5
 
 wPlayTimeHours:: db
 wPlayTimeMaxed:: db

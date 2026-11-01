@@ -10,6 +10,7 @@ ShowPokedexMenu:
 	ld [wLastMenuItem], a
 	inc a
 	ld [wd11e], a
+	ld a, JOY_REPEAT_MODE_LONG_LIST
 	ldh [hJoy7], a
 .setUpGraphics
 	ld b, SET_PAL_GENERIC
@@ -94,7 +95,19 @@ HandlePokedexSideMenu:
 	ld [hli], a ; old menu item ID
 	ld [wMenuWatchMovingOutOfBounds], a
 .handleMenuInput
+	; DATA/CRY/AREA/QUIT wraps on a fresh edge. CRY returns here,
+	; so re-arm wrapping and its configured speed before every input call.
+	ld a, 1
+	ld [wMenuWrappingEnabled], a
+	ldh a, [hJoy7]
+	push af
+	ld a, JOY_REPEAT_MODE_POKEDEX_SIDE
+	ldh [hJoy7], a
 	call HandleMenuInput
+	ld b, a
+	pop af
+	ldh [hJoy7], a
+	ld a, b
 	bit BIT_B_BUTTON, a
 	ld b, 2
 	jr nz, .buttonBPressed
@@ -267,6 +280,12 @@ HandlePokedexListMenu:
 	ld a, b
 	ld [wDexMaxSeenMon], a
 .loop
+	xor a ; ordinary redraw: no key-release wait
+	jr .drawList
+.wrapAndWait
+	ld a, 1 ; boundary wrap: draw the target before waiting for release
+.drawList
+	push af
 	xor a
 	ldh [hAutoBGTransferEnabled], a
 	hlcoord 4, 2
@@ -338,67 +357,125 @@ HandlePokedexListMenu:
 	ld [wd11e], a
 	dec d
 	jr nz, .printPokemonLoop
-	ld a, 01
+	call PlaceMenuCursor ; commit list and cursor in the same normal BG update
+	ld a, 1
 	ldh [hAutoBGTransferEnabled], a
 	call Delay3
 	farcall RevealFullScreenGBPalNormal
+	pop af
+	and a
+	call nz, .waitForVerticalRelease
+.input
 	call HandleMenuInput
 	bit BIT_B_BUTTON, a
 	jp nz, .buttonBPressed
 .checkIfUpPressed
 	bit BIT_D_UP, a
 	jr z, .checkIfDownPressed
-.upPressed ; scroll up one row
+.upPressed
 	ld a, [wListScrollOffset]
 	and a
-	jp z, .loop
+	jr nz, .scrollUp
+	; Only a fresh press at the first seen Pokémon can wrap to the last.
+	ldh a, [hJoyPressed]
+	bit BIT_D_UP, a
+	jp z, .waitAtBoundary
+	ld a, [wDexMaxSeenMon]
+	cp 7
+	jr c, .lastFitsFirstPage
+	sub 7
+	ld [wListScrollOffset], a
+	ld a, 6
+	ld [wCurrentMenuItem], a
+	jp .wrapAndWait
+.lastFitsFirstPage
+	xor a
+	ld [wListScrollOffset], a
+	ld a, [wDexMaxSeenMon]
+	dec a
+	ld [wCurrentMenuItem], a
+	jp .wrapAndWait
+.scrollUp
 	dec a
 	ld [wListScrollOffset], a
 	jp .loop
 .checkIfDownPressed
 	bit BIT_D_DOWN, a
 	jr z, .checkIfRightPressed
-.downPressed ; scroll down one row
-	ld a, [wDexMaxSeenMon]
-	cp 7
-	jp c, .loop ; can't if the list is shorter than 7
-	sub 7
-	ld b, a
+.downPressed
+	; The last selectable entry is the highest currently seen Pokémon.
 	ld a, [wListScrollOffset]
+	ld b, a
+	ld a, [wCurrentMenuItem]
+	add b
+	inc a ; 1-based Pokédex number
+	ld b, a
+	ld a, [wDexMaxSeenMon]
 	cp b
-	jp z, .loop
-	inc a
+	jr nz, .scrollDown
+	ldh a, [hJoyPressed]
+	bit BIT_D_DOWN, a
+	jp z, .waitAtBoundary
+	xor a
 	ld [wListScrollOffset], a
+	ld [wCurrentMenuItem], a
+	jp .wrapAndWait
+.scrollDown
+	ld hl, wListScrollOffset
+	inc [hl]
 	jp .loop
 .checkIfRightPressed
 	bit BIT_D_RIGHT, a
 	jr z, .checkIfLeftPressed
-.rightPressed ; scroll down 7 rows
+.rightPressed
 	ld a, [wDexMaxSeenMon]
 	cp 7
-	jp c, .loop ; can't if the list is shorter than 7
-	sub 6
+	jr c, .shortDexRight
+	sub 7 ; last full-page scroll offset
 	ld b, a
 	ld a, [wListScrollOffset]
 	add 7
-	ld [wListScrollOffset], a
 	cp b
-	jp c, .loop
-	dec b
+	jr c, .storeRightOffset
 	ld a, b
 	ld [wListScrollOffset], a
+	ld a, 6
+	ld [wCurrentMenuItem], a
 	jp .loop
-.checkIfLeftPressed ; scroll up 7 rows
+.storeRightOffset
+	ld [wListScrollOffset], a
+	jp .loop
+.shortDexRight
+	; On a shorter list, Right selects the actual last-seen entry.
+	ld a, [wDexMaxSeenMon]
+	dec a
+	ld [wCurrentMenuItem], a
+	jp .loop
+.checkIfLeftPressed
 	bit BIT_D_LEFT, a
 	jr z, .buttonAPressed
 .leftPressed
 	ld a, [wListScrollOffset]
+	and a
+	jp z, .input ; already on first page, don't redraw
 	sub 7
-	ld [wListScrollOffset], a
-	jp nc, .loop
+	jr nc, .storeLeftOffset
 	xor a
+	ld [wCurrentMenuItem], a
+.storeLeftOffset
 	ld [wListScrollOffset], a
 	jp .loop
+.waitAtBoundary
+	; Holding Up/Down until the edge does not trigger repeated wrapping.
+	call .waitForVerticalRelease
+	jp .input
+.waitForVerticalRelease
+	call DelayFrame
+	call Joypad
+	ldh a, [hJoyHeld]
+	and D_UP | D_DOWN
+	jr nz, .waitForVerticalRelease
+	ret
 .buttonAPressed
 	scf
 	ret

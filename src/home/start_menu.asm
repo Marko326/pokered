@@ -77,8 +77,17 @@ StartMenuReadyToDraw::
 	ldh [hAutoBGTransferEnabled], a
 StartMenuInputLoop::
 .loop
+	; The in-game START menu has its own adjustable repeat-speed row.
+	; Save/restore the caller's hJoy7 so submenu input modes are unaffected.
+	ldh a, [hJoy7]
+	push af
+	ld a, JOY_REPEAT_MODE_START_MENU
+	ldh [hJoy7], a
 	call HandleMenuInput
 	ld b, a
+	pop af
+	ldh [hJoy7], a
+	ld a, b
 .checkIfUpPressed
 	bit BIT_D_UP, a
 	jr z, .checkIfDownPressed
@@ -94,9 +103,17 @@ StartMenuInputLoop::
 	jr nz, .wrapMenuItemId
 	dec a ; there are only 6 menu items without the pokedex
 .wrapMenuItemId
+	ld c, a ; preserve last START menu index
+	ldh a, [hJoyPressed]
+	bit BIT_D_UP, a ; holding Up into the boundary must stop there
+	jp z, .loop
+	ld a, c
 	ld [wCurrentMenuItem], a
 	call EraseMenuCursor
-	jr .loop
+	call PlaceMenuCursor
+	call Delay3
+	call .waitForVerticalRelease
+	jp .loop
 .checkIfDownPressed
 	bit BIT_D_DOWN, a
 	jr z, .buttonPressed
@@ -108,12 +125,25 @@ StartMenuInputLoop::
 	dec c ; there are only 6 menu items without the pokedex
 .checkIfPastBottom
 	cp c
-	jr nz, .loop
-; the player went past the bottom, so wrap to the top
+	jp nz, .loop
+; the player went past the bottom, so wrap to the top on a fresh Down
+	ldh a, [hJoyPressed]
+	bit BIT_D_DOWN, a
+	jp z, .loop
 	xor a
 	ld [wCurrentMenuItem], a
 	call EraseMenuCursor
-	jr .loop
+	call PlaceMenuCursor
+	call Delay3
+	call .waitForVerticalRelease
+	jp .loop
+.waitForVerticalRelease
+	call DelayFrame
+	call Joypad
+	ldh a, [hJoyHeld]
+	and D_UP | D_DOWN
+	jr nz, .waitForVerticalRelease
+	ret
 .buttonPressed ; A, B, or Start button pressed
 	call PlaceUnfilledArrowMenuCursor
 	ld a, [wCurrentMenuItem]

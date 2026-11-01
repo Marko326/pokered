@@ -4,8 +4,8 @@
 DisplayListMenuID::
 	xor a
 	ldh [hAutoBGTransferEnabled], a ; disable auto-transfer
-	ld a, 1
-	ldh [hJoy7], a ; joypad state update flag
+	ld a, JOY_REPEAT_MODE_LONG_LIST
+	ldh [hJoy7], a ; long-list repeat speed from MenuRepeatDelayTable
 	ld a, [wBattleType]
 	and a ; is it the Old Man battle?
 	jr nz, .specialBattleType
@@ -19,6 +19,7 @@ DisplayListMenuID::
 	set 6, [hl] ; turn off letter printing delay
 	xor a
 	ld [wMenuItemToSwap], a ; 0 means no item is currently being swapped
+	ld [wItemListRedrawDirty], a ; first draw does not invalidate saved START glyphs
 	ld [wListCount], a
 	ld a, [wListPointer]
 	ld l, a
@@ -54,14 +55,34 @@ DisplayListMenuID::
 	ld [wMenuWatchedKeys], a
 	ld c, 10
 	call DelayFrames
+	; The initial list draw keeps the original START Bag fast-return path.
+	xor a
+	jr DisplayListMenuIDLoop.paint
 
 DisplayListMenuIDLoop::
+	xor a ; regular redraw: no edge-wrap wait
+	jr .redraw
+.wrapAndWait
+	ld a, 1 ; single edge jump: wait for direction release after redraw
+.redraw
+	; After the initial draw, any list repaint may replace CHS DFS glyphs
+	; referenced by START's saved tilemap. Do not use that tilemap alone on exit.
+	push af
+	ld a, 1
+	ld [wItemListRedrawDirty], a
+	pop af
+.paint
+	push af
 	xor a
 	ldh [hAutoBGTransferEnabled], a ; disable transfer
 	call PrintListMenuEntries
+	call PlaceMenuCursor ; list and cursor enter the normal BG transfer together
 	ld a, 1
 	ldh [hAutoBGTransferEnabled], a ; enable transfer
 	call Delay3
+	pop af
+	and a
+	call nz, .waitForDirectionRelease
 	ld a, [wBattleType]
 	and a ; is it the Old Man battle?
 	jr z, .notOldManBattle
@@ -80,6 +101,7 @@ DisplayListMenuIDLoop::
 	jr .buttonAPressed
 .notOldManBattle
 	call LoadGBPal
+.input
 	call HandleMenuInput
 	push af
 	call PlaceMenuCursor
@@ -174,23 +196,97 @@ DisplayListMenuIDLoop::
 	jp nz, HandleItemListSwapping ; if so, allow the player to swap menu entries
 	ld b, a
 	bit BIT_D_DOWN, b
-	ld hl, wListScrollOffset
 	jr z, .upPressed
 .downPressed
+	; Include priced shop-buy and special elevator/badge lists.
+	; Moves list is deliberately excluded; held Down never wraps.
+	ld a, [wListMenuID]
+	cp MOVESLISTMENU
+	jr z, .regularDown
+	cp SPECIALLISTMENU + 1
+	jr nc, .regularDown
+.eligibleDown
+	ld a, [wListCount]
+	and a
+	jr z, .regularDown
+	ld c, a
+	ld a, [wListScrollOffset]
+	ld b, a
+	ld a, [wCurrentMenuItem]
+	add b
+	cp c
+	jr nz, .regularDown
+	ldh a, [hJoyPressed]
+	bit BIT_D_DOWN, a
+	jr z, .noMovementDown
+	xor a
+	ld [wListScrollOffset], a
+	ld [wCurrentMenuItem], a
+	jp DisplayListMenuIDLoop.wrapAndWait
+.noMovementDown
+	call DisplayListMenuIDLoop.waitForDirectionRelease
+	jp DisplayListMenuIDLoop.input
+.regularDown
+	ld hl, wListScrollOffset
 	ld a, [hl]
 	add 3
 	ld b, a
 	ld a, [wListCount]
 	cp b ; will going down scroll past the Cancel button?
-	jp c, DisplayListMenuIDLoop
+	jp c, DisplayListMenuIDLoop.input ; no unnecessary redraw at boundary
 	inc [hl] ; if not, go down
 	jp DisplayListMenuIDLoop
 .upPressed
+	; Same eligibility on fresh Up; never repeat-wrap.
+	ld a, [wListMenuID]
+	cp MOVESLISTMENU
+	jr z, .regularUp
+	cp SPECIALLISTMENU + 1
+	jr nc, .regularUp
+.eligibleUp
+	ld a, [wListCount]
+	and a
+	jr z, .regularUp
+	ld a, [wListScrollOffset]
+	and a
+	jr nz, .regularUp
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .regularUp
+	ldh a, [hJoyPressed]
+	bit BIT_D_UP, a
+	jr z, .noMovementUp
+	ld a, [wListCount]
+	cp 2
+	jr c, .shortList
+	sub 2 ; last visible row points to CANCEL
+	ld [wListScrollOffset], a
+	ld a, 2
+	ld [wCurrentMenuItem], a
+	jp DisplayListMenuIDLoop.wrapAndWait
+.shortList
+	xor a
+	ld [wListScrollOffset], a
+	ld a, [wListCount] ; CANCEL follows the only item
+	ld [wCurrentMenuItem], a
+	jp DisplayListMenuIDLoop.wrapAndWait
+.noMovementUp
+	call DisplayListMenuIDLoop.waitForDirectionRelease
+	jp DisplayListMenuIDLoop.input
+.regularUp
+	ld hl, wListScrollOffset
 	ld a, [hl]
 	and a
-	jp z, DisplayListMenuIDLoop
+	jp z, DisplayListMenuIDLoop.input ; no redraw at first entry
 	dec [hl]
 	jp DisplayListMenuIDLoop
+.waitForDirectionRelease
+	call DelayFrame
+	call Joypad
+	ldh a, [hJoyHeld]
+	and D_UP | D_DOWN
+	jr nz, .waitForDirectionRelease
+	ret
 
 ; ROM-1.3: Preserve the original HOME interface and A return value.
 DisplayChooseQuantityMenu::
