@@ -44,7 +44,10 @@ PlayerPCMenu:
 	ld [wCurrentMenuItem], a
 	ld hl, wFlags_0xcd60
 	set 5, [hl]
-	call LoadScreenTilesFromBuffer2
+	; Build the Player's PC parent menu off-screen. The old helper enabled
+	; AutoBG immediately after restoring the saved map, exposing the menu
+	; border, entries, and lower prompt as separate intermediate frames.
+	call LoadScreenTilesFromBuffer2DisableBGTransfer
 	hlcoord 0, 0
 	ld b, $8
 	ld c, $7 ;ld c, $e
@@ -72,6 +75,11 @@ PlayerPCMenu:
 	ld [wPlayerMonNumber], a
 	ld hl, WhatDoYouWantText
 	call PrintText
+	; Reveal the completed menu and its lower text box together, then wait
+	; for all three BG-transfer portions before accepting input.
+	ld a, 1
+	ldh [hAutoBGTransferEnabled], a
+	call Delay3
 	call HandleMenuInput
 	bit 1, a
 	jp nz, ExitPlayerPC

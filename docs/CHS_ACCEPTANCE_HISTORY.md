@@ -1,5 +1,36 @@
 # CHS_Mod 历史变更与验收记录
 
+## ROM-1.24 — START / PC 菜单输入与显示修复正式收口（2026-11-01）
+
+- **收口决定与版本**：用户确认当前候选版本已修好并要求正式清理提交。本轮不使用测试功能，正式标识由 `ROM-1.23D` 候选清理为 `ROM-1.24`；Options 右上角从 9 字符候选位置 `(10,0)` 恢复到 8 字符正式位置 `(11,0)`。提交日志只记录正式版本 `ROM-1.23 → ROM-1.24`。
+- **START 输入与边界**：`DrawStartMenu` 将 `wMaxMenuItem` 设为最后一个有效索引，并在旧选中索引越界时复位；`StartMenuInputLoop` 复用公共 `HandleMenuInput` 的边界循环与方向键处理；`PlaceUnfilledArrowMenuCursor` 之后从 `hJoy5` 读取 A/B 输入，避免辅助函数改写 B 寄存器造成按键误判。用户此前确认 A/B 已恢复正常，本轮不重新改动该行为。
+- **PC 子菜单返回主菜单**：`ReloadMainMenu` 使用 `LoadScreenTilesFromBuffer2DisableBGTransfer` 恢复 PC 会话缓存背景，不再在此处调用 `ReloadMapData` / `UpdateSprites`；由 `DisplayPCMainMenu` 完成主菜单绘制后再进行背景传输。名人堂 `PKMNLeague` 返回仍保留 `ReloadMapData`，避免 Hall of Fame 前景图块污染地图图块。
+- **PC 按 B 退出地图**：`LogOff` 保持 LCD 开启；保存并暂时关闭 `wUpdateSpritesEnabled`，隐藏精灵并等待一帧；通过 `LoadTextBoxTilePatterns` 恢复被状态页面复用的文字框图块，再 `farcall RedrawMapView`；最后恢复原精灵更新状态，并在原状态启用时调用 `UpdateSprites`。避免旧 `ReloadMapData` 路径关闭/重新开启 LCD 造成白闪。
+- **Player's PC 菜单进入与返回**：`PlayerPCMenu` 使用 `LoadScreenTilesFromBuffer2DisableBGTransfer`，在暂停 AutoBG 期间完成主菜单边框、选项、菜单状态与 `WhatDoYouWantText` 提示框绘制；随后开启 `hAutoBGTransferEnabled` 并 `Delay3`，确保完整背景传输后才接收输入。用户确认本轮版本已修好所述 Player's PC 闪动；用户没有逐项列出所有红蓝版及 DMG/CGB 组合，本记录不扩大为全矩阵验收。
+- **Bill's PC 原文字遮挡**：删除 `ClearBillPCMenuMain_CHS` 及存入、取出、放生、换盒路径中的清屏调用；保留原菜单文字，由列表窗口覆盖其实际占用范围。没有改中文字形加载流程。
+- **列表取消项**：`PrintListMenuEntries_` 的 CANCEL 项显式使用 `call PlaceString` / `ret`。
+- **保持不变**：不修改宝可梦/道具存取数据、SRAM/WRAM/存档布局、DFS 字库引擎、全局 VBlank / Palette、菜单速度表及已确认修好的 DMG 玩家显示路径。Bill's PC 首次进入时中文字先异常再恢复的问题按用户明确要求暂缓，本轮不处理。
+- **静态核验**：清理增量与 HEAD 全量补丁分别执行正向应用、反向检查及最终文件字节对照；执行 `scripts/verify_qol115e_static.py`，结果 PASS。另对 START、PC LogOff、PlayerPC、Bill's PC 遮挡和版本位置执行 12 项针对性源码断言，12/12 PASS。历史 `verify_qol116_static.py` 的 10 项功能断言通过，但 2 项正式版本/Options 坐标白名单因未收录 ROM-1.24 而失败；`verify_dor119_static.py` 在旧版本白名单处失败。两者均为旧版守卫，不覆盖本轮 PC 路径，未修改测试脚本以避免扩大提交范围。
+- **构建与实机边界**：遵守项目要求，本轮未由 AI 执行 RGBDS 编译/链接，未生成 ROM、未声称新 MAP 或 ROM SHA-256 已验证。用户反馈当前版本已修好，但没有提供本轮具体模式/红蓝组合清单；不虚报未列明的覆盖范围。
+- **基线与交付**：全量补丁基线为导出信息声明的 `CHS_Mod` HEAD `122678e9f6c4b0289103065875241cc1b67382fe`；其源码树由导出 Worktree 与 `current_worktree.patch` 逆向重建并用于应用核验，未恢复或冒称恢复原 Git 对象历史。清理增量以用户已应用 PC LogOff 与 Player's PC 闪动候选的 ROM-1.23D 工作区为基线。无工具/审计脚本改动，单笔提交；交付两份互斥补丁及一份中文 Conventional Commit 日志。Git Commit / Push 由维护者执行。
+
+
+## ROM-1.23B — PC 返回与列表左侧提示、START 末项越界（测试候选）
+
+- 基于 ROM-1.23A 精确源码，修复 START wMaxMenuItem 数量/索引错用，改用公共 HandleMenuInput 边界回卷规则。
+- PC LOG OFF 恢复 LCD 受控 ReloadMapData，取消中间 UpdateSprites；不改变名人堂图块安全重载。
+- Bill's PC 的 Pokémon 名单左侧原五行操作菜单被 ClearBillPCMenuMain_CHS 有意清空且会和列表覆盖；在剩余三列显示一字简称“取／寄／放”及当前模式箭头，避免完全空白。
+- 未改 DFS/VBlank、宝可梦存取逻辑、存档或计时配置。未完成红蓝链接、MAP 和 DMG/CGB 画面验收，不标为已修复正式版。
+
+## ROM-1.23A — PC 进入/回退显示最小测试候选（未验收）
+
+- 以正式 ROM-1.23 为唯一源码基线，借鉴 RPP #111（PC 真正退出重建地图）/#112（PC 子菜单返回不整图重载）；当前 CHS 无独立实机复现证据，属于针对既有可疑路径的优化候选。
+- Bill/Player/Oak 子菜单返回：仅恢复 `wTileMapBackup2` 对应的 WRAM 背景，保留原 PC 主菜单重绘；避免原 `ReloadMapData` 的 `DisableLCD`→`EnableLCD` 切换。
+- `LogOff` 加 `farcall RedrawMapView` 还原可能受 StatsScreen 污染的地图 BG；League PC 保留原 `ReloadMapData`，防止前图污染地图图形，本轮不处理名人堂轮播。
+- 版本 `ROM-1.23A`（Options 起点 10,0）；不修改通用 DFS/VBlank/Palette、PC 存取数据或速度表。
+- 仅静态/补丁可应用检查；红蓝 ROM/MAP、DMG/CGB、实际白闪/花屏和数据安全均待验证，无 Commit/Push。
+
+
 ## ROM-1.23 — 菜单首尾循环、长按输入与自定义速度表正式源码收口（2026-11-01）
 
 - **用户决定**：明确要求“以 ROM-1.22M 为准”整理正式三件套。这是版本收口授权，不扩大为用户已完成红蓝、DMG/CGB 全场景验收的声明。

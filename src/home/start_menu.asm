@@ -77,8 +77,11 @@ StartMenuReadyToDraw::
 	ldh [hAutoBGTransferEnabled], a
 StartMenuInputLoop::
 .loop
-	; The in-game START menu has its own adjustable repeat-speed row.
-	; Save/restore the caller's hJoy7 so submenu input modes are unaffected.
+	; The shared menu handler already implements held-at-edge stopping,
+	; fresh-press-only wrapping, and cursor updating.  Keep wMaxMenuItem
+	; as the last selectable index (set by DrawStartMenu).
+	ld a, 1
+	ld [wMenuWrappingEnabled], a
 	ldh a, [hJoy7]
 	push af
 	ld a, JOY_REPEAT_MODE_START_MENU
@@ -88,67 +91,14 @@ StartMenuInputLoop::
 	pop af
 	ldh [hJoy7], a
 	ld a, b
-.checkIfUpPressed
-	bit BIT_D_UP, a
-	jr z, .checkIfDownPressed
-	ld a, [wCurrentMenuItem] ; menu selection
-	and a
-	jr nz, .loop
-	ld a, [wLastMenuItem]
-	and a
-	jr nz, .loop
-; if the player pressed tried to go past the top item, wrap around to the bottom
-	CheckEvent EVENT_GOT_POKEDEX
-	ld a, 6 ; there are 7 menu items with the pokedex, so the max index is 6
-	jr nz, .wrapMenuItemId
-	dec a ; there are only 6 menu items without the pokedex
-.wrapMenuItemId
-	ld c, a ; preserve last START menu index
-	ldh a, [hJoyPressed]
-	bit BIT_D_UP, a ; holding Up into the boundary must stop there
-	jp z, .loop
-	ld a, c
-	ld [wCurrentMenuItem], a
-	call EraseMenuCursor
-	call PlaceMenuCursor
-	call Delay3
-	call .waitForVerticalRelease
-	jp .loop
-.checkIfDownPressed
-	bit BIT_D_DOWN, a
-	jr z, .buttonPressed
-; if the player pressed tried to go past the bottom item, wrap around to the top
-	CheckEvent EVENT_GOT_POKEDEX
-	ld a, [wCurrentMenuItem]
-	ld c, 7 ; there are 7 menu items with the pokedex
-	jr nz, .checkIfPastBottom
-	dec c ; there are only 6 menu items without the pokedex
-.checkIfPastBottom
-	cp c
-	jp nz, .loop
-; the player went past the bottom, so wrap to the top on a fresh Down
-	ldh a, [hJoyPressed]
-	bit BIT_D_DOWN, a
-	jp z, .loop
-	xor a
-	ld [wCurrentMenuItem], a
-	call EraseMenuCursor
-	call PlaceMenuCursor
-	call Delay3
-	call .waitForVerticalRelease
-	jp .loop
-.waitForVerticalRelease
-	call DelayFrame
-	call Joypad
-	ldh a, [hJoyHeld]
 	and D_UP | D_DOWN
-	jr nz, .waitForVerticalRelease
-	ret
+	jr nz, .loop
+	; A/B/START are handled below, never as repeated direction input.
 .buttonPressed ; A, B, or Start button pressed
 	call PlaceUnfilledArrowMenuCursor
 	ld a, [wCurrentMenuItem]
 	ld [wBattleAndStartSavedMenuItem], a ; save current menu selection
-	ld a, b
+	ldh a, [hJoy5] ; keep the input byte: cursor helper overwrites B
 	and B_BUTTON | START ; was the Start button or B button pressed?
 	jp nz, CloseStartMenu
 	CheckEvent EVENT_GOT_POKEDEX

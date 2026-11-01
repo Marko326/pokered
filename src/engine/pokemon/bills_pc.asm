@@ -1,13 +1,6 @@
 WhatText_CHS::
 	db "Whattt?@"
 
-ClearBillPCMenuMain_CHS: ;
-	hlcoord 2, 1 ;
-	ld b, 10 ;
-	ld c, 9 ;
-	call ClearScreenArea ;
-	ret ;
-
 ClearBillPCMenuSub_CHS: ;CHS_Fix 24 for refreshing the screen after looking at stat from bill's pc
 	hlcoord 6, $0A ;
 	ld b, 1 ;
@@ -280,7 +273,6 @@ BillsPCDeposit:
 	call PrintText
 	jp BillsPCMenu
 .boxNotFull
-	call ClearBillPCMenuMain_CHS ; CHS_Fix 23
 	ld hl, wPartyCount
 	call DisplayMonListMenu
 	jp c, BillsPCMenu
@@ -331,7 +323,6 @@ BillsPCWithdraw:
 	call PrintText
 	jp BillsPCMenu
 .partyNotFull
-	call ClearBillPCMenuMain_CHS ; CHS_Fix 23
 
 	ld hl, wBoxCount
 	call DisplayMonListMenu
@@ -364,7 +355,6 @@ BillsPCRelease:
 	call PrintText
 	jp BillsPCMenu
 .loop
-	call ClearBillPCMenuMain_CHS
 	ld hl, wBoxCount
 	call DisplayMonListMenu
 	jp c, BillsPCMenu
@@ -386,7 +376,6 @@ BillsPCRelease:
 	jp BillsPCMenu
 
 BillsPCChangeBox:
-	; call ClearBillPCMenuMain_CHS
 	farcall ChangeBox
 	jp BillsPCMenu
 

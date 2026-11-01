@@ -69,6 +69,9 @@ PKMNLeague:
 	call PlaySound
 	call WaitForSoundToFinish
 	farcall PKMNLeaguePC
+	; Hall of Fame front pictures overwrite overworld tileset patterns.
+	; Keep the proven graphics reload until the separate HoF return fix.
+	call ReloadMapData
 	jr ReloadMainMenu
 BillsPC:
 	ld a, SFX_ENTER_PC
@@ -86,8 +89,12 @@ BillsPC:
 ReloadMainMenu:
 	xor a
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
-	call ReloadMapData
-	call UpdateSprites
+	; RPP #112, CHS adaptation: no LCD-off map reload while PC owns UI.
+	; Restore the PC session's saved background in WRAM only; the next
+	; DisplayPCMainMenu composes the full menu before BG transfer resumes.
+	call LoadScreenTilesFromBuffer2DisableBGTransfer
+	; DisplayPCMainMenu updates OAM after the menu border is prepared.
+	; Do not expose an intermediate sprite/map combination on DMG.
 	jp PCMainMenu
 LogOff:
 	ld a, SFX_TURN_OFF_PC
@@ -96,6 +103,25 @@ LogOff:
 	ld hl, wFlags_0xcd60
 	res 3, [hl]
 	res 5, [hl]
+	; Keep the LCD enabled while restoring the overworld. Pokémon status
+	; pages reuse vChars2, which aliases the overworld text-box tile range.
+	; Restore those patterns through VBlank before redrawing the map.
+	; Hide OAM during the row-by-row BG redraw so DMG cannot show map
+	; sprites against a partially restored background.
+	ld a, [wUpdateSpritesEnabled]
+	push af
+	xor a
+	ld [wUpdateSpritesEnabled], a
+	call HideSprites
+	call DelayFrame
+	call LoadTextBoxTilePatterns
+	farcall RedrawMapView
+	pop af
+	ld [wUpdateSpritesEnabled], a
+	cp 1
+	jr nz, .done
+	call UpdateSprites
+.done
 	ret
 
 TurnedOnPC1Text:

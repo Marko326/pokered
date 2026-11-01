@@ -186,5 +186,5 @@ PrintListMenuEntries_::
 	ret
 .printCancelMenuItem
 	ld de, ListMenuCancelText
-	jp PlaceString
-
+	call PlaceString
+	ret

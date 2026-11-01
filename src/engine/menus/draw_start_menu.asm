@@ -65,7 +65,20 @@ DrawStartMenu::
 	call PrintStartMenuItem
 	ld a, $07
 .storeMenuItemCount
-	ld [wMaxMenuItem], a ; number of menu items
+	; HandleMenuInput interprets this as a LAST INDEX, not a count.
+	; The old value (6 or 7) allowed the cursor below EXIT.
+	dec a
+	ld [wMaxMenuItem], a
+	ld b, a
+	ld a, [wCurrentMenuItem]
+	cp b
+	jr c, .validStartSelection
+	jr z, .validStartSelection
+	; A stale saved selection from an older build must not draw off-screen.
+	xor a
+	ld [wCurrentMenuItem], a
+	ld [wLastMenuItem], a
+.validStartSelection
 	ld de, StartMenuPokemonText
 	call PrintStartMenuItem
 	ld de, StartMenuItemText
