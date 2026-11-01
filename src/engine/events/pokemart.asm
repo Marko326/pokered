@@ -70,6 +70,8 @@ DisplayPokemartDialogue_::
 	ld a, [wNumBagItems]
 	and a
 	jp z, .bagEmpty
+	xor a
+	ld [wWhichPokemon], a
 	ld hl, PokemonSellingGreetingText
 	call PrintText
 	call ClearDialogueCHS
@@ -85,9 +87,9 @@ DisplayPokemartDialogue_::
 	ld [wListPointer], a
 	ld a, h
 	ld [wListPointer + 1], a
+	farcall RestoreItemListPosition
 	xor a
 	ld [wPrintItemPrices], a
-	ld [wCurrentMenuItem], a
 	ld a, ITEMLISTMENU
 	ld [wListMenuID], a
 	call DisplayListMenuID
@@ -132,13 +134,13 @@ DisplayPokemartDialogue_::
 	ld [wBoughtOrSoldItemInMart], a
 .skipSettingFlag1
 	call AddAmountSoldToMoney
-	ld hl, wNumBagItems
-	call RemoveItemFromInventory
+	ld de, wNumBagItems
+	farcall RemoveItemFromInventoryPreserveListState
 	jp .sellMenuLoop
 .unsellableItem
 	ld hl, PokemartUnsellableItemText
 	call PrintText
-	jp .returnToMainPokemartMenu
+	jp .sellMenuLoop
 .bagEmpty
 	ld hl, PokemartItemBagEmptyText
 	call PrintText
@@ -152,6 +154,8 @@ DisplayPokemartDialogue_::
 	ld a, INIT_OTHER_ITEM_LIST
 	ld [wInitListType], a
 	callfar InitList
+	xor a
+	ld [wWhichPokemon], a
 
 	; Skip the buying greeting; retain the CHS menu cleanup.
 	call ClearDialogueCHS
@@ -167,9 +171,8 @@ DisplayPokemartDialogue_::
 	ld [wListPointer], a
 	ld a, h
 	ld [wListPointer + 1], a
-	xor a
-	ld [wCurrentMenuItem], a
-	inc a
+	farcall RestoreItemListPosition
+	ld a, 1
 	ld [wPrintItemPrices], a
 	inc a ; a = 2 (PRICEDITEMLISTMENU)
 	ld [wListMenuID], a
@@ -245,11 +248,11 @@ DisplayPokemartDialogue_::
 .notEnoughMoney
 	ld hl, PokemartNotEnoughMoneyText
 	call PrintText
-	jr .returnToMainPokemartMenu
+	jp .buyMenuLoop
 .bagFull
 	ld hl, PokemartItemBagFullText
 	call PrintText
-	jr .returnToMainPokemartMenu
+	jp .buyMenuLoop
 .done
 	ld hl, PokemartThankYouText
 	call PrintText

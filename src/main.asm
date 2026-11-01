@@ -141,7 +141,7 @@ INCLUDE "engine/events/hidden_objects/bills_house_pc.asm"
 INCLUDE "engine/events/hidden_objects/oaks_lab_email.asm"
 
 
-SECTION "Bill's PC", ROMX
+SECTION "Bill's PC", ROMX, BANK[$2D]
 
 INCLUDE "engine/pokemon/bills_pc.asm"
 

@@ -409,11 +409,15 @@ BillsPCRelease:
 	inc a
 	ld [wRemoveMonFromBox], a
 	call RemovePokemon
+	call NormalizeBillsPCListCursorAfterRemoval
 	call WaitForSoundToFinish
 	ld a, [wcf91]
 	call PlayCry
 	ld hl, MonWasReleasedText
 	call PrintText
+	ld a, [wBoxCount]
+	and a
+	jr nz, .loop
 	call ClearListView_CHS ;CHS_Fix 37
 	jp BillsPCMenu
 

@@ -78,8 +78,24 @@ LeaguePCShowTeam:
 	ret
 
 LeaguePCShowMon:
+	; Keep the League PC frame stable while advancing through Hall of Fame.
+	; The first recorded mon still gets the original full-screen initialization;
+	; later mons clear only the 7x7 front-pic canvas before loading the next pic.
+	ld a, [wHoFTeamIndex2]
+	and a
+	jr nz, .refreshFrontPic
+	ld a, c
+	cp PARTY_LENGTH
+	jr nz, .refreshFrontPic
 	call GBPalWhiteOutWithDelay3
 	call ClearScreen
+	jr .loadMon
+.refreshFrontPic
+	hlcoord 12, 5
+	lb bc, 7, 7
+	call ClearScreenArea
+	call Delay3
+.loadMon
 	ld hl, wHallOfFame
 	ld a, [hli]
 	ld [wHoFMonSpecies], a

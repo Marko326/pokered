@@ -188,3 +188,76 @@ PrintListMenuEntries_::
 	ld de, ListMenuCancelText
 	call PlaceString
 	ret
+
+; ROM-1.26: shared conventional item-list cursor restoration.
+; Input: wListPointer -> inventory count; wWhichPokemon -> last absolute item index.
+; Keep the old visible scroll when possible, clamp after full-slot removal.
+RestoreItemListPosition::
+	ld a, [wListPointer]
+	ld l, a
+	ld a, [wListPointer + 1]
+	ld h, a
+	ld b, [hl] ; number of real entries (Cancel is not included)
+	ld a, [wWhichPokemon]
+	cp b
+	jr c, .validIndex
+	ld a, b
+	and a
+	jr z, .validIndex
+	dec a ; removed last entry: select the preceding real entry
+.validIndex
+	ld c, a
+	ld a, b
+	cp 2
+	jr c, .zeroMaxScroll
+	sub 2
+	ld b, a
+	jr .clampScroll
+.zeroMaxScroll
+	xor a
+	ld b, a
+.clampScroll
+	ld a, [wListScrollOffset]
+	cp b
+	jr c, .scrollWithinMax
+	ld a, b
+.scrollWithinMax
+	cp c
+	jr c, .scrollBeforeTarget
+	jr z, .scrollBeforeTarget
+	ld a, c
+.scrollBeforeTarget
+	ld [wListScrollOffset], a
+	ld b, a
+	ld a, c
+	sub b
+	cp 3
+	jr c, .storeRow
+	ld a, c
+	sub 2
+	ld [wListScrollOffset], a
+	ld a, 2
+.storeRow
+	ld [wCurrentMenuItem], a
+	ret
+
+; The stock removal primitive resets several unrelated menu cursor variables
+; after deleting a whole slot. Insulate PC/Shop/Bag UI from those side effects.
+; Input: DE -> wNumBagItems or wNumBoxItems.
+RemoveItemFromInventoryPreserveListState::
+	ld a, [wListScrollOffset]
+	push af
+	ld a, [wSavedListScrollOffset]
+	push af
+	ld a, [wBagSavedMenuItem]
+	push af
+	ld h, d
+	ld l, e
+	call RemoveItemFromInventory
+	pop af
+	ld [wBagSavedMenuItem], a
+	pop af
+	ld [wSavedListScrollOffset], a
+	pop af
+	ld [wListScrollOffset], a
+	ret

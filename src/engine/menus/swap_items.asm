@@ -138,9 +138,21 @@ HandleItemListSwapping::
 	inc de
 	jr .moveItemsUpLoop
 .afterMovingItemsUp
-	xor a
-	ld [wListScrollOffset], a
-	ld [wCurrentMenuItem], a
+	; The removed stack shifts the survivor by one slot if it was earlier.
+	; Reuse the same list-position clamp as PC and Pokémart.
+	ld a, [wCurrentMenuItem]
+	ld b, a
+	ld a, [wListScrollOffset]
+	add b
+	ld b, a
+	ld a, [wMenuItemToSwap]
+	cp b
+	jr nc, .survivorIndexReady
+	dec b
+.survivorIndexReady
+	ld a, b
+	ld [wWhichPokemon], a
+	farcall RestoreItemListPosition
 .done
 	xor a
 	ld [wMenuItemToSwap], a ; 0 means no item is currently being swapped
