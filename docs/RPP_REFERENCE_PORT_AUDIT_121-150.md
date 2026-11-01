@@ -1,13 +1,13 @@
 # RPP 参考分支移植台账：第 05 批（121～150）
 
-> **CHS 唯一源码基线**：用户上传 `ROM-1.21.zip`，`CHS_Mod` 已提交 HEAD `70549f631b187d2062a3b952a0d26426804d38b1`。
+> **本批原始静态对照基线（历史）**：用户上传 `ROM-1.21.zip`，当时记录的 `CHS_Mod` HEAD `70549f631b187d2062a3b952a0d26426804d38b1`；当前正式版本为 `ROM-1.25`，后续状态以本文件 ROM-1.25 补记为准。
 > **参考来源**：`CHS_Mod_QOL-1.14_已提交版交接资料包_无嵌套.zip` → RPP `individual/121～150`；本段 **30 笔提交、30 份原始补丁均存在**。
 > **范围**：逐条核对原始补丁实际改动与 CHS 源码、验收记录。所有状态是**移植评估结论**，不是新 ROM 测试结果。**本次纯文档，不改运行代码、RGBDS、音频引擎或游戏版本。**
 
 ## 本批依赖结构与关键审计发现
 
 1. **#121～127：RPP 实时 Summary 及 Battle Party 快返回链**。前提是第 4 批 #104～120 的双页面/实时换宠、BG0 缓存、战斗快返回 helper。CHS 仍使用独立 `StatusScreen`/`StatusScreen2` 和自身 QOL-1.16/FLH-1.20 恢复路径；尽管用户可见症状相似，绝不能整套拷入。#124 的命令框已有 CHS 同目标修复，标为“部分实现”；#130 则可直接确认已实现。
-2. **#128/#129：真实但可选的玩法差异**。卧室 PC 目前是 `script_players_pc`；参考改为取得图鉴后可用完整 PC。CHS 宝可梦笛野外无卡比兽时打印无效果，而参考增加唤醒队伍。这些是需要用户决定的新行为，不是默认修 Bug。
+2. **#128/#129：真实但可选的玩法差异**。#128 已在 ROM-1.25 完成 CHS 适配：图鉴后开放完整 PC，图鉴前保留原道具存取；#129 宝可梦笛野外唤醒队伍仍是需要用户决定的新行为，不是默认修 Bug。
 3. **#131/#132：有公共代码路径的显示修复**。CHS 已有离屏重绘，但未完全具备 RPP 同名 Buffer1 辅助函数；`AnimationWavyScreen` 仍缺参考的 `hSCX` 更新/结束清零，**#132 是本批最有依据的待核验 Bug**，建议在 Psychic/Psywave 动画后观察横向偏移，确认才修。
 4. **#133：构建工具链不能混用**。CHS 已在 `src/Makefile` 支持 `RGBDS`/4 工具可配置，官方要求 RGBDS 1.0.4；参考补丁 `.rgbds-version=0.5.2` 不适用。
 5. **#134～150：MoveDex / 扩展动画 / 属性配色的连续功能链**。多数不是原版 CHS 的故障：扩展动画、Dark/Fairy/18 属性颜色、X 道具旧动画回放、交易 Poof 受染色等问题依赖引入的新系统。**#142 的 crysaudio 音效代码明确不适用 CHS**；它的 Shadow Ball 新动画可作独立新功能规划，但不能直接带入 Crystal Audio。#143 是 RPP Bank `$1E` 优化，不是 ROM0 收益。
@@ -19,7 +19,8 @@
 - **已实现：2**（#130、#133）。
 - **待核验：1**（#132）。
 - **部分实现：2**（#124、#131）。
-- **需评估：3**（#128、#129、#147）。
+- **需评估：2**（#129、#147）。
+- **已移植（CHS 适配）：1**（#128；ROM-1.25，用户已确认修正后的卧室 PC 入口正常，其他菜单分支仍按实际测试范围记录）。
 
 ## 逐笔对照（RPP 原始编号与 Hash）
 
@@ -32,7 +33,7 @@
 | **#125** `c065cd9f6f` | perf(summary): 统一 Party/Summary 快速路径并优化 Battle Party 首次进入 | 统一 START/Battle 的实时 Summary 资源复用 | **依赖暂缓** | 参考新增 `battle_party_summary_fast_path.asm`，复用 #104/#105 信息页共享资源及 `wBattlePartySummaryEnemyPicDirty`；CHS 的 `StatusScreen`/`StatusScreen2` 仍是分开的流程。 | 高依赖的 UI/WRAM/战斗图片缓存重构，当前不移植；不能拿其性能数字替代 CHS 测试。 | 极高 / 高 |
 | **#126** `4e831043d0` | fix(summary): 清除 Battle Party 快速返回时的父菜单箭头残影 | 快速 Battle Party 返回父箭头残影修复 | **依赖暂缓** | 只在 #125 缓存的 `wTileMapBackup2` 指定坐标清掉 `$EC` 父菜单箭头；CHS 未引入 #125 快速路径，已有自己的 Party 菜单绘制与 BG 传输。 | 不作为 CHS 现有残影；仅在未来复用类似快路径时检查父菜单光标。 | 中 / 高 |
 | **#127** `8bb23a7348` | fix(summary): 恢复 Battle Party Summary 的上下切换宝可梦 | 恢复 Battle Summary 上下切换 | **依赖暂缓** | 参考修 #125 快速 Summary 入口未授予 `STATUS_SCREEN_MON_SWITCH_F` 权限、方向键未释放；CHS 当前没有 #104/#105 实时换宠状态机。 | 与 #125 一起评估；不要把“尚无新功能”误记成当前 Bug。 | 中 / 高 |
-| **#128** `8272e87727` | fix(pc): 统一卧室电脑与宝可梦中心的完整 PC 功能 | 卧室 PC 与宝可梦中心 PC 权限统一 | **需评估** | 参考把红主角卧室 `TX_PLAYERS_PC` 改为独立 `TX_RED_BEDROOM_PC`，取得图鉴后开放完整 `ActivatePC`（Bill/Player/Oak/League），未取得前禁止使用；CHS `src/engine/events/hidden_objects/reds_room.asm` 仍为 `script_players_pc` 物品存储，与中心 `ActivatePC` 不同。 | 真实功能差异但会改变开场权限/游戏流程；用户决定是否需要。需审计中文脚本导入、文本宏、事件旗标与当前存档行为。 | 高 / 高 |
+| **#128** `8272e87727` | fix(pc): 统一卧室电脑与宝可梦中心的完整 PC 功能 | 卧室 PC 与宝可梦中心 PC 权限统一 | **已移植（CHS 适配）** | ROM-1.25 `OpenRedsPC` 在取得图鉴后跳转到卧室本地 `RedBedroomPCFullText:: script_pokecenter_pc`，复用完整 `ActivatePC`；图鉴前仍走 `script_players_pc`。本地脚本避开 `TextPredefs` 无 Bank 字段的跨 Bank 指针问题。 | 用户明确选择该功能；CHS 有意保留图鉴前道具存取（不同于 RPP 图鉴前禁用）。用户确认修正后入口正常；全菜单状态仍需按回归范围验证。 | 高 / 高 |
 | **#129** `5526c7168f` | fix(pokeflute): 恢复战斗中的宝可梦笛音效并追踪敌方睡眠状态 | 宝可梦笛在野外唤醒队伍及战斗流程整理 | **需评估** | 参考把队伍唤醒抽成 `WakeSleepingPlayerPartyWithPokeflute`，野外无卡比兽时也唤醒队伍，并整理战斗笛声/睡眠标志；CHS `src/engine/items/item_effects.asm` 的 `.noSnorlaxToWakeUp` 仍直接打印“无效果”，`WakeUpEntireParty` 只在战斗路径使用。 | 新玩法差异，可选，需核实原版设计、中文“无效果”文字、卡比兽交互、战斗双方睡眠位；不能直接照搬参考 `callba` 参数 ABI。 | 中 / 高 |
 | **#130** `19f3b60ab7` | fix(party): 修复队伍菜单返回时的窗口闪烁 | Party 操作菜单内部重绘闪烁 | **已实现** | 参考重绘 Party 时停用 AutoBG 传输；CHS `src/engine/menus/party_menu.asm:RedrawPartyMenu_` 已在入口 `xor a; ldh [hAutoBGTransferEnabled],a`，FLH-1.20 还区分内部重绘和首次揭屏。 | CHS 已有更完整的同目的修复，用户曾在 DMG/CGB 验收；无需重复移植。 | 低 / 高 |
 | **#131** `3aa60942c8` | fix(ui): 优化菜单离屏重建并修复窗口中间帧闪烁 | 菜单离屏重建与多路径防闪 | **部分实现** | 参考扩展 `LoadScreenTilesFromBuffer1DisableBGTransfer` 并在战斗/Player PC/商店相关返回时延迟揭屏；CHS `src/home/tilemap.asm` 已有 `LoadScreenTilesFromBuffer2DisableBGTransfer`，START 及 FLH 走局部禁用/恢复，但尚未发现参考 `Buffer1Disable...` 统一助手。 | 原理部分覆盖；逐场景存在异常才考虑补齐，不能全局替换以免破坏 CHS Window/DFS 与现有 DOR/FLH 修复。 | 中 / 高 |
@@ -72,3 +73,33 @@
 - **没有修改**：`src/`、`scripts/`、WRAM/SRAM、翻译表、Makefile、`GameVersionText` 或任何实机可运行内容。下一步只有用户选定功能才另做测试补丁。
 
 **下一批：151～180，仍按 30 笔逐项评估。**
+
+
+## ROM-1.26A #128 CHS 适配状态更新（2026-11-01）
+
+- **进度：部分移植，测试候选**。取得图鉴后，卧室电脑复用宝可梦中心完整 `ActivatePC` 菜单，保留现有 `PCMainMenu` 与 CHS 显示保护，不复制 RPP 独立封装代码。
+- **明确有意不同**：取得图鉴前保留原 Player's PC 道具存取（RPP 原实现为图鉴前完全禁用）。此差异出于减少早期物品/中文提示/存档回归，不能描述为“#128 已全部按参考版移植”。
+- **证据层级**：只检查源码及补丁；红蓝链接、地图图块、早期存取与已通关不同菜单状态仍待验收。
+
+
+## ROM-1.26B #128 跨 Bank 修正补记（2026-11-01）
+
+- ROM-1.26A 图鉴后分支调用 `PokemonCenterPCText`，用户实测显示“31 出错。”。静态检查遗漏了 `TextPredefs` 只有 16-bit 指针、无 Bank 字段这一条件。
+- 旧 MAP 显示卧室入口在 ROMX Bank #23（`Hidden Objects 3`），宝可梦中心文本在 Bank #24（`Hidden Objects 4`）；`DisplayTextID` 在 `wTextPredefFlag` 置位时跳过地图 Bank 切换。
+- ROM-1.26B 候选形成时，源码入口修正尚未构建、链接或运行；此后用户已确认图鉴后卧室 PC 入口不再出现“31 出错。”，正式收口状态见下方 ROM-1.25 补记。
+
+
+## ROM-1.26B 用户反馈与 ROM-1.26C CHS 引导文本补记（历史候选记录；后由 ROM-1.25 收口）
+
+- 用户确认 ROM-1.26B 的图鉴后卧室完整 PC 入口已正常工作，当前测试未发现问题；图鉴前原道具存取仍保留。
+- CHS 额外加入图鉴交付后的中文引导，不属于 RPP #128 原补丁内容：大木在 `OaksLabText25` 的 `sound_get_key_item` 后提示“你家里的电脑也升级了！现在可以寄放和取出宝可梦了！”。
+- 权威翻译源写入 `src/xlsx/indoor.xlsx` 的 `OaksLab` 工作表，并同步更新 `_G1RB.json`；中文构建文本仍由 `_importText.py` 生成到构建树，不直接覆盖 `src/text/OaksLab.asm` 英文源文件。
+- **当时的候选边界**：ROM-1.26C 首轮文本截图发现分页问题，随后通过空 `text_start` + `para` 修正；用户确认修正版分页正常。该记录后由 ROM-1.25 正式收口补记更新；仍未执行 ROM 编译/链接或全平台测试。
+
+
+## ROM-1.25 正式收口补记：#128 卧室 PC（2026-11-01）
+
+- **状态：已完成 CHS 适配并进入正式源码**。图鉴前保留 `script_players_pc` 道具存取；图鉴后由卧室 Bank 本地脚本 `RedBedroomPCFullText:: script_pokecenter_pc` 进入共用完整 PC 菜单。
+- **跨 Bank 根因与修正**：ROM-1.26A 曾从卧室 Bank #23 使用宝可梦中心 Bank #24 的 16-bit `TextPredefs` 地址，用户实测显示“31 出错。”。ROM-1.26B 改用卧室本地脚本入口并复用未使用的 `$1E` 槽，保留 `$1F PokemonCenterPCText`。用户确认修正后卧室 PC 入口正常。
+- **CHS 有意差异**：图鉴前仍允许原道具存取，不照搬 RPP 图鉴前禁用电脑的行为。大木交付图鉴后的升级提示属于 CHS 额外中文引导，已在 ROM-1.25 同步工作簿和生成 JSON。
+- **验收边界**：用户确认的仅为卧室入口修正与提示分页场景；未完成红蓝构建、全菜单状态/旧存档和 DMG/CGB 全矩阵验收。

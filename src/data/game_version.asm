@@ -1,6 +1,6 @@
-; ROM-1.24 正式标识；主菜单与设置界面共用。
-; 收口 START / PC 菜单输入与显示修复；不改游戏数据结构。
+; ROM-1.25 正式标识；主菜单与设置界面共用。
+; 卧室电脑使用本地文本脚本入口接入完整 PC 菜单；不修改存档结构。
 SECTION "Game Version", ROM0
 
 GameVersionText::
-	db "ROM-1.24@"
+	db "ROM-1.25@"

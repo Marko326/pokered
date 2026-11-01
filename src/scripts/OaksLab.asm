@@ -1212,6 +1212,7 @@ OaksLabText24:
 OaksLabText25:
 	text_far _OaksLabText25
 	sound_get_key_item
+	text_far _OaksLabHomePCUpdatedText
 	text_end
 
 OaksLabText26:

@@ -259,25 +259,30 @@ ExitBillsPC:
 	ret
 
 BillsPCDeposit:
-	ld a, [wPartyCount]
-	dec a
-	jr nz, .partyLargeEnough
-	ld hl, CantDepositLastMonText
-	call PrintText
-	jp BillsPCMenu
-.partyLargeEnough
-	ld a, [wBoxCount]
-	cp MONS_PER_BOX
-	jr nz, .boxNotFull
-	ld hl, BoxFullText
-	call PrintText
-	jp BillsPCMenu
-.boxNotFull
+	; Allow browsing even if only one party mon remains or the box is full.
+	; Enforce both limits only after the player confirms DEPOSIT.
 	ld hl, wPartyCount
 	call DisplayMonListMenu
 	jp c, BillsPCMenu
 	call DisplayDepositWithdrawMenu
-	jp nc, BillsPCMenu
+	jp nc, BillsPCDeposit
+	ld a, [wPartyCount]
+	dec a
+	jr nz, .partyLargeEnough
+	; Keep the action menu visible until the rejected action is resolved.
+	call LoadScreenTilesFromBuffer1
+	ld hl, CantDepositLastMonText
+	call PrintText
+	jp BillsPCDeposit
+.partyLargeEnough
+	ld a, [wBoxCount]
+	cp MONS_PER_BOX
+	jr nz, .boxNotFull
+	call LoadScreenTilesFromBuffer1
+	ld hl, BoxFullText
+	call PrintText
+	jp BillsPCDeposit
+.boxNotFull
 	ld a, [wcf91]
 	call GetCryData
 	call PlaySoundWaitForCurrent
@@ -287,7 +292,10 @@ BillsPCDeposit:
 	xor a
 	ld [wRemoveMonFromBox], a
 	call RemovePokemon
+	call NormalizeBillsPCListCursorAfterRemoval
 	call WaitForSoundToFinish
+	; The transfer is complete; now uncover the list and show its result.
+	call LoadScreenTilesFromBuffer1
 	ld hl, wBoxNumString
 	ld a, [wCurrentBoxNum]
 	and $7f
@@ -305,8 +313,7 @@ BillsPCDeposit:
 	ld [hl], CHARVAL("@")
 	ld hl, MonWasStoredText
 	call PrintText
-	call ClearListView_CHS ;CHS_FIX 37
-	jp BillsPCMenu
+	jp BillsPCDeposit
 
 BillsPCWithdraw:
 	ld a, [wBoxCount]
@@ -316,19 +323,21 @@ BillsPCWithdraw:
 	call PrintText
 	jp BillsPCMenu
 .boxNotEmpty
-	ld a, [wPartyCount]
-	cp PARTY_LENGTH
-	jr nz, .partyNotFull
-	ld hl, CantTakeMonText
-	call PrintText
-	jp BillsPCMenu
-.partyNotFull
-
+	; A full party can browse the box; check capacity on confirmation.
 	ld hl, wBoxCount
 	call DisplayMonListMenu
 	jp c, BillsPCMenu
 	call DisplayDepositWithdrawMenu
-	jp nc, BillsPCMenu
+	jp nc, BillsPCWithdraw
+	ld a, [wPartyCount]
+	cp PARTY_LENGTH
+	jr nz, .partyNotFull
+	; Keep the action menu visible until the rejected action is resolved.
+	call LoadScreenTilesFromBuffer1
+	ld hl, CantTakeMonText
+	call PrintText
+	jp BillsPCWithdraw
+.partyNotFull
 	ld a, [wWhichPokemon]
 	ld hl, wBoxMonNicks
 	call GetPartyMonName
@@ -341,11 +350,44 @@ BillsPCWithdraw:
 	ld a, 1
 	ld [wRemoveMonFromBox], a
 	call RemovePokemon
+	call NormalizeBillsPCListCursorAfterRemoval
 	call WaitForSoundToFinish
+	; The transfer is complete; now uncover the list and show its result.
+	call LoadScreenTilesFromBuffer1
 	ld hl, MonIsTakenOutText
 	call PrintText
-	call ClearListView_CHS ;CHS_FIX 37
-	jp BillsPCMenu
+	; Avoid reopening an empty Withdraw list after the final mon.
+	ld a, [wBoxCount]
+	and a
+	jp z, BillsPCMenu
+	jp BillsPCWithdraw
+
+; List entries shift when a mon is removed. If the selected entry was the
+; last real entry, keep the cursor on the previous mon instead of CANCEL.
+; Preserve the current list page whenever possible.
+NormalizeBillsPCListCursorAfterRemoval:
+	ld hl, wPartyCount
+	ld a, [wRemoveMonFromBox]
+	and a
+	jr z, .gotCount
+	ld hl, wBoxCount
+.gotCount
+	ld a, [wWhichPokemon]
+	cp [hl]
+	ret c
+	ld hl, wPartyAndBillsPCSavedMenuItem
+	ld a, [hl]
+	and a
+	jr z, .moveScrollUp
+	dec [hl]
+	ret
+.moveScrollUp
+	ld hl, wListScrollOffset
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ret
 
 BillsPCRelease:
 	ld a, [wBoxCount]
@@ -456,32 +498,35 @@ LoadSubMenuOptionString_CHS: ; CHS_Fix 24
 	ret
 
 DisplayDepositWithdrawMenu:
+	; Preserve the mon list and its bottom message before covering it.
+	; Buffer 1 is already used by this PC flow for the Stats return.
+	call SaveScreenTilesToBuffer1
+	xor a
+	ld [wCurrentMenuItem], a
+.redrawActionMenu
 	call LoadSubMenuOptionString_CHS
-.next
 	ld hl, wTopMenuItemY
 	ld a, 12
 	ld [hli], a ; wTopMenuItemY
 	ld a, 10
 	ld [hli], a ; wTopMenuItemX
-	xor a
-	ld [hli], a ; wCurrentMenuItem
-	inc hl
+	inc hl ; preserve wCurrentMenuItem (STATS after returning from Stats)
+	inc hl ; wTileBehindCursor
 	ld a, 2
 	ld [hli], a ; wMaxMenuItem
 	ld a, A_BUTTON | B_BUTTON
 	ld [hli], a ; wMenuWatchedKeys
 	xor a
 	ld [hl], a ; wLastMenuItem
-	ld hl, wListScrollOffset
-	ld [hli], a ; wListScrollOffset
-	ld [hl], a ; wMenuWatchMovingOutOfBounds
+	ld [wMenuWatchMovingOutOfBounds], a
 	ld [wPlayerMonNumber], a
-	ld [wPartyAndBillsPCSavedMenuItem], a
+	; Do not reset wListScrollOffset or wPartyAndBillsPCSavedMenuItem:
+	; these belong to the underlying Deposit/Withdraw list.
 .loop
 	coord hl, 1, $0E ; CHS_Fix 24 recover single tile
-	ld de, WhatText_CHS ; CHS_Fix 24 recover single tile
-	call PlaceString ; CHS_Fix 24 recover single tile
-	call LoadSubMenuOptionString_CHS ; CHS_Fix 24 Reload Sub Menu
+	ld de, WhatText_CHS
+	call PlaceString
+	call LoadSubMenuOptionString_CHS ; CHS original submenu redraw
 	call HandleMenuInput
 	bit BIT_B_BUTTON, a
 	jr nz, .exit
@@ -491,38 +536,33 @@ DisplayDepositWithdrawMenu:
 	dec a
 	jr z, .viewStats
 .exit
-	and a
-	push af
-	ld a, [wBillPCTilemapMark]
-	cp 0
-	jr z, .donothing
-	cp $1f
-	jr z, .donothing
-	ld a, [wBillPCEnteredViewStats]
-	cp 1
-	jr nz, .donothing
-	call ReloadTilesetTilePatterns
-.donothing
-	ld a, 0
+	; B/CANCEL restores the list verbatim, including the bottom message.
+	call LoadScreenTilesFromBuffer1
+	xor a
 	ld [wBillPCEnteredViewStats], a
-	pop af
-	ret
+	ret ; carry clear: return to Deposit/Withdraw list
 .choseDepositWithdraw
+	; Keep the action overlay visible while the transfer actually runs.
+	; BillsPCDeposit / BillsPCWithdraw restore buffer 1 only after the
+	; transfer finishes, or immediately before showing a limit error.
+	xor a
+	ld [wBillPCEnteredViewStats], a
 	scf
 	ret
 .viewStats
-	ld a, $31 ; CHS_Fix 24 push text to stack
-	lb bc, 6, 8 ;
-	coord hl, 6, 3 ;
-	call DFSStaticize ;
+	; Keep CHS DFS and tile-pattern restoration on the Stats path.
+	ld a, $31
+	lb bc, 6, 8
+	coord hl, 6, 3
+	call DFSStaticize
 
-	hlcoord 19,0
+	hlcoord 19, 0
 	ld a, [hl]
 	ld [wBillPCTilemapMark], a
 	ld a, 1
 	ld [wBillPCEnteredViewStats], a
 
-	call SaveScreenTilesToBuffer1
+	; The original list (not the action window) is already in buffer 1.
 	ld a, [wParentMenuItem]
 	and a
 	ld a, PLAYER_PARTY_DATA
@@ -534,26 +574,27 @@ DisplayDepositWithdrawMenu:
 	predef StatusScreen2
 	call LoadScreenTilesFromBuffer1
 
-	ld a,1 ; CHS_Fix 24 recover single tile
-	ld [wTempSpace],a ;
-	call ReloadTilesetTilePatterns ;
-	ld a,0 ;
-	ld [wTempSpace],a ;
+	ld a, 1 ; CHS_Fix 24 recover single tile
+	ld [wTempSpace], a
+	call ReloadTilesetTilePatterns
+	xor a
+	ld [wTempSpace], a
 
 	ld a, [wBillPCTilemapMark]
-	cp 0
+	and a
 	jr z, .donothing2
 	cp $0B
 	jr z, .donothing2
-	lb bc, 2, 4 ;
-	coord hl, 16, 0 ;
-	call ClearScreenArea ;
+	lb bc, 2, 4
+	coord hl, 16, 0
+	call ClearScreenArea
 .donothing2
-	; call ReloadTilesetTilePatterns
 	call RunDefaultPaletteCommand
 	call LoadGBPal
-	call ClearBillPCMenuSub_CHS
-	jp .loop
+	; After Stats, restore the chosen action while keeping the mon list.
+	ld a, 1
+	ld [wCurrentMenuItem], a
+	jp .redrawActionMenu
 
 DepositPCText:  db "DEPOSIT@"
 WithdrawPCText: db "WITHDRAW@"

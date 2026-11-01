@@ -1,12 +1,12 @@
 # RPP 参考分支移植台账：第 07 批（181～210）
 
-> **CHS 基线**：最新正式 `ROM-1.21.zip` 的 `CHS_Mod` 已提交 HEAD `70549f631b187d2062a3b952a0d26426804d38b1`。
+> **本批原始静态对照基线（历史）**：`ROM-1.21.zip` 的 `CHS_Mod` HEAD `70549f631b187d2062a3b952a0d26426804d38b1`；当前正式版本为 `ROM-1.25`，#195 的现行取舍见本文件更新记录。
 > **参考来源**：`CHS_Mod_QOL-1.14_已提交版交接资料包_无嵌套.zip` 内的 RPP `individual/181～210` 原始提交补丁，共 30 笔、无缺号。
 > **审查范围**：逐笔结合参考原始提交说明/改动路径、CHS 源码和前六批审核结论作静态评估。**未进行本轮新游戏运行测试，不能将“源码可能存在”写成已复现 Bug。** 本轮只更新文档，不修改游戏 ASM、数据、版本号或存档。
 
 ## 本批核心发现
 
-1. **#195：优先检查 HM 道具存入 Player’s PC**。CHS `PlayerPCDeposit` 在列表选择后调用 `IsKeyItem` 以控制“数量”询问，再执行实际存入；虽然 `IsKeyItem_` 把 HM 视为 Key Item，当前流程**没有在入库前拒绝 HM**。这是与 RPP 修复不同的真实代码路径，推荐用备份存档验证 HM01～05 的可存取行为，再独立设计最小修复。
+1. **#195：用户明确决定不用移植**。原始静态对照发现 CHS `PlayerPCDeposit` 未在入库前单独拒绝 HM；RPP 的限制用于防止 HM 存入 PC 后造成 Soft Lock。但用户明确要求保留 CHS 当前规则，因此该项只保留历史源码分析，不再列为当前待办。
 2. **#201～202：CHS 已实现**。CHS `QOL-1.17` 的 `damage_hp_animation.asm` 明确包含按有效伤害比例分档和特殊 tile-only VBlank HUD 刷新，参考的两笔不应重复移植。
 3. **#207：值得复现的战斗规则 Bug**。CHS 仍是原始敌我 ThrashingAbout/AttackMissed 路径，未发现 RPP 失败后早解锁的统一处理。建议用低概率/免疫对照确认锁招与混乱行为，未复现前不能声称已有故障。
 4. **#181～184、#190、#194、#203：参考新增系统专属**。MoveDex、英文 packed names、分类 TM/HM Pocket、扩展动画 wrapper 与压缩名称价格问题不属于 CHS 当前既有系统；尤其 #203 是 RPP #183 加入名称压缩后引起的 HRAM 覆盖，CHS 当前没有同一触发路径。
@@ -20,7 +20,8 @@
 - **依赖暂缓：7**（#181、#187、#188、#192、#193、#206、#209）。
 - **已实现：2**（#201、#202）。
 - **当前不适用：7**（#182、#184、#185、#190、#194、#198、#203）。
-- **待核验 Bug：2**（#195、#207）。
+- **待核验 Bug：1**（#207）。
+- **不移植（用户决定）：1**（#195）。
 - **部分实现：2**（#197、#210）。
 - **需评估：10**（#183、#186、#189、#191、#196、#199、#200、#204、#205、#208）。
 
@@ -42,7 +43,7 @@
 | **#192** `0d1d2e99aa` | fix(pc): 修复 Bill's PC 列表光标越过 Cancel | Bill PC 连续操作后 Cancel 越界 | **依赖暂缓** | RPP 在连续存取/放生后保留列表并需限制缩短后的可选行；CHS bills_pc.asm 仍是原有菜单流程，没有参考 NormalizeBillsPCListCursorAfterRemoval。 | 若移植参考 #073～076 连续 PC 改造，必须把本修复作为必需后续；当前不宣称 CHS 有此 Bug。 | 中 / 高 |
 | **#193** `b201e7097d` | feat(pc): 统一 Bill's PC Pokémon 列表首尾跳转行为 | Bill PC Pokémon 列表首尾跳转 | **依赖暂缓** | 参考依赖 #192 边界规则，在 Cancel 与首只宝可梦间跳转；CHS 没有相同连续 PC 光标状态。 | 应与参考 #073～076、#192 成组评估，当前不孤立套用。 | 中 / 高 |
 | **#194** `810de3bd1f` | feat(bag): TM/HM Pocket 支持 START 快捷跳转 HM01 | TM/HM Pocket START 跳转 HM01 | **当前不适用** | 参考要求 #078～082 的分类 Bag/Pocket Slot Map；CHS 使用原版背包/列表，没有 wBagPocketActive/BAG_POCKET_MODE_START。 | 当前不适用；若日后实现分类背包再列新需求。 | 低 / 高 |
-| **#195** `80f36849f7` | fix(pc): 禁止 HM 道具存入 Player's PC | 禁止 HM 道具存入玩家电脑 | **待核验 Bug** | CHS src/engine/menus/players_pc.asm:PlayerPCDeposit 在 DisplayListMenuID 后仅 call IsKeyItem 决定询问数量，随后仍执行 AddItemToInventory/RemoveItemFromInventory；未见 IsItemHM 拦截；IsKeyItem_ 确实把 HM 当 Key Item，但不等于禁止存入。 | 较高优先级的真实路径差异：用备份存档验证 HM01～05 是否可存入/再取出；若确认，单独加存入前校验并测试一般 Key Item/TM。 | 低至中 / 高 |
+| **#195** `80f36849f7` | fix(pc): 禁止 HM 道具存入 Player's PC | 禁止 HM 道具存入玩家电脑 | **不移植（用户决定）** | CHS `PlayerPCDeposit` 未在入库前单独拒绝 HM；RPP 的拦截用于避免 HM 存入 PC 后造成 Soft Lock。用户明确选择保留 CHS 当前行为。 | 不移植 RPP 限制，不改 `players_pc.asm`；原始差异仅作审计历史。除非用户重新授权，不再安排复测或修复。 | 低至中 / 高 |
 | **#196** `9124e61a8c` | feat(hm): 允许普通技能替换 HM 技能并停用旧删除限制 | 允许 HM 技能被普通技能覆盖 | **需评估** | CHS src/engine/pokemon/learn_move.asm 中调用 IsMoveHM，仍显示 HMCantDeleteText；参考删除 HM 覆盖限制。 | 这是改变原版游戏规则而非修 Bug；可能影响卡关，未经用户决定不改。 | 中 / 高 |
 | **#197** `049cc43002` | fix(bag): 优化道具使用后 Pokémon 菜单返回并统一快速恢复 | 道具选择 Pokémon 后的快速界面恢复 | **部分实现** | CHS 已有 START/Party 快速恢复（RestoreStartMenuFromPartyWhite 等），但 item_effects.asm 和 start_sub_menus.asm 仍保留多条 GBPalWhiteOutWithDelay3、RestoreScreenTilesAndReloadTilePatterns/ReloadMapData 路径；没有参考 Summary_RestoreStartBagFromParty。 | 优化目标部分重合但并不等价；有性能需求时按道具类型逐条计时/看闪烁，最小修改。 | 高 / 中 |
 | **#198** `210e60f1b1` | fix(summary): 修复 Party 快速返回时按键音效被拉长 | 快速 Party LCD-off 后按键音被拉长 | **当前不适用** | RPP 的 #197 快速 Party/Bag LCD-off 调整引入按键音延长，#198 修其更新音效 VBlank 时序；CHS 未引入同一 #197 helper。 | 参考新增快速恢复的后续修复；CHS 若实测按键音延长则单独找原因，不能默认套补丁。 | 中 / 高 |
@@ -61,7 +62,7 @@
 
 ## 后续建议和依赖顺序
 
-- **P1 验证，非直接移植：#195**。通过备份存档测试从 Player's PC Deposit 选择 HM01/HM05 能否存入及再取出；如确认影响玩法，最小修复拦截应放在实际写入物品数组之前，红蓝、DMG/CGB 冒烟测试普通道具、普通 Key Item、HM、TM。
+- **#195：用户明确决定不用移植**。RPP 的 HM 禁止存入保护是为避免 HM 被存入后造成 Soft Lock；按用户决定，CHS 不复制该限制，保留现有 Player's PC 存取行为。原始风险分析仅作历史依据，不再作为当前待办。
 - **P1 复现：#207**。保留一代规则先定义期望，再用 Thrash/Petal Dance 失手、属性无效以及自然最后一回合等案例核查；若是 RPP 特别加入的改规则，需要另外取得用户授权。
 - **P2 低风险新功能候选：#189、#191**。只在有用户需求时评估独立 WRAM 记录，注意共享 Party/Bill's PC 光标状态与旧存档兼容，不修改 SRAM 格式。
 - **P2 可选体验：#200、#197、#204**。先度量画面和声音时序，任何启动剪影加速只选参考最终的 #200，不套 #199 中间态；#197 如果实施，必须同时审查 #198 的按键音时序风险。
@@ -76,3 +77,9 @@
 - **本轮没有修改**游戏功能、中文 DFS、CHR、ROM Bank 布局、版本号，也没有运行新 ROM 编译、模拟器测试或 Git Commit/Push。
 
 下一批按约定仅评估 **211～240**，不得提前推断其状态。
+
+
+## ROM-1.25 开发候选补记：#195 用户不移植决定（2026-11-01）
+
+- **当前执行状态：不用移植（用户明确决定）**。#195 是 RPP 为避免 HM 存入 PC 可能造成 Soft Lock 所作的保护；本 CHS 项目不复制该参考限制，也不修改现有 Player's PC HM 存取逻辑。
+- 上述原始静态风险分析保留作为历史依据，但其“优先核验/建议修复”不再代表当前任务安排；除非用户重新授权，#195 不在开发队列中。

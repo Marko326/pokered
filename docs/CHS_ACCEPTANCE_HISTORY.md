@@ -1,5 +1,25 @@
 # CHS_Mod 历史变更与验收记录
 
+## ROM-1.25 — PC 功能正式收口（2026-11-01）
+
+- **正式版本与基线**：从已提交 `CHS_Mod` HEAD `23b2d335183ab27a153ab6d7747260ed8a3ccd37`（ROM-1.24）收口到正式 `ROM-1.25`。早期 `ROM-1.25` 与 `ROM-1.26A/B/C` 均为本轮未提交的开发候选标识；正式提交从 `ROM-1.24` 只递增到 `ROM-1.25`；本轮未使用游戏内测试功能，因此不保留测试后缀。`GameVersionText` 更新为 8 字符 `ROM-1.25`，Options 右上角从候选 9 字符坐标 `(10,0)` 恢复到正式 8 字符坐标 `(11,0)`。
+- **基线重建说明**：ROM-1.26B 导出记录声明分支 `CHS_Mod`、HEAD `23b2d335183ab27a153ab6d7747260ed8a3ccd37`，并附 `current_worktree.patch`。从完整 ROM-1.26B 源码快照反向应用该补丁重建 HEAD；与 ROM-1.24 精简快照中所有共有项目文件逐项比较一致。上传 ZIP 不含 `.git`，HEAD Hash 依据导出记录，未能在本环境独立读取 Git 对象。
+- **Bill's PC #073～076**：存取成功后留在对应列表；容量限制延后到确认操作时检查；删除末项后调整光标/滚动；B/CANCEL 返回列表；Stats 返回恢复 CHS 列表与 DFS 显示；取出盒中最后一只后返回 Bill's PC 主菜单。DEPOSIT/WITHDRAW 小菜单在实际转移与声音等待结束前保持显示，结束后才恢复列表和结果提示。模块由 Bank `$08` 移至 Bank `$2D`，避免原 Bank `$08` 空间紧张；最终红蓝 Bank 余量仍须由维护者本地链接确认。
+- **卧室 PC #128**：图鉴前保留 `script_players_pc` 道具存取；图鉴后由卧室本地 `RedBedroomPCFullText:: script_pokecenter_pc` 入口复用完整 PC 菜单。原先跨 Bank 直接引用 `PokemonCenterPCText` 曾导致用户实测出现“31 出错。”；修正后使用同 Bank 脚本并复用预定义槽 `$1E`，保留 `$1F` 宝可梦中心入口。用户确认修正后卧室 PC 入口正常。
+- **图鉴后中文提示**：在 `OaksLabText25` 的 `sound_get_key_item` 后追加独立 `text_far _OaksLabHomePCUpdatedText`。提示先显示“大木：对了，你家里的电脑也升级了！”，再显示“现在可以寄放和取出宝可梦了！”。用户截图发现初版文本拼接在图鉴领取对白后；修正为英文、中文翻译均使用空 `text_start` + `para` 新段落结构，更新 `src/xlsx/indoor.xlsx` 与生成的 `src/_G1RB.json`。用户确认分页修正后显示正常。
+- **用户验收范围**：用户确认 DEPOSIT/WITHDRAW 小菜单显示时机正确；确认卧室 PC 修正后不再出现“31 出错。”且入口正常；确认图鉴后通知分页修正后没有问题。上述为用户实际反馈范围，不代表红蓝双版、DMG/CGB、全部容量边界、所有 PC 菜单状态及旧存档的穷尽验收。
+- **明确不改**：#195 按用户决定不移植 HM 存入限制；#331 按用户反馈当前无需移植；Bill's PC 首次进入中文字异常按用户要求继续暂缓；不改存档结构、SRAM/WRAM、事件旗标、charmap 或中文字库。
+- **验证边界**：19 项 PC/卧室入口/对白/版本定向源码断言 19/19 PASS；`git diff --check` 与两条补丁路径的正向应用、反向撤销及逐文件比对通过。`indoor.xlsx` 检查 0 错误、4 项既有警告、53 项既有提醒；英文/中文导入在隔离目录成功，新提示输出的 `text_start` / `para` 分页结构正确，英文导入的 MrFujisHouse 长度警告与 ROM-1.26B 基线相同。全量 `_checkValid.command` 的 8 个工作簿中 6 个无错误；`core.xlsx` 的 1 项指令关系错误和 `dexRGB.xlsx` 的 1 项缺失 `data/pokemon/dex_text_b.asm` 错误，与 ROM-1.26B 基线日志逐项一致，非本轮引入。`_genJSON.py` 生成结果与更新后的 `_G1RB.json` 字节一致；同步时补入了工作簿中已有、代码已引用但旧 JSON 漏掉的 BikeShop SELECT 上下车提示。`verify_hp_damage_speed_static.py` 与 `verify_qol115e_static.py` PASS；`verify_qol116_static.py` 的 10 项功能断言 PASS，但 2 项正式版本/Options 白名单不识别 ROM-1.25。另 11 个历史静态守卫（DOR-1.17B/C/D、DOR-1.18/1.19、FLH-1.20、Party SELECT、ROM-1.20A/B/C/D）均在旧版本白名单首断言停止，后续功能断言未执行。没有修改这些工具脚本，避免把本轮扩大为双提交；这些失败属于测试器版本兼容缺口，不写成测试全通过。AI 未编译/链接 ROM，未生成 ROM-1.25 MAP/ROM SHA，也未执行模拟器测试。
+- **提交模式**：本轮没有修改 `scripts/`、`src/tools/`、转换器或审计脚本，按模式 B 使用单笔 Git 提交。交付为清理增量补丁、HEAD 全量补丁和一份中文 Conventional Commit 日志；不由 AI 执行 Commit / Push。历史静态检查器的版本白名单保持原样，已在验证边界中如实记录其过期限制。
+
+## ROM-1.25 — Bill's PC #073～076 连续存取开发候选（2026-11-01，非正式验收）
+
+- **用户决定**：#195 不移植参考版 HM 电脑存入保护；#331 用户确认退出名人堂未见花屏，当前维持 CHS 的 `ReloadMapData` 方案。二者都没有修改实际游戏代码。
+- **本轮源码候选**：以 ROM-1.24 快照为起点，对 `src/engine/pokemon/bills_pc.asm` 做 CHS 专项移植：存取循环、容量限制后置、尾项光标归一化、二级取消回列表、Stats 恢复原菜单与取空盒结束条件；维持 CHS DFS / Stats 特殊路径和 SRAM/WRAM 地址；旧红版 MAP Bank $08 仅余 20 B，因而将完整 Bill's PC ROMX 节从 Bank $08 移至 Bank $2D，待新 MAP/跨 Bank 调用实测。
+- **版本号**：`ROM-1.24 → ROM-1.25`；只标开发候选，不代表正式游戏验收。不添加额外 A/B/C 测试后缀，不改变 Options 8 字符右上角位置。
+- **当时证据层级**：仅源码级分析与补丁静态重放。根据项目明确禁止，AI 未编译/链接红蓝 ROM；未产生新的 MAP、ROM SHA 或游戏画面记录，当时用户尚未运行本候选。后续小菜单时机的用户反馈见本记录上方的 ROM-1.25 正式收口项。保留此前 Bill's PC 首入中文字异常暂缓项。
+- **用户反馈修正（同一 ROM-1.25 开发候选）**：初版在选择 DEPOSIT/WITHDRAW 后立即 `LoadScreenTilesFromBuffer1`，导致小菜单在实际转移前消失。修正版让小菜单覆盖层在转移期间保持显示；存取成功后、结果文本绘制前恢复列表；若确认时因最后一只/满盒/满队限制而不能执行，则在限制提示前恢复列表。B/CANCEL 仍立即恢复底层列表。
+
 ## ROM-1.24 — START / PC 菜单输入与显示修复正式收口（2026-11-01）
 
 - **收口决定与版本**：用户确认当前候选版本已修好并要求正式清理提交。本轮不使用测试功能，正式标识由 `ROM-1.23D` 候选清理为 `ROM-1.24`；Options 右上角从 9 字符候选位置 `(10,0)` 恢复到 8 字符正式位置 `(11,0)`。提交日志只记录正式版本 `ROM-1.23 → ROM-1.24`。
@@ -1037,3 +1057,35 @@
 - **仍需实机验证**：首次进 Party 1～6 只、A 子菜单取消/返回、查看 Summary 返回后、连续 A/SELECT 交换、中文与英文昵称。源码护栏能证明三处标志清理存在，**不能单独证明图像已完全正常**。
 - **版本标志**：`ROM-1.21C`；Options 仍按 9 个字符从 (10,0) 显示。
 - **交付基线**：上轮 ROM-1.21B 第五轮候选的确切内容快照，非用户本地最新 Git HEAD；不 Commit/Push。
+
+
+## ROM-1.25 用户反馈及 ROM-1.26A #128 CHS 候选（2026-11-01）
+
+- **ROM-1.25 用户反馈**：玩家反馈上一轮小菜单显示时机已经改对，实际操作没有观察到问题；没有提供红蓝版独立构建证据和全场景清单，因此仅记录反馈范围，不写成全面验收。
+- **#128 源码候选**：卧室电脑收到图鉴后进入与宝可梦中心共用的 `PokemonCenterPCText` / `ActivatePC`；图鉴前继续原道具 PC，明确与 RPP 的图鉴前锁定设计不同，避免未经用户选择就改变游戏开场的物品取回权限。
+- **范围与验证**：未动 #073～076 的现有存取逻辑和用户刚确认的小菜单显示时机；仅静态检查及补丁应用、撤销检查。未编译、未链接、未模拟器/实机验证；ROM0 版本文字数据增加 1 字节，银行余量须用新 MAP 复核。
+
+
+## ROM-1.26A 实测反馈与 ROM-1.26B #128 跨 Bank 修正（2026-11-01）
+
+- **用户实测 ROM-1.26A**：取得图鉴前卧室电脑正常；取得图鉴后显示“31 出错。”。因此 ROM-1.26A 的图鉴后入口判定失败，不能视为功能验收通过。
+- **根因**：`OpenRedsPC` 在 `Hidden Objects 3`（ROMX Bank #23），而 `PokemonCenterPCText` 在 `Hidden Objects 4`（ROMX Bank #24）。`TextPredefs` 是无 Bank 字段的 16-bit 地址表；`PrintPredefTextID` 置位 `wTextPredefFlag` 后，`DisplayTextID` 跳过地图 Bank 切换，导致卧室路径以 Bank #23 读取 Bank #24 的指针地址，显示预定义文本编号 31 的错误提示。
+- **ROM-1.26B 候选修正**：在 `Hidden Objects 3` 定义本地 `RedBedroomPCFullText:: script_pokecenter_pc`，图鉴后使用该入口；将原未使用的预定义槽 `$1E` 指向此本地脚本，原 `$1F PokemonCenterPCText` 保持宝可梦中心用途。表长度不变，无 ROM0 可执行代码增加。
+- **验证边界**：源码静态检查及补丁正反向应用检查待完成；未编译/链接 ROM、未生成新 MAP、未实测修正版。图鉴前路径沿用原 `script_players_pc`；PC 共用主菜单与存档路径不变。
+
+
+## ROM-1.26B 用户反馈与 ROM-1.26C 图鉴后卧室电脑通知（2026-11-01）
+
+- **ROM-1.26B 用户反馈**：用户确认取得图鉴后卧室电脑能正常打开完整 PC 菜单，未观察到问题；图鉴前仍保留原道具存取。此反馈只代表用户实际测试的入口，不扩大为红蓝/DMG/CGB 全面验收。
+- **翻译工作簿恢复到本轮资料**：用户上传的 `ROM-1.26B.zip` 包含 `src/xlsx/indoor.xlsx`、`xlsxList.txt` 所列的全部 9 个工作簿，以及 `_importText.py` / `charmap.py` / `charmap.txt`。
+- **ROM-1.26C 文本改动**：新增 `_OaksLabHomePCUpdatedText`，在 `OaksLabText25` 的图鉴获得音效之后显示：“大木：对了，你家里的电脑也升级了！现在可以寄放和取出宝可梦了！”随后继续原有大木博士对白。
+- **同步范围**：修改 `src/xlsx/indoor.xlsx`、`src/_G1RB.json`、`src/scripts/OaksLab.asm`、版本字符串和项目记录。翻译导入在隔离目录验证可生成；室内表检查 0 错误。`src/text/OaksLab.asm` 保持原始英文源文件不变，中文编译文本由构建预处理从 XLSX 生成。
+- **验证边界**：未编译/链接 ROM，未生成 ROM-1.26C MAP，未进行 ROM-1.26C 实机测试；不 Commit/Push。
+
+
+## ROM-1.26C 对话分页修正（2026-11-01）
+
+- 用户实机截图显示，图鉴领取文本之后新增的卧室电脑通知被接在旧文本光标位置，造成“你家里的电脑也……”与“大木：对了”挤在同一对话框中。
+- 根因不是汉字字库或 charmap 映射，而是新文本以 `text`（TX_START 后直接打印内容）开头；连续 `text_far` 不会自动清空/重置对话光标。
+- 修正为与项目既有物品说明文本相同的控制序列：空 `text_start`，随后 `para` 开始新段落。英文、中文翻译源同步调整；中文句首为“大木：对了，”。
+- 已用 `tools/_importText.py xlsx/indoor.xlsx 5 RB 0` 验证生成文本，输出包含 `text_start`、`para`；`_checkValid.py xlsx/indoor.xlsx 1 5 0` 为 0 错误，原有 4 项警告和 53 项提醒未增加。ROM-1.26C 尚未重新编译/链接或实机复测。

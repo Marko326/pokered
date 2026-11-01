@@ -66,7 +66,6 @@ ROMX $8
 	"Music Headers 2"
 	"Sound Effects 2"
 	"Low Health Alarm (Audio Engine 2)"
-	"Bill's PC"
 	"Audio Engine 2"
 	"Music 2"
 ROMX $9
@@ -182,6 +181,8 @@ ROMX $2B
 ROMX $2C
 	"Move Names"
 ROMX $2D
+	; Keep the Bill's PC module in Bank $2D to avoid the tight Bank $08 placement.
+	"Bill's PC"
 	"Quantity Menu Helpers"
 	"Number Printing"
 	"Player Speed Steps"

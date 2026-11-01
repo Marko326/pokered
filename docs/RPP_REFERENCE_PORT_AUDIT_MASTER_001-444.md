@@ -1,8 +1,16 @@
+> **ROM-1.25 正式收口补记（2026-11-01）**：#073～076 已完成 Bill's PC 连续存取 CHS 适配；#128 已完成卧室 PC 图鉴后完整菜单入口及图鉴后中文升级提示。用户确认小菜单时机、修正后的卧室 PC 入口和通知分页均正常。正式版本 ROM-1.25；红蓝构建/新 MAP 与全场景矩阵仍待维护者验证。
+
+> **ROM-1.26B #128 修正候选阶段记录（2026-11-01；后由 ROM-1.25 用户验收补记更新）**：用户实测 ROM-1.26A 图鉴后显示“31 出错。”；根因为卧室 Bank #23 错用宝可梦中心 Bank #24 的无 Bank 文本预定义指针。ROM-1.26B 改用卧室本地 `script_pokecenter_pc` 入口并复用未使用的预定义槽 `$1E`；未构建/运行。
+
+> **ROM-1.26A PC 候选补记（2026-11-01）**：#128 已写入 CHS 测试候选：取得图鉴后卧室 PC 复用完整菜单；图鉴前保留原道具 PC（与 RPP 锁定方案不同）。此补记不覆盖旧 442 笔静态审核统计；未编译/运行。
+
 # RPP 参考分支 442 笔提交：15 批成果总台账
+
+> **当前用户取舍与状态**：#195 不移植 RPP 的 HM 存入限制；#331 当前无需移植；#073～076 与 #128 已在 ROM-1.25 完成 CHS 适配。下方 442 笔分类数字仍是 ROM-1.21 时的历史静态审核快照，不因后续移植而重算。
 
 > ROM-1.23 实施注记：参考 #038/#042/#050/#193 的菜单边界与输入体验相关实现，已随 ROM-1.22H～M 候选按 M 状态收入口正式源码交付；不改变本表 442 笔原始静态分类。红蓝构建、MAP 和 DMG/CGB 运行证据仍需另行补齐。
 
-> CHS 对照版本：`ROM-1.21`；本轮整理基线：`CHS_Mod` 已提交 HEAD `f7a43ff08a5e213c55fcfa1a287b5f6bd5658bfb`。
+> 原始 442 笔静态分类的 CHS 比较版本：`ROM-1.21`；原始台账整理基线：`CHS_Mod` HEAD `f7a43ff08a5e213c55fcfa1a287b5f6bd5658bfb`（历史记录，不是当前补丁基线）。当前正式版本与后续处理见本文顶部 ROM-1.25 补记。
 > 本表**由项目已有 15 份分批静态审核文档逐笔提取合并**；不是本轮对 442 笔重新编译或运行验证。原批次原文及其中的 CHS 源码依据仍为权威细节。
 > 参考编号 `001～444`，其中 `#072`、`#269` 在交接资料中缺失独立补丁，实际可评估的为 **442 笔**。
 
@@ -24,7 +32,7 @@
 ## 二、已整理的决策路线
 
 1. **先审计较明确、改动范围小的风险**：#177（老虎机图块复制长度与素材实际长度不符）；#173（BCD 跨 Bank 输入指针，仅核查 ROMX 指针来源）；#180（standing-only NPC 素材边界）；#442（除数为 0 的可达性）。先做静态核验，不对这四项一概直接套参考代码。
-2. **再做可控运行复现**：#443（自伤/落空反伤/替身）、#440（Counter 真实受击）、#336（Transform Fly/Dig）、#266（濒死回合末伤害）、#390（双针与替身）、#417（战斗 PP 道具）、#195（HM 存电脑）等；有问题才开独立修复。
+2. **再做可控运行复现**：#443（自伤/落空反伤/替身）、#440（Counter 真实受击）、#336（Transform Fly/Dig）、#266（濒死回合末伤害）、#390（双针与替身）、#417（战斗 PP 道具）等；#195 已按用户决定不移植，不列入复现队列。
 3. **QoL 由维护者按需选**：#073～076（PC 连续存取）、#042（列表翻页）、#101～103（购买、电梯）、#289（Party/Bag/PC 快捷键）、#346～347（连续使用道具）、#237（神奇糖果文字），仍需验证中文 DFS 与现有 START/SELECT 快捷键。
 4. **默认暂缓系统链**：Crystal Audio、地区形态/独立图鉴、扩容招式/MoveDex、分类背包、大片动画重构、地图数据全量压缩、非用户要求的战斗规则变更。
 
@@ -106,10 +114,10 @@
 | #070 `1420a790d7` | 修改默认rom生成的名称和位置 | 需评估 | 需求待选 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
 | #071 `85c3ffe2a1` | 优化训练家派出宝可梦文本的自动滚动 | 需评估 | 需求待选 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
 | #072 `—` | 交接资料缺少 #072 独立补丁（无原始标题） | 缺号 | 无原补丁，不推测 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
-| #073 `887bcb3d13` | 存取宝可梦后保留当前操作界面 | 需评估 | 需求待选 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
-| #074 `a82b9c5fa3` | 优化精灵盒子存取限制与界面返回逻辑 | 依赖暂缓 | 成组暂缓 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
-| #075 `4590050511` | 修复存取宝可梦后列表游标落到 Cancel 的问题 | 依赖暂缓 | 成组暂缓 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
-| #076 `b5dcfc396b` | 完善宝可梦盒子的连续存取与菜单返回体验 | 依赖暂缓 | 成组暂缓 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
+| #073 `887bcb3d13` | 存取宝可梦后保留当前操作界面 | 已移植（CHS 适配） | ROM-1.25 收口 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
+| #074 `a82b9c5fa3` | 优化精灵盒子存取限制与界面返回逻辑 | 已移植（CHS 适配） | ROM-1.25 收口 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
+| #075 `4590050511` | 修复存取宝可梦后列表游标落到 Cancel 的问题 | 已移植（CHS 适配） | ROM-1.25 收口 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
+| #076 `b5dcfc396b` | 完善宝可梦盒子的连续存取与菜单返回体验 | 已移植（CHS 适配） | ROM-1.25 收口 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
 | #077 `7ffb140546` | movedex_v1.0.1-v1.2.6 | 需评估 | 需求待选 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
 | #078 `82ba739ea2` | 背包分类展示V1 | 需评估 | 需求待选 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
 | #079 `0bc91b8e53` | 背包分类展示V2 | 依赖暂缓 | 成组暂缓 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
@@ -161,7 +169,7 @@
 | #125 `c065cd9f6f` | perf(summary): 统一 Party/Summary 快速路径并优化 Battle Party 首次进入 | 依赖暂缓 | 成组暂缓 | [121-150.md](RPP_REFERENCE_PORT_AUDIT_121-150.md) |
 | #126 `4e831043d0` | fix(summary): 清除 Battle Party 快速返回时的父菜单箭头残影 | 依赖暂缓 | 成组暂缓 | [121-150.md](RPP_REFERENCE_PORT_AUDIT_121-150.md) |
 | #127 `8bb23a7348` | fix(summary): 恢复 Battle Party Summary 的上下切换宝可梦 | 依赖暂缓 | 成组暂缓 | [121-150.md](RPP_REFERENCE_PORT_AUDIT_121-150.md) |
-| #128 `8272e87727` | fix(pc): 统一卧室电脑与宝可梦中心的完整 PC 功能 | 需评估 | 需求待选 | [121-150.md](RPP_REFERENCE_PORT_AUDIT_121-150.md) |
+| #128 `8272e87727` | fix(pc): 统一卧室电脑与宝可梦中心的完整 PC 功能 | 已移植（CHS 适配） | ROM-1.25 收口 | [121-150.md](RPP_REFERENCE_PORT_AUDIT_121-150.md) |
 | #129 `5526c7168f` | fix(pokeflute): 恢复战斗中的宝可梦笛音效并追踪敌方睡眠状态 | 需评估 | 需求待选 | [121-150.md](RPP_REFERENCE_PORT_AUDIT_121-150.md) |
 | #130 `19f3b60ab7` | fix(party): 修复队伍菜单返回时的窗口闪烁 | 已实现 | 不重复移植 | [121-150.md](RPP_REFERENCE_PORT_AUDIT_121-150.md) |
 | #131 `3aa60942c8` | fix(ui): 优化菜单离屏重建并修复窗口中间帧闪烁 | 部分实现 | 只核剩余差异 | [121-150.md](RPP_REFERENCE_PORT_AUDIT_121-150.md) |
@@ -228,7 +236,7 @@
 | #192 `0d1d2e99aa` | fix(pc): 修复 Bill's PC 列表光标越过 Cancel | 依赖暂缓 | 成组暂缓 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
 | #193 `b201e7097d` | feat(pc): 统一 Bill's PC Pokémon 列表首尾跳转行为 | 依赖暂缓 | 成组暂缓 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
 | #194 `810de3bd1f` | feat(bag): TM/HM Pocket 支持 START 快捷跳转 HM01 | 当前不适用 | 不直接适用 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
-| #195 `80f36849f7` | fix(pc): 禁止 HM 道具存入 Player's PC | 待核验 Bug | 先复现 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
+| #195 `80f36849f7` | fix(pc): 禁止 HM 道具存入 Player's PC | 不移植（用户决定） | 保留 CHS 原规则 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
 | #196 `9124e61a8c` | feat(hm): 允许普通技能替换 HM 技能并停用旧删除限制 | 需评估 | 需求待选 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
 | #197 `049cc43002` | fix(bag): 优化道具使用后 Pokémon 菜单返回并统一快速恢复 | 部分实现 | 只核剩余差异 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
 | #198 `210e60f1b1` | fix(summary): 修复 Party 快速返回时按键音效被拉长 | 当前不适用 | 不直接适用 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
@@ -364,7 +372,7 @@
 | #328 `758cef5fdb` | perf(menu): 轻量化 START 菜单并完善子菜单返回显示时序 | 部分实现 | 只核剩余差异 | [301-330.md](RPP_REFERENCE_PORT_AUDIT_301-330.md) |
 | #329 `af0fe260e2` | fix(forms): 稳定地区形态身份并修复捕获后首次图鉴展示 | 当前不适用 | 不直接适用 | [301-330.md](RPP_REFERENCE_PORT_AUDIT_301-330.md) |
 | #330 `3f1662b444` | feat(forms): 补全联机交换与名人堂地区形态显示 | 当前不适用 | 不直接适用 | [301-330.md](RPP_REFERENCE_PORT_AUDIT_301-330.md) |
-| #331 `972de8d6dc` | fix(pc): 修复名人堂电脑退出后的地图花屏 | 待核验 Bug | 先复现 | [331-360.md](RPP_REFERENCE_PORT_AUDIT_331-360.md) |
+| #331 `972de8d6dc` | fix(pc): 修复名人堂电脑退出后的地图花屏 | 当前不移植（用户未复现） | 保留 CHS ReloadMapData | [331-360.md](RPP_REFERENCE_PORT_AUDIT_331-360.md) |
 | #332 `29f17bdf82` | fix(pc): 优化名人堂电脑轮播切换显示 | 需评估 | 需求待选 | [331-360.md](RPP_REFERENCE_PORT_AUDIT_331-360.md) |
 | #333 `c69bca0727` | fix(forms): 补全 Transform 地区形态继承 | 当前不适用 | 不直接适用 | [331-360.md](RPP_REFERENCE_PORT_AUDIT_331-360.md) |
 | #334 `39aba8363f` | fix(capture): 修复变身后捕获物种识别错误 | 已实现 | 不重复移植 | [331-360.md](RPP_REFERENCE_PORT_AUDIT_331-360.md) |
