@@ -59,7 +59,7 @@ CeladonMartElevatorWarpMaps:
 CeladonMartElevatorWarpMapsEnd:
 
 CeladonMartElevatorScript_48654:
-	farjp ShakeElevator
+	farjp ShakeBuildingElevator
 
 CeladonMartElevator_TextPointers:
 	dw CeladonMartElevatorText1

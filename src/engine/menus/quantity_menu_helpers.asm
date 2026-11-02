@@ -1,5 +1,12 @@
 ; ROM-1.3: Move the CHS quantity menu to spare ROMX bank $2D.
 DisplayChooseQuantityMenu_::
+; Preserve the caller's shared input timer/output; quantity repeat is local.
+	ldh a, [hFrameCounter]
+	push af
+	ldh a, [hJoy5]
+	push af
+	ld a, 40 ; Ruby quantity picker initial repeat delay
+	ldh [hFrameCounter], a
 ; text box dimensions/coordinates for just quantity
 	hlcoord 15, 9
 	ld b, 1 ; height
@@ -25,16 +32,22 @@ DisplayChooseQuantityMenu_::
 	ld [wItemQuantity], a ; initialize current quantity to 0
 	jp .incrementQuantity
 .waitForKeyPressLoop
-	call JoypadLowSensitivity
-	ldh a, [hJoyPressed] ; newly pressed buttons
+	call .readQuantityMenuKeys
+	ldh a, [hJoyPressed] ; A/B remain edge-triggered, like Ruby's newKeys
 	bit BIT_A_BUTTON, a
 	jp nz, .buttonAPressed
 	bit BIT_B_BUTTON, a
 	jp nz, .buttonBPressed
-	bit BIT_D_UP, a
-	jr nz, .incrementQuantity
-	bit BIT_D_DOWN, a
-	jr nz, .decrementQuantity
+	ldh a, [hJoy5] ; directions include Ruby-style held-key repeats
+	and D_UP | D_DOWN | D_LEFT | D_RIGHT
+	cp D_UP
+	jr z, .incrementQuantity
+	cp D_DOWN
+	jr z, .decrementQuantity
+	cp D_RIGHT
+	jr z, .incrementQuantityBy10
+	cp D_LEFT
+	jr z, .decrementQuantityBy10
 	jr .waitForKeyPressLoop
 .incrementQuantity
 	ld a, [wMaxItemQuantity]
@@ -56,6 +69,32 @@ DisplayChooseQuantityMenu_::
 ; wrap to the max quantity if the player goes below 1
 	ld a, [wMaxItemQuantity]
 	ld [hl], a
+	jr .handleNewQuantity
+.decrementQuantityBy10
+; Left subtracts ten and clamps at the minimum quantity, matching Ruby.
+	ld hl, wItemQuantity
+	ld a, [hl]
+	cp 11
+	jr nc, .subtractTen
+	ld a, 1
+	ld [hl], a
+	jr .handleNewQuantity
+.subtractTen
+	sub 10
+	ld [hl], a
+	jr .handleNewQuantity
+.incrementQuantityBy10
+; Right adds ten and clamps at the selected item's maximum quantity.
+	ld hl, wItemQuantity
+	ld a, [hl]
+	add 10
+	ld b, a
+	ld a, [wMaxItemQuantity]
+	cp b
+	jr nc, .storeIncreasedQuantity
+	ld b, a
+.storeIncreasedQuantity
+	ld [hl], b
 .handleNewQuantity
 	hlcoord 17, 10
 	ld a, [wListMenuID]
@@ -112,12 +151,55 @@ DisplayChooseQuantityMenu_::
 	xor a
 	ld [wMenuItemToSwap], a ; 0 means no item is currently being swapped
 	ld e, a ; keep the selection across the Bank restore
-	ret
+	jr .restoreInputState
 .buttonBPressed ; the player chose to cancel the transaction
 	xor a
 	ld [wMenuItemToSwap], a ; 0 means no item is currently being swapped
 	ld a, $ff
 	ld e, a ; keep the selection across the Bank restore
+.restoreInputState
+	pop af
+	ldh [hJoy5], a
+	pop af
+	ldh [hFrameCounter], a
+	ret
+
+; Reproduce Ruby's newAndRepeatedKeys behavior locally so no other menu's
+; repeat timing or input policy changes.
+.readQuantityMenuKeys
+	call Joypad
+	ldh a, [hJoyPressed]
+	and a
+	jr nz, .newQuantityMenuKey
+	ldh a, [hJoyReleased]
+	and a
+	jr nz, .resetQuantityMenuDelay
+	ldh a, [hJoyHeld]
+	and a
+	jr z, .resetQuantityMenuDelay
+	ldh a, [hFrameCounter]
+	and a
+	jr z, .repeatQuantityMenuKeys
+	xor a
+	ldh [hJoy5], a
+	ret
+.newQuantityMenuKey
+	ldh a, [hJoyPressed]
+	ldh [hJoy5], a
+	ld a, 40 ; Ruby: first repeat after 40 frames
+	ldh [hFrameCounter], a
+	ret
+.resetQuantityMenuDelay
+	xor a
+	ldh [hJoy5], a
+	ld a, 40
+	ldh [hFrameCounter], a
+	ret
+.repeatQuantityMenuKeys
+	ldh a, [hJoyHeld]
+	ldh [hJoy5], a
+	ld a, 5 ; Ruby: repeat every 5 frames
+	ldh [hFrameCounter], a
 	ret
 
 InitialQuantityText::

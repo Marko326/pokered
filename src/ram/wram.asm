@@ -227,10 +227,7 @@ wPartyAndBillsPCSavedMenuItem:: db
 ; isn't active.
 wBagSavedMenuItem:: db
 
-; It is used by the start menu to remember the cursor position while the menu
-; isn't active.
-; The battle menu uses it so that the cursor position doesn't get lost when
-; a sub-menu is shown. It's reset at the start of each battle.
+; Battle menu cursor only; battles reset this without affecting START.
 wBattleAndStartSavedMenuItem:: db
 
 wPlayerMoveListIndex:: db
@@ -241,7 +238,10 @@ wPlayerMonNumber:: db
 ; the address of the menu cursor's current location within wTileMap
 wMenuCursorLocation:: dw
 
-	ds 2
+; Session-only START cursor, separate from the battle menu cursor.
+wStartMenuSavedMenuItem:: db
+; Session-only START -> Pokémon cursor, separate from battle/PC Party state.
+wStartPartySavedMenuItem:: db
 
 ; how many times should HandleMenuInput poll the joypad state before it returns?
 wMenuJoypadPollCount:: db
@@ -315,7 +315,9 @@ wMenuWrappingEnabled:: db
 ; whether to check for 180-degree turn (0 = don't, 1 = do)
 wCheckFor180DegreeTurn:: db
 
-	ds 1
+; Session-only absolute Pokédex selection (1..151, 0 = initial); unused $CC4C.
+; Outside saved wMainData, preserving existing WRAM addresses and save layout.
+wPokedexSavedSelection:: db
 
 wMissableObjectIndex:: db
 
@@ -1360,7 +1362,10 @@ wTempTilesetNumTiles:: db
 ; so that it can be restored when the player is done with the pokemart NPC
 wSavedListScrollOffset:: db
 
-	ds 2
+; START Bag remembers its last absolute item slot across battles/PC/shop.
+; Saved independently of the global list and Battle Bag cursors; not in .sav.
+wStartBagSavedPosition:: db
+wStartBagSavedScrollOffset:: db
 
 ; base coordinates of frame block
 wBaseCoordX:: db

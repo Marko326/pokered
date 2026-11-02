@@ -162,15 +162,15 @@ RestoreStartMenuInputStateFromSaved::
 	ld [wTopMenuItemY], a
 	ld a, $0b
 	ld [wTopMenuItemX], a
-	ld a, [wBattleAndStartSavedMenuItem]
+	ld a, [wStartMenuSavedMenuItem]
 	ld [wCurrentMenuItem], a
 	ld [wLastMenuItem], a
 	xor a
 	ld [wMenuWatchMovingOutOfBounds], a
 	CheckEvent EVENT_GOT_POKEDEX
-	ld a, $06
+	ld a, $05 ; no Pokédex: EXIT is index 5, the last valid item
 	jr z, .storeMenuItemCount
-	inc a
+	inc a ; with Pokédex: EXIT is index 6
 .storeMenuItemCount
 	ld [wMaxMenuItem], a
 
@@ -178,7 +178,7 @@ RestoreStartMenuInputStateFromSaved::
 	; back to the active START cursor and restore the cursor address/under-tile state
 	; without repainting the menu text.
 	hlcoord 11, 2
-	ld a, [wBattleAndStartSavedMenuItem]
+	ld a, [wStartMenuSavedMenuItem]
 	and a
 	jr z, .cursorReady
 	ld de, SCREEN_WIDTH * 2

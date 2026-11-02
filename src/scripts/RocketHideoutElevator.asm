@@ -57,7 +57,7 @@ RocketHideoutElevatorWarpMapsEnd:
 
 RocketHideoutElevatorScript_4575f:
 	call Delay3
-	farcall ShakeElevator
+	farcall ShakeBuildingElevator
 	ret
 
 RocketHideoutElevator_TextPointers:

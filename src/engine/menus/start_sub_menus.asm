@@ -11,6 +11,18 @@ StartMenu_Pokemon::
 	ld a, [wPartyCount]
 	and a
 	jp z, RedisplayStartMenu
+	; Restore START Party's session cursor, not the shared battle/PC cursor.
+	; If the party shrank, return to the first Pokémon instead of a stale slot.
+	ld a, [wPartyCount]
+	dec a
+	ld b, a
+	ld a, [wStartPartySavedMenuItem]
+	cp b
+	jr c, .restoreSavedPartyCursor
+	jr z, .restoreSavedPartyCursor
+	xor a
+.restoreSavedPartyCursor
+	ld [wPartyAndBillsPCSavedMenuItem], a
 	xor a
 	ld [wMenuItemToSwap], a
 	ld [wUpdateSpritesEnabled], a
@@ -26,6 +38,9 @@ StartMenu_Pokemon::
 	ld [wPartyMenuTypeOrMessageID], a
 	call GoBackToPartyMenu
 .checkIfPokemonChosen
+	; Mirror the latest Party cursor before every START Party return path.
+	ld a, [wPartyAndBillsPCSavedMenuItem]
+	ld [wStartPartySavedMenuItem], a
 	jr nc, .chosePokemon
 .exitMenu
 	call GBPalWhiteOutWithDelay3
@@ -344,11 +359,29 @@ StartMenu_Item::
 	ld [wPrintItemPrices], a
 	ld a, ITEMLISTMENU
 	ld [wListMenuID], a
-	ld a, [wBagSavedMenuItem]
-	ld [wCurrentMenuItem], a
+	; START Bag keeps an absolute cursor outside the battle/PC shared state.
+	; Use ROM-1.26 item-list normalization for a shortened/empty Bag.
+	ld a, [wWhichPokemon]
+	push af
+	ld a, [wStartBagSavedPosition]
+	ld [wWhichPokemon], a
+	ld a, [wStartBagSavedScrollOffset]
+	ld [wListScrollOffset], a
+	farcall RestoreItemListPosition
+	pop af
+	ld [wWhichPokemon], a
 	call DisplayListMenuID
+	push af ; preserve list-selection carry across the cursor bookkeeping
+	; Capture the absolute slot, including the visible page, before any item
+	; action can change common menu scratch or the real Bag item count.
 	ld a, [wCurrentMenuItem]
-	ld [wBagSavedMenuItem], a
+	ld [wBagSavedMenuItem], a ; preserve the original shared Bag behavior
+	ld b, a
+	ld a, [wListScrollOffset]
+	ld [wStartBagSavedScrollOffset], a
+	add b
+	ld [wStartBagSavedPosition], a
+	pop af
 	jr nc, .choseItem
 .exitMenu
 	; QOL-1.16F: simply opening Bag still uses the 1.16C no-white fast return.

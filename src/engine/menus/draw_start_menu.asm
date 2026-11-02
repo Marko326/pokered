@@ -21,7 +21,7 @@ DrawStartMenu::
 	ld [wTopMenuItemY], a ; Y position of first menu choice
 	ld a, $0b
 	ld [wTopMenuItemX], a ; X position of first menu choice
-	ld a, [wBattleAndStartSavedMenuItem] ; remembered menu selection from last time
+	ld a, [wStartMenuSavedMenuItem] ; session-only START menu selection
 	ld [wCurrentMenuItem], a
 	ld [wLastMenuItem], a
 	xor a
@@ -47,7 +47,7 @@ DrawStartMenu::
 	ld [wTopMenuItemY], a ; Y position of first menu choice
 	ld a, $0d
 	ld [wTopMenuItemX], a ; X position of first menu choice
-	ld a, [wBattleAndStartSavedMenuItem] ; remembered menu selection from last time
+	ld a, [wStartMenuSavedMenuItem] ; session-only START menu selection
 	ld [wCurrentMenuItem], a
 	ld [wLastMenuItem], a
 	xor a

@@ -97,7 +97,7 @@ StartMenuInputLoop::
 .buttonPressed ; A, B, or Start button pressed
 	call PlaceUnfilledArrowMenuCursor
 	ld a, [wCurrentMenuItem]
-	ld [wBattleAndStartSavedMenuItem], a ; save current menu selection
+	ld [wStartMenuSavedMenuItem], a ; save the START cursor for this play session
 	ldh a, [hJoy5] ; keep the input byte: cursor helper overwrites B
 	and B_BUTTON | START ; was the Start button or B button pressed?
 	jp nz, CloseStartMenu

@@ -1,4 +1,12 @@
 ShakeElevator::
+	ld b, 100 ; legacy duration for existing non-building callers
+	jr ShakeElevatorWithLoopCount
+
+ShakeBuildingElevator::
+	ld b, 40 ; shorter animation for the three building elevators
+
+ShakeElevatorWithLoopCount:
+	push bc ; preserve the loop count across redraw and sound helpers
 	ld de, -$20
 	call ShakeElevatorRedrawRow
 	ld de, SCREEN_HEIGHT * $20
@@ -9,7 +17,7 @@ ShakeElevator::
 	ldh a, [hSCY]
 	ld d, a
 	ld e, $1
-	ld b, 100
+	pop bc ; restore the chosen 100/40 count
 .shakeLoop ; scroll the BG up and down and play a sound effect
 	ld a, e
 	xor $fe

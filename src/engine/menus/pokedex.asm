@@ -4,12 +4,36 @@ ShowPokedexMenu:
 	call UpdateSprites
 	ld a, [wListScrollOffset]
 	push af
+	; A one-based Pokédex number is saved for this play session only.
+	; Rebuild the visible row and scroll, not just the screen row.
+	ld a, [wPokedexSavedSelection]
+	and a
+	jr z, .useFirstPokedexEntry
+	ld [wd11e], a
+	dec a
+	cp 7
+	jr c, .savedEntryOnFirstPage
+	sub 6
+	ld [wListScrollOffset], a
+	ld a, 6
+	jr .storeSavedEntryRow
+.savedEntryOnFirstPage
+	xor a
+	ld [wListScrollOffset], a
+	ld a, [wd11e]
+	dec a
+.storeSavedEntryRow
+	ld [wCurrentMenuItem], a
+	ld [wLastMenuItem], a
+	jr .pokedexSelectionReady
+.useFirstPokedexEntry
 	xor a
 	ld [wCurrentMenuItem], a
 	ld [wListScrollOffset], a
 	ld [wLastMenuItem], a
 	inc a
 	ld [wd11e], a
+.pokedexSelectionReady
 	ld a, JOY_REPEAT_MODE_LONG_LIST
 	ldh [hJoy7], a
 .setUpGraphics
@@ -32,6 +56,13 @@ ShowPokedexMenu:
 	call HandlePokedexListMenu
 	jr c, .goToSideMenu ; if the player chose a pokemon from the list
 .exitPokedex
+	; Save the absolute selected Pokédex number before clearing menu scratch.
+	ld a, [wListScrollOffset]
+	ld b, a
+	ld a, [wCurrentMenuItem]
+	add b
+	inc a
+	ld [wPokedexSavedSelection], a
 	xor a
 	ld [wMenuWatchMovingOutOfBounds], a
 	ld [wCurrentMenuItem], a
@@ -279,6 +310,18 @@ HandlePokedexListMenu:
 .storeMaxSeenPokemon
 	ld a, b
 	ld [wDexMaxSeenMon], a
+	; An obsolete saved index must not point beyond the current seen range.
+	ld b, a
+	ld a, [wCurrentMenuItem]
+	ld c, a
+	ld a, [wListScrollOffset]
+	add c
+	cp b
+	jr c, .loop
+	xor a
+	ld [wCurrentMenuItem], a
+	ld [wLastMenuItem], a
+	ld [wListScrollOffset], a
 .loop
 	xor a ; ordinary redraw: no key-release wait
 	jr .drawList

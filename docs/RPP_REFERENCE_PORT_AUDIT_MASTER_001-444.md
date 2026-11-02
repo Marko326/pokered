@@ -4,9 +4,11 @@
 
 > **ROM-1.26A PC 候选补记（2026-11-01）**：#128 已写入 CHS 测试候选：取得图鉴后卧室 PC 复用完整菜单；图鉴前保留原道具 PC（与 RPP 锁定方案不同）。此补记不覆盖旧 442 笔静态审核统计；未编译/运行。
 
+> **ROM-1.27 当前实施状态补记（2026-11-02）**：在原始静态分类之后，CHS 已完成 #083（START 会话光标）、#102（道具列表位置恢复，ROM-1.26）、#103（建筑电梯当前楼层/等待，ROM-1.27）、#119（放生/合并光标，ROM-1.26）、#189（图鉴会话光标，ROM-1.27）、#191（START Party 会话光标，ROM-1.27）的 CHS 适配。用户反馈本轮相关功能已测试、未发现问题；START EXIT 快速返回边界另在 ROM-1.27 修正。原始分类数字仍是 ROM-1.21 第一轮静态审核快照，不因后续实施重算；逐笔状态栏更新为当前后续实施状态。
+
 # RPP 参考分支 442 笔提交：15 批成果总台账
 
-> **当前用户取舍与状态**：#195 不移植 RPP 的 HM 存入限制；#331 当前无需移植；#073～076 与 #128 已在 ROM-1.25 完成 CHS 适配。下方 442 笔分类数字仍是 ROM-1.21 时的历史静态审核快照，不因后续移植而重算。
+> **当前用户取舍与状态**：#195 不移植 RPP 的 HM 存入限制；#331 当前无需移植；#073～076 与 #128 已在 ROM-1.25，#102/#119 已在 ROM-1.26，#083/#103/#189/#191 已在 ROM-1.27 完成 CHS 适配。下方 442 笔分类数字仍是 ROM-1.21 时的历史静态审核快照，不因后续移植而重算。
 
 > ROM-1.23 实施注记：参考 #038/#042/#050/#193 的菜单边界与输入体验相关实现，已随 ROM-1.22H～M 候选按 M 状态收入口正式源码交付；不改变本表 442 笔原始静态分类。红蓝构建、MAP 和 DMG/CGB 运行证据仍需另行补齐。
 
@@ -14,7 +16,7 @@
 > 本表**由项目已有 15 份分批静态审核文档逐笔提取合并**；不是本轮对 442 笔重新编译或运行验证。原批次原文及其中的 CHS 源码依据仍为权威细节。
 > 参考编号 `001～444`，其中 `#072`、`#269` 在交接资料中缺失独立补丁，实际可评估的为 **442 笔**。
 
-## 一、第一轮成果总数
+## 一、第一轮成果总数（ROM-1.21 历史分类快照）
 
 | 状态 | 笔数 | 下一步动作 |
 |---|---:|---|
@@ -124,7 +126,7 @@
 | #080 `8f10d2186c` | 重构背包分类为 Slot Map 架构并完善 Pocket 交互 | 依赖暂缓 | 成组暂缓 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
 | #081 `c9ab87df89` | feat: 完成四分类战斗背包、独立光标记忆与界面稳定性整改** | 依赖暂缓 | 成组暂缓 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
 | #082 `053aecd2e0` | feat: START 背包跳过空分类并修复标题切换残影 | 依赖暂缓 | 成组暂缓 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
-| #083 `ce4d5a6384` | feat(menu): START 菜单在当前游戏会话中保留光标位置 | 需评估 | 需求待选 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
+| #083 `ce4d5a6384` | feat(menu): START 菜单在当前游戏会话中保留光标位置 | 已移植（CHS 适配，ROM-1.27） | 已收口 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
 | #084 `870f05e8cb` | feat: 钓鱼便捷化：优化未咬钩重试与遭遇文本流程 | 需评估 | 需求待选 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
 | #085 `90db9580d5` | feat(bag): 简化物品描述并移除独立 INFO 菜单 | 部分实现 | 只核剩余差异 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
 | #086 `b36ff7a593` | feat(fly): 扩展飞行地点与地图操作 | 需评估 | 需求待选 | [061-090.md](RPP_REFERENCE_PORT_AUDIT_061-090.md) |
@@ -143,8 +145,8 @@
 | #099 `829f64fc5f` | feat(town-map): 添加地图快捷定位并优化按键触发 | 部分实现 | 只核剩余差异 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
 | #100 `95b1274995` | fix(overworld): 优化冲浪碰撞音效触发 | 待核验 | 先复现 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
 | #101 `3148a7c783` | fix(vending-machine): 优化饮料机购买流程 | 需评估 | 需求待选 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
-| #102 `47a4b0c801` | fix(item-lists): 统一道具列表操作后的光标与返回行为 | 需评估 | 需求待选 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
-| #103 `6151c20df9` | feat(elevator): 缩短建筑电梯等待并定位当前楼层 | 需评估 | 需求待选 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
+| #102 `47a4b0c801` | fix(item-lists): 统一道具列表操作后的光标与返回行为 | 已移植（CHS 适配，ROM-1.26） | 已收口 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
+| #103 `6151c20df9` | feat(elevator): 缩短建筑电梯等待并定位当前楼层 | 已移植（CHS 适配，ROM-1.27） | 已收口 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
 | #104 `1243dbc826` | feat(summary): 重构宝可梦信息页左右切换机制 | 需评估 | 需求待选 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
 | #105 `a909672b44` | feat(summary): 重构宝可梦信息页切换机制 | 依赖暂缓 | 成组暂缓 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
 | #106 `f6d104d4df` | feat(summary): 切换宝可梦时不再播放叫声 | 依赖暂缓 | 成组暂缓 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
@@ -160,7 +162,7 @@
 | #116 `d2a19899a6` | feat(bills-pc): 完成 Deposit Stats 实时切换与原子返回 | 依赖暂缓 | 成组暂缓 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
 | #117 `51fea8137d` | feat(bills-pc): 完成 Withdraw Stats 实时切换与最终目标同步 | 依赖暂缓 | 成组暂缓 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
 | #118 `74df9eb5cf` | perf(bills-pc): 优化 Withdraw Stats Box Pokémon 实时切换性能 | 依赖暂缓 | 成组暂缓 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
-| #119 `84af724964` | fix(cursor): 统一放生与道具合并后的列表光标恢复行为 | 待核验 | 先复现 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
+| #119 `84af724964` | fix(cursor): 统一放生与道具合并后的列表光标恢复行为 | 已移植（CHS 适配，ROM-1.26） | 已收口 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
 | #120 `f8582e1d88` | perf(summary): 缩短 Pokémon Summary 初次加载白屏时间 | 依赖暂缓 | 成组暂缓 | [091-120.md](RPP_REFERENCE_PORT_AUDIT_091-120.md) |
 | #121 `9603ed02b6` | perf(summary): 缩短 Party 返回 START 加载时间 | 依赖暂缓 | 成组暂缓 | [121-150.md](RPP_REFERENCE_PORT_AUDIT_121-150.md) |
 | #122 `2b73220f2f` | perf(summary): 进一步缩短 Party 返回 START 加载时间 | 依赖暂缓 | 成组暂缓 | [121-150.md](RPP_REFERENCE_PORT_AUDIT_121-150.md) |
@@ -230,9 +232,9 @@
 | #186 `c709652080` | feat(pokedex): 新增第三页种族值信息 | 需评估 | 需求待选 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
 | #187 `4b4ae23ca6` | refactor(pokedex): 重构详情页分类与子页导航 | 依赖暂缓 | 成组暂缓 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
 | #188 `9719be906e` | feat(pokedex): 新增进化种族值变化子页 | 依赖暂缓 | 成组暂缓 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
-| #189 `a4a659d08d` | feat(pokedex): 记住会话内图鉴浏览位置 | 需评估 | 需求待选 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
+| #189 `a4a659d08d` | feat(pokedex): 记住会话内图鉴浏览位置 | 已移植（CHS 适配，ROM-1.27） | 已收口 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
 | #190 `18eb692948` | feat(movedex): 记住会话内技能图鉴浏览位置 | 当前不适用 | 不直接适用 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
-| #191 `5bb96267d8` | feat(party): 独立记忆 START 队伍菜单光标 | 需评估 | 需求待选 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
+| #191 `5bb96267d8` | feat(party): 独立记忆 START 队伍菜单光标 | 已移植（CHS 适配，ROM-1.27） | 已收口 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
 | #192 `0d1d2e99aa` | fix(pc): 修复 Bill's PC 列表光标越过 Cancel | 依赖暂缓 | 成组暂缓 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
 | #193 `b201e7097d` | feat(pc): 统一 Bill's PC Pokémon 列表首尾跳转行为 | 依赖暂缓 | 成组暂缓 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |
 | #194 `810de3bd1f` | feat(bag): TM/HM Pocket 支持 START 快捷跳转 HM01 | 当前不适用 | 不直接适用 | [181-210.md](RPP_REFERENCE_PORT_AUDIT_181-210.md) |

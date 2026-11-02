@@ -20,6 +20,12 @@ MainMenu:
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a
+	; START and START Party cursors last only for this play session.
+	ld [wStartMenuSavedMenuItem], a
+	ld [wStartPartySavedMenuItem], a
+	ld [wStartBagSavedPosition], a
+	ld [wStartBagSavedScrollOffset], a
+	ld [wPokedexSavedSelection], a ; clear previous play-session Dex cursor
 	ld [wDefaultMap], a
 	ld hl, wd72e
 	res 6, [hl]
@@ -518,7 +524,7 @@ DisplayOptionMenu:
 	ld c, 18
 	call TextBoxBorder
 	; 与主菜单共用版本号，不再显示原汉化版的静态版本标签。
-	hlcoord 11, 0 ; ROM-1.26 正式标识为 8 字符，右对齐至第 18 列。
+	hlcoord 11, 0 ; ROM-1.27 为 8 字符，右对齐至第 18 列。
 	ld de, GameVersionText
 	call PlaceString
 	hlcoord 1, 1
