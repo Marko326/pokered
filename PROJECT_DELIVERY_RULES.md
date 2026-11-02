@@ -25,11 +25,11 @@
 - 每轮报告必须区分「用户实际测试通过」「静态校验通过」和「尚待验证」；只写最小测试范围在回复中，不将测试夹具混入正式补丁。
 - 每次收口更新 `TODO.md` 与对应 `docs/` 验收记录；发现可复用的错误原因记录到 `RPP_DEVELOPMENT_PITFALLS.md`。
 
-## 当前基线说明（2026-10-26 文档收尾）
+## 当前基线说明（2026-11-02 QOL-1.19 收口）
 
-- 当前确认的提交 HEAD：`e03f27ac02b8a8f6d61fa5c9c4517174663f4220`（`QOL-1.18E`），分支 `备份`；本轮使用用户 `QOL-1.18F.zip` 内的干净 HEAD 项目及用户最新上传的 `QOL-1.18F.patch`。
-- 最新工作区补丁与 ZIP 中 `RPP_PROJECT_CONTEXT/patches/current_worktree.patch` 字节相同；套用后为 `QOL-1.18F` 未提交工作状态。不要把此前交付的 G/H 候选当作当前工作区代码。
-- 本轮仅在该 F 工作区上**登记遗留问题并暂时收尾**，没有修复或验证音频行为；保留游戏显示版本 `QOL-1.18F`，不因文档收尾增加新的测试版本号。
-- 未解决：①战斗结束返回野外后的单点爆破；②战斗后存档音效异常（飞空可恢复、START 切换音乐无效、Music On 亦可能发生）。详见 `TODO.md` 和 `docs/QOL_1.18F_AUDIO_OPEN_ISSUES.md`。
-- 本次三件套：增量从**上述 F 未提交工作区**到文档收尾状态；全量从本次 ZIP 的 **E 干净 HEAD** 到含 F 修改和文档的最终状态；两者不可叠加。
-- 历史 QOL-1.18E 的 Music Off 野战逃跑音效恢复记录仍有效，但不代表这两项新遗留问题已解决；用户在 RPP Mobile 自行 Commit/Push 后才更新已提交基线。
+- 本轮用户提供的项目 ZIP：`QOL-1.18F.zip`；确认的干净 HEAD 为 `27e5fd06cfed9a8ae7c342a2265ed96f10ca4b57`（`QOL-1.18F`），分支 `备份`，导出信息注明源码为干净 HEAD、无当前工作区补丁。
+- 上一轮交付的 `QOL-1.18I` 是基于上述 F 干净 HEAD 的未提交测试状态，仅改动 `home/vblank.asm` 与 `data/game_version.asm`；用户已反馈测试无异常。它不是 Git Commit，也不改变当前已提交 HEAD。
+- 本次正式收口目标为 `QOL-1.19`：保留用户已验证的 CGB 2x/1x OAM 转换分流，清除测试后缀，并更新 TODO、专项验收文档、踩坑记录与提交日志。
+- 本次三件套：增量补丁从**已测试的 QOL-1.18I 工作状态**到 QOL-1.19 收口状态；全量补丁从本轮 ZIP 的 **QOL-1.18F 干净 HEAD** 到 QOL-1.19 最终状态；两者不可叠加。合集 ZIP 仅包含两份补丁和 `commit-message.txt`，不包含完整工程。
+- QOL-1.18F 遗留的战斗结束后单点爆破与战斗后存档音效异常仍未解决；本轮没有修改音频代码，详见 `TODO.md` 与 `docs/QOL_1.18F_AUDIO_OPEN_ISSUES.md`。
+- AI 未编译 ROM、未生成新 MAP、未执行 Git Commit/Push。用户在 RPP Mobile 完成 Commit/Push 后，才将 QOL-1.19 更新为新的已提交基线。

@@ -87,3 +87,15 @@
 - [ ] 后续再独立排查 AUDIO-01 和 AUDIO-02；先做提交历史回溯、对照正常/异常录音，再确定是否涉及硬件停播、声道状态、音频 Bank 或其他机制。**不得把候选推断记录为已确认根因。**
 - [x] 当前轮仅将用户已知问题写入 `TODO.md`、`docs/QOL_1.18F_AUDIO_OPEN_ISSUES.md` 和踩坑记录；不调整 ASM、SFX、SRAM/WRAM、音频初始化或游戏显示版本。
 - [ ] 用户在 RPP Mobile 自行决定是否 Git Commit/Push；本轮文档补丁与提交日志不代表问题修好或已经提交。
+
+
+## QOL-1.19：CGB 双速模式下 OAM 调色板转换时序（用户实测通过，待提交）
+
+- [x] CGB 2x：在 VBlank 的 OAM DMA 前转换新生成的 OAM 属性，保留野外 START 菜单玩家精灵颜色。
+- [x] CGB 1x：在 `DelayFrame` 等待前转换 OAM 属性，缩短战斗 VBlank 路径，修复 Party 第一只宝可梦图标白线。
+- [x] DMG：跳过 CGB 专用 OAM 转换；保留原有 CPU 速度切换、调色板更新和 `PrepareOAMData` 顺序。
+- [x] 用户反馈 `QOL-1.18I` 移植测试版本无异常；本次目标的战斗白线与野外人物颜色问题均通过用户实测。
+- [x] 清理测试版本标记，游戏内正式版本更新为 `QOL-1.19`；补充 `docs/QOL_1.19_CGB_OAM_TIMING_ACCEPTANCE.md` 与开发踩坑记录。
+- [x] 不修改音频、移动规则、WRAM/SRAM 布局或存档字段。
+- [ ] 用户在 RPP Mobile 自行 Git Commit/Push；本次三件套与提交日志不代表已经提交。
+- [ ] 助手未编译 ROM、未生成新 MAP；ROM0/ROMX 空间需在用户本地构建后核对。

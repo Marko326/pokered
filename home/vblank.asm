@@ -29,7 +29,15 @@ VBlank::
 	call VBlankCopy
 	call VBlankCopyDouble
 	call UpdateMovingBgTiles
-	call CGBFixOAMPalettes ; CGB-1.12: Map DMG OBJ1 selection to CGB palette 1.
+	; QOL-1.19: CGB 2x converts new overworld OAM just before DMA.
+	; CGB 1x converts via DelayFrame to keep battle VBlank short.
+	ldh a, [hCGB]
+	and a
+	jr z, .dma
+	ldh a, [rKEY1]
+	bit 7, a
+	call nz, CGBFixOAMPalettes
+.dma
 	call hDMARoutine
 	ld a, BANK(PrepareOAMData)
 	ldh [hLoadedROMBank], a
@@ -99,6 +107,22 @@ DelayFrame::
 
 DEF NOT_VBLANKED EQU 1
 
+	; QOL-1.19: CGB 1x converts OAM before the wait; DMG skips it.
+	; CGB 2x already converts before DMA; preserve caller registers.
+	ldh a, [hCGB]
+	and a
+	jr z, .wait
+	ldh a, [rKEY1]
+	bit 7, a
+	jr nz, .wait
+	push bc
+	push de
+	push hl
+	call CGBFixOAMPalettes
+	pop hl
+	pop de
+	pop bc
+.wait
 	ld a, NOT_VBLANKED
 	ldh [hVBlankOccurred], a
 .halt

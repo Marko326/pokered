@@ -74,3 +74,13 @@
 - 用户仍报告**战斗后存档音异常**；飞空后曾恢复，START 开关 Music 不足以恢复，Music On 下亦可能出现。这提示排查应覆盖地图恢复、音频 Bank 和声道状态，但**不能仅凭现象断言根因是 Bank**，也不要未经验证改动原始 `SFX_SAVE` 音符。
 - QOL-1.18E 已验证的是 Music Off 下**直接逃跑**后的一条 SFX 恢复路径；“击倒后返回野外、连续战斗、立即存档”属于不同场景，不能将前者的验收结果外推。
 - 此次仅归档两项未解决缺陷并制作文档收尾补丁，不修改音频代码；后续应以完整当前工作区/补丁链及实机录音复现为基线重新定位。
+
+
+## QOL-1.19：CGB 1x/2x 必须分流 OAM 属性转换时机
+
+- `CGBFixOAMPalettes` 需要在 OAM DMA 前处理 `wShadowOAM`，但不能把所有 CGB 速度都固定放在同一个时机。
+- CGB 战斗 1x 在 VBlank 中额外遍历 40 个 OAM 属性会增加敏感路径负担；将 1x 转换放到 `DelayFrame` 等待前，避免把这段工作留在 VBlank。
+- CGB 野外 2x 必须保留 VBlank 内、DMA 前的转换路径；只把转换统一移到 `DelayFrame` 会造成野外 START 菜单人物精灵颜色回归。
+- 用 `hCGB` 区分 DMG/CGB，再用 `rKEY1` bit 7 区分 1x/2x；DMG 跳过 CGB 专用转换。`CGBFixOAMPalettes` 会使用 B、DE、HL，`DelayFrame` 调用点必须保护这些寄存器；AF 本来就由等待逻辑改写。
+- `VBlank`、`DelayFrame` 与 `CGBFixOAMPalettes` 均位于 ROM0/HOME；该调用不需要跨 Bank，也不访问调用方 ROMX 数据。
+- 验收至少同时覆盖 CGB 战斗 Party 第一只图标、CGB 野外 START 玩家精灵、DMG 路径；单独修复其中一条路径不代表另一条路径正常。
