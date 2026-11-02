@@ -363,16 +363,18 @@ CableClubOptionsText:
 DisplayContinueGameInfo:
 	xor a
 	ldh [hAutoBGTransferEnabled], a
-	hlcoord 4, 7
-	ld b, 8
+	; Five rows: map legend, player, badges, Dex count, play time.
+	hlcoord 4, 5
+	ld b, 10
 	ld c, 13 ;ld c, 14 CHS_Fix 25
 	call TextBoxBorder
+	decoord 5, 7
+	farcall PrintCurrentMapOnSaveScreen
 	hlcoord 5, 9
 	ld de, SaveScreenInfoText
 	call PlaceString
-	hlcoord 11, 9 ;hlcoord 12, 9
-	ld de, wPlayerName
-	call PlaceString
+	hlcoord 18, 9 ; exclusive right edge of the Continue info box
+	call PrintPlayerNameRightAligned
 	hlcoord 14, 11 ;hlcoord 17, 11
 	call PrintNumBadges
 	hlcoord 13, 13 ;hlcoord 16, 13
@@ -387,33 +389,38 @@ DisplayContinueGameInfo:
 PrintSaveScreenText:
 	xor a
 	ldh [hAutoBGTransferEnabled], a
+	; Keep the original horizontal frame; use its top information row for the map.
 	hlcoord 5, 0 ;hlcoord 4, 0
-	ld b, $8
+	ld b, 10
 	ld c, $d ;ld c, $e
 	call TextBoxBorder
 	call LoadTextBoxTilePatterns
 	call UpdateSprites
-	hlcoord 6, 2 ;hlcoord 5, 2
+	decoord 6, 2
+	farcall PrintCurrentMapOnSaveScreen
+	; Do not clear the global DFS cache here: the START menu remains
+	; underneath this overlay and still references its cached glyph tiles.
+	; Keep those mappings alive while the SAVE labels and prompt are drawn.
+	hlcoord 6, 4
 	ld de, SaveScreenInfoText
 	call PlaceString
-	hlcoord 11, 2;hlcoord 12, 2
-	ld de, wPlayerName
-	call PlaceString
-	hlcoord 15, 4;hlcoord 17, 4
+	hlcoord 19, 4 ; exclusive right edge of the Save info box
+	call PrintPlayerNameRightAligned
+	hlcoord 15, 6
 	call PrintNumBadges
-	hlcoord 14, 6;hlcoord 16, 6
+	hlcoord 14, 8
 	call PrintNumOwnedMons
-	hlcoord 13, 8
+	hlcoord 13, 10
 	call PrintPlayTime
 
 	ld a, $60
 	lb bc, 4, 3
-	coord hl, 6, 1
+	coord hl, 6, 3
 	call DFSStaticize
 	
 	ld a, $6E
 	lb bc, 2, 3
-	coord hl, 10, 5
+	coord hl, 10, 7
 	call DFSStaticize
 
 	; ld a, $6C
@@ -433,23 +440,55 @@ PrintSaveScreenText:
 
 	ld a, $6C
 	lb bc, 1, 1
-	coord hl, $C, $A
+	coord hl, $C, $C
 	call DFSStaticize
 
 	ld a, $74
 	lb bc, 1, 1
-	coord hl, $C, $B
+	coord hl, $C, $D
 	call DFSStaticize
 
 	ld a, $75
 	lb bc, 2, 2
-	coord hl, $D, $A
+	coord hl, $D, $C
 	call DFSStaticize
 
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
 	ld c, 30
 	jp DelayFrames
+
+; Print the player name against the right edge of the original 13-tile box.
+; In: HL = exclusive right-edge coordinate for the name field.
+; The 11-byte saved name can hold at most five Hanzi (7.5 tiles); the field
+; has 8 tiles. Copy before applying a whole-character safety limit: never
+; modify the saved wPlayerName.
+PrintPlayerNameRightAligned:
+	push hl
+	ld hl, wPlayerName
+	ld de, wBuffer
+	ld bc, NAME_LENGTH
+	call CopyData
+	ld a, 16 ; 8 tiles in DFS half-tile units
+	ld [wDummy], a
+	ld de, wBuffer
+	callfar FixStrLength_Gen1 ; DFS routine is in ROMX Bank $41
+	ld de, wBuffer
+	push de
+	callfar GetStrLength_Gen1
+	ld c, d ; rounded-up tile width (D), including a possible half tile
+	pop de ; restore the wBuffer string pointer
+	pop hl ; restore the right-edge screen coordinate
+	; Build the negative width in BC, not DE. DE must remain the string
+	; pointer passed to PlaceString (overwriting it caused reads from $FFFD).
+	ld a, c
+	cpl
+	ld c, a
+	ld b, $ff
+	inc bc ; BC = -name width
+	add hl, bc
+	call PlaceString
+	ret
 
 PrintNumBadges:
 	push hl
@@ -524,7 +563,7 @@ DisplayOptionMenu:
 	ld c, 18
 	call TextBoxBorder
 	; 与主菜单共用版本号，不再显示原汉化版的静态版本标签。
-	hlcoord 11, 0 ; ROM-1.27 为 8 字符，右对齐至第 18 列。
+	hlcoord 11, 0 ; ROM-1.28 正式版为 8 字符，右对齐至第 18 列。
 	ld de, GameVersionText
 	call PlaceString
 	hlcoord 1, 1

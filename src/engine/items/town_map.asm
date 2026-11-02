@@ -24,8 +24,11 @@ DisplayTownMap:
 	ld de, TownMapCursor
 	lb bc, BANK(TownMapCursor), (TownMapCursorEnd - TownMapCursor) / $8
 	call CopyVideoDataDouble
-	xor a
-	ld [wWhichTownMapLocation], a
+	; The cursor index shares scratch WRAM; initialize it after OAM setup.
+	; Reuse the map selector saved above for .enterLoop.
+	pop af
+	push af
+	call InitTownMapLocationFromPlayerMap
 	pop af
 	jr .enterLoop
 
@@ -70,7 +73,21 @@ DisplayTownMap:
 	ldh a, [hJoy5]
 	ld b, a
 	and A_BUTTON | B_BUTTON | D_UP | D_DOWN
+	jr nz, .normalInput
+	; START/SELECT use physical edges, never the held-key repeat stream.
+	ldh a, [hJoyPressed]
+	and START | SELECT
 	jr z, .inputLoop
+	ld b, a
+	ld a, SFX_TINK
+	call PlaySound
+	bit BIT_START, b
+	jp nz, .pressedStart
+	; SELECT: Pallet Town is entry 0 in the ordinary TownMapOrder.
+	xor a
+	ld [wWhichTownMapLocation], a
+	jp .townMapLoop
+.normalInput
 	ld a, SFX_TINK
 	call PlaySound
 	bit 6, b
@@ -105,7 +122,125 @@ DisplayTownMap:
 	ld [wWhichTownMapLocation], a
 	jp .townMapLoop
 
+.pressedStart
+	; Teleport/blackout location, not the last town walked through.
+	ld a, [wLastBlackoutMap]
+	cp ROUTE_4
+	jr z, .mtMoonCenter
+	cp ROUTE_10
+	jr z, .rockTunnelCenter
+	cp NUM_CITY_MAPS
+	jp nc, .inputLoop ; unknown/invalid recovery map: do nothing
+	jr .findTownMapEntry
+.mtMoonCenter
+	ld a, MT_MOON_1F ; the Mt. Moon entry in TownMapOrder
+	jr .findTownMapEntry
+.rockTunnelCenter
+	ld a, ROCK_TUNNEL_POKECENTER
+.findTownMapEntry
+	ld b, a ; desired map ID
+	ld hl, TownMapOrder
+	ld c, 0 ; list index
+.scanTownMapOrder
+	ld a, [hli]
+	cp b
+	jr z, .foundTownMapEntry
+	inc c
+	ld a, c
+	cp TownMapOrderEnd - TownMapOrder
+	jr c, .scanTownMapOrder
+	jp .inputLoop ; no matching entry: keep the old cursor
+.foundTownMapEntry
+	ld a, c
+	ld [wWhichTownMapLocation], a
+	jp .townMapLoop
+
 INCLUDE "data/maps/town_map_order.asm"
+
+InitTownMapLocationFromPlayerMap:
+; In: A = current player map selector. Out: wWhichTownMapLocation.
+; Prefer the same selector in TownMapOrder (routes, towns, landmarks).
+; For indoor maps not listed there, use the closest displayed map coordinate.
+; This must run after Town Map graphics/OAM initialization because the cursor
+; index shares scratch WRAM that drawing may overwrite.
+	ld d, a
+	ld hl, TownMapOrder
+	ld b, 0
+.exactLoop
+	ld a, [hli]
+	cp d
+	jr nz, .nextExact
+	ld a, b
+	ld [wWhichTownMapLocation], a
+	ret
+.nextExact
+	inc b
+	ld a, b
+	cp TownMapOrderEnd - TownMapOrder
+	jr c, .exactLoop
+
+	; Indoor/dungeon fallback: compare coordinates, not map IDs.
+	ld a, d
+	ld de, wTownMapCoords
+	call LoadTownMapEntry
+	ld a, [de]
+	ld [wBuffer + 2], a ; player y/x, packed high/low nybbles
+	ld a, $ff
+	ld [wBuffer], a ; minimum Manhattan distance
+	xor a
+	ld [wBuffer + 1], a ; selected list index, default = Pallet
+	ld [wBuffer + 3], a ; scanning list index
+	ld hl, TownMapOrder
+.coordLoop
+	ld a, [hli]
+	push hl
+	ld de, wTownMapCoords
+	call LoadTownMapEntry
+	ld a, [de]
+	ld b, a ; candidate packed y/x
+	ld a, [wBuffer + 2]
+	and $0f
+	ld c, a
+	ld a, b
+	and $0f
+	sub c
+	jr nc, .xPositive
+	cpl
+	inc a
+.xPositive
+	ld c, a ; absolute x difference
+	ld a, [wBuffer + 2]
+	and $f0
+	swap a
+	ld b, a
+	ld a, [de]
+	and $f0
+	swap a
+	sub b
+	jr nc, .yPositive
+	cpl
+	inc a
+.yPositive
+	add c ; Manhattan distance, at most 30
+	ld b, a
+	ld a, [wBuffer]
+	cp b
+	jr c, .nextCoord
+	jr z, .nextCoord ; ties keep the first geographic entry
+	ld a, b
+	ld [wBuffer], a
+	ld a, [wBuffer + 3]
+	ld [wBuffer + 1], a
+.nextCoord
+	pop hl
+	ld a, [wBuffer + 3]
+	inc a
+	ld [wBuffer + 3], a
+	cp TownMapOrderEnd - TownMapOrder
+	jp c, .coordLoop
+	ld a, [wBuffer + 1]
+	ld [wWhichTownMapLocation], a
+	ret
 
 TownMapCursor:
 	INCBIN "gfx/town_map/town_map_cursor.1bpp"
@@ -209,7 +344,12 @@ LoadTownMap_Fly::
 	ld b, a
 	pop hl
 	and A_BUTTON | B_BUTTON | D_UP | D_DOWN
-	jr z, .inputLoop
+	jr nz, .normalFlyInput
+	ldh a, [hJoyPressed]
+	and START | SELECT
+	jp nz, .shortcutPressed
+	jr .inputLoop
+.normalFlyInput
 	bit 0, b
 	jr nz, .pressedA
 	ld a, SFX_TINK
@@ -258,8 +398,49 @@ LoadTownMap_Fly::
 	jr z, .pressedDown ; skip past unvisited towns
 	jp .townMapFlyLoop
 .wrapToEndOfList
-	ld hl, wFlyLocationsList + NUM_CITY_MAPS
+	; One extra optional recovery-point entry, then the end sentinel.
+	ld hl, wFlyLocationsList + NUM_CITY_MAPS + 1
 	jr .pressedDown
+
+.shortcutPressed
+	ld b, a ; newly pressed START/SELECT bits
+	ld a, SFX_TINK
+	call PlaySound
+	bit BIT_START, b
+	jr nz, .shortcutLastHeal
+	; SELECT selects Pallet only if that Fly destination is unlocked.
+	ld a, [wFlyLocationsList]
+	cp PALLET_TOWN
+	jp nz, .inputLoop
+	ld hl, wFlyLocationsList
+	jr .shortcutFound
+.shortcutLastHeal
+	ld a, [wLastBlackoutMap]
+	cp NUM_CITY_MAPS
+	jr nc, .checkSpecialHeal
+	; City slot is indexed by its map ID. Never jump to NOT_VISITED.
+	ld e, a
+	ld d, 0
+	ld hl, wFlyLocationsList
+	add hl, de
+	ld a, [hl]
+	cp e
+	jp nz, .inputLoop
+	jr .shortcutFound
+.checkSpecialHeal
+	cp ROUTE_4
+	jr z, .checkSpecialEntry
+	cp ROUTE_10
+	jp nz, .inputLoop
+.checkSpecialEntry
+	ld b, a
+	ld a, [wFlyLocationsList + NUM_CITY_MAPS]
+	cp b
+	jp nz, .inputLoop
+	ld hl, wFlyLocationsList + NUM_CITY_MAPS
+.shortcutFound
+	decoord 10, 0
+	jp .townMapFlyLoop ; update cursor only; A still confirms Fly
 
 ToText:
 	db "To@"
@@ -285,6 +466,16 @@ BuildFlyLocationsList:
 	inc b
 	dec c
 	jr nz, .loop
+	; No new visit/SRAM flag: expose a special Fly landing only after
+	; healing at its Route 4 / Route 10 Pokémon Center.
+	ld a, [wLastBlackoutMap]
+	cp ROUTE_4
+	jr z, .writeSpecialLocation
+	cp ROUTE_10
+	jr z, .writeSpecialLocation
+	ld a, NOT_VISITED
+.writeSpecialLocation
+	ld [hli], a
 	ld [hl], $ff
 	ret
 
@@ -598,6 +789,114 @@ LoadTownMapEntry:
 	ld h, [hl]
 	ld l, a
 	ret
+
+; RPP #025: first line of the original-width Save / Continue info box.
+; In: DE = first interior tile of the box (13 columns, unchanged).
+; The CHS DFS encoding stores Hanzi as two bytes drawn over 1.5 tiles.
+; The frame has 13 interior tiles: a four-Hanzi label occupies 6, then 1
+; blank tile, leaving at most 6 tiles for the right-aligned map name.
+; Limit by whole encoded characters; never split a Hanzi or reach the border.
+PrintCurrentMapOnSaveScreen::
+	push de
+	ld a, [wCurMap]
+	ld de, wTownMapCoords
+	call LoadTownMapEntry
+	ld de, wBuffer
+	ld c, 0 ; half-tile units; six right-field tiles plus one blank column
+.copyName
+	ld a, [hli]
+	cp "@"
+	jr z, .nameReady
+	ld b, a
+	; Match GetStrLength_Gen1's single- / double-code decision.
+	and a
+	jr z, .singleCode
+	cp $14
+	jr c, .doubleCode
+	cp $2f
+	jr nc, .singleCode
+	bit 3, a
+	jr nz, .doubleCode
+.singleCode
+	ld a, c
+	add 2 ; one narrow character = 2 half tiles
+	cp 13
+	jr nc, .nameReady
+	ld c, a
+	ld a, b
+	cp "_" ; Town Map line-break marker becomes space here
+	jr nz, .checkShortcut
+	ld a, " "
+	jr .storeSingle
+.checkShortcut
+	; These tokens expand in PlaceString; use a stable one-tile label.
+	cp "#"
+	jr z, .shorten
+	cp "<PKMN>"
+	jr nz, .storeSingle
+.shorten
+	ld a, "P"
+.storeSingle
+	ld [de], a
+	inc de
+	jr .copyName
+.doubleCode
+	ld a, c
+	add 3 ; one complete Hanzi = 3 half tiles
+	cp 13
+	jr nc, .nameReady
+	ld c, a
+	ld a, b
+	ld [de], a
+	inc de
+	ld a, [hli] ; keep the second DFS byte together
+	ld [de], a
+	inc de
+	jr .copyName
+.nameReady
+	ld a, "@"
+	ld [de], a
+	pop hl ; left edge, originally passed in DE
+	; Keep the row origin for a final DFSStaticize pass. Double-code glyphs
+	; occupy the current row and the row immediately above it.
+	push hl
+	; Draw left label first. Both fields are separate PlaceString calls.
+	; Use explicit CHS two-byte glyph codes (not source UTF-8): the project
+	; supports builds where RGBDS_WCHAR charmap mappings are not enabled.
+	push hl
+	push bc ; keep measured width across PlaceString
+	ld de, .locationLabel
+	call PlaceString
+	pop bc
+	pop hl
+	; Right-align to last interior column: 13 - ceil(halfwidth/2).
+	; Maximum name width is 6, so at least one blank tile separates fields.
+	ld a, c
+	inc a
+	srl a
+	ld b, a
+	ld a, 13
+	sub b
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld de, wBuffer
+	call PlaceString
+	; Freeze this 2x13 row in vChars2 tiles $40-$5F. This isolates the new
+	; location line from later DFS cache reuse without touching the box border
+	; tiles ($79-$7E) or the existing info-row staticization range ($60-$78).
+	pop hl
+	ld bc, -SCREEN_WIDTH
+	add hl, bc
+	ld a, $40
+	lb bc, 2, 13
+	call DFSStaticize
+	ret
+
+.locationLabel
+	; 当=$06E5, 前=$0E70, 位=$1167, 置=$18B9 (src/charmap.txt).
+	; Explicit bytes work with both RGBDS_WCHAR and legacy charmap modes.
+	db $06, $E5, $0E, $70, $11, $67, $18, $B9, CHARVAL("@")
 
 INCLUDE "data/maps/town_map_entries.asm"
 
