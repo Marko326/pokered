@@ -1,5 +1,13 @@
 # 可长期维护的 `make` 构建方式（CHS_Mod 红/蓝汉化）
 
+## ROM-1.28FIX SAVE / Continue 地点字形冲突修正（2026-11-02）
+
+- **正式基线**：ROM-1.28，HEAD `f483b39a4d95aaa16dc3b2f906a02ec4dfc0e82a`。用户已验证其上的 `town_map.asm` 单文件修正无问题。
+- **修正内容**：SAVE / Continue 地点行只显示地图名，不再绘制「当前位置」标签；保留完整中文字形边界截断和最多六格宽度。移除 `vChars2 $40-$5F` 的 `DFSStaticize`，避免固定 DFS 字形与户外地图图块编号冲突。
+- **版本显示**：按维护者要求使用 `ROM-1.28FIX`，不递增 ROM-1.29；11 字符版本在 Options 从 `(8,0)` 开始，右边缘与既有正式版一致。
+- **不变项**：地图快捷定位、Town Map 数据、玩家名右对齐、存档格式及 SAVE/Continue 流程均不改变；不修改工具、转换器或审计脚本。
+- **交付**：模式 B 三件套——已验收工作区清理增量、`f483b39a...` 基线累计全量、中文 `fix(map)` Conventional Commit 日志。两份补丁互斥。助手不执行 Git Commit / Push，也不运行 RGBDS 构建。
+
 ## ROM-1.28 地图 QoL 正式收口与红版维护说明（2026-11-02）
 
 - 正式版本从 `ROM-1.27` 递增到 `ROM-1.28`；游戏内 `GameVersionText` 为 8 个字符、Options 坐标 `(11,0)`。ROM-1.27A/B/C 为本次候选历史，不作为独立 Git 正式版本。

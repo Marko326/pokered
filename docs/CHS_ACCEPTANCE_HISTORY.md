@@ -1,3 +1,12 @@
+## ROM-1.28FIX — SAVE / Continue 地点字形冲突修正版（2026-11-02）
+
+- **基线与版本**：正式基线为 `CHS_Mod` HEAD `f483b39a4d95aaa16dc3b2f906a02ec4dfc0e82a`（ROM-1.28）。本次以该 HEAD 上导出的单文件未提交修正 `src/engine/items/town_map.asm` 为已验收工作区；用户明确反馈实际验证“没问题”，并授权制作正式清理三件套。游戏版本不递增到 ROM-1.29，而按要求在原版本号后追加 `FIX`，显示为 `ROM-1.28FIX`。
+- **地点行修正**：SAVE / Continue 第一行不再绘制左侧「当前位置」固定标签，仅显示地图名称；仍按完整 CHS 双字节字符边界截断，并保留最多六格的保守宽度，避免拆字和增加 DFS 活跃字形压力。
+- **VRAM / DFS 冲突修正**：移除该地点行原先对 `vChars2 $40-$5F` 的 `DFSStaticize`。这些图块编号在户外场景仍可能作为地图图块使用，固定化地点文字会与 DMG/CGB 场景图块冲突；修正后直接使用现有 DFS 绘制，不再占用该固定区间。
+- **保持不变**：地图名称仍来自既有 Town Map 数据；SAVE 使用当前地图、Continue 使用存档地图的既有调用关系不变。地图 START/SELECT 快捷定位、普通地图初始定位、玩家名右对齐、存档流程、SRAM/WRAM/存档格式均不改。
+- **版本显示**：`GameVersionText` 从 `ROM-1.28` 改为 11 字符 `ROM-1.28FIX`；Options 右上角起点由 `(11,0)` 调整为 `(8,0)`，继续右对齐至第 18 列。主菜单左下角版本显示起点不变。
+- **验证与交付边界**：用户已实际验证本次地点显示修正无问题。清理阶段只做源码/补丁静态核验，不运行 RGBDS、不生成新 ROM、MAP 或 SHA。模式 B 三件套为：已验收工作区→ROM-1.28FIX 清理增量、正式 HEAD `f483b39a...`→ROM-1.28FIX 累计全量、中文 Conventional Commit 日志；两份补丁互斥，不叠加。Git Commit / Push 仍由维护者执行。
+
 ## ROM-1.28 — 地图 QoL 正式收口（2026-11-02）
 
 - **基线/版本**：用户本轮提交 `ROM-1.27C.patch`，声明 `CHS_Mod` HEAD `1b1fc3905302bdff9989f7fb29df9a551ee7909f`（ROM-1.27）。补丁与上传的完整 ROM-1.27C ZIP 中 `current_worktree.patch` 字节一致；在 C Worktree 反向重建正式 HEAD，再正向重放可恢复原文件。清理后正式显示 `ROM-1.28`，Options 版本号回归 8 字符位置。

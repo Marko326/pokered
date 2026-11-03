@@ -790,19 +790,20 @@ LoadTownMapEntry:
 	ld l, a
 	ret
 
-; RPP #025: first line of the original-width Save / Continue info box.
-; In: DE = first interior tile of the box (13 columns, unchanged).
-; The CHS DFS encoding stores Hanzi as two bytes drawn over 1.5 tiles.
-; The frame has 13 interior tiles: a four-Hanzi label occupies 6, then 1
-; blank tile, leaving at most 6 tiles for the right-aligned map name.
-; Limit by whole encoded characters; never split a Hanzi or reach the border.
+; SAVE / Continue: show only the map name, no "current location" label.
+; In: DE = first interior tile of the existing 13-column information box.
+; Keep the previous conservative six-tile name limit to reduce live DFS
+; glyph pressure while START and the Yes/No prompt share the text cache.
+; Truncate at complete double-byte CHS characters (no split Hanzi).
+; Do not DFSStaticize this line into vChars2 $40-$5f: those tile IDs are
+; also live outdoor scenery on both DMG and CGB.
 PrintCurrentMapOnSaveScreen::
 	push de
 	ld a, [wCurMap]
 	ld de, wTownMapCoords
 	call LoadTownMapEntry
 	ld de, wBuffer
-	ld c, 0 ; half-tile units; six right-field tiles plus one blank column
+	ld c, 0 ; measured width in half-tile units, maximum six tiles
 .copyName
 	ld a, [hli]
 	cp "@"
@@ -856,47 +857,9 @@ PrintCurrentMapOnSaveScreen::
 .nameReady
 	ld a, "@"
 	ld [de], a
-	pop hl ; left edge, originally passed in DE
-	; Keep the row origin for a final DFSStaticize pass. Double-code glyphs
-	; occupy the current row and the row immediately above it.
-	push hl
-	; Draw left label first. Both fields are separate PlaceString calls.
-	; Use explicit CHS two-byte glyph codes (not source UTF-8): the project
-	; supports builds where RGBDS_WCHAR charmap mappings are not enabled.
-	push hl
-	push bc ; keep measured width across PlaceString
-	ld de, .locationLabel
-	call PlaceString
-	pop bc
-	pop hl
-	; Right-align to last interior column: 13 - ceil(halfwidth/2).
-	; Maximum name width is 6, so at least one blank tile separates fields.
-	ld a, c
-	inc a
-	srl a
-	ld b, a
-	ld a, 13
-	sub b
-	ld e, a
-	ld d, 0
-	add hl, de
+	pop hl ; draw at the left edge; do not allocate fixed VRAM tiles
 	ld de, wBuffer
-	call PlaceString
-	; Freeze this 2x13 row in vChars2 tiles $40-$5F. This isolates the new
-	; location line from later DFS cache reuse without touching the box border
-	; tiles ($79-$7E) or the existing info-row staticization range ($60-$78).
-	pop hl
-	ld bc, -SCREEN_WIDTH
-	add hl, bc
-	ld a, $40
-	lb bc, 2, 13
-	call DFSStaticize
-	ret
-
-.locationLabel
-	; 当=$06E5, 前=$0E70, 位=$1167, 置=$18B9 (src/charmap.txt).
-	; Explicit bytes work with both RGBDS_WCHAR and legacy charmap modes.
-	db $06, $E5, $0E, $70, $11, $67, $18, $B9, CHARVAL("@")
+	jp PlaceString
 
 INCLUDE "data/maps/town_map_entries.asm"
 

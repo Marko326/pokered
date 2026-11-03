@@ -563,7 +563,7 @@ DisplayOptionMenu:
 	ld c, 18
 	call TextBoxBorder
 	; 与主菜单共用版本号，不再显示原汉化版的静态版本标签。
-	hlcoord 11, 0 ; ROM-1.28 正式版为 8 字符，右对齐至第 18 列。
+	hlcoord 8, 0 ; ROM-1.28FIX 为 11 字符，右对齐至第 18 列。
 	ld de, GameVersionText
 	call PlaceString
 	hlcoord 1, 1

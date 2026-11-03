@@ -1,3 +1,14 @@
+## ROM-1.28FIX — SAVE / Continue 地点行修正版（2026-11-02）
+
+- [x] **用户验收**：正式 ROM-1.28 HEAD `f483b39a4d95aaa16dc3b2f906a02ec4dfc0e82a` 上的 `src/engine/items/town_map.asm` 单文件修正已经由用户实际验证，反馈无问题。
+- [x] **地点显示**：SAVE / Continue 地点行移除「当前位置」固定标签，只显示地图名；继续按完整 CHS 字形边界截断，并保留最多六格的保守宽度。
+- [x] **DFS / VRAM 安全**：移除地点行对 `vChars2 $40-$5F` 的 `DFSStaticize`，避免与户外场景图块编号冲突并降低同时存在 START、Yes/No 文本时的 DFS 字形压力。
+- [x] **版本标识**：按维护者要求不升 ROM-1.29，而将原版本号追加 `FIX`：`ROM-1.28 → ROM-1.28FIX`；Options 版本号起点调整为 `(8,0)`。
+- [x] **正式三件套**：模式 B；① 已验收工作区→ROM-1.28FIX 清理增量；② 正式 HEAD `f483b39a...`→ROM-1.28FIX 累计全量；③ 中文 Conventional Commit 日志。两份 PATCH 二选一，不叠加；不由助手 Commit / Push。
+- [ ] **构建证据（非阻断）**：本次不由助手运行 RGBDS、生成 ROM/MAP/SHA；如需正式构建归档，由维护者本地补充。
+
+---
+
 ## ROM-1.28 — 地图快捷定位及存档信息显示正式收口（2026-11-02）
 
 - [x] **正式基线**：`CHS_Mod` 已提交 HEAD `1b1fc3905302bdff9989f7fb29df9a551ee7909f`（ROM-1.27）；用户明确要求以所附 `ROM-1.27C.patch` 为本轮清理依据。该补丁与 ROM-1.27C ZIP 导出的 Worktree Patch 字节一致，未提交改动共涉及 `docs/MAP_QOL_PLAN.md`、`src/data/game_version.asm`、`src/engine/items/town_map.asm`、`src/engine/menus/main_menu.asm`。
