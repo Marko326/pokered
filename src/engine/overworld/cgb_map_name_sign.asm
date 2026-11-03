@@ -1,8 +1,18 @@
-; ROM-1.29 CGB-only location sign (native CHS font, map-entry-only trigger).
+; ROM-1.30 CGB-only location sign (native CHS font, map-entry-only trigger).
 ; The DMG frame loop never calls this module. The CGB Window uses its own
 ; tile data in VRAM bank 1, instead of CHS DFS / NPC sprite tiles in bank 0.
 ; No new saved variables, no edits to the existing Town Map/Fly names.
-; Formal ROM-1.29 first stage: 11 cities + Routes 1-25.
+; Formal ROM-1.30 second stage: 11 cities + Routes 1-25 plus five basic
+; physical landmarks from RPP #214; floor-specific identities remain later work.
+
+DEF MAP_NAME_SIGN_SPECIAL_BASE EQU $80
+DEF MAP_NAME_SIGN_VIRIDIAN_FOREST EQU MAP_NAME_SIGN_SPECIAL_BASE + 0
+DEF MAP_NAME_SIGN_MT_MOON         EQU MAP_NAME_SIGN_SPECIAL_BASE + 1
+DEF MAP_NAME_SIGN_ROCK_TUNNEL     EQU MAP_NAME_SIGN_SPECIAL_BASE + 2
+DEF MAP_NAME_SIGN_DIGLETTS_CAVE   EQU MAP_NAME_SIGN_SPECIAL_BASE + 3
+DEF MAP_NAME_SIGN_POWER_PLANT     EQU MAP_NAME_SIGN_SPECIAL_BASE + 4
+DEF MAP_NAME_SIGN_BASE_LABELS     EQU 36
+DEF MAP_NAME_SIGN_SPECIAL_LABELS  EQU 5
 
 UpdateCGBMapNameSign::
 	ld a, [wMapNameSignInitialized]
@@ -64,28 +74,21 @@ UpdateCGBMapNameSign::
 	ld [wMapNameSignPending], a
 	ret
 .readyToDraw
-	; Startup can resolve an indoor save/start position to an already-supported
-	; city/route label. Ordinary transitions in this first stage remain strictly
-	; outdoor-only; indoor/dungeon expansion stays for later work.
+	; Startup may resolve a city/route or one of the five stage-2 physical
+	; landmarks. Normal transitions use the same physical resolver, while all
+	; other indoor maps remain neutral and preserve the previous landmark.
 	ld a, [wMapNameSignInitialMap]
 	and a
-	jr z, .resolveCurrentOutdoor
+	jr z, .resolveCurrentMap
 	dec a
 	ld b, a
 	xor a
 	ld [wMapNameSignInitialMap], a
 	jr .show
 
-.resolveCurrentOutdoor
-	ld a, [wCurMap]
-	cp NUM_CITY_MAPS
-	jr c, .validOutdoor
-	cp FIRST_ROUTE_MAP ; unused map $0b is not displayable
-	jr c, .notOutdoor
-	cp FIRST_INDOOR_MAP
-	jr nc, .notOutdoor ; indoor/dungeon signs are outside this first stage
-.validOutdoor
-	ld b, a
+.resolveCurrentMap
+	call MapNameSignResolveRuntimeMap
+	jr nc, .notOutdoor
 	ld a, [wMapNameSignEffectiveMap]
 	cp b
 	jr nz, .show
@@ -230,23 +233,71 @@ UpdateCGBMapNameSign::
 	ldh [rWY], a
 	ret
 
-; Resolve the first map after New Game / Continue to one of the 36 labels that
-; this first-stage implementation already owns. Outdoor maps map directly.
-; Indoor maps reuse the existing Town Map name resolution, but only names that
-; exactly match one of those 36 labels are accepted.
-; Returns carry set with A = supported external map id; carry clear otherwise.
-MapNameSignResolveInitialMap:
+; Resolve the currently loaded physical map to an effective sign identity.
+; Carry set: B = supported identity. Carry clear: neutral/unsupported indoor map.
+; Ordinary interiors and gates deliberately remain neutral, preserving the previous
+; effective city/route/landmark until the player reaches another supported map.
+MapNameSignResolveRuntimeMap:
 	ld a, [wCurMap]
 	cp FIRST_INDOOR_MAP
-	jr nc, .indoor
+	jr nc, .special
 	cp NUM_CITY_MAPS
-	jr c, .supported
+	jr c, .external
 	cp FIRST_ROUTE_MAP
-	jr c, .unsupported ; unused map $0b
-.supported
+	jr c, .unsupported ; unused raw map $0b
+.external
+	ld b, a
+	scf
+	ret
+
+.special
+	ld c, a
+	ld hl, MapNameSignSpecialMapTable
+.loop
+	ld a, [hli]
+	cp $ff
+	jr z, .unsupported
+	cp c
+	jr z, .found
+	inc hl
+	jr .loop
+.found
+	ld b, [hl]
+	scf
+	ret
+.unsupported
+	and a ; clear carry
+	ret
+
+MapNameSignSpecialMapTable:
+	; Stage 2 intentionally stops at five basic landmarks. Gate/entrance maps are
+	; omitted so they inherit the previous landmark just like RPP #214 transit maps.
+	db VIRIDIAN_FOREST, MAP_NAME_SIGN_VIRIDIAN_FOREST
+	db MT_MOON_1F,      MAP_NAME_SIGN_MT_MOON
+	db MT_MOON_B1F,     MAP_NAME_SIGN_MT_MOON
+	db MT_MOON_B2F,     MAP_NAME_SIGN_MT_MOON
+	db ROCK_TUNNEL_1F,  MAP_NAME_SIGN_ROCK_TUNNEL
+	db ROCK_TUNNEL_B1F, MAP_NAME_SIGN_ROCK_TUNNEL
+	db DIGLETTS_CAVE,   MAP_NAME_SIGN_DIGLETTS_CAVE
+	db POWER_PLANT,     MAP_NAME_SIGN_POWER_PLANT
+	db $ff
+
+; Resolve the first map after New Game / Continue to a currently supported label.
+; Stage-2 physical landmarks resolve directly; other indoor maps reuse the existing
+; Town Map name only when it exactly matches one of the original 36 city/route labels.
+; Returns carry set with A = supported effective identity; carry clear otherwise.
+MapNameSignResolveInitialMap:
+	; Prefer the physical resolver so Continue inside one of the five supported
+	; landmarks identifies the landmark itself rather than a Town Map alias.
+	call MapNameSignResolveRuntimeMap
+	jr nc, .indoor
+	ld a, b
 	scf
 	ret
 .indoor
+	ld a, [wCurMap]
+	cp FIRST_INDOOR_MAP
+	jr c, .unsupported
 	ld de, wTownMapCoords
 	farcall LoadTownMapEntry
 	ld d, h
@@ -282,10 +333,16 @@ MapNameSignResolveInitialMap:
 MapNameSignCopyCurrentLabelToVRAM:
 	push de
 	ld a, [wMapNameSignEffectiveMap]
+	cp MAP_NAME_SIGN_SPECIAL_BASE
+	jr nc, .specialIndex
 	cp FIRST_ROUTE_MAP
-	jr c, .cityIndex
+	jr c, .labelIndexReady
 	dec a ; skip unused map $0b; routes follow the eleven cities
-.cityIndex
+	jr .labelIndexReady
+.specialIndex
+	sub MAP_NAME_SIGN_SPECIAL_BASE
+	add MAP_NAME_SIGN_BASE_LABELS
+.labelIndexReady
 	ld e, a
 	ld d, 0
 	ld hl, MapNameSignLabelPointers
@@ -302,8 +359,8 @@ MapNameSignCopyCurrentLabelToVRAM:
 ; safe to rewrite during visible scanlines; only the 36 tile IDs are swapped in
 ; one fresh VBlank.
 MapNameSignRefreshVisible:
-	; Mask interrupts only while VBK=1. Once bank 0 is restored, let the
-	; normal interrupt cadence continue while waiting for a fresh VBlank.
+	; Keep interrupt sources masked from the bank-1 glyph upload through the
+	; fresh-VBlank tile-ID swap, matching the #215 ownership rule.
 	ld a, [rIE]
 	push af
 	xor a
@@ -548,11 +605,12 @@ MapNameSignFrame1bpp:
 MapNameSignFrameEnd:
 	ASSERT MapNameSignFrameEnd - MapNameSignFrame1bpp == 9 * 8
 MapNameSignLabelPointers:
-	FOR i, 36
+	FOR i, MAP_NAME_SIGN_BASE_LABELS + MAP_NAME_SIGN_SPECIAL_LABELS
 		dw MapNameSignLabelData + i * (18 * 2 * 8)
 	ENDR
 MapNameSignLabelData:
-	; Index 0..10: towns; 11..35: routes 1..25.
+	; Index 0..10: towns; 11..35: Routes 1..25.
+	; Index 36..40: 常青森林, 月见山, 岩山隧道, 地鼠洞穴, 无人发电厂.
 	INCBIN "gfx/map_name_sign/labels.1bpp"
 MapNameSignLabelDataEnd:
-	ASSERT MapNameSignLabelDataEnd - MapNameSignLabelData == 36 * 18 * 2 * 8
+	ASSERT MapNameSignLabelDataEnd - MapNameSignLabelData == (MAP_NAME_SIGN_BASE_LABELS + MAP_NAME_SIGN_SPECIAL_LABELS) * 18 * 2 * 8

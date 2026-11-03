@@ -14,7 +14,10 @@ EnterMap::
 	ldh a, [hCGB]
 	and a
 	jr z, .noMapNameSignQueue
-	ld a, 1
+	; Full EnterMap paths are warps/room changes. Delay them like Fly so the
+	; destination scene settles before the sign appears. Seamless town/route
+	; connections still queue 1 in CheckMapConnections for instant #215 refresh.
+	ld a, MAP_NAME_SIGN_FLY_DELAY + 1
 	ld [wMapNameSignPending], a
 .noMapNameSignQueue
 	ld hl, wd72c
@@ -548,6 +551,15 @@ WarpFound2::
 	ld a, [wNumberOfWarps]
 	sub c
 	ld [wWarpedFromWhichWarp], a ; save ID of used warp
+	; A full warp/door/cave transition must not carry the currently visible
+	; CGB location sign into the map-change sequence. Reclaim the shared Window
+	; before leaving the source map; EnterMap will queue the destination sign
+	; again after the Fly-style delay. Seamless map connections never pass here.
+	ldh a, [hCGB]
+	and a
+	jr z, .noCGBMapNameSignBeforeWarp
+	farcall HideCGBMapNameSign
+.noCGBMapNameSignBeforeWarp
 	ld a, [wCurMap]
 	ld [wWarpedFromWhichMap], a
 	call CheckIfInOutsideMap
@@ -593,6 +605,18 @@ WarpFound2::
 	res 1, [hl]
 	jr .done
 .goBackOutside
+	; Unlit Rock Tunnel uses FadePal2 (wMapPalOffset=$06), not the normal
+	; FadePal4 doorway palette. Starting GBFadeOutToBlack here would first
+	; brighten the cave to FadePal4, causing a visible flash. Continue from
+	; the current dark palette to black instead. After FLASH the offset is 0,
+	; so the original PlayMapChangeSound doorway fade remains untouched.
+	ld a, [wMapPalOffset]
+	cp $06
+	jr nz, .noUnlitRockTunnelFade
+	ld hl, FadePal2 + 2
+	ld b, 2
+	call GBFadeDecCommon
+.noUnlitRockTunnelFade
 	ld a, [wLastMap]
 	ld [wCurMap], a
 	call PlayMapChangeSound

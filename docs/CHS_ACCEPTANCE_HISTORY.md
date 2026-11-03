@@ -1,3 +1,14 @@
+## ROM-1.30 — CGB 地名牌基础地标与 Warp 转场正式收口（2026-11-03）
+
+- **基线与版本**：用户最新项目 ZIP 的 RPP 导出记录声明分支 `CHS_Mod`、正式 HEAD `a8ac7a01a423b8a4e25de81e82a583ba60c23112`、源码版本 `ROM-1.29`，Worktree 含未提交修改。用户随后上传的 `ROM-1.29.patch` 以同一 HEAD 为 BASE；本轮从 ROM-1.29 正式源码正向应用该 patch，重建出的受影响文件内容与已测试候选一致。正式版本正常递增为 `ROM-1.30`，不保留开发后缀，Options 继续使用 8 字符 `(11,0)` 右对齐。
+- **基础地标扩展**：在 ROM-1.29 的 11 城镇＋Route 1～25 基础上，新增常青森林、月见山、岩山隧道、地鼠洞穴、无人发电厂五个 CGB 地名牌身份。月见山 1F/B1F/B2F 共用「月见山」，岩山隧道 1F/B1F 共用「岩山隧道」；Gate／入口等中转地图继续保持 neutral，不提前扩展楼层与完整 #217～#225 链。
+- **Warp 与无缝连接分流**：完整房门、洞口和其他 Warp 在 `WarpFound2` 离开源地图前主动 `HideCGBMapNameSign`，避免旧 Window 跨转场残留；目标 `EnterMap` 以与 Fly 相同的短延迟重新排队地名牌。城市／道路 `CheckMapConnections` 无缝连接继续即时排队，保留 ROM-1.29 已验收的 #215 连续刷新与 120 帧显示时长。
+- **SAVE / Continue 地点名**：继续使用既有 `PlaceString`/DFS 小字体和原 13 格信息框，不采用已撤回的大字体方案。地点名按完整 CHS 字形边界截断的上限由 6 格放宽至 8 格，修复「无人发电厂」在 SAVE/Continue 页面被截成「无人发电」的问题。
+- **岩山隧道未闪光退出亮闪**：未使用 FLASH 时 Rock Tunnel 使用 `wMapPalOffset=$06`（`FadePal2`）。若直接调用普通 `GBFadeOutToBlack`，会先从较暗的 `FadePal2` 跳回较亮 `FadePal4` 再淡黑，产生肉眼可见亮闪。最终仅在 offset 为 `$06` 时从 `FadePal2 + 2` 经 `GBFadeDecCommon` 继续淡至黑；使用 FLASH 后 offset 为 0，不进入该特殊分支，原 `PlayMapChangeSound` 门口淡黑保持不变。
+- **用户运行验收**：用户先后用录像复现未闪光出口的亮闪，并在最终修正后上传 `65176.mp4`，明确反馈“感觉没问题了”“没问题”；本记录仅覆盖其实际测试的岩山隧道进出及本轮相关地名牌观感，不扩大为红／蓝、DMG/CGB/SGB 或全部 Warp 的穷尽矩阵。
+- **兼容性与不变项**：不新增 SRAM/存档字段，不改变 WRAM 后续标签地址；CGB 地名牌继续使用专用 Bank `$3D`、VRAM Bank 1 与 Palette 5，DMG 不进入该更新模块。普通道路无缝连接、Fly 延迟、START/对白/战斗 Window 交接与 ROM-1.29 已验收行为保持。Surf 按 B 加速仅登记 TODO，本版本不实现。
+- **验证与交付边界**：清理阶段执行补丁 `git apply --check --whitespace=error-all`、正向/反向应用、`git diff --check`、最终修改文件字节及 Git 可执行权限一致性检查，并执行本轮定向静态断言。项目禁止助手自行编译/链接 ROM，因此未生成 ROM-1.30 红蓝 ROM、MAP 或 SHA。无工具/审计脚本修改，采用模式 B：清理增量＋HEAD 全量＋一份中文 Conventional Commit 日志；Git Commit / Push 仍由维护者执行。
+
 ## ROM-1.29 — CGB 地名牌第一阶段正式收口（2026-11-02）
 
 - **基线与版本**：用户最新 RPP 导出 `ROM-1.28FIX.patch` 声明 `CHS_Mod` HEAD `2ca225eaba041844c0e35eff9ce90fd7150a0a65`（ROM-1.28FIX）。当前工作区功能经用户实际测试后收口；正式版本正常递增为 `ROM-1.29`，不保留 `FIX` 或开发字母，Options 恢复 `(11,0)` 的 8 字符右对齐。

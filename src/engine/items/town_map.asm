@@ -792,7 +792,7 @@ LoadTownMapEntry:
 
 ; SAVE / Continue: show only the map name, no "current location" label.
 ; In: DE = first interior tile of the existing 13-column information box.
-; Keep the previous conservative six-tile name limit to reduce live DFS
+; Keep a conservative eight-tile name limit to reduce live DFS
 ; glyph pressure while START and the Yes/No prompt share the text cache.
 ; Truncate at complete double-byte CHS characters (no split Hanzi).
 ; Do not DFSStaticize this line into vChars2 $40-$5f: those tile IDs are
@@ -803,7 +803,7 @@ PrintCurrentMapOnSaveScreen::
 	ld de, wTownMapCoords
 	call LoadTownMapEntry
 	ld de, wBuffer
-	ld c, 0 ; measured width in half-tile units, maximum six tiles
+	ld c, 0 ; measured width in half-tile units, maximum eight tiles
 .copyName
 	ld a, [hli]
 	cp "@"
@@ -821,7 +821,7 @@ PrintCurrentMapOnSaveScreen::
 .singleCode
 	ld a, c
 	add 2 ; one narrow character = 2 half tiles
-	cp 13
+	cp 17
 	jr nc, .nameReady
 	ld c, a
 	ld a, b
@@ -844,7 +844,7 @@ PrintCurrentMapOnSaveScreen::
 .doubleCode
 	ld a, c
 	add 3 ; one complete Hanzi = 3 half tiles
-	cp 13
+	cp 17
 	jr nc, .nameReady
 	ld c, a
 	ld a, b

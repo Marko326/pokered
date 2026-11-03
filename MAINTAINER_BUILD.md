@@ -1,3 +1,11 @@
+## ROM-1.30 CGB 地名牌基础地标与 Warp 转场正式收口（2026-11-03）
+
+- **基线**：本轮正式基线为用户 RPP 导出声明的 `CHS_Mod` HEAD `a8ac7a01a423b8a4e25de81e82a583ba60c23112`（ROM-1.29）。上传的 `ROM-1.29.patch` 是该 HEAD 上已实测 Worktree；全量补丁从 HEAD 重建，清理增量从该 Worktree 出发。
+- **功能范围**：CGB 地名牌新增常青森林、月见山、岩山隧道、地鼠洞穴、无人发电厂五个基础物理地标；原 11 城镇＋Route 1～25、120 帧显示和 #215 连续刷新保持。楼层／中转身份仍留待 #217～#225 后续阶段。
+- **Warp 行为**：完整 Warp 离开源地图前先回收地名牌，目标 `EnterMap` 按 Fly 的短延迟再显示；普通城市／道路的地图连接仍即时刷新。SAVE/Continue 仍使用原字号与 DFS，只把安全截断上限 6→8 格以完整容纳「无人发电厂」。
+- **Rock Tunnel 暗场**：未使用 FLASH 时 `wMapPalOffset=$06`，退出室外前从当前 `FadePal2` 继续淡到黑，避免普通 `GBFadeOutToBlack` 先回亮造成闪白；FLASH 后 offset=0，保留原门口 fade。用户最终录像复测并反馈当前效果无问题。
+- **版本与交付**：正式版本 `ROM-1.29 → ROM-1.30`，Options 保持 `(11,0)`。无工具／审计脚本修改，采用模式 B 三件套；增量和全量补丁互斥。Surf 按 B 加速只登记 TODO。本环境不运行 RGBDS、不生成 ROM/MAP/SHA，也不执行 Git Commit / Push。
+
 # 可长期维护的 `make` 构建方式（CHS_Mod 红/蓝汉化）
 
 ## ROM-1.29 CGB 地名牌第一阶段正式收口（2026-11-02）
