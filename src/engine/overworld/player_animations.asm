@@ -62,6 +62,15 @@ EnterMapAnim::
 	ld de, FlyAnimationEnterScreenCoords
 	call DoFlyAnimation
 	call LoadPlayerSpriteGraphics
+	; The CGB sign starts only after the Fly landing animation has finished.
+	; A normal warp/connection must not inherit this additional delay.
+	ldh a, [hCGB]
+	and a
+	jr z, .restoreDefaultMusic
+	; Pending > 1 counts down only in normal overworld updates.
+	; This leaves the 120-frame visible timer completely untouched.
+	ld a, MAP_NAME_SIGN_FLY_DELAY + 1
+	ld [wMapNameSignPending], a
 	jr .restoreDefaultMusic
 
 FlyAnimationEnterScreenCoords:

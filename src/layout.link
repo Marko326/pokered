@@ -201,6 +201,9 @@ ROMX $2D
 ROMX $3C
 	"CGB Native Color"
 
+ROMX $3D
+	"CGB Map Name Sign"
+
 ROMX $40
 	"Home 2"
 

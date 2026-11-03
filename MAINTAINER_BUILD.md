@@ -1,5 +1,16 @@
 # 可长期维护的 `make` 构建方式（CHS_Mod 红/蓝汉化）
 
+## ROM-1.29 CGB 地名牌第一阶段正式收口（2026-11-02）
+
+- **正式基线**：ROM-1.28FIX，用户最新 RPP 导出记录为 `CHS_Mod` HEAD `2ca225eaba041844c0e35eff9ce90fd7150a0a65`；本轮以该 HEAD 上的 `ROM-1.28FIX.patch` 已验收工作区为功能状态。
+- **功能范围**：CGB-only 地名牌第一阶段支持 11 个城镇与 Route 1～25；地图连接、普通进图、Fly 落地后触发，显示 120 帧；DMG 路径不调用该模块。
+- **启动定位**：New Game / Continue 第一次进入游戏时复用 Fly 的短延迟显示当前位置；普通城市建筑可借既有 Town Map 名称解析到当前已支持的城镇/道路，未纳入的洞窟/独立地标仍不显示。
+- **连续刷新**：按 RPP #215 的 Window 所有权思路适配 CHS 8×16 中文字形。旧牌仍显示时先把新名字写入备用 VRAM Bank 1 字形区，再屏蔽中断等待一个全新的 VBlank，原子切换两行共 36 个 tile ID，避免外框闪烁和上下半字混合。
+- **Window 交接**：START/对白入口与 BattleTransition 在接管 `$9c00` 前主动回收地名牌。该战斗入口修正解决了地名牌显示期间触发首场野战时，CHS 战斗调色板清黑 Palette 5 后出现 4-tile 高黑条的问题。
+- **状态边界**：仅复用 `$cd61-$cd69` 既有 9-byte WRAM padding 中的 8 byte 运行期状态，不推动后续 WRAM 地址，不新增 SRAM/存档字段；Palette 5、VRAM Bank 1 与专用 Bank `$3D` 仅服务 CGB 地名牌。
+- **验收**：用户实际复现并确认野战黑条最小修正有效；连续刷新首版曾出现中文上下半字混合，按 #215 的 fresh-VBlank 中断所有权修正后用户确认“没问题了”。该反馈不扩大为红/蓝、DMG/CGB 全矩阵验收。
+- **版本与交付**：正式版本由 `ROM-1.28FIX` 正常递增为 `ROM-1.29`，恢复 8 字符版本显示与 Options `(11,0)` 右对齐。模式 B 三件套：已验收工作区清理增量、`2ca225e...` HEAD 累计全量、中文 `feat(map)` Conventional Commit 日志；两份补丁互斥。助手不执行 Git Commit / Push，也不运行 RGBDS 构建。
+
 ## ROM-1.28FIX SAVE / Continue 地点字形冲突修正（2026-11-02）
 
 - **正式基线**：ROM-1.28，HEAD `f483b39a4d95aaa16dc3b2f906a02ec4dfc0e82a`。用户已验证其上的 `town_map.asm` 单文件修正无问题。

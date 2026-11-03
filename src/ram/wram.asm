@@ -174,6 +174,9 @@ ENDU
 	; 80-byte gap so all later WRAM addresses stay EXACTLY unchanged.
 wPartySwapNameTileCache:: ds 2 * 2 * 8 ; two 2-row, 8-column name regions
 wPartySwapRedrawPending:: db
+; This padding is also used as a 24x20 temporary tilemap by
+; LoadCurrentMapView: it can be overwritten during ordinary walking.
+; Keep all map-sign state OUT of this region.
 	ds 80 - (2 * 2 * 8 + 1)
 
 
@@ -866,7 +869,18 @@ wRightGBMonSpecies:: db
 ; bit 6: tried pushing against boulder once (you need to push twice before it will move)
 wFlags_0xcd60:: db
 
-	ds 9
+; Persistent CGB-only location-sign session state.  The 9-byte padding at
+; $cd61-$cd69 is not part of the overworld tilemap scratch buffer and is not
+; in saved SRAM.  Preserve the addresses of every existing WRAM label.
+	ds 1
+wMapNameSignInitialized:: db
+wMapNameSignLastRawMap:: db
+wMapNameSignEffectiveMap:: db
+wMapNameSignTimer:: db
+wMapNameSignAttrsActive:: db
+wMapNameSignPending:: db
+wMapNameSignLabelBuffer:: db ; 0=$90-$b3, 1=$b4-$d7
+wMapNameSignInitialMap:: db   ; supported map id + 1; 0 = no startup popup
 
 ; This has overlapping related uses.
 ; When the player tries to use an item or use certain field moves, 0 is stored

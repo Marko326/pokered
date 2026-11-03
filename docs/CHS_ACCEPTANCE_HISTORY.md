@@ -1,3 +1,15 @@
+## ROM-1.29 — CGB 地名牌第一阶段正式收口（2026-11-02）
+
+- **基线与版本**：用户最新 RPP 导出 `ROM-1.28FIX.patch` 声明 `CHS_Mod` HEAD `2ca225eaba041844c0e35eff9ce90fd7150a0a65`（ROM-1.28FIX）。当前工作区功能经用户实际测试后收口；正式版本正常递增为 `ROM-1.29`，不保留 `FIX` 或开发字母，Options 恢复 `(11,0)` 的 8 字符右对齐。
+- **第一阶段范围**：仅 CGB 的 11 个城镇与 Route 1～25 地名牌；地图连接/进图触发，Fly 落地后短延迟触发，牌面显示 120 帧。普通室内/洞窟在本阶段不作为普通切图触发目标，避免一次引入完整 Landmark/楼层体系。
+- **启动定位**：New Game / Continue 第一次进入游戏时同样延迟后显示当前位置；若起始/存档位于普通室内，则只在既有 Town Map 名称能解析到当前 36 个已支持城镇/道路标签时显示。
+- **连续刷新与中文适配**：参考 RPP #215 的 Window 所有权规则，但因 CHS 中文为 8×16 两 tile 字形，使用两组 36-tile Bank 1 名字缓冲。连续跨不同地点时旧框保持可见，新字形先写入非活动缓冲；随后保持中断源屏蔽，等待一个新的 VBlank 并一次切换 36 个 Window tile ID。首版中断恢复过早曾出现上下半字混合，用户录像复现后已修正并确认正常。
+- **战斗黑条根因与修复**：地名牌占用 `$9c00` Window、VRAM Bank 1 与 CGB BG Palette 5。野战可在牌面仍显示时直接进入 BattleTransition，而 CHS 战斗初始化会清黑 Palette 0～5，导致遗留四行属性显示为 32px 黑条。现于 BattleTransition 接管 Window 前统一 Hide；用户按触发条件复现旧问题并确认补丁修复。
+- **共享 Window 交接**：DisplayTextIDInit 在 START/对白接管 Window 前回收地名牌；战斗入口增加同样的 CGB-only 回收。地名牌自然结束也清除四行 attributes 并移出屏幕。
+- **状态与数据边界**：新增逻辑不写 SRAM，不修改存档格式；运行状态放在 `$cd61-$cd69` 原 9-byte padding，保留所有后续 WRAM 地址。地名牌资源放 Bank `$3D`，CGB 独立 VRAM Bank 1，DMG 不进入该帧更新路径。
+- **尚未纳入**：RPP 后续洞窟/森林/特殊地标、Silph Co./Pokémon Tower/Mansion/Rocket HQ/Safari/百货/S.S. Anne 等楼层与中转身份继续作为后续独立阶段；ROM-1.29 不冒称 #214～#225 全链完成。
+- **验证边界**：用户确认当前连续刷新最终修正版“没问题了”，并此前确认野战黑条修复有效；助手仅做补丁正反应用、whitespace、字节/权限一致性静态校验，不运行 RGBDS 或生成 ROM/MAP/SHA，不扩大为全平台矩阵通过。
+
 ## ROM-1.28FIX — SAVE / Continue 地点字形冲突修正版（2026-11-02）
 
 - **基线与版本**：正式基线为 `CHS_Mod` HEAD `f483b39a4d95aaa16dc3b2f906a02ec4dfc0e82a`（ROM-1.28）。本次以该 HEAD 上导出的单文件未提交修正 `src/engine/items/town_map.asm` 为已验收工作区；用户明确反馈实际验证“没问题”，并授权制作正式清理三件套。游戏版本不递增到 ROM-1.29，而按要求在原版本号后追加 `FIX`，显示为 `ROM-1.28FIX`。

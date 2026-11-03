@@ -49,3 +49,6 @@ src/rgbds-cn/
 
 # Local Python virtual environment
 .venv/
+
+# Map sign 1bpp tiles are checked-in source assets (not generated build output).
+!src/gfx/map_name_sign/*.1bpp

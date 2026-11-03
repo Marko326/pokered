@@ -1,6 +1,6 @@
-; ROM-1.28FIX 修正版；修正 SAVE/Continue 地点行的 DFS 图块冲突。
+; ROM-1.29 正式版本；新增 CGB 地名牌第一阶段、连续刷新与启动定位。
 ; 卧室电脑使用本地文本脚本入口接入完整 PC 菜单；不修改存档结构。
 SECTION "Game Version", ROM0
 
 GameVersionText::
-	db "ROM-1.28FIX@"
+	db "ROM-1.29@"

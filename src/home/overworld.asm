@@ -10,6 +10,13 @@ EnterMap::
 	ld [wJoyIgnore], a
 	call LoadMapData
 	farcall ClearVariablesOnEnterMap
+	; The location sign is armed by map entry, never by ordinary footsteps.
+	ldh a, [hCGB]
+	and a
+	jr z, .noMapNameSignQueue
+	ld a, 1
+	ld [wMapNameSignPending], a
+.noMapNameSignQueue
 	ld hl, wd72c
 	bit 0, [hl] ; has the player already made 3 steps since the last battle?
 	jr z, .skipGivingThreeStepsOfNoRandomBattles
@@ -45,6 +52,12 @@ OverworldLoopLessDelay::
 	call DelayFrame
 	call GBCSetCPU2xSpeed ; CGB-only: do not change the established 60 FPS loop
 	call LoadGBPal
+	; Only CGB owns the second VRAM bank. Leave the DMG loop untouched.
+	ldh a, [hCGB]
+	and a
+	jr z, .noCGBMapNameSign
+	farcall UpdateCGBMapNameSign
+.noCGBMapNameSign
 	ld a, [wd736]
 	bit 6, a ; jumping down a ledge?
 	call nz, HandleMidJump
@@ -733,6 +746,13 @@ CheckMapConnections::
 ; x#SPRITESTATEDATA2_IMAGEBASEOFFSET without loading any tile patterns.
 	farcall InitMapSprites
 	call LoadTileBlockMap
+	; A seamless town/route connection is a genuine map transition.
+	ldh a, [hCGB]
+	and a
+	jr z, .noMapNameSignQueueConnected
+	ld a, 1
+	ld [wMapNameSignPending], a
+.noMapNameSignQueueConnected
 	jp OverworldLoopLessDelay
 
 .didNotEnterConnectedMap

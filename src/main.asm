@@ -585,3 +585,7 @@ INCLUDE "engine/items/machine_name_helpers.asm"
 ; QOL-1.17: isolated direct-attack damage animation in helper Bank $2D.
 SECTION "Battle Damage HP Animation", ROMX
 INCLUDE "engine/battle/damage_hp_animation.asm"
+
+; ROM-1.29 CGB map-name sign: isolated from DMG, DFS and Bank 0.
+SECTION "CGB Map Name Sign", ROMX, BANK[$3D]
+INCLUDE "engine/overworld/cgb_map_name_sign.asm"

@@ -2,6 +2,13 @@
 DisplayTextIDInit::
 	xor a
 	ld [wListMenuID], a
+	; The map sign and dialogue/START use Window BG $9c00. Reclaim CGB
+	; attributes before normal menu transfer; don't touch the DMG path.
+	ldh a, [hCGB]
+	and a
+	jr z, .noCGBMapNameSign
+	farcall HideCGBMapNameSign
+.noCGBMapNameSign
 	ld a, [wAutoTextBoxDrawingControl]
 	bit 0, a
 	jr nz, .skipDrawingTextBoxBorder

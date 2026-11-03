@@ -1,4 +1,12 @@
 BattleTransition:
+	; A wild encounter can start while the CGB map-name sign is still active.
+	; Reclaim Window BG $9c00 before battle code moves WY to the top and
+	; clears transient CGB palettes; trainer dialogue usually did this already.
+	ldh a, [hCGB]
+	and a
+	jr z, .noCGBMapNameSign
+	farcall HideCGBMapNameSign
+.noCGBMapNameSign
 	ld a, 1
 	ldh [hAutoBGTransferEnabled], a
 	call Delay3
