@@ -136,12 +136,12 @@ HandlePokedexSideMenu:
 	ld [wMenuWatchMovingOutOfBounds], a
 .handleMenuInput
 	; DATA/CRY/AREA/QUIT wraps on a fresh edge. CRY returns here,
-	; so re-arm wrapping and its configured speed before every input call.
+	; so re-arm wrapping and edge-only mode before every input call.
 	ld a, 1
 	ld [wMenuWrappingEnabled], a
 	ldh a, [hJoy7]
 	push af
-	ld a, JOY_REPEAT_MODE_POKEDEX_SIDE
+	xor a ; hJoy7 = 0: no held-key repeat in this four-item menu
 	ldh [hJoy7], a
 	call HandleMenuInput
 	ld b, a

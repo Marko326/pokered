@@ -362,11 +362,11 @@ ChangeBox::
 	call UpdateSprites
 	ld hl, hUILayoutFlags
 	set 1, [hl]
-	; Use the editable PC-box repeat-speed row; restore hJoy7 on exit.
-	; HandleMenuInput clears wrapping itself.
+	; The 12-box selector uses edge-only input, not held-key repeat.
+	; Restore the caller's hJoy7 on exit; HandleMenuInput clears wrapping.
 	ldh a, [hJoy7]
 	push af
-	ld a, JOY_REPEAT_MODE_PC_BOX
+	xor a ; hJoy7 = 0: fresh Up/Down press only
 	ldh [hJoy7], a
 	ld a, 1
 	ld [wMenuWrappingEnabled], a

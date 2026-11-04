@@ -259,7 +259,7 @@ HandlePartyMenuInput::
 	ld [wMenuWrappingEnabled], a
 	ld a, $40
 	ld [wPartyMenuAnimMonEnabled], a
-	; Use the Party speed-table row only for field START Party and its SWITCH target.
+	; Use edge-only input for field START Party and its SWITCH target.
 	; Save hJoy7: battle/item/PC Party selectors are unchanged.
 	ldh a, [hJoy7]
 	push af
@@ -272,7 +272,7 @@ HandlePartyMenuInput::
 	ld a, [wIsInBattle]
 	and a
 	jr nz, .partyInput
-	ld a, JOY_REPEAT_MODE_PARTY ; configured in MenuRepeatDelayTable
+	xor a ; hJoy7 = 0: holding Up/Down does not move again
 	ldh [hJoy7], a
 .partyInput
 	call HandleMenuInput_

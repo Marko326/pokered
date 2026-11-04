@@ -298,10 +298,8 @@ LoadTownMap_Fly::
 	ld hl, vSprites tile $04
 	lb bc, BANK(BirdSprite), 12
 	call CopyVideoData
-	ld de, TownMapUpArrow
-	ld hl, vChars1 tile $6d
-	lb bc, BANK(TownMapUpArrow), (TownMapUpArrowEnd - TownMapUpArrow) / $8
-	call CopyVideoDataDouble
+	; Fly has no separate up/down arrow overlay: the original right-hand
+	; map border tiles remain visible at (19,0) and (19,1).
 	call BuildFlyLocationsList
 	xor a
 	ld [wFlyLocationsAxis], a
@@ -320,28 +318,34 @@ LoadTownMap_Fly::
 	ld b, $0
 	call DrawPlayerOrBirdSprite
 	ld hl, wFlyLocationsList
-	decoord 19, 0 ;decoord 18, 0
 .townMapFlyLoop
-	ld a, CHARVAL(" ")
-	ld [de], a
+	; Do not erase x=19: it belongs to the original map border, not
+	; a scrolling-arrow background.
 	push hl
 	push hl
-	hlcoord 4, 0 ;hlcoord 3, 0
-	lb bc, 2, 15 ; clear full location name field through x=18
+	; DFS location names use both rows 0 and 1. Clear the upper halves
+	; too, or switching to a shorter name leaves part of the old glyph.
+	; Keep x=11 and the map border intact (name field is x=4..10).
+	hlcoord 4, 0
+	lb bc, 2, 7
 	call ClearScreenArea
 	pop hl
 	ld a, [hl]
 	ld b, $4
-	call DrawPlayerOrBirdSprite ; draw bird sprite
-	hlcoord 4, 1 ;hlcoord 3, 0
+	push af ; remember the selector; drawing the bird replaces A and HL
+	call DrawPlayerOrBirdSprite ; draw bird sprite, keep generic name intact
+	pop af
+	hlcoord 4, 1
 	ld de, wcd6d
+	; Only the Fly destination heading uses the three-glyph short name.
+	; Town Map, SAVE/Continue and map-name signs still use PowerPlantName.
+	cp POWER_PLANT
+	jr nz, .showFlyName
+	ld de, FlyPowerPlantShortName
+.showFlyName
 	call PlaceString
 	ld c, 15
 	call DelayFrames
-	hlcoord 19, 0 ;hlcoord 18, 0
-	ld [hl], CHARVAL("▲")
-	hlcoord 19, 1 ;hlcoord 19, 0
-	ld [hl], CHARVAL("▼")
 	pop hl
 .inputLoop
 	push hl
@@ -401,7 +405,6 @@ LoadTownMap_Fly::
 	jp z, .inputLoop ; no unlocked special location: keep city cursor
 	ld h, d
 	ld l, e
-	decoord 19, 0 ; redraw always expects a tilemap pointer in DE
 	jp .townMapFlyLoop
 .pressedUp
 	ld a, [wFlyLocationsAxis]
@@ -414,10 +417,8 @@ LoadTownMap_Fly::
 	farcall FlySpecialToCityCursor
 	ld h, d
 	ld l, e
-	decoord 19, 0
 	jp .townMapFlyLoop
 .cityUp
-	decoord 19, 0 ;decoord 18, 0
 	inc hl
 	ld a, [hl]
 	cp $ff
@@ -441,10 +442,8 @@ LoadTownMap_Fly::
 	farcall FlySpecialToCityCursor
 	ld h, d
 	ld l, e
-	decoord 19, 1
 	jp .townMapFlyLoop
 .cityDown
-	decoord 19, 1 ;decoord 19, 0
 	dec hl
 	ld a, [hl]
 	cp $ff
@@ -499,11 +498,15 @@ LoadTownMap_Fly::
 	; START/SELECT keep the ROM-1.31 city/recovery list semantics.
 	xor a
 	ld [wFlyLocationsAxis], a
-	decoord 19, 0
 	jp .townMapFlyLoop ; update cursor only; A still confirms Fly
 
 ToText:
 	db "To@"
+
+FlyPowerPlantShortName:
+	; 发电厂 (CHS DFS glyph codes, three characters / five BG tiles).
+	; Deliberately not named PowerPlantName: that shared name stays unchanged.
+	db $07, $B0, $07, $23, $06, $05, CHARVAL("@")
 
 BuildFlyLocationsList:
 	ld hl, wFlyAnimUsingCoordList
@@ -538,10 +541,6 @@ BuildFlyLocationsList:
 	ld [hli], a
 	ld [hl], $ff
 	ret
-
-TownMapUpArrow:
-	INCBIN "gfx/town_map/up_arrow.1bpp"
-TownMapUpArrowEnd:
 
 LoadTownMap:
 	call GBPalWhiteOutWithDelay3

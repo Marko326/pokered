@@ -77,14 +77,15 @@ StartMenuReadyToDraw::
 	ldh [hAutoBGTransferEnabled], a
 StartMenuInputLoop::
 .loop
-	; The shared menu handler already implements held-at-edge stopping,
-	; fresh-press-only wrapping, and cursor updating.  Keep wMaxMenuItem
+	; The shared menu handler handles fresh-press wrapping and cursor updates.
+	; This short menu uses edge-only input: holding Up/Down never repeats.
+	; Keep wMaxMenuItem
 	; as the last selectable index (set by DrawStartMenu).
 	ld a, 1
 	ld [wMenuWrappingEnabled], a
 	ldh a, [hJoy7]
 	push af
-	ld a, JOY_REPEAT_MODE_START_MENU
+	xor a ; hJoy7 = 0: move only on a new physical key press
 	ldh [hJoy7], a
 	call HandleMenuInput
 	ld b, a
