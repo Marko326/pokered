@@ -384,6 +384,8 @@ LoadTownMap_Fly::
 	jr z, .wrapToStartOfList
 	cp NOT_VISITED
 	jr z, .pressedUp ; skip past unvisited towns
+	cp NUM_CITY_MAPS
+	jr nc, .pressedUp ; Route 4/10 recovery slot is START-only
 	jp .townMapFlyLoop
 .wrapToStartOfList
 	ld hl, wFlyLocationsList
@@ -396,6 +398,8 @@ LoadTownMap_Fly::
 	jr z, .wrapToEndOfList
 	cp NOT_VISITED
 	jr z, .pressedDown ; skip past unvisited towns
+	cp NUM_CITY_MAPS
+	jr nc, .pressedDown ; Route 4/10 recovery slot is START-only
 	jp .townMapFlyLoop
 .wrapToEndOfList
 	; One extra optional recovery-point entry, then the end sentinel.

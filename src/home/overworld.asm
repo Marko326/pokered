@@ -35,6 +35,14 @@ EnterMap::
 	ld a, [hl]
 	and 1 << 4 | 1 << 3 ; fly warp or dungeon warp
 	jr z, .didNotEnterUsingFlyWarpOrDungeonWarp
+	; A non-Fly warp pad can change multi-floor identity (e.g. Silph Co.).
+	; Prime its CGB sign before EnterMapAnim reveals the destination scene.
+	ldh a, [hCGB]
+	and a
+	jr z, .skipCGBMapNameSignPrime
+	farcall PrimeCGBMapNameSignForWarpPad
+.skipCGBMapNameSignPrime
+	ld hl, wd732 ; farcall clobbers HL
 	res 3, [hl]
 	farcall EnterMapAnim
 	call UpdateSprites

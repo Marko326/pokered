@@ -4,8 +4,8 @@
 ; cannot underflow when B is released or the cycling-road direction changes.
 AdvancePlayerAtSpeed::
 	ld a, [wWalkBikeSurfState]
-	cp $02 ; surfing is always normal speed
-	jr z, .normal
+	cp $02 ; surfing
+	jr z, .surfing
 	call IsPlayerCharacterBeingControlledByGame
 	jr nz, .normal ; scripted movement, doors and simulated joypad
 	ld a, [wd736]
@@ -17,6 +17,19 @@ AdvancePlayerAtSpeed::
 	and a ; $00 = walking
 	jr nz, .normal
 	ldh a, [hJoyHeld]
+	and B_BUTTON
+	jr z, .normal
+	ld c, 1 ; one additional pixel while holding B
+	jr .extraSteps
+.surfing
+	; Surf uses the raw physical input sampled by ReadJoypad. hJoyHeld may
+	; have B masked by wJoyIgnore, while hJoyInput preserves the actual key.
+	call IsPlayerCharacterBeingControlledByGame
+	jr nz, .normal ; scripted movement, doors and simulated joypad
+	ld a, [wd736]
+	bit 6, a ; ledge jump
+	jr nz, .normal
+	ldh a, [hJoyInput]
 	and B_BUTTON
 	jr z, .normal
 	ld c, 1 ; one additional pixel while holding B

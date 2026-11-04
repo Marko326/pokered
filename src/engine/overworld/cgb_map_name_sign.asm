@@ -2,8 +2,9 @@
 ; The DMG frame loop never calls this module. The CGB Window uses its own
 ; tile data in VRAM bank 1, instead of CHS DFS / NPC sprite tiles in bank 0.
 ; No new saved variables, no edits to the existing Town Map/Fly names.
-; Formal ROM-1.30 second stage: 11 cities + Routes 1-25 plus five basic
-; physical landmarks from RPP #214; floor-specific identities remain later work.
+; ROM-1.31 formal scope: 11 cities, Routes 1-25, five basic landmarks
+; and #217/#218/#220/#222/#225 physical floor/area identities.
+; New Game / Continue entry is silent; transitions preserve neutral maps.
 
 DEF MAP_NAME_SIGN_SPECIAL_BASE EQU $80
 DEF MAP_NAME_SIGN_VIRIDIAN_FOREST EQU MAP_NAME_SIGN_SPECIAL_BASE + 0
@@ -11,8 +12,95 @@ DEF MAP_NAME_SIGN_MT_MOON         EQU MAP_NAME_SIGN_SPECIAL_BASE + 1
 DEF MAP_NAME_SIGN_ROCK_TUNNEL     EQU MAP_NAME_SIGN_SPECIAL_BASE + 2
 DEF MAP_NAME_SIGN_DIGLETTS_CAVE   EQU MAP_NAME_SIGN_SPECIAL_BASE + 3
 DEF MAP_NAME_SIGN_POWER_PLANT     EQU MAP_NAME_SIGN_SPECIAL_BASE + 4
+DEF MAP_NAME_SIGN_SILPH_CO_1F     EQU MAP_NAME_SIGN_SPECIAL_BASE + 5
+DEF MAP_NAME_SIGN_SILPH_CO_2F     EQU MAP_NAME_SIGN_SPECIAL_BASE + 6
+DEF MAP_NAME_SIGN_SILPH_CO_3F     EQU MAP_NAME_SIGN_SPECIAL_BASE + 7
+DEF MAP_NAME_SIGN_SILPH_CO_4F     EQU MAP_NAME_SIGN_SPECIAL_BASE + 8
+DEF MAP_NAME_SIGN_SILPH_CO_5F     EQU MAP_NAME_SIGN_SPECIAL_BASE + 9
+DEF MAP_NAME_SIGN_SILPH_CO_6F     EQU MAP_NAME_SIGN_SPECIAL_BASE + 10
+DEF MAP_NAME_SIGN_SILPH_CO_7F     EQU MAP_NAME_SIGN_SPECIAL_BASE + 11
+DEF MAP_NAME_SIGN_SILPH_CO_8F     EQU MAP_NAME_SIGN_SPECIAL_BASE + 12
+DEF MAP_NAME_SIGN_SILPH_CO_9F     EQU MAP_NAME_SIGN_SPECIAL_BASE + 13
+DEF MAP_NAME_SIGN_SILPH_CO_10F    EQU MAP_NAME_SIGN_SPECIAL_BASE + 14
+DEF MAP_NAME_SIGN_SILPH_CO_11F    EQU MAP_NAME_SIGN_SPECIAL_BASE + 15
 DEF MAP_NAME_SIGN_BASE_LABELS     EQU 36
-DEF MAP_NAME_SIGN_SPECIAL_LABELS  EQU 5
+DEF MAP_NAME_SIGN_LOCAL_LABELS    EQU 41 ; cities/routes + 5 basic landmarks, bank $3D
+DEF MAP_NAME_SIGN_EXT_A_LABELS    EQU 47 ; Silph + #218 + #220 in bank $2E
+DEF MAP_NAME_SIGN_EXT_B_LABELS    EQU 19 ; #222 + #225 in bank $2F
+DEF MAP_NAME_SIGN_SPECIAL_LABELS  EQU 71 ; 5 basic + 11 Silph + 55 new
+DEF MAP_NAME_SIGN_POKEMON_TOWER_1F             EQU MAP_NAME_SIGN_SPECIAL_BASE + 16
+DEF MAP_NAME_SIGN_POKEMON_TOWER_2F             EQU MAP_NAME_SIGN_SPECIAL_BASE + 17
+DEF MAP_NAME_SIGN_POKEMON_TOWER_3F             EQU MAP_NAME_SIGN_SPECIAL_BASE + 18
+DEF MAP_NAME_SIGN_POKEMON_TOWER_4F             EQU MAP_NAME_SIGN_SPECIAL_BASE + 19
+DEF MAP_NAME_SIGN_POKEMON_TOWER_5F             EQU MAP_NAME_SIGN_SPECIAL_BASE + 20
+DEF MAP_NAME_SIGN_POKEMON_TOWER_6F             EQU MAP_NAME_SIGN_SPECIAL_BASE + 21
+DEF MAP_NAME_SIGN_POKEMON_TOWER_7F             EQU MAP_NAME_SIGN_SPECIAL_BASE + 22
+DEF MAP_NAME_SIGN_POKEMON_MANSION_1F           EQU MAP_NAME_SIGN_SPECIAL_BASE + 23
+DEF MAP_NAME_SIGN_POKEMON_MANSION_2F           EQU MAP_NAME_SIGN_SPECIAL_BASE + 24
+DEF MAP_NAME_SIGN_POKEMON_MANSION_3F           EQU MAP_NAME_SIGN_SPECIAL_BASE + 25
+DEF MAP_NAME_SIGN_POKEMON_MANSION_B1F          EQU MAP_NAME_SIGN_SPECIAL_BASE + 26
+DEF MAP_NAME_SIGN_ROCKET_HIDEOUT_B1F           EQU MAP_NAME_SIGN_SPECIAL_BASE + 27
+DEF MAP_NAME_SIGN_ROCKET_HIDEOUT_B2F           EQU MAP_NAME_SIGN_SPECIAL_BASE + 28
+DEF MAP_NAME_SIGN_ROCKET_HIDEOUT_B3F           EQU MAP_NAME_SIGN_SPECIAL_BASE + 29
+DEF MAP_NAME_SIGN_ROCKET_HIDEOUT_B4F           EQU MAP_NAME_SIGN_SPECIAL_BASE + 30
+DEF MAP_NAME_SIGN_GAME_CORNER                  EQU MAP_NAME_SIGN_SPECIAL_BASE + 31
+DEF MAP_NAME_SIGN_SAFARI_ZONE_CENTER           EQU MAP_NAME_SIGN_SPECIAL_BASE + 32
+DEF MAP_NAME_SIGN_SAFARI_ZONE_EAST             EQU MAP_NAME_SIGN_SPECIAL_BASE + 33
+DEF MAP_NAME_SIGN_SAFARI_ZONE_NORTH            EQU MAP_NAME_SIGN_SPECIAL_BASE + 34
+DEF MAP_NAME_SIGN_SAFARI_ZONE_WEST             EQU MAP_NAME_SIGN_SPECIAL_BASE + 35
+DEF MAP_NAME_SIGN_MT_MOON_1F                   EQU MAP_NAME_SIGN_SPECIAL_BASE + 36
+DEF MAP_NAME_SIGN_MT_MOON_B1F                  EQU MAP_NAME_SIGN_SPECIAL_BASE + 37
+DEF MAP_NAME_SIGN_MT_MOON_B2F                  EQU MAP_NAME_SIGN_SPECIAL_BASE + 38
+DEF MAP_NAME_SIGN_ROCK_TUNNEL_1F               EQU MAP_NAME_SIGN_SPECIAL_BASE + 39
+DEF MAP_NAME_SIGN_ROCK_TUNNEL_B1F              EQU MAP_NAME_SIGN_SPECIAL_BASE + 40
+DEF MAP_NAME_SIGN_VICTORY_ROAD_1F              EQU MAP_NAME_SIGN_SPECIAL_BASE + 41
+DEF MAP_NAME_SIGN_VICTORY_ROAD_2F              EQU MAP_NAME_SIGN_SPECIAL_BASE + 42
+DEF MAP_NAME_SIGN_VICTORY_ROAD_3F              EQU MAP_NAME_SIGN_SPECIAL_BASE + 43
+DEF MAP_NAME_SIGN_CERULEAN_CAVE_1F             EQU MAP_NAME_SIGN_SPECIAL_BASE + 44
+DEF MAP_NAME_SIGN_CERULEAN_CAVE_2F             EQU MAP_NAME_SIGN_SPECIAL_BASE + 45
+DEF MAP_NAME_SIGN_CERULEAN_CAVE_B1F            EQU MAP_NAME_SIGN_SPECIAL_BASE + 46
+DEF MAP_NAME_SIGN_SEAFOAM_ISLANDS_1F           EQU MAP_NAME_SIGN_SPECIAL_BASE + 47
+DEF MAP_NAME_SIGN_SEAFOAM_ISLANDS_B1F          EQU MAP_NAME_SIGN_SPECIAL_BASE + 48
+DEF MAP_NAME_SIGN_SEAFOAM_ISLANDS_B2F          EQU MAP_NAME_SIGN_SPECIAL_BASE + 49
+DEF MAP_NAME_SIGN_SEAFOAM_ISLANDS_B3F          EQU MAP_NAME_SIGN_SPECIAL_BASE + 50
+DEF MAP_NAME_SIGN_SEAFOAM_ISLANDS_B4F          EQU MAP_NAME_SIGN_SPECIAL_BASE + 51
+DEF MAP_NAME_SIGN_CELADON_MART_1F              EQU MAP_NAME_SIGN_SPECIAL_BASE + 52
+DEF MAP_NAME_SIGN_CELADON_MART_2F              EQU MAP_NAME_SIGN_SPECIAL_BASE + 53
+DEF MAP_NAME_SIGN_CELADON_MART_3F              EQU MAP_NAME_SIGN_SPECIAL_BASE + 54
+DEF MAP_NAME_SIGN_CELADON_MART_4F              EQU MAP_NAME_SIGN_SPECIAL_BASE + 55
+DEF MAP_NAME_SIGN_CELADON_MART_5F              EQU MAP_NAME_SIGN_SPECIAL_BASE + 56
+DEF MAP_NAME_SIGN_CELADON_MART_ROOF            EQU MAP_NAME_SIGN_SPECIAL_BASE + 57
+DEF MAP_NAME_SIGN_CELADON_MANSION_1F           EQU MAP_NAME_SIGN_SPECIAL_BASE + 58
+DEF MAP_NAME_SIGN_CELADON_MANSION_2F           EQU MAP_NAME_SIGN_SPECIAL_BASE + 59
+DEF MAP_NAME_SIGN_CELADON_MANSION_3F           EQU MAP_NAME_SIGN_SPECIAL_BASE + 60
+DEF MAP_NAME_SIGN_CELADON_MANSION_ROOF         EQU MAP_NAME_SIGN_SPECIAL_BASE + 61
+DEF MAP_NAME_SIGN_MUSEUM_1F                    EQU MAP_NAME_SIGN_SPECIAL_BASE + 62
+DEF MAP_NAME_SIGN_MUSEUM_2F                    EQU MAP_NAME_SIGN_SPECIAL_BASE + 63
+DEF MAP_NAME_SIGN_SS_ANNE_1F                   EQU MAP_NAME_SIGN_SPECIAL_BASE + 64
+DEF MAP_NAME_SIGN_SS_ANNE_2F                   EQU MAP_NAME_SIGN_SPECIAL_BASE + 65
+DEF MAP_NAME_SIGN_SS_ANNE_3F                   EQU MAP_NAME_SIGN_SPECIAL_BASE + 66
+DEF MAP_NAME_SIGN_SS_ANNE_B1F                  EQU MAP_NAME_SIGN_SPECIAL_BASE + 67
+DEF MAP_NAME_SIGN_SS_ANNE_BOW                  EQU MAP_NAME_SIGN_SPECIAL_BASE + 68
+DEF MAP_NAME_SIGN_SS_ANNE_KITCHEN              EQU MAP_NAME_SIGN_SPECIAL_BASE + 69
+DEF MAP_NAME_SIGN_SS_ANNE_CAPTAINS_ROOM        EQU MAP_NAME_SIGN_SPECIAL_BASE + 70
+ASSERT MAP_NAME_SIGN_SPECIAL_BASE + MAP_NAME_SIGN_SPECIAL_LABELS < $ff
+
+; EnterMap has already loaded the destination and armed its normal delay.
+; Prime only non-Fly warp-pad destinations so the destination floor label is
+; ready before EnterMapAnim reveals the bottom of the target scene.
+PrimeCGBMapNameSignForWarpPad::
+	ld a, [wMapNameSignInitialized]
+	and a
+	ret z ; startup is silent; only later map transitions show signs
+	ld a, [wd732]
+	bit 3, a ; warp pad (Fly is separately identified below)
+	ret z
+	ld a, [wFlags_D733]
+	bit 7, a ; Fly out of battle keeps its dedicated landing delay
+	ret nz
+	ld a, 1
+	ld [wMapNameSignPending], a
+	jp UpdateCGBMapNameSign
 
 UpdateCGBMapNameSign::
 	ld a, [wMapNameSignInitialized]
@@ -24,20 +112,12 @@ UpdateCGBMapNameSign::
 	ld [wMapNameSignLastRawMap], a
 	ld a, $ff
 	ld [wMapNameSignEffectiveMap], a
-	; New Game / Continue should identify the current supported place once,
-	; using the same short post-entry delay as Fly. Indoor maps are resolved
-	; through the Town Map name table only when that name already has one of
-	; this first-stage sign's 36 city/route labels.
-	call MapNameSignResolveInitialMap
-	jr nc, .initialNoPopup
-	inc a ; store map id + 1 so PALLET_TOWN ($00) is representable
-	ld [wMapNameSignInitialMap], a
-	ld a, MAP_NAME_SIGN_FLY_DELAY + 1
-	ld [wMapNameSignPending], a
-	ret
-.initialNoPopup
+	; New Game / Continue do not display an entry popup. Reset the
+	; pending entry armed by EnterMap; future real map transitions still arm
+	; the sign through EnterMap / CheckMapConnections as before.
 	xor a
-	ld [wMapNameSignInitialMap], a
+	ld [wMapNameSignTimer], a
+	ld [wMapNameSignInitialMap], a ; reserved for WRAM layout compatibility
 	ld [wMapNameSignPending], a
 	ret
 
@@ -66,7 +146,7 @@ UpdateCGBMapNameSign::
 	jp HideCGBMapNameSign
 
 .mapChanged
-	; Fly and the first New Game / Continue popup share the same short delay.
+	; Only real map transitions are pending, including Fly landing.
 	; Display time remains a full 120 frames once the sign is visible.
 	cp 1
 	jr z, .readyToDraw
@@ -74,19 +154,8 @@ UpdateCGBMapNameSign::
 	ld [wMapNameSignPending], a
 	ret
 .readyToDraw
-	; Startup may resolve a city/route or one of the five stage-2 physical
-	; landmarks. Normal transitions use the same physical resolver, while all
-	; other indoor maps remain neutral and preserve the previous landmark.
-	ld a, [wMapNameSignInitialMap]
-	and a
-	jr z, .resolveCurrentMap
-	dec a
-	ld b, a
-	xor a
-	ld [wMapNameSignInitialMap], a
-	jr .show
-
-.resolveCurrentMap
+	; Every popup now comes from a real map transition, not startup.
+	; Ordinary interiors stay neutral; physical floors still resolve normally.
 	call MapNameSignResolveRuntimeMap
 	jr nc, .notOutdoor
 	ld a, [wMapNameSignEffectiveMap]
@@ -270,69 +339,93 @@ MapNameSignResolveRuntimeMap:
 	ret
 
 MapNameSignSpecialMapTable:
-	; Stage 2 intentionally stops at five basic landmarks. Gate/entrance maps are
-	; omitted so they inherit the previous landmark just like RPP #214 transit maps.
+	; Neutral maps are intentionally excluded. Their current identity persists
+	; while playing; startup no longer requests an initial sign.
 	db VIRIDIAN_FOREST, MAP_NAME_SIGN_VIRIDIAN_FOREST
-	db MT_MOON_1F,      MAP_NAME_SIGN_MT_MOON
-	db MT_MOON_B1F,     MAP_NAME_SIGN_MT_MOON
-	db MT_MOON_B2F,     MAP_NAME_SIGN_MT_MOON
-	db ROCK_TUNNEL_1F,  MAP_NAME_SIGN_ROCK_TUNNEL
-	db ROCK_TUNNEL_B1F, MAP_NAME_SIGN_ROCK_TUNNEL
-	db DIGLETTS_CAVE,   MAP_NAME_SIGN_DIGLETTS_CAVE
-	db POWER_PLANT,     MAP_NAME_SIGN_POWER_PLANT
+	db DIGLETTS_CAVE, MAP_NAME_SIGN_DIGLETTS_CAVE
+	db POWER_PLANT, MAP_NAME_SIGN_POWER_PLANT
+	db SILPH_CO_1F, MAP_NAME_SIGN_SILPH_CO_1F
+	db SILPH_CO_2F, MAP_NAME_SIGN_SILPH_CO_2F
+	db SILPH_CO_3F, MAP_NAME_SIGN_SILPH_CO_3F
+	db SILPH_CO_4F, MAP_NAME_SIGN_SILPH_CO_4F
+	db SILPH_CO_5F, MAP_NAME_SIGN_SILPH_CO_5F
+	db SILPH_CO_6F, MAP_NAME_SIGN_SILPH_CO_6F
+	db SILPH_CO_7F, MAP_NAME_SIGN_SILPH_CO_7F
+	db SILPH_CO_8F, MAP_NAME_SIGN_SILPH_CO_8F
+	db SILPH_CO_9F, MAP_NAME_SIGN_SILPH_CO_9F
+	db SILPH_CO_10F, MAP_NAME_SIGN_SILPH_CO_10F
+	db SILPH_CO_11F, MAP_NAME_SIGN_SILPH_CO_11F
+	; RPP #218: map to the actual floor / area (not Town Map aliases).
+	db POKEMON_TOWER_1F, MAP_NAME_SIGN_POKEMON_TOWER_1F
+	db POKEMON_TOWER_2F, MAP_NAME_SIGN_POKEMON_TOWER_2F
+	db POKEMON_TOWER_3F, MAP_NAME_SIGN_POKEMON_TOWER_3F
+	db POKEMON_TOWER_4F, MAP_NAME_SIGN_POKEMON_TOWER_4F
+	db POKEMON_TOWER_5F, MAP_NAME_SIGN_POKEMON_TOWER_5F
+	db POKEMON_TOWER_6F, MAP_NAME_SIGN_POKEMON_TOWER_6F
+	db POKEMON_TOWER_7F, MAP_NAME_SIGN_POKEMON_TOWER_7F
+	db POKEMON_MANSION_1F, MAP_NAME_SIGN_POKEMON_MANSION_1F
+	db POKEMON_MANSION_2F, MAP_NAME_SIGN_POKEMON_MANSION_2F
+	db POKEMON_MANSION_3F, MAP_NAME_SIGN_POKEMON_MANSION_3F
+	db POKEMON_MANSION_B1F, MAP_NAME_SIGN_POKEMON_MANSION_B1F
+	db ROCKET_HIDEOUT_B1F, MAP_NAME_SIGN_ROCKET_HIDEOUT_B1F
+	db ROCKET_HIDEOUT_B2F, MAP_NAME_SIGN_ROCKET_HIDEOUT_B2F
+	db ROCKET_HIDEOUT_B3F, MAP_NAME_SIGN_ROCKET_HIDEOUT_B3F
+	db ROCKET_HIDEOUT_B4F, MAP_NAME_SIGN_ROCKET_HIDEOUT_B4F
+	db GAME_CORNER, MAP_NAME_SIGN_GAME_CORNER
+	; RPP #220: map to the actual floor / area (not Town Map aliases).
+	db SAFARI_ZONE_CENTER, MAP_NAME_SIGN_SAFARI_ZONE_CENTER
+	db SAFARI_ZONE_EAST, MAP_NAME_SIGN_SAFARI_ZONE_EAST
+	db SAFARI_ZONE_NORTH, MAP_NAME_SIGN_SAFARI_ZONE_NORTH
+	db SAFARI_ZONE_WEST, MAP_NAME_SIGN_SAFARI_ZONE_WEST
+	db MT_MOON_1F, MAP_NAME_SIGN_MT_MOON_1F
+	db MT_MOON_B1F, MAP_NAME_SIGN_MT_MOON_B1F
+	db MT_MOON_B2F, MAP_NAME_SIGN_MT_MOON_B2F
+	db ROCK_TUNNEL_1F, MAP_NAME_SIGN_ROCK_TUNNEL_1F
+	db ROCK_TUNNEL_B1F, MAP_NAME_SIGN_ROCK_TUNNEL_B1F
+	db VICTORY_ROAD_1F, MAP_NAME_SIGN_VICTORY_ROAD_1F
+	db VICTORY_ROAD_2F, MAP_NAME_SIGN_VICTORY_ROAD_2F
+	db VICTORY_ROAD_3F, MAP_NAME_SIGN_VICTORY_ROAD_3F
+	db CERULEAN_CAVE_1F, MAP_NAME_SIGN_CERULEAN_CAVE_1F
+	db CERULEAN_CAVE_2F, MAP_NAME_SIGN_CERULEAN_CAVE_2F
+	db CERULEAN_CAVE_B1F, MAP_NAME_SIGN_CERULEAN_CAVE_B1F
+	db SEAFOAM_ISLANDS_1F, MAP_NAME_SIGN_SEAFOAM_ISLANDS_1F
+	db SEAFOAM_ISLANDS_B1F, MAP_NAME_SIGN_SEAFOAM_ISLANDS_B1F
+	db SEAFOAM_ISLANDS_B2F, MAP_NAME_SIGN_SEAFOAM_ISLANDS_B2F
+	db SEAFOAM_ISLANDS_B3F, MAP_NAME_SIGN_SEAFOAM_ISLANDS_B3F
+	db SEAFOAM_ISLANDS_B4F, MAP_NAME_SIGN_SEAFOAM_ISLANDS_B4F
+	; RPP #222: map to the actual floor / area (not Town Map aliases).
+	db CELADON_MART_1F, MAP_NAME_SIGN_CELADON_MART_1F
+	db CELADON_MART_2F, MAP_NAME_SIGN_CELADON_MART_2F
+	db CELADON_MART_3F, MAP_NAME_SIGN_CELADON_MART_3F
+	db CELADON_MART_4F, MAP_NAME_SIGN_CELADON_MART_4F
+	db CELADON_MART_5F, MAP_NAME_SIGN_CELADON_MART_5F
+	db CELADON_MART_ROOF, MAP_NAME_SIGN_CELADON_MART_ROOF
+	db CELADON_MANSION_1F, MAP_NAME_SIGN_CELADON_MANSION_1F
+	db CELADON_MANSION_2F, MAP_NAME_SIGN_CELADON_MANSION_2F
+	db CELADON_MANSION_3F, MAP_NAME_SIGN_CELADON_MANSION_3F
+	db CELADON_MANSION_ROOF, MAP_NAME_SIGN_CELADON_MANSION_ROOF
+	db MUSEUM_1F, MAP_NAME_SIGN_MUSEUM_1F
+	db MUSEUM_2F, MAP_NAME_SIGN_MUSEUM_2F
+	; RPP #225: map to the actual floor / area (not Town Map aliases).
+	db SS_ANNE_1F, MAP_NAME_SIGN_SS_ANNE_1F
+	db SS_ANNE_2F, MAP_NAME_SIGN_SS_ANNE_2F
+	db SS_ANNE_3F, MAP_NAME_SIGN_SS_ANNE_3F
+	db SS_ANNE_B1F, MAP_NAME_SIGN_SS_ANNE_B1F
+	db SS_ANNE_BOW, MAP_NAME_SIGN_SS_ANNE_BOW
+	db SS_ANNE_KITCHEN, MAP_NAME_SIGN_SS_ANNE_KITCHEN
+	db SS_ANNE_CAPTAINS_ROOM, MAP_NAME_SIGN_SS_ANNE_CAPTAINS_ROOM
+	; Cabins/roof room share the corresponding real deck or rooftop identity.
+	db CELADON_MANSION_ROOF_HOUSE, MAP_NAME_SIGN_CELADON_MANSION_ROOF
+	db SS_ANNE_1F_ROOMS, MAP_NAME_SIGN_SS_ANNE_1F
+	db SS_ANNE_2F_ROOMS, MAP_NAME_SIGN_SS_ANNE_2F
+	db SS_ANNE_B1F_ROOMS, MAP_NAME_SIGN_SS_ANNE_B1F
 	db $ff
-
-; Resolve the first map after New Game / Continue to a currently supported label.
-; Stage-2 physical landmarks resolve directly; other indoor maps reuse the existing
-; Town Map name only when it exactly matches one of the original 36 city/route labels.
-; Returns carry set with A = supported effective identity; carry clear otherwise.
-MapNameSignResolveInitialMap:
-	; Prefer the physical resolver so Continue inside one of the five supported
-	; landmarks identifies the landmark itself rather than a Town Map alias.
-	call MapNameSignResolveRuntimeMap
-	jr nc, .indoor
-	ld a, b
-	scf
-	ret
-.indoor
-	ld a, [wCurMap]
-	cp FIRST_INDOOR_MAP
-	jr c, .unsupported
-	ld de, wTownMapCoords
-	farcall LoadTownMapEntry
-	ld d, h
-	ld e, l
-	ld hl, MapNameSignTownMapNamePointers
-	ld c, 0
-.compareLoop
-	ld a, [hli]
-	cp e
-	jr nz, .nextPointer
-	ld a, [hl]
-	cp d
-	jr z, .foundPointer
-.nextPointer
-	inc hl
-	inc c
-	ld a, c
-	cp 36
-	jr c, .compareLoop
-.unsupported
-	and a ; clear carry
-	ret
-.foundPointer
-	ld a, c
-	cp NUM_CITY_MAPS
-	jr c, .foundMap
-	inc a ; skip unused raw map $0b before Route 1
-.foundMap
-	scf
-	ret
-
 ; Render the current effective label into DE in VRAM bank 1.
 MapNameSignCopyCurrentLabelToVRAM:
 	push de
 	ld a, [wMapNameSignEffectiveMap]
+	cp MAP_NAME_SIGN_SILPH_CO_1F
+	jr nc, .externalIndex
 	cp MAP_NAME_SIGN_SPECIAL_BASE
 	jr nc, .specialIndex
 	cp FIRST_ROUTE_MAP
@@ -354,6 +447,19 @@ MapNameSignCopyCurrentLabelToVRAM:
 	pop de
 	ld bc, 18 * 2 * 8
 	jp MapNameSignCopy1bppAsOpaque2bpp
+.externalIndex
+	; Execute the decoder inside the source bank: never switch away from
+	; bank $3D while executing the $3D decoder. Bankswitch restores the bank.
+	pop de
+	cp MAP_NAME_SIGN_CELADON_MART_1F
+	jr nc, .externalB
+	ld b, BANK(MapNameSignCopyExtendedBank2E)
+	ld hl, MapNameSignCopyExtendedBank2E
+	jp Bankswitch
+.externalB
+	ld b, BANK(MapNameSignCopyExtendedBank2F)
+	ld hl, MapNameSignCopyExtendedBank2F
+	jp Bankswitch
 
 ; Keep the visible frame while changing landmarks. The inactive label buffer is
 ; safe to rewrite during visible scanlines; only the 36 tile IDs are swapped in
@@ -433,44 +539,6 @@ MapNameSignWaitFreshVBlank:
 	cp 144
 	jr c, .waitNextVBlank
 	ret
-
-MapNameSignTownMapNamePointers:
-	dw PalletTownName
-	dw ViridianCityName
-	dw PewterCityName
-	dw CeruleanCityName
-	dw LavenderTownName
-	dw VermilionCityName
-	dw CeladonCityName
-	dw FuchsiaCityName
-	dw CinnabarIslandName
-	dw IndigoPlateauName
-	dw SaffronCityName
-	dw Route1Name
-	dw Route2Name
-	dw Route3Name
-	dw Route4Name
-	dw Route5Name
-	dw Route6Name
-	dw Route7Name
-	dw Route8Name
-	dw Route9Name
-	dw Route10Name
-	dw Route11Name
-	dw Route12Name
-	dw Route13Name
-	dw Route14Name
-	dw Route15Name
-	dw Route16Name
-	dw Route17Name
-	dw Route18Name
-	dw Route19Name
-	dw Route20Name
-	dw Route21Name
-	dw Route22Name
-	dw Route23Name
-	dw Route24Name
-	dw Route25Name
 
 HideCGBMapNameSign::
 	; Called explicitly before dialogue/START overwrites Window BG $9c00.
@@ -605,12 +673,12 @@ MapNameSignFrame1bpp:
 MapNameSignFrameEnd:
 	ASSERT MapNameSignFrameEnd - MapNameSignFrame1bpp == 9 * 8
 MapNameSignLabelPointers:
-	FOR i, MAP_NAME_SIGN_BASE_LABELS + MAP_NAME_SIGN_SPECIAL_LABELS
+	FOR i, MAP_NAME_SIGN_LOCAL_LABELS
 		dw MapNameSignLabelData + i * (18 * 2 * 8)
 	ENDR
 MapNameSignLabelData:
 	; Index 0..10: towns; 11..35: Routes 1..25.
-	; Index 36..40: 常青森林, 月见山, 岩山隧道, 地鼠洞穴, 无人发电厂.
+	; Index 36..40: five basic landmarks. All floor/area signs are banked.
 	INCBIN "gfx/map_name_sign/labels.1bpp"
 MapNameSignLabelDataEnd:
-	ASSERT MapNameSignLabelDataEnd - MapNameSignLabelData == (MAP_NAME_SIGN_BASE_LABELS + MAP_NAME_SIGN_SPECIAL_LABELS) * 18 * 2 * 8
+	ASSERT MapNameSignLabelDataEnd - MapNameSignLabelData == MAP_NAME_SIGN_LOCAL_LABELS * 18 * 2 * 8

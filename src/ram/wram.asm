@@ -880,7 +880,7 @@ wMapNameSignTimer:: db
 wMapNameSignAttrsActive:: db
 wMapNameSignPending:: db
 wMapNameSignLabelBuffer:: db ; 0=$90-$b3, 1=$b4-$d7
-wMapNameSignInitialMap:: db   ; supported map id + 1; 0 = no startup popup
+wMapNameSignInitialMap:: db   ; reserved byte; no startup popup (keep WRAM addresses)
 
 ; This has overlapping related uses.
 ; When the player tries to use an item or use certain field moves, 0 is stored

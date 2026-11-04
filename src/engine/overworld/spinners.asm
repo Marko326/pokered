@@ -1,4 +1,11 @@
 LoadSpinnerArrowTiles::
+	; RPP #221 / Yellow Legacy: movement is 16 one-pixel steps at 60 FPS.
+	; Refresh facing and spinner graphics only every other step so each tile keeps
+	; eight visual rotations instead of spinning twice as fast.
+	ld a, [wWalkCounter]
+	bit 0, a
+	ret nz
+
 	ld a, [wSpritePlayerStateData1ImageIndex]
 	srl a
 	srl a
@@ -38,7 +45,7 @@ LoadSpinnerArrowTiles::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call CopyVideoData
+	call CopySpinnerTile
 	pop bc
 	ld a, $6
 	add c
@@ -47,6 +54,59 @@ LoadSpinnerArrowTiles::
 	pop af
 	dec a
 	jr nz, .loop
+	; The Overworld loop already waits once for every one-pixel step.
+	; Do not add eight more frame waits during the eight arrow refreshes.
+	ret
+
+CopySpinnerTile:
+	; All #221 spinner frames come from SpinnerArrowAnimTiles in this same ROM
+	; bank. Copy one 2bpp tile directly during safe LCD modes. Mainline-only:
+	; IME must be enabled on entry, since this routine restores it with ei.
+	; The Overworld loop owns frame pacing. Preserve the CGB VRAM bank.
+	di
+	ldh a, [rVBK]
+	push af
+	xor a
+	ldh [rVBK], a
+
+	; Save the VRAM destination and real stack pointer. hSPTemp is the engine's
+	; existing VBlank scratch pair; interrupts remain disabled while it is used.
+	ld b, h
+	ld c, l
+	ld hl, sp + 0
+	ld a, h
+	ldh [hSPTemp], a
+	ld a, l
+	ldh [hSPTemp + 1], a
+
+	; Use the stack as the fast 16-byte ROM source, matching RPP #221.
+	ld h, d
+	ld l, e
+	ld sp, hl
+	ld h, b
+	ld l, c
+	ld c, 8
+.loop
+	pop de
+.waitVRAM
+	ldh a, [rSTAT]
+	and %10
+	jr nz, .waitVRAM
+	ld [hl], e
+	inc l
+	ld [hl], d
+	inc l
+	dec c
+	jr nz, .loop
+
+	ldh a, [hSPTemp]
+	ld h, a
+	ldh a, [hSPTemp + 1]
+	ld l, a
+	ld sp, hl
+	pop af
+	ldh [rVBK], a
+	ei
 	ret
 
 INCLUDE "data/tilesets/spinner_tiles.asm"

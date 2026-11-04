@@ -589,3 +589,10 @@ INCLUDE "engine/battle/damage_hp_animation.asm"
 ; ROM-1.30 CGB map-name sign: isolated from DMG, DFS and Bank 0.
 SECTION "CGB Map Name Sign", ROMX, BANK[$3D]
 INCLUDE "engine/overworld/cgb_map_name_sign.asm"
+
+; Roomy, isolated ROMX banks for RPP #217-#225 CGB floor/area sign tiles.
+; Keep decoder beside its image source so bankswitch does not unmap code.
+SECTION "CGB Map Sign Extended 2E", ROMX, BANK[$2E]
+INCLUDE "engine/overworld/cgb_map_name_sign_bank_2e.asm"
+SECTION "CGB Map Sign Extended 2F", ROMX, BANK[$2F]
+INCLUDE "engine/overworld/cgb_map_name_sign_bank_2f.asm"
