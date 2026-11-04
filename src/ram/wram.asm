@@ -928,10 +928,20 @@ NEXTU
 wTileMapBackup2:: ds SCREEN_WIDTH * SCREEN_HEIGHT
 ENDU
 
-; This union spans 30 bytes.
+; This union spans 30 bytes; every alias below keeps the same WRAM addresses.
 UNION
-; Temporary storage area
-wBuffer:: ds 30
+; Temporary storage area (30 bytes unchanged).
+wBuffer:: ds 28
+; Fly-only direction/axis fields live at offsets 28/29.
+wFlyDirectionInput:: db
+wFlyLocationsAxis:: db
+
+NEXTU
+; Fly special selector list and both sentinels occupy offsets 1..15.
+; Offset 0 is wTownMapCoords (also written by FarCopyData) and must NEVER
+; contain a live selector or sentinel while the Town Map is drawing.
+ ds 1
+wSpecialFlyLocationsList:: ds 15
 
 NEXTU
 wEvoOldSpecies:: db
@@ -2064,7 +2074,11 @@ wSeafoamIslandsB3FCurScript:: db
 wRoute23CurScript:: db
 wSeafoamIslandsB4FCurScript:: db
 wRoute18Gate1FCurScript:: db
-	ds 78
+	; FLY-1.32: existing, saved game-progress padding, unchanged addresses/size.
+	; Magic distinguishes legacy saves; flags are initialized on first map load.
+	ds 74
+wSpecialFlyMagic:: ds 2
+wSpecialFlyVisitedFlag:: ds 2
 wGameProgressFlagsEnd::
 
 	ds 56

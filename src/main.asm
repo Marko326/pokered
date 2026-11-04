@@ -587,6 +587,10 @@ SECTION "Battle Damage HP Animation", ROMX
 INCLUDE "engine/battle/damage_hp_animation.asm"
 
 ; ROM-1.30 CGB map-name sign: isolated from DMG, DFS and Bank 0.
+; CHS Fly-only data/logic in a roomy automatic ROMX bank; keep ROM0/Bank $1C lean.
+SECTION "Special Fly Locations", ROMX
+INCLUDE "engine/items/special_fly_locations.asm"
+
 SECTION "CGB Map Name Sign", ROMX, BANK[$3D]
 INCLUDE "engine/overworld/cgb_map_name_sign.asm"
 

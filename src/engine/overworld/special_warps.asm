@@ -25,6 +25,19 @@ SpecialWarpIn::
 	bit 4, [hl] ; dungeon warp?
 	ret nz
 ; if not dungeon warp
+	; Direct Fly may enter interiors without passing through the exterior
+	; gate that normally establishes LAST_MAP.  Keep the historical RPP
+	; anti-loop fixes: the forest south gate must exit to Route 2, while
+	; Celadon Mart 1F must return to Celadon City after flying to its roof.
+	cp VIRIDIAN_FOREST
+	jr nz, .notForest
+	ld a, ROUTE_2
+	jr .storeLastMap
+.notForest
+	cp CELADON_MART_ROOF
+	jr nz, .storeLastMap
+	ld a, CELADON_CITY
+.storeLastMap
 	ld [wLastMap], a
 	ret
 
@@ -113,6 +126,16 @@ LoadSpecialWarpData:
 .otherDestination
 	ld a, [wDestinationMap]
 .usedFlyWarp
+	; Special selector IDs need a real map and a six-byte Fly landing record.
+	; Banked lookup leaves the original city/blackout route unchanged on miss.
+	push af
+	ld d, a
+	farcall TryLoadSpecialFlyWarpData
+	jr nc, .normalFlyWarp
+	pop af
+	jp .finishFlyWarp
+.normalFlyWarp
+	pop af
 	ld b, a
 	ld [wCurMap], a
 	ld hl, FlyWarpDataPtr
@@ -137,6 +160,7 @@ LoadSpecialWarpData:
 	inc de
 	dec c
 	jr nz, .copyWarpDataLoop2
+.finishFlyWarp
 	xor a ; OVERWORLD
 	ld [wCurMapTileset], a
 .done

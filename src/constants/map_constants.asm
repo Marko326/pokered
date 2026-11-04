@@ -269,6 +269,13 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const AGATHAS_ROOM,                   5,  6 ; $F7
 DEF NUM_MAPS EQU const_value
 
+; UI-only virtual Fly selector, deliberately outside every real map ID.
+; Never resolve it through normal map headers: the special Fly table must
+; translate it to the real Route 20 landing before loading map data.
+DEF SPECIAL_FLY_SEAFOAM_WEST_SELECTOR EQU $fd
+ASSERT SPECIAL_FLY_SEAFOAM_WEST_SELECTOR >= NUM_MAPS
+ASSERT SPECIAL_FLY_SEAFOAM_WEST_SELECTOR < $fe ; $fe/$ff are Fly list markers
+
 ; Indoor maps, such as houses, use this as the Map ID in their exit warps
 ; This map ID takes the player back to the last outdoor map they were on, stored in wLastMap
 DEF LAST_MAP EQU -1

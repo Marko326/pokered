@@ -301,6 +301,9 @@ LoadTownMap_Fly::
 	lb bc, BANK(TownMapUpArrow), (TownMapUpArrowEnd - TownMapUpArrow) / $8
 	call CopyVideoDataDouble
 	call BuildFlyLocationsList
+	xor a
+	ld [wFlyLocationsAxis], a
+	farcall BuildSpecialFlyLocationsList
 	ld hl, wUpdateSpritesEnabled
 	ld a, [hl]
 	push af
@@ -313,14 +316,14 @@ LoadTownMap_Fly::
 	ld b, $0
 	call DrawPlayerOrBirdSprite
 	ld hl, wFlyLocationsList
-	decoord 10, 0 ;decoord 18, 0
+	decoord 19, 0 ;decoord 18, 0
 .townMapFlyLoop
 	ld a, CHARVAL(" ")
 	ld [de], a
 	push hl
 	push hl
 	hlcoord 4, 0 ;hlcoord 3, 0
-	lb bc, 2, 6 ;lb bc, 1, 15
+	lb bc, 2, 15 ; clear full location name field through x=18
 	call ClearScreenArea
 	pop hl
 	ld a, [hl]
@@ -331,9 +334,9 @@ LoadTownMap_Fly::
 	call PlaceString
 	ld c, 15
 	call DelayFrames
-	hlcoord 10, 0 ;hlcoord 18, 0
+	hlcoord 19, 0 ;hlcoord 18, 0
 	ld [hl], CHARVAL("▲")
-	hlcoord 10, 1 ;hlcoord 19, 0
+	hlcoord 19, 1 ;hlcoord 19, 0
 	ld [hl], CHARVAL("▼")
 	pop hl
 .inputLoop
@@ -343,7 +346,7 @@ LoadTownMap_Fly::
 	ldh a, [hJoy5]
 	ld b, a
 	pop hl
-	and A_BUTTON | B_BUTTON | D_UP | D_DOWN
+	and A_BUTTON | B_BUTTON | D_LEFT | D_RIGHT | D_UP | D_DOWN
 	jr nz, .normalFlyInput
 	ldh a, [hJoyPressed]
 	and START | SELECT
@@ -354,10 +357,14 @@ LoadTownMap_Fly::
 	jr nz, .pressedA
 	ld a, SFX_TINK
 	call PlaySound
+	bit 4, b
+	jp nz, .pressedHorizontal
+	bit 5, b
+	jp nz, .pressedHorizontal
 	bit 6, b
-	jr nz, .pressedUp
+	jp nz, .pressedUp
 	bit 7, b
-	jr nz, .pressedDown
+	jp nz, .pressedDown
 	jr .pressedB
 .pressedA
 	ld a, SFX_HEAL_AILMENT
@@ -376,8 +383,37 @@ LoadTownMap_Fly::
 	pop af
 	ld [hl], a
 	ret
+.pressedHorizontal
+	; Current cursor is passed in DE; bank switching consumes HL and BC.
+	ld d, h
+	ld e, l
+	ld a, b
+	ld [wFlyDirectionInput], a
+	push hl
+	farcall MoveSpecialFlyCursor
+	pop hl ; return to old cursor if no specials are unlocked
+	ld a, d
+	or e
+	jp z, .inputLoop ; no unlocked special location: keep city cursor
+	ld h, d
+	ld l, e
+	decoord 19, 0 ; redraw always expects a tilemap pointer in DE
+	jp .townMapFlyLoop
 .pressedUp
-	decoord 10, 0 ;decoord 18, 0
+	ld a, [wFlyLocationsAxis]
+	and a
+	jr z, .cityUp
+	ld d, h
+	ld e, l
+	ld a, b
+	ld [wFlyDirectionInput], a
+	farcall FlySpecialToCityCursor
+	ld h, d
+	ld l, e
+	decoord 19, 0
+	jp .townMapFlyLoop
+.cityUp
+	decoord 19, 0 ;decoord 18, 0
 	inc hl
 	ld a, [hl]
 	cp $ff
@@ -391,7 +427,20 @@ LoadTownMap_Fly::
 	ld hl, wFlyLocationsList
 	jp .townMapFlyLoop
 .pressedDown
-	decoord 10, 1 ;decoord 19, 0
+	ld a, [wFlyLocationsAxis]
+	and a
+	jr z, .cityDown
+	ld d, h
+	ld e, l
+	ld a, b
+	ld [wFlyDirectionInput], a
+	farcall FlySpecialToCityCursor
+	ld h, d
+	ld l, e
+	decoord 19, 1
+	jp .townMapFlyLoop
+.cityDown
+	decoord 19, 1 ;decoord 19, 0
 	dec hl
 	ld a, [hl]
 	cp $ff
@@ -443,7 +492,10 @@ LoadTownMap_Fly::
 	jp nz, .inputLoop
 	ld hl, wFlyLocationsList + NUM_CITY_MAPS
 .shortcutFound
-	decoord 10, 0
+	; START/SELECT keep the ROM-1.31 city/recovery list semantics.
+	xor a
+	ld [wFlyLocationsAxis], a
+	decoord 19, 0
 	jp .townMapFlyLoop ; update cursor only; A still confirms Fly
 
 ToText:
@@ -767,6 +819,15 @@ ZeroOutDuplicatesInList:
 LoadTownMapEntry:
 ; in: a = map number
 ; out: lower nybble of [de] = x, upper nybble of [de] = y, hl = address of name
+	; Alias-only Fly selectors must never go through the upper-bound lookup.
+	cp DIGLETTS_CAVE_ROUTE_2
+	jp z, .diglettRoute2
+	cp DIGLETTS_CAVE_ROUTE_11
+	jp z, .diglettRoute11
+	cp CELADON_MART_ROOF
+	jp z, .martRoof
+	cp SPECIAL_FLY_SEAFOAM_WEST_SELECTOR
+	jp z, .seafoamWest
 	cp FIRST_INDOOR_MAP
 	jr c, .external
 	ld bc, 4
@@ -793,6 +854,29 @@ LoadTownMapEntry:
 	ld h, [hl]
 	ld l, a
 	ret
+.diglettRoute2
+	ld a, $43 ; x=3, y=4 on the regular Town Map
+	ld hl, DiglettsCaveName
+	jr .specialEntry
+.diglettRoute11
+	ld a, $9c ; x=12, y=9
+	ld hl, DiglettsCaveName
+	jr .specialEntry
+.martRoof
+	ld a, $57 ; x=7, y=5
+	ld hl, CeladonMartRoofName
+	jr .specialEntry
+.seafoamWest
+	ld a, $f4 ; x=4, y=15, opposite side of Seafoam
+	ld hl, SeafoamIslandsName
+.specialEntry
+	ld [de], a
+	ret
+
+CeladonMartRoofName:
+	; 百货屋顶: four Chinese glyphs, six tiles, within SAVE/Continue's 8-tile cap.
+	; Explicit DFS glyph bytes also work in builds without RGBDS_WCHAR.
+	db $04, $FB, $09, $B7, $11, $89, $07, $40, CHARVAL("@")
 
 ; SAVE / Continue: show only the map name, no "current location" label.
 ; In: DE = first interior tile of the existing 13-column information box.

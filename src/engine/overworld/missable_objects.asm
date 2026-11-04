@@ -7,6 +7,9 @@ MarkTownVisitedAndLoadMissableObjects::
 	ld hl, wTownVisitedFlag   ; mark town as visited (for flying)
 	predef FlagActionPredef
 .notInTown
+	; Landmark Fly flags are stored in preexisting saved padding; do not alter
+	; city visit flags or SRAM boundaries. Called for each real map load.
+	farcall MarkSpecialFlyLocationVisited
 	ld hl, MapHSPointers
 	ld a, [wCurMap]
 	ld b, $0
