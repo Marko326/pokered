@@ -10,6 +10,7 @@ EnterMap::
 	ld [wJoyIgnore], a
 	call LoadMapData
 	farcall ClearVariablesOnEnterMap
+	farcall UpdateSeafoamEntranceSource
 	; The location sign is armed by map entry, never by ordinary footsteps.
 	ldh a, [hCGB]
 	and a

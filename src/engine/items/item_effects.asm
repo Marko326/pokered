@@ -3017,19 +3017,31 @@ FindWildLocationsOfMon:
 	ret
 
 CheckMapForMon:
+	; A single map may contain a species in many encounter slots. Record
+	; the map at most once so wBuffer cannot overflow before the Town Map
+	; logic splits Route 20 into two logical water regions.
 	inc hl
 	ld b, NUM_WILDMONS
 .loop
 	ld a, [wd11e]
 	cp [hl]
-	jr nz, .nextEntry
-	ld a, c
-	ld [de], a
-	inc de
-.nextEntry
+	jr z, .found
 	inc hl
 	inc hl
 	dec b
 	jr nz, .loop
+	dec hl
+	ret
+.found
+	ld a, c
+	ld [de], a
+	inc de
+	; Keep HL on the water encounter-rate byte, as in the original
+	; full scan, so the caller can still inspect the second encounter list.
+.skipRemaining
+	inc hl
+	inc hl
+	dec b
+	jr nz, .skipRemaining
 	dec hl
 	ret

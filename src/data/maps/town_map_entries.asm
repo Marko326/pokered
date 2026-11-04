@@ -37,7 +37,7 @@ ExternalMapEntries:
 	external_map  5,  5, Route16Name
 	external_map  4,  8, Route17Name
 	external_map  6, 13, Route18Name
-	external_map  6, 15, Route19Name
+	external_map  8, 14, Route19Name
 	external_map  4, 15, Route20Name
 	external_map  2, 13, Route21Name
 	external_map  0,  8, Route22Name
@@ -59,7 +59,7 @@ InternalMapEntries:
 	internal_map OAKS_LAB,                       2, 11, PalletTownName
 	internal_map VIRIDIAN_GYM,                   2,  8, ViridianCityName
 	internal_map VIRIDIAN_FOREST_SOUTH_GATE,     2,  6, Route2Name
-	internal_map VIRIDIAN_FOREST,                2,  4, ViridianForestName
+	internal_map VIRIDIAN_FOREST,                2,  5, ViridianForestName
 	internal_map PEWTER_POKECENTER,              2,  3, PewterCityName
 	internal_map MT_MOON_B2F,                    6,  2, MountMoonName
 	internal_map CERULEAN_MART,                 10,  2, CeruleanCityName

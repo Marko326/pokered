@@ -85,6 +85,9 @@ SpecialFlyVisitedMaps:
 	db MT_MOON_1F, 2
 	db CERULEAN_CAVE_1F, 3
 	db BILLS_HOUSE, 4
+	; Healing-house entry unlocks the existing Rock Tunnel/Route 10 special Fly.
+	; One selector and one saved bit: no duplicate icon or overlapping destination.
+	db ROCK_TUNNEL_POKECENTER, 5
 	db ROCK_TUNNEL_1F, 5
 	db CELADON_MART_ROOF, 6
 	db DIGLETTS_CAVE_ROUTE_11, 7
@@ -155,44 +158,55 @@ MoveSpecialFlyCursor::
 	ld c, 8
 	jp .fromCityAnchor
 .rockHeal
-	ld c, 19
+	ld c, 21
 .fromCityAnchor
-	ld a, [wFlyDirectionInput]
-	bit BIT_D_RIGHT, a
-	jp nz, .rightFromCity
-	ld hl, SpecialFlyAnchorPositions + NUM_SPECIAL_FLY_LOCATIONS - 1
-	ld de, wSpecialFlyLocationsList + NUM_SPECIAL_FLY_LOCATIONS
-	ld b, NUM_SPECIAL_FLY_LOCATIONS
-.leftFromCity
-	ld a, [hld]
-	cp c
-	jp z, .leftCandidate ; same-anchor special sites remain directly selectable
-	jp nc, .skipLeft
-.leftCandidate
-	ld a, [de]
-	cp $fe
-	jp nz, .found
-.skipLeft
-	dec de
-	dec b
-	jp nz, .leftFromCity
-	jp .lastUnlocked
-.rightFromCity
+	; SpecialFlyEntries uses the preferred browsing order, not sorted
+	; geographic anchors (Power Plant 23 precedes Route 11 Diglett Cave 19).
+	; Examine every unlocked special to find the closest eligible anchor
+	; in the requested direction, independent of its position in the list.
+	; Keep the best list pointer on the stack; no extra WRAM is needed.
+	ld de, 0
+	push de ; best pointer = 0; balanced on all scan exits
 	ld hl, SpecialFlyAnchorPositions
 	ld de, wSpecialFlyLocationsList + 1
-	ld b, NUM_SPECIAL_FLY_LOCATIONS
-.rightCheck
-	ld a, [hli]
-	cp c
-	jp c, .skipRight ; allow a special site at the city's own anchor
+	ld b, $ff ; best distance (all actual distances are below $ff)
+.scanCityCandidates
 	ld a, [de]
+	cp $ff
+	jr z, .cityScanDone
 	cp $fe
-	jp nz, .found
-.skipRight
+	jr z, .nextCityCandidate ; locked special
+	ld a, [wFlyDirectionInput]
+	bit BIT_D_RIGHT, a
+	jr z, .cityLeftDistance
+	ld a, [hl]
+	sub c ; special anchor - current city anchor
+	jr c, .nextCityCandidate
+	jr .compareCityDistance
+.cityLeftDistance
+	ld a, c
+	sub [hl] ; current city anchor - special anchor
+	jr c, .nextCityCandidate
+.compareCityDistance
+	cp b
+	jr nc, .nextCityCandidate ; on equal distance keep first table item
+	ld b, a
+	pop af ; discard old best pointer
+	push de ; store this unlocked candidate list pointer
+.nextCityCandidate
+	inc hl
 	inc de
-	dec b
-	jp nz, .rightCheck
-	jp .firstUnlocked
+	jr .scanCityCandidates
+.cityScanDone
+	pop de ; restore selected pointer, balancing the local stack
+	ld a, d
+	or e
+	jp nz, .found
+	; No candidate on this side: preserve existing first/last wrap rules.
+	ld a, [wFlyDirectionInput]
+	bit BIT_D_RIGHT, a
+	jp nz, .firstUnlocked
+	jp .lastUnlocked
 .fromSpecial
 	ld a, [wFlyDirectionInput]
 	bit BIT_D_RIGHT, a
@@ -352,42 +366,54 @@ FlySpecialToCityCursor::
 	and a
 	ret
 
+; Geographic positions use the RPP TownMapOrder after adapting its map IDs
+; to CHS and omitting Mt. Moon Square (which does not exist in this ROM).
 FlyCityAnchorPositions:
-	db 0, 2, 6, 10, 21, 16, 25, 35, 40, 45, 26
+	; PALLET, VIRIDIAN, PEWTER, CERULEAN, LAVENDER, VERMILION,
+	; CELADON, FUCHSIA, CINNABAR, INDIGO, SAFFRON.
+	db 0, 2, 6, 11, 24, 17, 28, 39, 46, 51, 30
+FlyCityAnchorPositionsEnd:
+ASSERT FlyCityAnchorPositionsEnd - FlyCityAnchorPositions == NUM_CITY_MAPS
 FlySortedCityAnchors:
 	db  0, PALLET_TOWN
 	db  2, VIRIDIAN_CITY
 	db  6, PEWTER_CITY
-	db 10, CERULEAN_CITY
-	db 16, VERMILION_CITY
-	db 21, LAVENDER_TOWN
-	db 25, CELADON_CITY
-	db 26, SAFFRON_CITY
-	db 35, FUCHSIA_CITY
-	db 40, CINNABAR_ISLAND
-	db 45, INDIGO_PLATEAU
+	db 11, CERULEAN_CITY
+	db 17, VERMILION_CITY
+	db 24, LAVENDER_TOWN
+	db 28, CELADON_CITY
+	db 30, SAFFRON_CITY
+	db 39, FUCHSIA_CITY
+	db 46, CINNABAR_ISLAND
+	db 51, INDIGO_PLATEAU
+FlySortedCityAnchorsEnd:
+ASSERT FlySortedCityAnchorsEnd - FlySortedCityAnchors == NUM_CITY_MAPS * 2
 
 SpecialFlyAnchorPositions:
-	db 4, 5, 8, 10, 13, 19, 25, 27, 36, 38, 38, 44, 46
+	db 4, 5, 8, 10, 14, 21, 23, 19, 29, 40, 43, 44, 50
+SpecialFlyAnchorPositionsEnd:
+ASSERT SpecialFlyAnchorPositionsEnd - SpecialFlyAnchorPositions == NUM_SPECIAL_FLY_LOCATIONS
 
 MACRO special_fly_entry
 	db \1, \2, \3 / 8, 1 << (\3 % 8)
 ENDM
 SpecialFlyEntries:
-	; selector, geographic TownMapOrder index, saved bit index
+	; selector, geographic TownMapOrder index, saved bit index.
+	; Keep each saved bit attached to its destination. Special-axis browsing
+	; follows the city-axis sweep, which differs from geographic TownMapOrder.
 	special_fly_entry VIRIDIAN_FOREST,         4,  0
 	special_fly_entry DIGLETTS_CAVE_ROUTE_2,   5,  1
 	special_fly_entry MT_MOON_1F,             8,  2
-	special_fly_entry CERULEAN_CAVE_1F,       10,  3
-	special_fly_entry BILLS_HOUSE,            13,  4
-	special_fly_entry ROCK_TUNNEL_1F,        19,  5
-	special_fly_entry CELADON_MART_ROOF,      25,  6
-	special_fly_entry DIGLETTS_CAVE_ROUTE_11, 27,  7
-	special_fly_entry SAFARI_ZONE_GATE,       36,  8
-	special_fly_entry SPECIAL_FLY_SEAFOAM_WEST_SELECTOR,          38,  9 ; virtual west Seafoam entry
-	special_fly_entry SEAFOAM_ISLANDS_1F,     38, 10 ; east Seafoam
-	special_fly_entry VICTORY_ROAD_1F,        44, 11
-	special_fly_entry POWER_PLANT,            46, 12
+	special_fly_entry CERULEAN_CAVE_1F,       10, 3
+	special_fly_entry BILLS_HOUSE,            14, 4
+	special_fly_entry ROCK_TUNNEL_1F,         21, 5
+	special_fly_entry POWER_PLANT,            23, 12
+	special_fly_entry DIGLETTS_CAVE_ROUTE_11, 19, 7
+	special_fly_entry CELADON_MART_ROOF,      29, 6
+	special_fly_entry SAFARI_ZONE_GATE,       40, 8
+	special_fly_entry SEAFOAM_ISLANDS_1F,     43, 10 ; east Seafoam
+	special_fly_entry SPECIAL_FLY_SEAFOAM_WEST_SELECTOR, 44, 9 ; west Seafoam
+	special_fly_entry VICTORY_ROAD_1F,        50, 11
 SpecialFlyEntriesEnd:
 	db $ff
 ASSERT (SpecialFlyEntriesEnd - SpecialFlyEntries) == NUM_SPECIAL_FLY_LOCATIONS * 4

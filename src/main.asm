@@ -600,3 +600,8 @@ SECTION "CGB Map Sign Extended 2E", ROMX, BANK[$2E]
 INCLUDE "engine/overworld/cgb_map_name_sign_bank_2e.asm"
 SECTION "CGB Map Sign Extended 2F", ROMX, BANK[$2F]
 INCLUDE "engine/overworld/cgb_map_name_sign_bank_2f.asm"
+
+; FLY-1.34: logical Route 20 / Seafoam Town Map areas and Pokédex habitat nodes.
+; Keep this classifier out of ROM0 and the constrained Bank $1C Fly/Town Map code.
+SECTION "Fly Town Map Route20 Classifier", ROMX, BANK[$34]
+INCLUDE "engine/items/fly_town_map_route20.asm"

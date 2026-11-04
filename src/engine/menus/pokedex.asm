@@ -1,4 +1,11 @@
 ShowPokedexMenu:
+	; Keep overworld OAM disabled for the entire full-screen Pokédex session.
+	; Returning from Nest Map must not redraw the player/NPC sprites over the list.
+	ld hl, wUpdateSpritesEnabled
+	ld a, [hl]
+	push af
+	ld [hl], $ff
+	call ClearSprites
 	farcall CoverFullScreenWithWhite
 	call ClearScreen
 	call UpdateSprites
@@ -72,6 +79,8 @@ ShowPokedexMenu:
 	ld [wOverrideSimulatedJoypadStatesMask], a
 	pop af
 	ld [wListScrollOffset], a
+	pop af
+	ld [wUpdateSpritesEnabled], a
 	farcall CoverFullScreenWithWhiteDelay3
 	call RunDefaultPaletteCommand
 	jp ReloadMapData

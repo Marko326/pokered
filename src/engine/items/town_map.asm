@@ -10,6 +10,8 @@ DisplayTownMap:
 	ld a, JOY_REPEAT_MODE_LONG_LIST
 	ldh [hJoy7], a
 	ld a, [wCurMap]
+	farcall GetFlyTownMapPlayerMap
+	ld a, d
 	push af
 	ld b, $0
 	call DrawPlayerOrBirdSprite ; player sprite
@@ -313,6 +315,8 @@ LoadTownMap_Fly::
 	ld de, ToText
 	call PlaceString
 	ld a, [wCurMap]
+	farcall GetFlyTownMapPlayerMap
+	ld a, d
 	ld b, $0
 	call DrawPlayerOrBirdSprite
 	ld hl, wFlyLocationsList
@@ -631,7 +635,7 @@ DrawPlayerOrBirdSprite:
 	jp CopyData
 
 DisplayWildLocations:
-	farcall FindWildLocationsOfMon
+	farcall BuildPokedexTownMapLocations
 	call ZeroOutDuplicatesInList
 	ld hl, wShadowOAM
 	ld de, wTownMapCoords
@@ -669,7 +673,7 @@ DisplayWildLocations:
 	call PlaceString
 	jr .done
 .drawPlayerSprite
-	ld a, [wCurMap]
+	ld a, [wOAMBaseTile] ; logical Town Map selector saved by BuildPokedexTownMapLocations
 	ld b, $0
 	call DrawPlayerOrBirdSprite
 .done
@@ -819,7 +823,7 @@ ZeroOutDuplicatesInList:
 LoadTownMapEntry:
 ; in: a = map number
 ; out: lower nybble of [de] = x, upper nybble of [de] = y, hl = address of name
-	; Alias-only Fly selectors must never go through the upper-bound lookup.
+	; Logical-only Town Map selectors must never go through the upper-bound lookup.
 	cp DIGLETTS_CAVE_ROUTE_2
 	jp z, .diglettRoute2
 	cp DIGLETTS_CAVE_ROUTE_11
@@ -828,6 +832,12 @@ LoadTownMapEntry:
 	jp z, .martRoof
 	cp SPECIAL_FLY_SEAFOAM_WEST_SELECTOR
 	jp z, .seafoamWest
+	cp UNUSED_MAP_F1
+	jp z, .seafoamWest
+	cp UNUSED_MAP_F2
+	jp z, .route20West
+	cp UNUSED_MAP_F3
+	jp z, .route19East
 	cp FIRST_INDOOR_MAP
 	jr c, .external
 	ld bc, 4
@@ -859,16 +869,24 @@ LoadTownMapEntry:
 	ld hl, DiglettsCaveName
 	jr .specialEntry
 .diglettRoute11
-	ld a, $9c ; x=12, y=9
+	ld a, $8b ; x=11, y=8, one tile left/up from Route 11
 	ld hl, DiglettsCaveName
 	jr .specialEntry
 .martRoof
-	ld a, $57 ; x=7, y=5
+	ld a, $47 ; x=7, y=4, one tile above Celadon City
 	ld hl, CeladonMartRoofName
 	jr .specialEntry
 .seafoamWest
-	ld a, $f4 ; x=4, y=15, opposite side of Seafoam
+	ld a, $e4 ; x=4, y=14, one tile up/left from east Seafoam
 	ld hl, SeafoamIslandsName
+	jr .specialEntry
+.route20West
+	ld a, $f3 ; x=3, y=15, Cinnabar-side water
+	ld hl, Route20Name
+	jr .specialEntry
+.route19East
+	ld a, $f6 ; x=6, y=15, Fuchsia-side water
+	ld hl, Route19Name
 .specialEntry
 	ld [de], a
 	ret

@@ -4,11 +4,12 @@ TownMapOrder:
 	db VIRIDIAN_CITY
 	db ROUTE_2
 	db VIRIDIAN_FOREST
-	db DIGLETTS_CAVE
+	db DIGLETTS_CAVE_ROUTE_2
 	db PEWTER_CITY
 	db ROUTE_3
 	db MT_MOON_1F
 	db ROUTE_4
+	db CERULEAN_CAVE_1F
 	db CERULEAN_CITY
 	db ROUTE_24
 	db ROUTE_25
@@ -17,14 +18,17 @@ TownMapOrder:
 	db ROUTE_6
 	db VERMILION_CITY
 	db SS_ANNE_1F
+	db DIGLETTS_CAVE_ROUTE_11
 	db ROUTE_9
 	db ROCK_TUNNEL_POKECENTER
 	db ROUTE_10
+	db POWER_PLANT
 	db LAVENDER_TOWN
 	db POKEMON_TOWER_2F
 	db ROUTE_8
 	db ROUTE_7
 	db CELADON_CITY
+	db CELADON_MART_ROOF
 	db SAFFRON_CITY
 	db ROUTE_11
 	db ROUTE_12
@@ -37,13 +41,15 @@ TownMapOrder:
 	db FUCHSIA_CITY
 	db SAFARI_ZONE_EAST
 	db ROUTE_19
-	db SEAFOAM_ISLANDS_B1F
-	db ROUTE_20
+	db UNUSED_MAP_F3 ; SeaRoute 19, Fuchsia-side water
+	db SEAFOAM_ISLANDS_B1F ; east/lower Seafoam island
+	db UNUSED_MAP_F1 ; west/upper Seafoam island
+	db UNUSED_MAP_F2 ; SeaRoute 20, Cinnabar-side water
 	db CINNABAR_ISLAND
 	db ROUTE_21
 	db ROUTE_22
 	db ROUTE_23
 	db VICTORY_ROAD_3F
 	db INDIGO_PLATEAU
-	db POWER_PLANT
 TownMapOrderEnd:
+ASSERT TownMapOrderEnd - TownMapOrder == 52

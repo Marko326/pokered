@@ -2248,10 +2248,13 @@ wCompletedInGameTradeFlags:: dw
 
 wWarpedFromWhichWarp:: db
 wWarpedFromWhichMap:: db
+; 0 = unknown/east fallback, 1 = Route 20 west entrance, 2 = east entrance.
+wSeafoamEntranceSource:: db
 
-	ds 2
+	ds 1
 
 wCardKeyDoorY:: db
+ASSERT wCardKeyDoorY == wWarpedFromWhichMap + 3
 wCardKeyDoorX:: db
 
 	ds 2

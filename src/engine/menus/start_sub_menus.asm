@@ -158,6 +158,13 @@ StartMenu_Pokemon::
 .fly
 	bit BIT_THUNDERBADGE, a
 	jp z, .newBadgeRequired
+	; Match RPP: these two indoor landmarks explicitly allow Fly OUT.
+	; Fly INTO them is handled separately by the destination list/warp data.
+	ld a, [wCurMap]
+	cp VIRIDIAN_FOREST
+	jr z, .canFly
+	cp CELADON_MART_ROOF
+	jr z, .canFly
 	call CheckIfInOutsideMap
 IF DEF (_DEBUG)
 	jr  .canFly

@@ -1,6 +1,6 @@
-; ROM-1.33 开发候选；Fly 左右切换已访问特殊地点。
+; ROM-1.34 正式清理；地图、双轴 Fly 与特殊地点可用性修订。
 ; 卧室电脑使用本地文本脚本入口接入完整 PC 菜单；不修改存档结构。
 SECTION "Game Version", ROM0
 
 GameVersionText::
-	db "ROM-1.33@"
+	db "ROM-1.34@"
