@@ -29,7 +29,13 @@ Route12HouseText1:
 	ld hl, Route12HouseText_564cf
 	jr .done
 .got_item
+	; Only mention the SELECT bicycle shortcut after the Bike Shop event.
+	CheckEvent EVENT_GOT_BICYCLE
+	jr z, .no_bicycle
 	ld hl, Route12HouseText_564d4
+	jr .done
+.no_bicycle
+	ld hl, Route12HouseText_564de
 .done
 	call PrintText
 	jp TextScriptEnd
@@ -49,9 +55,13 @@ Route12HouseText_564cf:
 	text_end
 
 Route12HouseText_564d4:
-	text_far _Route12HouseText_564d4
+	text_far FishingGuruSuperRodRepeatText
 	text_end
 
 Route12HouseText_564d9:
 	text_far _Route12HouseText_564d9
+	text_end
+
+Route12HouseText_564de:
+	text_far FishingGuruSuperRodRepeatTextNoBike
 	text_end

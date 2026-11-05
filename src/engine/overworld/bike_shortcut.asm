@@ -15,9 +15,12 @@ SelectBicycleShortcut::
 	ld a, [wd732]
 	bit 5, a ; forced Cycling Road riding
 	ret nz
-	ld a, [wWalkBikeSurfState]
-	cp 2
-	ret z ; cannot switch from surfing
+	; RPP #383: allow Surf SELECT to try the remembered Bag rod;
+	; land still requires facing fishable water. Forced bike restrictions
+	; and all existing gameplay/script guards above are unchanged.
+	; The helper preserves carry when it handles the shoreline action.
+	farcall TrySelectShoreFishing
+	ret c
 	ld b, BICYCLE
 	call IsItemInBag
 	ret z ; no bicycle

@@ -25,6 +25,7 @@ MainMenu:
 	ld [wStartPartySavedMenuItem], a
 	ld [wStartBagSavedPosition], a
 	ld [wStartBagSavedScrollOffset], a
+	ld [wRepeatFishingRod], a ; RPP #084: drop any interrupted retry on a new session
 	ld [wPokedexSavedSelection], a ; clear previous play-session Dex cursor
 	ld [wDefaultMap], a
 	ld hl, wd72e

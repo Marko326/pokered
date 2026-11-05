@@ -610,3 +610,19 @@ INCLUDE "engine/items/fly_town_map_route20.asm"
 ; ROMX Bank $30 (empty in the ROM-1.35 map). No extra ROM0 code or WRAM.
 SECTION "Field Move A Interactions", ROMX, BANK[$30]
 INCLUDE "engine/overworld/field_move_a_interactions.asm"
+
+; RPP #381: select-rod and last-Bag-rod logic, outside crowded Bank 0.
+SECTION "Shore SELECT Fishing", ROMX, BANK[$30]
+INCLUDE "engine/overworld/select_fishing_shortcut.asm"
+
+; RPP #084: dedicated no-bite retry prompt in the same roomy ROMX bank.
+SECTION "Fishing Retry Prompt", ROMX, BANK[$30]
+INCLUDE "engine/items/fishing_retry.asm"
+
+; RPP #383: Surf fishing result text with no land rod sprite/OAM changes.
+SECTION "Surf Fishing Result", ROMX, BANK[$30]
+INCLUDE "engine/items/surf_fishing_result.asm"
+
+; RPP #382/#384: post-gift fishing tips; far text in roomy ROMX Bank $30.
+SECTION "Fishing Guru and Surf Tips", ROMX, BANK[$30]
+INCLUDE "data/text/fishing_guru_tips.asm"

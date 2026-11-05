@@ -29,7 +29,13 @@ FuchsiaHouse3Text1:
 	ld hl, FuchsiaHouse3Text_56212
 	jr .done
 .got_item
+	; Only mention the SELECT bicycle shortcut after the Bike Shop event.
+	CheckEvent EVENT_GOT_BICYCLE
+	jr z, .no_bicycle
 	ld hl, FuchsiaHouse3Text_56217
+	jr .done
+.no_bicycle
+	ld hl, FuchsiaHouse3Text_56221
 .done
 	call PrintText
 	jp TextScriptEnd
@@ -58,9 +64,13 @@ FuchsiaHouse3Text_56212:
 	text_end
 
 FuchsiaHouse3Text_56217:
-	text_far _FuchsiaHouse3Text_56217
+	text_far FishingGuruGoodRodRepeatText
 	text_end
 
 FuchsiaHouse3Text_5621c:
 	text_far _FuchsiaHouse3Text_5621c
+	text_end
+
+FuchsiaHouse3Text_56221:
+	text_far FishingGuruOldGoodRodRepeatTextNoBike
 	text_end

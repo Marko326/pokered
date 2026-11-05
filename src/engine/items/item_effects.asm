@@ -1924,6 +1924,8 @@ CoinCaseNumCoinsText:
 ItemUseOldRod:
 	call FishingInit
 	jp c, ItemUseNotTime
+	ld a, OLD_ROD
+	ld [wRepeatFishingRod], a
 	lb bc, 5, MAGIKARP
 	ld a, $1 ; set bite
 	jr RodResponse
@@ -1931,6 +1933,8 @@ ItemUseOldRod:
 ItemUseGoodRod:
 	call FishingInit
 	jp c, ItemUseNotTime
+	ld a, GOOD_ROD
+	ld [wRepeatFishingRod], a
 .RandomLoop
 	call Random
 	srl a
@@ -1959,6 +1963,8 @@ INCLUDE "data/wild/good_rod.asm"
 ItemUseSuperRod:
 	call FishingInit
 	jp c, ItemUseNotTime
+	ld a, SUPER_ROD
+	ld [wRepeatFishingRod], a
 	call ReadSuperRodData
 	ld a, e
 RodResponse:
@@ -1975,8 +1981,13 @@ RodResponse:
 	ld [wCurOpponent], a
 
 .next
+	; Surf must keep its sprite graphics, mount OAM and movement state.
+	; Only the land route may borrow the legacy FishingAnim with state 0.
+	ld a, [wWalkBikeSurfState]
+	cp 2
+	jr z, .surfResult
 	ld hl, wWalkBikeSurfState
-	ld a, [hl] ; store the value in a
+	ld a, [hl]
 	push af
 	push hl
 	ld [hl], 0
@@ -1984,6 +1995,65 @@ RodResponse:
 	pop hl
 	pop af
 	ld [hl], a
+	jr .resultDone
+.surfResult
+	farcall PresentSurfFishingResult
+.resultDone
+	; RPP #084: only response 0 (no nibble) may offer another cast.
+	; 1 starts the normal battle; 2 means the map has no fish at all.
+	ld a, [wRodResponse]
+	and a
+	jp nz, .endFishing
+	; Surf never loaded the land rod graphics, so it needs no cleanup:
+	; copying RedSprite here would corrupt the visible Surf mount.
+	ld a, [wWalkBikeSurfState]
+	cp 2
+	jr z, .restoredFishingSprite
+	; FishingAnim changes only the standing player's first 12 sprite tiles
+	; at vNPCSprites ($8000). Restore JUST that half while text is open:
+	; LoadPlayerSpriteGraphics also writes to vNPCSprites2 ($8800), which
+	; aliases CHS/DFS live Chinese glyphs $80-$eb and corrupts the dialogue.
+	; Normal menu exit already restores both halves when closing text.
+	ld de, RedSprite
+	ld a, [wWalkBikeSurfState]
+	cp 1
+	jr nz, .restoreWalkingFishingSprite
+	ld de, RedBikeSprite
+.restoreWalkingFishingSprite
+	ld hl, vNPCSprites
+	lb bc, BANK(RedSprite), $0c
+	call CopyVideoData
+	ld a, $a0 ; off-screen Y for the old rod OAM entry
+	ld [wShadowOAMSprite39YCoord], a
+	call UpdateSprites
+.restoredFishingSprite
+	farcall PromptRepeatFishingRod
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .endFishing ; NO or B, without entering another item menu
+	; Tail-jump, never call UseItem recursively. Any number of retries
+	; therefore uses constant stack space and the original rod RNG.
+	ld a, [wRepeatFishingRod]
+	set 7, a ; window already visible: skip only the next map redraw
+	ld [wRepeatFishingRod], a
+	res 7, a
+	; Rebuild the original item-name buffer before the next normal
+	; rod-use message; the text engine and menus share name scratch.
+	ld [wcf91], a
+	ld [wd11e], a
+	call GetItemName
+	call CopyToStringBuffer
+	ld a, [wRepeatFishingRod]
+	res 7, a
+	cp GOOD_ROD
+	jp z, ItemUseGoodRod
+	cp SUPER_ROD
+	jp z, ItemUseSuperRod
+	cp OLD_ROD
+	jp z, ItemUseOldRod
+.endFishing
+	xor a
+	ld [wRepeatFishingRod], a
 	ret
 
 ; checks if fishing is possible and if so, runs initialization code common to all rods
@@ -1992,25 +2062,39 @@ FishingInit:
 	ld a, [wIsInBattle]
 	and a
 	jr z, .notInBattle
-	scf ; can't fish during battle
-	ret
+	jr .cannotFish ; can't fish during battle
 .notInBattle
-	call IsNextTileShoreOrWater
-	ret c
+	; Water tiles in front matter on land, but are irrelevant while Surfing.
+	; A Surf Bag cast is legitimate too (wPseudoItemID = 0).
 	ld a, [wWalkBikeSurfState]
-	cp 2 ; Surfing?
-	jr z, .surfing
+	cp 2
+	jr z, .waterReady
+	call IsNextTileShoreOrWater
+	jr c, .cannotFish
+.waterReady
+	; A first Bag cast (including Surf) must restore the map from Bag.
+	; SELECT/retries already have a live map/window, and skip this redraw.
+	; Recasting from an open Yes/No text window must not redraw the
+	; whole map under that window (RPP #380 follow-up to #084).
+	ld a, [wRepeatFishingRod]
+	bit 7, a
+	jr nz, .keepRetryWindow
 	call ItemUseReloadOverworldData
+.keepRetryWindow
 	ld hl, ItemUseText00
 	call PrintText
 	ld a, SFX_HEAL_AILMENT
 	call PlaySound
-	ld c, 80
+	; Keep the existing CHS cast preparation (20 frames) on both routes.
+	; The later FishingAnim bite wait stays random (36..163 frames).
+	ld c, 20
 	call DelayFrames
 	and a
 	ret
-.surfing
-	scf ; can't fish when surfing
+.cannotFish
+	xor a
+	ld [wRepeatFishingRod], a
+	scf
 	ret
 
 ItemUseOaksParcel:

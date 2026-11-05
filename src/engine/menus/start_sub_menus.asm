@@ -520,7 +520,11 @@ StartMenu_Item::
 	and a
 	jr nz, .tossItem
 ; use item
-	ld [wPseudoItemID], a ; a must be 0 due to above conditional jump
+	; RPP #381: register a rod only when the player chooses USE in BAG.
+	; This is not triggered by repeated casts or by the SELECT shortcut.
+	farcall RememberBagFishingRod
+	xor a
+	ld [wPseudoItemID], a
 	ld a, [wcf91]
 	cp HM01
 	jr nc, .useItem_partyMenu

@@ -264,7 +264,9 @@ wMenuWatchMovingOutOfBounds:: db
 
 wTradeCenterPointerTableIndex:: db
 
-	ds 1
+; RPP #084: transient rod ID for an immediate no-bite retry prompt.
+; Bit 7 is set only during a synchronous retry; this is not a saved last rod.
+wRepeatFishingRod:: db
 
 ; destination pointer for text output
 ; this variable is written to, but is never read from
@@ -2076,7 +2078,11 @@ wSeafoamIslandsB4FCurScript:: db
 wRoute18Gate1FCurScript:: db
 	; FLY-1.32: existing, saved game-progress padding, unchanged addresses/size.
 	; Magic distinguishes legacy saves; flags are initialized on first map load.
-	ds 74
+	; RPP #381: use 3 existing saved padding bytes for the latest BAG rod.
+	; Do not move wSpecialFlyMagic or any downstream save field.
+	ds 71
+wLastBagFishingRodMagic:: ds 2
+wLastBagFishingRod:: db
 wSpecialFlyMagic:: ds 2
 wSpecialFlyVisitedFlag:: ds 2
 wGameProgressFlagsEnd::

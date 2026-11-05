@@ -29,7 +29,13 @@ VermilionHouse2Text1:
 	ld hl, VermilionHouse2Text_560c0
 	jr .done
 .got_item
+	; Only mention the SELECT bicycle shortcut after the Bike Shop event.
+	CheckEvent EVENT_GOT_BICYCLE
+	jr z, .no_bicycle
 	ld hl, VermilionHouse2Text_560c5
+	jr .done
+.no_bicycle
+	ld hl, VermilionHouse2Text_560cf
 .done
 	call PrintText
 	jp TextScriptEnd
@@ -49,9 +55,13 @@ VermilionHouse2Text_560c0:
 	text_end
 
 VermilionHouse2Text_560c5:
-	text_far _VermilionHouse2Text_560c5
+	text_far FishingGuruOldRodRepeatText
 	text_end
 
 VermilionHouse2Text_560ca:
 	text_far _VermilionHouse2Text_560ca
+	text_end
+
+VermilionHouse2Text_560cf:
+	text_far FishingGuruOldGoodRodRepeatTextNoBike
 	text_end

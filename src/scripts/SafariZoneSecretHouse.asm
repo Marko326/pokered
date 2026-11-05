@@ -22,6 +22,8 @@ SafariZoneSecretHouseText1:
 	call PrintText
 	jr .done
 .got_item
+	; RPP #382: combine original Surf explanation and tips into
+	; one PrintText; no automatic replacement of the last old page.
 	ld hl, HM03ExplanationText
 	call PrintText
 .done
@@ -37,7 +39,7 @@ ReceivedHM03Text:
 	text_end
 
 HM03ExplanationText:
-	text_far _HM03ExplanationText
+	text_far SurfFishingRepeatText
 	text_end
 
 HM03NoRoomText:

@@ -110,7 +110,15 @@ UpdateCGBMapNameSign::
 	ld [wMapNameSignInitialized], a
 	ld a, [wCurMap]
 	ld [wMapNameSignLastRawMap], a
-	ld a, $ff
+	; Initialize the effective map identity without showing a sign.
+	; Battle return also calls EnterMap and queues a map sign: if the
+	; first Continue/New Game has not seeded this identity, the first
+	; battle in the same map would compare against $ff and falsely pop it.
+	call MapNameSignResolveRuntimeMap
+	ld a, $ff ; unsupported/neutral maps keep the first real entry eligible
+	jr nc, .initialIdentityResolved
+	ld a, b ; existing city, route or supported landmark identity
+.initialIdentityResolved
 	ld [wMapNameSignEffectiveMap], a
 	; New Game / Continue do not display an entry popup. Reset the
 	; pending entry armed by EnterMap; future real map transitions still arm

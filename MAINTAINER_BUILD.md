@@ -1,3 +1,11 @@
+## ROM-1.37 — 钓鱼专项清理及维护要点（2026-11-05）
+
+- 本版基于 `CHS_Mod` 正式 HEAD `b24357fdb4dd4e5c6715c4475da5fb4edb8ca53b`（ROM-1.36）累计整合 RPP #084、#381～#384 和 Continue 地名牌初次战斗返回修复；不直接移植 #385。已验收候选只做版本与文档收口，不改运行行为。
+- 钓鱼准备延迟在 `src/engine/items/item_effects.asm` 的 `FishingInit` 内为 **20 帧**（当前用户工作区值）；后续随机等待在 `src/engine/overworld/player_animations.asm` 为 `Random & $7f + 36`，每次 36～163 帧。调节两处时需分别验证，不更改原咬钩概率。
+- 连续钓鱼时不要调用完整 `LoadPlayerSpriteGraphics` 覆盖 `$8800` DFS 中文字形；当前只恢复玩家第一组图块和钓竿 OAM。冲浪钓鱼走单独结果入口，不套用陆地钓竿姿势。更改文本窗口复用须同时检查「是／否／B」及中文逐字显示。
+- 三位赠竿 NPC 的自行车说明只看 `EVENT_GOT_BICYCLE`（车店交车事件），而非背包 BICYCLE；临时模拟该事件的测试补丁不得合入正式分支。HM03 重复对话的教学由维护者确认正常。新增教学是 Bank `$30` 的独立 DFS ASM 字形码文本，原 XLSX 不涉及本轮改动。
+- 模式 B 正式清理：只交清理增量、`b24357fd` HEAD 全量、中文提交日志，二选一应用。禁止助手自行 RGBDS 编译或 Git Commit／Push；最终 Bank 空间、ROM/MAP/SHA 请维护者本地归档。随包旧 MAP 标记不匹配，不可作为新版余量证明。
+
 ## ROM-1.36 — 第一世代野外技能交互正式收口（2026-11-05；待维护者 Commit）
 
 - **Git 基线**：用户 `ROM-1.35(1).zip` 的 RPP 导出记录声明 `CHS_Mod` 最近已提交 HEAD `42d7e6744b631f6adb5bf5c3167dc680a8bed297`（ROM-1.35）。导出是 HEAD 上的 Worktree；其 `current_worktree.patch` 已包含 #036 Dig／Teleport 确认修改。ROM-1.36 全量补丁从该 HEAD 累计包含 Worktree 原有修改及本轮 #031～#034 改动；增量从最终怪力对话修正版候选出发。

@@ -497,7 +497,13 @@ FishingAnim:
 	ld de, wShadowOAMSprite39
 	ld bc, $4
 	call CopyData
-	ld c, 100
+	; Vary only the rod-pose wait, independently of the bite decision.
+	; 36..163 frames, mean 99.5 (original: fixed 100 frames).
+	; RPP #381 shortened this to 84; CHS intentionally does not.
+	call Random
+	and $7f
+	add 36
+	ld c, a
 	call DelayFrames
 	ld a, [wRodResponse]
 	and a
