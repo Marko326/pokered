@@ -761,6 +761,8 @@ ItemUseSurfboard:
 	ld a, 2
 	ld [wWalkBikeSurfState], a ; change player state to surfing
 	call PlayDefaultMusic ; play surfing music
+	; Preserve the normal post-Surf message for both Party and A-key use.
+	; RPP #032 shortens the BEFORE-using prompt, not this success text.
 	ld hl, SurfingGotOnText
 	jp PrintText
 .tryToStopSurfing
@@ -1569,21 +1571,8 @@ ThrewRockText:
 
 ; also used for Dig out-of-battle effect
 ItemUseEscapeRope:
-	ld a, [wIsInBattle]
-	and a
-	jr nz, .notUsable
-	ld a, [wCurMap]
-	cp AGATHAS_ROOM
-	jr z, .notUsable
-	ld a, [wCurMapTileset]
-	ld b, a
-	ld hl, EscapeRopeTilesets
-.loop
-	ld a, [hli]
-	cp $ff
-	jr z, .notUsable
-	cp b
-	jr nz, .loop
+	call CanUseEscapeRope
+	jr nc, .notUsable
 	ld hl, wd732
 	set 3, [hl]
 	set 6, [hl]
@@ -1605,6 +1594,31 @@ ItemUseEscapeRope:
 	jp RemoveUsedItem
 .notUsable
 	jp ItemUseNotTime
+
+; DIG and ESCAPE ROPE share the original map restrictions. Return carry set
+; when usable. Keep this side-effect-free so the DIG prompt is shown only
+; when the move would succeed, before consuming any item/warp state.
+CanUseEscapeRope::
+	ld a, [wIsInBattle]
+	and a
+	jr nz, .cannotUse
+	ld a, [wCurMap]
+	cp AGATHAS_ROOM
+	jr z, .cannotUse
+	ld a, [wCurMapTileset]
+	ld b, a
+	ld hl, EscapeRopeTilesets
+.loop
+	ld a, [hli]
+	cp $ff
+	jr z, .cannotUse
+	cp b
+	jr nz, .loop
+	scf
+	ret
+.cannotUse
+	and a ; clear carry
+	ret
 
 INCLUDE "data/tilesets/escape_rope_tilesets.asm"
 

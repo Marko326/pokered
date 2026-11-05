@@ -4,6 +4,8 @@
 > **参考**：`CHS_Mod_QOL-1.14_已提交版交接资料包_无嵌套.zip` / `04_参考工程/.../individual/031～060` 的实际提交补丁。
 > **审查边界**：仅核对第二批 30 笔；第一批 001～030 继承既有台账，不重复做代码迁移；061 之后尚未核对。本轮为**静态源码与交接资料比较**，不是 CHS 模拟器测试，也不意味着逐一重放参考补丁。
 
+> **ROM-1.36 当前状态补记（2026-11-05）**：第一轮表格保留的是当时 ROM-1.21 的静态评估结论，不重算原始 442 笔分类。后续 CHS 已在 ROM-1.36 收口 #031/#032（Cut／Surf）、#033/#034（Strength）与 #036（Dig／Teleport 确认）；#035 仍为当前不适用，第一世代 CHS 没有对应的野外头槌 Field Move／撞树脚本，按维护者决定不新增。详细实现与验收边界见 `docs/FIELD_MOVE_INTERACTIONS.md`、`docs/CHS_ACCEPTANCE_HISTORY.md`。
+
 ## 先说明：参考 Crystal Audio 与 CHS 音频架构不同
 
 - RPP `#051～#056`、`#060` 的 `crysaudio/engine.asm` 以 **Music On/Off、BGM Volume、静音时解析、NR50/NR51 路由**为功能/修复链，其中部分 Bug 是该功能链引出的后续问题。

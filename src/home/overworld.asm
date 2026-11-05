@@ -164,7 +164,23 @@ OverworldLoopLessDelay::
 	call IsSpriteOrSignInFrontOfPlayer
 	ldh a, [hSpriteIndexOrTextID]
 	and a
-	jp z, OverworldLoop
+	jr z, .tryBackgroundFieldMove
+	; RPP #033: intercept only boulder sprites, not NPCs/signs.  The
+	; helper closes its own Window when handled; otherwise DisplayTextID
+	; retains the normal map-script dialogue path.
+	farcall HandleStrengthBoulderOnA
+	; The helper sets carry only when it handled a boulder.  Check its
+	; returned flags directly.  wWhichTrade is an independent NPC trade
+	; selector, not the boulder result; using it caused fall-through to
+	; an unrelated NPC's text after both YES and NO/B.
+	jp c, OverworldLoop
+	jr .displayDialogue
+.tryBackgroundFieldMove
+	; RPP #031/#032: only when no hidden item, NPC, or sign handled A.
+	; The background field-move helper owns its text Window and returns
+	; after Cut/Surf (or when the front tile is neither tree nor water).
+	farcall TryCutSurfOnA
+	jp OverworldLoop
 .displayDialogue
 	predef GetTileAndCoordsInFrontOfPlayer
 	call UpdateSprites

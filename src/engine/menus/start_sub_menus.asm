@@ -230,6 +230,14 @@ ENDC
 	text_far _FlashLightsAreaText
 	text_end
 .dig
+	; Use the same eligibility test as ESCAPE ROPE. If unavailable,
+	; follow the original UseItem failure path without showing a prompt.
+	farcall CanUseEscapeRope
+	jr nc, .useDig
+	ld hl, .wantToUseDigText
+	call .confirmFieldMove
+	jp nz, .chosePokemon ; NO or B: back to this Pokémon's action menu
+.useDig
 	ld a, ESCAPE_ROPE
 	ld [wcf91], a
 	ld [wPseudoItemID], a
@@ -249,6 +257,9 @@ ENDC
 	call PrintText
 	jp .loop
 .canTeleport
+	ld hl, .wantToUseTeleportText
+	call .confirmFieldMove
+	jp nz, .chosePokemon ; NO or B: no warp, return to action menu
 	ld hl, .warpToLastPokemonCenterText
 	call PrintText
 	ld hl, wd732
@@ -270,6 +281,38 @@ ENDC
 .cannotFlyHereText
 	text_far _CannotFlyHereText
 	text_end
+.wantToUseDigText
+	; DFS: encode Chinese directly as two-byte glyphs, not UTF-8 literals.
+	text_start
+	db $12, $EC, $0F, $B1, $13, $81, $11, $0E
+	db $07, $64, $0C, $9E, $01, $F5
+	db CHARVAL("@")
+	text_end
+.wantToUseTeleportText
+	text_start
+	db $12, $EC, $0F, $B1, $13, $81, $10, $0C
+	db $0A, $08, $13, $0C, $07, $4A, $0C, $9E
+	db $01, $F5
+	db CHARVAL("@")
+	text_end
+
+; The party screen is already saved in Buffer1 by .chosePokemon.
+; YesNoChoice would save over it, so display only the two-option menu.
+; B selects NO. Restore the original party before re-opening its menu.
+; Return Z for YES, NZ for NO/B.
+.confirmFieldMove
+	call PrintText
+	xor a ; YES_NO_MENU
+	ld [wTwoOptionMenuID], a
+	hlcoord 14, 7
+	lb bc, 8, 15
+	ld a, TWO_OPTION_MENU
+	ld [wTextBoxID], a
+	call DisplayTextBoxID
+	call LoadScreenTilesFromBuffer1
+	ld a, [wCurrentMenuItem]
+	and a
+	ret
 .softboiled
 	ld hl, wPartyMon1MaxHP
 	ld a, [wWhichPokemon]

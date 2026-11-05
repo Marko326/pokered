@@ -22,6 +22,11 @@ CheckForHiddenObjectOrBookshelfOrCardKeyDoor::
 	push de
 	jp hl
 .returnAddress
+	; A previously claimed hidden item must not block an NPC, sign or
+	; field move at the same coordinate.  Unclaimed items still win.
+	ldh a, [hDidntFindAnyHiddenObject]
+	and a
+	jr nz, .hiddenObjectNotFound
 	xor a
 	jr .done
 .hiddenObjectNotFound

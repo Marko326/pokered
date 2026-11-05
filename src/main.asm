@@ -605,3 +605,8 @@ INCLUDE "engine/overworld/cgb_map_name_sign_bank_2f.asm"
 ; Keep this classifier out of ROM0 and the constrained Bank $1C Fly/Town Map code.
 SECTION "Fly Town Map Route20 Classifier", ROMX, BANK[$34]
 INCLUDE "engine/items/fly_town_map_route20.asm"
+
+; RPP #031/#032: A-button Cut/Surf background interaction is isolated in
+; ROMX Bank $30 (empty in the ROM-1.35 map). No extra ROM0 code or WRAM.
+SECTION "Field Move A Interactions", ROMX, BANK[$30]
+INCLUDE "engine/overworld/field_move_a_interactions.asm"

@@ -1,3 +1,17 @@
+## ROM-1.36 — 第一世代野外技能交互正式收口（2026-11-05；清理准备）
+
+- **正式基线与 Worktree 关系**：用户提供的 `ROM-1.35(1).zip` 导出记录声明分支 `CHS_Mod`、最近已提交 HEAD `42d7e6744b631f6adb5bf5c3167dc680a8bed297`、游戏版本 `ROM-1.35`。该 ZIP 同时包含 HEAD 上的未提交 Worktree；`RPP_PROJECT_CONTEXT/patches/current_worktree.patch` 的原始差异包括 `TODO.md`、`docs/MAP_QOL_PLAN.md`、`src/engine/items/item_effects.asm` 与 `src/engine/menus/start_sub_menus.asm`。其中 #036 挖洞／瞬间移动确认属于本轮起点已有改动，累计全量必须纳入，不能误写为已在 HEAD。
+- **正式目标版本**：将本轮未提交的开发候选合并为一次正式功能提交；游戏版本只从 `ROM-1.35` 递增到 `ROM-1.36`。`GameVersionText` 为 8 字符，Options 仍从 `(11,0)` 绘制；本轮未使用游戏内测试功能，不更新测试版本号。
+- **RPP #036 — Dig／Teleport 确认**：保留原 Worktree 的 `CanUseEscapeRope` 共享资格判断。Dig 仅在 Escape Rope 原地图限制允许时显示确认；否／B 返回宝可梦操作菜单；Teleport 在原有返回治疗点流程之前增加确认。没有改动地图限制、治疗点目标或存档格式。
+- **RPP #031／#032 — Cut／Surf**：新增 ROMX Bank `$30` 的 A 键背景交互模块。先遵循隐藏物、NPC、告示牌的原有优先级，再判断前方树／水面。Cut 检查四象限可砍树图块、居合斩和 Cascade Badge；Surf 复用水岸与方向碰撞检查、`IsSurfingAllowed` 和原 `SURFBOARD` 执行路径。已领取的隐藏道具不再阻断同坐标树木交互，未领取时仍先取得道具。地图 A 键 Cut 使用 `Cut2` 避免 Party `UsedCut` 的白屏／整图重载，保留成功提示、动画和音效；Party 菜单继续走原 `UsedCut`。居合斩成功文字清除强制瞬出标志，遵循 Options 文字速度。`WriteOAMBlock` 使用四组明确的 `(tile, OAM_OBP1)` 数据，修复砍树／怪力粉尘动画的调色板数据解释错误。
+- **RPP #033／#034 — Strength**：只识别面前的巨石精灵，直接按 CHS 的 `wMapSpriteData` 与 `hSpriteIndexOrTextID` 取精灵数据，不污染 NPC 交易状态。满足 STRENGTH 与彩虹徽章条件时询问；否／B 不启用；已启用时不重复询问。队伍菜单 `PrintStrengthTxt` 只显示 `CanMoveBouldersText`，移除重复的 `UsedStrengthText` 提示。A 键处理通过 Carry 返回状态给 Overworld 分派器；此前错误检查 `wWhichTrade` 导致巨石对话后继续进入 NPC `DisplayTextID`，现改为处理完成后直接回地图。
+- **用户实际反馈**：用户明确测试冲浪有／无会冲浪宝可梦两类 A 键对话均正常；砍树最终四块 OAM 调色板纠错后反馈「没问题」并开始怪力阶段；怪力选择是／否后多余 NPC 文本修正后反馈「没问题了」；挖洞／瞬间移动确认此前已有通过反馈。上述记录只支持用户描述的场景，不扩大为所有地图、所有版本与 DMG/CGB 全矩阵均通过。
+- **不移植事项**：RPP #035 的野外头槌交互不进入本版。第一世代有战斗招式 HEADBUTT，但 CHS 不存在 RPP 式野外撞树 Field Move／脚本；按维护者明确决定不新增。RPP #381～#385 钓鱼快捷操作是另一独立功能，也不纳入本次。
+- **静态审计与构建边界**：未修改 `scripts/`、转换器、工具或审计脚本，采用模式 B 单笔 `feat(overworld)`。本轮运行 14 个既有 `scripts/verify_*.py`：2 PASS、12 FAIL；11 个旧入口在历史版本白名单断言处失败，`verify_qol116_static.py` 的功能检查通过，但正式版本／Options 坐标守卫不接受 ROM-1.36。不能写成全量审计 PASS。项目要求 AI 不编译／链接 ROM，因此未生成 ROM-1.36、MAP 或 SHA；ROMX Bank `$30` 在 ROM-1.35 随包 MAP 中为空，新增主体放入该 Bank，但最终 Bank／ROM0 余量仍须维护者本地构建后确认。
+- **Git 状态**：本轮只准备补丁与日志，不执行 Git Commit／Push。增量从用户当前已验收的 ROM-1.36 怪力对话修正版 Worktree 到最终清理状态；累计全量从 `42d7e674` 正式 HEAD 到最终 ROM-1.36，包含起始 Worktree 中的 #036 修改与本轮全部功能。
+
+---
+
 ## ROM-1.35 — Fly 名称显示收尾与四类短菜单单按（2026-11-04；正式清理准备）
 
 - **基线与版本**：最新 RPP 完整导出 `ROM-1.34(3).zip` 声明 `CHS_Mod` HEAD `35581b43f8d7ae55ea91178723375ad911c66e8f`，正式版 `ROM-1.34`，Worktree 干净。后续测试候选含 Fly 顶部局部显示优化及四类菜单单按补丁。本次整合为 `ROM-1.35`，没有新的测试功能版本；Git 身份来源是导出记录而非本地 `.git` 对象核验。

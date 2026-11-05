@@ -1,8 +1,8 @@
 PrintStrengthTxt:
+	; RPP #034: party-menu activation matches direct boulder interaction.
+	; Only show which Pokemon can move the rock, not a duplicate use text.
 	ld hl, wd728
 	set 0, [hl]
-	ld hl, UsedStrengthText
-	call PrintText
 	ld hl, CanMoveBouldersText
 	jp PrintText
 

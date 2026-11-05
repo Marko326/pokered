@@ -9,7 +9,13 @@ HiddenItems:
 	predef FlagActionPredef
 	ld a, c
 	and a
-	ret nz
+	jr z, .notAlreadyCollected
+	; The item on this tile was already collected.  Do not consume A:
+	; Viridian City has a Cut tree at its hidden Potion location (14,4).
+	ld a, $ff
+	ldh [hDidntFindAnyHiddenObject], a
+	ret
+.notAlreadyCollected
 	call EnableAutoTextBoxDrawing
 	ld a, 1
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a

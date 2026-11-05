@@ -6,16 +6,29 @@ UsedCut:
 	jr z, .overworld
 	cp GYM
 	jr nz, .nothingToCut
+	; Gym cut tree: accept all 4 visual quadrants, not just $50.
 	ld a, [wTileInFrontOfPlayer]
-	cp $50 ; gym cut tree
-	jr nz, .nothingToCut
-	jr .canCut
-.overworld
-	dec a
-	ld a, [wTileInFrontOfPlayer]
-	cp $3d ; cut tree
+	cp $40
 	jr z, .canCut
-	cp $52 ; grass
+	cp $41
+	jr z, .canCut
+	cp $50
+	jr z, .canCut
+	cp $51
+	jr z, .canCut
+	jr .nothingToCut
+.overworld
+	ld a, [wTileInFrontOfPlayer]
+	; Overworld cut tree: accept all 4 visual quadrants.
+	cp $2d
+	jr z, .canCut
+	cp $2e
+	jr z, .canCut
+	cp $3d
+	jr z, .canCut
+	cp $3e
+	jr z, .canCut
+	cp $52 ; keep the original tall-grass Cut from Party
 	jr z, .canCut
 .nothingToCut
 	ld hl, .NothingToCutText
@@ -32,8 +45,10 @@ UsedCut:
 	ld a, [wWhichPokemon]
 	ld hl, wPartyMonNicks
 	call GetPartyMonName
+	; Keep Options text speed for the Cut success message.
+	; Original Red sets wd730 bit 6 here, bypassing PrintLetterDelay.
 	ld hl, wd730
-	set 6, [hl]
+	res 6, [hl]
 	call GBPalWhiteOutWithDelay3
 	call ClearSprites
 	call RestoreScreenTilesAndReloadTilePatterns
@@ -47,6 +62,9 @@ UsedCut:
 	call Delay3
 	xor a
 	ldh [hWY], a
+Cut2:: ; RPP #031: direct field Cut, no palette whiteout / map reloading
+	; Keep the original execution message/animation. RPP #031 only skips
+	; the pre-action environment hint when Cut can actually be used.
 	ld hl, UsedCutText
 	call PrintText
 	call LoadScreenTilesFromBuffer2
@@ -67,6 +85,18 @@ UsedCut:
 	ldh [hWY], a
 	call UpdateSprites
 	jp RedrawMapView
+
+UsedCutFromFieldA::
+	; Front tile is already validated by the A-button field helper.  RPP
+	; uses Cut2 here instead of the whiteout-heavy Party UsedCut path.
+	ld a, [wTileInFrontOfPlayer]
+	ld [wCutTile], a
+	ld a, 1
+	ld [wActionResultOrTookBattleTurn], a
+	; RPP also sets no-text-delay here; CHS honors the user's text-speed option instead.
+	ld hl, wd730
+	res 6, [hl]
+	jp Cut2
 
 UsedCutText:
 	text_far _UsedCutText
@@ -124,8 +154,15 @@ WriteCutOrBoulderDustAnimationOAMBlock:
 	jp WriteOAMBlock
 
 CutOrBoulderDustAnimationTilesAndAttributes:
-	dbsprite  2, -1,  0,  4, $fd, OAM_OBP1
-	dbsprite  2, -1,  0,  6, $ff, OAM_OBP1
+	; WriteOAMBlock reads FOUR (tile ID, attribute) pairs, not OAM
+	; sprite position records.  Using dbsprite here inadvertently mixed
+	; native CGB OBJ0/OBJ1 across the 2x2 tree animation.
+	; Use the original Red four-tile layout and DMG/CGB OBJ1 on all four.
+	; Palette 1 stays tied to rOBP1 for the original flashing animation.
+	db $fc, OAM_OBP1
+	db $fd, OAM_OBP1
+	db $fe, OAM_OBP1
+	db $ff, OAM_OBP1
 
 GetCutOrBoulderDustAnimationOffsets:
 	ld hl, wSpritePlayerStateData1YPixels
