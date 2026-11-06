@@ -34,7 +34,7 @@ ReceivedHM02Text:
 	text_end
 
 HM02ExplanationText:
-	text_far _HM02ExplanationText
+	text_far FlyHouseExplanationWithSpecialFlyTips
 	text_end
 
 HM02NoRoomText:

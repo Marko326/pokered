@@ -386,7 +386,7 @@ StartMenu_Item::
 	jr nz, .notInCableClubRoom
 	ld hl, CannotUseItemsHereText
 	call PrintText
-	jr .exitMenu
+	jp .exitMenu
 .notInCableClubRoom
 	coord hl, 11, 1
 	ld b, 1
@@ -420,7 +420,30 @@ StartMenu_Item::
 	farcall RestoreItemListPosition
 	pop af
 	ld [wWhichPokemon], a
+	ld a, 1
+	ld [wStartBagDescriptionActive], a
+	ld a, $fe ; first displayed item must create the description box
+	ld [wStartBagDescriptionLastID], a
+	xor a
+	ld [wStartBagDescriptionBoxDrawn], a
+	; A second text box covers the lower screen. The normal map-sprite
+	; clipping uses map tile probes and can leave NPC OAM above this box.
+	; As in full-screen Pokédex, suspend overworld OAM while Bag owns UI.
+	; Save the prior enable byte on stack; preserve menu carry on return.
+	ld a, [wUpdateSpritesEnabled]
+	push af
+	xor a
+	ld [wUpdateSpritesEnabled], a
+	call HideSprites
+	call DelayFrame ; commit the hidden OAM before showing Bag
 	call DisplayListMenuID
+	push af
+	xor a
+	ld [wStartBagDescriptionActive], a
+	pop af
+	pop bc ; B = saved wUpdateSpritesEnabled, flags stay unchanged
+	ld a, b
+	ld [wUpdateSpritesEnabled], a
 	push af ; preserve list-selection carry across the cursor bookkeeping
 	; Capture the absolute slot, including the visible page, before any item
 	; action can change common menu scratch or the real Bag item count.
@@ -466,12 +489,13 @@ StartMenu_Item::
 	; latch until Bag returns to START.
 	ld a, 1
 	ld [wStartMenuClosePending], a
-; erase menu cursor (blank each tile in front of an item name)
+; Erase the START Bag's newly shifted item cursors before USE/TOSS.
+	; Its active flag has already been cleared by DisplayListMenuID return.
 	ld a, CHARVAL(" ")
-	ldcoord_a 5, 4
-	ldcoord_a 5, 6
-	ldcoord_a 5, 8
-	ldcoord_a 5, 10
+	ldcoord_a 5, 3
+	ldcoord_a 5, 5
+	ldcoord_a 5, 7
+	ldcoord_a 5, 9
 	call PlaceUnfilledArrowMenuCursor
 	xor a
 	ld [wMenuItemToSwap], a

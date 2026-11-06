@@ -1,7 +1,16 @@
 ; ROM-1.3: Move CHS list rendering to ROMX bank $0F; keep its Chinese layout.
 PrintListMenuEntries_::
+	; Shift the ENTIRE START Bag list up: interior y=2..10, names y=3/5/7/9.
+	; Other item/PC/shop lists keep their original interior y=3..11.
+	ld a, [wStartBagDescriptionActive]
+	and a
+	jr z, .normalClearOrigin
+	hlcoord 5, 2
+	jr .clearEntries
+.normalClearOrigin
 	hlcoord 5, 3
-	ld b, 9
+.clearEntries
+	ld b, 9 ; clear interior only; never overwrite the Bag bottom border at y=11
 	ld c, 14
 	call ClearScreenArea
 	ld a, [wListPointer]
@@ -25,7 +34,16 @@ PrintListMenuEntries_::
 	jr nc, .noCarry
 	inc d
 .noCarry
-	hlcoord 6, 4 ; coordinates of first list entry name
+	; Names, quantities, CANCEL and the scroll indicator all use this base.
+	; The later +2*SCREEN_WIDTH per entry preserves their two-tile spacing.
+	ld a, [wStartBagDescriptionActive]
+	and a
+	jr z, .normalEntryOrigin
+	hlcoord 6, 3
+	jr .entryOriginReady
+.normalEntryOrigin
+	hlcoord 6, 4
+.entryOriginReady
 	ld b, 4 ; print 4 names
 .loop
 	ld a, b

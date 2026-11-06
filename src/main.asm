@@ -626,3 +626,11 @@ INCLUDE "engine/items/surf_fishing_result.asm"
 ; RPP #382/#384: post-gift fishing tips; far text in roomy ROMX Bank $30.
 SECTION "Fishing Guru and Surf Tips", ROMX, BANK[$30]
 INCLUDE "data/text/fishing_guru_tips.asm"
+
+; CHS: repeat HM02 teaching with special-Fly left/right navigation.
+SECTION "HM02 Special Fly Guide", ROMX, BANK[$30]
+INCLUDE "data/text/fly_house_special_fly_tips.asm"
+
+; CHS: two-line single-list START Bag descriptions; no Pocket modes.
+SECTION "Single Bag Descriptions", ROMX, BANK[$30]
+INCLUDE "engine/items/single_bag_descriptions.asm"

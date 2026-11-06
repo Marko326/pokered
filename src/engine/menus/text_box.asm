@@ -27,6 +27,17 @@ DisplayTextBoxID_::
 	jp hl ; jump to the function
 .coordTableMatch
 	call GetTextBoxIDCoords
+	; START Bag only: translate the complete upper-list layout one tile up.
+	; Border y=1..11; its item rows/cursors/clear region/arrow are translated
+	; separately at the list renderer/input entry points. Description stays y=12..17.
+	ld a, [wTextBoxID]
+	cp LIST_MENU_BOX
+	jr nz, .normalBoxCoords
+	ld a, [wStartBagDescriptionActive]
+	and a
+	jr z, .normalBoxCoords
+	dec d
+.normalBoxCoords
 	call GetAddressOfScreenCoords
 	call TextBoxBorder
 	ret

@@ -2334,7 +2334,11 @@ wCurMapScript:: db
 wStartMenuCloseMode:: db
 ; Transient list-repaint flag in existing padding (no WRAM address changes).
 wItemListRedrawDirty:: db
-	ds 5
+; Session-only START Bag description state; subdivide existing padding.
+wStartBagDescriptionActive:: db
+wStartBagDescriptionLastID:: db
+wStartBagDescriptionBoxDrawn:: db
+	ds 2
 
 wPlayTimeHours:: db
 wPlayTimeMaxed:: db

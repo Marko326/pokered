@@ -1,6 +1,6 @@
-; ROM-1.37 正式版本：收口第一世代钓鱼与快捷操作。
+; ROM-1.38 正式版本：收口背包双框道具说明与 HM02 飞翔教学。
 ; 卧室电脑使用本地文本脚本入口接入完整 PC 菜单；不修改存档结构。
 SECTION "Game Version", ROM0
 
 GameVersionText::
-	db "ROM-1.37@"
+	db "ROM-1.38@"

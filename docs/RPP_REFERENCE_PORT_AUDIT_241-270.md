@@ -1,3 +1,5 @@
+> **ROM-1.37 后续实施状态（2026-11-05；覆盖本批旧“未移植／待评估”表述）**：当前统一台账见 [`RPP_REFERENCE_PORT_CURRENT_STATUS_ROM-1.37.md`](RPP_REFERENCE_PORT_CURRENT_STATUS_ROM-1.37.md)。下列正文保留 ROM-1.21 第一轮审核时点的原始证据，不删除也不把静态分类冒充现行待办。 本批本轮没有单独的新状态核验，继续参照原始分类。
+
 # RPP 参考分支移植台账：第 09 批（241～270）
 
 > **CHS 正式对照**：`ROM-1.21.zip` / `CHS_Mod` 已提交 HEAD `70549f631b187d2062a3b952a0d26426804d38b1`。

@@ -14,6 +14,10 @@ HandleMenuInput_::
 .loop1
 	xor a
 	ld [wAnimCounter], a ; counter for pokemon shaking animation
+	; HandleMenuInput consumes ordinary Up/Down internally, without returning
+	; to the list caller. Refresh START Bag descriptions on each cursor step.
+	; The helper does nothing for other menus and unchanged selections.
+	call UpdateStartBagDescriptionIfActive
 	call PlaceMenuCursor
 	ld a, [wStartMenuInputCapture]
 	and a
@@ -50,7 +54,16 @@ HandleMenuInput_::
 	and a ; was a key pressed?
 	jr nz, .keyPressed
 	push hl
-	hlcoord 18, 11 ; coordinates of blinking down arrow in some menus
+	; Blink at the same row as the printed down arrow (one row higher in
+	; START Bag only); do not leave an old cursor/arrow at y=11.
+	ld a, [wStartBagDescriptionActive]
+	and a
+	jr z, .normalDownArrow
+	hlcoord 18, 10
+	jr .downArrowReady
+.normalDownArrow
+	hlcoord 18, 11
+.downArrowReady
 	ld c, CHARVAL(" ")
 	call HandleDownArrowBlinkTiming ; blink down arrow (if any)
 	pop hl

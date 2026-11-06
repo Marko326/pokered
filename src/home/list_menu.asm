@@ -47,7 +47,14 @@ DisplayListMenuID::
 	ld a, 2 ; max menu item ID is 2 if the list has at least 2 entries
 .setMenuVariables
 	ld [wMaxMenuItem], a
+	; The START Bag list has moved up one row, so move its live cursor too.
+	; PC/shop/other lists still start at y=4.
+	ld a, [wStartBagDescriptionActive]
+	and a
 	ld a, 4
+	jr z, .setTopMenuY
+	dec a
+.setTopMenuY
 	ld [wTopMenuItemY], a
 	ld a, 5
 	ld [wTopMenuItemX], a
@@ -76,6 +83,11 @@ DisplayListMenuIDLoop::
 	xor a
 	ldh [hAutoBGTransferEnabled], a ; disable transfer
 	call PrintListMenuEntries
+	; List repaint can recycle DFS font tiles even if the selected item ID
+	; has not changed. Repaint its description too, never show stale glyphs.
+	ld a, $fe
+	ld [wStartBagDescriptionLastID], a
+	call UpdateStartBagDescriptionIfActive
 	call PlaceMenuCursor ; list and cursor enter the normal BG transfer together
 	ld a, 1
 	ldh [hAutoBGTransferEnabled], a ; enable transfer
@@ -104,6 +116,7 @@ DisplayListMenuIDLoop::
 .input
 	call HandleMenuInput
 	push af
+	call UpdateStartBagDescriptionIfActive
 	call PlaceMenuCursor
 	pop af
 	bit BIT_A_BUTTON, a
@@ -316,3 +329,17 @@ PrintListMenuEntries::
 
 ListMenuCancelText::
 	db "CANCEL@"
+
+; Only START -> Bag sets this flag; PC/Mart/Battle lists do not render a panel.
+UpdateStartBagDescriptionIfActive::
+    ld a, [wStartBagDescriptionActive]
+    and a
+    ret z
+    push bc
+    push de
+    push hl
+    farcall UpdateSingleBagDescription
+    pop hl
+    pop de
+    pop bc
+    ret
