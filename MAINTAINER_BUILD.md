@@ -5,6 +5,8 @@
 - **正式清理范围**：`src/data/game_version.asm` 将 `GameVersionText` 从 `ROM-1.39D` 改为正式 `ROM-1.40`；正式版号为 8 字符，因此 `src/engine/menus/options_bilingual.asm` 的 Options 右上角版本绘制起点从 x=10 调回 x=11，右边缘仍为 x=18。除版本常量和该显示坐标外，不再改动运行逻辑。
 - **功能保持**：保留 Options 中英文页均不显示 `B:BACK`／`B:返回`、首次进入默认选中 PAGE、A／左右翻页、B／START 退出、两处用户特意保留的「中文」选项原字码，以及页脚清理区域 x=11..18、y=15..17。LANGUAGE 位、WRAM／SRAM 和存档格式不变。
 - **LANGUAGE 范围限制**：本轮仍是第一阶段试点，仅 Options 与 Route 1 一位 NPC 使用语言切换；English 模式不代表全游戏对白、战斗、菜单和图鉴均已英文覆盖，后续待办继续保留。
+- **提交拆分**：累计差异包含 LANGUAGE 资源盘点脚本及其报告／TSV，按项目模式 A 分为 `feat(menus)` 游戏功能提交与 `test(tool)` 审计提交；工具部分由反向隔离补丁单独撤回／恢复。
+- **交付五件套**：①ROM-1.39D→ROM-1.40 清理增量补丁；②最终状态→仅保留游戏功能的工具反向隔离补丁；③`04324e16...` 正式 HEAD→ROM-1.40 累计全量补丁；④功能提交日志；⑤工具／审计提交日志。共 3 份补丁＋2 份日志。增量与全量互斥。
 - **构建与提交边界**：由维护者本地运行官方 RGBDS `make red`／`make blue`，检查新 MAP、Bank 空间和红蓝 ROM。本环境不运行 RGBDS、不生成 ROM／MAP／SHA，也不执行 Git Commit／Push。补丁可逆应用与静态核对不等于 ROM 构建或完整平台实测。
 
 ---

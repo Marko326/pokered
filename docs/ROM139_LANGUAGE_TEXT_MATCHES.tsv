@@ -1,0 +1,2448 @@
+label	chs_xlsx	english_in_src_text	english_source	complex_control_or_placeholder	also_in_upstream_master
+_MomWakeUpText	indoor.xlsx	yes	src/text/RedsHouse1F.asm	no	not checked
+_MomHealText1	indoor.xlsx	yes	src/text/RedsHouse1F.asm	yes	not checked
+_MomHealText2	indoor.xlsx	yes	src/text/RedsHouse1F.asm	no	not checked
+_StandByMeText	indoor.xlsx	yes	src/text/RedsHouse1F.asm	no	not checked
+_TVWrongSideText	indoor.xlsx	yes	src/text/RedsHouse1F.asm	no	not checked
+_DaisyInitialText	indoor.xlsx	yes	src/text/BluesHouse.asm	yes	not checked
+_DaisyOfferMapText	indoor.xlsx	yes	src/text/BluesHouse.asm	no	not checked
+_GotMapText	indoor.xlsx	yes	src/text/BluesHouse.asm	yes	not checked
+_DaisyBagFullText	indoor.xlsx	yes	src/text/BluesHouse.asm	no	not checked
+_DaisyUseMapText	indoor.xlsx	yes	src/text/BluesHouse.asm	no	not checked
+_BluesHouseDaisyWalkingText	indoor.xlsx	yes	src/text/BluesHouse.asm	no	not checked
+_BluesHouseTownMapText	indoor.xlsx	yes	src/text/BluesHouse.asm	no	not checked
+_OaksLabGaryText1	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabText40	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabText41	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabText39	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabCharmanderText	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabSquirtleText	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabBulbasaurText	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabMonEnergeticText	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabReceivedMonText	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabLastMonText	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabText_1d2f0	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabText_1d2f5	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabText_1d2fa	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabDeliverParcelText1	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabDeliverParcelText2	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabAroundWorldText	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabGivePokeballsText1	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabGivePokeballsText2	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabPleaseVisitText	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabText_1d31d	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabText_1d32c	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabText8	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabText_1d340	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabRivalWaitingText	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabChooseMonText	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabRivalInterjectionText	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabBePatientText	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabLeavingText	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabRivalPickingMonText	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabRivalReceivedMonText	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabRivalChallengeText	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabText_1d3be	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabText_1d3c3	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabRivalToughenUpText	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabText21	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabText22	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabText23	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabText24	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabText25	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabText26	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabText27	indoor.xlsx	yes	src/text/OaksLab.asm	yes	not checked
+_OaksLabText_1d405	indoor.xlsx	yes	src/text/OaksLab.asm	no	not checked
+_OaksLabHomePCUpdatedText	indoor.xlsx	no		no	not checked
+_ViridianPokeCenterText2	indoor.xlsx	yes	src/text/ViridianPokecenter.asm	no	not checked
+_ViridianPokeCenterText3	indoor.xlsx	yes	src/text/ViridianPokecenter.asm	no	not checked
+_ViridianMartText1	indoor.xlsx	yes	src/text/ViridianMart.asm	no	not checked
+_ViridianMartText4	indoor.xlsx	yes	src/text/ViridianMart.asm	no	not checked
+ViridianMartParcelQuestText	indoor.xlsx	yes	src/text/ViridianMart.asm	yes	not checked
+_ViridianMartText2	indoor.xlsx	yes	src/text/ViridianMart.asm	no	not checked
+_ViridianMartText3	indoor.xlsx	yes	src/text/ViridianMart.asm	no	not checked
+_SchoolText1	indoor.xlsx	yes	src/text/ViridianSchoolHouse.asm	no	not checked
+_SchoolText2	indoor.xlsx	yes	src/text/ViridianSchoolHouse.asm	no	not checked
+_ViridianHouseText1	indoor.xlsx	yes	src/text/ViridianNicknameHouse.asm	no	not checked
+_ViridianHouseText2	indoor.xlsx	yes	src/text/ViridianNicknameHouse.asm	no	not checked
+_ViridianHouseText_1d5b1	indoor.xlsx	yes	src/text/ViridianNicknameHouse.asm	no	not checked
+_ViridianHouseText4	indoor.xlsx	yes	src/text/ViridianNicknameHouse.asm	no	not checked
+_GiovanniPreBattleText	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ReceivedEarthBadgeText	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_GiovanniPostBattleAdviceText	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_GiovanniEarthBadgeInfoText	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ReceivedTM27Text	indoor.xlsx	yes	src/text/ViridianGym.asm	yes	not checked
+_TM27ExplanationText	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_TM27NoRoomText	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymBattleText1	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymEndBattleText1	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymAfterBattleText1	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymBattleText2	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymEndBattleText2	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymAfterBattleText2	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymBattleText3	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymEndBattleText3	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymAfterBattleText3	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymBattleText4	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymEndBattleText4	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymAfterBattleText4	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymBattleText5	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymEndBattleText5	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymAfterBattleText5	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymBattleText6	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymEndBattleText6	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymAfterBattleText6	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymBattleText7	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymEndBattleText7	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymAfterBattleText7	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymBattleText8	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymEndBattleText8	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymAfterBattleText8	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymGuidePreBattleText	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_ViridianGymGuidePostBattleText	indoor.xlsx	yes	src/text/ViridianGym.asm	no	not checked
+_Museum1FText_5c21a	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c21f	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c224	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c229	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c22e	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c233	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c238	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c23d	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c242	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c251	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c28e	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_ReceivedOldAmberText	indoor.xlsx	yes	src/text/Museum1F.asm	yes	not checked
+_Museum1FText_5c299	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c29e	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c2ad	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum1FText_5c2bc	indoor.xlsx	yes	src/text/Museum1F.asm	no	not checked
+_Museum2FText1	indoor.xlsx	yes	src/text/Museum2F.asm	no	not checked
+_Museum2FText2	indoor.xlsx	yes	src/text/Museum2F.asm	no	not checked
+_Museum2FText3	indoor.xlsx	yes	src/text/Museum2F.asm	no	not checked
+_Museum2FText4	indoor.xlsx	yes	src/text/Museum2F.asm	no	not checked
+_Museum2FText5	indoor.xlsx	yes	src/text/Museum2F.asm	no	not checked
+_Museum2FText6	indoor.xlsx	yes	src/text/Museum2F.asm	no	not checked
+_Museum2FText7	indoor.xlsx	yes	src/text/Museum2F.asm	no	not checked
+_BrockPreBattleText	indoor.xlsx	yes	src/text/PewterGym.asm	no	not checked
+_BrockPostBattleAdviceText	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_BeforeReceivedTM34Text	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_ReceivedTM34Text	indoor.xlsx	yes	src/text/PewterGym_2.asm	yes	not checked
+_TM34ExplanationText	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_TM34NoRoomText	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_ReceivedBoulderBadgeText	indoor.xlsx	yes	src/text/PewterGym_2.asm	yes	not checked
+_BrockBoulerBadgeInfoText	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_PewterGymBattleText1	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_PewterGymEndBattleText1	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_PewterGymAfterBattleText1	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_PewterGymGuidePreAdviceText	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_PewterGymGuideBeginAdviceText	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_PewterGymGuideAdviceText	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_PewterGymText_5c524	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_PewterGymGuidePostBattleText	indoor.xlsx	yes	src/text/PewterGym_2.asm	no	not checked
+_PewterHouse1Text1	indoor.xlsx	yes	src/text/PewterNidoranHouse.asm	no	not checked
+_PewterHouse1Text2	indoor.xlsx	yes	src/text/PewterNidoranHouse.asm	no	not checked
+_PewterHouse1Text3	indoor.xlsx	yes	src/text/PewterNidoranHouse.asm	no	not checked
+_PewterMartText2	indoor.xlsx	yes	src/text/PewterMart.asm	no	not checked
+_PewterMartText3	indoor.xlsx	yes	src/text/PewterMart.asm	no	not checked
+_PewterHouse2Text1	indoor.xlsx	yes	src/text/PewterSpeechHouse.asm	no	not checked
+_PewterHouse2Text2	indoor.xlsx	yes	src/text/PewterSpeechHouse.asm	no	not checked
+_PewterPokecenterText2	indoor.xlsx	yes	src/text/PewterPokecenter.asm	no	not checked
+_PewterJigglypuffText	indoor.xlsx	yes	src/text/PewterPokecenter.asm	no	not checked
+_CeruleanTrashedText_1d6ab	indoor.xlsx	yes	src/text/CeruleanTrashedHouse.asm	no	not checked
+_CeruleanTrashedText_1d6b0	indoor.xlsx	yes	src/text/CeruleanTrashedHouse.asm	no	not checked
+_CeruleanHouseTrashedText2	indoor.xlsx	yes	src/text/CeruleanTrashedHouse.asm	no	not checked
+_CeruleanHouseTrashedText3	indoor.xlsx	yes	src/text/CeruleanTrashedHouse.asm	no	not checked
+_CeruleanHouse1Text1	indoor.xlsx	yes	src/text/CeruleanTradeHouse.asm	no	not checked
+_CeruleanPokecenterText2	indoor.xlsx	yes	src/text/CeruleanPokecenter.asm	no	not checked
+_CeruleanPokecenterText3	indoor.xlsx	yes	src/text/CeruleanPokecenter.asm	no	not checked
+_MistyPreBattleText	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_TM11ExplanationText	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_MistyCascadeBadgeInfoText	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_ReceivedTM11Text	indoor.xlsx	yes	src/text/CeruleanGym.asm	yes	not checked
+_TM11NoRoomText	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_ReceivedCascadeBadgeText	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_CeruleanGymBattleText1	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_CeruleanGymEndBattleText1	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_CeruleanGymAfterBattleText1	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_CeruleanGymBattleText2	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_CeruleanGymEndBattleText2	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_CeruleanGymAfterBattleText2	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_CeruleanGymGuidePreBattleText	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_CeruleanGymGuidePostBattleText	indoor.xlsx	yes	src/text/CeruleanGym.asm	no	not checked
+_BikeShopText_1d810	indoor.xlsx	yes	src/text/BikeShop.asm	no	not checked
+_BikeShopText_1d815	indoor.xlsx	yes	src/text/BikeShop.asm	no	not checked
+_BikeShopCantAffordText	indoor.xlsx	yes	src/text/BikeShop.asm	no	not checked
+_BikeShopText_1d81f	indoor.xlsx	yes	src/text/BikeShop.asm	no	not checked
+_BikeShopText_1d824	indoor.xlsx	yes	src/text/BikeShop.asm	yes	not checked
+_BikeShopComeAgainText	indoor.xlsx	yes	src/text/BikeShop.asm	no	not checked
+_BikeShopText_1d82f	indoor.xlsx	yes	src/text/BikeShop.asm	no	not checked
+_BikeShopText_1d834	indoor.xlsx	yes	src/text/BikeShop.asm	no	not checked
+_BikeShopText_1d843	indoor.xlsx	yes	src/text/BikeShop.asm	no	not checked
+_BikeShopText_1d85c	indoor.xlsx	yes	src/text/BikeShop.asm	no	not checked
+_BikeShopText_1d861	indoor.xlsx	yes	src/text/BikeShop.asm	no	not checked
+_CeruleanMartText2	indoor.xlsx	yes	src/text/CeruleanMart.asm	no	not checked
+_CeruleanMartText3	indoor.xlsx	yes	src/text/CeruleanMart.asm	no	not checked
+_CeruleanHouse2Text_74e77	indoor.xlsx	yes	src/text/CeruleanBadgeHouse.asm	no	not checked
+_CeruleanHouse2Text_74e7c	indoor.xlsx	yes	src/text/CeruleanBadgeHouse.asm	no	not checked
+_CeruleanHouse2Text_74e81	indoor.xlsx	yes	src/text/CeruleanBadgeHouse.asm	no	not checked
+_CeruleanHouse2Text_74e96	indoor.xlsx	yes	src/text/CeruleanBadgeHouse.asm	no	not checked
+_CeruleanHouse2Text_74e9b	indoor.xlsx	yes	src/text/CeruleanBadgeHouse.asm	no	not checked
+_CeruleanHouse2Text_74ea0	indoor.xlsx	yes	src/text/CeruleanBadgeHouse.asm	no	not checked
+_CeruleanHouse2Text_74ea5	indoor.xlsx	yes	src/text/CeruleanBadgeHouse.asm	no	not checked
+_CeruleanHouse2Text_74eaa	indoor.xlsx	yes	src/text/CeruleanBadgeHouse.asm	no	not checked
+_CeruleanHouse2Text_74eaf	indoor.xlsx	yes	src/text/CeruleanBadgeHouse.asm	no	not checked
+_CeruleanHouse2Text_74eb4	indoor.xlsx	yes	src/text/CeruleanBadgeHouse.asm	no	not checked
+_CeruleanHouse2Text_74eb9	indoor.xlsx	yes	src/text/CeruleanBadgeHouse.asm	no	not checked
+_LavenderPokecenterText2	indoor.xlsx	yes	src/text/LavenderPokecenter.asm	no	not checked
+_LavenderPokecenterText3	indoor.xlsx	yes	src/text/LavenderPokecenter.asm	no	not checked
+_PokemonTower1Text1	indoor.xlsx	yes	src/text/PokemonTower1F.asm	no	not checked
+_PokemonTower1Text2	indoor.xlsx	yes	src/text/PokemonTower1F.asm	no	not checked
+_PokemonTower1Text3	indoor.xlsx	yes	src/text/PokemonTower1F.asm	no	not checked
+_PokemonTower1Text4	indoor.xlsx	yes	src/text/PokemonTower1F.asm	no	not checked
+_PokemonTower1Text5	indoor.xlsx	yes	src/text/PokemonTower1F.asm	no	not checked
+_PokemonTower2Text_6062d	indoor.xlsx	yes	src/text/PokemonTower2F.asm	yes	not checked
+_PokemonTower2Text_60632	indoor.xlsx	yes	src/text/PokemonTower2F.asm	no	not checked
+_PokemonTower2Text_60637	indoor.xlsx	yes	src/text/PokemonTower2F.asm	yes	not checked
+_PokemonTower2Text_6063c	indoor.xlsx	yes	src/text/PokemonTower2F.asm	no	not checked
+_PokemonTower2Text2	indoor.xlsx	yes	src/text/PokemonTower2F.asm	no	not checked
+_PokemonTower3BattleText1	indoor.xlsx	yes	src/text/PokemonTower3F.asm	no	not checked
+_PokemonTower3EndBattleText1	indoor.xlsx	yes	src/text/PokemonTower3F.asm	no	not checked
+_PokemonTower3AfterBattleText1	indoor.xlsx	yes	src/text/PokemonTower3F.asm	no	not checked
+_PokemonTower3BattleText2	indoor.xlsx	yes	src/text/PokemonTower3F.asm	no	not checked
+_PokemonTower3EndBattleText2	indoor.xlsx	yes	src/text/PokemonTower3F.asm	no	not checked
+_PokemonTower3AfterBattleText2	indoor.xlsx	yes	src/text/PokemonTower3F.asm	no	not checked
+_PokemonTower3BattleText3	indoor.xlsx	yes	src/text/PokemonTower3F.asm	no	not checked
+_PokemonTower3EndBattleText3	indoor.xlsx	yes	src/text/PokemonTower3F.asm	no	not checked
+_PokemonTower3AfterBattleText3	indoor.xlsx	yes	src/text/PokemonTower3F.asm	no	not checked
+_PokemonTower4BattleText1	indoor.xlsx	yes	src/text/PokemonTower4F.asm	no	not checked
+_PokemonTower4EndBattleText1	indoor.xlsx	yes	src/text/PokemonTower4F.asm	no	not checked
+_PokemonTower4AfterBattleText1	indoor.xlsx	yes	src/text/PokemonTower4F.asm	no	not checked
+_PokemonTower4BattleText2	indoor.xlsx	yes	src/text/PokemonTower4F.asm	no	not checked
+_PokemonTower4EndBattleText2	indoor.xlsx	yes	src/text/PokemonTower4F.asm	no	not checked
+_PokemonTower4AfterBattleText2	indoor.xlsx	yes	src/text/PokemonTower4F.asm	no	not checked
+_PokemonTower4BattleText3	indoor.xlsx	yes	src/text/PokemonTower4F.asm	no	not checked
+_PokemonTower4EndBattleText3	indoor.xlsx	yes	src/text/PokemonTower4F.asm	no	not checked
+_PokemonTower4AfterBattleText3	indoor.xlsx	yes	src/text/PokemonTower4F.asm	no	not checked
+_PokemonTower5Text1	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5BattleText1	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5EndBattleText1	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5AfterBattleText1	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5BattleText2	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5EndBattleText2	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5AfterBattleText2	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5BattleText3	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5EndBattleText3	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5AfterBattleText3	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5BattleText4	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5EndBattleText4	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5AfterBattleText4	indoor.xlsx	yes	src/text/PokemonTower5F.asm	no	not checked
+_PokemonTower5Text7	indoor.xlsx	yes	src/text/PokemonTower5F.asm	yes	not checked
+_PokemonTower2Text_60c1f	indoor.xlsx	yes	src/text/PokemonTower6F.asm	no	not checked
+_PokemonTower2Text_60c24	indoor.xlsx	yes	src/text/PokemonTower6F.asm	no	not checked
+_PokemonTower6BattleText1	indoor.xlsx	yes	src/text/PokemonTower6F.asm	no	not checked
+_PokemonTower6EndBattleText1	indoor.xlsx	yes	src/text/PokemonTower6F.asm	no	not checked
+_PokemonTower6AfterBattleText1	indoor.xlsx	yes	src/text/PokemonTower6F.asm	no	not checked
+_PokemonTower6BattleText2	indoor.xlsx	yes	src/text/PokemonTower6F.asm	no	not checked
+_PokemonTower6EndBattleText2	indoor.xlsx	yes	src/text/PokemonTower6F.asm	no	not checked
+_PokemonTower6AfterBattleText2	indoor.xlsx	yes	src/text/PokemonTower6F.asm	no	not checked
+_PokemonTower6BattleText3	indoor.xlsx	yes	src/text/PokemonTower6F.asm	no	not checked
+_PokemonTower6EndBattleText3	indoor.xlsx	yes	src/text/PokemonTower6F.asm	no	not checked
+_PokemonTower6AfterBattleText3	indoor.xlsx	yes	src/text/PokemonTower6F.asm	no	not checked
+_PokemonTower6Text6	indoor.xlsx	yes	src/text/PokemonTower6F.asm	no	not checked
+_TowerRescueFujiText	indoor.xlsx	yes	src/text/PokemonTower7F.asm	no	not checked
+_PokemonTower7BattleText1	indoor.xlsx	yes	src/text/PokemonTower7F.asm	no	not checked
+_PokemonTower7EndBattleText1	indoor.xlsx	yes	src/text/PokemonTower7F.asm	no	not checked
+_PokemonTower7AfterBattleText1	indoor.xlsx	yes	src/text/PokemonTower7F.asm	no	not checked
+_PokemonTower7BattleText2	indoor.xlsx	yes	src/text/PokemonTower7F.asm	no	not checked
+_PokemonTower7EndBattleText2	indoor.xlsx	yes	src/text/PokemonTower7F.asm	no	not checked
+_PokemonTower7AfterBattleText2	indoor.xlsx	yes	src/text/PokemonTower7F.asm	no	not checked
+_PokemonTower7BattleText3	indoor.xlsx	yes	src/text/PokemonTower7F.asm	no	not checked
+_PokemonTower7EndBattleText3	indoor.xlsx	yes	src/text/PokemonTower7F.asm	no	not checked
+_PokemonTower7AfterBattleText3	indoor.xlsx	yes	src/text/PokemonTower7F.asm	no	not checked
+_LavenderHouse1Text_1d8d1	indoor.xlsx	yes	src/text/MrFujisHouse.asm	no	not checked
+_LavenderHouse1Text_1d8d6	indoor.xlsx	yes	src/text/MrFujisHouse.asm	no	not checked
+_LavenderHouse1Text_1d8f4	indoor.xlsx	yes	src/text/MrFujisHouse.asm	no	not checked
+_LavenderHouse1Text_1d8f9	indoor.xlsx	yes	src/text/MrFujisHouse.asm	no	not checked
+_LavenderHouse1Text3	indoor.xlsx	yes	src/text/MrFujisHouse.asm	no	not checked
+_LavenderHouse1Text4	indoor.xlsx	yes	src/text/MrFujisHouse.asm	no	not checked
+_LavenderHouse1Text_1d94c	indoor.xlsx	yes	src/text/MrFujisHouse.asm	yes	not checked
+_ReceivedFluteText	indoor.xlsx	yes	src/text/MrFujisHouse.asm	yes	not checked
+_FluteExplanationText	indoor.xlsx	yes	src/text/MrFujisHouse.asm	no	not checked
+_FluteNoRoomText	indoor.xlsx	yes	src/text/MrFujisHouse.asm	no	not checked
+_MrFujiAfterFluteText	indoor.xlsx	yes	src/text/MrFujisHouse.asm	no	not checked
+_LavenderHouse1Text6	indoor.xlsx	yes	src/text/MrFujisHouse.asm	no	not checked
+_LavenderMartText2	indoor.xlsx	yes	src/text/LavenderMart.asm	no	not checked
+_LavenderMartReviveText	indoor.xlsx	yes	src/text/LavenderMart.asm	no	not checked
+_LavenderMartNuggetText	indoor.xlsx	yes	src/text/LavenderMart.asm	no	not checked
+_LavenderHouse2Text1	indoor.xlsx	yes	src/text/LavenderCuboneHouse.asm	no	not checked
+_LavenderHouse2Text_1d9dc	indoor.xlsx	yes	src/text/LavenderCuboneHouse.asm	no	not checked
+_LavenderHouse2Text_1d9e1	indoor.xlsx	yes	src/text/LavenderCuboneHouse.asm	no	not checked
+_NameRaterText_1dab3	indoor.xlsx	yes	src/text/NameRatersHouse.asm	no	not checked
+_NameRaterText_1dab8	indoor.xlsx	yes	src/text/NameRatersHouse.asm	no	not checked
+_NameRaterText_1dabd	indoor.xlsx	yes	src/text/NameRatersHouse.asm	yes	not checked
+_NameRaterText_1dac2	indoor.xlsx	yes	src/text/NameRatersHouse.asm	no	not checked
+_NameRaterText_1dac7	indoor.xlsx	yes	src/text/NameRatersHouse.asm	yes	not checked
+_NameRaterText_1dacc	indoor.xlsx	yes	src/text/NameRatersHouse.asm	no	not checked
+_NameRaterText_1dad1	indoor.xlsx	yes	src/text/NameRatersHouse.asm	yes	not checked
+_VermilionPokecenterText2	indoor.xlsx	yes	src/text/VermilionPokecenter.asm	no	not checked
+_VermilionPokecenterText3	indoor.xlsx	yes	src/text/VermilionPokecenter.asm	no	not checked
+PikachuFanText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+PikachuFanBetterText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+SeelFanText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+SeelFanBetterText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+FanClubPikachuText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+FanClubSeelText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+FanClubMeetChairText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+FanClubChairStoryText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+ReceivedBikeVoucherText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	yes	not checked
+ExplainBikeVoucherText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+FanClubNoStoryText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+FanClubChairFinalText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	yes	not checked
+FanClubBagFullText	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+_FanClubText6	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+_FanClubText7	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+_FanClubText8	indoor.xlsx	yes	src/text/PokemonFanClub.asm	no	not checked
+_VermilionMartText2	indoor.xlsx	yes	src/text/VermilionMart.asm	no	not checked
+_VermilionMartText3	indoor.xlsx	yes	src/text/VermilionMart.asm	no	not checked
+_LTSurgePreBattleText	indoor.xlsx	yes	src/text/VermilionGym.asm	no	not checked
+_LTSurgePostBattleAdviceText	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_LTSurgeThunderBadgeInfoText	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_ReceivedTM24Text	indoor.xlsx	yes	src/text/VermilionGym_2.asm	yes	not checked
+_TM24ExplanationText	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_TM24NoRoomText	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_ReceivedThunderBadgeText	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_VermilionGymBattleText1	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_VermilionGymEndBattleText1	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_VermilionGymAfterBattleText1	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_VermilionGymBattleText2	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_VermilionGymEndBattleText2	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_VermilionGymAfterBattleText2	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_VermilionGymBattleText3	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_VermilionGymEndBattleText3	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_VermilionGymAfterBattleText3	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_VermilionGymGuidePreBattleText	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_VermilionGymGuidePostBattleText	indoor.xlsx	yes	src/text/VermilionGym_2.asm	no	not checked
+_VermilionHouse1Text1	indoor.xlsx	yes	src/text/VermilionPidgeyHouse.asm	no	not checked
+_VermilionHouse1Text2	indoor.xlsx	yes	src/text/VermilionPidgeyHouse.asm	no	not checked
+_VermilionHouse1Text3	indoor.xlsx	yes	src/text/VermilionPidgeyHouse.asm	no	not checked
+_VermilionDockText1	indoor.xlsx	yes	src/text/VermilionDock.asm	no	not checked
+_VermilionHouse2Text_560b1	indoor.xlsx	yes	src/text/VermilionOldRodHouse.asm	no	not checked
+_VermilionHouse2Text_560b6	indoor.xlsx	yes	src/text/VermilionOldRodHouse.asm	yes	not checked
+_VermilionHouse2Text_560bb	indoor.xlsx	yes	src/text/VermilionOldRodHouse.asm	no	not checked
+_VermilionHouse2Text_560c0	indoor.xlsx	yes	src/text/VermilionOldRodHouse.asm	no	not checked
+_VermilionHouse2Text_560c5	indoor.xlsx	yes	src/text/VermilionOldRodHouse.asm	yes	not checked
+_VermilionHouse2Text_560ca	indoor.xlsx	yes	src/text/VermilionOldRodHouse.asm	no	not checked
+_CeladonMart1Text1	indoor.xlsx	yes	src/text/CeladonMart1F.asm	no	not checked
+_CeladonMart1Text2	indoor.xlsx	yes	src/text/CeladonMart1F.asm	no	not checked
+_CeladonMart1Text3	indoor.xlsx	yes	src/text/CeladonMart1F.asm	no	not checked
+_CeladonMart2Text3	indoor.xlsx	yes	src/text/CeladonMart2F.asm	no	not checked
+_CeladonMart2Text4	indoor.xlsx	yes	src/text/CeladonMart2F.asm	no	not checked
+_CeladonMart2Text5	indoor.xlsx	yes	src/text/CeladonMart2F.asm	no	not checked
+_TM18PreReceiveText	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_ReceivedTM18Text	indoor.xlsx	yes	src/text/CeladonMart3F.asm	yes	not checked
+_TM18ExplanationText	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_TM18NoRoomText	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_CeladonMart3Text2	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_CeladonMart3Text3	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_CeladonMart3Text4	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_CeladonMart3Text5	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_CeladonMart3Text6	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_CeladonMart3Text7	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_CeladonMart3Text9	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_CeladonMart3Text11	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_CeladonMart3Text13	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_CeladonMart3Text14	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_CeladonMart3Text15	indoor.xlsx	yes	src/text/CeladonMart3F.asm	no	not checked
+_CeladonMart4Text2	indoor.xlsx	yes	src/text/CeladonMart4F.asm	no	not checked
+_CeladonMart4Text3	indoor.xlsx	yes	src/text/CeladonMart4F.asm	no	not checked
+_CeladonMart4Text4	indoor.xlsx	yes	src/text/CeladonMart4F.asm	no	not checked
+_CeladonMartRoofText_484ee	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_CeladonMartRoofText_484f3	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_CeladonMartRoofText_484f9	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	yes	not checked
+_CeladonMartRoofText_484fe	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	yes	not checked
+_CeladonMartRoofText_48504	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_CeladonMartRoofText_4850a	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	yes	not checked
+_CeladonMartRoofText_4850f	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	yes	not checked
+_CeladonMartRoofText_48515	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_ReceivedTM49Text	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	yes	not checked
+_CeladonMartRoofText_48520	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_CeladonMartRoofText_48526	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_CeladonMartRoofText_4852c	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_CeladonMartRoofText1	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_CeladonMartRoofText_48598	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_CeladonMartRoofText4	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_CeladonMartRoofText6	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_VendingMachineText1	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_VendingMachineText4	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_VendingMachineText5	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	yes	not checked
+_VendingMachineText6	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_VendingMachineText7	indoor.xlsx	yes	src/text/CeladonMartRoof.asm	no	not checked
+_CeladonMansion1Text1	indoor.xlsx	yes	src/text/CeladonMansion1F.asm	no	not checked
+_CeladonMansion1Text2	indoor.xlsx	yes	src/text/CeladonMansion1F.asm	no	not checked
+_CeladonMansion1Text3	indoor.xlsx	yes	src/text/CeladonMansion1F.asm	no	not checked
+_CeladonMansion1Text4	indoor.xlsx	yes	src/text/CeladonMansion1F.asm	no	not checked
+_CeladonMansion1Text5	indoor.xlsx	yes	src/text/CeladonMansion1F.asm	no	not checked
+_CeladonMansion2Text1	indoor.xlsx	yes	src/text/CeladonMansion2F.asm	no	not checked
+_ProgrammerText	indoor.xlsx	yes	src/text/CeladonMansion3F.asm	no	not checked
+_GraphicArtistText	indoor.xlsx	yes	src/text/CeladonMansion3F.asm	no	not checked
+_WriterText	indoor.xlsx	yes	src/text/CeladonMansion3F.asm	no	not checked
+_GameDesignerText	indoor.xlsx	yes	src/text/CeladonMansion3F.asm	no	not checked
+_CompletedDexText	indoor.xlsx	yes	src/text/CeladonMansion3F.asm	no	not checked
+_CeladonMansion3Text5	indoor.xlsx	yes	src/text/CeladonMansion3F.asm	no	not checked
+_CeladonMansion3Text6	indoor.xlsx	yes	src/text/CeladonMansion3F.asm	no	not checked
+_CeladonMansion3Text7	indoor.xlsx	yes	src/text/CeladonMansion3F.asm	no	not checked
+_CeladonMansion3Text8	indoor.xlsx	yes	src/text/CeladonMansion3F.asm	no	not checked
+_CeladonMansion4Text1	indoor.xlsx	yes	src/text/CeladonMansionRoof.asm	no	not checked
+_CeladonMansion5Text1	indoor.xlsx	yes	src/text/CeladonMansionRoofHouse.asm	no	not checked
+_CeladonPokecenterText2	indoor.xlsx	yes	src/text/CeladonPokecenter.asm	no	not checked
+_CeladonPokecenterText3	indoor.xlsx	yes	src/text/CeladonPokecenter.asm	no	not checked
+_ErikaPreBattleText	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_ReceivedRainbowBadgeText	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_ErikaPostBattleAdviceText	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_ErikaRainbowBadgeInfoText	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_ReceivedTM21Text	indoor.xlsx	yes	src/text/CeladonGym.asm	yes	not checked
+_TM21ExplanationText	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_TM21NoRoomText	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymBattleText2	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymEndBattleText2	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymAfterBattleText2	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymBattleText3	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymEndBattleText3	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymAfterBattleText3	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymBattleText4	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymEndBattleText4	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymAfterBattleText4	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymBattleText5	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymEndBattleText5	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymAfterBattleText5	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymBattleText6	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymEndBattleText6	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymAfterBattleText6	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymBattleText7	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymEndBattleText7	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymAfterBattleText7	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymBattleText8	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymEndBattleText8	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGymAfterBattleText8	indoor.xlsx	yes	src/text/CeladonGym.asm	no	not checked
+_CeladonGameCornerText1	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48d22	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48d27	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48d2c	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48d31	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48d36	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48d3b	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText3	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText4	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48d9c	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_Received10CoinsText	indoor.xlsx	yes	src/text/GameCorner.asm	yes	not checked
+_CeladonGameCornerText_48da7	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48dac	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText6	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48dca	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48dcf	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText8	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48e26	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_Received20CoinsText	indoor.xlsx	yes	src/text/GameCorner.asm	yes	not checked
+_CeladonGameCornerText_48e31	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48e36	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48e88	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48e8d	indoor.xlsx	yes	src/text/GameCorner.asm	yes	not checked
+_CeladonGameCornerText_48e93	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48e98	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48ece	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48ed3	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48ed8	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48f09	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonGameCornerText_48f19	indoor.xlsx	yes	src/text/GameCorner.asm	no	not checked
+_CeladonMart5Text1	indoor.xlsx	yes	src/text/CeladonMart5F.asm	no	not checked
+_CeladonMart5Text2	indoor.xlsx	yes	src/text/CeladonMart5F.asm	no	not checked
+_CeladonMart5Text5	indoor.xlsx	yes	src/text/CeladonMart5F.asm	no	not checked
+_CeladonPrizeRoomText1	indoor.xlsx	yes	src/text/GameCornerPrizeRoom.asm	no	not checked
+_CeladonPrizeRoomText2	indoor.xlsx	yes	src/text/GameCornerPrizeRoom.asm	no	not checked
+_CeladonDinerText1	indoor.xlsx	yes	src/text/CeladonDiner.asm	no	not checked
+_CeladonDinerText2	indoor.xlsx	yes	src/text/CeladonDiner.asm	no	not checked
+_CeladonDinerText3	indoor.xlsx	yes	src/text/CeladonDiner.asm	no	not checked
+_CeladonDinerText4	indoor.xlsx	yes	src/text/CeladonDiner.asm	no	not checked
+_CeladonDinerText_491a7	indoor.xlsx	yes	src/text/CeladonDiner.asm	no	not checked
+_ReceivedCoinCaseText	indoor.xlsx	yes	src/text/CeladonDiner.asm	yes	not checked
+_CoinCaseNoRoomText	indoor.xlsx	yes	src/text/CeladonDiner.asm	no	not checked
+_CeladonDinerText_491b7	indoor.xlsx	yes	src/text/CeladonDiner.asm	no	not checked
+_CeladonHouseText1	indoor.xlsx	yes	src/text/CeladonChiefHouse.asm	no	not checked
+_CeladonHouseText2	indoor.xlsx	yes	src/text/CeladonChiefHouse.asm	no	not checked
+_CeladonHouseText3	indoor.xlsx	yes	src/text/CeladonChiefHouse.asm	no	not checked
+_CeladonHotelText1	indoor.xlsx	yes	src/text/CeladonHotel.asm	no	not checked
+_CeladonHotelText2	indoor.xlsx	yes	src/text/CeladonHotel.asm	no	not checked
+_CeladonHotelText3	indoor.xlsx	yes	src/text/CeladonHotel.asm	no	not checked
+_FuchsiaMartText2	indoor.xlsx	yes	src/text/FuchsiaMart.asm	no	not checked
+_FuchsiaMartText3	indoor.xlsx	yes	src/text/FuchsiaMart.asm	no	not checked
+_FuchsiaHouse1Text1	indoor.xlsx	yes	src/text/FuchsiaBillsGrandpasHouse.asm	no	not checked
+_FuchsiaHouse1Text2	indoor.xlsx	yes	src/text/FuchsiaBillsGrandpasHouse.asm	no	not checked
+_FuchsiaHouse1Text3	indoor.xlsx	yes	src/text/FuchsiaBillsGrandpasHouse.asm	no	not checked
+_FuchsiaPokecenterText1	indoor.xlsx	yes	src/text/FuchsiaPokecenter.asm	no	not checked
+_FuchsiaPokecenterText3	indoor.xlsx	yes	src/text/FuchsiaPokecenter.asm	no	not checked
+_WardenGibberishText1	indoor.xlsx	yes	src/text/WardensHouse.asm	no	not checked
+_WardenGibberishText2	indoor.xlsx	yes	src/text/WardensHouse.asm	no	not checked
+_WardenGibberishText3	indoor.xlsx	yes	src/text/WardensHouse.asm	no	not checked
+_WardenTeethText1	indoor.xlsx	yes	src/text/WardensHouse.asm	yes	not checked
+_WardenTeethText2	indoor.xlsx	yes	src/text/WardensHouse.asm	no	not checked
+_WardenThankYouText	indoor.xlsx	yes	src/text/WardensHouse.asm	no	not checked
+_ReceivedHM04Text	indoor.xlsx	yes	src/text/WardensHouse.asm	yes	not checked
+_HM04ExplanationText	indoor.xlsx	yes	src/text/WardensHouse.asm	no	not checked
+_HM04NoRoomText	indoor.xlsx	yes	src/text/WardensHouse.asm	no	not checked
+_FuchsiaHouse2Text_75176	indoor.xlsx	yes	src/text/WardensHouse.asm	no	not checked
+_FuchsiaHouse2Text_7517b	indoor.xlsx	yes	src/text/WardensHouse.asm	no	not checked
+_SafariZoneEntranceText1	indoor.xlsx	yes	src/text/SafariZoneGate.asm	no	not checked
+SafariZoneEntranceText_9e6e4	indoor.xlsx	yes	src/text/SafariZoneGate.asm	no	not checked
+SafariZoneEntranceText_9e747	indoor.xlsx	yes	src/text/SafariZoneGate.asm	yes	not checked
+_SafariZoneEntranceText_75360	indoor.xlsx	yes	src/text/SafariZoneGate.asm	no	not checked
+_SafariZoneEntranceText_75365	indoor.xlsx	yes	src/text/SafariZoneGate.asm	no	not checked
+_SafariZoneEntranceText_7536a	indoor.xlsx	yes	src/text/SafariZoneGate.asm	no	not checked
+SafariZoneEntranceText_9e814	indoor.xlsx	yes	src/text/SafariZoneGate.asm	no	not checked
+_SafariZoneEntranceText_753bb	indoor.xlsx	yes	src/text/SafariZoneGate.asm	no	not checked
+_SafariZoneEntranceText_753c0	indoor.xlsx	yes	src/text/SafariZoneGate.asm	no	not checked
+_SafariZoneEntranceText_753c5	indoor.xlsx	yes	src/text/SafariZoneGate.asm	no	not checked
+_SafariZoneEntranceText_753e6	indoor.xlsx	yes	src/text/SafariZoneGate.asm	no	not checked
+_SafariZoneEntranceText_753eb	indoor.xlsx	yes	src/text/SafariZoneGate.asm	no	not checked
+_SafariZoneEntranceText_753f0	indoor.xlsx	yes	src/text/SafariZoneGate.asm	no	not checked
+_KogaBeforeBattleText	indoor.xlsx	yes	src/text/FuchsiaGym.asm	no	not checked
+_ReceivedSoulBadgeText	indoor.xlsx	yes	src/text/FuchsiaGym.asm	no	not checked
+_KogaPostBattleAdviceText	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_KogaSoulBadgeInfoText	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_ReceivedTM06Text	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	yes	not checked
+_TM06ExplanationText	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_TM06NoRoomText	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymBattleText1	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymEndBattleText1	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymAfterBattleText1	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymBattleText2	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymEndBattleText2	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymAfterBattleText2	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymBattleText3	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymEndBattleText3	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymAfterBattleText3	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymBattleText4	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymEndBattleText4	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymAfterBattleText4	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymBattleText5	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymEndBattleText5	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymAfterBattleText5	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymBattleText6	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymEndBattleText6	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymAfterBattleText6	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymGuidePreBattleText	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaGymGuidePostBattleText	indoor.xlsx	yes	src/text/FuchsiaGym_2.asm	no	not checked
+_FuchsiaMeetingRoomText1	indoor.xlsx	yes	src/text/FuchsiaMeetingRoom.asm	no	not checked
+_FuchsiaMeetingRoomText2	indoor.xlsx	yes	src/text/FuchsiaMeetingRoom.asm	no	not checked
+_FuchsiaMeetingRoomText3	indoor.xlsx	yes	src/text/FuchsiaMeetingRoom.asm	no	not checked
+_FuchsiaHouse3Text_561bd	indoor.xlsx	yes	src/text/FuchsiaGoodRodHouse.asm	no	not checked
+_FuchsiaHouse3Text_561c2	indoor.xlsx	yes	src/text/FuchsiaGoodRodHouse.asm	yes	not checked
+_FuchsiaHouse3Text_56212	indoor.xlsx	yes	src/text/FuchsiaGoodRodHouse.asm	no	not checked
+_FuchsiaHouse3Text_56217	indoor.xlsx	yes	src/text/FuchsiaGoodRodHouse.asm	yes	not checked
+_FuchsiaHouse3Text_5621c	indoor.xlsx	yes	src/text/FuchsiaGoodRodHouse.asm	no	not checked
+_Mansion1BattleText2	indoor.xlsx	yes	src/text/PokemonMansion1F.asm	no	not checked
+_Mansion1EndBattleText2	indoor.xlsx	yes	src/text/PokemonMansion1F.asm	no	not checked
+_Mansion1AfterBattleText2	indoor.xlsx	yes	src/text/PokemonMansion1F.asm	no	not checked
+_MansionSwitchText	indoor.xlsx	yes	src/text/PokemonMansion1F.asm	no	not checked
+_MansionSwitchPressedText	indoor.xlsx	yes	src/text/PokemonMansion1F.asm	no	not checked
+_MansionSwitchNotPressedText	indoor.xlsx	yes	src/text/PokemonMansion1F.asm	no	not checked
+_BlainePreBattleText	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_ReceivedVolcanoBadgeText	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_BlainePostBattleAdviceText	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_BlaineVolcanoBadgeInfoText	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_ReceivedTM38Text	indoor.xlsx	yes	src/text/CinnabarGym.asm	yes	not checked
+_TM38ExplanationText	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_TM38NoRoomText	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymBattleText2	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymEndBattleText2	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymAfterBattleText2	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymBattleText1	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymEndBattleText1	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymAfterBattleText1	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymBattleText3	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymEndBattleText3	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymAfterBattleText3	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymBattleText4	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymEndBattleText4	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymAfterBattleText4	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymBattleText5	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymEndBattleText5	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymAfterBattleText5	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymBattleText6	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymEndBattleText6	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymAfterBattleText6	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymBattleText7	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymEndBattleText7	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymAfterBattleText7	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymGuidePreBattleText	indoor.xlsx	yes	src/text/CinnabarGym.asm	no	not checked
+_CinnabarGymGuidePostBattleText	indoor.xlsx	yes	src/text/CinnabarGym.asm	yes	not checked
+_Lab1Text1	indoor.xlsx	yes	src/text/CinnabarLab.asm	no	not checked
+_Lab1Text2	indoor.xlsx	yes	src/text/CinnabarLab.asm	no	not checked
+_Lab1Text3	indoor.xlsx	yes	src/text/CinnabarLab.asm	no	not checked
+_Lab1Text4	indoor.xlsx	yes	src/text/CinnabarLab.asm	no	not checked
+_Lab1Text5	indoor.xlsx	yes	src/text/CinnabarLab.asm	no	not checked
+_Lab2Text1	indoor.xlsx	yes	src/text/CinnabarLabTradeRoom.asm	no	not checked
+_TM35PreReceiveText	indoor.xlsx	yes	src/text/CinnabarLabMetronomeRoom.asm	no	not checked
+_ReceivedTM35Text	indoor.xlsx	yes	src/text/CinnabarLabMetronomeRoom.asm	yes	not checked
+_TM35ExplanationText	indoor.xlsx	yes	src/text/CinnabarLabMetronomeRoom.asm	no	not checked
+_TM35NoRoomText	indoor.xlsx	yes	src/text/CinnabarLabMetronomeRoom.asm	no	not checked
+_Lab3Text2	indoor.xlsx	yes	src/text/CinnabarLabMetronomeRoom.asm	no	not checked
+_Lab3Text3	indoor.xlsx	yes	src/text/CinnabarLabMetronomeRoom.asm	no	not checked
+_Lab3Text5	indoor.xlsx	yes	src/text/CinnabarLabMetronomeRoom.asm	no	not checked
+_Lab4Text_75dc6	indoor.xlsx	yes	src/text/CinnabarLabFossilRoom.asm	no	not checked
+_Lab4Text_75dcb	indoor.xlsx	yes	src/text/CinnabarLabFossilRoom.asm	no	not checked
+_Lab4Text_75dd0	indoor.xlsx	yes	src/text/CinnabarLabFossilRoom.asm	no	not checked
+_Lab4Text_75dd5	indoor.xlsx	yes	src/text/CinnabarLabFossilRoom.asm	yes	not checked
+_Lab4Text_610ae	indoor.xlsx	yes	src/text/CinnabarLabFossilRoom.asm	yes	not checked
+_Lab4Text_610b3	indoor.xlsx	yes	src/text/CinnabarLabFossilRoom.asm	yes	not checked
+_Lab4Text_610b8	indoor.xlsx	yes	src/text/CinnabarLabFossilRoom.asm	no	not checked
+_Lab4Text_610bd	indoor.xlsx	yes	src/text/CinnabarLabFossilRoom.asm	no	not checked
+_CinnabarPokecenterText2	indoor.xlsx	yes	src/text/CinnabarPokecenter.asm	no	not checked
+_CinnabarPokecenterText3	indoor.xlsx	yes	src/text/CinnabarPokecenter.asm	no	not checked
+_CinnabarMartText2	indoor.xlsx	yes	src/text/CinnabarMart.asm	no	not checked
+_CinnabarMartText3	indoor.xlsx	yes	src/text/CinnabarMart.asm	no	not checked
+_IndigoPlateauLobbyText2	indoor.xlsx	yes	src/text/IndigoPlateauLobby.asm	no	not checked
+_IndigoPlateauLobbyText3	indoor.xlsx	yes	src/text/IndigoPlateauLobby.asm	no	not checked
+_CopycatsHouse1FText1	indoor.xlsx	yes	src/text/CopycatsHouse1F.asm	no	not checked
+_CopycatsHouse1FText2	indoor.xlsx	yes	src/text/CopycatsHouse1F.asm	no	not checked
+_CopycatsHouse1FText3	indoor.xlsx	yes	src/text/CopycatsHouse1F.asm	no	not checked
+_CopycatsHouse2FText_5ccd4	indoor.xlsx	yes	src/text/CopycatsHouse2F.asm	yes	not checked
+_TM31PreReceiveText	indoor.xlsx	yes	src/text/CopycatsHouse2F.asm	no	not checked
+_ReceivedTM31Text	indoor.xlsx	yes	src/text/CopycatsHouse2F.asm	yes	not checked
+_TM31ExplanationText1	indoor.xlsx	yes	src/text/CopycatsHouse2F.asm	no	not checked
+_TM31ExplanationText2	indoor.xlsx	yes	src/text/CopycatsHouse2F.asm	yes	not checked
+_TM31NoRoomText	indoor.xlsx	yes	src/text/CopycatsHouse2F.asm	no	not checked
+_CopycatsHouse2FText2	indoor.xlsx	yes	src/text/CopycatsHouse2F.asm	no	not checked
+_CopycatsHouse2FText3	indoor.xlsx	yes	src/text/CopycatsHouse2F.asm	no	not checked
+_CopycatsHouse2FText6	indoor.xlsx	yes	src/text/CopycatsHouse2F.asm	no	not checked
+_CopycatsHouse2FText_5cd17	indoor.xlsx	yes	src/text/CopycatsHouse2F.asm	no	not checked
+_CopycatsHouse2FText_5cd1c	indoor.xlsx	yes	src/text/CopycatsHouse2F.asm	no	not checked
+_FightingDojoText_5ce8e	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoText_5ce93	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoText_5ce98	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoText_5ce9d	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoBattleText1	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoEndBattleText1	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoAfterBattleText1	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoBattleText2	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoEndBattleText2	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoAfterBattleText2	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoBattleText3	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoEndBattleText3	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoAfterBattleText3	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoBattleText4	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoEndBattleText4	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_FightingDojoAfterBattleText4	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_WantHitmonleeText	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_WantHitmonchanText	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_OtherHitmonText	indoor.xlsx	yes	src/text/FightingDojo.asm	no	not checked
+_SabrinaPreBattleText	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_ReceivedMarshBadgeText	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SabrinaPostBattleAdviceText	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_KogaMarshBadgeInfoText	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_ReceivedTM46Text	indoor.xlsx	yes	src/text/SaffronGym.asm	yes	not checked
+_TM46ExplanationText	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_TM46NoRoomText	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymGuidePreBattleText	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymGuidePostBattleText	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymBattleText1	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymEndBattleText1	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymAfterBattleText1	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymBattleText2	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymEndBattleText2	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymAfterBattleText2	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymBattleText3	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymEndBattleText3	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymAfterBattleText3	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymBattleText4	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymEndBattleText4	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymAfterBattleText4	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymBattleText5	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymEndBattleText5	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymAfterBattleText5	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymBattleText6	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymEndBattleText6	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymAfterBattleText6	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymBattleText7	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymEndBattleText7	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronGymAfterBattleText7	indoor.xlsx	yes	src/text/SaffronGym.asm	no	not checked
+_SaffronHouse1Text1	indoor.xlsx	yes	src/text/SaffronPidgeyHouse.asm	no	not checked
+_SaffronHouse1Text2	indoor.xlsx	yes	src/text/SaffronPidgeyHouse.asm	no	not checked
+_SaffronHouse1Text3	indoor.xlsx	yes	src/text/SaffronPidgeyHouse.asm	no	not checked
+_SaffronHouse1Text4	indoor.xlsx	yes	src/text/SaffronPidgeyHouse.asm	no	not checked
+_SaffronMartText2	indoor.xlsx	yes	src/text/SaffronMart.asm	no	not checked
+_SaffronMartText3	indoor.xlsx	yes	src/text/SaffronMart.asm	no	not checked
+_SilphCo1Text1	indoor.xlsx	yes	src/text/SilphCo1F.asm	no	not checked
+_SaffronPokecenterText2	indoor.xlsx	yes	src/text/SaffronPokecenter.asm	no	not checked
+_SaffronPokecenterText3	indoor.xlsx	yes	src/text/SaffronPokecenter.asm	no	not checked
+_TM29PreReceiveText	indoor.xlsx	yes	src/text/MrPsychicsHouse.asm	no	not checked
+_ReceivedTM29Text	indoor.xlsx	yes	src/text/MrPsychicsHouse.asm	yes	not checked
+_TM29ExplanationText	indoor.xlsx	yes	src/text/MrPsychicsHouse.asm	no	not checked
+_TM29NoRoomText	indoor.xlsx	yes	src/text/MrPsychicsHouse.asm	no	not checked
+_DiglettsCaveRoute2Text1	routes.xlsx	yes	src/text/DiglettsCaveRoute2.asm	no	not checked
+_ViridianForestExitText1	routes.xlsx	yes	src/text/ViridianForestNorthGate.asm	no	not checked
+_ViridianForestExitText2	routes.xlsx	yes	src/text/ViridianForestNorthGate.asm	no	not checked
+_Route2HouseText1	routes.xlsx	yes	src/text/Route2TradeHouse.asm	no	not checked
+_Route2GateText_5d616	routes.xlsx	yes	src/text/Route2Gate.asm	no	not checked
+_Route2GateText2	routes.xlsx	yes	src/text/Route2Gate.asm	no	not checked
+_ViridianForestEntranceText1	routes.xlsx	yes	src/text/ViridianForestSouthGate.asm	no	not checked
+_ViridianForestEntranceText2	routes.xlsx	yes	src/text/ViridianForestSouthGate.asm	no	not checked
+_MtMoonPokecenterText1	routes.xlsx	yes	src/text/MtMoonPokecenter.asm	no	not checked
+_MtMoonPokecenterText3	routes.xlsx	yes	src/text/MtMoonPokecenter.asm	no	not checked
+_MagikarpSalesmanText1	routes.xlsx	yes	src/text/MtMoonPokecenter.asm	no	not checked
+_MagikarpSalesmanNoText	routes.xlsx	yes	src/text/MtMoonPokecenter.asm	no	not checked
+_MagikarpSalesmanNoMoneyText	routes.xlsx	yes	src/text/MtMoonPokecenter.asm	no	not checked
+_MagikarpSalesmanText2	routes.xlsx	yes	src/text/MtMoonPokecenter.asm	no	not checked
+_MtMoonPokecenterText5	routes.xlsx	yes	src/text/MtMoonPokecenter.asm	no	not checked
+_SaffronGateText_1dfe7	routes.xlsx	yes	src/text/SaffronGates.asm	no	not checked
+_SaffronGateText_8aaa9	routes.xlsx	yes	src/text/SaffronGates.asm	no	not checked
+_SaffronGateText_1dff1	routes.xlsx	yes	src/text/SaffronGates.asm	no	not checked
+_SaffronGateText_1dff6	routes.xlsx	yes	src/text/SaffronGates.asm	no	not checked
+_DayCareIntroText	routes.xlsx	yes	src/text/Daycare.asm	no	not checked
+_DayCareWhichMonText	routes.xlsx	yes	src/text/Daycare.asm	no	not checked
+_DayCareWillLookAfterMonText	routes.xlsx	yes	src/text/Daycare.asm	yes	not checked
+_DayCareComeSeeMeInAWhileText	routes.xlsx	yes	src/text/Daycare.asm	no	not checked
+_DayCareMonHasGrownText	routes.xlsx	yes	src/text/Daycare.asm	yes	not checked
+_DayCareOweMoneyText	routes.xlsx	yes	src/text/Daycare.asm	yes	not checked
+_DayCareGotMonBackText	routes.xlsx	yes	src/text/Daycare.asm	yes	not checked
+_DayCareMonNeedsMoreTimeText	routes.xlsx	yes	src/text/Daycare.asm	yes	not checked
+_DayCareAllRightThenText	routes.xlsx	yes	src/text/Daycare_2.asm	no	not checked
+_DayCareComeAgainText	routes.xlsx	yes	src/text/Daycare_2.asm	no	not checked
+_DayCareNoRoomForMonText	routes.xlsx	yes	src/text/Daycare_2.asm	no	not checked
+_DayCareOnlyHaveOneMonText	routes.xlsx	yes	src/text/Daycare_2.asm	no	not checked
+_DayCareCantAcceptMonWithHMText	routes.xlsx	yes	src/text/Daycare_2.asm	no	not checked
+_DayCareHeresYourMonText	routes.xlsx	yes	src/text/Daycare_2.asm	no	not checked
+_DayCareNotEnoughMoneyText	routes.xlsx	yes	src/text/Daycare_2.asm	no	not checked
+_UndergrdTunnelEntRoute6Text1	routes.xlsx	yes	src/text/UndergroundPathRoute6.asm	no	not checked
+_UndergroundPathEntRoute7Text1	routes.xlsx	yes	src/text/UndergroundPathRoute7.asm	no	not checked
+_UGPathRoute7EntranceUnusedText_5d773	routes.xlsx	yes	src/text/UndergroundPathRoute7Copy.asm	no	not checked
+_UGPathRoute7EntranceUnusedText_5d778	routes.xlsx	yes	src/text/UndergroundPathRoute7Copy.asm	no	not checked
+_UGPathRoute7EntranceUnusedText_5d77d	routes.xlsx	yes	src/text/UndergroundPathRoute7Copy.asm	no	not checked
+_UGPathRoute7EntranceUnusedText_5d782	routes.xlsx	yes	src/text/UndergroundPathRoute7Copy.asm	no	not checked
+_UndergroundPathEntRoute8Text1	routes.xlsx	yes	src/text/UndergroundPathRoute8.asm	no	not checked
+_RockTunnelPokecenterText2	routes.xlsx	yes	src/text/RockTunnelPokecenter.asm	no	not checked
+_RockTunnelPokecenterText3	routes.xlsx	yes	src/text/RockTunnelPokecenter.asm	no	not checked
+_RockTunnel1BattleText1	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1EndBattleText1	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1AfterBattleText1	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1BattleText2	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1EndBattleText2	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1AfterBattleText2	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1BattleText3	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1EndBattleText3	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1AfterBattleText3	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1BattleText4	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1EndBattleText4	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1AfterBattleText4	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1BattleText5	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1EndBattleText5	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1AfterBattleText5	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1BattleText6	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1EndBattleText6	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1AfterBattleText6	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1BattleText7	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1EndBattleText7	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1AfterBattleText7	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_RockTunnel1Text8	routes.xlsx	yes	src/text/RockTunnel1F.asm	no	not checked
+_VoltorbBattleText	routes.xlsx	yes	src/text/PowerPlant.asm	no	not checked
+_ZapdosBattleText	routes.xlsx	yes	src/text/PowerPlant.asm	no	not checked
+_Route11GateText1	routes.xlsx	yes	src/text/Route11Gate1F.asm	no	not checked
+_Route11GateUpstairsText_494a3	routes.xlsx	yes	src/text/Route11Gate2F.asm	no	not checked
+_BinocularsSnorlaxText	routes.xlsx	yes	src/text/Route11Gate2F.asm	no	not checked
+_BinocularsNoSnorlaxText	routes.xlsx	yes	src/text/Route11Gate2F.asm	no	not checked
+_Route11GateUpstairsText_494d5	routes.xlsx	yes	src/text/Route11Gate2F.asm	no	not checked
+_DiglettsCaveEntRoute11Text1	routes.xlsx	yes	src/text/DiglettsCaveRoute11.asm	no	not checked
+_Route12GateText1	routes.xlsx	yes	src/text/Route12Gate1F.asm	no	not checked
+_TM39PreReceiveText	routes.xlsx	yes	src/text/Route12Gate2F.asm	no	not checked
+_ReceivedTM39Text	routes.xlsx	yes	src/text/Route12Gate2F.asm	yes	not checked
+_TM39ExplanationText	routes.xlsx	yes	src/text/Route12Gate2F.asm	no	not checked
+_TM39NoRoomText	routes.xlsx	yes	src/text/Route12Gate2F.asm	no	not checked
+_Route12GateUpstairsText_495b8	routes.xlsx	yes	src/text/Route12Gate2F.asm	no	not checked
+_Route12GateUpstairsText_495c4	routes.xlsx	yes	src/text/Route12Gate2F.asm	no	not checked
+_Route12HouseText_564c0	routes.xlsx	yes	src/text/Route12SuperRodHouse.asm	no	not checked
+_Route12HouseText_564c5	routes.xlsx	yes	src/text/Route12SuperRodHouse.asm	yes	not checked
+_Route12HouseText_564ca	routes.xlsx	yes	src/text/Route12SuperRodHouse.asm	no	not checked
+_Route12HouseText_564cf	routes.xlsx	yes	src/text/Route12SuperRodHouse.asm	no	not checked
+_Route12HouseText_564d4	routes.xlsx	yes	src/text/Route12SuperRodHouse.asm	yes	not checked
+_Route12HouseText_564d9	routes.xlsx	yes	src/text/Route12SuperRodHouse.asm	no	not checked
+_Route15GateText1	routes.xlsx	yes	src/text/Route15Gate1F.asm	no	not checked
+_Route15GateUpstairsText_4968c	routes.xlsx	yes	src/text/Route15Gate2F.asm	no	not checked
+_Route15GateUpstairsText_49698	routes.xlsx	yes	src/text/Route15Gate2F.asm	no	not checked
+_Route16GateText_49777	routes.xlsx	yes	src/text/Route16Gate1F.asm	no	not checked
+_Route16GateText_4977c	routes.xlsx	yes	src/text/Route16Gate1F.asm	no	not checked
+_Route16GateText_49781	routes.xlsx	yes	src/text/Route16Gate1F.asm	no	not checked
+_Route16GateText2	routes.xlsx	yes	src/text/Route16Gate1F.asm	no	not checked
+_Route16GateUpstairsText_49820	routes.xlsx	yes	src/text/Route16Gate2F.asm	no	not checked
+_Route16GateUpstairsText_4982f	routes.xlsx	yes	src/text/Route16Gate2F.asm	no	not checked
+_Route16GateUpstairsText_4983b	routes.xlsx	yes	src/text/Route16Gate2F.asm	no	not checked
+_Route16GateUpstairsText_49847	routes.xlsx	yes	src/text/Route16Gate2F.asm	no	not checked
+_Route16HouseText3	routes.xlsx	yes	src/text/Route16FlyHouse.asm	no	not checked
+_ReceivedHM02Text	routes.xlsx	yes	src/text/Route16FlyHouse.asm	yes	not checked
+_HM02ExplanationText	routes.xlsx	yes	src/text/Route16FlyHouse.asm	no	not checked
+_HM02NoRoomText	routes.xlsx	yes	src/text/Route16FlyHouse.asm	no	not checked
+_Route16HouseText_1e652	routes.xlsx	yes	src/text/Route16FlyHouse.asm	no	not checked
+_Route18GateText_49928	routes.xlsx	yes	src/text/Route18Gate1F.asm	no	not checked
+_Route18GateText_4992d	routes.xlsx	yes	src/text/Route18Gate1F.asm	no	not checked
+_Route18GateText_49932	routes.xlsx	yes	src/text/Route18Gate1F.asm	no	not checked
+_Route18GateUpstairsText_49993	routes.xlsx	yes	src/text/Route18Gate2F.asm	no	not checked
+_Route18GateUpstairsText_4999f	routes.xlsx	yes	src/text/Route18Gate2F.asm	no	not checked
+_Route22GateText_1e704	routes.xlsx	yes	src/text/Route22Gate.asm	no	not checked
+_Route22GateText_1e715	routes.xlsx	yes	src/text/Route22Gate.asm	no	not checked
+_Route22GateText_1e71a	routes.xlsx	yes	src/text/Route22Gate.asm	no	not checked
+_MoltresBattleText	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2BattleText1	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2EndBattleText1	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2AfterBattleText1	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2BattleText2	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2EndBattleText2	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2AfterBattleText2	routes.xlsx	yes	src/text/VictoryRoad2F.asm	yes	not checked
+_VictoryRoad2BattleText3	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2EndBattleText3	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2AfterBattleText3	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2BattleText4	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2EndBattleText4	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2AfterBattleText4	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2BattleText5	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2EndBattleText5	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_VictoryRoad2AfterBattleText5	routes.xlsx	yes	src/text/VictoryRoad2F.asm	no	not checked
+_BillsHouseText_1e865	routes.xlsx	yes	src/text/BillsHouse.asm	no	not checked
+_BillsHouseText_1e86a	routes.xlsx	yes	src/text/BillsHouse.asm	no	not checked
+_BillsHouseText_1e86f	routes.xlsx	yes	src/text/BillsHouse.asm	no	not checked
+_BillThankYouText	routes.xlsx	yes	src/text/BillsHouse.asm	no	not checked
+_SSTicketReceivedText	routes.xlsx	yes	src/text/BillsHouse.asm	yes	not checked
+_SSTicketNoRoomText	routes.xlsx	yes	src/text/BillsHouse.asm	no	not checked
+_BillsHouseText_1e8cb	routes.xlsx	yes	src/text/BillsHouse.asm	no	not checked
+_BillsHouseText_1e8da	routes.xlsx	yes	src/text/BillsHouse.asm	no	not checked
+_Route1ViridianMartSampleText	routes.xlsx	yes	src/text/Route1.asm	no	not checked
+_Route1Text_1cae8	routes.xlsx	yes	src/text/Route1.asm	yes	not checked
+_Route1Text_1caee	routes.xlsx	yes	src/text/Route1.asm	no	not checked
+_Route1Text_1caf3	routes.xlsx	yes	src/text/Route1.asm	no	not checked
+_Route1Text2	routes.xlsx	yes	src/text/Route1.asm	no	not checked
+_Route1Text3	routes.xlsx	yes	src/text/Route1.asm	no	not checked
+_Route2Text3	routes.xlsx	yes	src/text/Route2.asm	no	not checked
+_Route2Text4	routes.xlsx	yes	src/text/Route2.asm	no	not checked
+_Route3Text1	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3BattleText1	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3EndBattleText1	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3AfterBattleText1	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3BattleText2	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3EndBattleText2	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3AfterBattleText2	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3BattleText3	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3EndBattleText3	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3AfterBattleText3	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3BattleText4	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3EndBattleText4	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3AfterBattleText4	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3BattleText5	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3EndBattleText5	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3AfterBattleText5	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3BattleText6	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3EndBattleText6	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3AfterBattleText6	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3BattleText7	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3EndBattleText7	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3AfterBattleText7	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3BattleText8	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3EndBattleText8	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3AfterBattleText8	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route3Text10	routes.xlsx	yes	src/text/Route3.asm	no	not checked
+_Route4Text1	routes.xlsx	yes	src/text/Route4.asm	no	not checked
+_Route4BattleText1	routes.xlsx	yes	src/text/Route4.asm	no	not checked
+_Route4EndBattleText1	routes.xlsx	yes	src/text/Route4.asm	no	not checked
+_Route4AfterBattleText1	routes.xlsx	yes	src/text/Route4.asm	no	not checked
+_Route4Text5	routes.xlsx	yes	src/text/Route4.asm	no	not checked
+_Route4Text6	routes.xlsx	yes	src/text/Route4.asm	no	not checked
+_Route5Text1	routes.xlsx	yes	src/text/Route5.asm	no	not checked
+_Route6BattleText1	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6EndBattleText1	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6AfterBattleText1	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6BattleText2	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6EndBattleText2	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6BattleText3	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6EndBattleText3	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6AfterBattleText3	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6BattleText4	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6EndBattleText4	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6AfterBattleText4	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6BattleText5	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6EndBattleText5	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6AfterBattleText5	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6BattleText6	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6EndBattleText6	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6AfterBattleText6	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route6Text7	routes.xlsx	yes	src/text/Route6.asm	no	not checked
+_Route7Text1	routes.xlsx	yes	src/text/Route7.asm	no	not checked
+_Route8BattleText1	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8EndBattleText1	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8AfterBattleText1	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8BattleText2	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8EndBattleText2	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8AfterBattleText2	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8BattleText3	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8EndBattleText3	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8AfterBattleText3	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8BattleText4	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8EndBattleText4	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8AfterBattleText4	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8BattleText5	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8EndBattleText5	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8AfterBattleText5	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8BattleText6	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8EndBattleText6	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8AfterBattleText6	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8BattleText7	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8EndBattleText7	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8AfterBattleText7	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8BattleText8	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8EndBattleText8	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8AfterBattleText8	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8BattleText9	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8EndBattleText9	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8AfterBattleText9	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route8Text10	routes.xlsx	yes	src/text/Route8.asm	no	not checked
+_Route9BattleText1	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9EndBattleText1	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9AfterBattleText1	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9BattleText2	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9EndBattleText2	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9AfterBattleText2	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9BattleText3	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9EndBattleText3	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9AfterBattleText3	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9BattleText4	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9EndBattleText4	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9AfterBattleText4	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9BattleText5	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9EndBattleText5	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9AfterBattleText5	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9BattleText6	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9EndBattleText6	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9AfterBattleText6	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9BattleText7	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9EndBattleText7	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9AfterBattleText7	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9BattleText8	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9EndBattleText8	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9AfterBattleText8	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9BattleText9	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9EndBattleText9	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9AfterBattleText9	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route9Text11	routes.xlsx	yes	src/text/Route9.asm	no	not checked
+_Route10BattleText1	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10EndBattleText1	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10AfterBattleText1	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10BattleText2	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10EndBattleText2	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10AfterBattleText2	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10BattleText3	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10EndBattleText3	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10AfterBattleText3	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10BattleText4	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10EndBattleText4	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10AfterBattleText4	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10BattleText5	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10EndBattleText5	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10AfterBattleText5	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10BattleText6	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10EndBattleText6	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10AfterBattleText6	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10AfterBattleText6	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10Text7	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route10Text10	routes.xlsx	yes	src/text/Route10.asm	no	not checked
+_Route11BattleText1	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11EndBattleText1	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11AfterBattleText1	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11BattleText2	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11EndBattleText2	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11AfterBattleText2	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11BattleText3	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11EndBattleText3	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11AfterBattleText3	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11BattleText4	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11EndBattleText4	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11AfterBattleText4	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11BattleText5	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11EndBattleText5	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11AfterBattleText5	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11BattleText6	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11EndBattleText6	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11AfterBattleText6	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11BattleText7	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11EndBattleText7	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11AfterBattleText7	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11BattleText8	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11EndBattleText8	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11AfterBattleText8	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11BattleText9	routes.xlsx	yes	src/text/Route11.asm	no	not checked
+_Route11EndBattleText9	routes.xlsx	yes	src/text/Route11_2.asm	no	not checked
+_Route11AfterBattleText9	routes.xlsx	yes	src/text/Route11_2.asm	no	not checked
+_Route11BattleText10	routes.xlsx	yes	src/text/Route11_2.asm	no	not checked
+_Route11EndBattleText10	routes.xlsx	yes	src/text/Route11_2.asm	no	not checked
+_Route11AfterBattleText10	routes.xlsx	yes	src/text/Route11_2.asm	no	not checked
+_Route11Text11	routes.xlsx	yes	src/text/Route11_2.asm	no	not checked
+_Route12Text1	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12Text13	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12Text14	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12BattleText1	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12EndBattleText1	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12AfterBattleText1	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12BattleText2	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12EndBattleText2	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12AfterBattleText2	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12BattleText3	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12EndBattleText3	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12AfterBattleText3	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12BattleText4	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12EndBattleText4	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12AfterBattleText4	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12BattleText5	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12EndBattleText5	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12AfterBattleText5	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12BattleText6	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12EndBattleText6	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12AfterBattleText6	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12BattleText7	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12EndBattleText7	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12AfterBattleText7	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12Text11	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route12Text12	routes.xlsx	yes	src/text/Route12.asm	no	not checked
+_Route13BattleText2	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13EndBattleText2	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13AfterBattleText2	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13BattleText3	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13EndBattleText3	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13AfterBattleText3	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13BattleText4	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13EndBattleText4	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13AfterBattleText4	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13BattleText5	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13EndBattleText5	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13AfterBattleText5	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13BattleText6	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13EndBattleText6	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13AfterBattleText6	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13BattleText7	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13EndBattleText7	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13AfterBattleText7	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13BattleText8	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13EndBattleText8	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13AfterBattleText8	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13BattleText9	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13EndBattleText9	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13AfterBattleText9	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13BattleText10	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13EndBattleText10	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13AfterBattleText10	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13BattleText11	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13EndBattleText11	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13AfterBattleText11	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13Text11	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13Text12	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route13Text13	routes.xlsx	yes	src/text/Route13.asm	no	not checked
+_Route14BattleText1	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14EndBattleText1	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14AfterBattleText1	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14BattleText2	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14EndBattleText2	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14AfterBattleText2	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14BattleText3	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14EndBattleText3	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14AfterBattleText3	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14BattleText4	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14EndBattleText4	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14AfterBattleText4	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14BattleText5	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14EndBattleText5	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14AfterBattleText5	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14BattleText6	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14EndBattleText6	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14AfterBattleText6	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14BattleText7	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14EndBattleText7	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14AfterBattleText7	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14BattleText8	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14EndBattleText8	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14AfterBattleText8	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14BattleText9	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14EndBattleText9	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14AfterBattleText9	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14BattleText10	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14EndBattleText10	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14AfterBattleText10	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route14Text11	routes.xlsx	yes	src/text/Route14.asm	no	not checked
+_Route15BattleText1	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15EndBattleText1	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15AfterBattleText1	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15BattleText2	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15EndBattleText2	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15AfterBattleText2	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15BattleText3	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15EndBattleText3	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15AfterBattleText3	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15BattleText4	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15EndBattleText4	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15AfterBattleText4	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15BattleText5	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15EndBattleText5	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15AfterBattleText5	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15BattleText6	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15EndBattleText6	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15AfterBattleText6	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15BattleText7	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15EndBattleText7	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15AfterBattleText7	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15BattleText8	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15EndBattleText8	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15AfterBattleText8	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15BattleText9	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15EndBattleText9	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15AfterBattleText9	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15BattleText10	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15EndBattleText10	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15AfterBattleText10	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route15Text12	routes.xlsx	yes	src/text/Route15.asm	no	not checked
+_Route16BattleText1	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16EndBattleText1	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16AfterBattleText1	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16BattleText2	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16EndBattleText2	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16AfterBattleText2	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16BattleText3	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16EndBattleText3	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16AfterBattleText3	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16BattleText4	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16EndBattleText4	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16AfterBattleText4	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16BattleText5	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16EndBattleText5	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16AfterBattleText5	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16BattleText6	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16EndBattleText6	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16AfterBattleText6	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16Text7	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16Text10	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16Text11	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16Text8	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route16Text9	routes.xlsx	yes	src/text/Route16.asm	no	not checked
+_Route17BattleText1	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17EndBattleText1	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17AfterBattleText1	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17BattleText2	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17EndBattleText2	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17AfterBattleText2	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17BattleText3	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17EndBattleText3	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17AfterBattleText3	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17BattleText4	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17EndBattleText4	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17AfterBattleText4	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17BattleText5	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17EndBattleText5	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17AfterBattleText5	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17BattleText6	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17EndBattleText6	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17AfterBattleText6	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17BattleText7	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17EndBattleText7	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17AfterBattleText7	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17BattleText8	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17EndBattleText8	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17AfterBattleText8	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17BattleText9	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17EndBattleText9	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17AfterBattleText9	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17BattleText10	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17EndBattleText10	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17AfterBattleText10	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17Text11	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17Text12	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17Text13	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17Text14	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17Text15	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route17Text16	routes.xlsx	yes	src/text/Route17.asm	no	not checked
+_Route18BattleText1	routes.xlsx	yes	src/text/Route18.asm	no	not checked
+_Route18EndBattleText1	routes.xlsx	yes	src/text/Route18.asm	no	not checked
+_Route18AfterBattleText1	routes.xlsx	yes	src/text/Route18.asm	no	not checked
+_Route18BattleText2	routes.xlsx	yes	src/text/Route18.asm	no	not checked
+_Route18EndBattleText2	routes.xlsx	yes	src/text/Route18.asm	no	not checked
+_Route18AfterBattleText2	routes.xlsx	yes	src/text/Route18.asm	no	not checked
+_Route18BattleText3	routes.xlsx	yes	src/text/Route18.asm	no	not checked
+_Route18EndBattleText3	routes.xlsx	yes	src/text/Route18.asm	no	not checked
+_Route18AfterBattleText3	routes.xlsx	yes	src/text/Route18.asm	no	not checked
+_Route18Text4	routes.xlsx	yes	src/text/Route18.asm	no	not checked
+_Route18Text5	routes.xlsx	yes	src/text/Route18.asm	no	not checked
+_Route19BattleText1	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19EndBattleText1	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19AfterBattleText1	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19BattleText2	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19EndBattleText2	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19AfterBattleText2	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19BattleText3	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19EndBattleText3	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19AfterBattleText3	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19BattleText4	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19EndBattleText4	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19AfterBattleText4	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19BattleText5	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19EndBattleText5	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19AfterBattleText5	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19BattleText6	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19EndBattleText6	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19AfterBattleText6	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19BattleText7	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19EndBattleText7	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19AfterBattleText7	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19BattleText8	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19EndBattleText8	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19AfterBattleText8	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19BattleText9	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19EndBattleText9	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19AfterBattleText9	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19BattleText10	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19EndBattleText10	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19AfterBattleText10	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route19Text11	routes.xlsx	yes	src/text/Route19.asm	no	not checked
+_Route20BattleText1	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20EndBattleText1	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20AfterBattleText1	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20BattleText2	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20EndBattleText2	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20AfterBattleText2	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20BattleText3	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20EndBattleText3	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20AfterBattleText3	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20BattleText4	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20EndBattleText4	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20AfterBattleText4	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20BattleText5	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20EndBattleText5	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20AfterBattleText5	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20BattleText6	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20EndBattleText6	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20AfterBattleText6	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20BattleText7	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20EndBattleText7	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20AfterBattleText7	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20BattleText8	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20EndBattleText8	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20AfterBattleText8	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20BattleText9	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20EndBattleText9	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20AfterBattleText9	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20BattleText10	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20EndBattleText10	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20AfterBattleText10	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20AfterBattleText10	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route20Text11	routes.xlsx	yes	src/text/Route20.asm	no	not checked
+_Route21BattleText1	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21EndBattleText1	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21AfterBattleText1	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21BattleText2	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21EndBattleText2	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21AfterBattleText2	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21BattleText3	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21EndBattleText3	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21AfterBattleText3	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21BattleText4	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21EndBattleText4	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21AfterBattleText4	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21BattleText5	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21EndBattleText5	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21AfterBattleText5	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21BattleText6	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21EndBattleText6	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21AfterBattleText6	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21BattleText7	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21EndBattleText7	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21AfterBattleText7	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21BattleText8	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21EndBattleText8	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21AfterBattleText8	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21BattleText9	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21EndBattleText9	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route21AfterBattleText9	routes.xlsx	yes	src/text/Route21.asm	no	not checked
+_Route22RivalBeforeBattleText1	routes.xlsx	yes	src/text/Route22.asm	yes	not checked
+_Route22RivalAfterBattleText1	routes.xlsx	yes	src/text/Route22.asm	no	not checked
+_Route22RivalDefeatedText1	routes.xlsx	yes	src/text/Route22.asm	no	not checked
+_Route22Text_511bc	routes.xlsx	yes	src/text/Route22.asm	yes	not checked
+_Route22RivalBeforeBattleText2	routes.xlsx	yes	src/text/Route22.asm	yes	not checked
+_Route22RivalAfterBattleText2	routes.xlsx	yes	src/text/Route22.asm	yes	not checked
+_Route22RivalDefeatedText2	routes.xlsx	yes	src/text/Route22.asm	no	not checked
+_Route22Text_511d0	routes.xlsx	yes	src/text/Route22.asm	yes	not checked
+_Route22FrontGateText	routes.xlsx	yes	src/text/Route22.asm	no	not checked
+_VictoryRoadGuardText1	routes.xlsx	yes	src/text/Route23.asm	yes	not checked
+_VictoryRoadGuardText2	routes.xlsx	yes	src/text/Route23.asm	yes	not checked
+_VictoryRoadGuardText_513a3	routes.xlsx	yes	src/text/Route23.asm	no	not checked
+_Route23Text8	routes.xlsx	yes	src/text/Route23.asm	no	not checked
+_Route24Text_51510	routes.xlsx	yes	src/text/Route24.asm	no	not checked
+_Route24Text_51515	routes.xlsx	yes	src/text/Route24.asm	no	not checked
+_Route24Text_5151a	routes.xlsx	yes	src/text/Route24.asm	yes	not checked
+_Route24Text_51521	routes.xlsx	yes	src/text/Route24.asm	no	not checked
+_Route24Text_51526	routes.xlsx	yes	src/text/Route24.asm	no	not checked
+_Route24Text_5152b	routes.xlsx	yes	src/text/Route24.asm	no	not checked
+_Route24Text_51530	routes.xlsx	yes	src/text/Route24.asm	no	not checked
+_Route24BattleText1	routes.xlsx	yes	src/text/Route24.asm	no	not checked
+_Route24EndBattleText1	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24AfterBattleText1	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24BattleText2	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24EndBattleText2	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24AfterBattleText2	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24BattleText3	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24EndBattleText3	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24AfterBattleText3	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24BattleText4	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24EndBattleText4	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24AfterBattleText4	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24BattleText5	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24EndBattleText5	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24AfterBattleText5	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24BattleText6	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24EndBattleText6	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route24AfterBattleText6	routes.xlsx	yes	src/text/Route24_2.asm	no	not checked
+_Route25BattleText1	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25EndBattleText1	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25AfterBattleText1	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25BattleText2	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25EndBattleText2	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25AfterBattleText2	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25BattleText3	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25EndBattleText3	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25AfterBattleText3	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25BattleText4	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25EndBattleText4	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25AfterBattleText4	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25BattleText5	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25EndBattleText5	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25AfterBattleText5	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25BattleText6	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25EndBattleText6	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25AfterBattleText6	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25BattleText7	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25EndBattleText7	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25AfterBattleText7	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25BattleText8	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25EndBattleText8	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25AfterBattleText8	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25BattleText9	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25EndBattleText9	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25AfterBattleText9	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_Route25Text11	routes.xlsx	yes	src/text/Route25.asm	no	not checked
+_CardKeySuccessText1	core.xlsx	no		no	not checked
+_CardKeySuccessText2	core.xlsx	no		no	not checked
+_CardKeyFailText	core.xlsx	no		no	not checked
+_TrainerNameText	core.xlsx	no		yes	not checked
+_NoNibbleText	core.xlsx	no		no	not checked
+_NothingHereText	core.xlsx	no		no	not checked
+_ItsABiteText	core.xlsx	no		no	not checked
+_ExclamationText	core.xlsx	no		no	not checked
+_GroundRoseText	core.xlsx	no		no	not checked
+_BoulderText	core.xlsx	no		no	not checked
+_MartSignText	core.xlsx	no		no	not checked
+_PokeCenterSignText	core.xlsx	no		no	not checked
+_FoundItemText	core.xlsx	no		yes	not checked
+_NoMoreRoomForItemText	core.xlsx	no		no	not checked
+_OaksAideHiText	core.xlsx	no		yes	not checked
+_OaksAideUhOhText	core.xlsx	no		yes	not checked
+_OaksAideComeBackText	core.xlsx	no		yes	not checked
+_OaksAideHereYouGoText	core.xlsx	no		yes	not checked
+_OaksAideGotItemText	core.xlsx	no		yes	not checked
+_OaksAideNoRoomText	core.xlsx	no		yes	not checked
+_AIBattleWithdrawText	core.xlsx	no		yes	not checked
+_AIBattleUseItemText	core.xlsx	no		yes	not checked
+_TradeWentToText	core.xlsx	no		yes	not checked
+_TradeForText	core.xlsx	no		yes	not checked
+_TradeSendsText	core.xlsx	no		yes	not checked
+_TradeWavesFarewellText	core.xlsx	no		yes	not checked
+_TradeTransferredText	core.xlsx	no		yes	not checked
+_TradeTakeCareText	core.xlsx	no		yes	not checked
+_TradeWillTradeText	core.xlsx	no		yes	not checked
+_TradeforText	core.xlsx	no		yes	not checked
+_PlaySlotMachineText	core.xlsx	no		no	not checked
+_OutOfCoinsSlotMachineText	core.xlsx	no		no	not checked
+_BetHowManySlotMachineText	core.xlsx	no		no	not checked
+_StartSlotMachineText	core.xlsx	no		no	not checked
+_NotEnoughCoinsSlotMachineText	core.xlsx	no		no	not checked
+_OneMoreGoSlotMachineText	core.xlsx	no		no	not checked
+_LinedUpText	core.xlsx	no		yes	not checked
+_NotThisTimeText	core.xlsx	no		no	not checked
+_YeahText	core.xlsx	no		no	not checked
+_DexSeenOwnedText	core.xlsx	no		yes	not checked
+_DexRatingText	core.xlsx	no		no	not checked
+_GymStatueText1	core.xlsx	no		yes	not checked
+_GymStatueText2	core.xlsx	no		yes	not checked
+_ViridianCityPokecenterGuyText	core.xlsx	no		no	not checked
+_PewterCityPokecenterGuyText	core.xlsx	no		no	not checked
+_CeruleanPokecenterGuyText	core.xlsx	no		no	not checked
+_LavenderPokecenterGuyText	core.xlsx	no		no	not checked
+_MtMoonPokecenterBenchGuyText	core.xlsx	no		no	not checked
+_RockTunnelPokecenterGuyText	core.xlsx	no		no	not checked
+_UnusedBenchGuyText1	core.xlsx	no		no	not checked
+_UnusedBenchGuyText2	core.xlsx	no		no	not checked
+_UnusedBenchGuyText3	core.xlsx	no		no	not checked
+_VermilionPokecenterGuyText	core.xlsx	no		no	not checked
+_CeladonCityPokecenterGuyText	core.xlsx	no		no	not checked
+_FuchsiaCityPokecenterGuyText	core.xlsx	no		no	not checked
+_CinnabarPokecenterGuyText	core.xlsx	no		no	not checked
+_SaffronCityPokecenterGuyText1	core.xlsx	no		no	not checked
+_SaffronCityPokecenterGuyText2	core.xlsx	no		no	not checked
+_CeladonCityHotelText	core.xlsx	no		no	not checked
+_BookcaseText	core.xlsx	no		no	not checked
+_NewBicycleText	core.xlsx	no		no	not checked
+_PushStartText	core.xlsx	no		no	not checked
+_SaveOptionText	core.xlsx	no		no	not checked
+_StrengthsAndWeaknessesText	core.xlsx	no		no	not checked
+_TimesUpText	core.xlsx	no		no	not checked
+_GameOverText	core.xlsx	no		no	not checked
+_CinnabarGymQuizIntroText	core.xlsx	no		no	not checked
+_CinnabarQuizQuestionsText1	core.xlsx	no		no	not checked
+_CinnabarQuizQuestionsText2	core.xlsx	no		no	not checked
+_CinnabarQuizQuestionsText3	core.xlsx	no		no	not checked
+_CinnabarQuizQuestionsText4	core.xlsx	no		no	not checked
+_CinnabarQuizQuestionsText5	core.xlsx	no		no	not checked
+_CinnabarQuizQuestionsText6	core.xlsx	no		no	not checked
+_CinnabarGymQuizCorrectText	core.xlsx	no		no	not checked
+_CinnabarGymQuizIncorrectText	core.xlsx	no		no	not checked
+_MagazinesText	core.xlsx	no		no	not checked
+_BillsHouseMonitorText	core.xlsx	no		no	not checked
+_BillsHouseInitiatedText	core.xlsx	no		yes	not checked
+_BillsHousePokemonListText1	core.xlsx	no		no	not checked
+_BillsHousePokemonListText2	core.xlsx	no		no	not checked
+_OakLabEmailText	core.xlsx	no		no	not checked
+_GameCornerCoinCaseText	core.xlsx	no		no	not checked
+_GameCornerNoCoinsText	core.xlsx	no		no	not checked
+_GameCornerOutOfOrderText	core.xlsx	no		no	not checked
+_GameCornerOutToLunchText	core.xlsx	no		no	not checked
+_GameCornerSomeonesKeysText	core.xlsx	no		no	not checked
+_JustAMomentText	core.xlsx	no		no	not checked
+TMNotebookText	core.xlsx	no		no	not checked
+_TurnPageText	core.xlsx	no		no	not checked
+_ViridianSchoolNotebookText5	core.xlsx	no		no	not checked
+_ViridianSchoolNotebookText1	core.xlsx	no		no	not checked
+_ViridianSchoolNotebookText2	core.xlsx	no		no	not checked
+_ViridianSchoolNotebookText3	core.xlsx	no		no	not checked
+_ViridianSchoolNotebookText4	core.xlsx	no		no	not checked
+_EnemiesOnEverySideText	core.xlsx	no		no	not checked
+_WhatGoesAroundComesAroundText	core.xlsx	no		no	not checked
+_FightingDojoText	core.xlsx	no		no	not checked
+_IndigoPlateauHQText	core.xlsx	no		no	not checked
+_RedBedroomSNESText	core.xlsx	no		yes	not checked
+_Route15UpstairsBinocularsText	core.xlsx	no		no	not checked
+_AerodactylFossilText	core.xlsx	no		no	not checked
+_KabutopsFossilText	core.xlsx	no		no	not checked
+_LinkCableHelpText1	core.xlsx	no		no	not checked
+_LinkCableHelpText2	core.xlsx	no		no	not checked
+_LinkCableInfoText1	core.xlsx	no		no	not checked
+_LinkCableInfoText2	core.xlsx	no		no	not checked
+_LinkCableInfoText3	core.xlsx	no		no	not checked
+_ViridianSchoolBlackboardText1	core.xlsx	no		no	not checked
+_ViridianSchoolBlackboardText2	core.xlsx	no		no	not checked
+_ViridianBlackboardSleepText	core.xlsx	no		no	not checked
+_ViridianBlackboardPoisonText	core.xlsx	no		no	not checked
+_ViridianBlackboardPrlzText	core.xlsx	no		no	not checked
+_ViridianBlackboardBurnText	core.xlsx	no		no	not checked
+_ViridianBlackboardFrozenText	core.xlsx	no		no	not checked
+_VermilionGymTrashText	core.xlsx	no		no	not checked
+_VermilionGymTrashSuccessText1	core.xlsx	no		no	not checked
+_VermilionGymTrashSuccessText2	core.xlsx	no		no	not checked
+_VermilionGymTrashSuccessText3	core.xlsx	no		no	not checked
+_VermilionGymTrashFailText	core.xlsx	no		no	not checked
+_FoundHiddenItemText	core.xlsx	no		yes	not checked
+_HiddenItemBagFullText	core.xlsx	no		yes	not checked
+_FoundHiddenCoinsText	core.xlsx	no		yes	not checked
+_FoundHiddenCoins2Text	core.xlsx	no		yes	not checked
+_DroppedHiddenCoinsText	core.xlsx	no		no	not checked
+_IndigoPlateauStatuesText1	core.xlsx	no		no	not checked
+_IndigoPlateauStatuesText2	core.xlsx	no		no	not checked
+_IndigoPlateauStatuesText3	core.xlsx	no		no	not checked
+_PokemonBooksText	core.xlsx	no		no	not checked
+_DiglettSculptureText	core.xlsx	no		no	not checked
+_ElevatorText	core.xlsx	no		no	not checked
+_TownMapText	core.xlsx	no		no	not checked
+_PokemonStuffText	core.xlsx	no		no	not checked
+_OutOfSafariBallsText	core.xlsx	no		no	not checked
+_WildRanText	core.xlsx	no		yes	not checked
+_EnemyRanText	core.xlsx	no		yes	not checked
+_HurtByPoisonText	core.xlsx	no		yes	not checked
+_HurtByBurnText	core.xlsx	no		yes	not checked
+_HurtByLeechSeedText	core.xlsx	no		yes	not checked
+_EnemyMonFaintedText	core.xlsx	no		yes	not checked
+_MoneyForWinningText	core.xlsx	no		yes	not checked
+_TrainerDefeatedText	core.xlsx	no		yes	not checked
+_PlayerMonFaintedText	core.xlsx	no		yes	not checked
+_UseNextMonText	core.xlsx	no		no	not checked
+_Rival1WinText	core.xlsx	no		yes	not checked
+_PlayerBlackedOutText2	core.xlsx	no		yes	not checked
+_LinkBattleLostText	core.xlsx	no		yes	not checked
+_TrainerAboutToUseText	core.xlsx	no		yes	not checked
+_TrainerSentOutText	core.xlsx	no		yes	not checked
+_NoWillText	core.xlsx	no		no	not checked
+_CantEscapeText	core.xlsx	no		no	not checked
+_NoRunningText	core.xlsx	no		no	not checked
+_GotAwayText	core.xlsx	no		no	not checked
+_ItemsCantBeUsedHereText	core.xlsx	no		no	not checked
+_AlreadyOutText	core.xlsx	no		yes	not checked
+_MoveNoPPText	core.xlsx	no		no	not checked
+_MoveDisabledText	core.xlsx	no		no	not checked
+_NoMovesLeftText	core.xlsx	no		yes	not checked
+_MultiHitText	core.xlsx	no		yes	not checked
+_ScaredText	core.xlsx	no		yes	not checked
+_GetOutText	core.xlsx	no		no	not checked
+_FastAsleepText	core.xlsx	no		yes	not checked
+_WokeUpText	core.xlsx	no		yes	not checked
+_IsFrozenText	core.xlsx	no		yes	not checked
+_FullyParalyzedText	core.xlsx	no		yes	not checked
+_FlinchedText	core.xlsx	no		yes	not checked
+_MustRechargeText	core.xlsx	no		yes	not checked
+_DisabledNoMoreText	core.xlsx	no		yes	not checked
+_IsConfusedText	core.xlsx	no		yes	not checked
+_HurtItselfText	core.xlsx	no		no	not checked
+_ConfusedNoMoreText	core.xlsx	no		yes	not checked
+_SavingEnergyText	core.xlsx	no		yes	not checked
+_UnleashedEnergyText	core.xlsx	no		yes	not checked
+_ThrashingAboutText	core.xlsx	no		yes	not checked
+_AttackContinuesText	core.xlsx	no		yes	not checked
+_CantMoveText	core.xlsx	no		yes	not checked
+_MoveIsDisabledText	core.xlsx	no		yes	not checked
+_MonName1Text	core.xlsx	no		yes	not checked
+_Used1Text	core.xlsx	no		no	not checked
+_Used2Text	core.xlsx	no		no	not checked
+_InsteadText	core.xlsx	no		no	not checked
+_MoveNameText	core.xlsx	no		yes	not checked
+_ExclamationPoint1Text	core.xlsx	no		no	not checked
+_ExclamationPoint2Text	core.xlsx	no		no	not checked
+_ExclamationPoint3Text	core.xlsx	no		no	not checked
+_ExclamationPoint4Text	core.xlsx	no		no	not checked
+_ExclamationPoint5Text	core.xlsx	no		no	not checked
+_AttackMissedText	core.xlsx	no		yes	not checked
+_KeptGoingAndCrashedText	core.xlsx	no		yes	not checked
+_UnaffectedText	core.xlsx	no		yes	not checked
+_DoesntAffectMonText	core.xlsx	no		yes	not checked
+_CriticalHitText	core.xlsx	no		no	not checked
+_OHKOText	core.xlsx	no		no	not checked
+_LoafingAroundText	core.xlsx	no		yes	not checked
+_BeganToNapText	core.xlsx	no		yes	not checked
+_WontObeyText	core.xlsx	no		yes	not checked
+_TurnedAwayText	core.xlsx	no		yes	not checked
+_IgnoredOrdersText	core.xlsx	no		yes	not checked
+_SubstituteTookDamageText	core.xlsx	no		yes	not checked
+_SubstituteBrokeText	core.xlsx	no		yes	not checked
+_BuildingRageText	core.xlsx	no		yes	not checked
+_MirrorMoveFailedText	core.xlsx	no		no	not checked
+_HitXTimesText	core.xlsx	no		yes	not checked
+_GainedText	core.xlsx	no		yes	not checked
+_WithExpAllText	core.xlsx	no		no	not checked
+_BoostedText	core.xlsx	no		no	not checked
+_ExpPointsText	core.xlsx	no		yes	not checked
+_GrewLevelText	core.xlsx	no		yes	not checked
+_WildMonAppearedText	core.xlsx	no		yes	not checked
+_HookedMonAttackedText	core.xlsx	no		yes	not checked
+_EnemyAppearedText	core.xlsx	no		yes	not checked
+_TrainerWantsToFightText	core.xlsx	no		yes	not checked
+_UnveiledGhostText	core.xlsx	no		no	not checked
+_GhostCantBeIDdText	core.xlsx	no		no	not checked
+_GoText	core.xlsx	no		no	not checked
+_DoItText	core.xlsx	no		no	not checked
+_GetmText	core.xlsx	no		no	not checked
+_EnemysWeakText	core.xlsx	no		no	not checked
+_PlayerMon1Text	core.xlsx	no		yes	not checked
+_PlayerMon2Text	core.xlsx	no		yes	not checked
+_EnoughText	core.xlsx	no		no	not checked
+_OKExclamationText	core.xlsx	no		no	not checked
+_GoodText	core.xlsx	no		no	not checked
+_ComeBackText	core.xlsx	no		no	not checked
+_SuperEffectiveText	core.xlsx	no		no	not checked
+_NotVeryEffectiveText	core.xlsx	no		no	not checked
+_SafariZoneEatingText	core.xlsx	no		yes	not checked
+_SafariZoneAngryText	core.xlsx	no		yes	not checked
+_PickUpPayDayMoneyText	core.xlsx	no		yes	not checked
+_ClearSaveDataText	core.xlsx	no		no	not checked
+_WhichFloorText	core.xlsx	no		no	not checked
+_PartyMenuNormalText	core.xlsx	no		no	not checked
+_PartyMenuItemUseText	core.xlsx	no		no	not checked
+_PartyMenuBattleText	core.xlsx	no		no	not checked
+_PartyMenuUseTMText	core.xlsx	no		no	not checked
+_PartyMenuSwapMonText	core.xlsx	no		no	not checked
+_PotionText	core.xlsx	no		yes	not checked
+_AntidoteText	core.xlsx	no		yes	not checked
+_ParlyzHealText	core.xlsx	no		yes	not checked
+_BurnHealText	core.xlsx	no		yes	not checked
+_IceHealText	core.xlsx	no		yes	not checked
+_AwakeningText	core.xlsx	no		yes	not checked
+_FullHealText	core.xlsx	no		yes	not checked
+_ReviveText	core.xlsx	no		yes	not checked
+_RareCandyText	core.xlsx	no		yes	not checked
+_TurnedOnPC1Text	core.xlsx	no		yes	not checked
+_AccessedBillsPCText	core.xlsx	no		no	not checked
+_AccessedSomeonesPCText	core.xlsx	no		no	not checked
+_AccessedMyPCText	core.xlsx	no		no	not checked
+_TurnedOnPC2Text	core.xlsx	no		yes	not checked
+_WhatDoYouWantText	core.xlsx	no		no	not checked
+_WhatToDepositText	core.xlsx	no		no	not checked
+_DepositHowManyText	core.xlsx	no		no	not checked
+_ItemWasStoredText	core.xlsx	no		yes	not checked
+_NothingToDepositText	core.xlsx	no		no	not checked
+_NoRoomToStoreText	core.xlsx	no		no	not checked
+_WhatToWithdrawText	core.xlsx	no		no	not checked
+_WithdrawHowManyText	core.xlsx	no		no	not checked
+_WithdrewItemText	core.xlsx	no		yes	not checked
+_NothingStoredText	core.xlsx	no		no	not checked
+_CantCarryMoreText	core.xlsx	no		no	not checked
+_WhatToTossText	core.xlsx	no		no	not checked
+_TossHowManyText	core.xlsx	no		no	not checked
+_AccessedHoFPCText	core.xlsx	no		no	not checked
+_SwitchOnText	core.xlsx	no		no	not checked
+_WhatText	core.xlsx	no		no	not checked
+_DepositWhichMonText	core.xlsx	no		no	not checked
+_MonWasStoredText	core.xlsx	no		yes	not checked
+_CantDepositLastMonText	core.xlsx	no		no	not checked
+_BoxFullText	core.xlsx	no		no	not checked
+_MonIsTakenOutText	core.xlsx	no		yes	not checked
+_NoMonText	core.xlsx	no		no	not checked
+_CantTakeMonText	core.xlsx	no		no	not checked
+_ReleaseWhichMonText	core.xlsx	no		no	not checked
+_OnceReleasedText	core.xlsx	no		yes	not checked
+_MonWasReleasedText	core.xlsx	no		yes	not checked
+_RequireCoinCaseText	core.xlsx	no		no	not checked
+_ExchangeCoinsForPrizesText	core.xlsx	no		no	not checked
+_WhichPrizeText	core.xlsx	no		no	not checked
+_HereYouGoText	core.xlsx	no		no	not checked
+_SoYouWantPrizeText	core.xlsx	no		yes	not checked
+_SorryNeedMoreCoinsText	core.xlsx	no		no	not checked
+_OopsYouDontHaveEnoughRoomText	core.xlsx	no		no	not checked
+_OhFineThenText	core.xlsx	no		no	not checked
+_GetDexRatedText	core.xlsx	no		no	not checked
+_ClosedOaksPCText	core.xlsx	no		no	not checked
+_AccessedOaksPCText	core.xlsx	no		no	not checked
+_WhereWouldYouLikeText	core.xlsx	no		no	not checked
+_PleaseWaitText	core.xlsx	no		no	not checked
+_LinkCanceledText	core.xlsx	no		no	not checked
+_OakSpeechText1	core.xlsx	no		no	not checked
+_OakSpeechText2A	core.xlsx	no		no	not checked
+_OakSpeechText2B	core.xlsx	no		no	not checked
+_IntroducePlayerText	core.xlsx	no		no	not checked
+_IntroduceRivalText	core.xlsx	no		no	not checked
+_OakSpeechText3	core.xlsx	no		yes	not checked
+_DoYouWantToNicknameText	core.xlsx	no		yes	not checked
+_YourNameIsText	core.xlsx	no		yes	not checked
+_HisNameIsText	core.xlsx	no		yes	not checked
+_WillBeTradedText	core.xlsx	no		yes	not checked
+_TextIDErrorText	core.xlsx	no		yes	not checked
+_ContCharText	core.xlsx	no		no	not checked
+_FileDataDestroyedText	core.xlsx	no		no	not checked
+_WouldYouLikeToSaveText	core.xlsx	no		no	not checked
+_GameSavedText	core.xlsx	no		yes	not checked
+_OlderFileWillBeErasedText	core.xlsx	no		no	not checked
+_WhenYouChangeBoxText	core.xlsx	no		no	not checked
+_ChooseABoxText	core.xlsx	no		no	not checked
+_EvolvedText	core.xlsx	no		yes	not checked
+_IntoText	core.xlsx	no		yes	not checked
+_StoppedEvolvingText	core.xlsx	no		yes	not checked
+_IsEvolvingText	core.xlsx	no		yes	not checked
+_FellAsleepText	core.xlsx	no		yes	not checked
+_AlreadyAsleepText	core.xlsx	no		yes	not checked
+_PoisonedText	core.xlsx	no		yes	not checked
+_BadlyPoisonedText	core.xlsx	no		yes	not checked
+_BurnedText	core.xlsx	no		yes	not checked
+_FrozenText	core.xlsx	no		yes	not checked
+_FireDefrostedText	core.xlsx	no		yes	not checked
+_MonsStatsRoseText	core.xlsx	no		yes	not checked
+_GreatlyRoseText	core.xlsx	no		no	not checked
+_RoseText	core.xlsx	no		no	not checked
+_MonsStatsFellText	core.xlsx	no		yes	not checked
+_GreatlyFellText	core.xlsx	no		no	not checked
+_FellText	core.xlsx	no		no	not checked
+_RanFromBattleText	core.xlsx	no		yes	not checked
+_RanAwayScaredText	core.xlsx	no		yes	not checked
+_WasBlownAwayText	core.xlsx	no		yes	not checked
+_ChargeMoveEffectText	core.xlsx	no		no	not checked
+_MadeWhirlwindText	core.xlsx	no		yes	not checked
+_TookInSunlightText	core.xlsx	no		yes	not checked
+_LoweredItsHeadText	core.xlsx	no		yes	not checked
+_SkyAttackGlowingText	core.xlsx	no		yes	not checked
+_FlewUpHighText	core.xlsx	no		yes	not checked
+_DugAHoleText	core.xlsx	no		yes	not checked
+_BecameConfusedText	core.xlsx	no		yes	not checked
+_MimicLearnedMoveText	core.xlsx	no		yes	not checked
+_MoveWasDisabledText	core.xlsx	no		yes	not checked
+_NothingHappenedText	core.xlsx	no		no	not checked
+_NoEffectText	core.xlsx	no		no	not checked
+_ButItFailedText	core.xlsx	no		no	not checked
+_DidntAffectText	core.xlsx	no		yes	not checked
+_IsUnaffectedText	core.xlsx	no		yes	not checked
+_ParalyzedMayNotAttackText	core.xlsx	no		yes	not checked
+_SubstituteText	core.xlsx	no		no	not checked
+_HasSubstituteText	core.xlsx	no		yes	not checked
+_TooWeakSubstituteText	core.xlsx	no		no	not checked
+_CoinsScatteredText	core.xlsx	no		no	not checked
+_GettingPumpedText	core.xlsx	no		yes	not checked
+_WasSeededText	core.xlsx	no		yes	not checked
+_EvadedAttackText	core.xlsx	no		yes	not checked
+_HitWithRecoilText	core.xlsx	no		yes	not checked
+_ConvertedTypeText	core.xlsx	no		yes	not checked
+_StatusChangesEliminatedText	core.xlsx	no		no	not checked
+_StartedSleepingEffect	core.xlsx	no		yes	not checked
+_FellAsleepBecameHealthyText	core.xlsx	no		yes	not checked
+_RegainedHealthText	core.xlsx	no		yes	not checked
+_TransformedText	core.xlsx	no		yes	not checked
+_LightScreenProtectedText	core.xlsx	no		yes	not checked
+_ReflectGainedArmorText	core.xlsx	no		yes	not checked
+_ShroudedInMistText	core.xlsx	no		yes	not checked
+_SuckedHealthText	core.xlsx	no		yes	not checked
+_DreamWasEatenText	core.xlsx	no		yes	not checked
+_TradeCenterText1	core.xlsx	no		no	not checked
+_ColosseumText1	core.xlsx	no		no	not checked
+_PokemartGreetingText	core.xlsx	no		no	not checked
+_PokemonFaintedText	core.xlsx	no		yes	not checked
+_PlayerBlackedOutText	core.xlsx	no		yes	not checked
+_RepelWoreOffText	core.xlsx	no		no	not checked
+_PokemartBuyingGreetingText	core.xlsx	no		no	not checked
+_PokemartTellBuyPriceText	core.xlsx	no		yes	not checked
+_PokemartBoughtItemText	core.xlsx	no		no	not checked
+_PokemartNotEnoughMoneyText	core.xlsx	no		no	not checked
+_PokemartItemBagFullText	core.xlsx	no		no	not checked
+_PokemonSellingGreetingText	core.xlsx	no		no	not checked
+_PokemartTellSellPriceText	core.xlsx	no		yes	not checked
+_PokemartItemBagEmptyText	core.xlsx	no		no	not checked
+_PokemartUnsellableItemText	core.xlsx	no		no	not checked
+_PokemartThankYouText	core.xlsx	no		no	not checked
+_PokemartAnythingElseText	core.xlsx	no		no	not checked
+_LearnedMove1Text	core.xlsx	no		yes	not checked
+_WhichMoveToForgetText	core.xlsx	no		no	not checked
+_AbandonLearningText	core.xlsx	no		yes	not checked
+_DidNotLearnText	core.xlsx	no		yes	not checked
+_TryingToLearnText	core.xlsx	no		yes	not checked
+_OneTwoAndText	core.xlsx	no		no	not checked
+_PoofText	core.xlsx	no		no	not checked
+_ForgotAndText	core.xlsx	no		yes	not checked
+_HMCantDeleteText	core.xlsx	no		no	not checked
+_PokemonCenterWelcomeText	core.xlsx	no		no	not checked
+_ShallWeHealYourPokemonText	core.xlsx	no		no	not checked
+_NeedYourPokemonText	core.xlsx	no		no	not checked
+_PokemonFightingFitText	core.xlsx	no		no	not checked
+_PokemonCenterFarewellText	core.xlsx	no		no	not checked
+_CableClubNPCAreaReservedFor2FriendsLinkedByCableText	core.xlsx	no		no	not checked
+_CableClubNPCWelcomeText	core.xlsx	no		no	not checked
+_CableClubNPCPleaseApplyHereHaveToSaveText	core.xlsx	no		no	not checked
+_CableClubNPCPleaseWaitText	core.xlsx	no		no	not checked
+_CableClubNPCLinkClosedBecauseOfInactivityText	core.xlsx	no		no	not checked
+_CableClubNPCPleaseComeAgainText	core.xlsx	no		no	not checked
+_CableClubNPCMakingPreparationsText	core.xlsx	no		no	not checked
+_UsedStrengthText	core.xlsx	no		yes	not checked
+_CanMoveBouldersText	core.xlsx	no		yes	not checked
+_CurrentTooFastText	core.xlsx	no		no	not checked
+_CyclingIsFunText	core.xlsx	no		no	not checked
+_FlashLightsAreaText	core.xlsx	no		no	not checked
+_WarpToLastPokemonCenterText	core.xlsx	no		no	not checked
+_CannotUseTeleportNowText	core.xlsx	no		yes	not checked
+_CannotFlyHereText	core.xlsx	no		yes	not checked
+_NotHealthyEnoughText	core.xlsx	no		no	not checked
+_NewBadgeRequiredText	core.xlsx	no		no	not checked
+_CannotUseItemsHereText	core.xlsx	no		no	not checked
+_CannotGetOffHereText	core.xlsx	no		no	not checked
+_GotMonText	core.xlsx	no		yes	not checked
+_SentToBoxText	core.xlsx	no		yes	not checked
+_BoxIsFullText	core.xlsx	no		no	not checked
+_ItemUseBallText00	core.xlsx	no		no	not checked
+_ItemUseBallText01	core.xlsx	no		no	not checked
+_ItemUseBallText02	core.xlsx	no		no	not checked
+_ItemUseBallText03	core.xlsx	no		no	not checked
+_ItemUseBallText04	core.xlsx	no		no	not checked
+_ItemUseBallText05	core.xlsx	no		yes	not checked
+_ItemUseBallText07	core.xlsx	no		yes	not checked
+_ItemUseBallText08	core.xlsx	no		yes	not checked
+_ItemUseBallText06	core.xlsx	no		yes	not checked
+_SurfingGotOnText	core.xlsx	no		yes	not checked
+_SurfingNoPlaceToGetOffText	core.xlsx	no		no	not checked
+_VitaminStatRoseText	core.xlsx	no		yes	not checked
+_VitaminNoEffectText	core.xlsx	no		no	not checked
+_ThrewBaitText	core.xlsx	no		yes	not checked
+_ThrewRockText	core.xlsx	no		yes	not checked
+_PlayedFluteNoEffectText	core.xlsx	no		no	not checked
+_FluteWokeUpText	core.xlsx	no		no	not checked
+_PlayedFluteHadEffectText	core.xlsx	no		yes	not checked
+_CoinCaseNumCoinsText	core.xlsx	no		yes	not checked
+_ItemfinderFoundItemText	core.xlsx	no		no	not checked
+_ItemfinderFoundNothingText	core.xlsx	no		no	not checked
+_RaisePPWhichTechniqueText	core.xlsx	no		no	not checked
+_RestorePPWhichTechniqueText	core.xlsx	no		no	not checked
+_PPMaxedOutText	core.xlsx	no		yes	not checked
+_PPIncreasedText	core.xlsx	no		yes	not checked
+_PPRestoredText	core.xlsx	no		no	not checked
+_BootedUpTMText	core.xlsx	no		no	not checked
+_BootedUpHMText	core.xlsx	no		no	not checked
+_TeachMachineMoveText	core.xlsx	no		yes	not checked
+_MonCannotLearnMachineMoveText	core.xlsx	no		yes	not checked
+_ItemUseNotTimeText	core.xlsx	no		yes	not checked
+_ItemUseNotYoursToUseText	core.xlsx	no		no	not checked
+_ItemUseNoEffectText	core.xlsx	no		no	not checked
+_ThrowBallAtTrainerMonText1	core.xlsx	no		no	not checked
+_ThrowBallAtTrainerMonText2	core.xlsx	no		no	not checked
+_NoCyclingAllowedHereText	core.xlsx	no		no	not checked
+_NoSurfingHereText	core.xlsx	no		yes	not checked
+_BoxFullCannotThrowBallText	core.xlsx	no		no	not checked
+_ItemUseText001	core.xlsx	no		yes	not checked
+_ItemUseText002	core.xlsx	no		yes	not checked
+_GotOnBicycleText1	core.xlsx	no		yes	not checked
+_GotOnBicycleText2	core.xlsx	no		yes	not checked
+_GotOffBicycleText1	core.xlsx	no		yes	not checked
+_GotOffBicycleText2	core.xlsx	no		yes	not checked
+_ThrewAwayItemText	core.xlsx	no		yes	not checked
+_IsItOKToTossItemText	core.xlsx	no		yes	not checked
+_TooImportantToTossText	core.xlsx	no		no	not checked
+_AlreadyKnowsText	core.xlsx	no		yes	not checked
+_ConnectCableText	core.xlsx	no		no	not checked
+_TradedForText	core.xlsx	no		yes	not checked
+_WannaTrade1Text	core.xlsx	no		yes	not checked
+_NoTrade1Text	core.xlsx	no		no	not checked
+_WrongMon1Text	core.xlsx	no		yes	not checked
+_Thanks1Text	core.xlsx	no		no	not checked
+_AfterTrade1Text	core.xlsx	no		yes	not checked
+_WannaTrade2Text	core.xlsx	no		yes	not checked
+_NoTrade2Text	core.xlsx	no		no	not checked
+_WrongMon2Text	core.xlsx	no		yes	not checked
+_Thanks2Text	core.xlsx	no		no	not checked
+_AfterTrade2Text	core.xlsx	no		yes	not checked
+_WannaTrade3Text	core.xlsx	no		yes	not checked
+_NoTrade3Text	core.xlsx	no		no	not checked
+_WrongMon3Text	core.xlsx	no		yes	not checked
+_Thanks3Text	core.xlsx	no		no	not checked
+_AfterTrade3Text	core.xlsx	no		yes	not checked
+_NothingToCutText	core.xlsx	no		no	not checked
+_UsedCutText	core.xlsx	no		yes	not checked
+_DexCompletionText	core.xlsx	yes	src/text/pokedex_ratings.asm	yes	not checked
+_DexRatingText_Own0To9	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own10To19	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own20To29	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own30To39	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own40To49	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own50To59	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own60To69	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own70To79	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own80To89	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own90To99	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own100To109	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own110To119	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own120To129	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own130To139	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own140To149	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_DexRatingText_Own150To151	core.xlsx	yes	src/text/pokedex_ratings.asm	no	not checked
+_SilphCo5EndBattleText4	buildingsB.xlsx	yes	src/text/SilphCo5F_2.asm	no	not checked
+_SilphCo5AfterBattleText4	buildingsB.xlsx	yes	src/text/SilphCo5F_2.asm	no	not checked
+_SilphCo5BattleText5	buildingsB.xlsx	yes	src/text/SilphCo5F_2.asm	no	not checked
+_SilphCo5EndBattleText5	buildingsB.xlsx	yes	src/text/SilphCo5F_2.asm	no	not checked
+_SilphCo5AfterBattleText5	buildingsB.xlsx	yes	src/text/SilphCo5F_2.asm	no	not checked
+_SilphCo5Text9	buildingsB.xlsx	yes	src/text/SilphCo5F_2.asm	no	not checked
+_SilphCo5Text10	buildingsB.xlsx	yes	src/text/SilphCo5F_2.asm	no	not checked
+_SilphCo5Text11	buildingsB.xlsx	yes	src/text/SilphCo5F_2.asm	no	not checked
+_SilphCo6Text_1a24a	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6Text_1a24f	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6Text_1a261	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6Text_1a266	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6Text_1a278	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6Text_1a27d	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6Text_1a28f	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6Text_1a294	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6Text_1a2a6	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6Text_1a2ab	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6BattleText2	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6EndBattleText2	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6AfterBattleText2	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6BattleText3	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6EndBattleText3	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6AfterBattleText3	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6BattleText4	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6EndBattleText4	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_SilphCo6AfterBattleText4	buildingsB.xlsx	yes	src/text/SilphCo6F.asm	no	not checked
+_MeetLaprasGuyText	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_HeresYourLaprasText	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_LaprasGuyText	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_LaprasGuySavedText	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7Text_51e00	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_CanceledMasterBallText	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7Text_51e23	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7Text_51e28	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7Text_51e46	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7Text_51e4b	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7BattleText1	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7EndBattleText1	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7AfterBattleText1	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7BattleText2	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7EndBattleText2	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7AfterBattleText2	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7BattleText3	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7EndBattleText3	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7AfterBattleText3	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7BattleText4	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7EndBattleText4	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7AfterBattleText4	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7Text_51ebe	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	yes	not checked
+_SilphCo7Text_51ec3	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	yes	not checked
+_SilphCo7Text_51ec8	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	no	not checked
+_SilphCo7Text_51ecd	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	yes	not checked
+_SilphCo7Text_51ed2	buildingsB.xlsx	yes	src/text/SilphCo7F.asm	yes	not checked
+_SilphCo8Text_565be	buildingsB.xlsx	yes	src/text/SilphCo8F.asm	no	not checked
+_SilphCo8Text_565c3	buildingsB.xlsx	yes	src/text/SilphCo8F.asm	no	not checked
+_SilphCo8BattleText1	buildingsB.xlsx	yes	src/text/SilphCo8F.asm	no	not checked
+_SilphCo8EndBattleText1	buildingsB.xlsx	yes	src/text/SilphCo8F.asm	no	not checked
+_SilphCo8AfterBattleText1	buildingsB.xlsx	yes	src/text/SilphCo8F.asm	no	not checked
+_SilphCo8BattleText2	buildingsB.xlsx	yes	src/text/SilphCo8F.asm	no	not checked
+_SilphCo8EndBattleText2	buildingsB.xlsx	yes	src/text/SilphCo8F.asm	no	not checked
+_SilphCo8AfterBattleText2	buildingsB.xlsx	yes	src/text/SilphCo8F.asm	no	not checked
+_SilphCo8BattleText3	buildingsB.xlsx	yes	src/text/SilphCo8F.asm	no	not checked
+_SilphCo8EndBattleText3	buildingsB.xlsx	yes	src/text/SilphCo8F.asm	no	not checked
+_SilphCo8AfterBattleText3	buildingsB.xlsx	yes	src/text/SilphCo8F.asm	no	not checked
+_SilphCo9Text_5d8e5	buildingsB.xlsx	yes	src/text/SilphCo9F.asm	no	not checked
+_SilphCo9Text_5d8ea	buildingsB.xlsx	yes	src/text/SilphCo9F.asm	no	not checked
+_SilphCo9Text_5d8ef	buildingsB.xlsx	yes	src/text/SilphCo9F.asm	no	not checked
+_SilphCo9BattleText1	buildingsB.xlsx	yes	src/text/SilphCo9F.asm	no	not checked
+_SilphCo9EndBattleText1	buildingsB.xlsx	yes	src/text/SilphCo9F.asm	no	not checked
+_SilphCo9AfterBattleText1	buildingsB.xlsx	yes	src/text/SilphCo9F.asm	no	not checked
+_SilphCo9BattleText2	buildingsB.xlsx	yes	src/text/SilphCo9F.asm	no	not checked
+_SilphCo9EndBattleText2	buildingsB.xlsx	yes	src/text/SilphCo9F.asm	no	not checked
+_SilphCo9AfterBattleText2	buildingsB.xlsx	yes	src/text/SilphCo9F.asm	no	not checked
+_SilphCo9BattleText3	buildingsB.xlsx	yes	src/text/SilphCo9F.asm	no	not checked
+_SilphCo9EndBattleText3	buildingsB.xlsx	yes	src/text/SilphCo9F.asm	no	not checked
+_SilphCo9AfterBattleText3	buildingsB.xlsx	yes	src/text/SilphCo9F.asm	no	not checked
+_SilphCo10Text_5a1d3	buildingsB.xlsx	yes	src/text/SilphCo10F.asm	no	not checked
+_SilphCo10Text_5a1d8	buildingsB.xlsx	yes	src/text/SilphCo10F.asm	no	not checked
+_SilphCo10BattleText1	buildingsB.xlsx	yes	src/text/SilphCo10F.asm	no	not checked
+_SilphCo10EndBattleText1	buildingsB.xlsx	yes	src/text/SilphCo10F.asm	no	not checked
+_SilphCo10AfterBattleText1	buildingsB.xlsx	yes	src/text/SilphCo10F.asm	no	not checked
+_SilphCo10BattleText2	buildingsB.xlsx	yes	src/text/SilphCo10F.asm	no	not checked
+_SilphCo10EndBattleText2	buildingsB.xlsx	yes	src/text/SilphCo10F.asm	no	not checked
+_SilphCo10AfterBattleText2	buildingsB.xlsx	yes	src/text/SilphCo10F.asm	no	not checked
+_SilphCoPresidentText	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	no	not checked
+_ReceivedSilphCoMasterBallText	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	yes	not checked
+_SilphCo10Text_6231c	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	no	not checked
+_SilphCoMasterBallNoRoomText	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	no	not checked
+_SilphCo11Text2	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	no	not checked
+_SilphCo11Text3	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	yes	not checked
+_SilphCo10Text_62330	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	no	not checked
+_SilphCo10Text_62335	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	yes	not checked
+_SilphCo11BattleText1	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	no	not checked
+_SilphCo11EndBattleText1	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	no	not checked
+_SilphCo11AfterBattleText1	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	no	not checked
+_SilphCo11BattleText2	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	no	not checked
+_SilphCo11EndBattleText2	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	no	not checked
+_SilphCo11AfterBattleText2	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	no	not checked
+_SilphCo10Text_6237b	buildingsB.xlsx	yes	src/text/SilphCo11F.asm	no	not checked
+_Mansion2BattleText1	buildingsB.xlsx	yes	src/text/PokemonMansion2F.asm	no	not checked
+_Mansion2EndBattleText1	buildingsB.xlsx	yes	src/text/PokemonMansion2F.asm	no	not checked
+_Mansion2AfterBattleText1	buildingsB.xlsx	yes	src/text/PokemonMansion2F.asm	no	not checked
+_Mansion2Text3	buildingsB.xlsx	yes	src/text/PokemonMansion2F.asm	no	not checked
+_Mansion2Text4	buildingsB.xlsx	yes	src/text/PokemonMansion2F.asm	no	not checked
+_Mansion2Text_520c2	buildingsB.xlsx	yes	src/text/PokemonMansion2F.asm	no	not checked
+_Mansion2Text_520c7	buildingsB.xlsx	yes	src/text/PokemonMansion2F.asm	no	not checked
+_Mansion2Text_520cc	buildingsB.xlsx	yes	src/text/PokemonMansion2F.asm	no	not checked
+_Mansion3BattleText1	buildingsB.xlsx	yes	src/text/PokemonMansion3F.asm	no	not checked
+_Mansion3EndBattleText1	buildingsB.xlsx	yes	src/text/PokemonMansion3F.asm	no	not checked
+_Mansion3AfterBattleText1	buildingsB.xlsx	yes	src/text/PokemonMansion3F.asm	no	not checked
+_Mansion3BattleText2	buildingsB.xlsx	yes	src/text/PokemonMansion3F.asm	no	not checked
+_Mansion3EndBattleText2	buildingsB.xlsx	yes	src/text/PokemonMansion3F.asm	no	not checked
+_Mansion3AfterBattleText2	buildingsB.xlsx	yes	src/text/PokemonMansion3F.asm	no	not checked
+_Mansion3Text5	buildingsB.xlsx	yes	src/text/PokemonMansion3F.asm	no	not checked
+_Mansion4BattleText1	buildingsB.xlsx	yes	src/text/PokemonMansionB1F.asm	no	not checked
+_Mansion4EndBattleText1	buildingsB.xlsx	yes	src/text/PokemonMansionB1F.asm	no	not checked
+_Mansion4AfterBattleText1	buildingsB.xlsx	yes	src/text/PokemonMansionB1F.asm	no	not checked
+_Mansion4BattleText2	buildingsB.xlsx	yes	src/text/PokemonMansionB1F.asm	no	not checked
+_Mansion4EndBattleText2	buildingsB.xlsx	yes	src/text/PokemonMansionB1F.asm	no	not checked
+_Mansion4AfterBattleText2	buildingsB.xlsx	yes	src/text/PokemonMansionB1F.asm	no	not checked
+_Mansion4Text7	buildingsB.xlsx	yes	src/text/PokemonMansionB1F.asm	no	not checked
+_SafariZoneEastText5	buildingsB.xlsx	yes	src/text/SafariZoneEast.asm	no	not checked
+_SafariZoneEastText6	buildingsB.xlsx	yes	src/text/SafariZoneEast.asm	no	not checked
+_SafariZoneEastText7	buildingsB.xlsx	yes	src/text/SafariZoneEast.asm	no	not checked
+_SafariZoneNorthText3	buildingsB.xlsx	yes	src/text/SafariZoneNorth.asm	no	not checked
+_SafariZoneNorthText4	buildingsB.xlsx	yes	src/text/SafariZoneNorth.asm	no	not checked
+_SafariZoneNorthText5	buildingsB.xlsx	yes	src/text/SafariZoneNorth.asm	no	not checked
+_SafariZoneNorthText6	buildingsB.xlsx	yes	src/text/SafariZoneNorth.asm	no	not checked
+_SafariZoneNorthText7	buildingsB.xlsx	yes	src/text/SafariZoneNorth.asm	no	not checked
+_SafariZoneWestText5	buildingsB.xlsx	yes	src/text/SafariZoneWest.asm	no	not checked
+_SafariZoneWestText6	buildingsB.xlsx	yes	src/text/SafariZoneWest.asm	no	not checked
+_SafariZoneWestText7	buildingsB.xlsx	yes	src/text/SafariZoneWest.asm	no	not checked
+_SafariZoneWestText8	buildingsB.xlsx	yes	src/text/SafariZoneWest.asm	no	not checked
+_SafariZoneCenterText2	buildingsB.xlsx	yes	src/text/SafariZoneCenter.asm	no	not checked
+_SafariZoneCenterText3	buildingsB.xlsx	yes	src/text/SafariZoneCenter.asm	no	not checked
+_SafariZoneRestHouse1Text1	buildingsB.xlsx	yes	src/text/SafariZoneCenterRestHouse.asm	no	not checked
+_SafariZoneRestHouse1Text2	buildingsB.xlsx	yes	src/text/SafariZoneCenterRestHouse.asm	no	not checked
+_SecretHouseText_4a350	buildingsB.xlsx	yes	src/text/SafariZoneSecretHouse.asm	no	not checked
+_ReceivedHM03Text	buildingsB.xlsx	yes	src/text/SafariZoneSecretHouse.asm	yes	not checked
+_HM03ExplanationText	buildingsB.xlsx	yes	src/text/SafariZoneSecretHouse.asm	no	not checked
+_HM03NoRoomText	buildingsB.xlsx	yes	src/text/SafariZoneSecretHouse.asm	no	not checked
+_SafariZoneRestHouse2Text1	buildingsB.xlsx	yes	src/text/SafariZoneWestRestHouse.asm	no	not checked
+_SafariZoneRestHouse2Text2	buildingsB.xlsx	yes	src/text/SafariZoneWestRestHouse.asm	no	not checked
+_SafariZoneRestHouse2Text3	buildingsB.xlsx	yes	src/text/SafariZoneWestRestHouse.asm	no	not checked
+_SafariZoneRestHouse3Text1	buildingsB.xlsx	yes	src/text/SafariZoneEastRestHouse.asm	no	not checked
+_SafariZoneRestHouse3Text2	buildingsB.xlsx	yes	src/text/SafariZoneEastRestHouse.asm	no	not checked
+_SafariZoneRestHouse3Text3	buildingsB.xlsx	yes	src/text/SafariZoneEastRestHouse.asm	no	not checked
+_SafariZoneRestHouse4Text1	buildingsB.xlsx	yes	src/text/SafariZoneNorthRestHouse.asm	no	not checked
+_SafariZoneRestHouse4Text2	buildingsB.xlsx	yes	src/text/SafariZoneNorthRestHouse.asm	no	not checked
+_SafariZoneRestHouse4Text3	buildingsB.xlsx	yes	src/text/SafariZoneNorthRestHouse.asm	no	not checked
+_MewtwoBattleText	buildingsB.xlsx	yes	src/text/CeruleanCaveB1F.asm	no	not checked
+_VictoryRoad1BattleText1	buildingsB.xlsx	yes	src/text/VictoryRoad1F.asm	no	not checked
+_VictoryRoad1EndBattleText1	buildingsB.xlsx	yes	src/text/VictoryRoad1F.asm	no	not checked
+_VictoryRoad1AfterBattleText1	buildingsB.xlsx	yes	src/text/VictoryRoad1F.asm	no	not checked
+_VictoryRoad1BattleText2	buildingsB.xlsx	yes	src/text/VictoryRoad1F.asm	no	not checked
+_VictoryRoad1EndBattleText2	buildingsB.xlsx	yes	src/text/VictoryRoad1F.asm	no	not checked
+_VictoryRoad1AfterBattleText2	buildingsB.xlsx	yes	src/text/VictoryRoad1F.asm	no	not checked
+_LanceBeforeBattleText	buildingsB.xlsx	yes	src/text/LancesRoom.asm	yes	not checked
+_LanceEndBattleText	buildingsB.xlsx	yes	src/text/LancesRoom.asm	no	not checked
+_LanceAfterBattleText	buildingsB.xlsx	yes	src/text/LancesRoom.asm	yes	not checked
+_HallofFameRoomText1	buildingsB.xlsx	yes	src/text/HallOfFame.asm	yes	not checked
+_GaryChampionIntroText	buildingsB.xlsx	yes	src/text/ChampionsRoom.asm	yes	not checked
+_GaryDefeatedText	buildingsB.xlsx	yes	src/text/ChampionsRoom.asm	no	not checked
+_GaryVictoryText	buildingsB.xlsx	yes	src/text/ChampionsRoom.asm	yes	not checked
+_GaryText_76103	buildingsB.xlsx	yes	src/text/ChampionsRoom.asm	no	not checked
+_GaryText2	buildingsB.xlsx	yes	src/text/ChampionsRoom.asm	yes	not checked
+_GaryText_76120	buildingsB.xlsx	yes	src/text/ChampionsRoom.asm	yes	not checked
+_GaryText_76125	buildingsB.xlsx	yes	src/text/ChampionsRoom.asm	yes	not checked
+_GaryText_7612a	buildingsB.xlsx	yes	src/text/ChampionsRoom.asm	yes	not checked
+_LoreleiBeforeBattleText	buildingsB.xlsx	yes	src/text/LoreleisRoom.asm	no	not checked
+_LoreleiEndBattleText	buildingsB.xlsx	yes	src/text/LoreleisRoom.asm	no	not checked
+_LoreleiAfterBattleText	buildingsB.xlsx	yes	src/text/LoreleisRoom.asm	no	not checked
+_LoreleiDontRunAwayText	buildingsB.xlsx	yes	src/text/LoreleisRoom.asm	no	not checked
+_BrunoBeforeBattleText	buildingsB.xlsx	yes	src/text/BrunosRoom.asm	yes	not checked
+_BrunoEndBattleText	buildingsB.xlsx	yes	src/text/BrunosRoom.asm	no	not checked
+_BrunoAfterBattleText	buildingsB.xlsx	yes	src/text/BrunosRoom.asm	no	not checked
+_BrunoDontRunAwayText	buildingsB.xlsx	yes	src/text/BrunosRoom.asm	no	not checked
+_AgathaBeforeBattleText	buildingsB.xlsx	yes	src/text/AgathasRoom.asm	yes	not checked
+_AgathaEndBattleText	buildingsB.xlsx	yes	src/text/AgathasRoom.asm	no	not checked
+_AgathaAfterBattleText	buildingsB.xlsx	yes	src/text/AgathasRoom.asm	no	not checked
+_AgathaDontRunAwayText	buildingsB.xlsx	yes	src/text/AgathasRoom.asm	no	not checked
+_RockTunnel2BattleText2	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2EndBattleText2	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2AfterBattleText2	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2BattleText3	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2EndBattleText3	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2AfterBattleText3	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2BattleText4	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2EndBattleText4	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2AfterBattleText4	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2BattleText5	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2EndBattleText5	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2AfterBattleText5	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2BattleText6	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2EndBattleText6	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2AfterBattleText6	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2BattleText7	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2EndBattleText7	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2AfterBattleText7	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2BattleText8	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2EndBattleText8	buildingsB.xlsx	yes	src/text/RockTunnelB1F.asm	no	not checked
+_RockTunnel2AfterBattleText8	buildingsB.xlsx	yes	src/text/RockTunnelB1F_2.asm	no	not checked
+_RockTunnel2BattleText9	buildingsB.xlsx	yes	src/text/RockTunnelB1F_2.asm	no	not checked
+_RockTunnel2EndBattleText9	buildingsB.xlsx	yes	src/text/RockTunnelB1F_2.asm	no	not checked
+_RockTunnel2AfterBattleText9	buildingsB.xlsx	yes	src/text/RockTunnelB1F_2.asm	no	not checked
+_ArticunoBattleText	buildingsB.xlsx	yes	src/text/SeafoamIslandsB4F.asm	no	not checked
+_SeafoamIslands5Text4	buildingsB.xlsx	yes	src/text/SeafoamIslandsB4F.asm	no	not checked
+_SeafoamIslands5Text5	buildingsB.xlsx	yes	src/text/SeafoamIslandsB4F.asm	no	not checked
+_ViridianForestText1	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestBattleText1	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestEndBattleText1	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianFrstAfterBattleText1	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestBattleText2	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestEndBattleText2	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianFrstAfterBattleText2	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestBattleText3	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestEndBattleText3	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianFrstAfterBattleText3	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestText8	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestText9	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestText10	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestText11	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestText12	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestText13	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_ViridianForestText14	buildingsA.xlsx	yes	src/text/ViridianForest.asm	no	not checked
+_MtMoon1BattleText2	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1EndBattleText2	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1AfterBattleText2	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1BattleText3	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1EndBattleText3	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1AfterBattleText3	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1BattleText4	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1EndBattleText4	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1AfterBattleText4	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1BattleText5	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1EndBattleText5	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1AfterBattleText5	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1BattleText6	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1EndBattleText6	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1AfterBattleText6	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1BattleText7	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1EndBattleText7	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1AfterBattleText7	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1BattleText8	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1EndBattleText8	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1AfterBattleText8	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoon1Text14	buildingsA.xlsx	yes	src/text/MtMoon1F.asm	no	not checked
+_MtMoonText1	buildingsA.xlsx	yes	src/text/MtMoonB1F.asm	no	not checked
+_MtMoon3Text_49f24	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3Text_49f64	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3Text_49f6f	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	yes	not checked
+_MtMoon3Text_49f7f	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3Text_49f85	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3Text_49f8a	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3Text_49f8f	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3Text_49f94	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3Text_49f99	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3BattleText2	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3EndBattleText2	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3AfterBattleText2	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3BattleText3	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3EndBattleText3	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3AfterBattleText3	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3BattleText4	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3EndBattleText4	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3AfterBattleText4	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3BattleText5	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3EndBattleText5	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_MtMoon3AfterBattleText5	buildingsA.xlsx	yes	src/text/MtMoonB2F.asm	no	not checked
+_SSAnne1Text1	buildingsA.xlsx	yes	src/text/SSAnne1F.asm	no	not checked
+_SSAnne1Text2	buildingsA.xlsx	yes	src/text/SSAnne1F.asm	no	not checked
+_SSAnne2Text1	buildingsA.xlsx	yes	src/text/SSAnne2F.asm	no	not checked
+_SSAnneRivalBeforeBattleText	buildingsA.xlsx	yes	src/text/SSAnne2F.asm	yes	not checked
+_SSAnneRivalDefeatedText	buildingsA.xlsx	yes	src/text/SSAnne2F.asm	no	not checked
+_SSAnneRivalWonText	buildingsA.xlsx	yes	src/text/SSAnne2F.asm	yes	not checked
+_SSAnneRivalCaptainText	buildingsA.xlsx	yes	src/text/SSAnne2F.asm	yes	not checked
+_SSAnne3Text1	buildingsA.xlsx	yes	src/text/SSAnne3F.asm	no	not checked
+_SSAnne5Text1	buildingsA.xlsx	yes	src/text/SSAnneBow.asm	no	not checked
+_SSAnne5Text2	buildingsA.xlsx	yes	src/text/SSAnneBow.asm	no	not checked
+_SSAnne5Text3	buildingsA.xlsx	yes	src/text/SSAnneBow.asm	no	not checked
+_SSAnne5BattleText1	buildingsA.xlsx	yes	src/text/SSAnneBow.asm	no	not checked
+_SSAnne5EndBattleText1	buildingsA.xlsx	yes	src/text/SSAnneBow.asm	no	not checked
+_SSAnne5AfterBattleText1	buildingsA.xlsx	yes	src/text/SSAnneBow.asm	no	not checked
+_SSAnne5BattleText2	buildingsA.xlsx	yes	src/text/SSAnneBow.asm	no	not checked
+_SSAnne5EndBattleText2	buildingsA.xlsx	yes	src/text/SSAnneBow.asm	no	not checked
+_SSAnne5AfterBattleText2	buildingsA.xlsx	yes	src/text/SSAnneBow.asm	no	not checked
+_SSAnne6Text1	buildingsA.xlsx	yes	src/text/SSAnneKitchen.asm	no	not checked
+_SSAnne6Text2	buildingsA.xlsx	yes	src/text/SSAnneKitchen.asm	no	not checked
+_SSAnne6Text3	buildingsA.xlsx	yes	src/text/SSAnneKitchen.asm	no	not checked
+_SSAnne6Text4	buildingsA.xlsx	yes	src/text/SSAnneKitchen.asm	no	not checked
+_SSAnne6Text5	buildingsA.xlsx	yes	src/text/SSAnneKitchen.asm	no	not checked
+_SSAnne6Text6	buildingsA.xlsx	yes	src/text/SSAnneKitchen.asm	no	not checked
+_SSAnne6Text_61807	buildingsA.xlsx	yes	src/text/SSAnneKitchen.asm	no	not checked
+_SSAnne6Text_6180c	buildingsA.xlsx	yes	src/text/SSAnneKitchen.asm	no	not checked
+_SSAnne6Text_61811	buildingsA.xlsx	yes	src/text/SSAnneKitchen.asm	no	not checked
+_SSAnne6Text_61816	buildingsA.xlsx	yes	src/text/SSAnneKitchen.asm	no	not checked
+_SSAnne7RubText	buildingsA.xlsx	yes	src/text/SSAnneCaptainsRoom.asm	yes	not checked
+_ReceivingHM01Text	buildingsA.xlsx	yes	src/text/SSAnneCaptainsRoom.asm	no	not checked
+_ReceivedHM01Text	buildingsA.xlsx	yes	src/text/SSAnneCaptainsRoom.asm	yes	not checked
+_SSAnne7Text_61932	buildingsA.xlsx	yes	src/text/SSAnneCaptainsRoom.asm	no	not checked
+_HM01NoRoomText	buildingsA.xlsx	yes	src/text/SSAnneCaptainsRoom.asm	no	not checked
+_SSAnne7Text2	buildingsA.xlsx	yes	src/text/SSAnneCaptainsRoom.asm	no	not checked
+_SSAnne7Text3	buildingsA.xlsx	yes	src/text/SSAnneCaptainsRoom.asm	no	not checked
+_SSAnne8Text8	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8BattleText1	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8EndBattleText1	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8AfterBattleText1	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8BattleText2	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8EndBattleText2	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8AfterBattleText2	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8BattleText3	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8EndBattleText3	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8AfterBattleText3	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8BattleText4	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8EndBattleText4	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8AfterBattleText4	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8Text5	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8Text6	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8Text7	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8Text9	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne8Text11	buildingsA.xlsx	yes	src/text/SSAnne1FRooms.asm	no	not checked
+_SSAnne9Text_61bf2	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9Text_61c01	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9Text_61c10	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9Text_61c1f	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9Text_61c2e	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9Text_61c3d	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9Text_61c4c	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9BattleText1	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9EndBattleText1	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9AfterBattleText1	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9BattleText2	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9EndBattleText2	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9AfterBattleText2	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9BattleText3	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9EndBattleText3	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9AfterBattleText3	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9BattleText4	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9EndBattleText4	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne9AfterBattleText4	buildingsA.xlsx	yes	src/text/SSAnne2FRooms.asm	no	not checked
+_SSAnne10Text8	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10BattleText1	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10EndBattleText1	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10AfterBattleText1	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10BattleText2	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10EndBattleText2	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10AfterBattleText2	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10BattleText3	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10EndBattleText3	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10AfterBattleText3	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10BattleText4	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10EndBattleText4	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10AfterBattleText4	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10BattleText5	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10EndBattleText5	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10AfterBattleText5	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10BattleText6	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10EndBattleText6	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10AfterBattleText6	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_SSAnne10Text7	buildingsA.xlsx	yes	src/text/SSAnneB1FRooms.asm	no	not checked
+_VictoryRoad3BattleText2	buildingsA.xlsx	yes	src/text/VictoryRoad3F.asm	no	not checked
+_VictoryRoad3EndBattleText2	buildingsA.xlsx	yes	src/text/VictoryRoad3F.asm	no	not checked
+_VictoryRoad3AfterBattleText2	buildingsA.xlsx	yes	src/text/VictoryRoad3F.asm	no	not checked
+_VictoryRoad3BattleText3	buildingsA.xlsx	yes	src/text/VictoryRoad3F.asm	no	not checked
+_VictoryRoad3EndBattleText3	buildingsA.xlsx	yes	src/text/VictoryRoad3F.asm	no	not checked
+_VictoryRoad3AfterBattleText3	buildingsA.xlsx	yes	src/text/VictoryRoad3F.asm	no	not checked
+_VictoryRoad3BattleText4	buildingsA.xlsx	yes	src/text/VictoryRoad3F.asm	no	not checked
+_VictoryRoad3EndBattleText4	buildingsA.xlsx	yes	src/text/VictoryRoad3F.asm	no	not checked
+_VictoryRoad3AfterBattleText4	buildingsA.xlsx	yes	src/text/VictoryRoad3F.asm	no	not checked
+_VictoryRoad3BattleText5	buildingsA.xlsx	yes	src/text/VictoryRoad3F.asm	no	not checked
+_VictoryRoad3EndBattleText5	buildingsA.xlsx	yes	src/text/VictoryRoad3F.asm	no	not checked
+_VictoryRoad3AfterBattleText5	buildingsA.xlsx	yes	src/text/VictoryRoad3F.asm	no	not checked
+_RocketHideout1EndBattleText6	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1BattleText2	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1EndBattleText2	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1AfterBattleTxt2	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1BattleText3	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1EndBattleText3	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1AfterBattleTxt3	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1BattleText4	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1EndBattleText4	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1AfterBattleTxt4	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1BattleText5	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1EndBattleText5	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1AfterBattleTxt5	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1BattleText6	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout1AfterBattleTxt6	buildingsA.xlsx	yes	src/text/RocketHideoutB1F.asm	no	not checked
+_RocketHideout2BattleText2	buildingsA.xlsx	yes	src/text/RocketHideoutB2F.asm	no	not checked
+_RocketHideout2EndBattleText2	buildingsA.xlsx	yes	src/text/RocketHideoutB2F.asm	no	not checked
+_RocketHideout2AfterBattleTxt2	buildingsA.xlsx	yes	src/text/RocketHideoutB2F.asm	no	not checked
+_RocketHideout3BattleText2	buildingsA.xlsx	yes	src/text/RocketHideoutB3F.asm	no	not checked
+_RocketHideout3EndBattleText2	buildingsA.xlsx	yes	src/text/RocketHideoutB3F.asm	no	not checked
+_RocketHideout3AfterBattleTxt2	buildingsA.xlsx	yes	src/text/RocketHideoutB3F.asm	no	not checked
+_RocketHideout3BattleTxt	buildingsA.xlsx	yes	src/text/RocketHideoutB3F.asm	no	not checked
+_RocketHideout3EndBattleText3	buildingsA.xlsx	yes	src/text/RocketHideoutB3F.asm	no	not checked
+_RocketHide3AfterBattleText3	buildingsA.xlsx	yes	src/text/RocketHideoutB3F.asm	no	not checked
+_RocketHideout4Text_4557a	buildingsA.xlsx	yes	src/text/RocketHideoutB4F.asm	no	not checked
+_RocketHideout4Text_4557f	buildingsA.xlsx	yes	src/text/RocketHideoutB4F.asm	no	not checked
+_RocketHideout4Text_45584	buildingsA.xlsx	yes	src/text/RocketHideoutB4F.asm	no	not checked
+_RocketHideout4BattleText2	buildingsA.xlsx	yes	src/text/RocketHideoutB4F.asm	no	not checked
+_RocketHideout4EndBattleText2	buildingsA.xlsx	yes	src/text/RocketHideoutB4F.asm	no	not checked
+_RocketHide4AfterBattleText2	buildingsA.xlsx	yes	src/text/RocketHideoutB4F.asm	no	not checked
+_RocketHideout4BattleText3	buildingsA.xlsx	yes	src/text/RocketHideoutB4F.asm	no	not checked
+_RocketHideout4EndBattleText3	buildingsA.xlsx	yes	src/text/RocketHideoutB4F.asm	no	not checked
+_RocketHide4AfterBattleText3	buildingsA.xlsx	yes	src/text/RocketHideoutB4F.asm	no	not checked
+_RocketHideout4BattleText4	buildingsA.xlsx	yes	src/text/RocketHideoutB4F.asm	no	not checked
+_RocketHideout4EndBattleText4	buildingsA.xlsx	yes	src/text/RocketHideoutB4F.asm	no	not checked
+_RocketHideout4Text_455ec	buildingsA.xlsx	yes	src/text/RocketHideoutB4F.asm	no	not checked
+_RocketElevatorText_4578b	buildingsA.xlsx	yes	src/text/RocketHideoutElevator.asm	no	not checked
+_SilphCo2Text_59ded	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_ReceivedTM36Text	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	yes	not checked
+_TM36ExplanationText	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_TM36NoRoomText	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo2BattleText1	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo2EndBattleText1	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo2AfterBattleText1	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo2BattleText2	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo2EndBattleText2	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo2AfterBattleText2	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo2BattleText3	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo2EndBattleText3	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo2AfterBattleText3	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo2BattleText4	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo2EndBattleText4	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo2AfterBattleText4	buildingsA.xlsx	yes	src/text/SilphCo2F.asm	no	not checked
+_SilphCo3Text_59ff9	buildingsA.xlsx	yes	src/text/SilphCo3F.asm	no	not checked
+_SilphCo3Text_59ffe	buildingsA.xlsx	yes	src/text/SilphCo3F.asm	yes	not checked
+_SilphCo3BattleText1	buildingsA.xlsx	yes	src/text/SilphCo3F.asm	no	not checked
+_SilphCo3EndBattleText1	buildingsA.xlsx	yes	src/text/SilphCo3F.asm	no	not checked
+_SilphCo3AfterBattleText1	buildingsA.xlsx	yes	src/text/SilphCo3F.asm	no	not checked
+_SilphCo3BattleText2	buildingsA.xlsx	yes	src/text/SilphCo3F.asm	no	not checked
+_SilphCo3EndBattleText2	buildingsA.xlsx	yes	src/text/SilphCo3F.asm	no	not checked
+_SilphCo3AfterBattleText2	buildingsA.xlsx	yes	src/text/SilphCo3F.asm	no	not checked
+_SilphCo4Text_19de0	buildingsA.xlsx	yes	src/text/SilphCo4F.asm	no	not checked
+_SilphCo4Text_19de5	buildingsA.xlsx	yes	src/text/SilphCo4F.asm	no	not checked
+_SilphCo4BattleText2	buildingsA.xlsx	yes	src/text/SilphCo4F.asm	no	not checked
+_SilphCo4EndBattleText2	buildingsA.xlsx	yes	src/text/SilphCo4F.asm	no	not checked
+_SilphCo4AfterBattleText2	buildingsA.xlsx	yes	src/text/SilphCo4F.asm	no	not checked
+_SilphCo4BattleText3	buildingsA.xlsx	yes	src/text/SilphCo4F.asm	no	not checked
+_SilphCo4EndBattleText3	buildingsA.xlsx	yes	src/text/SilphCo4F.asm	no	not checked
+_SilphCo4AfterBattleText3	buildingsA.xlsx	yes	src/text/SilphCo4F.asm	no	not checked
+_SilphCo4BattleText4	buildingsA.xlsx	yes	src/text/SilphCo4F.asm	no	not checked
+_SilphCo4EndBattleText4	buildingsA.xlsx	yes	src/text/SilphCo4F.asm	no	not checked
+_SilphCo4AfterBattleText4	buildingsA.xlsx	yes	src/text/SilphCo4F.asm	no	not checked
+_SilphCo5Text_1a010	buildingsA.xlsx	yes	src/text/SilphCo5F.asm	no	not checked
+_SilphCo5Text_1a015	buildingsA.xlsx	yes	src/text/SilphCo5F.asm	no	not checked
+_SilphCo5BattleText2	buildingsA.xlsx	yes	src/text/SilphCo5F.asm	no	not checked
+_SilphCo5EndBattleText2	buildingsA.xlsx	yes	src/text/SilphCo5F.asm	no	not checked
+_SilphCo5AfterBattleText2	buildingsA.xlsx	yes	src/text/SilphCo5F.asm	no	not checked
+_SilphCo5BattleText3	buildingsA.xlsx	yes	src/text/SilphCo5F.asm	no	not checked
+_SilphCo5EndBattleText3	buildingsA.xlsx	yes	src/text/SilphCo5F.asm	no	not checked
+_SilphCo5AfterBattleText3	buildingsA.xlsx	yes	src/text/SilphCo5F.asm	no	not checked
+_SilphCo5BattleText4	buildingsA.xlsx	yes	src/text/SilphCo5F.asm	no	not checked
+_OakAppearsText	outdoor.xlsx	yes	src/text/PalletTown.asm	no	not checked
+_OakWalksUpText	outdoor.xlsx	yes	src/text/PalletTown.asm	no	not checked
+_PalletTownText2	outdoor.xlsx	yes	src/text/PalletTown.asm	no	not checked
+_PalletTownText3	outdoor.xlsx	yes	src/text/PalletTown.asm	no	not checked
+_PalletTownText4	outdoor.xlsx	yes	src/text/PalletTown.asm	no	not checked
+_PalletTownText5	outdoor.xlsx	yes	src/text/PalletTown.asm	no	not checked
+_PalletTownText6	outdoor.xlsx	yes	src/text/PalletTown.asm	yes	not checked
+_PalletTownText7	outdoor.xlsx	yes	src/text/PalletTown.asm	yes	not checked
+_ViridianCityText1	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_19122	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_19127	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_1914d	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_19152	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_19157	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_19175	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_1917a	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_19191	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_191ca	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ReceivedTM42Text	outdoor.xlsx	yes	src/text/ViridianCity.asm	yes	not checked
+_TM42Explanation	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_TM42NoRoomText	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_1920a	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_1920f	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_19214	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText_19219	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText8	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText9	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText10	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText13	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_ViridianCityText14	outdoor.xlsx	yes	src/text/ViridianCity.asm	no	not checked
+_PewterCityText1	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText2	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText_193f1	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText_193f6	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText_193fb	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText13	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText_19427	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText_1942c	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText_19431	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText_1945d	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText14	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText6	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText7	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText10	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText11	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_PewterCityText12	outdoor.xlsx	yes	src/text/PewterCity.asm	no	not checked
+_CeruleanCityText_19668	outdoor.xlsx	yes	src/text/CeruleanCity.asm	yes	not checked
+_CeruleanCityText_1966d	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText_19672	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText_19677	outdoor.xlsx	yes	src/text/CeruleanCity.asm	yes	not checked
+_CeruleanCityText_196d9	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_ReceivedTM28Text	outdoor.xlsx	yes	src/text/CeruleanCity.asm	yes	not checked
+_ReceivedTM28Text2	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_TM28NoRoomText	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText_196ee	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText_196f3	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText3	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText4	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText5	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText6	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText_19730	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText_19735	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText_1973a	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText_1976f	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText_19774	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText_19779	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText_1977e	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText9	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText10	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText12	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText13	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText16	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_CeruleanCityText17	outdoor.xlsx	yes	src/text/CeruleanCity.asm	no	not checked
+_LavenderTownText_4413c	outdoor.xlsx	yes	src/text/LavenderTown.asm	no	not checked
+_LavenderTownText_44141	outdoor.xlsx	yes	src/text/LavenderTown.asm	no	not checked
+_LavenderTownText_44146	outdoor.xlsx	yes	src/text/LavenderTown.asm	no	not checked
+_LavenderTownText2	outdoor.xlsx	yes	src/text/LavenderTown.asm	no	not checked
+_LavenderTownText3	outdoor.xlsx	yes	src/text/LavenderTown.asm	no	not checked
+_LavenderTownText4	outdoor.xlsx	yes	src/text/LavenderTown.asm	no	not checked
+_LavenderTownText5	outdoor.xlsx	yes	src/text/LavenderTown.asm	no	not checked
+_LavenderTownText8	outdoor.xlsx	yes	src/text/LavenderTown.asm	no	not checked
+_LavenderTownText9	outdoor.xlsx	yes	src/text/LavenderTown.asm	no	not checked
+_VermilionCityText1	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_VermilionCityTextDidYouSee	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_VermilionCityTextSSAnneDeparted	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_SSAnneWelcomeText4	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_SSAnneWelcomeText9	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_SSAnneFlashedTicketText	outdoor.xlsx	yes	src/text/VermilionCity.asm	yes	not checked
+_SSAnneNoTicketText	outdoor.xlsx	yes	src/text/VermilionCity.asm	yes	not checked
+_SSAnneNotHereText	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_VermilionCityText4	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_VermilionCityText5	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_VermilionCityText14	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_VermilionCityText6	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_VermilionCityText7	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_VermilionCityText8	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_VermilionCityText11	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_VermilionCityText12	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_VermilionCityText13	outdoor.xlsx	yes	src/text/VermilionCity.asm	no	not checked
+_CeladonCityText1	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText2	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText3	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText4	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_TM41PreText	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_ReceivedTM41Text	outdoor.xlsx	yes	src/text/CeladonCity.asm	yes	not checked
+_TM41ExplanationText	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_TM41NoRoomText	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText6	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText7	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText8	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText9	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText10	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText11	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText13	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText14	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText15	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText16	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText17	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_CeladonCityText18	outdoor.xlsx	yes	src/text/CeladonCity.asm	no	not checked
+_FuchsiaCityText1	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityText2	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityText3	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityText4	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityText5	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityText11	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityText13	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityText16	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityText17	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityText18	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityChanseyText	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityVoltorbText	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityKangaskhanText	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCitySlowpokeText	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityLaprasText	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityOmanyteText	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityKabutoText	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_FuchsiaCityText_19b2a	outdoor.xlsx	yes	src/text/FuchsiaCity.asm	no	not checked
+_CinnabarIslandText8	outdoor.xlsx	yes	src/text/CinnabarIsland.asm	no	not checked
+_CinnabarIslandText1	outdoor.xlsx	yes	src/text/CinnabarIsland.asm	no	not checked
+_CinnabarIslandText2	outdoor.xlsx	yes	src/text/CinnabarIsland.asm	no	not checked
+_CinnabarIslandText3	outdoor.xlsx	yes	src/text/CinnabarIsland.asm	no	not checked
+_CinnabarIslandText6	outdoor.xlsx	yes	src/text/CinnabarIsland.asm	no	not checked
+_CinnabarIslandText7	outdoor.xlsx	yes	src/text/CinnabarIsland.asm	no	not checked
+_SaffronCityText1	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText2	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText3	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText4	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText5	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText6	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText7	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText8	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText9	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText10	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText11	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText12	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText13	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText14	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText15	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText16	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText17	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText18	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText20	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText21	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText22	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText24	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
+_SaffronCityText25	outdoor.xlsx	yes	src/text/SaffronCity.asm	no	not checked
