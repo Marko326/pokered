@@ -780,6 +780,8 @@ NEXTU
 wOptionsTextSpeedCursorX:: db
 wOptionsBattleAnimCursorX:: db
 wOptionsBattleStyleCursorX:: db
+; Options Page (0/1) reuses an otherwise-unused cancel-cursor byte.
+wOptionsMenuPage::
 wOptionsCancelCursorX:: db
 
 NEXTU
@@ -1792,6 +1794,8 @@ wRivalName:: ds NAME_LENGTH
 ; bit 6 = battle style
 ; 0: Shift
 ; 1: Set
+; bit 5 = global LANGUAGE setting (0: Chinese, 1: English; current NPC pilot)
+; bit 4 = reserved; preserve when updating Options
 ; bits 0-3 = text speed (number of frames to delay after printing a letter)
 ; 1: Fast
 ; 3: Medium

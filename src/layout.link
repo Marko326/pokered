@@ -213,6 +213,9 @@ ROMX $40
 ROMX $41
 	"DFS"
 
+ROMX $45
+	"Dual-Language Options"
+
 ROMX $50
 	"Chinese Fonts 50"
 

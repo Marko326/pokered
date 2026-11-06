@@ -634,3 +634,8 @@ INCLUDE "data/text/fly_house_special_fly_tips.asm"
 ; CHS: two-line single-list START Bag descriptions; no Pocket modes.
 SECTION "Single Bag Descriptions", ROMX, BANK[$30]
 INCLUDE "engine/items/single_bag_descriptions.asm"
+
+; ROM-1.39 LANGUAGE phase 1: OPTIONS bilingual UI + Route 1 NPC pilot.
+; Keep code and the extra English sample out of full Bank $01.
+SECTION "Dual-Language Options", ROMX, BANK[$45]
+INCLUDE "engine/menus/options_bilingual.asm"
