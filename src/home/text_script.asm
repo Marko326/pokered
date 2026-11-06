@@ -171,7 +171,15 @@ DisplayPokemartDialogue::
 	call LoadItemList
 	ld a, PRICEDITEMLISTMENU
 	ld [wListMenuID], a
+	; Mart parent session: each BUY/SELL list can temporarily show the
+	; shared description panel. This flag is cleared after the dialogue.
+	ld a, $80
+	ld [wPCItemDescriptionSessionActive], a
 	homecall DisplayPokemartDialogue_
+	; BUY/SELL list exits keep OAM hidden until the shop's parent dialogue ends.
+	call RestoreItemListSpritesAndUpdate
+	xor a
+	ld [wPCItemDescriptionSessionActive], a
 	jp AfterDisplayingTextID
 
 PokemartGreetingText::

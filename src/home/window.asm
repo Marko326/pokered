@@ -54,10 +54,13 @@ HandleMenuInput_::
 	and a ; was a key pressed?
 	jr nz, .keyPressed
 	push hl
-	; Blink at the same row as the printed down arrow (one row higher in
-	; START Bag only); do not leave an old cursor/arrow at y=11.
+	; Blink at the row where this menu actually draws the down arrow.
+	; START Bag and Player PC use y=10; Mart BUY/SELL retains y=11.
 	ld a, [wStartBagDescriptionActive]
 	and a
+	jr z, .normalDownArrow
+	ld a, [wPCItemDescriptionSessionActive]
+	cp 2 ; live Mart BUY/SELL item list
 	jr z, .normalDownArrow
 	hlcoord 18, 10
 	jr .downArrowReady

@@ -2338,7 +2338,12 @@ wItemListRedrawDirty:: db
 wStartBagDescriptionActive:: db
 wStartBagDescriptionLastID:: db
 wStartBagDescriptionBoxDrawn:: db
-	ds 2
+; Reuse two existing Main Data padding bytes for transient Player PC/Mart state.
+; Session values: 0 none, 1 PC list, 2 Mart list, 3 PC parent pending,
+; $80 Mart parent, $82 Mart parent pending. The save block length and all
+; following WRAM addresses stay unchanged.
+wPCItemDescriptionSessionActive:: db
+wPCItemDescriptionSavedSpritesEnabled:: db
 
 wPlayTimeHours:: db
 wPlayTimeMaxed:: db

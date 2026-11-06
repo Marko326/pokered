@@ -194,6 +194,9 @@ RestoreStartMenuInputStateFromSaved::
 	ld a, CHARVAL(" ")
 	ld [wTileBehindCursor], a
 	ld [hl], CHARVAL("▶")
+	; LoadScreenTilesFromBuffer2 transfers the saved parent BG incrementally.
+	; Wait until it is complete before the caller rebuilds overworld OAM.
+	call Delay3
 	ret
 
 ; QOL-1.15C: the ordinary START border, labels and cursor live wholly in

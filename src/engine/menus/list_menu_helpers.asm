@@ -1,16 +1,34 @@
 ; ROM-1.3: Move CHS list rendering to ROMX bank $0F; keep its Chinese layout.
 PrintListMenuEntries_::
-	; Shift the ENTIRE START Bag list up: interior y=2..10, names y=3/5/7/9.
-	; Other item/PC/shop lists keep their original interior y=3..11.
+	; START/PC names use y=3/5/7/9 and their raised frame.
+	; Mart restores the original LIST_MENU_BOX frame y=2..12, four
+	; rendered entries y=4/6/8/10, and the original arrow at y=11.
 	ld a, [wStartBagDescriptionActive]
 	and a
 	jr z, .normalClearOrigin
+	ld a, [wPCItemDescriptionSessionActive]
+	cp 2
+	jr nz, .startOrPCClear
+	ld a, [wStartBagDescriptionBoxDrawn]
+	and a
+	jr nz, .shopFrameReady
+	; On the first paint, redraw the same original LIST_MENU_BOX geometry
+	; (y=2..12); the description MESSAGE_BOX keeps its original y=12..17 edge.
+	hlcoord 4, 2
+	lb bc, 9, 14
+	call TextBoxBorder
+.shopFrameReady
+	hlcoord 5, 3
+	ld b, 9 ; clear the original interior rows 3..11 only
+	jr .clearEntries
+.startOrPCClear
 	hlcoord 5, 2
+	ld b, 9
 	jr .clearEntries
 .normalClearOrigin
 	hlcoord 5, 3
+	ld b, 9
 .clearEntries
-	ld b, 9 ; clear interior only; never overwrite the Bag bottom border at y=11
 	ld c, 14
 	call ClearScreenArea
 	ld a, [wListPointer]
@@ -34,17 +52,24 @@ PrintListMenuEntries_::
 	jr nc, .noCarry
 	inc d
 .noCarry
-	; Names, quantities, CANCEL and the scroll indicator all use this base.
-	; The later +2*SCREEN_WIDTH per entry preserves their two-tile spacing.
+	; DFS Chinese glyphs grow one tile ABOVE the text anchor.
+	; Mart keeps the original four displayed rows at y=4/6/8/10.
+	ld a, [wPCItemDescriptionSessionActive]
+	cp 2
+	jr z, .martEntryOrigin
 	ld a, [wStartBagDescriptionActive]
 	and a
 	jr z, .normalEntryOrigin
 	hlcoord 6, 3
-	jr .entryOriginReady
+	ld b, 4
+	jr .loop
+.martEntryOrigin
+	hlcoord 6, 4
+	ld b, 4 ; restore the original four rendered rows
+	jr .loop
 .normalEntryOrigin
 	hlcoord 6, 4
-.entryOriginReady
-	ld b, 4 ; print 4 names
+	ld b, 4
 .loop
 	ld a, b
 	ld [wWhichPokemon], a
@@ -197,8 +222,16 @@ PrintListMenuEntries_::
 	inc c
 	dec b
 	jp nz, .loop
+	; Keep the original four-row list's scroll arrow at x=18,y=11.
+	ld a, [wPCItemDescriptionSessionActive]
+	cp 2
+	jr nz, .normalScrollArrow
+	hlcoord 18, 11
+	jr .placeScrollArrow
+.normalScrollArrow
 	ld bc, -8
 	add hl, bc
+.placeScrollArrow
 	ld a, CHARVAL("▼")
 	ld [hl], a
 	ret

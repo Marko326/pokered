@@ -168,3 +168,26 @@ CloseStartMenu::
 .fullClose
 	call LoadTextBoxTilePatterns
 	jp CloseTextDisplay
+
+; START Bag returns through an overlay, not a full-screen white transition.
+; The caller has already restored/transferred the parent tilemap (and waited
+; for its BG copy) before this helper consumes the saved OAM enable byte.
+RestoreStartBagSpritesAndUpdate::
+	pop hl ; preserve the Bank $01 caller's return address
+	pop af ; consume the saved wUpdateSpritesEnabled byte
+	ld [wUpdateSpritesEnabled], a
+	push hl
+	call UpdateSprites
+	ret
+
+; The DFS-dirty return first rebuilds the parent START window off-screen.
+; Keep the caller's saved OAM byte below both return addresses until the copy
+; completes, then restore it and return to the unchanged Bank $01 JP target.
+RestoreStartMenuFromItemNoWhiteAndOAM::
+	farcall RestoreStartMenuFromItemNoWhite
+	pop hl
+	pop af
+	ld [wUpdateSpritesEnabled], a
+	push hl
+	call UpdateSprites
+	ret

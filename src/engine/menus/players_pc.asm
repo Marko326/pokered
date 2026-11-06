@@ -52,7 +52,6 @@ PlayerPCMenu:
 	ld b, $8
 	ld c, $7 ;ld c, $e
 	call TextBoxBorder
-	call UpdateSprites
 	hlcoord 2, 2
 	ld de, PlayersPCMenuEntries
 	call PlaceString
@@ -80,6 +79,8 @@ PlayerPCMenu:
 	ld a, 1
 	ldh [hAutoBGTransferEnabled], a
 	call Delay3
+	; Only now is the parent PC frame fully visible; release the list's OAM hold.
+	call RestoreItemListSpritesAndUpdate
 	call HandleMenuInput
 	bit 1, a
 	jp nz, ExitPlayerPC

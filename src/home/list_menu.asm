@@ -4,6 +4,9 @@
 DisplayListMenuID::
 	xor a
 	ldh [hAutoBGTransferEnabled], a ; disable auto-transfer
+	; Reuse the START Bag description panel for the three Player's PC item
+	; lists. The gate validates the PC session and actual inventory pointer.
+	farcall TryStartPCItemDescriptions
 	ld a, JOY_REPEAT_MODE_LONG_LIST
 	ldh [hJoy7], a ; long-list repeat speed from MenuRepeatDelayTable
 	ld a, [wBattleType]
@@ -29,7 +32,20 @@ DisplayListMenuID::
 	ld [wListCount], a
 	ld a, LIST_MENU_BOX
 	ld [wTextBoxID], a
-	call DisplayTextBoxID ; draw the menu text box
+	; Mart keeps the original LIST_MENU_BOX frame (y=2..12) below MONEY.
+	; Disable the START/PC raised-frame adjustment for this initial draw.
+	ld a, [wPCItemDescriptionSessionActive]
+	cp 2 ; live Mart item-list description
+	jr nz, .drawListBoxNormally
+	xor a
+	ld [wStartBagDescriptionActive], a
+	call DisplayTextBoxID
+	ld a, 1
+	ld [wStartBagDescriptionActive], a
+	jr .listBoxDrawn
+.drawListBoxNormally
+	call DisplayTextBoxID
+.listBoxDrawn
 	call UpdateSprites ; disable sprites behind the text box
 ; the code up to .skipMovingSprites appears to be useless
 	hlcoord 5, 2 ;hlcoord 4, 2 ; coordinates of upper left corner of menu text box
@@ -47,10 +63,13 @@ DisplayListMenuID::
 	ld a, 2 ; max menu item ID is 2 if the list has at least 2 entries
 .setMenuVariables
 	ld [wMaxMenuItem], a
-	; The START Bag list has moved up one row, so move its live cursor too.
-	; PC/shop/other lists still start at y=4.
+	; START Bag/Player PC use y=3; Mart retains its original y=4 cursor row.
 	ld a, [wStartBagDescriptionActive]
 	and a
+	ld a, 4
+	jr z, .setTopMenuY
+	ld a, [wPCItemDescriptionSessionActive]
+	cp 2
 	ld a, 4
 	jr z, .setTopMenuY
 	dec a
@@ -201,6 +220,8 @@ DisplayListMenuIDLoop::
 	ldh [hJoy7], a ; joypad state update flag
 	ld hl, wd730
 	res 6, [hl] ; turn on letter printing delay
+	farcall FinishPCItemDescriptions
+	xor a ; chosen item: carry must remain clear after the farcall
 	jp BankswitchBack
 .checkOtherKeys ; check B, SELECT, Up, and Down keys
 	bit BIT_B_BUTTON, a
@@ -307,6 +328,24 @@ DisplayChooseQuantityMenu::
 	ld a, e
 	ret
 
+; PC and Mart description lists leave OAM suspended after ExitListMenu.
+; State 3/$82 means the list is gone but its parent UI has not yet been revealed.
+RestoreItemListSpritesAndUpdate::
+	ld a, [wPCItemDescriptionSessionActive]
+	cp 3
+	jr z, .restoreSavedState
+	cp $82
+	jr z, .restoreSavedState
+	call UpdateSprites ; no pending description list (e.g. first PC parent menu)
+	ret
+.restoreSavedState
+	xor a
+	ld [wPCItemDescriptionSessionActive], a
+	ld a, [wPCItemDescriptionSavedSpritesEnabled]
+	ld [wUpdateSpritesEnabled], a
+	call UpdateSprites
+	ret
+
 ExitListMenu::
 	ld a, [wCurrentMenuItem]
 	ld [wChosenMenuItem], a
@@ -317,6 +356,7 @@ ExitListMenu::
 	ldh [hJoy7], a
 	ld hl, wd730
 	res 6, [hl]
+	farcall FinishPCItemDescriptions
 	call BankswitchBack
 	xor a
 	ld [wMenuItemToSwap], a ; 0 means no item is currently being swapped
@@ -330,7 +370,7 @@ PrintListMenuEntries::
 ListMenuCancelText::
 	db "CANCEL@"
 
-; Only START -> Bag sets this flag; PC/Mart/Battle lists do not render a panel.
+; START Bag, Player PC and Mart item lists reuse one description flag.
 UpdateStartBagDescriptionIfActive::
     ld a, [wStartBagDescriptionActive]
     and a

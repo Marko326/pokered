@@ -1,21 +1,35 @@
-; START Bag single-list short descriptions (CHS adaptation of RPP #085).
-; Bank $30. Uses the existing wBagItems list; no Pocket/SlotMap or save change.
-; Called from HOME only when wStartBagDescriptionActive != 0.
+; Shared single-list short descriptions (CHS adaptation of RPP #085).
+; START Bag, Player's PC and Mart BUY/SELL reuse the same translated text.
+; Only obtainable Bag items were refined: badge/SAFARI_BALL/POKEDEX/COIN and
+; unused IDs keep their original placeholders. No new Pocket or save layout.
+; The active inventory comes from wListPointer and wListCount.
 UpdateSingleBagDescription::
     ld a, [wCurrentMenuItem]
     ld b, a
     ld a, [wListScrollOffset]
     add b
     ld b, a
-    ld a, [wNumBagItems]
+    ; wListCount and wListPointer belong to the current list: Bag or PC.
+    ; Both inventories store count followed by (item ID, quantity) pairs.
+    ld a, [wListCount]
     cp b
     jr z, .cancel
     jr c, .cancel
+    ; Mart BUY has one item ID byte per entry (wItemList).
+    ; Bag, Player PC and Mart SELL use pairs (ID, quantity).
+    ld a, [wListMenuID]
+    cp PRICEDITEMLISTMENU
     ld a, b
+    jr z, .entryOffsetReady
     add a
+.entryOffsetReady
     ld e, a
     ld d, 0
-    ld hl, wBagItems
+    ld a, [wListPointer]
+    ld l, a
+    ld a, [wListPointer + 1]
+    ld h, a
+    inc hl
     add hl, de
     ld a, [hl]
     jr .selected
@@ -105,6 +119,135 @@ UpdateSingleBagDescription::
     call PlaceString
     ret
 
+; Player PC and Mart lists share the conventional list-menu entry point.
+; The Mart uses an explicit parent-session marker in HOME. Bank $01 caller code
+; remains size-neutral; the existing PlayerPC sprite update moves after reveal.
+; Bill's PC and battle are gated.
+TryStartPCItemDescriptions::
+    ; START Bag owns its own OAM save on the caller stack.
+    ld a, [wStartBagDescriptionActive]
+    and a
+    ret nz
+    ; $80 = fresh Mart parent; $82 = Mart parent after a list returned.
+    ; $03 = Player PC after a list returned. Pending states keep the original
+    ; saved byte instead of overwriting it with the temporarily disabled value.
+    ld a, [wPCItemDescriptionSessionActive]
+    cp $80
+    jr z, .martParentFresh
+    cp $82
+    jr z, .martParentPending
+    cp 3
+    jr z, .pcParentPending
+    xor a
+    ld [wPCItemDescriptionSessionActive], a ; fresh non-Mart list
+    ld b, 0 ; save the current OAM enable byte
+    jr .checkPlayerPC
+.pcParentPending
+    ld b, 1 ; preserve the original OAM enable byte across PC list loops
+.checkPlayerPC
+    ld a, [wFlags_0xcd60]
+    bit 5, a ; PlayerPCMenu has the player-PC parent menu open
+    ret z
+    ld a, [wListMenuID]
+    cp ITEMLISTMENU
+    ret nz
+    ; Only the real player Bag and storage inventories, never a vendor list.
+    ld a, [wListPointer]
+    cp LOW(wNumBagItems)
+    jr nz, .checkBox
+    ld a, [wListPointer + 1]
+    cp HIGH(wNumBagItems)
+    jr z, .enable
+.checkBox
+    ld a, [wListPointer]
+    cp LOW(wNumBoxItems)
+    ret nz
+    ld a, [wListPointer + 1]
+    cp HIGH(wNumBoxItems)
+    ret nz
+.enable
+    ld a, 1 ; Player PC item-list session
+    ld [wPCItemDescriptionSessionActive], a
+    jr .enablePanel
+.martParentFresh
+    ld b, 0 ; save the current OAM enable byte
+    jr .martParent
+.martParentPending
+    ld b, 1 ; preserve the original OAM enable byte across Mart list loops
+.martParent
+    ; The Mart is the only caller with this explicit parent marker.
+    ; BUY: PRICEDITEMLISTMENU + wItemList (single-byte IDs).
+    ; SELL: ITEMLISTMENU + wNumBagItems (ID,quantity pairs).
+    ld a, [wListMenuID]
+    cp PRICEDITEMLISTMENU
+    jr z, .martBuy
+    cp ITEMLISTMENU
+    ret nz
+    ld a, [wListPointer]
+    cp LOW(wNumBagItems)
+    ret nz
+    ld a, [wListPointer + 1]
+    cp HIGH(wNumBagItems)
+    ret nz
+    ld a, [wPrintItemPrices]
+    and a
+    ret nz
+    jr .enableMart
+.martBuy
+    ld a, [wListPointer]
+    cp LOW(wItemList)
+    ret nz
+    ld a, [wListPointer + 1]
+    cp HIGH(wItemList)
+    ret nz
+    ld a, [wPrintItemPrices]
+    and a
+    ret z
+.enableMart
+    ld a, 2 ; live Mart BUY/SELL list, distinct from the parent $80/$82
+    ld [wPCItemDescriptionSessionActive], a
+.enablePanel
+    ld a, 1
+    ld [wStartBagDescriptionActive], a
+    ld a, $fe ; force a fresh description on first draw
+    ld [wStartBagDescriptionLastID], a
+    xor a
+    ld [wStartBagDescriptionBoxDrawn], a
+    ; Keep OAM disabled through the caller's prompt/parent-screen rebuild.
+    ld a, b
+    and a
+    jr nz, .keepSavedSprites
+    ld a, [wUpdateSpritesEnabled]
+    ld [wPCItemDescriptionSavedSpritesEnabled], a
+.keepSavedSprites
+    xor a
+    ld [wUpdateSpritesEnabled], a
+    call HideSprites
+    call DelayFrame
+    ret
+
+FinishPCItemDescriptions::
+    ld a, [wPCItemDescriptionSessionActive]
+    cp 1
+    jr z, .finishList
+    cp 2
+    ret nz ; START Bag, Mart parent ($80/$82), and other lists are untouched
+.finishList
+    push af
+    xor a
+    ld [wStartBagDescriptionActive], a
+    ld [wStartBagDescriptionBoxDrawn], a
+    pop af
+    cp 2
+    jr z, .restoreMartParent
+    ld a, 3 ; PC parent is pending; restore OAM only after its menu is drawn
+    jr .storeMode
+.restoreMartParent
+    ld a, $82 ; Mart parent is pending; keep OAM hidden across BUY/SELL loops
+.storeMode
+    ld [wPCItemDescriptionSessionActive], a
+    ret
+
 SingleBagItemDescriptionPointers:
     dw SingleBagItemDescription01
     dw SingleBagItemDescription02
@@ -115,7 +258,7 @@ SingleBagItemDescriptionPointers:
     dw SingleBagItemDescription07
     dw SingleBagItemDescription08
     dw SingleBagItemDescription09
-    dw SingleBagItemDescription10
+    dw SingleBagEvolutionStoneDescription
     dw SingleBagItemDescription11
     dw SingleBagItemDescription12
     dw SingleBagItemDescription13
@@ -137,9 +280,9 @@ SingleBagItemDescriptionPointers:
     dw SingleBagItemDescription29
     dw SingleBagItemDescription30
     dw SingleBagItemDescription31
-    dw SingleBagItemDescription32
-    dw SingleBagItemDescription33
-    dw SingleBagItemDescription34
+    dw SingleBagEvolutionStoneDescription
+    dw SingleBagEvolutionStoneDescription
+    dw SingleBagEvolutionStoneDescription
     dw SingleBagItemDescription35
     dw SingleBagItemDescription36
     dw SingleBagItemDescription37
@@ -152,7 +295,7 @@ SingleBagItemDescriptionPointers:
     dw SingleBagItemDescription44
     dw SingleBagItemDescription45
     dw SingleBagItemDescription46
-    dw SingleBagItemDescription47
+    dw SingleBagEvolutionStoneDescription
     dw SingleBagItemDescription48
     dw SingleBagItemDescription49
     dw SingleBagItemDescription50
@@ -195,37 +338,37 @@ SingleBagMachineDescription:
     db CHARVAL("@")
 
 SingleBagItemDescription01:
-    db $05, $76, $07, $43, $05, $b2, $09, $b3 ; 必定捕获
+    db $05, $b2, $19, $18, $12, $f2, $0f, $94, $05, $2e, $0b, $29, $0c, $da ; 捕捉野生宝可梦
     db CHARVAL("<NEXT>")
-    db $0e, $ec, $09, $1b, $05, $2e, $0b, $29, $0c, $da ; 任何宝可梦
+    db $05, $76, $07, $43, $06, $2b, $08, $8e ; 必定成功
     db CHARVAL("@")
 
 SingleBagItemDescription02:
-    db $05, $b2, $09, $b3, $0c, $78, $08, $86, $08, $69 ; 捕获率更高
+    db $05, $b2, $09, $b3, $0d, $64, $0b, $d8, $08, $86, $0e, $7f, $06, $f8 ; 捕获能力更强的
     db CHARVAL("<NEXT>")
-    db $06, $f8, $0a, $a5, $0c, $23, $0e, $b2 ; 的精灵球
+    db $08, $69, $09, $d6, $0a, $a5, $0c, $23, $0e, $b2 ; 高级精灵球
     db CHARVAL("@")
 
 SingleBagItemDescription03:
-    db $08, $86, $13, $20, $05, $b2, $09, $b3 ; 更易捕获
+    db $05, $66, $0e, $20, $10, $d8, $0a, $a5, $0c, $23, $0e, $b2 ; 比普通精灵球
     db CHARVAL("<NEXT>")
-    db $12, $f2, $0f, $94, $05, $2e, $0b, $29, $0c, $da ; 野生宝可梦
+    db $08, $86, $0e, $fb, $13, $20, $05, $b2, $19, $18 ; 更容易捕捉
     db CHARVAL("@")
 
 SingleBagItemDescription04:
-    db $13, $81, $13, $98, $05, $b2, $09, $b3 ; 用于捕获
+    db $13, $81, $13, $98, $05, $b2, $19, $18 ; 用于捕捉
     db CHARVAL("<NEXT>")
     db $12, $f2, $0f, $94, $05, $2e, $0b, $29, $0c, $da ; 野生宝可梦
     db CHARVAL("@")
 
 SingleBagItemDescription05:
-    db $05, $e5, $0b, $10, $08, $c0, $07, $6c ; 查看关都
+    db $05, $e5, $0b, $10, $08, $c0, $07, $6c, $07, $10, $0e, $b8 ; 查看关都地区
     db CHARVAL("<NEXT>")
-    db $07, $10, $0e, $b8, $07, $10, $10, $ec ; 地区地图
+    db $07, $10, $10, $ec ; 地图
     db CHARVAL("@")
 
 SingleBagItemDescription06:
-    db $0e, $3b, $06, $13, $06, $6e, $12, $41 ; 骑车出行
+    db $0e, $3b, $06, $2d, $19, $30, $12, $41, $06, $13 ; 骑乘自行车
     db CHARVAL("<NEXT>")
     db $13, $0c, $07, $4a, $08, $86, $0b, $62 ; 移动更快
     db CHARVAL("@")
@@ -248,70 +391,64 @@ SingleBagItemDescription09:
     db $05, $2e, $0b, $29, $0c, $da, $19, $26, $0c, $05 ; 宝可梦资料
     db CHARVAL("@")
 
-SingleBagItemDescription10:
-    db $0d, $64, $0f, $b1, $05, $bb, $07, $e4 ; 能使部分
-    db CHARVAL("<NEXT>")
-    db $05, $2e, $0b, $29, $0c, $da, $0a, $94, $09, $71 ; 宝可梦进化
-    db CHARVAL("@")
-
 SingleBagItemDescription11:
-    db $0a, $7e, $06, $75, $05, $2e, $0b, $29, $0c, $da ; 解除宝可梦
+    db $0a, $7e, $06, $75, $18, $c6, $07, $6e, $19, $0c, $10, $7e ; 解除中毒状态
     db CHARVAL("<NEXT>")
-    db $06, $f8, $18, $c6, $07, $6e, $19, $0c, $10, $7e ; 的中毒状态
+    db $05, $b7, $09, $98, $08, $28, $10, $b7, $0b, $d8 ; 不恢复体力
     db CHARVAL("@")
 
 SingleBagItemDescription12:
-    db $0a, $7e, $06, $75, $05, $2e, $0b, $29, $0c, $da ; 解除宝可梦
+    db $0a, $7e, $06, $75, $19, $21, $0f, $65, $19, $0c, $10, $7e ; 解除灼伤状态
     db CHARVAL("<NEXT>")
-    db $06, $f8, $19, $21, $0f, $65, $19, $0c, $10, $7e ; 的灼伤状态
+    db $05, $b7, $09, $98, $08, $28, $10, $b7, $0b, $d8 ; 不恢复体力
     db CHARVAL("@")
 
 SingleBagItemDescription13:
-    db $0a, $7e, $06, $75, $05, $2e, $0b, $29, $0c, $da ; 解除宝可梦
+    db $0a, $7e, $06, $75, $05, $97, $07, $63, $19, $0c, $10, $7e ; 解除冰冻状态
     db CHARVAL("<NEXT>")
-    db $06, $f8, $05, $97, $07, $63, $19, $0c, $10, $7e ; 的冰冻状态
+    db $05, $b7, $09, $98, $08, $28, $10, $b7, $0b, $d8 ; 不恢复体力
     db CHARVAL("@")
 
 SingleBagItemDescription14:
-    db $09, $7f, $12, $42, $06, $23, $10, $09, $06, $f8 ; 唤醒沉睡的
+    db $09, $7f, $12, $42, $10, $09, $19, $20, $06, $f8 ; 唤醒睡着的
     db CHARVAL("<NEXT>")
     db $05, $2e, $0b, $29, $0c, $da ; 宝可梦
     db CHARVAL("@")
 
 SingleBagItemDescription15:
-    db $0a, $7e, $06, $75, $05, $2e, $0b, $29, $0c, $da ; 解除宝可梦
+    db $0a, $7e, $06, $75, $0c, $97, $05, $72, $19, $0c, $10, $7e ; 解除麻痹状态
     db CHARVAL("<NEXT>")
-    db $06, $f8, $0c, $97, $05, $72, $19, $0c, $10, $7e ; 的麻痹状态
+    db $05, $b7, $09, $98, $08, $28, $10, $b7, $0b, $d8 ; 不恢复体力
     db CHARVAL("@")
 
 SingleBagItemDescription16:
     db $09, $98, $08, $28, $0e, $c9, $05, $bb, $10, $b7, $0b, $d8 ; 恢复全部体力
     db CHARVAL("<NEXT>")
-    db $05, $9e, $18, $c4, $13, $b8, $13, $36, $06, $01 ; 并治愈异常
+    db $05, $9e, $0a, $7e, $06, $75, $13, $36, $06, $01, $19, $0c, $10, $7e ; 并解除异常状态
     db CHARVAL("@")
 
 SingleBagItemDescription17:
-    db $11, $21, $0e, $c9, $09, $98, $08, $28 ; 完全恢复
+    db $09, $98, $08, $28, $0e, $c9, $05, $bb, $10, $b7, $0b, $d8 ; 恢复全部体力
     db CHARVAL("<NEXT>")
-    db $05, $2e, $0b, $29, $0c, $da, $10, $b7, $0b, $d8 ; 宝可梦体力
+    db $06, $df, $05, $b7, $0a, $7e, $06, $75, $13, $36, $06, $01, $19, $0c, $10, $7e ; 但不解除异常状态
     db CHARVAL("@")
 
 SingleBagItemDescription18:
     db $09, $98, $08, $28, $10, $b7, $0b, $d8 ; 恢复体力
     db CHARVAL("<NEXT>")
-    db $07, $ae, $04, $fb, $07, $1e ; 二百点
+    db $19, $60, $07, $90, $01, $e8, $01, $e6, $01, $e6, $07, $1e ; 最多２００点
     db CHARVAL("@")
 
 SingleBagItemDescription19:
     db $09, $98, $08, $28, $10, $b7, $0b, $d8 ; 恢复体力
     db CHARVAL("<NEXT>")
-    db $11, $91, $0f, $a6, $07, $1e ; 五十点
+    db $19, $60, $07, $90, $01, $eb, $01, $e6, $07, $1e ; 最多５０点
     db CHARVAL("@")
 
 SingleBagItemDescription20:
     db $09, $98, $08, $28, $10, $b7, $0b, $d8 ; 恢复体力
     db CHARVAL("<NEXT>")
-    db $07, $ae, $0f, $a6, $07, $1e ; 二十点
+    db $19, $60, $07, $90, $01, $e8, $01, $e6, $07, $1e ; 最多２０点
     db CHARVAL("@")
 
 SingleBagItemDescription21:
@@ -363,93 +500,75 @@ SingleBagItemDescription28:
     db CHARVAL("@")
 
 SingleBagItemDescription29:
-    db $06, $a9, $07, $64, $12, $8c, $10, $a5, $06, $6e ; 从洞穴逃出
+    db $06, $a9, $07, $64, $12, $8c, $18, $c6, $10, $a5, $06, $6e ; 从洞穴中逃出
     db CHARVAL("<NEXT>")
-    db $09, $9a, $06, $f1, $0f, $0d, $0b, $3a, $06, $7c ; 回到入口处
+    db $09, $9a, $06, $f1, $0f, $0d, $0b, $3a, $08, $31, $0a, $98 ; 回到入口附近
     db CHARVAL("@")
 
 SingleBagItemDescription30:
-    db $13, $01, $07, $43, $05, $b9, $0f, $f5, $0d, $62 ; 一定步数内
+    db $01, $e7, $01, $e6, $01, $e6, $05, $b9, $0d, $62, $05, $7a, $0b, $06 ; １００步内避开
     db CHARVAL("<NEXT>")
-    db $0f, $1a, $12, $0d, $05, $2e, $0b, $29, $0c, $da, $05, $b7, $0b, $88 ; 弱小宝可梦不来
+    db $05, $66, $07, $83, $0f, $cf, $06, $fc, $09, $d6, $07, $05, $06, $f8, $05, $2e, $0b, $29, $0c, $da ; 比队首等级低的宝可梦
     db CHARVAL("@")
 
 SingleBagItemDescription31:
-    db $08, $ad, $0b, $a3, $06, $f8, $28, $04, $1f, $f0 ; 古老的琥珀
+    db $08, $ad, $06, $d0, $05, $2e, $0b, $29, $0c, $da, $06, $f8 ; 古代宝可梦的
     db CHARVAL("<NEXT>")
-    db $09, $b4, $05, $d4, $13, $8e, $09, $71, $0f, $a7 ; 或藏有化石
-    db CHARVAL("@")
-
-SingleBagItemDescription32:
-    db $0d, $64, $0f, $b1, $05, $bb, $07, $e4 ; 能使部分
-    db CHARVAL("<NEXT>")
-    db $05, $2e, $0b, $29, $0c, $da, $0a, $94, $09, $71 ; 宝可梦进化
-    db CHARVAL("@")
-
-SingleBagItemDescription33:
-    db $0d, $64, $0f, $b1, $05, $bb, $07, $e4 ; 能使部分
-    db CHARVAL("<NEXT>")
-    db $05, $2e, $0b, $29, $0c, $da, $0a, $94, $09, $71 ; 宝可梦进化
-    db CHARVAL("@")
-
-SingleBagItemDescription34:
-    db $0d, $64, $0f, $b1, $05, $bb, $07, $e4 ; 能使部分
-    db CHARVAL("<NEXT>")
-    db $05, $2e, $0b, $29, $0c, $da, $0a, $94, $09, $71 ; 宝可梦进化
+    db $13, $0b, $06, $81, $11, $9b, $18, $c0, $28, $04, $1f, $f0 ; 遗传物质琥珀
     db CHARVAL("@")
 
 SingleBagItemDescription35:
-    db $18, $19, $09, $f3, $05, $2e, $0b, $29, $0c, $da ; 增加宝可梦
+    db $10, $b3, $08, $69, $10, $b7, $0b, $d8, $06, $f8 ; 提高体力的
     db CHARVAL("<NEXT>")
-    db $10, $b7, $0b, $d8, $06, $f8, $09, $bb, $06, $77, $18, $ab ; 体力的基础值
+    db $09, $bb, $06, $77, $0d, $64, $0b, $d8, $18, $ab ; 基础能力值
     db CHARVAL("@")
 
 SingleBagItemDescription36:
-    db $18, $19, $09, $f3, $05, $2e, $0b, $29, $0c, $da ; 增加宝可梦
+    db $10, $b3, $08, $69, $08, $8d, $09, $b9, $06, $f8 ; 提高攻击的
     db CHARVAL("<NEXT>")
-    db $08, $8d, $09, $b9, $06, $f8, $09, $bb, $06, $77, $18, $ab ; 攻击的基础值
+    db $09, $bb, $06, $77, $0d, $64, $0b, $d8, $18, $ab ; 基础能力值
     db CHARVAL("@")
 
 SingleBagItemDescription37:
-    db $18, $19, $09, $f3, $05, $2e, $0b, $29, $0c, $da ; 增加宝可梦
+    db $10, $b3, $08, $69, $07, $ce, $13, $b7, $06, $f8 ; 提高防御的
     db CHARVAL("<NEXT>")
-    db $07, $ce, $13, $b7, $06, $f8, $09, $bb, $06, $77, $18, $ab ; 防御的基础值
+    db $09, $bb, $06, $77, $0d, $64, $0b, $d8, $18, $ab ; 基础能力值
     db CHARVAL("@")
 
 SingleBagItemDescription38:
-    db $18, $19, $09, $f3, $05, $2e, $0b, $29, $0c, $da ; 增加宝可梦
+    db $10, $b3, $08, $69, $10, $37, $07, $78, $06, $f8 ; 提高速度的
     db CHARVAL("<NEXT>")
-    db $10, $37, $07, $78, $06, $f8, $09, $bb, $06, $77, $18, $ab ; 速度的基础值
+    db $09, $bb, $06, $77, $0d, $64, $0b, $d8, $18, $ab ; 基础能力值
     db CHARVAL("@")
 
 SingleBagItemDescription39:
-    db $18, $19, $09, $f3, $05, $2e, $0b, $29, $0c, $da ; 增加宝可梦
+    db $10, $b3, $08, $69, $10, $aa, $0f, $da, $06, $f8 ; 提高特殊的
     db CHARVAL("<NEXT>")
-    db $10, $aa, $0f, $da, $06, $f8, $09, $bb, $06, $77, $18, $ab ; 特殊的基础值
+    db $09, $bb, $06, $77, $0d, $64, $0b, $d8, $18, $ab ; 基础能力值
     db CHARVAL("@")
 
 SingleBagItemDescription40:
     db $0e, $e1, $05, $2e, $0b, $29, $0c, $da ; 让宝可梦
     db CHARVAL("<NEXT>")
-    db $06, $fc, $09, $d6, $10, $b3, $08, $69, $13, $01, $09, $d6 ; 等级提高一级
+    db $06, $fc, $09, $d6, $10, $b3, $0f, $97, $13, $01, $09, $d6 ; 等级提升一级
     db CHARVAL("@")
 
 SingleBagItemDescription41:
     db $08, $ad, $06, $d0, $05, $2e, $0b, $29, $0c, $da ; 古代宝可梦
     db CHARVAL("<NEXT>")
-    db $0c, $2e, $11, $cc, $06, $f8, $09, $71, $0f, $a7 ; 留下的化石
+    db $0c, $2e, $11, $cc, $06, $f8, $09, $f7, $0b, $27, $09, $71, $0f, $a7 ; 留下的甲壳化石
     db CHARVAL("@")
 
 SingleBagItemDescription42:
     db $08, $ad, $06, $d0, $05, $2e, $0b, $29, $0c, $da ; 古代宝可梦
     db CHARVAL("<NEXT>")
-    db $0c, $2e, $11, $cc, $06, $f8, $09, $71, $0f, $a7 ; 留下的化石
+    db $0c, $2e, $11, $cc, $06, $f8, $05, $3c, $0b, $27, $09, $71, $0f, $a7 ; 留下的贝壳化石
     db CHARVAL("@")
 
 SingleBagItemDescription43:
-    db $06, $c8, $0b, $06, $10, $aa, $0f, $da, $0c, $d1, $10, $6c ; 打开特殊门锁
+    db $13, $81, $13, $98, $06, $c8, $0b, $06 ; 用于打开
     db CHARVAL("<NEXT>")
-    db $10, $6d, $12, $6e, $06, $f8, $13, $db, $06, $39 ; 所需的钥匙
+    db $10, $aa, $07, $43, $0c, $d1, $10, $6c, $06, $f8, $13, $db, $06, $39 ; 特定门锁的钥匙
     db CHARVAL("@")
 
 SingleBagItemDescription44:
@@ -459,27 +578,21 @@ SingleBagItemDescription44:
     db CHARVAL("@")
 
 SingleBagItemDescription45:
-    db $07, $82, $09, $7d, $19, $30, $12, $41, $06, $13 ; 兑换自行车
+    db $0e, $06, $0e, $cd, $0b, $29, $07, $82, $09, $7d ; 凭券可兑换
     db CHARVAL("<NEXT>")
-    db $10, $6d, $12, $6e, $06, $f8, $07, $82, $09, $7d, $0e, $cd ; 所需的兑换券
+    db $13, $01, $0b, $f0, $19, $30, $12, $41, $06, $13 ; 一辆自行车
     db CHARVAL("@")
 
 SingleBagItemDescription46:
-    db $18, $40, $07, $67, $0f, $a9, $10, $b3, $0f, $97 ; 战斗时提升
+    db $18, $40, $07, $67, $18, $c6, $13, $f9, $0f, $a9 ; 战斗中暂时
     db CHARVAL("<NEXT>")
-    db $18, $68, $0f, $b5, $0d, $0c, $18, $c6, $0c, $78 ; 招式命中率
-    db CHARVAL("@")
-
-SingleBagItemDescription47:
-    db $0d, $64, $0f, $b1, $05, $bb, $07, $e4 ; 能使部分
-    db CHARVAL("<NEXT>")
-    db $05, $2e, $0b, $29, $0c, $da, $0a, $94, $09, $71 ; 宝可梦进化
+    db $10, $b3, $08, $69, $18, $68, $0f, $b5, $0d, $0c, $18, $c6, $0c, $78 ; 提高招式命中率
     db CHARVAL("@")
 
 SingleBagItemDescription48:
     db $0b, $06, $0e, $41, $11, $ad, $0c, $61, $08, $04 ; 开启希鲁夫
     db CHARVAL("<NEXT>")
-    db $08, $93, $10, $1b, $0c, $d1, $0a, $97 ; 公司门禁
+    db $08, $93, $10, $1b, $06, $f8, $0c, $d1, $0a, $97 ; 公司的门禁
     db CHARVAL("@")
 
 SingleBagItemDescription49:
@@ -495,25 +608,25 @@ SingleBagItemDescription50:
     db CHARVAL("@")
 
 SingleBagItemDescription51:
-    db $0e, $e1, $07, $84, $0f, $ce, $0b, $bf, $0b, $06 ; 让对手离开
+    db $13, $f6, $12, $f2, $0f, $94, $18, $40, $07, $67, $18, $c6 ; 在野生战斗中
     db CHARVAL("<NEXT>")
-    db $18, $40, $07, $67, $06, $f8, $11, $1d, $0d, $a2 ; 战斗的玩偶
+    db $0d, $64, $18, $a7, $0a, $6f, $10, $a5, $0b, $bf ; 能直接逃离
     db CHARVAL("@")
 
 SingleBagItemDescription52:
-    db $0a, $7e, $06, $75, $0e, $c9, $05, $bb ; 解除全部
+    db $0a, $7e, $06, $75, $13, $36, $06, $01, $19, $0c, $10, $7e ; 解除异常状态
     db CHARVAL("<NEXT>")
-    db $13, $36, $06, $01, $19, $0c, $10, $7e ; 异常状态
+    db $05, $b7, $09, $98, $08, $28, $10, $b7, $0b, $d8 ; 不恢复体力
     db CHARVAL("@")
 
 SingleBagItemDescription53:
-    db $0e, $e1, $09, $aa, $19, $9a, $05, $2e, $0b, $29, $0c, $da ; 让昏厥宝可梦
+    db $0e, $e1, $09, $aa, $19, $9a, $05, $2e, $0b, $29, $0c, $da, $08, $28, $09, $b0 ; 让昏厥宝可梦复活
     db CHARVAL("<NEXT>")
-    db $09, $98, $08, $28, $05, $bb, $07, $e4, $10, $b7, $0b, $d8 ; 恢复部分体力
+    db $09, $98, $08, $28, $13, $01, $05, $11, $10, $b7, $0b, $d8 ; 恢复一半体力
     db CHARVAL("@")
 
 SingleBagItemDescription54:
-    db $0e, $e1, $09, $aa, $19, $9a, $05, $2e, $0b, $29, $0c, $da ; 让昏厥宝可梦
+    db $0e, $e1, $09, $aa, $19, $9a, $05, $2e, $0b, $29, $0c, $da, $08, $28, $09, $b0 ; 让昏厥宝可梦复活
     db CHARVAL("<NEXT>")
     db $09, $98, $08, $28, $0e, $c9, $05, $bb, $10, $b7, $0b, $d8 ; 恢复全部体力
     db CHARVAL("@")
@@ -525,21 +638,21 @@ SingleBagItemDescription55:
     db CHARVAL("@")
 
 SingleBagItemDescription56:
-    db $13, $01, $07, $43, $05, $b9, $0f, $f5, $0d, $62 ; 一定步数内
+    db $01, $e8, $01, $e6, $01, $e6, $05, $b9, $0d, $62, $05, $7a, $0b, $06 ; ２００步内避开
     db CHARVAL("<NEXT>")
-    db $0f, $1a, $12, $0d, $05, $2e, $0b, $29, $0c, $da, $05, $b7, $0b, $88 ; 弱小宝可梦不来
+    db $05, $66, $07, $83, $0f, $cf, $06, $fc, $09, $d6, $07, $05, $06, $f8, $05, $2e, $0b, $29, $0c, $da ; 比队首等级低的宝可梦
     db CHARVAL("@")
 
 SingleBagItemDescription57:
-    db $08, $86, $06, $02, $0f, $a9, $0a, $08, $0d, $62 ; 更长时间内
+    db $01, $e8, $01, $eb, $01, $e6, $05, $b9, $0d, $62, $05, $7a, $0b, $06 ; ２５０步内避开
     db CHARVAL("<NEXT>")
-    db $0f, $1a, $12, $0d, $05, $2e, $0b, $29, $0c, $da, $05, $b7, $0b, $88 ; 弱小宝可梦不来
+    db $05, $66, $07, $83, $0f, $cf, $06, $fc, $09, $d6, $07, $05, $06, $f8, $05, $2e, $0b, $29, $0c, $da ; 比队首等级低的宝可梦
     db CHARVAL("@")
 
 SingleBagItemDescription58:
-    db $18, $40, $07, $67, $0f, $a9, $10, $b3, $08, $69 ; 战斗时提高
+    db $18, $40, $07, $67, $18, $c6, $0f, $b1, $13, $81 ; 战斗中使用
     db CHARVAL("<NEXT>")
-    db $12, $ec, $08, $ec, $0d, $0c, $18, $c6, $0c, $78 ; 要害命中率
+    db $0a, $94, $0f, $0d, $0a, $d5, $0e, $45, $19, $0c, $10, $7e ; 进入聚气状态
     db CHARVAL("@")
 
 SingleBagItemDescription59:
@@ -549,99 +662,99 @@ SingleBagItemDescription59:
     db CHARVAL("@")
 
 SingleBagItemDescription60:
-    db $0f, $6e, $11, $38, $09, $98, $08, $28, $10, $b7, $0b, $d8 ; 稍微恢复体力
+    db $09, $98, $08, $28, $10, $b7, $0b, $d8 ; 恢复体力
     db CHARVAL("<NEXT>")
-    db $0b, $29, $19, $69, $13, $46, $0c, $05 ; 可作饮料
+    db $19, $60, $07, $90, $01, $eb, $01, $e6, $07, $1e ; 最多５０点
     db CHARVAL("@")
 
 SingleBagItemDescription61:
-    db $09, $98, $08, $28, $08, $86, $07, $90, $10, $b7, $0b, $d8 ; 恢复更多体力
+    db $09, $98, $08, $28, $10, $b7, $0b, $d8 ; 恢复体力
     db CHARVAL("<NEXT>")
-    db $0b, $29, $19, $69, $13, $46, $0c, $05 ; 可作饮料
+    db $19, $60, $07, $90, $01, $ec, $01, $e6, $07, $1e ; 最多６０点
     db CHARVAL("@")
 
 SingleBagItemDescription62:
-    db $09, $98, $08, $28, $06, $c9, $0b, $f1, $10, $b7, $0b, $d8 ; 恢复大量体力
+    db $09, $98, $08, $28, $10, $b7, $0b, $d8 ; 恢复体力
     db CHARVAL("<NEXT>")
-    db $0b, $29, $19, $69, $13, $46, $0c, $05 ; 可作饮料
+    db $19, $60, $07, $90, $01, $ee, $01, $e6, $07, $1e ; 最多８０点
     db CHARVAL("@")
 
 SingleBagItemDescription63:
-    db $0f, $9d, $04, $d4, $0d, $91, $09, $0f ; 圣安奴号
+    db $06, $2d, $19, $6a, $0f, $9d, $04, $d4, $0d, $91, $09, $0f ; 乘坐圣安奴号
     db CHARVAL("<NEXT>")
-    db $06, $fb, $06, $82, $0e, $06, $18, $9a ; 登船凭证
+    db $10, $6d, $12, $6e, $06, $f8, $06, $82, $0d, $f5 ; 所需的船票
     db CHARVAL("@")
 
 SingleBagItemDescription64:
-    db $0a, $42, $09, $7b, $08, $82, $13, $cc, $06, $02 ; 交还给园长
+    db $1d, $8d, $0c, $0a, $07, $10, $06, $ce, $13, $cc, $06, $02 ; 狩猎地带园长
     db CHARVAL("<NEXT>")
-    db $06, $f8, $18, $ce, $12, $ec, $11, $9b, $0d, $fb ; 的重要物品
+    db $13, $0b, $0f, $9f, $06, $f8, $0a, $8c, $09, $f9, $12, $a4 ; 遗失的金假牙
     db CHARVAL("@")
 
 SingleBagItemDescription65:
-    db $18, $40, $07, $67, $0f, $a9, $10, $b3, $08, $69 ; 战斗时提高
+    db $18, $40, $07, $67, $18, $c6, $13, $f9, $0f, $a9 ; 战斗中暂时
     db CHARVAL("<NEXT>")
-    db $05, $2e, $0b, $29, $0c, $da, $08, $8d, $09, $b9 ; 宝可梦攻击
+    db $10, $b3, $08, $69, $08, $8d, $09, $b9, $0d, $64, $0b, $d8 ; 提高攻击能力
     db CHARVAL("@")
 
 SingleBagItemDescription66:
-    db $18, $40, $07, $67, $0f, $a9, $10, $b3, $08, $69 ; 战斗时提高
+    db $18, $40, $07, $67, $18, $c6, $13, $f9, $0f, $a9 ; 战斗中暂时
     db CHARVAL("<NEXT>")
-    db $05, $2e, $0b, $29, $0c, $da, $07, $ce, $13, $b7 ; 宝可梦防御
+    db $10, $b3, $08, $69, $07, $ce, $13, $b7, $0d, $64, $0b, $d8 ; 提高防御能力
     db CHARVAL("@")
 
 SingleBagItemDescription67:
-    db $18, $40, $07, $67, $0f, $a9, $10, $b3, $08, $69 ; 战斗时提高
+    db $18, $40, $07, $67, $18, $c6, $13, $f9, $0f, $a9 ; 战斗中暂时
     db CHARVAL("<NEXT>")
-    db $05, $2e, $0b, $29, $0c, $da, $10, $37, $07, $78 ; 宝可梦速度
+    db $10, $b3, $08, $69, $10, $37, $07, $78, $0d, $64, $0b, $d8 ; 提高速度能力
     db CHARVAL("@")
 
 SingleBagItemDescription68:
-    db $18, $40, $07, $67, $0f, $a9, $10, $b3, $08, $69 ; 战斗时提高
+    db $18, $40, $07, $67, $18, $c6, $13, $f9, $0f, $a9 ; 战斗中暂时
     db CHARVAL("<NEXT>")
-    db $05, $2e, $0b, $29, $0c, $da, $10, $aa, $0f, $da ; 宝可梦特殊
+    db $10, $b3, $08, $69, $10, $aa, $0f, $da, $0d, $64, $0b, $d8 ; 提高特殊能力
     db CHARVAL("@")
 
 SingleBagItemDescription69:
-    db $0f, $cd, $09, $cf, $05, $9e, $06, $bc, $07, $d3 ; 收集并存放
+    db $13, $81, $0b, $88, $06, $bc, $07, $d3 ; 用来存放
     db CHARVAL("<NEXT>")
-    db $13, $8c, $11, $c1, $06, $d0, $05, $70 ; 游戏代币
+    db $13, $8c, $11, $c1, $10, $ce, $06, $d0, $05, $70 ; 游戏厅代币
     db CHARVAL("@")
 
 SingleBagItemDescription70:
-    db $10, $2b, $11, $31, $06, $c9, $0d, $30, $05, $a5, $0f, $b7 ; 送往大木博士
+    db $0a, $42, $08, $82, $06, $c9, $0d, $30, $05, $a5, $0f, $b7 ; 交给大木博士
     db CHARVAL("<NEXT>")
     db $06, $f8, $05, $26, $08, $e4 ; 的包裹
     db CHARVAL("@")
 
 SingleBagItemDescription71:
-    db $05, $e5, $18, $6a, $08, $31, $0a, $98, $06, $f8 ; 查找附近的
+    db $0d, $64, $12, $94, $18, $6a, $08, $31, $0a, $98, $06, $f8 ; 能寻找附近的
     db CHARVAL("<NEXT>")
     db $13, $49, $05, $d4, $06, $f4, $0a, $d9 ; 隐藏道具
     db CHARVAL("@")
 
 SingleBagItemDescription72:
-    db $0b, $10, $0e, $a5, $13, $82, $0c, $23 ; 看清幽灵
+    db $0b, $10, $06, $7f, $13, $82, $0c, $23, $06, $f8 ; 看穿幽灵的
     db CHARVAL("<NEXT>")
     db $18, $7e, $0f, $ad, $0c, $f2, $0c, $be ; 真实面貌
     db CHARVAL("@")
 
 SingleBagItemDescription73:
-    db $06, $8b, $11, $f6, $07, $09, $0f, $93 ; 吹响笛声
+    db $06, $8b, $11, $f6, $0b, $29, $09, $7f, $12, $42 ; 吹响可唤醒
     db CHARVAL("<NEXT>")
-    db $09, $7f, $12, $42, $05, $2e, $0b, $29, $0c, $da ; 唤醒宝可梦
+    db $06, $23, $10, $09, $06, $f8, $05, $2e, $0b, $29, $0c, $da ; 沉睡的宝可梦
     db CHARVAL("@")
 
 SingleBagItemDescription74:
-    db $0b, $38, $18, $bc, $07, $23, $10, $af ; 控制电梯
+    db $05, $d5, $0b, $38, $07, $23, $10, $af, $06, $f8 ; 操控电梯的
     db CHARVAL("<NEXT>")
-    db $10, $6d, $12, $6e, $06, $f8, $13, $db, $06, $39 ; 所需的钥匙
+    db $18, $ce, $12, $ec, $13, $db, $06, $39 ; 重要钥匙
     db CHARVAL("@")
 
 SingleBagItemDescription75:
     db $0e, $e1, $0e, $c9, $07, $83, $07, $e4, $11, $f7 ; 让全队分享
     db CHARVAL("<NEXT>")
-    db $18, $40, $07, $67, $0a, $a7, $12, $cd ; 战斗经验
+    db $09, $b3, $06, $f7, $06, $f8, $0a, $a7, $12, $cd ; 获得的经验
     db CHARVAL("@")
 
 SingleBagItemDescription76:
@@ -651,43 +764,49 @@ SingleBagItemDescription76:
     db CHARVAL("@")
 
 SingleBagItemDescription77:
-    db $0b, $29, $07, $32, $06, $f1, $08, $86, $0e, $7f ; 可钓到更强
+    db $13, $f6, $10, $08, $05, $7d, $07, $32, $13, $a1 ; 在水边钓鱼
     db CHARVAL("<NEXT>")
-    db $05, $2e, $0b, $29, $0c, $da, $06, $f8, $07, $32, $08, $42 ; 宝可梦的钓竿
+    db $0b, $29, $0d, $64, $07, $32, $06, $f1, $08, $86, $0e, $7f, $06, $f8, $05, $2e, $0b, $29, $0c, $da ; 可能钓到更强的宝可梦
     db CHARVAL("@")
 
 SingleBagItemDescription78:
-    db $0d, $64, $07, $32, $06, $f1, $11, $ab, $13, $8e ; 能钓到稀有
+    db $13, $f6, $10, $08, $05, $7d, $07, $32, $13, $a1 ; 在水边钓鱼
     db CHARVAL("<NEXT>")
-    db $05, $2e, $0b, $29, $0c, $da, $06, $f8, $07, $32, $08, $42 ; 宝可梦的钓竿
+    db $0b, $29, $0d, $64, $07, $32, $06, $f1, $11, $ab, $13, $8e, $05, $2e, $0b, $29, $0c, $da ; 可能钓到稀有宝可梦
     db CHARVAL("@")
 
 SingleBagItemDescription79:
-    db $10, $b3, $0f, $97, $05, $2e, $0b, $29, $0c, $da ; 提升宝可梦
+    db $10, $b3, $08, $69, $06, $d9, $08, $80, $18, $68, $0f, $b5 ; 提高单个招式
     db CHARVAL("<NEXT>")
-    db $18, $68, $0f, $b5, $19, $60, $06, $c9, $06, $a4, $0f, $f5 ; 招式最大次数
+    db $06, $f8, $19, $60, $06, $c9, $02, $0a, $02, $0a ; 的最大ＰＰ
     db CHARVAL("@")
 
 SingleBagItemDescription80:
-    db $09, $98, $08, $28, $13, $01, $08, $80, $18, $68, $0f, $b5 ; 恢复一个招式
+    db $06, $d9, $08, $80, $18, $68, $0f, $b5, $02, $0a, $02, $0a ; 单个招式ＰＰ
     db CHARVAL("<NEXT>")
-    db $06, $f8, $05, $bb, $07, $e4, $06, $a4, $0f, $f5 ; 的部分次数
+    db $19, $60, $07, $90, $09, $98, $08, $28, $01, $e7, $01, $e6, $07, $1e ; 最多恢复１０点
     db CHARVAL("@")
 
 SingleBagItemDescription81:
-    db $09, $98, $08, $28, $13, $01, $08, $80, $18, $68, $0f, $b5 ; 恢复一个招式
+    db $06, $d9, $08, $80, $18, $68, $0f, $b5, $02, $0a, $02, $0a ; 单个招式ＰＰ
     db CHARVAL("<NEXT>")
-    db $06, $f8, $0e, $c9, $05, $bb, $06, $a4, $0f, $f5 ; 的全部次数
+    db $09, $98, $08, $28, $06, $f1, $19, $60, $06, $c9, $18, $ab ; 恢复到最大值
     db CHARVAL("@")
 
 SingleBagItemDescription82:
-    db $09, $98, $08, $28, $0e, $c9, $05, $bb, $18, $68, $0f, $b5 ; 恢复全部招式
+    db $0e, $c9, $05, $bb, $18, $68, $0f, $b5, $02, $0a, $02, $0a ; 全部招式ＰＰ
     db CHARVAL("<NEXT>")
-    db $06, $f8, $05, $bb, $07, $e4, $06, $a4, $0f, $f5 ; 的部分次数
+    db $08, $81, $09, $98, $08, $28, $01, $e7, $01, $e6, $07, $1e ; 各恢复１０点
     db CHARVAL("@")
 
 SingleBagItemDescription83:
-    db $09, $98, $08, $28, $0e, $c9, $05, $bb, $18, $68, $0f, $b5 ; 恢复全部招式
+    db $0e, $c9, $05, $bb, $18, $68, $0f, $b5, $02, $0a, $02, $0a ; 全部招式ＰＰ
     db CHARVAL("<NEXT>")
-    db $06, $f8, $0e, $c9, $05, $bb, $06, $a4, $0f, $f5 ; 的全部次数
+    db $09, $98, $08, $28, $06, $f1, $19, $60, $06, $c9, $18, $ab ; 恢复到最大值
+    db CHARVAL("@")
+
+SingleBagEvolutionStoneDescription:
+    db $0d, $64, $0e, $e1, $10, $aa, $07, $43, $05, $2e, $0b, $29, $0c, $da ; 能让特定宝可梦
+    db CHARVAL("<NEXT>")
+    db $0a, $94, $09, $71, $06, $f8, $0f, $8b, $0e, $32, $0f, $a7, $10, $e7 ; 进化的神奇石头
     db CHARVAL("@")

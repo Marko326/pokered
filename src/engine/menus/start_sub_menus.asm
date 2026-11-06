@@ -381,6 +381,10 @@ ItemMenuLoop:
 	call RunDefaultPaletteCommand
 
 StartMenu_Item::
+	; Keep the incoming sprite-update state until the Bag returns. The saved
+	; byte stays on the stack through the parent BG transfer on the exit path.
+	ld a, [wUpdateSpritesEnabled]
+	push af
 	ld a, [wLinkState]
 	dec a ; is the player in the Colosseum or Trade Centre?
 	jr nz, .notInCableClubRoom
@@ -388,6 +392,12 @@ StartMenu_Item::
 	call PrintText
 	jp .exitMenu
 .notInCableClubRoom
+	; The Bag owns two windows. Map-tile clipping can leave NPC OAM above
+	; the lower description panel, so hide it before showing the list.
+	xor a
+	ld [wUpdateSpritesEnabled], a
+	call HideSprites
+	call DelayFrame ; commit the hidden OAM before any Bag-owned UI is shown
 	coord hl, 11, 1
 	ld b, 1
 	ld c, 8
@@ -426,24 +436,14 @@ StartMenu_Item::
 	ld [wStartBagDescriptionLastID], a
 	xor a
 	ld [wStartBagDescriptionBoxDrawn], a
-	; A second text box covers the lower screen. The normal map-sprite
-	; clipping uses map tile probes and can leave NPC OAM above this box.
-	; As in full-screen Pokédex, suspend overworld OAM while Bag owns UI.
-	; Save the prior enable byte on stack; preserve menu carry on return.
-	ld a, [wUpdateSpritesEnabled]
-	push af
-	xor a
-	ld [wUpdateSpritesEnabled], a
-	call HideSprites
-	call DelayFrame ; commit the hidden OAM before showing Bag
+	; A second text box covers the lower screen. Keep the original OAM enable
+	; byte on the stack until the list either returns to its parent or enters
+	; USE/TOSS. The map sprites must not be regenerated over the old Bag frame.
 	call DisplayListMenuID
 	push af
 	xor a
 	ld [wStartBagDescriptionActive], a
 	pop af
-	pop bc ; B = saved wUpdateSpritesEnabled, flags stay unchanged
-	ld a, b
-	ld [wUpdateSpritesEnabled], a
 	push af ; preserve list-selection carry across the cursor bookkeeping
 	; Capture the absolute slot, including the visible page, before any item
 	; action can change common menu scratch or the real Bag item count.
@@ -472,7 +472,8 @@ StartMenu_Item::
 	call LoadScreenTilesFromBuffer2 ; restore saved START screen
 	farcall RestoreStartMenuInputStateFromSaved
 	call LoadTextBoxTilePatterns
-	call UpdateSprites
+	; RestoreStartMenuInputStateFromSaved waits for the parent BG transfer.
+	call RestoreStartBagSpritesAndUpdate
 	jp StartMenuInputLoop
 .exitMenuDirtyDFS
 	xor a
@@ -480,9 +481,14 @@ StartMenu_Item::
 	ld [wItemListRedrawDirty], a
 	call LoadScreenTilesFromBuffer2DisableBGTransfer ; restore parent screen in RAM only
 	call LoadTextBoxTilePatterns
-	farcall RestoreStartMenuFromItemNoWhite
+	; This wrapper commits the complete parent START window before OAM returns.
+	call RestoreStartMenuFromItemNoWhiteAndOAM
 	jp StartMenuInputLoop
 .choseItem
+	; The list has closed and USE/TOSS is a separate overlay. Restore the saved
+	; update flag here, but do not rebuild OAM until its own UI asks for it.
+	pop af
+	ld [wUpdateSpritesEnabled], a
 	; Any item interaction opens translated USE/TOSS or item-result text and can
 	; repurpose the CHS DFS cache.  wStartMenuInputCapture is disabled while a
 	; submenu is active, so its paired pending byte is safe as a temporary dirty
