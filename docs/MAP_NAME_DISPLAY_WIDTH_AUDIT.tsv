@@ -1,0 +1,54 @@
+name_label	english_source	chinese_name	raw_source_char_count	estimated_visible_width_units	town_map_header_10col	fly_name_field_7col	continue_save_13col	note
+PalletTownName	PALLET TOWN	真新镇	11	11	OVER_BY_1	OVER_BY_4	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+ViridianCityName	VIRIDIAN CITY	常青市	13	13	OVER_BY_3	OVER_BY_6	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+PewterCityName	PEWTER CITY	深灰市	11	11	OVER_BY_1	OVER_BY_4	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+CeruleanCityName	CERULEAN CITY	华蓝市	13	13	OVER_BY_3	OVER_BY_6	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+LavenderTownName	LAVENDER TOWN	紫苑镇	13	13	OVER_BY_3	OVER_BY_6	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+VermilionCityName	VERMILION CITY	枯叶市	14	14	OVER_BY_4	OVER_BY_7	OVER_BY_1	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+CeladonCityName	CELADON CITY	玉虹市	12	12	OVER_BY_2	OVER_BY_5	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+FuchsiaCityName	FUCHSIA CITY	浅红市	12	12	OVER_BY_2	OVER_BY_5	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+CinnabarIslandName	CINNABAR ISLAND	红莲镇	15	15	OVER_BY_5	OVER_BY_8	OVER_BY_2	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+IndigoPlateauName	INDIGO PLATEAU	石英高原	14	14	OVER_BY_4	OVER_BY_7	OVER_BY_1	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+SaffronCityName	SAFFRON CITY	金黄市	12	12	OVER_BY_2	OVER_BY_5	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route1Name	ROUTE 1	1号道路	7	7	FIT	FIT	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route2Name	ROUTE 2	2号道路	7	7	FIT	FIT	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route3Name	ROUTE 3	3号道路	7	7	FIT	FIT	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route4Name	ROUTE 4	4号道路	7	7	FIT	FIT	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route5Name	ROUTE 5	5号道路	7	7	FIT	FIT	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route6Name	ROUTE 6	6号道路	7	7	FIT	FIT	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route7Name	ROUTE 7	7号道路	7	7	FIT	FIT	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route8Name	ROUTE 8	8号道路	7	7	FIT	FIT	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route9Name	ROUTE 9	9号道路	7	7	FIT	FIT	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route10Name	ROUTE 10	10号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route11Name	ROUTE 11	11号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route12Name	ROUTE 12	12号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route13Name	ROUTE 13	13号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route14Name	ROUTE 14	14号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route15Name	ROUTE 15	15号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route16Name	ROUTE 16	16号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route17Name	ROUTE 17	17号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route18Name	ROUTE 18	18号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route19Name	SEA ROUTE 19	19号水道	12	12	OVER_BY_2	OVER_BY_5	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route20Name	SEA ROUTE 20	20号水道	12	12	OVER_BY_2	OVER_BY_5	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route21Name	SEA ROUTE 21	21号水道	12	12	OVER_BY_2	OVER_BY_5	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route22Name	ROUTE 22	22号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route23Name	ROUTE 23	23号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route24Name	ROUTE 24	24号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+Route25Name	ROUTE 25	25号道路	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+ViridianForestName	VIRIDIAN FOREST	常青森林	15	15	OVER_BY_5	OVER_BY_8	OVER_BY_2	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+MountMoonName	MT.MOON	月见山	7	7	FIT	FIT	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+RockTunnelName	ROCK TUNNEL	岩山隧道	11	11	OVER_BY_1	OVER_BY_4	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+SeaCottageName	SEA COTTAGE	海角小屋	11	11	OVER_BY_1	OVER_BY_4	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+SSAnneName	S.S.ANNE	圣特安努号	8	8	FIT	OVER_BY_1	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+PokemonLeagueName	#MON LEAGUE	#联盟	11	14	OVER_BY_4	OVER_BY_7	OVER_BY_1	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+UndergroundPathName	UNDERGROUND PATH	地下通道	16	16	OVER_BY_6	OVER_BY_9	OVER_BY_3	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+PokemonTowerName	#MON TOWER	#塔	10	13	OVER_BY_3	OVER_BY_6	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	15	15	OVER_BY_5	OVER_BY_8	OVER_BY_2	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+VictoryRoadName	VICTORY ROAD	冠军之路	12	12	OVER_BY_2	OVER_BY_5	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+DiglettsCaveName	DIGLETT's CAVE	地鼠洞穴	14	14	OVER_BY_4	OVER_BY_7	OVER_BY_1	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+RocketHQName	ROCKET HQ	火箭队基地	9	9	FIT	OVER_BY_2	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+SilphCoName	SILPH CO.	西尔佛公司	9	9	FIT	OVER_BY_2	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+PokemonMansionName	<PKMN> MANSION	#屋	14	10	FIT	OVER_BY_3	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+SafariZoneName	SAFARI ZONE	狩猎地带	11	11	OVER_BY_1	OVER_BY_4	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+CeruleanCaveName	CERULEAN CAVE	华蓝洞窟	13	13	OVER_BY_3	OVER_BY_6	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test
+PowerPlantName	POWER PLANT	无人发电厂	11	11	OVER_BY_1	OVER_BY_4	FIT	估算；# expands to POKé and <PKMN> expands via PlaceString; final tile width needs ROM text renderer test

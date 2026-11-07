@@ -1,0 +1,8 @@
+selector_symbol	selector_value	is_physical_map_id	resolved_name_label	english_name_source_or_candidate	chinese_name	packed_coordinates	note
+DIGLETTS_CAVE_ROUTE_2	$2E	YES	DiglettsCaveName	DIGLETT's CAVE	地鼠洞穴	$43	实际地图 ID 特殊别名
+DIGLETTS_CAVE_ROUTE_11	$55	YES	DiglettsCaveName	DIGLETT's CAVE	地鼠洞穴	$8B	实际地图 ID 特殊别名
+CELADON_MART_ROOF	$7E	YES	CeladonMartRoofName	CELADON MART ROOF	百货屋顶（硬编码 CHS 字形）	$47	硬编码屋顶名称，不在 names.asm
+SPECIAL_FLY_SEAFOAM_WEST_SELECTOR	$FD	NO	SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	$E4	虚拟 Fly selector $FD
+UNUSED_MAP_F1	$F1	YES	SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	$E4	Seafoam 西侧逻辑 selector
+UNUSED_MAP_F2	$F2	YES	Route20Name	SEA ROUTE 20	20号水道	$F3	Route 20 红莲侧逻辑 selector
+UNUSED_MAP_F3	$F3	YES	Route19Name	SEA ROUTE 19	19号水道	$F6	Route 19 浅红侧逻辑 selector

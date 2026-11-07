@@ -1,0 +1,7 @@
+component	english_source	chinese_xlsx_replacement	source	consumer	category	language_state	note
+Fly heading ToText	To	飞往	src/engine/items/town_map.asm:503-504; Townnames worksheet row 56	LoadTownMap_Fly	固定 UI 文本，不是地点名称	当前导入为中文；无 LANGUAGE 分支	与 Fly 目的地名称分开处理
+Pokédex Nest suffix (ordinary)	's	的	src/engine/items/town_map.asm:286-290; Townnames worksheet row 57	LoadTownMap_Nest（大多数物种）	图鉴 UI 后缀，不是地点名称	当前导入为中文；无 LANGUAGE 分支	与物种名 Names 设置分开
+Pokédex Nest suffix (short)	 nest	分布	src/engine/items/town_map.asm:286-290; Townnames worksheet row 58	LoadTownMap_Nest（OMASTAR / MAGNETON 特殊分支）	图鉴 UI 后缀，不是地点名称	当前导入为中文；无 LANGUAGE 分支	独立 suffix variant
+Pokédex AREA empty state	AREA UNKNOWN	栖息地不明	src/engine/items/town_map.asm:665-685; Townnames worksheet row 59	DisplayWildLocations 无地点图标时	图鉴 UI 固定提示，不是地点名称	当前导入为中文；无 LANGUAGE 分支	AREA 页面还使用地图身份/坐标画标记
+Celadon Mart Roof name	CELADON MART ROOF（候选）	硬编码 CHS 字形	src/engine/items/town_map.asm:893-896; CGB label MAP_NAME_SIGN_CELADON_MART_ROOF	LoadTownMapEntry special branch; Town Map / Fly / Save/Continue string path	硬编码地点名称	只有 CHS 字节；不在 53 个 names.asm 名称中	需补入统一地点身份/名称表，不应页面专用处理
+Fly Power Plant short name	待定短名；完整名 POWER PLANT 已存在	硬编码 CHS 短名（3 个汉字）	src/engine/items/town_map.asm:340-345, 506-509	Fly heading only	Fly renderer 专用短地点名	当前只有 CHS 字节；无英文短名	Fly 名称栏只有 7 列，需与其他 Fly short labels 一起设计

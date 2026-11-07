@@ -2,6 +2,8 @@
 
 > 统计来自当前提供的完整源码，不是 ROM 编译结果，也不是已实现的全游戏英语覆盖率。本阶段仅 OPTIONS 和 Route 1 一位 NPC 会随语言切换。
 
+> **历史口径提示（2026-11-07）**：本报告只扫描早期 `src/text/` 标签范围。当前全游戏双语盘点已扩展到 `src/data/text/text_1..7.asm`、地图脚本、引擎引用、`data.xlsx`、名称表和图形资源；请以 `docs/BILINGUAL_PROJECT_AUDIT_ROM142B.md` 与 `docs/BILINGUAL_COVERAGE_MASTER.tsv` 作为 ROM-1.42B 阶段的覆盖台账。这里的 483/未匹配等早期数字不能直接当作当前待翻译数。
+
 ## 1. 可复用资源
 
 - 汉化导出 `src/_G1RB.json` 原始记录：**2447**，含尾逗号（盘点脚本读取时兼容，不修改原文件）。

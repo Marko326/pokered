@@ -1,0 +1,11 @@
+priority	phase	scope	current_state	code_change_now	exit_criteria
+P0	阶段0：全源入口盘点	文本标签、data.xlsx、dex 工作簿、图形资源、页面组件矩阵	首轮盘点已完成；仍有 5 个孤立标签及少量 inline literal 待人工确认	不改代码	建立唯一总表，明确每个入口的类别、来源、调用者、状态和验收证据
+P0	导入器质量门	data.xlsx importer 的 stale key、duplicate key、condition no-match、RB/RGB 过滤	发现 4 条 Not Found、1 条条件上下文失配、1 组 MISSINGNO 重复键冲突	暂不改代码；先把检查规则纳入方案	导入器不能仅凭无报错判定数据已正确写入
+P1	地图名称系统	Continue/Save、Town Map、Fly、Pokedex AREA、CGB 地名牌	首轮只读审计完成：248 map IDs、52 TownMap selectors、60 internal ranges、13 Fly destinations/13 marker overrides、109 CGB map-id mappings、107 labels；renderer 语义/宽度设计待评审	不改代码；先完成 physical/logical/CGB identity 与 per-renderer name variants 设计	交叉表和所有消费者复核；明确 Town Map 10列、Fly 7列、Save/Continue 13列、CGB 18 tile variants；Bank-safe ABI 与 Route20/Seafoam 语义通过设计审查
+P2	名称系统	物种、招式、道具、训练家、属性、默认玩家/宿敌名、交易昵称	物种名/交易昵称有独立 Names 位；招式/道具/训练家/类型等仍需接入	不改代码	遵循 NAME_LANGUAGE_COMPATIBILITY.md；昵称和旧存档不能被批量覆盖
+P3	Pokédex 剩余系统	主列表、151 条目说明、151 份元数据、AREA、子菜单	19 个评价标签已双语；其余列表/条目/AREA 仍是独立入口	不改代码	依赖物种名称和地图地点身份规则
+P4	Battle 引擎	149 个活动引擎标签、命令框、招式/属性/状态名	未完成；同一战斗画面至少包含命令 UI、引擎消息和名称表	不改代码	保留脚本控制流、动态变量、状态/数值 token
+P5	菜单/PC/商店	主菜单、START 菜单、PC、Save/Box、Poké Mart、背包	数据表存在大量独立静态入口；79 个自定义道具短说明另需英文方案	不改代码	按组件而不是整页验收；YES/NO 暂缓
+P6	事件/通信/野外/图形	167 个事件相关标签、Game Corner、Link、Field Move、CGB 图形	150 个事件/隐藏物标签（初步按路径分类）；Game Corner、Link、Field Move、CGB 图形另行登记，存在共享消费者	不改代码	使用统一入口总表，避免同一标签重复翻译
+P7	全局集成验收	中文/English 切换、保存重启、红蓝构建、MAP/SHA、实机回归	待各模块完成后进行	由维护者执行正式构建	RGBDS 1.0.4；项目根目录 make red / make blue；AI 不编译/链接 ROM
+DEFER	共用 YES/NO 选择框	公共 yes_no_menu_strings.asm	用户此前明确暂缓	不纳入当前实施	除非用户重新授权，不修改

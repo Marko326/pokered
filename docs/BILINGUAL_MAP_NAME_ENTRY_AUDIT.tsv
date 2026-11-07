@@ -1,0 +1,323 @@
+source_kind	index	key_or_selector	mapped_value_or_payload	source_file	note
+TownMapOrder	0	PALLET_TOWN		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	1	ROUTE_1		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	2	VIRIDIAN_CITY		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	3	ROUTE_2		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	4	VIRIDIAN_FOREST		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	5	DIGLETTS_CAVE_ROUTE_2		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	6	PEWTER_CITY		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	7	ROUTE_3		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	8	MT_MOON_1F		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	9	ROUTE_4		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	10	CERULEAN_CAVE_1F		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	11	CERULEAN_CITY		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	12	ROUTE_24		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	13	ROUTE_25		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	14	BILLS_HOUSE		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	15	ROUTE_5		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	16	ROUTE_6		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	17	VERMILION_CITY		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	18	SS_ANNE_1F		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	19	DIGLETTS_CAVE_ROUTE_11		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	20	ROUTE_9		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	21	ROCK_TUNNEL_POKECENTER		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	22	ROUTE_10		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	23	POWER_PLANT		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	24	LAVENDER_TOWN		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	25	POKEMON_TOWER_2F		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	26	ROUTE_8		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	27	ROUTE_7		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	28	CELADON_CITY		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	29	CELADON_MART_ROOF		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	30	SAFFRON_CITY		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	31	ROUTE_11		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	32	ROUTE_12		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	33	ROUTE_13		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	34	ROUTE_14		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	35	ROUTE_15		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	36	ROUTE_16		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	37	ROUTE_17		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	38	ROUTE_18		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	39	FUCHSIA_CITY		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	40	SAFARI_ZONE_EAST		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	41	ROUTE_19		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	42	UNUSED_MAP_F3		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	43	SEAFOAM_ISLANDS_B1F		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	44	UNUSED_MAP_F1		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	45	UNUSED_MAP_F2		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	46	CINNABAR_ISLAND		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	47	ROUTE_21		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	48	ROUTE_22		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	49	ROUTE_23		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	50	VICTORY_ROAD_3F		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+TownMapOrder	51	INDIGO_PLATEAU		src/data/maps/town_map_order.asm	Town Map list selector; selector identity is not a ROM address
+ExternalMapEntries	3		2, 11, PalletTownName	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	4		2,  8, ViridianCityName	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	5		2,  3, PewterCityName	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	6		10,  2, CeruleanCityName	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	7		14,  5, LavenderTownName	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	8		10,  9, VermilionCityName	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	9		7,  5, CeladonCityName	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	10		8, 13, FuchsiaCityName	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	11		2, 15, CinnabarIslandName	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	12		0,  2, IndigoPlateauName	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	13		10,  5, SaffronCityName	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	14		0,  0, PalletTownName	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	15		2, 10, Route1Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	16		2,  6, Route2Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	17		4,  3, Route3Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	18		8,  2, Route4Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	19		10,  3, Route5Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	20		10,  8, Route6Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	21		8,  5, Route7Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	22		13,  5, Route8Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	23		13,  2, Route9Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	24		14,  4, Route10Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	25		12,  9, Route11Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	26		14,  9, Route12Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	27		13, 11, Route13Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	28		11, 12, Route14Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	29		10, 13, Route15Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	30		5,  5, Route16Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	31		4,  8, Route17Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	32		6, 13, Route18Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	33		8, 14, Route19Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	34		4, 15, Route20Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	35		2, 13, Route21Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	36		0,  8, Route22Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	37		0,  6, Route23Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	38		10,  1, Route24Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+ExternalMapEntries	39		11,  0, Route25Name	src/data/maps/town_map_entries.asm	外部地图坐标/名称映射
+InternalMapEntries	2		OAKS_LAB,                       2, 11, PalletTownName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	3		VIRIDIAN_GYM,                   2,  8, ViridianCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	4		VIRIDIAN_FOREST_SOUTH_GATE,     2,  6, Route2Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	5		VIRIDIAN_FOREST,                2,  5, ViridianForestName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	6		PEWTER_POKECENTER,              2,  3, PewterCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	7		MT_MOON_B2F,                    6,  2, MountMoonName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	8		CERULEAN_MART,                 10,  2, CeruleanCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	9		MT_MOON_POKECENTER,             5,  2, Route4Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	10		CERULEAN_TRASHED_HOUSE_COPY,   10,  2, CeruleanCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	11		DAYCARE,                       10,  4, Route5Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	12		UNDERGROUND_PATH_ROUTE_6_COPY, 10,  6, Route6Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	13		UNDERGROUND_PATH_ROUTE_7_COPY,  9,  5, Route7Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	14		UNDERGROUND_PATH_ROUTE_8,      11,  5, Route8Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	15		ROCK_TUNNEL_1F,                14,  3, RockTunnelName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	16		POWER_PLANT,                   15,  4, PowerPlantName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	17		ROUTE_11_GATE_2F,              13,  9, Route11Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	18		ROUTE_12_GATE_1F,              14,  7, Route12Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	19		BILLS_HOUSE,                   12,  0, SeaCottageName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	20		VERMILION_DOCK,                10,  9, VermilionCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	21		SS_ANNE_B1F_ROOMS,              9, 10, SSAnneName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	22		VICTORY_ROAD_1F,                0,  4, VictoryRoadName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	23		HALL_OF_FAME,                   0,  2, PokemonLeagueName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	24		UNDERGROUND_PATH_NORTH_SOUTH,  10,  5, UndergroundPathName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	25		CHAMPIONS_ROOM,                 0,  2, PokemonLeagueName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	26		UNDERGROUND_PATH_WEST_EAST,    10,  5, UndergroundPathName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	27		CELADON_HOTEL,                  7,  5, CeladonCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	28		LAVENDER_POKECENTER,           14,  5, LavenderTownName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	29		POKEMON_TOWER_7F,              15,  5, PokemonTowerName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	30		LAVENDER_CUBONE_HOUSE,         14,  5, LavenderTownName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	31		WARDENS_HOUSE,                  8, 13, FuchsiaCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	32		SAFARI_ZONE_GATE,               8, 12, SafariZoneName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	33		FUCHSIA_MEETING_ROOM,           8, 13, FuchsiaCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	34		SEAFOAM_ISLANDS_B4F,            5, 15, SeafoamIslandsName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	35		VERMILION_OLD_ROD_HOUSE,       10,  9, VermilionCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	36		FUCHSIA_GOOD_ROD_HOUSE,         8, 13, FuchsiaCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	37		POKEMON_MANSION_1F,             2, 15, PokemonMansionName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	38		CINNABAR_MART_COPY,             2, 15, CinnabarIslandName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	39		INDIGO_PLATEAU_LOBBY,           0,  2, IndigoPlateauName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	40		MR_PSYCHICS_HOUSE,             10,  5, SaffronCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	41		ROUTE_15_GATE_2F,               9, 13, Route15Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	42		ROUTE_16_FLY_HOUSE,             4,  5, Route16Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	43		ROUTE_12_SUPER_ROD_HOUSE,      14, 10, Route12Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	44		ROUTE_18_GATE_2F,               7, 13, Route18Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	45		SEAFOAM_ISLANDS_1F,             5, 15, SeafoamIslandsName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	46		ROUTE_22_GATE,                  0,  7, Route22Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	47		VICTORY_ROAD_2F,                0,  4, VictoryRoadName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	48		ROUTE_12_GATE_2F,              14,  7, Route12Name	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	49		VERMILION_TRADE_HOUSE,         10,  9, VermilionCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	50		DIGLETTS_CAVE,                  3,  4, DiglettsCaveName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	51		VICTORY_ROAD_3F,                0,  4, VictoryRoadName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	52		UNUSED_MAP_CE,                  7,  5, RocketHQName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	53		SILPH_CO_8F,                   10,  5, SilphCoName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	54		POKEMON_MANSION_B1F,            2, 15, PokemonMansionName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	55		SAFARI_ZONE_NORTH_REST_HOUSE,   8, 12, SafariZoneName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	56		CERULEAN_CAVE_1F,               9,  1, CeruleanCaveName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	57		NAME_RATERS_HOUSE,             14,  5, LavenderTownName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	58		CERULEAN_BADGE_HOUSE,          10,  2, CeruleanCityName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	59		ROCK_TUNNEL_B1F,               14,  3, RockTunnelName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	60		SILPH_CO_ELEVATOR,             10,  5, SilphCoName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+InternalMapEntries	61		AGATHAS_ROOM,                   0,  2, PokemonLeagueName	src/data/maps/town_map_entries.asm	室内地图/楼层归属映射
+SpecialFlyEntries	0	VIRIDIAN_FOREST	VIRIDIAN_FOREST,         4,  0	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+SpecialFlyEntries	1	DIGLETTS_CAVE_ROUTE_2	DIGLETTS_CAVE_ROUTE_2,   5,  1	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+SpecialFlyEntries	2	MT_MOON_1F	MT_MOON_1F,             8,  2	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+SpecialFlyEntries	3	CERULEAN_CAVE_1F	CERULEAN_CAVE_1F,       10, 3	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+SpecialFlyEntries	4	BILLS_HOUSE	BILLS_HOUSE,            14, 4	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+SpecialFlyEntries	5	ROCK_TUNNEL_1F	ROCK_TUNNEL_1F,         21, 5	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+SpecialFlyEntries	6	POWER_PLANT	POWER_PLANT,            23, 12	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+SpecialFlyEntries	7	DIGLETTS_CAVE_ROUTE_11	DIGLETTS_CAVE_ROUTE_11, 19, 7	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+SpecialFlyEntries	8	CELADON_MART_ROOF	CELADON_MART_ROOF,      29, 6	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+SpecialFlyEntries	9	SAFARI_ZONE_GATE	SAFARI_ZONE_GATE,       40, 8	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+SpecialFlyEntries	10	SEAFOAM_ISLANDS_1F	SEAFOAM_ISLANDS_1F,     43, 10	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+SpecialFlyEntries	11	SPECIAL_FLY_SEAFOAM_WEST_SELECTOR	SPECIAL_FLY_SEAFOAM_WEST_SELECTOR, 44, 9	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+SpecialFlyEntries	12	VICTORY_ROAD_1F	VICTORY_ROAD_1F,        50, 11	src/engine/items/special_fly_locations.asm	特殊 Fly 目的地 selector
+LoadTownMapEntry_special_case	0	DIGLETTS_CAVE_ROUTE_2		src/engine/items/town_map.asm	特殊地图别名/逻辑 selector；需要映射到稳定地点身份
+LoadTownMapEntry_special_case	1	DIGLETTS_CAVE_ROUTE_11		src/engine/items/town_map.asm	特殊地图别名/逻辑 selector；需要映射到稳定地点身份
+LoadTownMapEntry_special_case	2	CELADON_MART_ROOF		src/engine/items/town_map.asm	特殊地图别名/逻辑 selector；需要映射到稳定地点身份
+LoadTownMapEntry_special_case	3	SPECIAL_FLY_SEAFOAM_WEST_SELECTOR		src/engine/items/town_map.asm	特殊地图别名/逻辑 selector；需要映射到稳定地点身份
+LoadTownMapEntry_special_case	4	UNUSED_MAP_F1		src/engine/items/town_map.asm	特殊地图别名/逻辑 selector；需要映射到稳定地点身份
+LoadTownMapEntry_special_case	5	UNUSED_MAP_F2		src/engine/items/town_map.asm	特殊地图别名/逻辑 selector；需要映射到稳定地点身份
+LoadTownMapEntry_special_case	6	UNUSED_MAP_F3		src/engine/items/town_map.asm	特殊地图别名/逻辑 selector；需要映射到稳定地点身份
+CGB_MapNameSignSpecialMapTable	0	VIRIDIAN_FOREST	MAP_NAME_SIGN_VIRIDIAN_FOREST	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	1	DIGLETTS_CAVE	MAP_NAME_SIGN_DIGLETTS_CAVE	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	2	POWER_PLANT	MAP_NAME_SIGN_POWER_PLANT	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	3	SILPH_CO_1F	MAP_NAME_SIGN_SILPH_CO_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	4	SILPH_CO_2F	MAP_NAME_SIGN_SILPH_CO_2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	5	SILPH_CO_3F	MAP_NAME_SIGN_SILPH_CO_3F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	6	SILPH_CO_4F	MAP_NAME_SIGN_SILPH_CO_4F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	7	SILPH_CO_5F	MAP_NAME_SIGN_SILPH_CO_5F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	8	SILPH_CO_6F	MAP_NAME_SIGN_SILPH_CO_6F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	9	SILPH_CO_7F	MAP_NAME_SIGN_SILPH_CO_7F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	10	SILPH_CO_8F	MAP_NAME_SIGN_SILPH_CO_8F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	11	SILPH_CO_9F	MAP_NAME_SIGN_SILPH_CO_9F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	12	SILPH_CO_10F	MAP_NAME_SIGN_SILPH_CO_10F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	13	SILPH_CO_11F	MAP_NAME_SIGN_SILPH_CO_11F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	14	POKEMON_TOWER_1F	MAP_NAME_SIGN_POKEMON_TOWER_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	15	POKEMON_TOWER_2F	MAP_NAME_SIGN_POKEMON_TOWER_2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	16	POKEMON_TOWER_3F	MAP_NAME_SIGN_POKEMON_TOWER_3F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	17	POKEMON_TOWER_4F	MAP_NAME_SIGN_POKEMON_TOWER_4F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	18	POKEMON_TOWER_5F	MAP_NAME_SIGN_POKEMON_TOWER_5F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	19	POKEMON_TOWER_6F	MAP_NAME_SIGN_POKEMON_TOWER_6F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	20	POKEMON_TOWER_7F	MAP_NAME_SIGN_POKEMON_TOWER_7F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	21	POKEMON_MANSION_1F	MAP_NAME_SIGN_POKEMON_MANSION_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	22	POKEMON_MANSION_2F	MAP_NAME_SIGN_POKEMON_MANSION_2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	23	POKEMON_MANSION_3F	MAP_NAME_SIGN_POKEMON_MANSION_3F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	24	POKEMON_MANSION_B1F	MAP_NAME_SIGN_POKEMON_MANSION_B1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	25	ROCKET_HIDEOUT_B1F	MAP_NAME_SIGN_ROCKET_HIDEOUT_B1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	26	ROCKET_HIDEOUT_B2F	MAP_NAME_SIGN_ROCKET_HIDEOUT_B2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	27	ROCKET_HIDEOUT_B3F	MAP_NAME_SIGN_ROCKET_HIDEOUT_B3F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	28	ROCKET_HIDEOUT_B4F	MAP_NAME_SIGN_ROCKET_HIDEOUT_B4F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	29	GAME_CORNER	MAP_NAME_SIGN_GAME_CORNER	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	30	SAFARI_ZONE_CENTER	MAP_NAME_SIGN_SAFARI_ZONE_CENTER	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	31	SAFARI_ZONE_EAST	MAP_NAME_SIGN_SAFARI_ZONE_EAST	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	32	SAFARI_ZONE_NORTH	MAP_NAME_SIGN_SAFARI_ZONE_NORTH	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	33	SAFARI_ZONE_WEST	MAP_NAME_SIGN_SAFARI_ZONE_WEST	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	34	MT_MOON_1F	MAP_NAME_SIGN_MT_MOON_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	35	MT_MOON_B1F	MAP_NAME_SIGN_MT_MOON_B1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	36	MT_MOON_B2F	MAP_NAME_SIGN_MT_MOON_B2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	37	ROCK_TUNNEL_1F	MAP_NAME_SIGN_ROCK_TUNNEL_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	38	ROCK_TUNNEL_B1F	MAP_NAME_SIGN_ROCK_TUNNEL_B1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	39	VICTORY_ROAD_1F	MAP_NAME_SIGN_VICTORY_ROAD_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	40	VICTORY_ROAD_2F	MAP_NAME_SIGN_VICTORY_ROAD_2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	41	VICTORY_ROAD_3F	MAP_NAME_SIGN_VICTORY_ROAD_3F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	42	CERULEAN_CAVE_1F	MAP_NAME_SIGN_CERULEAN_CAVE_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	43	CERULEAN_CAVE_2F	MAP_NAME_SIGN_CERULEAN_CAVE_2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	44	CERULEAN_CAVE_B1F	MAP_NAME_SIGN_CERULEAN_CAVE_B1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	45	SEAFOAM_ISLANDS_1F	MAP_NAME_SIGN_SEAFOAM_ISLANDS_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	46	SEAFOAM_ISLANDS_B1F	MAP_NAME_SIGN_SEAFOAM_ISLANDS_B1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	47	SEAFOAM_ISLANDS_B2F	MAP_NAME_SIGN_SEAFOAM_ISLANDS_B2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	48	SEAFOAM_ISLANDS_B3F	MAP_NAME_SIGN_SEAFOAM_ISLANDS_B3F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	49	SEAFOAM_ISLANDS_B4F	MAP_NAME_SIGN_SEAFOAM_ISLANDS_B4F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	50	CELADON_MART_1F	MAP_NAME_SIGN_CELADON_MART_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	51	CELADON_MART_2F	MAP_NAME_SIGN_CELADON_MART_2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	52	CELADON_MART_3F	MAP_NAME_SIGN_CELADON_MART_3F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	53	CELADON_MART_4F	MAP_NAME_SIGN_CELADON_MART_4F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	54	CELADON_MART_5F	MAP_NAME_SIGN_CELADON_MART_5F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	55	CELADON_MART_ROOF	MAP_NAME_SIGN_CELADON_MART_ROOF	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	56	CELADON_MANSION_1F	MAP_NAME_SIGN_CELADON_MANSION_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	57	CELADON_MANSION_2F	MAP_NAME_SIGN_CELADON_MANSION_2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	58	CELADON_MANSION_3F	MAP_NAME_SIGN_CELADON_MANSION_3F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	59	CELADON_MANSION_ROOF	MAP_NAME_SIGN_CELADON_MANSION_ROOF	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	60	MUSEUM_1F	MAP_NAME_SIGN_MUSEUM_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	61	MUSEUM_2F	MAP_NAME_SIGN_MUSEUM_2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	62	SS_ANNE_1F	MAP_NAME_SIGN_SS_ANNE_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	63	SS_ANNE_2F	MAP_NAME_SIGN_SS_ANNE_2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	64	SS_ANNE_3F	MAP_NAME_SIGN_SS_ANNE_3F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	65	SS_ANNE_B1F	MAP_NAME_SIGN_SS_ANNE_B1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	66	SS_ANNE_BOW	MAP_NAME_SIGN_SS_ANNE_BOW	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	67	SS_ANNE_KITCHEN	MAP_NAME_SIGN_SS_ANNE_KITCHEN	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	68	SS_ANNE_CAPTAINS_ROOM	MAP_NAME_SIGN_SS_ANNE_CAPTAINS_ROOM	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	69	CELADON_MANSION_ROOF_HOUSE	MAP_NAME_SIGN_CELADON_MANSION_ROOF	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	70	SS_ANNE_1F_ROOMS	MAP_NAME_SIGN_SS_ANNE_1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	71	SS_ANNE_2F_ROOMS	MAP_NAME_SIGN_SS_ANNE_2F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+CGB_MapNameSignSpecialMapTable	72	SS_ANNE_B1F_ROOMS	MAP_NAME_SIGN_SS_ANNE_B1F	src/engine/overworld/cgb_map_name_sign.asm	Map ID → 1bpp 图形 label，不使用 Town Map 字符串表
+Townnames_map_name	2	"""PALLET TOWN@"""	真新镇	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	3	"""VIRIDIAN CITY@"""	常青市	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	4	"""PEWTER CITY@"""	深灰市	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	5	"""CERULEAN CITY@"""	华蓝市	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	6	"""LAVENDER TOWN@"""	紫苑镇	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	7	"""VERMILION CITY@"""	枯叶市	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	8	"""CELADON CITY@"""	玉虹市	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	9	"""FUCHSIA CITY@"""	浅红市	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	10	"""CINNABAR ISLAND@"""	红莲镇	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	11	"""INDIGO PLATEAU@"""	石英高原	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	12	"""SAFFRON CITY@"""	金黄市	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	13	"""ROUTE 1@"""	1号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	14	"""ROUTE 2@"""	2号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	15	"""ROUTE 3@"""	3号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	16	"""ROUTE 4@"""	4号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	17	"""ROUTE 5@"""	5号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	18	"""ROUTE 6@"""	6号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	19	"""ROUTE 7@"""	7号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	20	"""ROUTE 8@"""	8号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	21	"""ROUTE 9@"""	9号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	22	"""ROUTE 10@"""	10号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	23	"""ROUTE 11@"""	11号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	24	"""ROUTE 12@"""	12号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	25	"""ROUTE 13@"""	13号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	26	"""ROUTE 14@"""	14号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	27	"""ROUTE 15@"""	15号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	28	"""ROUTE 16@"""	16号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	29	"""ROUTE 17@"""	17号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	30	"""ROUTE 18@"""	18号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	31	"""SEA ROUTE 19@"""	19号水道	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	32	"""SEA ROUTE 20@"""	20号水道	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	33	"""SEA ROUTE 21@"""	21号水道	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	34	"""ROUTE 22@"""	22号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	35	"""ROUTE 23@"""	23号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	36	"""ROUTE 24@"""	24号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	37	"""ROUTE 25@"""	25号道路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	38	"""VIRIDIAN FOREST@"""	常青森林	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	39	"""MT.MOON@"""	月见山	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	40	"""ROCK TUNNEL@"""	岩山隧道	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	41	"""SEA COTTAGE@"""	海角小屋	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	42	"""S.S.ANNE@"""	圣特安努号	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	43	"""#MON LEAGUE@"""	#联盟	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	44	"""UNDERGROUND PATH@"""	地下通道	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	45	"""#MON TOWER@"""	#塔	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	46	"""SEAFOAM ISLANDS@"""	双子岛	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	47	"""VICTORY ROAD@"""	冠军之路	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	48	"""DIGLETT's CAVE@"""	地鼠洞穴	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	49	"""ROCKET HQ@"""	火箭队基地	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	50	"""SILPH CO.@"""	西尔佛公司	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	51	"""<PKMN> MANSION@"""	#屋	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	52	"""SAFARI ZONE@"""	狩猎地带	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	53	"""CERULEAN CAVE@"""	华蓝洞窟	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_name	54	"""POWER PLANT@"""	无人发电厂	src/xlsx/data.xlsx:Townnames → data/maps/names.asm	53 个地图名称数据之一
+Townnames_map_ui	56	"""To@"""	飞往@	src/xlsx/data.xlsx:Townnames → engine/items/town_map.asm	To / 's / nest / AREA UNKNOWN 等 UI 字符串
+Townnames_map_ui	57	"""'s"""	的	src/xlsx/data.xlsx:Townnames → engine/items/town_map.asm	To / 's / nest / AREA UNKNOWN 等 UI 字符串
+Townnames_map_ui	58	""" nest@"""	分布@	src/xlsx/data.xlsx:Townnames → engine/items/town_map.asm	To / 's / nest / AREA UNKNOWN 等 UI 字符串
+Townnames_map_ui	59	""" AREA UNKNOWN@"""	  　栖息地不明@	src/xlsx/data.xlsx:Townnames → engine/items/town_map.asm	To / 's / nest / AREA UNKNOWN 等 UI 字符串
+Townnames_gym_script	61	"""PEWTER CITY@"""	深灰市	src/xlsx/data.xlsx:Townnames → scripts/PewterGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	62	"""BROCK@"""	小刚	src/xlsx/data.xlsx:Townnames → scripts/PewterGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	64	"""CERULEAN CITY@"""	华蓝市	src/xlsx/data.xlsx:Townnames → scripts/CeruleanGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	65	"""MISTY@"""	小霞	src/xlsx/data.xlsx:Townnames → scripts/CeruleanGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	67	"""VERMILION CITY@"""	枯叶市	src/xlsx/data.xlsx:Townnames → scripts/VermilionGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	68	"""LT.SURGE@"""	马志士	src/xlsx/data.xlsx:Townnames → scripts/VermilionGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	70	"""CELADON CITY@"""	玉虹市	src/xlsx/data.xlsx:Townnames → scripts/CeladonGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	71	"""ERIKA@"""	莉佳	src/xlsx/data.xlsx:Townnames → scripts/CeladonGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	73	"""FUCHSIA CITY@"""	浅红市	src/xlsx/data.xlsx:Townnames → scripts/FuchsiaGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	74	"""KOGA@"""	阿桔	src/xlsx/data.xlsx:Townnames → scripts/FuchsiaGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	76	"""SAFFRON CITY@"""	金黄市	src/xlsx/data.xlsx:Townnames → scripts/SaffronGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	77	"""SABRINA@"""	娜姿	src/xlsx/data.xlsx:Townnames → scripts/SaffronGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	79	"""CINNABAR ISLAND@"""	红莲镇	src/xlsx/data.xlsx:Townnames → scripts/CinnabarGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	80	"""BLAINE@"""	夏伯	src/xlsx/data.xlsx:Townnames → scripts/CinnabarGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	82	"""VIRIDIAN CITY@"""	常青市	src/xlsx/data.xlsx:Townnames → scripts/ViridianGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+Townnames_gym_script	83	"""GIOVANNI@"""	坂木	src/xlsx/data.xlsx:Townnames → scripts/ViridianGym.asm	Gym 脚本中的地点/训练家静态文字，不是地图名称表
+CGB_bitmap_asset_group	MAP_NAME_SIGN_LOCAL_LABELS	MAP_NAME_SIGN_LOCAL_LABELS	41	src/engine/overworld/cgb_map_name_sign.asm	图形文字数量常量；与字符串数据分开
+CGB_bitmap_asset_group	MAP_NAME_SIGN_EXT_A_LABELS	MAP_NAME_SIGN_EXT_A_LABELS	47	src/engine/overworld/cgb_map_name_sign.asm	图形文字数量常量；与字符串数据分开
+CGB_bitmap_asset_group	MAP_NAME_SIGN_EXT_B_LABELS	MAP_NAME_SIGN_EXT_B_LABELS	19	src/engine/overworld/cgb_map_name_sign.asm	图形文字数量常量；与字符串数据分开
+CGB_bitmap_asset_group	MAP_NAME_SIGN_SPECIAL_LABELS	MAP_NAME_SIGN_SPECIAL_LABELS	71	src/engine/overworld/cgb_map_name_sign.asm	图形文字数量常量；与字符串数据分开
+Hardcoded_special_map_name	CeladonMartRoofName	CeladonMartRoofName	CHS byte/glyph sequence	src/engine/items/town_map.asm	特殊地图名称硬编码，不在 53 个 TownMap names 表项内
+Hardcoded_special_fly_name	FlyPowerPlantShortName	FlyPowerPlantShortName	CHS short name	src/engine/items/town_map.asm	Fly 专用短名称；需单独英文短标签
+CGB_MapNameSignSpecialMapTable_unique_graphic_label_ids		unique graphic label IDs	69	src/engine/overworld/cgb_map_name_sign.asm	73 个 map-id 映射行中有 4 组房间/屋顶别名复用图形 label；唯一 label ID 为 69

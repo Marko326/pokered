@@ -49,6 +49,31 @@ class BilingualDialogueGeneratorTests(unittest.TestCase):
             '\tdone\n',
             encoding="utf-8",
         )
+        rating_source = [
+            '_DexCompletionText::',
+            '\ttext "DEX completion"',
+            '\tpara "Seen:@"',
+            '\ttext_decimal hDexRatingNumMonsSeen, 1, 3',
+            '\tline "Owned:@"',
+            '\ttext_decimal hDexRatingNumMonsOwned, 1, 3',
+            '\tdone',
+        ]
+        for label in MODULE.POKEDEX_RATING_LABELS[1:17]:
+            rating_source.extend([f"{label}::", '\ttext "Rating text"', '\tdone'])
+        (source / "text" / "pokedex_ratings.asm").write_text(
+            "\n".join(rating_source) + "\n", encoding="utf-8"
+        )
+        (source / "data" / "text" / "text_2.asm").write_text(
+            '_DexSeenOwnedText::\n'
+            '\ttext "POKéDEX seen"\n'
+            '\ttext_decimal wDexRatingNumMonsSeen, 1, 3\n'
+            '\ttext_decimal wDexRatingNumMonsOwned, 1, 3\n'
+            '\tdone\n'
+            '_DexRatingText::\n'
+            '\ttext "POKéDEX Rating"\n'
+            '\tdone\n',
+            encoding="utf-8",
+        )
         (source / "data" / "english_text" / "manual_dialogue_overrides.json").write_text(
             json.dumps({"_ManualText": '\ttext "Manual English."\n\tdone\n'}),
             encoding="utf-8",
@@ -101,6 +126,8 @@ class BilingualDialogueGeneratorTests(unittest.TestCase):
             self.assertNotIn("_UnsafeText_EN::", english)
             self.assertEqual(summary["routed_refs"], 4)
             self.assertEqual(summary["routed_labels"], 4)
+            self.assertEqual(summary["pokedex_rating_labels"], 19)
+            self.assertEqual(summary["pokedex_rating_bank"], 0x70)
             self.assertEqual(summary["ignored_existing_english_refs"], 1)
             self.assertEqual(summary["unrouted_script_refs"], 2)
             self.assertEqual(summary["missing_script_labels"], ["_MissingText"])
@@ -115,11 +142,18 @@ class BilingualDialogueGeneratorTests(unittest.TestCase):
             first_data = (
                 build / "data" / "english_text" / "generated_dialogue.asm"
             ).read_bytes()
+            first_rating_data = (
+                build / "data" / "english_text" / "generated_pokedex_ratings.asm"
+            ).read_bytes()
             MODULE.generate(source, build)
             self.assertEqual(first_script, (build / "scripts" / "TestMap.asm").read_bytes())
             self.assertEqual(
                 first_data,
                 (build / "data" / "english_text" / "generated_dialogue.asm").read_bytes(),
+            )
+            self.assertEqual(
+                first_rating_data,
+                (build / "data" / "english_text" / "generated_pokedex_ratings.asm").read_bytes(),
             )
             self.assertEqual(source_before, (source / "scripts" / "TestMap.asm").read_bytes())
 

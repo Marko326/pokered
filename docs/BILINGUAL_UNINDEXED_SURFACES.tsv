@@ -1,0 +1,11 @@
+surface	count_or_slots	content_type	source	consumers	status	notes
+Item short descriptions	79	CHS 自定义双字节/字节编码说明块	src/engine/items/single_bag_descriptions.asm	Bag / Player PC / Poké Mart BUY/SELL	未找到英文对照表；需人工撰写英文或定义保留策略	79 个唯一说明块；83 个指针槽位，其中 5 个进化石槽共用 1 个说明
+Pokédex descriptions	151	物种图鉴说明	src/xlsx/dex.xlsx → src/data/pokemon/dex_text.asm	Pokédex entry	当前 CHS 导入；独立于地图 text_far 生成器	151 个物种说明；需要保留分页/控制符
+Pokédex metadata	151	分类、身高、体重/相关字段	src/xlsx/dexEntry.xlsx → src/data/pokemon/dex_entries.asm	Pokédex entry	当前 CHS 导入；无全局 LANGUAGE 分支	151 个物种数据行；字段不是同一类普通文本
+CGB map-name signs	107	1bpp 图形文字标签	src/gfx/map_name_sign/; src/engine/overworld/cgb_map_name_sign*.asm	CGB 野外地图地名牌	CHS 图形资源；不能用普通字符串替换	41 local + 47 ext A + 19 ext B = 107 图形标签
+Save/PC BoxNames	12	BOX 1..12 名称	src/engine/menus/save.asm + data.xlsx Main 两条模式替换	Save / Player PC	中文构建通过 BOX 前缀字形替换；未见 LANGUAGE 英文分支	两条模式规则影响 12 个显示槽位，不能按两条文本计数
+Special map labels	2	Celadon Mart Roof / Fly Power Plant short name	src/engine/items/town_map.asm	Continue/Save / Fly	硬编码 CHS 字形/短名称，未见英文分支	与 53 个 Town Map 名称表项分开
+Credits	65	制作人员/章节/滚动文字	src/data/credits/credits_text.asm	Credits	当前源文件以英文为主；是否需要中文版本属于范围决策	65 个可见文本记录；专有姓名与栏目标题应分开处理
+Species English name table	190	宝可梦英文名备用表	src/data/pokemon/names2.asm	Party / Pokédex / Battle / HOF	现有 Names 选项可切换；独立于 LANGUAGE	wENGNameMark；需遵循旧存档/自定义昵称兼容文档
+Trade English nickname table	10	游戏内交换宝可梦默认昵称	src/data/events/trades2.asm	In-game trades	现有 Names 选项可切换；RB 中文表当前 9 个活动昵称	wENGNameMark；RGB 版本行不属于当前 RB 构建
+Save box prompt dynamic token	1	ChooseABox + <PKMN>	src/data/text/text_3.asm / _ChooseABoxText	Save / PC box selection	动态物种名 token 尚未被现有生成器支持	必须人工定义参数与指针规则

@@ -1,0 +1,72 @@
+label_index	label_identity	label_symbol	english_display_candidate	english_candidate_char_count	chinese_source	asset_group	asset_index	runtime_map_id_reference_count	status	note
+36	$80	MAP_NAME_SIGN_VIRIDIAN_FOREST	VIRIDIAN FOREST	15	常青森林	labels.1bpp	36	1	USED	—
+37	$81	MAP_NAME_SIGN_MT_MOON	MT.MOON	7	月见山	labels.1bpp	37	0	UNREFERENCED_ASSET	—
+38	$82	MAP_NAME_SIGN_ROCK_TUNNEL	ROCK TUNNEL	11	岩山隧道	labels.1bpp	38	0	UNREFERENCED_ASSET	—
+39	$83	MAP_NAME_SIGN_DIGLETTS_CAVE	DIGLETT's CAVE	14	地鼠洞穴	labels.1bpp	39	1	USED	—
+40	$84	MAP_NAME_SIGN_POWER_PLANT	POWER PLANT	11	无人发电厂	labels.1bpp	40	1	USED	—
+41	$85	MAP_NAME_SIGN_SILPH_CO_1F	SILPH CO. 1F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	0	1	USED	English wording is derived from map symbol, not yet approved artwork text
+42	$86	MAP_NAME_SIGN_SILPH_CO_2F	SILPH CO. 2F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	1	1	USED	English wording is derived from map symbol, not yet approved artwork text
+43	$87	MAP_NAME_SIGN_SILPH_CO_3F	SILPH CO. 3F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	2	1	USED	English wording is derived from map symbol, not yet approved artwork text
+44	$88	MAP_NAME_SIGN_SILPH_CO_4F	SILPH CO. 4F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	3	1	USED	English wording is derived from map symbol, not yet approved artwork text
+45	$89	MAP_NAME_SIGN_SILPH_CO_5F	SILPH CO. 5F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	4	1	USED	English wording is derived from map symbol, not yet approved artwork text
+46	$8A	MAP_NAME_SIGN_SILPH_CO_6F	SILPH CO. 6F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	5	1	USED	English wording is derived from map symbol, not yet approved artwork text
+47	$8B	MAP_NAME_SIGN_SILPH_CO_7F	SILPH CO. 7F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	6	1	USED	English wording is derived from map symbol, not yet approved artwork text
+48	$8C	MAP_NAME_SIGN_SILPH_CO_8F	SILPH CO. 8F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	7	1	USED	English wording is derived from map symbol, not yet approved artwork text
+49	$8D	MAP_NAME_SIGN_SILPH_CO_9F	SILPH CO. 9F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	8	1	USED	English wording is derived from map symbol, not yet approved artwork text
+50	$8E	MAP_NAME_SIGN_SILPH_CO_10F	SILPH CO. 10F	13	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	9	1	USED	English wording is derived from map symbol, not yet approved artwork text
+51	$8F	MAP_NAME_SIGN_SILPH_CO_11F	SILPH CO. 11F	13	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	10	1	USED	English wording is derived from map symbol, not yet approved artwork text
+52	$90	MAP_NAME_SIGN_POKEMON_TOWER_1F	POKéMON TOWER 1F	16	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	11	1	USED	English wording is derived from map symbol, not yet approved artwork text
+53	$91	MAP_NAME_SIGN_POKEMON_TOWER_2F	POKéMON TOWER 2F	16	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	12	1	USED	English wording is derived from map symbol, not yet approved artwork text
+54	$92	MAP_NAME_SIGN_POKEMON_TOWER_3F	POKéMON TOWER 3F	16	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	13	1	USED	English wording is derived from map symbol, not yet approved artwork text
+55	$93	MAP_NAME_SIGN_POKEMON_TOWER_4F	POKéMON TOWER 4F	16	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	14	1	USED	English wording is derived from map symbol, not yet approved artwork text
+56	$94	MAP_NAME_SIGN_POKEMON_TOWER_5F	POKéMON TOWER 5F	16	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	15	1	USED	English wording is derived from map symbol, not yet approved artwork text
+57	$95	MAP_NAME_SIGN_POKEMON_TOWER_6F	POKéMON TOWER 6F	16	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	16	1	USED	English wording is derived from map symbol, not yet approved artwork text
+58	$96	MAP_NAME_SIGN_POKEMON_TOWER_7F	POKéMON TOWER 7F	16	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	17	1	USED	English wording is derived from map symbol, not yet approved artwork text
+59	$97	MAP_NAME_SIGN_POKEMON_MANSION_1F	POKéMON MANSION 1F	18	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	18	1	USED	English wording is derived from map symbol, not yet approved artwork text
+60	$98	MAP_NAME_SIGN_POKEMON_MANSION_2F	POKéMON MANSION 2F	18	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	19	1	USED	English wording is derived from map symbol, not yet approved artwork text
+61	$99	MAP_NAME_SIGN_POKEMON_MANSION_3F	POKéMON MANSION 3F	18	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	20	1	USED	English wording is derived from map symbol, not yet approved artwork text
+62	$9A	MAP_NAME_SIGN_POKEMON_MANSION_B1F	POKéMON MANSION B1F	19	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	21	1	USED	English wording is derived from map symbol, not yet approved artwork text
+63	$9B	MAP_NAME_SIGN_ROCKET_HIDEOUT_B1F	ROCKET HIDEOUT B1F	18	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	22	1	USED	English wording is derived from map symbol, not yet approved artwork text
+64	$9C	MAP_NAME_SIGN_ROCKET_HIDEOUT_B2F	ROCKET HIDEOUT B2F	18	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	23	1	USED	English wording is derived from map symbol, not yet approved artwork text
+65	$9D	MAP_NAME_SIGN_ROCKET_HIDEOUT_B3F	ROCKET HIDEOUT B3F	18	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	24	1	USED	English wording is derived from map symbol, not yet approved artwork text
+66	$9E	MAP_NAME_SIGN_ROCKET_HIDEOUT_B4F	ROCKET HIDEOUT B4F	18	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	25	1	USED	English wording is derived from map symbol, not yet approved artwork text
+67	$9F	MAP_NAME_SIGN_GAME_CORNER	GAME CORNER	11	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	26	1	USED	English wording is derived from map symbol, not yet approved artwork text
+68	$A0	MAP_NAME_SIGN_SAFARI_ZONE_CENTER	SAFARI ZONE CENTER	18	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	27	1	USED	English wording is derived from map symbol, not yet approved artwork text
+69	$A1	MAP_NAME_SIGN_SAFARI_ZONE_EAST	SAFARI ZONE EAST	16	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	28	1	USED	English wording is derived from map symbol, not yet approved artwork text
+70	$A2	MAP_NAME_SIGN_SAFARI_ZONE_NORTH	SAFARI ZONE NORTH	17	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	29	1	USED	English wording is derived from map symbol, not yet approved artwork text
+71	$A3	MAP_NAME_SIGN_SAFARI_ZONE_WEST	SAFARI ZONE WEST	16	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	30	1	USED	English wording is derived from map symbol, not yet approved artwork text
+72	$A4	MAP_NAME_SIGN_MT_MOON_1F	MT. MOON 1F	11	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	31	1	USED	English wording is derived from map symbol, not yet approved artwork text
+73	$A5	MAP_NAME_SIGN_MT_MOON_B1F	MT. MOON B1F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	32	1	USED	English wording is derived from map symbol, not yet approved artwork text
+74	$A6	MAP_NAME_SIGN_MT_MOON_B2F	MT. MOON B2F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	33	1	USED	English wording is derived from map symbol, not yet approved artwork text
+75	$A7	MAP_NAME_SIGN_ROCK_TUNNEL_1F	ROCK TUNNEL 1F	14	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	34	1	USED	English wording is derived from map symbol, not yet approved artwork text
+76	$A8	MAP_NAME_SIGN_ROCK_TUNNEL_B1F	ROCK TUNNEL B1F	15	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	35	1	USED	English wording is derived from map symbol, not yet approved artwork text
+77	$A9	MAP_NAME_SIGN_VICTORY_ROAD_1F	VICTORY ROAD 1F	15	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	36	1	USED	English wording is derived from map symbol, not yet approved artwork text
+78	$AA	MAP_NAME_SIGN_VICTORY_ROAD_2F	VICTORY ROAD 2F	15	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	37	1	USED	English wording is derived from map symbol, not yet approved artwork text
+79	$AB	MAP_NAME_SIGN_VICTORY_ROAD_3F	VICTORY ROAD 3F	15	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	38	1	USED	English wording is derived from map symbol, not yet approved artwork text
+80	$AC	MAP_NAME_SIGN_CERULEAN_CAVE_1F	CERULEAN CAVE 1F	16	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	39	1	USED	English wording is derived from map symbol, not yet approved artwork text
+81	$AD	MAP_NAME_SIGN_CERULEAN_CAVE_2F	CERULEAN CAVE 2F	16	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	40	1	USED	English wording is derived from map symbol, not yet approved artwork text
+82	$AE	MAP_NAME_SIGN_CERULEAN_CAVE_B1F	CERULEAN CAVE B1F	17	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	41	1	USED	English wording is derived from map symbol, not yet approved artwork text
+83	$AF	MAP_NAME_SIGN_SEAFOAM_ISLANDS_1F	SEAFOAM ISLANDS 1F	18	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	42	1	USED	English wording is derived from map symbol, not yet approved artwork text
+84	$B0	MAP_NAME_SIGN_SEAFOAM_ISLANDS_B1F	SEAFOAM ISLANDS B1F	19	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	43	1	USED	English wording is derived from map symbol, not yet approved artwork text
+85	$B1	MAP_NAME_SIGN_SEAFOAM_ISLANDS_B2F	SEAFOAM ISLANDS B2F	19	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	44	1	USED	English wording is derived from map symbol, not yet approved artwork text
+86	$B2	MAP_NAME_SIGN_SEAFOAM_ISLANDS_B3F	SEAFOAM ISLANDS B3F	19	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	45	1	USED	English wording is derived from map symbol, not yet approved artwork text
+87	$B3	MAP_NAME_SIGN_SEAFOAM_ISLANDS_B4F	SEAFOAM ISLANDS B4F	19	existing CHS 1bpp bitmap; no parallel string source	labels_ext_a.1bpp	46	1	USED	English wording is derived from map symbol, not yet approved artwork text
+88	$B4	MAP_NAME_SIGN_CELADON_MART_1F	CELADON MART 1F	15	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	0	1	USED	English wording is derived from map symbol, not yet approved artwork text
+89	$B5	MAP_NAME_SIGN_CELADON_MART_2F	CELADON MART 2F	15	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	1	1	USED	English wording is derived from map symbol, not yet approved artwork text
+90	$B6	MAP_NAME_SIGN_CELADON_MART_3F	CELADON MART 3F	15	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	2	1	USED	English wording is derived from map symbol, not yet approved artwork text
+91	$B7	MAP_NAME_SIGN_CELADON_MART_4F	CELADON MART 4F	15	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	3	1	USED	English wording is derived from map symbol, not yet approved artwork text
+92	$B8	MAP_NAME_SIGN_CELADON_MART_5F	CELADON MART 5F	15	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	4	1	USED	English wording is derived from map symbol, not yet approved artwork text
+93	$B9	MAP_NAME_SIGN_CELADON_MART_ROOF	CELADON MART ROOF	17	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	5	1	USED	English wording is derived from map symbol, not yet approved artwork text
+94	$BA	MAP_NAME_SIGN_CELADON_MANSION_1F	CELADON MANSION 1F	18	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	6	1	USED	English wording is derived from map symbol, not yet approved artwork text
+95	$BB	MAP_NAME_SIGN_CELADON_MANSION_2F	CELADON MANSION 2F	18	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	7	1	USED	English wording is derived from map symbol, not yet approved artwork text
+96	$BC	MAP_NAME_SIGN_CELADON_MANSION_3F	CELADON MANSION 3F	18	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	8	1	USED	English wording is derived from map symbol, not yet approved artwork text
+97	$BD	MAP_NAME_SIGN_CELADON_MANSION_ROOF	CELADON MANSION ROOF	20	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	9	2	USED	English wording is derived from map symbol, not yet approved artwork text
+98	$BE	MAP_NAME_SIGN_MUSEUM_1F	MUSEUM 1F	9	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	10	1	USED	English wording is derived from map symbol, not yet approved artwork text
+99	$BF	MAP_NAME_SIGN_MUSEUM_2F	MUSEUM 2F	9	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	11	1	USED	English wording is derived from map symbol, not yet approved artwork text
+100	$C0	MAP_NAME_SIGN_SS_ANNE_1F	S.S. ANNE 1F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	12	2	USED	English wording is derived from map symbol, not yet approved artwork text
+101	$C1	MAP_NAME_SIGN_SS_ANNE_2F	S.S. ANNE 2F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	13	2	USED	English wording is derived from map symbol, not yet approved artwork text
+102	$C2	MAP_NAME_SIGN_SS_ANNE_3F	S.S. ANNE 3F	12	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	14	1	USED	English wording is derived from map symbol, not yet approved artwork text
+103	$C3	MAP_NAME_SIGN_SS_ANNE_B1F	S.S. ANNE B1F	13	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	15	2	USED	English wording is derived from map symbol, not yet approved artwork text
+104	$C4	MAP_NAME_SIGN_SS_ANNE_BOW	S.S. ANNE BOW	13	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	16	1	USED	English wording is derived from map symbol, not yet approved artwork text
+105	$C5	MAP_NAME_SIGN_SS_ANNE_KITCHEN	S.S. ANNE KITCHEN	17	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	17	1	USED	English wording is derived from map symbol, not yet approved artwork text
+106	$C6	MAP_NAME_SIGN_SS_ANNE_CAPTAINS_ROOM	S.S. ANNE CAPTAINS ROOM	23	existing CHS 1bpp bitmap; no parallel string source	labels_ext_b.1bpp	18	1	USED	English wording is derived from map symbol, not yet approved artwork text

@@ -116,6 +116,13 @@ def run_dialogue_generator(build_root: Path) -> dict:
         f"{summary['routed_labels']} English labels; ROMX {bank_range}.",
         flush=True,
     )
+    print(
+        "[CHS] Bilingual Pokedex ratings generated: "
+        f"{summary['pokedex_rating_labels']} English labels / "
+        f"{summary['pokedex_rating_estimated_bytes']} estimated bytes; "
+        f"ROMX ${summary['pokedex_rating_bank']:02X}.",
+        flush=True,
+    )
     return summary
 
 

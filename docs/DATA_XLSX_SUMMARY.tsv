@@ -1,0 +1,10 @@
+metric	count	meaning
+data.xlsx importer operations (all non-empty replacee rows)	951	包含文本替换、代码/格式变更和结构性替换
+text replacement directives	898	行级指令数，不等于唯一字符串数
+non-text code/format/structural directives	53	不计入双语文本数量
+RB-active text directives	845	当前 Red/Blue build 版本范围
+RGB-only skipped text directives	53	prepare_build.py 对 RB 构建跳过
+already bilingual Options/player-info rows	23	13 个 Options 字符串 + 10 个玩家资料固定标签
+separate Names option rows	199	190 个物种名 + 当前 RB 的 9 个交易昵称；不随 LANGUAGE 自动切换
+YES/NO deferred rows	11	按用户此前决定暂缓
+other RB-active text directives	612	待双语接入或导入规则复核；行级数量，不是唯一文本数量

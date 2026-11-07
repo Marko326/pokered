@@ -1,0 +1,10 @@
+sheet	all_import_operations	text_directives	non_text_directives	RB_active_text	RGB_skipped_text	target_files
+PM	195	195	0	195	0	data/pokemon/names.asm;engine/events/hidden_objects/bills_house_pc.asm
+Items	108	104	4	104	0	data/items/names.asm;scripts/Route23.asm
+Moves	168	165	3	165	0	data/moves/names.asm
+Townnames	73	73	0	73	0	data/maps/names.asm;engine/items/town_map.asm;scripts/CeladonGym.asm;scripts/CeruleanGym.asm;scripts/CinnabarGym.asm;scripts/FuchsiaGym.asm;scripts/PewterGym.asm;scripts/SaffronGym.asm;scripts/VermilionGym.asm;scripts/ViridianGym.asm
+PC	21	21	0	21	0	engine/menus/players_pc.asm;engine/pokemon/bills_pc.asm
+Trainers	78	63	15	63	0	data/trainers/name_pointers.asm;data/trainers/names.asm
+Main	290	261	29	208	53	data/battle/stat_mod_names.asm;data/battle/stat_names.asm;data/credits/credits_text.asm;data/events/prizes.asm;data/events/trades.asm;data/moves/field_move_names.asm;data/player_names.asm;data/player_names_list.asm;data/text_boxes.asm;data/types/names.asm;data/yes_no_menu_strings.asm;engine/battle/core.asm;engine/battle/end_of_battle.asm;engine/events/diploma.asm;engine/events/hidden_objects/school_blackboard.asm;engine/events/pokemart.asm;engine/events/prize_menu.asm;engine/events/vending_machine.asm;engine/items/item_effects.asm;engine/link/cable_club.asm;engine/link/print_waiting_text.asm;engine/menus/draw_start_menu.asm;engine/menus/league_pc.asm;engine/menus/main_menu.asm;engine/menus/naming_screen.asm;engine/menus/party_menu.asm;engine/menus/pokedex.asm;engine/menus/save.asm;engine/menus/start_sub_menus.asm;engine/menus/text_box.asm;engine/movie/hall_of_fame.asm;engine/movie/oak_speech/oak_speech2.asm;engine/movie/title.asm;engine/movie/trade2.asm;engine/overworld/player_state.asm;engine/pokemon/status_screen.asm;home/list_menu.asm;home/text.asm;scripts/BikeShop.asm;scripts/GameCorner.asm
+Patches	5	3	2	3	0	data/text/alphabets.asm;scripts/FuchsiaGoodRodHouse.asm
+OptionsBilingual	13	13	0	13	0	engine/menus/options_bilingual.asm

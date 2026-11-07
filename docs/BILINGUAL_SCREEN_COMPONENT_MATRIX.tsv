@@ -1,0 +1,36 @@
+screen_or_flow	component	text_category	source_or_entry	current_state	why_separate	next_stage
+Options 页面	LANGUAGE / 语言说明 / Names 选项	设置 UI + 独立名称语言	options_bilingual.asm; OptionsBilingual	已双语	LANGUAGE 与 Names 是两个不同控制位，不要自动合并	保持现有行为
+主标题菜单	CONTINUE / NEW GAME / OPTION / TRADE CENTER / COLOSSEUM 等	固定 UI	data.xlsx Main → engine/menus/main_menu.asm	待处理	与 Continue 信息框不是同一组文本	主菜单模块
+START 菜单	POKéDEX / POKéMON / ITEM / SAVE / RESET / EXIT 等	固定 UI	data.xlsx Main → engine/menus/draw_start_menu.asm	待处理	同一菜单内还有动态名称和数值	菜单模块
+Continue	PLAYER / BADGES / #DEX / TIME	固定 UI	GetSaveScreenInfoText; main_menu.asm	已双语；用户抽测无明显问题	只代表固定标签，不代表整页	保留现有实现
+Continue	当前地点名称	地图名称数据	PrintCurrentMapOnSaveScreen → LoadTownMapEntry → data/maps/names.asm	中文残留	地图 ID/别名/名称表是独立入口；ROM-1.42C 已撤回	地图名称模块
+Continue	玩家名、徽章数、图鉴数、游戏时间	动态 SRAM/RAM 数据	Save/Continue 信息读取	数据读取路径已有；语言标签与动态值分开	不要改存档字段或动态数值逻辑	回归测试
+Save	固定信息标签	固定 UI	GetSaveScreenInfoText	已双语；用户抽测无明显问题	与当前地点名称分离	保留现有实现
+Save	当前地点名称	地图名称数据	PrintCurrentMapOnSaveScreen → LoadTownMapEntry	中文残留	与 Town Map/Fly 共用地点身份表	地图名称模块
+Save/PC 盒子	BOX No. 与 BOX 1..12	固定 UI / 图形字形替换	data.xlsx Main → engine/menus/save.asm	中文导入；未见 LANGUAGE 英文分支	两条 BOX 前缀规则影响 12 个盒名	PC/菜单模块
+Save/PC 盒子	Choose a Box 提示	引擎文本 + 动态物种名 token	data/text 标签 _ChooseABoxText	人工复核	含 <PKMN>，不能盲目自动生成	动态文本门槛
+Trainer Card	NAME / MONEY / TIME / BADGES	固定 UI	TrainerInfo_NameMoneyTimeTextEnglish	已双语；用户反馈未见明显问题	动态数据本身不需要重新翻译	保留现有实现
+Hall of Fame	PLAY TIME / MONEY	固定 UI	HoFPlayTimeTextEnglish	已双语	仅两项，不代表 HOF 全页	保留现有实现
+Hall of Fame	HALL OF FAME / LEVEL / TYPE1 / TYPE2	固定 UI/类型标签	data.xlsx Main → engine/movie/hall_of_fame.asm	仍有中文入口	同页多个来源，不能整体标记完成	HOF/名称模块
+Hall of Fame	Seen / Owned / Rating	图鉴评价引擎文本	19 个图鉴评价双语标签中的复用项	已双语；1.42A 录像有证据	与玩家资料标签是不同模块	保留现有实现
+地图 NPC/路牌	地图脚本对白	脚本对白	text_far → text_bilingual 生成流程	1941 个唯一双语标签已接入	含动态姓名、RAM、数字、特殊 token	构建/回归收口
+Oak's Lab	博士评价	图鉴评价引擎	pokedex_rating.asm + pokedex_ratings.asm	已双语；16 档评价	YES/NO 公共选择框仍中文	保留评价；菜单暂缓
+Town Map	城市/道路/地点名称	地图名称数据	TownMapOrder → LoadTownMapEntry → data/maps/names.asm	中文残留	52 selectors / 53 名称数据；内部地图有别名	地图名称模块
+Town Map	To / 's / nest / AREA UNKNOWN	地图 UI 固定字符串	data.xlsx Townnames → engine/items/town_map.asm	中文残留	与 53 个地图名称不是同一类	地图名称模块
+Fly	目的地名称与 Power Plant 短名称	地图名称数据 + 专用短标签	SpecialFlyEntries; DrawPlayerOrBirdSprite; FlyPowerPlantShortName	中文残留	13 个特殊 Fly 目的地；短名称另有硬编码	地图名称模块
+CGB 地名牌	城镇/道路/楼层图形文字	图形资源	cgb_map_name_sign.asm; labels.1bpp / ext_a / ext_b	中文图形资源	41 本地 + 47 + 19 扩展，共 107；不走字符串表	图形文字模块
+Pokédex 列表	标题、DATA/CRY/AREA/QUIT、Seen/Owned 等	图鉴菜单 UI	data.xlsx Main → engine/menus/pokedex.asm	待处理	19 个评价标签已双语不代表列表已完成	图鉴模块
+Pokédex 条目	151 条宝可梦说明	图鉴说明文本	dex.xlsx → data/pokemon/dex_text.asm	中文导入；无 LANGUAGE 英文分支	独立于地图对白 text_far	图鉴模块
+Pokédex 条目	151 条分类/身高/体重等资料	图鉴数据字段	dexEntry.xlsx → data/pokemon/dex_entries.asm	中文导入；待双语设计	与描述文字分开	图鉴模块
+Pokédex AREA	地点图标、AREA UNKNOWN、宝可梦名称	地图位置 + 名称语言 + UI	town_map.asm; GetMonName; Townnames	混合来源	wENGNameMark 会影响 nest 后缀/物种名	地图/名称/图鉴联合验收
+Battle	FIGHT / ITEM / RUN / Safari 指令等	战斗命令 UI	data.xlsx Main → data/text_boxes.asm	RB 有 13 项直接文本导入；未接 LANGUAGE	RGB-only 另有 13 项，不属于 RB build	战斗/菜单模块
+Battle	战斗消息、属性克制、状态、升级等	战斗引擎文本	486 个非地图待处理标签中的战斗组	149 个活动标签待处理	动态招式/训练家/物种名必须保留	战斗模块
+Battle/Status	招式、道具、类型、能力名称	名称表/状态 UI	Moves / Items / Types / stat_names / stat_mod_names	中文导入；未统一 LANGUAGE	与战斗消息是不同数据表	名称模块
+Party/Status	属性、状态、数值、招式列表	状态 UI + 名称表	engine/pokemon/status_screen.asm; data/types/names.asm	中文导入/待处理	同屏有物种名、招式名、属性名多个来源	名称/菜单模块
+Bag	物品名与短说明	名称表 + 自定义描述	data/items/names.asm; single_bag_descriptions.asm	物品名待处理；79 个自定义说明块为 CHS 字节数据	说明复用 Bag/PC/Mart	名称/道具模块
+Player PC	PC 菜单、盒子、宝可梦/物品名称	PC UI + 名称表	data.xlsx PC/PM; save.asm; names tables	多入口混合	不能只改 PC 菜单标签	PC/菜单模块
+Poké Mart	买卖菜单、物品名、数量、说明、YES/NO	商店 UI + 名称表 + 共用菜单	pokemart.asm; data.xlsx Main/Items; single_bag_descriptions	混合来源；YES/NO 暂缓	物品说明复用同一描述表	商店模块
+Game Corner	老虎机、硬币、奖品提示	事件/老虎机引擎	engine/slots; data.xlsx Main	待处理	与普通商店菜单不同	事件/老虎机模块
+Link/Cable Club	通信等待、交换、对战提示	通信引擎	engine/link; data.xlsx Main	待处理	动态玩家名和协议状态不可误替换	通信模块
+Naming Screen	玩家/宿敌默认名字、字母键、名称选择	名称数据 + 输入 UI	data/player_names.asm; player_names_list.asm; alphabets.asm	RB 默认名字与字母标签仍待处理	Names 选项不等于玩家默认名语言	名称/菜单模块
+Credits/Diploma	制作人员名单、毕业证文字	过场/图形文字	data/credits/credits_text.asm; engine/events/diploma.asm	Credits 当前英文为主；Diploma 有 CHS 导入	需决定英文-only 内容是否保持不动	其他 UI/图形模块

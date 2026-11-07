@@ -1,0 +1,11 @@
+rule	condition	logical_selector	resolved_name	note
+Route20 non-Surf west island body	wCurMap=ROUTE_20; not Surf; 44<=x<55; y<10	UNUSED_MAP_F1 ($F1)	SEAFOAM ISLANDS	West Seafoam island body
+Route20 non-Surf east island body	wCurMap=ROUTE_20; not Surf; 55<=x<68; 6<=y<18	SEAFOAM_ISLANDS_B1F ($9F)	SEAFOAM ISLANDS	East Seafoam island body
+Route20 non-Surf elsewhere	wCurMap=ROUTE_20; not Surf; outside island bodies	UNUSED_MAP_F2 ($F2)	SEA ROUTE 20	Cinnabar-side/default logical water area
+Route20 Surf y<10	Surf; boundary x=62	UNUSED_MAP_F2 if x<62 else UNUSED_MAP_F3	SEA ROUTE 20 / SEA ROUTE 19	Fuchsia-side boundary
+Route20 Surf y=10..11	Surf; boundary x=64	UNUSED_MAP_F2 if x<64 else UNUSED_MAP_F3	SEA ROUTE 20 / SEA ROUTE 19	Fuchsia-side boundary
+Route20 Surf y=12..13	Surf; boundary x=65	UNUSED_MAP_F2 if x<65 else UNUSED_MAP_F3	SEA ROUTE 20 / SEA ROUTE 19	Fuchsia-side boundary
+Route20 Surf y=14..15	Surf; boundary x=66	UNUSED_MAP_F2 if x<66 else UNUSED_MAP_F3	SEA ROUTE 20 / SEA ROUTE 19	Fuchsia-side boundary
+Route20 Surf y>=16	Surf; boundary x=64	UNUSED_MAP_F2 if x<64 else UNUSED_MAP_F3	SEA ROUTE 20 / SEA ROUTE 19	Fuchsia-side boundary
+Seafoam interior west entrance	wCurMap=SEAFOAM_ISLANDS_1F or B1F..B4F; wSeafoamEntranceSource=1	UNUSED_MAP_F1 ($F1)	SEAFOAM ISLANDS	West/upper island identity
+Seafoam interior east/default	same Seafoam maps; wSeafoamEntranceSource!=1	SEAFOAM_ISLANDS_B1F ($9F)	SEAFOAM ISLANDS	East/lower island identity

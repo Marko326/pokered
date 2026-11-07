@@ -1,0 +1,249 @@
+map_id	map_id_decimal	map_symbol	map_class	town_map_name_label	english_name_source_or_candidate	chinese_name	town_map_x	town_map_y	load_town_map_entry_method	town_map_order_indices	special_fly_destination	fly_player_marker_override	cgb_sign_supported	cgb_sign_label_index	cgb_sign_label_symbol	cgb_sign_english_candidate	cgb_sign_asset_group	status
+$00	0	PALLET_TOWN	CITY	PalletTownName	PALLET TOWN	真新镇	2	11	ExternalMapEntries direct index	0	—	—	YES	0	BASE_MAP_$00	PALLET TOWN	labels.1bpp	RESOLVED
+$01	1	VIRIDIAN_CITY	CITY	ViridianCityName	VIRIDIAN CITY	常青市	2	8	ExternalMapEntries direct index	2	—	—	YES	1	BASE_MAP_$01	VIRIDIAN CITY	labels.1bpp	RESOLVED
+$02	2	PEWTER_CITY	CITY	PewterCityName	PEWTER CITY	深灰市	2	3	ExternalMapEntries direct index	6	—	—	YES	2	BASE_MAP_$02	PEWTER CITY	labels.1bpp	RESOLVED
+$03	3	CERULEAN_CITY	CITY	CeruleanCityName	CERULEAN CITY	华蓝市	10	2	ExternalMapEntries direct index	11	—	y=11,x=4->CERULEAN_CAVE_1F	YES	3	BASE_MAP_$03	CERULEAN CITY	labels.1bpp	RESOLVED
+$04	4	LAVENDER_TOWN	CITY	LavenderTownName	LAVENDER TOWN	紫苑镇	14	5	ExternalMapEntries direct index	24	—	—	YES	4	BASE_MAP_$04	LAVENDER TOWN	labels.1bpp	RESOLVED
+$05	5	VERMILION_CITY	CITY	VermilionCityName	VERMILION CITY	枯叶市	10	9	ExternalMapEntries direct index	17	—	—	YES	5	BASE_MAP_$05	VERMILION CITY	labels.1bpp	RESOLVED
+$06	6	CELADON_CITY	CITY	CeladonCityName	CELADON CITY	玉虹市	7	5	ExternalMapEntries direct index	28	—	—	YES	6	BASE_MAP_$06	CELADON CITY	labels.1bpp	RESOLVED
+$07	7	FUCHSIA_CITY	CITY	FuchsiaCityName	FUCHSIA CITY	浅红市	8	13	ExternalMapEntries direct index	39	—	y=3,x=18->SAFARI_ZONE_GATE	YES	7	BASE_MAP_$07	FUCHSIA CITY	labels.1bpp	RESOLVED
+$08	8	CINNABAR_ISLAND	CITY	CinnabarIslandName	CINNABAR ISLAND	红莲镇	2	15	ExternalMapEntries direct index	46	—	—	YES	8	BASE_MAP_$08	CINNABAR ISLAND	labels.1bpp	RESOLVED
+$09	9	INDIGO_PLATEAU	CITY	IndigoPlateauName	INDIGO PLATEAU	石英高原	0	2	ExternalMapEntries direct index	51	—	—	YES	9	BASE_MAP_$09	INDIGO PLATEAU	labels.1bpp	RESOLVED
+$0A	10	SAFFRON_CITY	CITY	SaffronCityName	SAFFRON CITY	金黄市	10	5	ExternalMapEntries direct index	30	—	—	YES	10	BASE_MAP_$0A	SAFFRON CITY	labels.1bpp	RESOLVED
+$0B	11	UNUSED_MAP_0B	UNUSED	PalletTownName	PALLET TOWN	真新镇	0	0	ExternalMapEntries direct index	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_RAW_MAP_ID
+$0C	12	ROUTE_1	ROUTE	Route1Name	ROUTE 1	1号道路	2	10	ExternalMapEntries direct index	1	—	—	YES	11	BASE_MAP_$0C	ROUTE 1	labels.1bpp	RESOLVED
+$0D	13	ROUTE_2	ROUTE	Route2Name	ROUTE 2	2号道路	2	6	ExternalMapEntries direct index	3	—	y=9,x=12->DIGLETTS_CAVE_ROUTE_2	YES	12	BASE_MAP_$0D	ROUTE 2	labels.1bpp	RESOLVED
+$0E	14	ROUTE_3	ROUTE	Route3Name	ROUTE 3	3号道路	4	3	ExternalMapEntries direct index	7	—	—	YES	13	BASE_MAP_$0E	ROUTE 3	labels.1bpp	RESOLVED
+$0F	15	ROUTE_4	ROUTE	Route4Name	ROUTE 4	4号道路	8	2	ExternalMapEntries direct index	9	—	y=5,x=11->MT_MOON_1F; y=5,x=18->MT_MOON_1F; y=5,x=24->MT_MOON_1F	YES	14	BASE_MAP_$0F	ROUTE 4	labels.1bpp	RESOLVED
+$10	16	ROUTE_5	ROUTE	Route5Name	ROUTE 5	5号道路	10	3	ExternalMapEntries direct index	15	—	—	YES	15	BASE_MAP_$10	ROUTE 5	labels.1bpp	RESOLVED
+$11	17	ROUTE_6	ROUTE	Route6Name	ROUTE 6	6号道路	10	8	ExternalMapEntries direct index	16	—	—	YES	16	BASE_MAP_$11	ROUTE 6	labels.1bpp	RESOLVED
+$12	18	ROUTE_7	ROUTE	Route7Name	ROUTE 7	7号道路	8	5	ExternalMapEntries direct index	27	—	—	YES	17	BASE_MAP_$12	ROUTE 7	labels.1bpp	RESOLVED
+$13	19	ROUTE_8	ROUTE	Route8Name	ROUTE 8	8号道路	13	5	ExternalMapEntries direct index	26	—	—	YES	18	BASE_MAP_$13	ROUTE 8	labels.1bpp	RESOLVED
+$14	20	ROUTE_9	ROUTE	Route9Name	ROUTE 9	9号道路	13	2	ExternalMapEntries direct index	20	—	—	YES	19	BASE_MAP_$14	ROUTE 9	labels.1bpp	RESOLVED
+$15	21	ROUTE_10	ROUTE	Route10Name	ROUTE 10	10号道路	14	4	ExternalMapEntries direct index	22	—	y=19,x=11->ROCK_TUNNEL_1F; y=39,x=6->POWER_PLANT; y=17,x=8->ROCK_TUNNEL_1F; y=53,x=8->ROCK_TUNNEL_1F	YES	20	BASE_MAP_$15	ROUTE 10	labels.1bpp	RESOLVED
+$16	22	ROUTE_11	ROUTE	Route11Name	ROUTE 11	11号道路	12	9	ExternalMapEntries direct index	31	—	y=5,x=4->DIGLETTS_CAVE_ROUTE_11	YES	21	BASE_MAP_$16	ROUTE 11	labels.1bpp	RESOLVED
+$17	23	ROUTE_12	ROUTE	Route12Name	ROUTE 12	12号道路	14	9	ExternalMapEntries direct index	32	—	—	YES	22	BASE_MAP_$17	ROUTE 12	labels.1bpp	RESOLVED
+$18	24	ROUTE_13	ROUTE	Route13Name	ROUTE 13	13号道路	13	11	ExternalMapEntries direct index	33	—	—	YES	23	BASE_MAP_$18	ROUTE 13	labels.1bpp	RESOLVED
+$19	25	ROUTE_14	ROUTE	Route14Name	ROUTE 14	14号道路	11	12	ExternalMapEntries direct index	34	—	—	YES	24	BASE_MAP_$19	ROUTE 14	labels.1bpp	RESOLVED
+$1A	26	ROUTE_15	ROUTE	Route15Name	ROUTE 15	15号道路	10	13	ExternalMapEntries direct index	35	—	—	YES	25	BASE_MAP_$1A	ROUTE 15	labels.1bpp	RESOLVED
+$1B	27	ROUTE_16	ROUTE	Route16Name	ROUTE 16	16号道路	5	5	ExternalMapEntries direct index	36	—	—	YES	26	BASE_MAP_$1B	ROUTE 16	labels.1bpp	RESOLVED
+$1C	28	ROUTE_17	ROUTE	Route17Name	ROUTE 17	17号道路	4	8	ExternalMapEntries direct index	37	—	—	YES	27	BASE_MAP_$1C	ROUTE 17	labels.1bpp	RESOLVED
+$1D	29	ROUTE_18	ROUTE	Route18Name	ROUTE 18	18号道路	6	13	ExternalMapEntries direct index	38	—	—	YES	28	BASE_MAP_$1D	ROUTE 18	labels.1bpp	RESOLVED
+$1E	30	ROUTE_19	ROUTE	Route19Name	SEA ROUTE 19	19号水道	8	14	ExternalMapEntries direct index	41	—	—	YES	29	BASE_MAP_$1E	SEA ROUTE 19	labels.1bpp	RESOLVED
+$1F	31	ROUTE_20	ROUTE	Route20Name	SEA ROUTE 20	20号水道	4	15	ExternalMapEntries direct index	—	—	—	YES	30	BASE_MAP_$1F	SEA ROUTE 20	labels.1bpp	RESOLVED
+$20	32	ROUTE_21	ROUTE	Route21Name	SEA ROUTE 21	21号水道	2	13	ExternalMapEntries direct index	47	—	—	YES	31	BASE_MAP_$20	SEA ROUTE 21	labels.1bpp	RESOLVED
+$21	33	ROUTE_22	ROUTE	Route22Name	ROUTE 22	22号道路	0	8	ExternalMapEntries direct index	48	—	—	YES	32	BASE_MAP_$21	ROUTE 22	labels.1bpp	RESOLVED
+$22	34	ROUTE_23	ROUTE	Route23Name	ROUTE 23	23号道路	0	6	ExternalMapEntries direct index	49	—	y=31,x=4->VICTORY_ROAD_1F	YES	33	BASE_MAP_$22	ROUTE 23	labels.1bpp	RESOLVED
+$23	35	ROUTE_24	ROUTE	Route24Name	ROUTE 24	24号道路	10	1	ExternalMapEntries direct index	12	—	—	YES	34	BASE_MAP_$23	ROUTE 24	labels.1bpp	RESOLVED
+$24	36	ROUTE_25	ROUTE	Route25Name	ROUTE 25	25号道路	11	0	ExternalMapEntries direct index	13	—	y=3,x=45->BILLS_HOUSE	YES	35	BASE_MAP_$24	ROUTE 25	labels.1bpp	RESOLVED
+$25	37	REDS_HOUSE_1F	INDOOR_OR_DUNGEON	PalletTownName	PALLET TOWN	真新镇	2	11	InternalMapEntries range; first threshold OAKS_LAB+1=$29	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$26	38	REDS_HOUSE_2F	INDOOR_OR_DUNGEON	PalletTownName	PALLET TOWN	真新镇	2	11	InternalMapEntries range; first threshold OAKS_LAB+1=$29	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$27	39	BLUES_HOUSE	INDOOR_OR_DUNGEON	PalletTownName	PALLET TOWN	真新镇	2	11	InternalMapEntries range; first threshold OAKS_LAB+1=$29	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$28	40	OAKS_LAB	INDOOR_OR_DUNGEON	PalletTownName	PALLET TOWN	真新镇	2	11	InternalMapEntries range; first threshold OAKS_LAB+1=$29	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$29	41	VIRIDIAN_POKECENTER	INDOOR_OR_DUNGEON	ViridianCityName	VIRIDIAN CITY	常青市	2	8	InternalMapEntries range; first threshold VIRIDIAN_GYM+1=$2E	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$2A	42	VIRIDIAN_MART	INDOOR_OR_DUNGEON	ViridianCityName	VIRIDIAN CITY	常青市	2	8	InternalMapEntries range; first threshold VIRIDIAN_GYM+1=$2E	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$2B	43	VIRIDIAN_SCHOOL_HOUSE	INDOOR_OR_DUNGEON	ViridianCityName	VIRIDIAN CITY	常青市	2	8	InternalMapEntries range; first threshold VIRIDIAN_GYM+1=$2E	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$2C	44	VIRIDIAN_NICKNAME_HOUSE	INDOOR_OR_DUNGEON	ViridianCityName	VIRIDIAN CITY	常青市	2	8	InternalMapEntries range; first threshold VIRIDIAN_GYM+1=$2E	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$2D	45	VIRIDIAN_GYM	INDOOR_OR_DUNGEON	ViridianCityName	VIRIDIAN CITY	常青市	2	8	InternalMapEntries range; first threshold VIRIDIAN_GYM+1=$2E	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$2E	46	DIGLETTS_CAVE_ROUTE_2	INDOOR_OR_DUNGEON	DiglettsCaveName	DIGLETT's CAVE	地鼠洞穴	3	4	LoadTownMapEntry special branch	5	DIGLETTS_CAVE_ROUTE_2 (order=5, bit=1)	—	NO/NEUTRAL	—	—	—	—	LOGICAL_ALIAS_SELECTOR
+$2F	47	VIRIDIAN_FOREST_NORTH_GATE	INDOOR_OR_DUNGEON	Route2Name	ROUTE 2	2号道路	2	6	InternalMapEntries range; first threshold VIRIDIAN_FOREST_SOUTH_GATE+1=$33	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$30	48	ROUTE_2_TRADE_HOUSE	INDOOR_OR_DUNGEON	Route2Name	ROUTE 2	2号道路	2	6	InternalMapEntries range; first threshold VIRIDIAN_FOREST_SOUTH_GATE+1=$33	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$31	49	ROUTE_2_GATE	INDOOR_OR_DUNGEON	Route2Name	ROUTE 2	2号道路	2	6	InternalMapEntries range; first threshold VIRIDIAN_FOREST_SOUTH_GATE+1=$33	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$32	50	VIRIDIAN_FOREST_SOUTH_GATE	INDOOR_OR_DUNGEON	Route2Name	ROUTE 2	2号道路	2	6	InternalMapEntries range; first threshold VIRIDIAN_FOREST_SOUTH_GATE+1=$33	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$33	51	VIRIDIAN_FOREST	INDOOR_OR_DUNGEON	ViridianForestName	VIRIDIAN FOREST	常青森林	2	5	InternalMapEntries range; first threshold VIRIDIAN_FOREST+1=$34	4	VIRIDIAN_FOREST (order=4, bit=0)	—	YES	36	MAP_NAME_SIGN_VIRIDIAN_FOREST	VIRIDIAN FOREST	labels.1bpp	RESOLVED
+$34	52	MUSEUM_1F	INDOOR_OR_DUNGEON	PewterCityName	PEWTER CITY	深灰市	2	3	InternalMapEntries range; first threshold PEWTER_POKECENTER+1=$3B	—	—	—	YES	98	MAP_NAME_SIGN_MUSEUM_1F	MUSEUM 1F	labels_ext_b.1bpp	RESOLVED
+$35	53	MUSEUM_2F	INDOOR_OR_DUNGEON	PewterCityName	PEWTER CITY	深灰市	2	3	InternalMapEntries range; first threshold PEWTER_POKECENTER+1=$3B	—	—	—	YES	99	MAP_NAME_SIGN_MUSEUM_2F	MUSEUM 2F	labels_ext_b.1bpp	RESOLVED
+$36	54	PEWTER_GYM	INDOOR_OR_DUNGEON	PewterCityName	PEWTER CITY	深灰市	2	3	InternalMapEntries range; first threshold PEWTER_POKECENTER+1=$3B	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$37	55	PEWTER_NIDORAN_HOUSE	INDOOR_OR_DUNGEON	PewterCityName	PEWTER CITY	深灰市	2	3	InternalMapEntries range; first threshold PEWTER_POKECENTER+1=$3B	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$38	56	PEWTER_MART	INDOOR_OR_DUNGEON	PewterCityName	PEWTER CITY	深灰市	2	3	InternalMapEntries range; first threshold PEWTER_POKECENTER+1=$3B	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$39	57	PEWTER_SPEECH_HOUSE	INDOOR_OR_DUNGEON	PewterCityName	PEWTER CITY	深灰市	2	3	InternalMapEntries range; first threshold PEWTER_POKECENTER+1=$3B	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$3A	58	PEWTER_POKECENTER	INDOOR_OR_DUNGEON	PewterCityName	PEWTER CITY	深灰市	2	3	InternalMapEntries range; first threshold PEWTER_POKECENTER+1=$3B	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$3B	59	MT_MOON_1F	INDOOR_OR_DUNGEON	MountMoonName	MT.MOON	月见山	6	2	InternalMapEntries range; first threshold MT_MOON_B2F+1=$3E	8	MT_MOON_1F (order=8, bit=2)	—	YES	72	MAP_NAME_SIGN_MT_MOON_1F	MT. MOON 1F	labels_ext_a.1bpp	RESOLVED
+$3C	60	MT_MOON_B1F	INDOOR_OR_DUNGEON	MountMoonName	MT.MOON	月见山	6	2	InternalMapEntries range; first threshold MT_MOON_B2F+1=$3E	—	—	—	YES	73	MAP_NAME_SIGN_MT_MOON_B1F	MT. MOON B1F	labels_ext_a.1bpp	RESOLVED
+$3D	61	MT_MOON_B2F	INDOOR_OR_DUNGEON	MountMoonName	MT.MOON	月见山	6	2	InternalMapEntries range; first threshold MT_MOON_B2F+1=$3E	—	—	—	YES	74	MAP_NAME_SIGN_MT_MOON_B2F	MT. MOON B2F	labels_ext_a.1bpp	RESOLVED
+$3E	62	CERULEAN_TRASHED_HOUSE	INDOOR_OR_DUNGEON	CeruleanCityName	CERULEAN CITY	华蓝市	10	2	InternalMapEntries range; first threshold CERULEAN_MART+1=$44	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$3F	63	CERULEAN_TRADE_HOUSE	INDOOR_OR_DUNGEON	CeruleanCityName	CERULEAN CITY	华蓝市	10	2	InternalMapEntries range; first threshold CERULEAN_MART+1=$44	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$40	64	CERULEAN_POKECENTER	INDOOR_OR_DUNGEON	CeruleanCityName	CERULEAN CITY	华蓝市	10	2	InternalMapEntries range; first threshold CERULEAN_MART+1=$44	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$41	65	CERULEAN_GYM	INDOOR_OR_DUNGEON	CeruleanCityName	CERULEAN CITY	华蓝市	10	2	InternalMapEntries range; first threshold CERULEAN_MART+1=$44	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$42	66	BIKE_SHOP	INDOOR_OR_DUNGEON	CeruleanCityName	CERULEAN CITY	华蓝市	10	2	InternalMapEntries range; first threshold CERULEAN_MART+1=$44	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$43	67	CERULEAN_MART	INDOOR_OR_DUNGEON	CeruleanCityName	CERULEAN CITY	华蓝市	10	2	InternalMapEntries range; first threshold CERULEAN_MART+1=$44	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$44	68	MT_MOON_POKECENTER	INDOOR_OR_DUNGEON	Route4Name	ROUTE 4	4号道路	5	2	InternalMapEntries range; first threshold MT_MOON_POKECENTER+1=$45	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$45	69	CERULEAN_TRASHED_HOUSE_COPY	INDOOR_OR_DUNGEON	CeruleanCityName	CERULEAN CITY	华蓝市	10	2	InternalMapEntries range; first threshold CERULEAN_TRASHED_HOUSE_COPY+1=$46	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$46	70	ROUTE_5_GATE	INDOOR_OR_DUNGEON	Route5Name	ROUTE 5	5号道路	10	4	InternalMapEntries range; first threshold DAYCARE+1=$49	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$47	71	UNDERGROUND_PATH_ROUTE_5	INDOOR_OR_DUNGEON	Route5Name	ROUTE 5	5号道路	10	4	InternalMapEntries range; first threshold DAYCARE+1=$49	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$48	72	DAYCARE	INDOOR_OR_DUNGEON	Route5Name	ROUTE 5	5号道路	10	4	InternalMapEntries range; first threshold DAYCARE+1=$49	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$49	73	ROUTE_6_GATE	INDOOR_OR_DUNGEON	Route6Name	ROUTE 6	6号道路	10	6	InternalMapEntries range; first threshold UNDERGROUND_PATH_ROUTE_6_COPY+1=$4C	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$4A	74	UNDERGROUND_PATH_ROUTE_6	INDOOR_OR_DUNGEON	Route6Name	ROUTE 6	6号道路	10	6	InternalMapEntries range; first threshold UNDERGROUND_PATH_ROUTE_6_COPY+1=$4C	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$4B	75	UNDERGROUND_PATH_ROUTE_6_COPY	INDOOR_OR_DUNGEON	Route6Name	ROUTE 6	6号道路	10	6	InternalMapEntries range; first threshold UNDERGROUND_PATH_ROUTE_6_COPY+1=$4C	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$4C	76	ROUTE_7_GATE	INDOOR_OR_DUNGEON	Route7Name	ROUTE 7	7号道路	9	5	InternalMapEntries range; first threshold UNDERGROUND_PATH_ROUTE_7_COPY+1=$4F	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$4D	77	UNDERGROUND_PATH_ROUTE_7	INDOOR_OR_DUNGEON	Route7Name	ROUTE 7	7号道路	9	5	InternalMapEntries range; first threshold UNDERGROUND_PATH_ROUTE_7_COPY+1=$4F	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$4E	78	UNDERGROUND_PATH_ROUTE_7_COPY	INDOOR_OR_DUNGEON	Route7Name	ROUTE 7	7号道路	9	5	InternalMapEntries range; first threshold UNDERGROUND_PATH_ROUTE_7_COPY+1=$4F	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$4F	79	ROUTE_8_GATE	INDOOR_OR_DUNGEON	Route8Name	ROUTE 8	8号道路	11	5	InternalMapEntries range; first threshold UNDERGROUND_PATH_ROUTE_8+1=$51	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$50	80	UNDERGROUND_PATH_ROUTE_8	INDOOR_OR_DUNGEON	Route8Name	ROUTE 8	8号道路	11	5	InternalMapEntries range; first threshold UNDERGROUND_PATH_ROUTE_8+1=$51	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$51	81	ROCK_TUNNEL_POKECENTER	INDOOR_OR_DUNGEON	RockTunnelName	ROCK TUNNEL	岩山隧道	14	3	InternalMapEntries range; first threshold ROCK_TUNNEL_1F+1=$53	21	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$52	82	ROCK_TUNNEL_1F	INDOOR_OR_DUNGEON	RockTunnelName	ROCK TUNNEL	岩山隧道	14	3	InternalMapEntries range; first threshold ROCK_TUNNEL_1F+1=$53	—	ROCK_TUNNEL_1F (order=21, bit=5)	—	YES	75	MAP_NAME_SIGN_ROCK_TUNNEL_1F	ROCK TUNNEL 1F	labels_ext_a.1bpp	RESOLVED
+$53	83	POWER_PLANT	INDOOR_OR_DUNGEON	PowerPlantName	POWER PLANT	无人发电厂	15	4	InternalMapEntries range; first threshold POWER_PLANT+1=$54	23	POWER_PLANT (order=23, bit=12)	—	YES	40	MAP_NAME_SIGN_POWER_PLANT	POWER PLANT	labels.1bpp	RESOLVED
+$54	84	ROUTE_11_GATE_1F	INDOOR_OR_DUNGEON	Route11Name	ROUTE 11	11号道路	13	9	InternalMapEntries range; first threshold ROUTE_11_GATE_2F+1=$57	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$55	85	DIGLETTS_CAVE_ROUTE_11	INDOOR_OR_DUNGEON	DiglettsCaveName	DIGLETT's CAVE	地鼠洞穴	11	8	LoadTownMapEntry special branch	19	DIGLETTS_CAVE_ROUTE_11 (order=19, bit=7)	—	NO/NEUTRAL	—	—	—	—	LOGICAL_ALIAS_SELECTOR
+$56	86	ROUTE_11_GATE_2F	INDOOR_OR_DUNGEON	Route11Name	ROUTE 11	11号道路	13	9	InternalMapEntries range; first threshold ROUTE_11_GATE_2F+1=$57	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$57	87	ROUTE_12_GATE_1F	INDOOR_OR_DUNGEON	Route12Name	ROUTE 12	12号道路	14	7	InternalMapEntries range; first threshold ROUTE_12_GATE_1F+1=$58	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$58	88	BILLS_HOUSE	INDOOR_OR_DUNGEON	SeaCottageName	SEA COTTAGE	海角小屋	12	0	InternalMapEntries range; first threshold BILLS_HOUSE+1=$59	14	BILLS_HOUSE (order=14, bit=4)	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$59	89	VERMILION_POKECENTER	INDOOR_OR_DUNGEON	VermilionCityName	VERMILION CITY	枯叶市	10	9	InternalMapEntries range; first threshold VERMILION_DOCK+1=$5F	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$5A	90	POKEMON_FAN_CLUB	INDOOR_OR_DUNGEON	VermilionCityName	VERMILION CITY	枯叶市	10	9	InternalMapEntries range; first threshold VERMILION_DOCK+1=$5F	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$5B	91	VERMILION_MART	INDOOR_OR_DUNGEON	VermilionCityName	VERMILION CITY	枯叶市	10	9	InternalMapEntries range; first threshold VERMILION_DOCK+1=$5F	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$5C	92	VERMILION_GYM	INDOOR_OR_DUNGEON	VermilionCityName	VERMILION CITY	枯叶市	10	9	InternalMapEntries range; first threshold VERMILION_DOCK+1=$5F	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$5D	93	VERMILION_PIDGEY_HOUSE	INDOOR_OR_DUNGEON	VermilionCityName	VERMILION CITY	枯叶市	10	9	InternalMapEntries range; first threshold VERMILION_DOCK+1=$5F	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$5E	94	VERMILION_DOCK	INDOOR_OR_DUNGEON	VermilionCityName	VERMILION CITY	枯叶市	10	9	InternalMapEntries range; first threshold VERMILION_DOCK+1=$5F	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$5F	95	SS_ANNE_1F	INDOOR_OR_DUNGEON	SSAnneName	S.S.ANNE	圣特安努号	9	10	InternalMapEntries range; first threshold SS_ANNE_B1F_ROOMS+1=$69	18	—	—	YES	100	MAP_NAME_SIGN_SS_ANNE_1F	S.S. ANNE 1F	labels_ext_b.1bpp	RESOLVED
+$60	96	SS_ANNE_2F	INDOOR_OR_DUNGEON	SSAnneName	S.S.ANNE	圣特安努号	9	10	InternalMapEntries range; first threshold SS_ANNE_B1F_ROOMS+1=$69	—	—	—	YES	101	MAP_NAME_SIGN_SS_ANNE_2F	S.S. ANNE 2F	labels_ext_b.1bpp	RESOLVED
+$61	97	SS_ANNE_3F	INDOOR_OR_DUNGEON	SSAnneName	S.S.ANNE	圣特安努号	9	10	InternalMapEntries range; first threshold SS_ANNE_B1F_ROOMS+1=$69	—	—	—	YES	102	MAP_NAME_SIGN_SS_ANNE_3F	S.S. ANNE 3F	labels_ext_b.1bpp	RESOLVED
+$62	98	SS_ANNE_B1F	INDOOR_OR_DUNGEON	SSAnneName	S.S.ANNE	圣特安努号	9	10	InternalMapEntries range; first threshold SS_ANNE_B1F_ROOMS+1=$69	—	—	—	YES	103	MAP_NAME_SIGN_SS_ANNE_B1F	S.S. ANNE B1F	labels_ext_b.1bpp	RESOLVED
+$63	99	SS_ANNE_BOW	INDOOR_OR_DUNGEON	SSAnneName	S.S.ANNE	圣特安努号	9	10	InternalMapEntries range; first threshold SS_ANNE_B1F_ROOMS+1=$69	—	—	—	YES	104	MAP_NAME_SIGN_SS_ANNE_BOW	S.S. ANNE BOW	labels_ext_b.1bpp	RESOLVED
+$64	100	SS_ANNE_KITCHEN	INDOOR_OR_DUNGEON	SSAnneName	S.S.ANNE	圣特安努号	9	10	InternalMapEntries range; first threshold SS_ANNE_B1F_ROOMS+1=$69	—	—	—	YES	105	MAP_NAME_SIGN_SS_ANNE_KITCHEN	S.S. ANNE KITCHEN	labels_ext_b.1bpp	RESOLVED
+$65	101	SS_ANNE_CAPTAINS_ROOM	INDOOR_OR_DUNGEON	SSAnneName	S.S.ANNE	圣特安努号	9	10	InternalMapEntries range; first threshold SS_ANNE_B1F_ROOMS+1=$69	—	—	—	YES	106	MAP_NAME_SIGN_SS_ANNE_CAPTAINS_ROOM	S.S. ANNE CAPTAINS ROOM	labels_ext_b.1bpp	RESOLVED
+$66	102	SS_ANNE_1F_ROOMS	INDOOR_OR_DUNGEON	SSAnneName	S.S.ANNE	圣特安努号	9	10	InternalMapEntries range; first threshold SS_ANNE_B1F_ROOMS+1=$69	—	—	—	YES	100	MAP_NAME_SIGN_SS_ANNE_1F	S.S. ANNE 1F	labels_ext_b.1bpp	RESOLVED
+$67	103	SS_ANNE_2F_ROOMS	INDOOR_OR_DUNGEON	SSAnneName	S.S.ANNE	圣特安努号	9	10	InternalMapEntries range; first threshold SS_ANNE_B1F_ROOMS+1=$69	—	—	—	YES	101	MAP_NAME_SIGN_SS_ANNE_2F	S.S. ANNE 2F	labels_ext_b.1bpp	RESOLVED
+$68	104	SS_ANNE_B1F_ROOMS	INDOOR_OR_DUNGEON	SSAnneName	S.S.ANNE	圣特安努号	9	10	InternalMapEntries range; first threshold SS_ANNE_B1F_ROOMS+1=$69	—	—	—	YES	103	MAP_NAME_SIGN_SS_ANNE_B1F	S.S. ANNE B1F	labels_ext_b.1bpp	RESOLVED
+$69	105	UNUSED_MAP_69	UNUSED	VictoryRoadName	VICTORY ROAD	冠军之路	0	4	InternalMapEntries range; first threshold VICTORY_ROAD_1F+1=$6D	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$6A	106	UNUSED_MAP_6A	UNUSED	VictoryRoadName	VICTORY ROAD	冠军之路	0	4	InternalMapEntries range; first threshold VICTORY_ROAD_1F+1=$6D	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$6B	107	UNUSED_MAP_6B	UNUSED	VictoryRoadName	VICTORY ROAD	冠军之路	0	4	InternalMapEntries range; first threshold VICTORY_ROAD_1F+1=$6D	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$6C	108	VICTORY_ROAD_1F	INDOOR_OR_DUNGEON	VictoryRoadName	VICTORY ROAD	冠军之路	0	4	InternalMapEntries range; first threshold VICTORY_ROAD_1F+1=$6D	—	VICTORY_ROAD_1F (order=50, bit=11)	—	YES	77	MAP_NAME_SIGN_VICTORY_ROAD_1F	VICTORY ROAD 1F	labels_ext_a.1bpp	RESOLVED
+$6D	109	UNUSED_MAP_6D	UNUSED	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold HALL_OF_FAME+1=$77	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$6E	110	UNUSED_MAP_6E	UNUSED	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold HALL_OF_FAME+1=$77	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$6F	111	UNUSED_MAP_6F	UNUSED	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold HALL_OF_FAME+1=$77	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$70	112	UNUSED_MAP_70	UNUSED	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold HALL_OF_FAME+1=$77	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$71	113	LANCES_ROOM	INDOOR_OR_DUNGEON	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold HALL_OF_FAME+1=$77	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$72	114	UNUSED_MAP_72	UNUSED	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold HALL_OF_FAME+1=$77	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$73	115	UNUSED_MAP_73	UNUSED	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold HALL_OF_FAME+1=$77	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$74	116	UNUSED_MAP_74	UNUSED	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold HALL_OF_FAME+1=$77	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$75	117	UNUSED_MAP_75	UNUSED	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold HALL_OF_FAME+1=$77	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$76	118	HALL_OF_FAME	INDOOR_OR_DUNGEON	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold HALL_OF_FAME+1=$77	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$77	119	UNDERGROUND_PATH_NORTH_SOUTH	INDOOR_OR_DUNGEON	UndergroundPathName	UNDERGROUND PATH	地下通道	10	5	InternalMapEntries range; first threshold UNDERGROUND_PATH_NORTH_SOUTH+1=$78	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$78	120	CHAMPIONS_ROOM	INDOOR_OR_DUNGEON	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold CHAMPIONS_ROOM+1=$79	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$79	121	UNDERGROUND_PATH_WEST_EAST	INDOOR_OR_DUNGEON	UndergroundPathName	UNDERGROUND PATH	地下通道	10	5	InternalMapEntries range; first threshold UNDERGROUND_PATH_WEST_EAST+1=$7A	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$7A	122	CELADON_MART_1F	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	YES	88	MAP_NAME_SIGN_CELADON_MART_1F	CELADON MART 1F	labels_ext_b.1bpp	RESOLVED
+$7B	123	CELADON_MART_2F	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	YES	89	MAP_NAME_SIGN_CELADON_MART_2F	CELADON MART 2F	labels_ext_b.1bpp	RESOLVED
+$7C	124	CELADON_MART_3F	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	YES	90	MAP_NAME_SIGN_CELADON_MART_3F	CELADON MART 3F	labels_ext_b.1bpp	RESOLVED
+$7D	125	CELADON_MART_4F	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	YES	91	MAP_NAME_SIGN_CELADON_MART_4F	CELADON MART 4F	labels_ext_b.1bpp	RESOLVED
+$7E	126	CELADON_MART_ROOF	INDOOR_OR_DUNGEON	CeladonMartRoofName	CELADON MART ROOF	百货屋顶（硬编码 CHS 字形）	7	4	LoadTownMapEntry special branch	29	CELADON_MART_ROOF (order=29, bit=6)	—	YES	93	MAP_NAME_SIGN_CELADON_MART_ROOF	CELADON MART ROOF	labels_ext_b.1bpp	LOGICAL_ALIAS_SELECTOR
+$7F	127	CELADON_MART_ELEVATOR	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$80	128	CELADON_MANSION_1F	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	YES	94	MAP_NAME_SIGN_CELADON_MANSION_1F	CELADON MANSION 1F	labels_ext_b.1bpp	RESOLVED
+$81	129	CELADON_MANSION_2F	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	YES	95	MAP_NAME_SIGN_CELADON_MANSION_2F	CELADON MANSION 2F	labels_ext_b.1bpp	RESOLVED
+$82	130	CELADON_MANSION_3F	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	YES	96	MAP_NAME_SIGN_CELADON_MANSION_3F	CELADON MANSION 3F	labels_ext_b.1bpp	RESOLVED
+$83	131	CELADON_MANSION_ROOF	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	YES	97	MAP_NAME_SIGN_CELADON_MANSION_ROOF	CELADON MANSION ROOF	labels_ext_b.1bpp	RESOLVED
+$84	132	CELADON_MANSION_ROOF_HOUSE	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	YES	97	MAP_NAME_SIGN_CELADON_MANSION_ROOF	CELADON MANSION ROOF	labels_ext_b.1bpp	RESOLVED
+$85	133	CELADON_POKECENTER	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$86	134	CELADON_GYM	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$87	135	GAME_CORNER	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	YES	67	MAP_NAME_SIGN_GAME_CORNER	GAME CORNER	labels_ext_a.1bpp	RESOLVED
+$88	136	CELADON_MART_5F	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	YES	92	MAP_NAME_SIGN_CELADON_MART_5F	CELADON MART 5F	labels_ext_b.1bpp	RESOLVED
+$89	137	GAME_CORNER_PRIZE_ROOM	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$8A	138	CELADON_DINER	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$8B	139	CELADON_CHIEF_HOUSE	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$8C	140	CELADON_HOTEL	INDOOR_OR_DUNGEON	CeladonCityName	CELADON CITY	玉虹市	7	5	InternalMapEntries range; first threshold CELADON_HOTEL+1=$8D	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$8D	141	LAVENDER_POKECENTER	INDOOR_OR_DUNGEON	LavenderTownName	LAVENDER TOWN	紫苑镇	14	5	InternalMapEntries range; first threshold LAVENDER_POKECENTER+1=$8E	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$8E	142	POKEMON_TOWER_1F	INDOOR_OR_DUNGEON	PokemonTowerName	#MON TOWER	#塔	15	5	InternalMapEntries range; first threshold POKEMON_TOWER_7F+1=$95	—	—	—	YES	52	MAP_NAME_SIGN_POKEMON_TOWER_1F	POKéMON TOWER 1F	labels_ext_a.1bpp	RESOLVED
+$8F	143	POKEMON_TOWER_2F	INDOOR_OR_DUNGEON	PokemonTowerName	#MON TOWER	#塔	15	5	InternalMapEntries range; first threshold POKEMON_TOWER_7F+1=$95	25	—	—	YES	53	MAP_NAME_SIGN_POKEMON_TOWER_2F	POKéMON TOWER 2F	labels_ext_a.1bpp	RESOLVED
+$90	144	POKEMON_TOWER_3F	INDOOR_OR_DUNGEON	PokemonTowerName	#MON TOWER	#塔	15	5	InternalMapEntries range; first threshold POKEMON_TOWER_7F+1=$95	—	—	—	YES	54	MAP_NAME_SIGN_POKEMON_TOWER_3F	POKéMON TOWER 3F	labels_ext_a.1bpp	RESOLVED
+$91	145	POKEMON_TOWER_4F	INDOOR_OR_DUNGEON	PokemonTowerName	#MON TOWER	#塔	15	5	InternalMapEntries range; first threshold POKEMON_TOWER_7F+1=$95	—	—	—	YES	55	MAP_NAME_SIGN_POKEMON_TOWER_4F	POKéMON TOWER 4F	labels_ext_a.1bpp	RESOLVED
+$92	146	POKEMON_TOWER_5F	INDOOR_OR_DUNGEON	PokemonTowerName	#MON TOWER	#塔	15	5	InternalMapEntries range; first threshold POKEMON_TOWER_7F+1=$95	—	—	—	YES	56	MAP_NAME_SIGN_POKEMON_TOWER_5F	POKéMON TOWER 5F	labels_ext_a.1bpp	RESOLVED
+$93	147	POKEMON_TOWER_6F	INDOOR_OR_DUNGEON	PokemonTowerName	#MON TOWER	#塔	15	5	InternalMapEntries range; first threshold POKEMON_TOWER_7F+1=$95	—	—	—	YES	57	MAP_NAME_SIGN_POKEMON_TOWER_6F	POKéMON TOWER 6F	labels_ext_a.1bpp	RESOLVED
+$94	148	POKEMON_TOWER_7F	INDOOR_OR_DUNGEON	PokemonTowerName	#MON TOWER	#塔	15	5	InternalMapEntries range; first threshold POKEMON_TOWER_7F+1=$95	—	—	—	YES	58	MAP_NAME_SIGN_POKEMON_TOWER_7F	POKéMON TOWER 7F	labels_ext_a.1bpp	RESOLVED
+$95	149	MR_FUJIS_HOUSE	INDOOR_OR_DUNGEON	LavenderTownName	LAVENDER TOWN	紫苑镇	14	5	InternalMapEntries range; first threshold LAVENDER_CUBONE_HOUSE+1=$98	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$96	150	LAVENDER_MART	INDOOR_OR_DUNGEON	LavenderTownName	LAVENDER TOWN	紫苑镇	14	5	InternalMapEntries range; first threshold LAVENDER_CUBONE_HOUSE+1=$98	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$97	151	LAVENDER_CUBONE_HOUSE	INDOOR_OR_DUNGEON	LavenderTownName	LAVENDER TOWN	紫苑镇	14	5	InternalMapEntries range; first threshold LAVENDER_CUBONE_HOUSE+1=$98	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$98	152	FUCHSIA_MART	INDOOR_OR_DUNGEON	FuchsiaCityName	FUCHSIA CITY	浅红市	8	13	InternalMapEntries range; first threshold WARDENS_HOUSE+1=$9C	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$99	153	FUCHSIA_BILLS_GRANDPAS_HOUSE	INDOOR_OR_DUNGEON	FuchsiaCityName	FUCHSIA CITY	浅红市	8	13	InternalMapEntries range; first threshold WARDENS_HOUSE+1=$9C	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$9A	154	FUCHSIA_POKECENTER	INDOOR_OR_DUNGEON	FuchsiaCityName	FUCHSIA CITY	浅红市	8	13	InternalMapEntries range; first threshold WARDENS_HOUSE+1=$9C	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$9B	155	WARDENS_HOUSE	INDOOR_OR_DUNGEON	FuchsiaCityName	FUCHSIA CITY	浅红市	8	13	InternalMapEntries range; first threshold WARDENS_HOUSE+1=$9C	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$9C	156	SAFARI_ZONE_GATE	INDOOR_OR_DUNGEON	SafariZoneName	SAFARI ZONE	狩猎地带	8	12	InternalMapEntries range; first threshold SAFARI_ZONE_GATE+1=$9D	—	SAFARI_ZONE_GATE (order=40, bit=8)	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$9D	157	FUCHSIA_GYM	INDOOR_OR_DUNGEON	FuchsiaCityName	FUCHSIA CITY	浅红市	8	13	InternalMapEntries range; first threshold FUCHSIA_MEETING_ROOM+1=$9F	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$9E	158	FUCHSIA_MEETING_ROOM	INDOOR_OR_DUNGEON	FuchsiaCityName	FUCHSIA CITY	浅红市	8	13	InternalMapEntries range; first threshold FUCHSIA_MEETING_ROOM+1=$9F	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$9F	159	SEAFOAM_ISLANDS_B1F	INDOOR_OR_DUNGEON	SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	5	15	InternalMapEntries range; first threshold SEAFOAM_ISLANDS_B4F+1=$A3	43	—	—	YES	84	MAP_NAME_SIGN_SEAFOAM_ISLANDS_B1F	SEAFOAM ISLANDS B1F	labels_ext_a.1bpp	RESOLVED
+$A0	160	SEAFOAM_ISLANDS_B2F	INDOOR_OR_DUNGEON	SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	5	15	InternalMapEntries range; first threshold SEAFOAM_ISLANDS_B4F+1=$A3	—	—	—	YES	85	MAP_NAME_SIGN_SEAFOAM_ISLANDS_B2F	SEAFOAM ISLANDS B2F	labels_ext_a.1bpp	RESOLVED
+$A1	161	SEAFOAM_ISLANDS_B3F	INDOOR_OR_DUNGEON	SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	5	15	InternalMapEntries range; first threshold SEAFOAM_ISLANDS_B4F+1=$A3	—	—	—	YES	86	MAP_NAME_SIGN_SEAFOAM_ISLANDS_B3F	SEAFOAM ISLANDS B3F	labels_ext_a.1bpp	RESOLVED
+$A2	162	SEAFOAM_ISLANDS_B4F	INDOOR_OR_DUNGEON	SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	5	15	InternalMapEntries range; first threshold SEAFOAM_ISLANDS_B4F+1=$A3	—	—	—	YES	87	MAP_NAME_SIGN_SEAFOAM_ISLANDS_B4F	SEAFOAM ISLANDS B4F	labels_ext_a.1bpp	RESOLVED
+$A3	163	VERMILION_OLD_ROD_HOUSE	INDOOR_OR_DUNGEON	VermilionCityName	VERMILION CITY	枯叶市	10	9	InternalMapEntries range; first threshold VERMILION_OLD_ROD_HOUSE+1=$A4	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$A4	164	FUCHSIA_GOOD_ROD_HOUSE	INDOOR_OR_DUNGEON	FuchsiaCityName	FUCHSIA CITY	浅红市	8	13	InternalMapEntries range; first threshold FUCHSIA_GOOD_ROD_HOUSE+1=$A5	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$A5	165	POKEMON_MANSION_1F	INDOOR_OR_DUNGEON	PokemonMansionName	<PKMN> MANSION	#屋	2	15	InternalMapEntries range; first threshold POKEMON_MANSION_1F+1=$A6	—	—	—	YES	59	MAP_NAME_SIGN_POKEMON_MANSION_1F	POKéMON MANSION 1F	labels_ext_a.1bpp	RESOLVED
+$A6	166	CINNABAR_GYM	INDOOR_OR_DUNGEON	CinnabarIslandName	CINNABAR ISLAND	红莲镇	2	15	InternalMapEntries range; first threshold CINNABAR_MART_COPY+1=$AE	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$A7	167	CINNABAR_LAB	INDOOR_OR_DUNGEON	CinnabarIslandName	CINNABAR ISLAND	红莲镇	2	15	InternalMapEntries range; first threshold CINNABAR_MART_COPY+1=$AE	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$A8	168	CINNABAR_LAB_TRADE_ROOM	INDOOR_OR_DUNGEON	CinnabarIslandName	CINNABAR ISLAND	红莲镇	2	15	InternalMapEntries range; first threshold CINNABAR_MART_COPY+1=$AE	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$A9	169	CINNABAR_LAB_METRONOME_ROOM	INDOOR_OR_DUNGEON	CinnabarIslandName	CINNABAR ISLAND	红莲镇	2	15	InternalMapEntries range; first threshold CINNABAR_MART_COPY+1=$AE	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$AA	170	CINNABAR_LAB_FOSSIL_ROOM	INDOOR_OR_DUNGEON	CinnabarIslandName	CINNABAR ISLAND	红莲镇	2	15	InternalMapEntries range; first threshold CINNABAR_MART_COPY+1=$AE	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$AB	171	CINNABAR_POKECENTER	INDOOR_OR_DUNGEON	CinnabarIslandName	CINNABAR ISLAND	红莲镇	2	15	InternalMapEntries range; first threshold CINNABAR_MART_COPY+1=$AE	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$AC	172	CINNABAR_MART	INDOOR_OR_DUNGEON	CinnabarIslandName	CINNABAR ISLAND	红莲镇	2	15	InternalMapEntries range; first threshold CINNABAR_MART_COPY+1=$AE	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$AD	173	CINNABAR_MART_COPY	INDOOR_OR_DUNGEON	CinnabarIslandName	CINNABAR ISLAND	红莲镇	2	15	InternalMapEntries range; first threshold CINNABAR_MART_COPY+1=$AE	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$AE	174	INDIGO_PLATEAU_LOBBY	INDOOR_OR_DUNGEON	IndigoPlateauName	INDIGO PLATEAU	石英高原	0	2	InternalMapEntries range; first threshold INDIGO_PLATEAU_LOBBY+1=$AF	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$AF	175	COPYCATS_HOUSE_1F	INDOOR_OR_DUNGEON	SaffronCityName	SAFFRON CITY	金黄市	10	5	InternalMapEntries range; first threshold MR_PSYCHICS_HOUSE+1=$B8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$B0	176	COPYCATS_HOUSE_2F	INDOOR_OR_DUNGEON	SaffronCityName	SAFFRON CITY	金黄市	10	5	InternalMapEntries range; first threshold MR_PSYCHICS_HOUSE+1=$B8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$B1	177	FIGHTING_DOJO	INDOOR_OR_DUNGEON	SaffronCityName	SAFFRON CITY	金黄市	10	5	InternalMapEntries range; first threshold MR_PSYCHICS_HOUSE+1=$B8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$B2	178	SAFFRON_GYM	INDOOR_OR_DUNGEON	SaffronCityName	SAFFRON CITY	金黄市	10	5	InternalMapEntries range; first threshold MR_PSYCHICS_HOUSE+1=$B8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$B3	179	SAFFRON_PIDGEY_HOUSE	INDOOR_OR_DUNGEON	SaffronCityName	SAFFRON CITY	金黄市	10	5	InternalMapEntries range; first threshold MR_PSYCHICS_HOUSE+1=$B8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$B4	180	SAFFRON_MART	INDOOR_OR_DUNGEON	SaffronCityName	SAFFRON CITY	金黄市	10	5	InternalMapEntries range; first threshold MR_PSYCHICS_HOUSE+1=$B8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$B5	181	SILPH_CO_1F	INDOOR_OR_DUNGEON	SaffronCityName	SAFFRON CITY	金黄市	10	5	InternalMapEntries range; first threshold MR_PSYCHICS_HOUSE+1=$B8	—	—	—	YES	41	MAP_NAME_SIGN_SILPH_CO_1F	SILPH CO. 1F	labels_ext_a.1bpp	RESOLVED
+$B6	182	SAFFRON_POKECENTER	INDOOR_OR_DUNGEON	SaffronCityName	SAFFRON CITY	金黄市	10	5	InternalMapEntries range; first threshold MR_PSYCHICS_HOUSE+1=$B8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$B7	183	MR_PSYCHICS_HOUSE	INDOOR_OR_DUNGEON	SaffronCityName	SAFFRON CITY	金黄市	10	5	InternalMapEntries range; first threshold MR_PSYCHICS_HOUSE+1=$B8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$B8	184	ROUTE_15_GATE_1F	INDOOR_OR_DUNGEON	Route15Name	ROUTE 15	15号道路	9	13	InternalMapEntries range; first threshold ROUTE_15_GATE_2F+1=$BA	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$B9	185	ROUTE_15_GATE_2F	INDOOR_OR_DUNGEON	Route15Name	ROUTE 15	15号道路	9	13	InternalMapEntries range; first threshold ROUTE_15_GATE_2F+1=$BA	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$BA	186	ROUTE_16_GATE_1F	INDOOR_OR_DUNGEON	Route16Name	ROUTE 16	16号道路	4	5	InternalMapEntries range; first threshold ROUTE_16_FLY_HOUSE+1=$BD	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$BB	187	ROUTE_16_GATE_2F	INDOOR_OR_DUNGEON	Route16Name	ROUTE 16	16号道路	4	5	InternalMapEntries range; first threshold ROUTE_16_FLY_HOUSE+1=$BD	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$BC	188	ROUTE_16_FLY_HOUSE	INDOOR_OR_DUNGEON	Route16Name	ROUTE 16	16号道路	4	5	InternalMapEntries range; first threshold ROUTE_16_FLY_HOUSE+1=$BD	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$BD	189	ROUTE_12_SUPER_ROD_HOUSE	INDOOR_OR_DUNGEON	Route12Name	ROUTE 12	12号道路	14	10	InternalMapEntries range; first threshold ROUTE_12_SUPER_ROD_HOUSE+1=$BE	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$BE	190	ROUTE_18_GATE_1F	INDOOR_OR_DUNGEON	Route18Name	ROUTE 18	18号道路	7	13	InternalMapEntries range; first threshold ROUTE_18_GATE_2F+1=$C0	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$BF	191	ROUTE_18_GATE_2F	INDOOR_OR_DUNGEON	Route18Name	ROUTE 18	18号道路	7	13	InternalMapEntries range; first threshold ROUTE_18_GATE_2F+1=$C0	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$C0	192	SEAFOAM_ISLANDS_1F	INDOOR_OR_DUNGEON	SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	5	15	InternalMapEntries range; first threshold SEAFOAM_ISLANDS_1F+1=$C1	—	SEAFOAM_ISLANDS_1F (order=43, bit=10)	—	YES	83	MAP_NAME_SIGN_SEAFOAM_ISLANDS_1F	SEAFOAM ISLANDS 1F	labels_ext_a.1bpp	RESOLVED
+$C1	193	ROUTE_22_GATE	INDOOR_OR_DUNGEON	Route22Name	ROUTE 22	22号道路	0	7	InternalMapEntries range; first threshold ROUTE_22_GATE+1=$C2	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$C2	194	VICTORY_ROAD_2F	INDOOR_OR_DUNGEON	VictoryRoadName	VICTORY ROAD	冠军之路	0	4	InternalMapEntries range; first threshold VICTORY_ROAD_2F+1=$C3	—	—	—	YES	78	MAP_NAME_SIGN_VICTORY_ROAD_2F	VICTORY ROAD 2F	labels_ext_a.1bpp	RESOLVED
+$C3	195	ROUTE_12_GATE_2F	INDOOR_OR_DUNGEON	Route12Name	ROUTE 12	12号道路	14	7	InternalMapEntries range; first threshold ROUTE_12_GATE_2F+1=$C4	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$C4	196	VERMILION_TRADE_HOUSE	INDOOR_OR_DUNGEON	VermilionCityName	VERMILION CITY	枯叶市	10	9	InternalMapEntries range; first threshold VERMILION_TRADE_HOUSE+1=$C5	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$C5	197	DIGLETTS_CAVE	INDOOR_OR_DUNGEON	DiglettsCaveName	DIGLETT's CAVE	地鼠洞穴	3	4	InternalMapEntries range; first threshold DIGLETTS_CAVE+1=$C6	—	—	—	YES	39	MAP_NAME_SIGN_DIGLETTS_CAVE	DIGLETT's CAVE	labels.1bpp	RESOLVED
+$C6	198	VICTORY_ROAD_3F	INDOOR_OR_DUNGEON	VictoryRoadName	VICTORY ROAD	冠军之路	0	4	InternalMapEntries range; first threshold VICTORY_ROAD_3F+1=$C7	50	—	—	YES	79	MAP_NAME_SIGN_VICTORY_ROAD_3F	VICTORY ROAD 3F	labels_ext_a.1bpp	RESOLVED
+$C7	199	ROCKET_HIDEOUT_B1F	INDOOR_OR_DUNGEON	RocketHQName	ROCKET HQ	火箭队基地	7	5	InternalMapEntries range; first threshold UNUSED_MAP_CE+1=$CF	—	—	—	YES	63	MAP_NAME_SIGN_ROCKET_HIDEOUT_B1F	ROCKET HIDEOUT B1F	labels_ext_a.1bpp	RESOLVED
+$C8	200	ROCKET_HIDEOUT_B2F	INDOOR_OR_DUNGEON	RocketHQName	ROCKET HQ	火箭队基地	7	5	InternalMapEntries range; first threshold UNUSED_MAP_CE+1=$CF	—	—	—	YES	64	MAP_NAME_SIGN_ROCKET_HIDEOUT_B2F	ROCKET HIDEOUT B2F	labels_ext_a.1bpp	RESOLVED
+$C9	201	ROCKET_HIDEOUT_B3F	INDOOR_OR_DUNGEON	RocketHQName	ROCKET HQ	火箭队基地	7	5	InternalMapEntries range; first threshold UNUSED_MAP_CE+1=$CF	—	—	—	YES	65	MAP_NAME_SIGN_ROCKET_HIDEOUT_B3F	ROCKET HIDEOUT B3F	labels_ext_a.1bpp	RESOLVED
+$CA	202	ROCKET_HIDEOUT_B4F	INDOOR_OR_DUNGEON	RocketHQName	ROCKET HQ	火箭队基地	7	5	InternalMapEntries range; first threshold UNUSED_MAP_CE+1=$CF	—	—	—	YES	66	MAP_NAME_SIGN_ROCKET_HIDEOUT_B4F	ROCKET HIDEOUT B4F	labels_ext_a.1bpp	RESOLVED
+$CB	203	ROCKET_HIDEOUT_ELEVATOR	INDOOR_OR_DUNGEON	RocketHQName	ROCKET HQ	火箭队基地	7	5	InternalMapEntries range; first threshold UNUSED_MAP_CE+1=$CF	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$CC	204	UNUSED_MAP_CC	UNUSED	RocketHQName	ROCKET HQ	火箭队基地	7	5	InternalMapEntries range; first threshold UNUSED_MAP_CE+1=$CF	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$CD	205	UNUSED_MAP_CD	UNUSED	RocketHQName	ROCKET HQ	火箭队基地	7	5	InternalMapEntries range; first threshold UNUSED_MAP_CE+1=$CF	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$CE	206	UNUSED_MAP_CE	UNUSED	RocketHQName	ROCKET HQ	火箭队基地	7	5	InternalMapEntries range; first threshold UNUSED_MAP_CE+1=$CF	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$CF	207	SILPH_CO_2F	INDOOR_OR_DUNGEON	SilphCoName	SILPH CO.	西尔佛公司	10	5	InternalMapEntries range; first threshold SILPH_CO_8F+1=$D6	—	—	—	YES	42	MAP_NAME_SIGN_SILPH_CO_2F	SILPH CO. 2F	labels_ext_a.1bpp	RESOLVED
+$D0	208	SILPH_CO_3F	INDOOR_OR_DUNGEON	SilphCoName	SILPH CO.	西尔佛公司	10	5	InternalMapEntries range; first threshold SILPH_CO_8F+1=$D6	—	—	—	YES	43	MAP_NAME_SIGN_SILPH_CO_3F	SILPH CO. 3F	labels_ext_a.1bpp	RESOLVED
+$D1	209	SILPH_CO_4F	INDOOR_OR_DUNGEON	SilphCoName	SILPH CO.	西尔佛公司	10	5	InternalMapEntries range; first threshold SILPH_CO_8F+1=$D6	—	—	—	YES	44	MAP_NAME_SIGN_SILPH_CO_4F	SILPH CO. 4F	labels_ext_a.1bpp	RESOLVED
+$D2	210	SILPH_CO_5F	INDOOR_OR_DUNGEON	SilphCoName	SILPH CO.	西尔佛公司	10	5	InternalMapEntries range; first threshold SILPH_CO_8F+1=$D6	—	—	—	YES	45	MAP_NAME_SIGN_SILPH_CO_5F	SILPH CO. 5F	labels_ext_a.1bpp	RESOLVED
+$D3	211	SILPH_CO_6F	INDOOR_OR_DUNGEON	SilphCoName	SILPH CO.	西尔佛公司	10	5	InternalMapEntries range; first threshold SILPH_CO_8F+1=$D6	—	—	—	YES	46	MAP_NAME_SIGN_SILPH_CO_6F	SILPH CO. 6F	labels_ext_a.1bpp	RESOLVED
+$D4	212	SILPH_CO_7F	INDOOR_OR_DUNGEON	SilphCoName	SILPH CO.	西尔佛公司	10	5	InternalMapEntries range; first threshold SILPH_CO_8F+1=$D6	—	—	—	YES	47	MAP_NAME_SIGN_SILPH_CO_7F	SILPH CO. 7F	labels_ext_a.1bpp	RESOLVED
+$D5	213	SILPH_CO_8F	INDOOR_OR_DUNGEON	SilphCoName	SILPH CO.	西尔佛公司	10	5	InternalMapEntries range; first threshold SILPH_CO_8F+1=$D6	—	—	—	YES	48	MAP_NAME_SIGN_SILPH_CO_8F	SILPH CO. 8F	labels_ext_a.1bpp	RESOLVED
+$D6	214	POKEMON_MANSION_2F	INDOOR_OR_DUNGEON	PokemonMansionName	<PKMN> MANSION	#屋	2	15	InternalMapEntries range; first threshold POKEMON_MANSION_B1F+1=$D9	—	—	—	YES	60	MAP_NAME_SIGN_POKEMON_MANSION_2F	POKéMON MANSION 2F	labels_ext_a.1bpp	RESOLVED
+$D7	215	POKEMON_MANSION_3F	INDOOR_OR_DUNGEON	PokemonMansionName	<PKMN> MANSION	#屋	2	15	InternalMapEntries range; first threshold POKEMON_MANSION_B1F+1=$D9	—	—	—	YES	61	MAP_NAME_SIGN_POKEMON_MANSION_3F	POKéMON MANSION 3F	labels_ext_a.1bpp	RESOLVED
+$D8	216	POKEMON_MANSION_B1F	INDOOR_OR_DUNGEON	PokemonMansionName	<PKMN> MANSION	#屋	2	15	InternalMapEntries range; first threshold POKEMON_MANSION_B1F+1=$D9	—	—	—	YES	62	MAP_NAME_SIGN_POKEMON_MANSION_B1F	POKéMON MANSION B1F	labels_ext_a.1bpp	RESOLVED
+$D9	217	SAFARI_ZONE_EAST	INDOOR_OR_DUNGEON	SafariZoneName	SAFARI ZONE	狩猎地带	8	12	InternalMapEntries range; first threshold SAFARI_ZONE_NORTH_REST_HOUSE+1=$E2	40	—	—	YES	69	MAP_NAME_SIGN_SAFARI_ZONE_EAST	SAFARI ZONE EAST	labels_ext_a.1bpp	RESOLVED
+$DA	218	SAFARI_ZONE_NORTH	INDOOR_OR_DUNGEON	SafariZoneName	SAFARI ZONE	狩猎地带	8	12	InternalMapEntries range; first threshold SAFARI_ZONE_NORTH_REST_HOUSE+1=$E2	—	—	—	YES	70	MAP_NAME_SIGN_SAFARI_ZONE_NORTH	SAFARI ZONE NORTH	labels_ext_a.1bpp	RESOLVED
+$DB	219	SAFARI_ZONE_WEST	INDOOR_OR_DUNGEON	SafariZoneName	SAFARI ZONE	狩猎地带	8	12	InternalMapEntries range; first threshold SAFARI_ZONE_NORTH_REST_HOUSE+1=$E2	—	—	—	YES	71	MAP_NAME_SIGN_SAFARI_ZONE_WEST	SAFARI ZONE WEST	labels_ext_a.1bpp	RESOLVED
+$DC	220	SAFARI_ZONE_CENTER	INDOOR_OR_DUNGEON	SafariZoneName	SAFARI ZONE	狩猎地带	8	12	InternalMapEntries range; first threshold SAFARI_ZONE_NORTH_REST_HOUSE+1=$E2	—	—	—	YES	68	MAP_NAME_SIGN_SAFARI_ZONE_CENTER	SAFARI ZONE CENTER	labels_ext_a.1bpp	RESOLVED
+$DD	221	SAFARI_ZONE_CENTER_REST_HOUSE	INDOOR_OR_DUNGEON	SafariZoneName	SAFARI ZONE	狩猎地带	8	12	InternalMapEntries range; first threshold SAFARI_ZONE_NORTH_REST_HOUSE+1=$E2	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$DE	222	SAFARI_ZONE_SECRET_HOUSE	INDOOR_OR_DUNGEON	SafariZoneName	SAFARI ZONE	狩猎地带	8	12	InternalMapEntries range; first threshold SAFARI_ZONE_NORTH_REST_HOUSE+1=$E2	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$DF	223	SAFARI_ZONE_WEST_REST_HOUSE	INDOOR_OR_DUNGEON	SafariZoneName	SAFARI ZONE	狩猎地带	8	12	InternalMapEntries range; first threshold SAFARI_ZONE_NORTH_REST_HOUSE+1=$E2	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$E0	224	SAFARI_ZONE_EAST_REST_HOUSE	INDOOR_OR_DUNGEON	SafariZoneName	SAFARI ZONE	狩猎地带	8	12	InternalMapEntries range; first threshold SAFARI_ZONE_NORTH_REST_HOUSE+1=$E2	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$E1	225	SAFARI_ZONE_NORTH_REST_HOUSE	INDOOR_OR_DUNGEON	SafariZoneName	SAFARI ZONE	狩猎地带	8	12	InternalMapEntries range; first threshold SAFARI_ZONE_NORTH_REST_HOUSE+1=$E2	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$E2	226	CERULEAN_CAVE_2F	INDOOR_OR_DUNGEON	CeruleanCaveName	CERULEAN CAVE	华蓝洞窟	9	1	InternalMapEntries range; first threshold CERULEAN_CAVE_1F+1=$E5	—	—	—	YES	81	MAP_NAME_SIGN_CERULEAN_CAVE_2F	CERULEAN CAVE 2F	labels_ext_a.1bpp	RESOLVED
+$E3	227	CERULEAN_CAVE_B1F	INDOOR_OR_DUNGEON	CeruleanCaveName	CERULEAN CAVE	华蓝洞窟	9	1	InternalMapEntries range; first threshold CERULEAN_CAVE_1F+1=$E5	—	—	—	YES	82	MAP_NAME_SIGN_CERULEAN_CAVE_B1F	CERULEAN CAVE B1F	labels_ext_a.1bpp	RESOLVED
+$E4	228	CERULEAN_CAVE_1F	INDOOR_OR_DUNGEON	CeruleanCaveName	CERULEAN CAVE	华蓝洞窟	9	1	InternalMapEntries range; first threshold CERULEAN_CAVE_1F+1=$E5	10	CERULEAN_CAVE_1F (order=10, bit=3)	—	YES	80	MAP_NAME_SIGN_CERULEAN_CAVE_1F	CERULEAN CAVE 1F	labels_ext_a.1bpp	RESOLVED
+$E5	229	NAME_RATERS_HOUSE	INDOOR_OR_DUNGEON	LavenderTownName	LAVENDER TOWN	紫苑镇	14	5	InternalMapEntries range; first threshold NAME_RATERS_HOUSE+1=$E6	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$E6	230	CERULEAN_BADGE_HOUSE	INDOOR_OR_DUNGEON	CeruleanCityName	CERULEAN CITY	华蓝市	10	2	InternalMapEntries range; first threshold CERULEAN_BADGE_HOUSE+1=$E7	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$E7	231	UNUSED_MAP_E7	UNUSED	RockTunnelName	ROCK TUNNEL	岩山隧道	14	3	InternalMapEntries range; first threshold ROCK_TUNNEL_B1F+1=$E9	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$E8	232	ROCK_TUNNEL_B1F	INDOOR_OR_DUNGEON	RockTunnelName	ROCK TUNNEL	岩山隧道	14	3	InternalMapEntries range; first threshold ROCK_TUNNEL_B1F+1=$E9	—	—	—	YES	76	MAP_NAME_SIGN_ROCK_TUNNEL_B1F	ROCK TUNNEL B1F	labels_ext_a.1bpp	RESOLVED
+$E9	233	SILPH_CO_9F	INDOOR_OR_DUNGEON	SilphCoName	SILPH CO.	西尔佛公司	10	5	InternalMapEntries range; first threshold SILPH_CO_ELEVATOR+1=$ED	—	—	—	YES	49	MAP_NAME_SIGN_SILPH_CO_9F	SILPH CO. 9F	labels_ext_a.1bpp	RESOLVED
+$EA	234	SILPH_CO_10F	INDOOR_OR_DUNGEON	SilphCoName	SILPH CO.	西尔佛公司	10	5	InternalMapEntries range; first threshold SILPH_CO_ELEVATOR+1=$ED	—	—	—	YES	50	MAP_NAME_SIGN_SILPH_CO_10F	SILPH CO. 10F	labels_ext_a.1bpp	RESOLVED
+$EB	235	SILPH_CO_11F	INDOOR_OR_DUNGEON	SilphCoName	SILPH CO.	西尔佛公司	10	5	InternalMapEntries range; first threshold SILPH_CO_ELEVATOR+1=$ED	—	—	—	YES	51	MAP_NAME_SIGN_SILPH_CO_11F	SILPH CO. 11F	labels_ext_a.1bpp	RESOLVED
+$EC	236	SILPH_CO_ELEVATOR	INDOOR_OR_DUNGEON	SilphCoName	SILPH CO.	西尔佛公司	10	5	InternalMapEntries range; first threshold SILPH_CO_ELEVATOR+1=$ED	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$ED	237	UNUSED_MAP_ED	UNUSED	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold AGATHAS_ROOM+1=$F8	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$EE	238	UNUSED_MAP_EE	UNUSED	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold AGATHAS_ROOM+1=$F8	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$EF	239	TRADE_CENTER	INDOOR_OR_DUNGEON	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold AGATHAS_ROOM+1=$F8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$F0	240	COLOSSEUM	INDOOR_OR_DUNGEON	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold AGATHAS_ROOM+1=$F8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$F1	241	UNUSED_MAP_F1	UNUSED	SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	4	14	LoadTownMapEntry special branch	44	—	—	NO/NEUTRAL	—	—	—	—	LOGICAL_ALIAS_SELECTOR
+$F2	242	UNUSED_MAP_F2	UNUSED	Route20Name	SEA ROUTE 20	20号水道	3	15	LoadTownMapEntry special branch	45	—	—	NO/NEUTRAL	—	—	—	—	LOGICAL_ALIAS_SELECTOR
+$F3	243	UNUSED_MAP_F3	UNUSED	Route19Name	SEA ROUTE 19	19号水道	6	15	LoadTownMapEntry special branch	42	—	—	NO/NEUTRAL	—	—	—	—	LOGICAL_ALIAS_SELECTOR
+$F4	244	UNUSED_MAP_F4	UNUSED	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold AGATHAS_ROOM+1=$F8	—	—	—	NO/NEUTRAL	—	—	—	—	UNUSED_MAP_FALLTHROUGH
+$F5	245	LORELEIS_ROOM	INDOOR_OR_DUNGEON	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold AGATHAS_ROOM+1=$F8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$F6	246	BRUNOS_ROOM	INDOOR_OR_DUNGEON	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold AGATHAS_ROOM+1=$F8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED
+$F7	247	AGATHAS_ROOM	INDOOR_OR_DUNGEON	PokemonLeagueName	#MON LEAGUE	#联盟	0	2	InternalMapEntries range; first threshold AGATHAS_ROOM+1=$F8	—	—	—	NO/NEUTRAL	—	—	—	—	RESOLVED

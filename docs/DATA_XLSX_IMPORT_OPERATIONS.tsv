@@ -1,0 +1,952 @@
+sheet	excel_row	target_file	build_version_header	build_status	operation_type	replacee	replacer	new_replacee_col4	condition_col5	audit_result	note
+PM	2	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RHYDON@@@@"""	钻角犀兽@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	3	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""KANGASKHAN"""	袋兽@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	4	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NIDORAN♂@@"""	尼多朗@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	5	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CLEFAIRY@@"""	皮皮@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	6	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SPEAROW@@@"""	烈雀@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	7	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VOLTORB@@@"""	霹雳电球@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	8	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NIDOKING@@"""	尼多王@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	9	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SLOWBRO@@@"""	呆壳兽@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	10	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""IVYSAUR@@@"""	妙蛙草@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	11	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EXEGGUTOR@"""	椰蛋树@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	12	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LICKITUNG@"""	大舌头@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	13	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EXEGGCUTE@"""	蛋蛋@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	14	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GRIMER@@@@"""	臭泥@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	15	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GENGAR@@@@"""	耿鬼@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	16	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NIDORAN♀@@"""	尼多兰@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	17	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NIDOQUEEN@"""	尼多后@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	18	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CUBONE@@@@"""	卡拉卡拉@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	19	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RHYHORN@@@"""	独角犀牛@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	20	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LAPRAS@@@@"""	拉普拉斯@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	21	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ARCANINE@@"""	风速狗@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	22	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MEW@@@@@@@"""	梦幻@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	23	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GYARADOS@@"""	暴鲤龙@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	24	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SHELLDER@@"""	大舌贝@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	25	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TENTACOOL@"""	玛瑙水母@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	26	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GASTLY@@@@"""	鬼斯@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	27	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SCYTHER@@@"""	飞天螳螂@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	28	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STARYU@@@@"""	海星星@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	29	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BLASTOISE@"""	水箭龟@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	30	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PINSIR@@@@"""	凯罗斯@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	31	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TANGELA@@@"""	蔓藤怪@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	32	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	33	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	34	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GROWLITHE@"""	卡蒂狗@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	35	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ONIX@@@@@@"""	大岩蛇@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	36	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FEAROW@@@@"""	大嘴雀@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	37	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PIDGEY@@@@"""	波波@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	38	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SLOWPOKE@@"""	呆呆兽@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	39	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""KADABRA@@@"""	勇基拉@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	40	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GRAVELER@@"""	隆隆石@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	41	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CHANSEY@@@"""	吉利蛋@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	42	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MACHOKE@@@"""	豪力@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	43	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MR.MIME@@@"""	魔墙人偶@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	44	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HITMONLEE@"""	飞腿郎@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	45	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HITMONCHAN"""	快拳郎@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	46	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ARBOK@@@@@"""	阿柏怪@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	47	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PARASECT@@"""	派拉斯特@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	48	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PSYDUCK@@@"""	可达鸭@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	49	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DROWZEE@@@"""	催眠貘@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	50	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GOLEM@@@@@"""	隆隆岩@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	51	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	52	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MAGMAR@@@@"""	鸭嘴火兽@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	53	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	54	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ELECTABUZZ"""	电击兽@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	55	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MAGNETON@@"""	三合一磁怪			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	56	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""KOFFING@@@"""	瓦斯弹@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	57	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	58	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MANKEY@@@@"""	猴怪@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	59	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SEEL@@@@@@"""	小海狮@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	60	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DIGLETT@@@"""	地鼠@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	61	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TAUROS@@@@"""	肯泰罗@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	62	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	63	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	64	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	65	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FARFETCH'D"""	大葱鸭@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	66	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VENONAT@@@"""	毛球@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	67	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DRAGONITE@"""	快龙@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	68	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	69	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	70	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	71	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DODUO@@@@@"""	嘟嘟@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	72	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POLIWAG@@@"""	蚊香蝌蚪@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	73	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JYNX@@@@@@"""	迷唇姐@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	74	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MOLTRES@@@"""	火焰鸟@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	75	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ARTICUNO@@"""	急冻鸟@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	76	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ZAPDOS@@@@"""	闪电鸟@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	77	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DITTO@@@@@"""	百变怪@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	78	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MEOWTH@@@@"""	喵喵@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	79	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""KRABBY@@@@"""	大钳蟹@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	80	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	81	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	82	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	83	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VULPIX@@@@"""	六尾@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	84	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NINETALES@"""	九尾@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	85	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PIKACHU@@@"""	皮卡丘@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	86	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RAICHU@@@@"""	雷丘@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	87	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	88	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	89	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DRATINI@@@"""	迷你龙@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	90	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DRAGONAIR@"""	哈克龙@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	91	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""KABUTO@@@@"""	化石盔@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	92	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""KABUTOPS@@"""	镰刀盔@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	93	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HORSEA@@@@"""	墨海马@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	94	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SEADRA@@@@"""	海刺龙@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	95	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	96	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	97	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SANDSHREW@"""	穿山鼠@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	98	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SANDSLASH@"""	穿山王@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	99	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OMANYTE@@@"""	菊石兽@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	100	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OMASTAR@@@"""	多刺菊石兽			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	101	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JIGGLYPUFF"""	胖丁@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	102	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WIGGLYTUFF"""	胖可丁@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	103	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EEVEE@@@@@"""	伊布@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	104	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FLAREON@@@"""	火伊布@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	105	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JOLTEON@@@"""	雷伊布@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	106	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VAPOREON@@"""	水伊布@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	107	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MACHOP@@@@"""	腕力@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	108	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ZUBAT@@@@@"""	超音蝠@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	109	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EKANS@@@@@"""	阿柏蛇@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	110	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PARAS@@@@@"""	派拉斯@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	111	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POLIWHIRL@"""	蚊香君@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	112	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POLIWRATH@"""	蚊香泳士@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	113	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WEEDLE@@@@"""	独角虫@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	114	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""KAKUNA@@@@"""	铁壳蛹@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	115	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BEEDRILL@@"""	大针蜂@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	116	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	117	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DODRIO@@@@"""	嘟嘟利@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	118	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PRIMEAPE@@"""	火暴猴@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	119	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DUGTRIO@@@"""	三地鼠@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	120	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VENOMOTH@@"""	摩鲁蛾@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	121	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DEWGONG@@@"""	白海狮@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	122	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	123	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	124	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CATERPIE@@"""	绿毛虫@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	125	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""METAPOD@@@"""	铁甲蛹@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	126	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BUTTERFREE"""	巴大蝶@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	127	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MACHAMP@@@"""	怪力@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	128	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	129	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GOLDUCK@@@"""	哥达鸭@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	130	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HYPNO@@@@@"""	引梦貘人@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	131	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GOLBAT@@@@"""	大嘴蝠@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	132	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MEWTWO@@@@"""	超梦@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	133	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SNORLAX@@@"""	卡比兽@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	134	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MAGIKARP@@"""	鲤鱼王@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	135	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	136	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	137	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MUK@@@@@@@"""	臭臭泥@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	138	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	139	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""KINGLER@@@"""	巨钳蟹@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	140	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CLOYSTER@@"""	刺甲贝@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	141	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	142	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ELECTRODE@"""	顽皮雷弹@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	143	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CLEFABLE@@"""	皮可西@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	144	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WEEZING@@@"""	双弹瓦斯@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	145	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PERSIAN@@@"""	猫老大@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	146	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MAROWAK@@@"""	嘎啦嘎啦@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	147	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	148	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HAUNTER@@@"""	鬼斯通@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	149	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ABRA@@@@@@"""	凯西@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	150	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ALAKAZAM@@"""	胡地@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	151	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PIDGEOTTO@"""	比比鸟@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	152	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PIDGEOT@@@"""	大比鸟@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	153	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STARMIE@@@"""	宝石海星@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	154	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BULBASAUR@"""	妙蛙种子@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	155	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VENUSAUR@@"""	妙蛙花@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	156	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TENTACRUEL"""	毒刺水母@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	157	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	158	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GOLDEEN@@@"""	角金鱼@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	159	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SEAKING@@@"""	金鱼王@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	160	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	161	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	162	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	163	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	164	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PONYTA@@@@"""	小火马@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	165	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RAPIDASH@@"""	烈焰马@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	166	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RATTATA@@@"""	小拉达@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	167	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RATICATE@@"""	拉达@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	168	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NIDORINO@@"""	尼多力诺@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	169	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NIDORINA@@"""	尼多娜@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	170	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GEODUDE@@@"""	小拳石@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	171	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PORYGON@@@"""	多边兽@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	172	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""AERODACTYL"""	化石翼龙@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	173	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	174	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MAGNEMITE@"""	小磁怪@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	175	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	176	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	177	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CHARMANDER"""	小火龙@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	178	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SQUIRTLE@@"""	杰尼龟@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	179	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CHARMELEON"""	火恐龙@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	180	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WARTORTLE@"""	卡咪龟@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	181	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CHARIZARD@"""	喷火龙@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	182	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	183	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	184	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	幽灵@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	185	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISSINGNO."""	缺号@@@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	186	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ODDISH@@@@"""	走路草@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	187	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GLOOM@@@@@"""	臭臭花@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	188	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VILEPLUME@"""	霸王花@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	189	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BELLSPROUT"""	喇叭芽@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	190	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WEEPINBELL"""	口呆花@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	191	data/pokemon/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VICTREEBEL"""	大食花@@@@			SEPARATE_NAMES_OPTION	由 wENGNameMark/Names 选项控制，不随 LANGUAGE 自动切换
+PM	193	engine/events/hidden_objects/bills_house_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EEVEE"""	伊布			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PM	194	engine/events/hidden_objects/bills_house_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FLAREON"""	火伊布			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PM	195	engine/events/hidden_objects/bills_house_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JOLTEON"""	雷伊布			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PM	196	engine/events/hidden_objects/bills_house_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VAPOREON"""	水伊布			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PM	197	engine/events/hidden_objects/bills_house_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CANCEL@"""	不观看@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	2	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MASTER BALL"""	大师球			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	3	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ULTRA BALL"""	高级球			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	4	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GREAT BALL"""	超级球			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	5	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POKé BALL"""	精灵球			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	6	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TOWN MAP"""	城镇地图			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	7	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BICYCLE"""	自行车			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	8	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""?????"""	?????			DUPLICATE_KEY_REVIEW	重复原文键；需确认所有出现位置应使用同一译文
+Items	9	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SAFARI BALL"""	狩猎球			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	10	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POKéDEX"""	#图鉴			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	11	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MOON STONE"""	月之石			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	12	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ANTIDOTE"""	解毒药			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	13	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BURN HEAL"""	灼伤药			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	14	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ICE HEAL"""	解冻药			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	15	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""AWAKENING"""	解眠药			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	16	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PARLYZ HEAL"""	解麻药			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	17	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FULL RESTORE"""	全复药			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	18	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MAX POTION"""	全满药			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	19	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HYPER POTION"""	厉害伤药			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	20	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SUPER POTION"""	好伤药			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	21	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POTION"""	伤药			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	22	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BOULDERBADGE"""	灰色徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	23	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CASCADEBADGE"""	蓝色徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	24	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""THUNDERBADGE"""	橙色徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	25	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RAINBOWBADGE"""	彩虹徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	26	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SOULBADGE"""	粉红徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	27	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MARSHBADGE"""	金色徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	28	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VOLCANOBADGE"""	深红徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	29	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EARTHBADGE"""	绿色徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	30	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ESCAPE ROPE"""	离洞绳			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	31	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""REPEL"""	除虫喷雾			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	32	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OLD AMBER"""	秘密琥珀			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	33	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FIRE STONE"""	火之石			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	34	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""THUNDERSTONE"""	雷之石			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	35	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WATER STONE"""	水之石			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	36	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HP UP"""	ñ增强剂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	37	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PROTEIN"""	攻击增强剂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	38	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""IRON"""	防御增强剂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	39	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CARBOS"""	速度增强剂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	40	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CALCIUM"""	特殊增强剂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	41	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RARE CANDY"""	神奇糖果			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	42	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DOME FOSSIL"""	甲壳化石			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	43	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HELIX FOSSIL"""	贝壳化石			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	44	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SECRET KEY"""	秘密钥匙			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	45	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""?????"""	?????			DUPLICATE_KEY_REVIEW	重复原文键；需确认所有出现位置应使用同一译文
+Items	46	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BIKE VOUCHER"""	兑换券			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	47	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""X ACCURACY"""	命中强化			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	48	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LEAF STONE"""	叶之石			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	49	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CARD KEY"""	钥匙卡			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	50	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NUGGET"""	金珠			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	51	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PP UP"""	%提升剂			DUPLICATE_KEY_REVIEW	重复原文键；需确认所有出现位置应使用同一译文
+Items	52	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POKé DOLL"""	皮皮玩偶			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	53	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FULL HEAL"""	万灵药			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	54	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""REVIVE"""	活力碎片			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	55	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MAX REVIVE"""	活力块			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	56	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GUARD SPEC."""	能力防守			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	57	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SUPER REPEL"""	白银喷雾			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	58	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MAX REPEL"""	黄金喷雾			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	59	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DIRE HIT"""	要害攻击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	60	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""COIN"""	代币			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	61	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FRESH WATER"""	美味之水			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	62	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SODA POP"""	劲爽汽水			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	63	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LEMONADE"""	果汁牛奶			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	64	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""S.S.TICKET"""	船票			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	65	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GOLD TEETH"""	金假牙			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	66	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""X ATTACK"""	力量强化			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	67	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""X DEFEND"""	防御强化			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	68	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""X SPEED"""	速度强化			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	69	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""X SPECIAL"""	特殊强化			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	70	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""COIN CASE"""	代币盒			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	71	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OAK's PARCEL"""	包裹			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	72	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ITEMFINDER"""	探宝器			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	73	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SILPH SCOPE"""	西尔佛检视镜			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	74	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POKé FLUTE"""	#之笛			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	75	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LIFT KEY"""	电梯钥匙			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	76	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EXP.ALL"""	学习装置			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	77	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OLD ROD"""	破旧钓竿			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	78	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GOOD ROD"""	好钓竿			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	79	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SUPER ROD"""	厉害钓竿			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	80	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PP UP"""	%提升剂			DUPLICATE_KEY_REVIEW	重复原文键；需确认所有出现位置应使用同一译文
+Items	81	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ETHER"""	%单项小补剂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	82	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MAX ETHER"""	%单项全补剂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	83	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ELIXER"""	%多项小补剂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	84	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MAX ELIXER"""	%多项全补剂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	85	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""B2F"""	地下2楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	86	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""B1F"""	地下1楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	87	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""1F"""	1楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	88	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""2F"""	2楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	89	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""3F"""	3楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	90	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""4F"""	4楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	91	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""5F"""	5楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	92	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""6F"""	6楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	93	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""7F"""	7楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	94	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""8F"""	8楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	95	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""9F"""	9楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	96	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""10F"""	10楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	97	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""11F"""	11楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	98	data/items/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""B4F"""	地下4楼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	99	data/items/names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	li 		db 		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Items	100	data/items/names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	assert_list_length NUM_ITEMS + NUM_FLOORS		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Items	101	data/items/names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	list_start ItemNames		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Items	102	data/items/names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	assert_list_length NUM_ITEMS		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Items	104	scripts/Route23.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EARTHBADGE@"""	绿色徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	105	scripts/Route23.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VOLCANOBADGE@"""	深红徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	106	scripts/Route23.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MARSHBADGE@"""	金色徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	107	scripts/Route23.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SOULBADGE@"""	粉红徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	108	scripts/Route23.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RAINBOWBADGE@"""	彩虹徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	109	scripts/Route23.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""THUNDERBADGE@"""	橙色徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Items	110	scripts/Route23.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CASCADEBADGE@"""	蓝色徽章			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	2	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POUND"""	拍击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	3	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""KARATE CHOP"""	空手劈			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	4	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DOUBLESLAP"""	连环巴掌			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	5	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""COMET PUNCH"""	连续拳			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	6	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MEGA PUNCH"""	百万吨重拳			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	7	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PAY DAY"""	聚宝功			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	8	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FIRE PUNCH"""	火焰拳			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	9	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ICE PUNCH"""	冰冻拳			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	10	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""THUNDERPUNCH"""	雷电拳			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	11	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SCRATCH"""	抓			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	12	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VICEGRIP"""	夹住			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	13	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GUILLOTINE"""	断头钳			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	14	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RAZOR WIND"""	旋风刀			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	15	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SWORDS DANCE"""	剑舞			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	16	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CUT"""	居合斩			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	17	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GUST"""	起风			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	18	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WING ATTACK"""	翅膀攻击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	19	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WHIRLWIND"""	吹飞			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	20	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FLY"""	飞翔			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	21	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BIND"""	绑紧			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	22	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SLAM"""	摔打			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	23	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VINE WHIP"""	藤鞭			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	24	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STOMP"""	踩踏			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	25	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DOUBLE KICK"""	二连踢			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	26	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MEGA KICK"""	百万吨重踢			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	27	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JUMP KICK"""	飞踢			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	28	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROLLING KICK"""	回旋踢			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	29	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SAND-ATTACK"""	泼沙			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	30	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HEADBUTT"""	头锤			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	31	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HORN ATTACK"""	角撞			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	32	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FURY ATTACK"""	乱击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	33	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HORN DRILL"""	角钻			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	34	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TACKLE"""	撞击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	35	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BODY SLAM"""	泰山压顶			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	36	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WRAP"""	紧束			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	37	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TAKE DOWN"""	猛撞			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	38	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""THRASH"""	大闹一番			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	39	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DOUBLE-EDGE"""	舍身冲撞			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	40	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TAIL WHIP"""	摇尾巴			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	41	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POISON STING"""	毒针			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	42	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TWINEEDLE"""	双针			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	43	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PIN MISSILE"""	飞弹针			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	44	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LEER"""	瞪眼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	45	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BITE"""	咬住			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	46	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GROWL"""	叫声			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	47	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROAR"""	吼叫			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	48	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SING"""	唱歌			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	49	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SUPERSONIC"""	超音波			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	50	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SONICBOOM"""	音爆			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	51	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DISABLE"""	定身法			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	52	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ACID"""	溶解液			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	53	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EMBER"""	火花			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	54	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FLAMETHROWER"""	喷射火焰			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	55	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MIST"""	白雾			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	56	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WATER GUN"""	水枪			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	57	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HYDRO PUMP"""	水炮			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	58	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SURF"""	冲浪			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	59	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ICE BEAM"""	冰冻光束			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	60	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BLIZZARD"""	暴风雪			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	61	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PSYBEAM"""	幻象光线			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	62	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BUBBLEBEAM"""	泡沫光线			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	63	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""AURORA BEAM"""	极光束			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	64	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HYPER BEAM"""	破坏光线			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	65	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PECK"""	啄			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	66	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DRILL PECK"""	啄钻			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	67	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SUBMISSION"""	地狱翻滚			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	68	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LOW KICK"""	踢倒			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	69	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""COUNTER"""	双倍奉还			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	70	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SEISMIC TOSS"""	地球上投			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	71	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STRENGTH"""	怪力			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	72	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ABSORB"""	吸取			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	73	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MEGA DRAIN"""	超级吸取			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	74	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LEECH SEED"""	寄生种子			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	75	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GROWTH"""	生长			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	76	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RAZOR LEAF"""	飞叶快刀			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	77	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SOLARBEAM"""	日光束			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	78	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POISONPOWDER"""	毒粉			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	79	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STUN SPORE"""	麻痹粉			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	80	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SLEEP POWDER"""	催眠粉			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	81	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PETAL DANCE"""	花瓣舞			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	82	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STRING SHOT"""	吐丝			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	83	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DRAGON RAGE"""	龙之怒			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	84	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FIRE SPIN"""	火焰旋涡			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	85	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""THUNDERSHOCK"""	电击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	86	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""THUNDERBOLT"""	十万伏特			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	87	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""THUNDER WAVE"""	电磁波			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	88	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""THUNDER"""	打雷			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	89	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROCK THROW"""	落石			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	90	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EARTHQUAKE"""	地震			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	91	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FISSURE"""	地裂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	92	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DIG"""	挖洞			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	93	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TOXIC"""	剧毒			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	94	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CONFUSION"""	念力			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	95	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PSYCHIC"""	精神强念			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	96	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HYPNOSIS"""	催眠术			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	97	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MEDITATE"""	瑜伽姿势			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	98	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""AGILITY"""	高速移动			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	99	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""QUICK ATTACK"""	电光一闪			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	100	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RAGE"""	愤怒			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	101	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TELEPORT"""	瞬间移动			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	102	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NIGHT SHADE"""	黑夜魔影			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	103	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MIMIC"""	模仿			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	104	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SCREECH"""	刺耳声			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	105	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DOUBLE TEAM"""	影子分身			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	106	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RECOVER"""	自我再生			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	107	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HARDEN"""	变硬			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	108	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MINIMIZE"""	变小			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	109	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SMOKESCREEN"""	烟幕			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	110	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CONFUSE RAY"""	奇异之光			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	111	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WITHDRAW"""	缩入壳中			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	112	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DEFENSE CURL"""	变圆			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	113	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BARRIER"""	屏障			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	114	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LIGHT SCREEN"""	光墙			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	115	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HAZE"""	黑雾			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	116	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""REFLECT"""	反射壁			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	117	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FOCUS ENERGY"""	聚气			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	118	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BIDE"""	忍耐			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	119	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""METRONOME"""	挥指			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	120	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MIRROR MOVE"""	鹦鹉学舌			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	121	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SELFDESTRUCT"""	自爆			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	122	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EGG BOMB"""	炸蛋			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	123	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LICK"""	舌舔			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	124	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SMOG"""	浊雾			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	125	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SLUDGE"""	污泥攻击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	126	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BONE CLUB"""	骨棒			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	127	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FIRE BLAST"""	大字爆炎			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	128	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WATERFALL"""	攀瀑			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	129	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CLAMP"""	贝壳夹击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	130	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SWIFT"""	高速星星			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	131	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SKULL BASH"""	火箭头锤			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	132	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SPIKE CANNON"""	尖刺加农炮			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	133	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CONSTRICT"""	缠绕			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	134	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""AMNESIA"""	瞬间失忆			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	135	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""KINESIS"""	折弯汤匙			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	136	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SOFTBOILED"""	生蛋			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	137	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HI JUMP KICK"""	飞膝踢			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	138	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GLARE"""	大蛇瞪眼			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	139	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DREAM EATER"""	食梦			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	140	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POISON GAS"""	毒瓦斯			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	141	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BARRAGE"""	投球			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	142	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LEECH LIFE"""	吸血			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	143	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LOVELY KISS"""	恶魔之吻			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	144	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SKY ATTACK"""	神鸟猛击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	145	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TRANSFORM"""	变身			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	146	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BUBBLE"""	泡沫			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	147	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DIZZY PUNCH"""	迷昏拳			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	148	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SPORE"""	蘑菇孢子			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	149	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FLASH"""	闪光			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	150	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PSYWAVE"""	精神波			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	151	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SPLASH"""	跃起			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	152	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ACID ARMOR"""	溶化			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	153	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CRABHAMMER"""	蟹钳锤			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	154	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EXPLOSION"""	大爆炸			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	155	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FURY SWIPES"""	乱抓			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	156	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BONEMERANG"""	骨头回力镖			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	157	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""REST"""	睡觉			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	158	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROCK SLIDE"""	岩崩			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	159	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HYPER FANG"""	必杀门牙			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	160	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SHARPEN"""	棱角化			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	161	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CONVERSION"""	纹理			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	162	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TRI ATTACK"""	三重攻击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	163	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SUPER FANG"""	愤怒门牙			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	164	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SLASH"""	劈开			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	165	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SUBSTITUTE"""	替身			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	166	data/moves/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STRUGGLE"""	挣扎			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Moves	167	data/moves/names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	li 		db 		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Moves	168	data/moves/names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	assert_list_length NUM_ATTACKS		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Moves	169	data/moves/names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	list_start MoveNames		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Townnames	2	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PALLET TOWN@"""	真新镇			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	3	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VIRIDIAN CITY@"""	常青市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	4	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PEWTER CITY@"""	深灰市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	5	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CERULEAN CITY@"""	华蓝市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	6	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LAVENDER TOWN@"""	紫苑镇			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	7	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VERMILION CITY@"""	枯叶市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	8	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CELADON CITY@"""	玉虹市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	9	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FUCHSIA CITY@"""	浅红市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	10	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CINNABAR ISLAND@"""	红莲镇			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	11	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""INDIGO PLATEAU@"""	石英高原			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	12	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SAFFRON CITY@"""	金黄市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	13	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 1@"""	1号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	14	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 2@"""	2号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	15	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 3@"""	3号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	16	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 4@"""	4号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	17	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 5@"""	5号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	18	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 6@"""	6号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	19	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 7@"""	7号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	20	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 8@"""	8号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	21	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 9@"""	9号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	22	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 10@"""	10号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	23	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 11@"""	11号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	24	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 12@"""	12号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	25	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 13@"""	13号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	26	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 14@"""	14号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	27	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 15@"""	15号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	28	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 16@"""	16号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	29	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 17@"""	17号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	30	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 18@"""	18号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	31	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SEA ROUTE 19@"""	19号水道			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	32	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SEA ROUTE 20@"""	20号水道			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	33	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SEA ROUTE 21@"""	21号水道			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	34	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 22@"""	22号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	35	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 23@"""	23号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	36	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 24@"""	24号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	37	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 25@"""	25号道路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	38	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VIRIDIAN FOREST@"""	常青森林			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	39	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MT.MOON@"""	月见山			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	40	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROCK TUNNEL@"""	岩山隧道			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	41	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SEA COTTAGE@"""	海角小屋			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	42	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""S.S.ANNE@"""	圣特安努号			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	43	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""#MON LEAGUE@"""	#联盟			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	44	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""UNDERGROUND PATH@"""	地下通道			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	45	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""#MON TOWER@"""	#塔			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	46	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SEAFOAM ISLANDS@"""	双子岛			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	47	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VICTORY ROAD@"""	冠军之路			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	48	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DIGLETT's CAVE@"""	地鼠洞穴			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	49	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROCKET HQ@"""	火箭队基地			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	50	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SILPH CO.@"""	西尔佛公司			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	51	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""<PKMN> MANSION@"""	#屋			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	52	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SAFARI ZONE@"""	狩猎地带			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	53	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CERULEAN CAVE@"""	华蓝洞窟			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	54	data/maps/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POWER PLANT@"""	无人发电厂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	56	engine/items/town_map.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""To@"""	飞往@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	57	engine/items/town_map.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""'s"""	的			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	58	engine/items/town_map.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	""" nest@"""	分布@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	59	engine/items/town_map.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	""" AREA UNKNOWN@"""	  　栖息地不明@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	61	scripts/PewterGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PEWTER CITY@"""	深灰市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	62	scripts/PewterGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BROCK@"""	小刚			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	64	scripts/CeruleanGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CERULEAN CITY@"""	华蓝市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	65	scripts/CeruleanGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISTY@"""	小霞			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	67	scripts/VermilionGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VERMILION CITY@"""	枯叶市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	68	scripts/VermilionGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LT.SURGE@"""	马志士			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	70	scripts/CeladonGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CELADON CITY@"""	玉虹市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	71	scripts/CeladonGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ERIKA@"""	莉佳			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	73	scripts/FuchsiaGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FUCHSIA CITY@"""	浅红市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	74	scripts/FuchsiaGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""KOGA@"""	阿桔			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	76	scripts/SaffronGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SAFFRON CITY@"""	金黄市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	77	scripts/SaffronGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SABRINA@"""	娜姿			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	79	scripts/CinnabarGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CINNABAR ISLAND@"""	红莲镇			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	80	scripts/CinnabarGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BLAINE@"""	夏伯			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	82	scripts/ViridianGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""VIRIDIAN CITY@"""	常青市			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Townnames	83	scripts/ViridianGym.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GIOVANNI@"""	坂木			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	2	engine/menus/players_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WITHDRAW ITEM"""	取出道具			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	3	engine/menus/players_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DEPOSIT ITEM"""	寄放道具			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	4	engine/menus/players_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TOSS ITEM"""	丢弃道具			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	5	engine/menus/players_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LOG OFF@"""	关机@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	7	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SOMEONE's PC@"""	某人的电脑@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	8	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BILL's PC@"""	正辉的电脑@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	9	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""'s PC@"""	的电脑@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	10	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PROF.OAK's PC@"""	大木的电脑@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	11	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""<PKMN>LEAGUE@"""	#联盟@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	12	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LOG OFF@"""	关机@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	13	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WITHDRAW <PKMN>"""	取出#			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	14	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DEPOSIT <PKMN>"""	寄放#			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	15	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RELEASE <PKMN>"""	放生#			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	16	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CHANGE BOX"""	更换盒子			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	17	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SEE YA!"""	再见			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	18	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BOX No.@"""	盒子@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	19	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""Whattt?@"""	要做什么？@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	20	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DEPOSIT@"""	寄放@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	21	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WITHDRAW@"""	取出@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	22	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STATS"""	查看能力			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+PC	23	engine/pokemon/bills_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CANCEL@"""	取消@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	4	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	dw .LassName		dw wTrainerName		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	5	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	dw .JrTrainerMName		dw wTrainerName		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	7	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	dw .PokemaniacName		dw wTrainerName		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	8	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	dw .SuperNerdName		dw wTrainerName		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	13	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	dw .BeautyName		dw wTrainerName		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	18	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	dw .ChiefName		dw wTrainerName		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	24	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""YOUNGSTER@"""	短裤			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	25	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BUG CATCHER@"""	捕虫			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	26	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	STRUCTURAL_OR_EMPTY_REWRITE	"""LASS@"""				NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	27	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	STRUCTURAL_OR_EMPTY_REWRITE	"""JR.TRAINER♂@"""				NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	28	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JR.TRAINER♀@"""	女童军			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	29	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	STRUCTURAL_OR_EMPTY_REWRITE	"""POKéMANIAC@"""				NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	30	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	STRUCTURAL_OR_EMPTY_REWRITE	"""SUPER NERD@"""				NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	31	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BURGLAR@"""	打劫者			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	32	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ENGINEER@"""	大叔			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	33	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JUGGLER@"""	杂耍			DUPLICATE_KEY_REVIEW	重复原文键；需确认所有出现位置应使用同一译文
+Trainers	34	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SWIMMER@"""	泳裤			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	35	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	STRUCTURAL_OR_EMPTY_REWRITE	"""BEAUTY@"""				NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	36	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROCKER@"""	摇滚团			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	37	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JUGGLER@"""	杂耍			DUPLICATE_KEY_REVIEW	重复原文键；需确认所有出现位置应使用同一译文
+Trainers	38	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BLACKBELT@"""	空手道			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	39	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PROF.OAK@"""	大木			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	40	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	STRUCTURAL_OR_EMPTY_REWRITE	"""CHIEF@"""				NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	41	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SCIENTIST@"""	研究员			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	42	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROCKET@"""	队员			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	43	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""COOLTRAINER♂@"""	精英♂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	44	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""COOLTRAINER♀@"""	精英♀			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	45	data/trainers/name_pointers.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PHYCHIC@"""	超能力			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	47	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""YOUNGSTER"""	短裤小子			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	48	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BUG CATCHER"""	捕虫少年			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	49	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LASS"""	迷你裙			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	50	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SAILOR"""	水手			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	51	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JR.TRAINER♂"""	童子军			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	52	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JR.TRAINER♀"""	女童子军			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	53	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POKéMANIAC"""	怪兽狂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	54	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SUPER NERD"""	理科男			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	55	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HIKER"""	登山男			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	56	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BIKER"""	暴走族			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	57	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BURGLAR"""	趁火打劫者			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	58	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ENGINEER"""	电工大叔			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	59	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JUGGLER"""	杂耍艺人			DUPLICATE_KEY_REVIEW	重复原文键；需确认所有出现位置应使用同一译文
+Trainers	60	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FISHERMAN"""	垂钓者			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	61	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SWIMMER"""	泳裤小伙子			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	62	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CUE BALL"""	光头男			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	63	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GAMBLER"""	赌徒			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	64	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BEAUTY"""	大姐姐			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	65	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PSYCHIC"""	超能力者			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	66	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROCKER"""	电气摇滚团			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	67	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JUGGLER"""	杂耍艺人			DUPLICATE_KEY_REVIEW	重复原文键；需确认所有出现位置应使用同一译文
+Trainers	68	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TAMER"""	驯兽师			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	69	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BIRD KEEPER"""	养鸟人			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	70	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BLACKBELT"""	空手道王			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	71	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RIVAL1"""	劲敌1			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	72	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PROF.OAK"""	大木老师			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	73	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CHIEF"""	经理			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	74	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SCIENTIST"""	流浪研究员			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	75	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GIOVANNI"""	坂木			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	76	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROCKET"""	火箭队员			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	77	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""COOLTRAINER♂"""	精英训练家♂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	78	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""COOLTRAINER♀"""	精英训练家♀			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	79	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BRUNO"""	希巴			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	80	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BROCK"""	小刚			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	81	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MISTY"""	小霞			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	82	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LT.SURGE"""	马志士			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	83	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ERIKA"""	莉佳			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	84	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""KOGA"""	阿桔			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	85	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BLAINE"""	夏伯			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	86	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SABRINA"""	娜姿			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	87	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GENTLEMAN"""	绅士			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	88	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RIVAL2"""	劲敌2			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	89	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RIVAL3"""	劲敌3			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	90	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LORELEI"""	科拿			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	91	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CHANNELER"""	祈祷师			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	92	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""AGATHA"""	菊子			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	93	data/trainers/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LANCE"""	阿渡			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Trainers	94	data/trainers/names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	li 		db 		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	95	data/trainers/names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	assert_list_length NUM_TRAINERS		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Trainers	96	data/trainers/names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	list_start TrainerNames		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	2	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CONTINUE"""	继续游戏			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	3	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NEW GAME"""	从头开始			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	4	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OPTION@"""	更改设置@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	5	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TRADE CENTER"""	交换中心			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	6	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""COLOSSEUM"""	圆形竞技场			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	7	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CANCEL@"""	取消@		圆形竞技场	ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	14	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CANCEL@"""	结束@		OptionMenuCancelText	CONDITIONAL_CONTEXT_STALE	条件标记在当前目标文件中找不到；导入器不会报告条件未命中
+Main	15	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PLAYER"""	主人公			ALREADY_BILINGUAL_PLAYER_INFO	ROM-1.42B 已有英文分支；用户反馈已测部分未见明显问题
+Main	16	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BADGES    """	持有徽章     枚			ALREADY_BILINGUAL_PLAYER_INFO	ROM-1.42B 已有英文分支；用户反馈已测部分未见明显问题
+Main	17	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""#DEX    """	#图鉴   只			ALREADY_BILINGUAL_PLAYER_INFO	ROM-1.42B 已有英文分支；用户反馈已测部分未见明显问题
+Main	18	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TIME@"""	游戏时间@			ALREADY_BILINGUAL_PLAYER_INFO	ROM-1.42B 已有英文分支；用户反馈已测部分未见明显问题
+Main	19	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""English@"""	ェ▶宝可梦名称：英文@			STALE_IMPORTER_KEY	实际临时导入日志 Not Found
+Main	20	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""Chinese@"""	ェ▶宝可梦名称：中文@			STALE_IMPORTER_KEY	实际临时导入日志 Not Found
+Main	21	engine/menus/main_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ver@"""	v120@			STALE_IMPORTER_KEY	实际临时导入日志 Not Found
+Main	23	engine/menus/draw_start_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POKéDEX@"""	图鉴			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	24	engine/menus/draw_start_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POKéMON@"""	#			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	25	engine/menus/draw_start_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ITEM@"""	道具			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	26	engine/menus/draw_start_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SAVE@"""	记录			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	27	engine/menus/draw_start_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RESET@"""	重置			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	28	engine/menus/draw_start_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EXIT@"""	关闭			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	29	engine/menus/draw_start_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OPTION@"""	设置			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	31	engine/events/pokemart.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""QUIT@"""	什么也不需要			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	33	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BUY"""	购买			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	34	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SELL"""	出售			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	35	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""QUIT@"""	什么也不需要@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	36	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""USE"""	使用			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	37	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TOSS@"""	丢弃@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	38	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FIGHT <PK><MN>"""	战斗 #			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	39	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ITEM  RUN@"""	道具 逃走@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	40	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BALL×       BAIT"""	球×      　 诱饵			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	41	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""THROW ROCK  RUN@"""	石块　       逃走@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	42	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SWITCH"""	替换			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	43	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STATS"""	查看能力			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	44	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CANCEL@"""	取消@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	45	data/text_boxes.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MONEY@"""	みむめ@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	46	data/text_boxes.asm	RB	ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"""アッ！@"""		"""アッ!@"""		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	48	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""BUY"""	购买			RGB_ONLY_SKIPPED
+Main	49	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""SELL"""	出售			RGB_ONLY_SKIPPED
+Main	50	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""QUIT@"""	什么也不需要@			RGB_ONLY_SKIPPED
+Main	51	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""USE"""	使用			RGB_ONLY_SKIPPED
+Main	52	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""TOSS@"""	丢弃@			RGB_ONLY_SKIPPED
+Main	53	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""FIGHT <PK><MN>"""	战斗   道具			RGB_ONLY_SKIPPED
+Main	54	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""ITEM  RUN@"""	# 逃走@			RGB_ONLY_SKIPPED
+Main	55	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""BALL×       BAIT"""	球×      　 诱饵			RGB_ONLY_SKIPPED
+Main	56	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""THROW ROCK  RUN@"""	石块　       逃走@			RGB_ONLY_SKIPPED
+Main	57	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""SWITCH"""	替换			RGB_ONLY_SKIPPED
+Main	58	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""STATS"""	查看能力			RGB_ONLY_SKIPPED
+Main	59	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""CANCEL@"""	取消@			RGB_ONLY_SKIPPED
+Main	60	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""MONEY@"""	みむめ@			RGB_ONLY_SKIPPED
+Main	61	data/text_boxes.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	CODE_OR_FORMAT_REWRITE	"""アッ！@"""		"""アッ!@"""		NON_TEXT_RGB_ONLY_SKIPPED
+Main	63	engine/menus/text_box.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STATS"""	查看能力			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	64	engine/menus/text_box.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SWITCH"""	调换			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	65	engine/menus/text_box.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CANCEL@"""	取消@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	67	data/moves/field_move_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CUT@"""	居合斩			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	68	data/moves/field_move_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FLY@"""	飞翔			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	69	data/moves/field_move_names.asm		ACTIVE_FOR_RB	STRUCTURAL_OR_EMPTY_REWRITE	"""@"""				NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	70	data/moves/field_move_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SURF@"""	冲浪			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	71	data/moves/field_move_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STRENGTH@"""	怪力			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	72	data/moves/field_move_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FLASH@"""	闪光			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	73	data/moves/field_move_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DIG@"""	挖洞			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	74	data/moves/field_move_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TELEPORT@"""	瞬间移动			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	75	data/moves/field_move_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SOFTBOILED@"""	生蛋			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	77	engine/menus/pokedex.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SEEN@"""	发现@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	78	engine/menus/pokedex.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OWN@"""	捉到@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	79	engine/menus/pokedex.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CONTENTS@"""	目录@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	80	engine/menus/pokedex.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DATA@"""	资料@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	81	engine/menus/pokedex.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CRY@"""	叫声@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	82	engine/menus/pokedex.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""AREA@"""	分布@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	83	engine/menus/pokedex.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""QUIT@"""	退出@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	84	engine/menus/pokedex.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HT  ?′??″"""	身高  ???ï			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	85	engine/menus/pokedex.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WT   ???lb@"""	体重  ???î@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	86	engine/menus/pokedex.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""--@"""	—————@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	88	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	li 		db 		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	89	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ATTACK"""	攻击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	90	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DEFENSE"""	防御			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	91	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SPEED"""	速度			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	92	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SPECIAL"""	特殊能力			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	93	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ACCURACY"""	命中率			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	94	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EVADE"""	闪避率			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	95	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	list_start StatModTextStrings		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	96	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	assert_list_length SPECIAL_DOWN_SIDE_EFFECT - ATTACK_DOWN_SIDE_EFFECT + 1		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	97	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	assert_list_length EVASION_UP1_EFFECT - ATTACK_UP1_EFFECT + 1		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	98	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	assert_list_length EVASION_DOWN1_EFFECT - ATTACK_DOWN1_EFFECT + 1		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	99	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	assert_list_length EVASION_UP2_EFFECT - ATTACK_UP2_EFFECT + 1		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	100	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	assert_list_length EVASION_DOWN2_EFFECT - ATTACK_DOWN2_EFFECT + 1		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	101	data/battle/stat_mod_names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	assert_list_length NUM_STAT_MODS - 2		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	103	data/battle/stat_names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	li 		db 		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	104	data/battle/stat_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HEALTH"""	ñ			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	105	data/battle/stat_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ATTACK"""	攻击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	106	data/battle/stat_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DEFENSE"""	防御			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	107	data/battle/stat_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SPEED"""	速度			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	108	data/battle/stat_names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SPECIAL"""	特殊			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	109	data/battle/stat_names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	list_start VitaminStats		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	110	data/battle/stat_names.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	assert_list_length NUM_STATS		;		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	112	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ATTACK"""	攻击			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	113	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DEFENSE"""	防御			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	114	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SPEED"""	速度			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	115	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SPECIAL@"""	特殊@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	116	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TYPE1/"""	属性1/			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	117	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TYPE2/"""	属性2/			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	118	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OT/"""	初训/			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	119	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STATUS/@"""	状态/@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	120	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OK@"""	正常@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	121	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""D@"""	濒死@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	122	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""Po@"""	中毒@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	123	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""B@"""	灼伤@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	124	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""F@"""	冰冻@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	125	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""Pa@"""	麻痹@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	126	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""S@"""	睡眠@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	127	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EXP POINTS"""	经验值/			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	128	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LEVEL UP@"""	还有@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	129	engine/pokemon/status_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""to@"""	至@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	131	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NORMAL@"""	一般			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	132	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FIGHTING@"""	格斗			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	133	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FLYING@"""	飞行			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	134	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POISON@"""	毒			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	135	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FIRE@"""	火			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	136	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WATER@"""	水			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	137	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GRASS@"""	草			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	138	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ELECTRIC@"""	电			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	139	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PSYCHIC@"""	超能力			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	140	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ICE@"""	冰			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	141	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GROUND@"""	地面			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	142	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROCK@"""	岩石			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	143	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BIRD@"""	鸟			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	144	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BUG@"""	虫			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	145	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GHOST@"""	幽灵			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	146	data/types/names.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DRAGON@"""	龙			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	148	home/list_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CANCEL@"""	取消			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	150	engine/menus/start_sub_menus.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NAME/"""	主人公/			ALREADY_BILINGUAL_PLAYER_INFO	ROM-1.42B 已有英文分支；用户反馈已测部分未见明显问题
+Main	151	engine/menus/start_sub_menus.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MONEY/"""	零花钱/			ALREADY_BILINGUAL_PLAYER_INFO	ROM-1.42B 已有英文分支；用户反馈已测部分未见明显问题
+Main	152	engine/menus/start_sub_menus.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TIME/@"""	游戏时间/@			ALREADY_BILINGUAL_PLAYER_INFO	ROM-1.42B 已有英文分支；用户反馈已测部分未见明显问题
+Main	153	engine/menus/start_sub_menus.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"$76,""BADGES"",$76,""@"""	ぁ#徽章ぁ@			ALREADY_BILINGUAL_PLAYER_INFO	ROM-1.42B 已有英文分支；用户反馈已测部分未见明显问题
+Main	154	engine/menus/start_sub_menus.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BALL×× @"""	球× @			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	156	engine/events/vending_machine.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""FRESH WATER"""	美味之水			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	157	engine/events/vending_machine.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SODA POP"""	劲爽汽水			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	158	engine/events/vending_machine.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LEMONADE"""	果汁牛奶			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	159	engine/events/vending_machine.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CANCEL@"""	取消@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	161	data/events/prizes.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NO THANKS@"""	还是算了@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	163	engine/events/prize_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""COIN@"""	ほま@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	165	scripts/GameCorner.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MONEY@"""	みむめ@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	166	scripts/GameCorner.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""COIN@"""	代币@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	168	data/yes_no_menu_strings.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NO"""	否			DEFERRED_BY_USER	公共 YES/NO 选项框按用户既有决定暂缓
+Main	169	data/yes_no_menu_strings.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""YES@"""	是@			DEFERRED_BY_USER	公共 YES/NO 选项框按用户既有决定暂缓
+Main	170	data/yes_no_menu_strings.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""YES"""	是			DEFERRED_BY_USER	公共 YES/NO 选项框按用户既有决定暂缓
+Main	171	data/yes_no_menu_strings.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NO@"""	否@			DEFERRED_BY_USER	公共 YES/NO 选项框按用户既有决定暂缓
+Main	172	data/yes_no_menu_strings.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TRADE"""	交换			DEFERRED_BY_USER	公共 YES/NO 选项框按用户既有决定暂缓
+Main	173	data/yes_no_menu_strings.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HEAL"""	治疗			DEFERRED_BY_USER	公共 YES/NO 选项框按用户既有决定暂缓
+Main	174	data/yes_no_menu_strings.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CANCEL@"""	取消@			DEFERRED_BY_USER	公共 YES/NO 选项框按用户既有决定暂缓
+Main	175	data/yes_no_menu_strings.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""EAST@"""	东@			DEFERRED_BY_USER	公共 YES/NO 选项框按用户既有决定暂缓
+Main	176	data/yes_no_menu_strings.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WEST@"""	西@			DEFERRED_BY_USER	公共 YES/NO 选项框按用户既有决定暂缓
+Main	177	data/yes_no_menu_strings.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NORTH"""	北			DEFERRED_BY_USER	公共 YES/NO 选项框按用户既有决定暂缓
+Main	178	data/yes_no_menu_strings.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SOUTH"""	南			DEFERRED_BY_USER	公共 YES/NO 选项框按用户既有决定暂缓
+Main	180	engine/menus/save.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""Now saving...@"""	正在记录……@			STALE_IMPORTER_KEY	实际临时导入日志 Not Found
+Main	181	engine/menus/save.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BOX No.@"""	当前盒子@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	182	engine/menus/save.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"""BOX "		"""ふへ  "		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	183	engine/menus/save.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"""BOX1"		"""ふへ 1"		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	185	engine/movie/hall_of_fame.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PLAY TIME@"""	游戏时间@			ALREADY_BILINGUAL_PLAYER_INFO	ROM-1.42B 已有英文分支；用户反馈已测部分未见明显问题
+Main	186	engine/movie/hall_of_fame.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MONEY@"""	零花钱@			ALREADY_BILINGUAL_PLAYER_INFO	ROM-1.42B 已有英文分支；用户反馈已测部分未见明显问题
+Main	187	engine/movie/hall_of_fame.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HALL OF FAME@"""	恭喜登入名人堂！@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	188	engine/movie/hall_of_fame.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LEVEL/"""	等级 /			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	189	engine/movie/hall_of_fame.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TYPE1/"""	属性1/			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	190	engine/movie/hall_of_fame.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TYPE2/@"""	属性2/@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	192	engine/menus/league_pc.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HALL OF FAME No   @"""	 第   次 登入名人堂@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	194	engine/movie/oak_speech/oak_speech2.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NAME@"""	@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	196	home/text.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TRAINER@"""	训练家			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	197	home/text.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""Enemy @"""	敌方			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	198	home/text.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POKé@"""	宝可梦			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	200	engine/items/item_effects.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""You don't have"""	一只#			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	201	engine/items/item_effects.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""any #MON!"""	都没有！			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	203	engine/battle/core.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OLD MAN@"""	老爷爷@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	204	engine/battle/core.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""disabled!@"""	被封住了！@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	205	engine/battle/core.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TYPE@"""	属性@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	206	engine/battle/core.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""WHICH"""	要模仿			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	207	engine/battle/core.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TECHNIQUE?@"""	哪个招式@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	208	engine/battle/core.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"ld a, ""G"""		ld a, $13		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	209	engine/battle/core.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"ld a, ""H"""		ld a, $82		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	210	engine/battle/core.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"ld a, ""O"""		ld a, $0C		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	211	engine/battle/core.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"ld a, ""S"""		ld a, $23		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	212	engine/battle/core.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"ld a, ""T"""		"ld a, ""@"""		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	214	engine/link/cable_club.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CANCEL@"""	取消@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	215	engine/link/cable_club.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PLEASE WAIT!@"""	 请您稍等……@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	216	engine/link/cable_club.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""Trade completed!@"""	交换完成！@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	217	engine/link/cable_club.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""Too bad! The trade"""	非常抱歉，			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	218	engine/link/cable_club.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""was canceled!@"""	交换已取消！@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	219	engine/link/cable_club.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STATS     TRADE@"""	查看能力    交换@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	221	engine/link/print_waiting_text.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""Waiting...!@"""	请您稍等……			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	224	data/player_names.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NEW NAME"""	自己决定			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	225	data/player_names.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RED"""	赤红			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	226	data/player_names.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BLUE"""	青绿			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	227	data/player_names.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ASH"""	小智			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	228	data/player_names.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GARY"""	小茂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	229	data/player_names.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JACK"""	杰克			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	230	data/player_names.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JOHN"""	约翰			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	232	data/player_names_list.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NEW NAME@"""	自己决定			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	233	data/player_names_list.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RED@"""	赤红			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	234	data/player_names_list.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BLUE@"""	青绿			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	235	data/player_names_list.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ASH@"""	小智			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	236	data/player_names_list.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""GARY@"""	小茂			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	237	data/player_names_list.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JACK@"""	杰克			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	238	data/player_names_list.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""JOHN@"""	约翰			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	240	data/player_names.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""NEW NAME"""	自己决定			RGB_ONLY_SKIPPED
+Main	241	data/player_names.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""RED"""	赤红			RGB_ONLY_SKIPPED
+Main	242	data/player_names.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""BLUE"""	碧蓝			RGB_ONLY_SKIPPED
+Main	243	data/player_names.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""ASH"""	小智			RGB_ONLY_SKIPPED
+Main	244	data/player_names.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""GARY"""	小茂			RGB_ONLY_SKIPPED
+Main	245	data/player_names.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""JACK"""	杰克			RGB_ONLY_SKIPPED
+Main	246	data/player_names.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""JOHN"""	约翰			RGB_ONLY_SKIPPED
+Main	247	data/player_names.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""GREEN"""	青绿			RGB_ONLY_SKIPPED
+Main	248	data/player_names.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""KAZ"""	恒和			RGB_ONLY_SKIPPED
+Main	249	data/player_names.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""JEAN"""	基恩			RGB_ONLY_SKIPPED
+Main	250	data/player_names.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""RITCHIE"""	阿溥			RGB_ONLY_SKIPPED
+Main	252	data/player_names_list.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""NEW NAME@"""	自己决定			RGB_ONLY_SKIPPED
+Main	253	data/player_names_list.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""RED@"""	赤红			RGB_ONLY_SKIPPED
+Main	254	data/player_names_list.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""BLUE@"""	碧蓝			RGB_ONLY_SKIPPED
+Main	255	data/player_names_list.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""ASH@"""	小智			RGB_ONLY_SKIPPED
+Main	256	data/player_names_list.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""GARY@"""	小茂			RGB_ONLY_SKIPPED
+Main	257	data/player_names_list.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""JACK@"""	杰克			RGB_ONLY_SKIPPED
+Main	258	data/player_names_list.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""JOHN@"""	约翰			RGB_ONLY_SKIPPED
+Main	259	data/player_names_list.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""GREEN@"""	青绿			RGB_ONLY_SKIPPED
+Main	260	data/player_names_list.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""KAZ@"""	恒和			RGB_ONLY_SKIPPED
+Main	261	data/player_names_list.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""JEAN@"""	基恩			RGB_ONLY_SKIPPED
+Main	262	data/player_names_list.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""RITCHIE@"""	阿溥			RGB_ONLY_SKIPPED
+Main	264	engine/overworld/player_state.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BALL×× @"""	球× 			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	266	data/events/trades.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TERRY@@@@@@"""	特瑞@@@@@@@			SEPARATE_NAMES_OPTION	RB 有 9 条交易昵称；由 wENGNameMark 控制；RGB 另有 18 条不用于当前 RB 构建
+Main	267	data/events/trades.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MARCEL@@@@@"""	魔魔@@@@@@@			SEPARATE_NAMES_OPTION	RB 有 9 条交易昵称；由 wENGNameMark 控制；RGB 另有 18 条不用于当前 RB 构建
+Main	268	data/events/trades.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SAILOR@@@@@"""	豹纹@@@@@@@			SEPARATE_NAMES_OPTION	RB 有 9 条交易昵称；由 wENGNameMark 控制；RGB 另有 18 条不用于当前 RB 构建
+Main	269	data/events/trades.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DUX@@@@@@@@"""	阿翔@@@@@@@			SEPARATE_NAMES_OPTION	RB 有 9 条交易昵称；由 wENGNameMark 控制；RGB 另有 18 条不用于当前 RB 构建
+Main	270	data/events/trades.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""MARC@@@@@@@"""	正子@@@@@@@			SEPARATE_NAMES_OPTION	RB 有 9 条交易昵称；由 wENGNameMark 控制；RGB 另有 18 条不用于当前 RB 构建
+Main	271	data/events/trades.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LOLA@@@@@@@"""	阿顽@@@@@@@			SEPARATE_NAMES_OPTION	RB 有 9 条交易昵称；由 wENGNameMark 控制；RGB 另有 18 条不用于当前 RB 构建
+Main	272	data/events/trades.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""DORIS@@@@@@"""	舔藏@@@@@@@			SEPARATE_NAMES_OPTION	RB 有 9 条交易昵称；由 wENGNameMark 控制；RGB 另有 18 条不用于当前 RB 构建
+Main	273	data/events/trades.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CRINKLES@@@"""	琳达@@@@@@@			SEPARATE_NAMES_OPTION	RB 有 9 条交易昵称；由 wENGNameMark 控制；RGB 另有 18 条不用于当前 RB 构建
+Main	274	data/events/trades.asm	RB	ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SPOT@@@@@@@"""	斑点@@@@@@@			SEPARATE_NAMES_OPTION	RB 有 9 条交易昵称；由 wENGNameMark 控制；RGB 另有 18 条不用于当前 RB 构建
+Main	276	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""RODAN@@@@@@"""	罗丹@@@@@@@			RGB_ONLY_SKIPPED
+Main	277	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""MIMOS@@@@@@"""	魔猴@@@@@@@			RGB_ONLY_SKIPPED
+Main	278	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""KRABBA@@@@@"""	道乐@@@@@@@			RGB_ONLY_SKIPPED
+Main	279	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""FETCH@@@@@@"""	阿鸭@@@@@@@			RGB_ONLY_SKIPPED
+Main	280	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""KEN@@@@@@@@"""	牛泰@@@@@@@			RGB_ONLY_SKIPPED
+Main	281	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""GHOSTY@@@@@"""	鬼助@@@@@@@			RGB_ONLY_SKIPPED
+Main	282	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""BOULDER@@@@"""	三郎@@@@@@@			RGB_ONLY_SKIPPED
+Main	283	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""OSCAR@@@@@@"""	奥斯卡@@@@@			RGB_ONLY_SKIPPED
+Main	284	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""POLI@@@@@@@"""	小蝌蚪@@@@@			RGB_ONLY_SKIPPED
+Main	285	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""TERRY@@@@@@"""	特瑞@@@@@@@			RGB_ONLY_SKIPPED
+Main	286	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""MARCEL@@@@@"""	魔魔@@@@@@@			RGB_ONLY_SKIPPED
+Main	287	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""SAILOR@@@@@"""	豹纹@@@@@@@			RGB_ONLY_SKIPPED
+Main	288	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""DUX@@@@@@@@"""	阿翔@@@@@@@			RGB_ONLY_SKIPPED
+Main	289	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""MARC@@@@@@@"""	正子@@@@@@@			RGB_ONLY_SKIPPED
+Main	290	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""LOLA@@@@@@@"""	阿顽@@@@@@@			RGB_ONLY_SKIPPED
+Main	291	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""DORIS@@@@@@"""	舔藏@@@@@@@			RGB_ONLY_SKIPPED
+Main	292	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""CRINKLES@@@"""	琳达@@@@@@@			RGB_ONLY_SKIPPED
+Main	293	data/events/trades.asm	RGB	SKIPPED_FOR_RB_RGB_ONLY	TEXT_REPLACEMENT	"""SPOT@@@@@@@"""	恰皮@@@@@@@			RGB_ONLY_SKIPPED
+Main	295	engine/movie/title.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NINTEN@"""	任天堂 D			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	296	engine/movie/title.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""SONY@"""	索软堂 X			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	298	engine/menus/party_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ABLE@"""	能学习！		.ableToLearnMoveText	ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	299	engine/menus/party_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NOT ABLE@"""	不能学		.notAbleToLearnMoveText	ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	300	engine/menus/party_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ABLE@"""	能使用！		.ableToEvolveText	ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	301	engine/menus/party_menu.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NOT ABLE@"""	不能使用		.notAbleToEvolveText	ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	302	engine/menus/party_menu.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"db ""　@"""		"db $01,$01,""@"""		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	304	engine/movie/trade2.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OT/"""	初训家/			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	305	engine/movie/trade2.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	──№<DOT>		────№<DOT> 		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	306	engine/movie/trade2.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	<ID>№<DOT>@		<ID>№<DOT>@		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	308	engine/battle/end_of_battle.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""YOU WIN@"""	  你赢了			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	309	engine/battle/end_of_battle.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""YOU LOSE@"""	  你输了			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	310	engine/battle/end_of_battle.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""  DRAW@"""	  平局			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	312	engine/events/diploma.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"CIRCLE_TILE_ID, ""Diploma"", CIRCLE_TILE_ID, ""@"""		"CIRCLE_TILE_ID, $7F,$7F,$0A,$37,$19,$0C,$7F,$7F,CIRCLE_TILE_ID, ""@"""		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	313	engine/events/diploma.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""Player@"""	玩家@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	314	engine/events/diploma.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""Congrats! This"""	您出色地完成了			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	315	engine/events/diploma.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""diploma certifies"""	#图鉴！			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	316	engine/events/diploma.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""that you have@"""	为表彰您取得的@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	317	engine/events/diploma.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""completed your"""	这一伟大功绩，			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	318	engine/events/diploma.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""#DEX.@"""	特发此状，以资鼓励！@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	319	engine/events/diploma.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"""GAME FREAK@"""		"""GAME FREAK@"""		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	321	scripts/BikeShop.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BICYCLE"""	自行车			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	322	scripts/BikeShop.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""CANCEL@"""	还是算了@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	323	scripts/BikeShop.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	hlcoord 8, 3		hlcoord 8, 2		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	325	engine/menus/naming_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""YOUR @"""	你的名字？			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	326	engine/menus/naming_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""RIVAL's @"""	劲敌的名字？			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	327	engine/menus/naming_screen.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"""NAME?@"""		"""@"""		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Main	328	engine/menus/naming_screen.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""NICKNAME?@"""	  的昵称？			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	330	engine/events/hidden_objects/school_blackboard.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	""" SLP"""	 睡眠			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	331	engine/events/hidden_objects/school_blackboard.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	""" PSN"""	 中毒			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	332	engine/events/hidden_objects/school_blackboard.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	""" PAR@"""	 麻痹@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	333	engine/events/hidden_objects/school_blackboard.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	""" BRN"""	 灼伤			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	334	engine/events/hidden_objects/school_blackboard.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	""" FRZ"""	 冰冻			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	335	engine/events/hidden_objects/school_blackboard.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	""" QUIT@"""	 退出 @			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	336	engine/events/hidden_objects/school_blackboard.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""HOW TO LINK"""	如何连接			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	337	engine/events/hidden_objects/school_blackboard.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""COLOSSEUM"""	圆形竞技场			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	338	engine/events/hidden_objects/school_blackboard.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TRADE CENTER"""	交换中心			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	339	engine/events/hidden_objects/school_blackboard.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""STOP READING@"""	不读了@			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Main	341	data/credits/credits_text.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	"""#MON@"""		"""POKéMON@"""		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Patches	2	scripts/FuchsiaGoodRodHouse.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	！		!		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Patches	3	scripts/FuchsiaGoodRodHouse.asm		ACTIVE_FOR_RB	CODE_OR_FORMAT_REWRITE	　		 		NON_TEXT_BUILD_PATCH	代码/格式/结构变更，不计入双语文本条目；正式清理时与工具/转换器改动分开审查
+Patches	5	data/text/alphabets.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PIN@"""	拼音			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Patches	6	data/text/alphabets.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PCH@"""	符号			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+Patches	7	data/text/alphabets.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""UP  DON@"""	上页 下页			ACTIVE_RULE_REQUIRES_SEMANTIC_CHECK
+OptionsBilingual	2	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""TEXT SPEED"""	语速			ALREADY_BILINGUAL_OPTIONS
+OptionsBilingual	3	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	""" FAST  MEDIUM SLOW@"""	 快    普通    慢@			ALREADY_BILINGUAL_OPTIONS
+OptionsBilingual	4	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BATTLE ANIMATION"""	对战动画			ALREADY_BILINGUAL_OPTIONS
+OptionsBilingual	5	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	""" ON       OFF@"""	 看       不看@			ALREADY_BILINGUAL_OPTIONS
+OptionsBilingual	6	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""BATTLE STYLE"""	比赛规则			ALREADY_BILINGUAL_OPTIONS
+OptionsBilingual	7	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	""" SHIFT    SET@"""	 替换      连战@			ALREADY_BILINGUAL_OPTIONS
+OptionsBilingual	8	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""POKEMON NAMES"""	宝可梦名称			ALREADY_BILINGUAL_OPTIONS
+OptionsBilingual	9	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	""" CHINESE       ENGLISH@"""	 中文       ENGLISH@			ALREADY_BILINGUAL_OPTIONS
+OptionsBilingual	10	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""LANGUAGE"""	语言			ALREADY_BILINGUAL_OPTIONS
+OptionsBilingual	11	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""ROUTE 1 NPC ONLY"""	目前仅1号道路NPC			ALREADY_BILINGUAL_OPTIONS
+OptionsBilingual	12	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""OTHER TEXT: CHS@"""	其他文字：中文@			ALREADY_BILINGUAL_OPTIONS
+OptionsBilingual	13	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PAGE 1/2   B:BACK@"""	第1页/2页 B:返回@			ALREADY_BILINGUAL_OPTIONS
+OptionsBilingual	14	engine/menus/options_bilingual.asm		ACTIVE_FOR_RB	TEXT_REPLACEMENT	"""PAGE 2/2   B:BACK@"""	第2页/2页 B:返回@			ALREADY_BILINGUAL_OPTIONS

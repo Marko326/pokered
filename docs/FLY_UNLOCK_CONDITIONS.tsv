@@ -1,0 +1,15 @@
+unlock_bit	physical_map_symbol	physical_map_id	condition	note
+0	VIRIDIAN_FOREST	$33	进入/访问该地图时置位	—
+1	DIGLETTS_CAVE_ROUTE_2	$2E	进入/访问该地图时置位	—
+2	MT_MOON_1F	$3B	进入/访问该地图时置位	—
+3	CERULEAN_CAVE_1F	$E4	进入/访问该地图时置位	—
+4	BILLS_HOUSE	$58	进入/访问该地图时置位	—
+5	ROCK_TUNNEL_POKECENTER	$51	进入/访问该地图时置位	ROCK_TUNNEL_POKECENTER 与 ROCK_TUNNEL_1F 共用 bit 5
+5	ROCK_TUNNEL_1F	$52	进入/访问该地图时置位	ROCK_TUNNEL_POKECENTER 与 ROCK_TUNNEL_1F 共用 bit 5
+6	CELADON_MART_ROOF	$7E	进入/访问该地图时置位	—
+7	DIGLETTS_CAVE_ROUTE_11	$55	进入/访问该地图时置位	—
+8	SAFARI_ZONE_GATE	$9C	进入/访问该地图时置位	—
+9	SEAFOAM_ISLANDS_1F via Route20 warp index 0	$C0	从 Route 20 西侧入口 warp index 0 进入 Seafoam 1F	由 MarkSpecialFlyLocationVisited 的 Seafoam 专用分支设置
+10	SEAFOAM_ISLANDS_1F via Route20 warp index 1	$C0	从 Route 20 东侧入口 warp index 1 进入 Seafoam 1F	由 MarkSpecialFlyLocationVisited 的 Seafoam 专用分支设置
+11	VICTORY_ROAD_1F	$6C	进入/访问该地图时置位	—
+12	POWER_PLANT	$53	进入/访问该地图时置位	—

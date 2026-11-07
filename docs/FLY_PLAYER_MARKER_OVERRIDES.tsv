@@ -1,0 +1,14 @@
+override_index	actual_map_symbol	actual_map_id	anchor_y	anchor_x	logical_selector	logical_selector_id	resolved_name_label	english_name_source_or_candidate	chinese_name
+0	ROUTE_4	$0F	5	11	MT_MOON_1F	$3B	MountMoonName	MT.MOON	月见山
+1	ROUTE_10	$15	19	11	ROCK_TUNNEL_1F	$52	RockTunnelName	ROCK TUNNEL	岩山隧道
+2	ROUTE_10	$15	39	6	POWER_PLANT	$53	PowerPlantName	POWER PLANT	无人发电厂
+3	CERULEAN_CITY	$03	11	4	CERULEAN_CAVE_1F	$E4	CeruleanCaveName	CERULEAN CAVE	华蓝洞窟
+4	ROUTE_25	$24	3	45	BILLS_HOUSE	$58	SeaCottageName	SEA COTTAGE	海角小屋
+5	FUCHSIA_CITY	$07	3	18	SAFARI_ZONE_GATE	$9C	SafariZoneName	SAFARI ZONE	狩猎地带
+6	ROUTE_23	$22	31	4	VICTORY_ROAD_1F	$6C	VictoryRoadName	VICTORY ROAD	冠军之路
+7	ROUTE_2	$0D	9	12	DIGLETTS_CAVE_ROUTE_2	$2E	DiglettsCaveName	DIGLETT's CAVE	地鼠洞穴
+8	ROUTE_11	$16	5	4	DIGLETTS_CAVE_ROUTE_11	$55	DiglettsCaveName	DIGLETT's CAVE	地鼠洞穴
+9	ROUTE_4	$0F	5	18	MT_MOON_1F	$3B	MountMoonName	MT.MOON	月见山
+10	ROUTE_4	$0F	5	24	MT_MOON_1F	$3B	MountMoonName	MT.MOON	月见山
+11	ROUTE_10	$15	17	8	ROCK_TUNNEL_1F	$52	RockTunnelName	ROCK TUNNEL	岩山隧道
+12	ROUTE_10	$15	53	8	ROCK_TUNNEL_1F	$52	RockTunnelName	ROCK TUNNEL	岩山隧道

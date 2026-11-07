@@ -1,3 +1,29 @@
+## ROM-1.42 — 图鉴评价与玩家资料双语正式清理（2026-11-07；模式 A 提交准备）
+
+- **基线与工作区**：项目导出记录声明分支 `CHS_Mod`、HEAD `608a85501b97174401367f544427aaac60639e54`；ROM-1.42B ZIP 是该 HEAD 之上的未提交 Worktree 快照，不能冒充干净 HEAD。随包 Bundle 分支停在 `bd091a28...`，通过所附 003／004 Commit Patch 重建 608a8550 内容树，用于累计全量补丁核验。清理增量以 ROM-1.42B 当前 Worktree（已整合项目计划）为前置。
+- **正式版号清理**：`src/data/game_version.asm` 从 `ROM-1.42B` 改为 8 字符 `ROM-1.42`；Options 版本文字起点从 x=10 恢复 x=11，右边缘保持 x=18。仅清理版号和对齐，不改双语选择、文本读取、动态值、WRAM／SRAM 或存档行为。版本：`ROM-1.41 → ROM-1.42`。
+- **第一笔功能提交**：保留图鉴评价 19 个英文标签、16 档阈值、Oak's Lab／Hall of Fame 动态 Seen／Owned 数值，以及 Continue／Save、Trainer Card、Hall of Fame 玩家资料固定标签的双语分支；均沿用 `wOptions` bit 5。玩家名、徽章数量、金钱、时间、Seen／Owned 数值的原读取路径不变。
+- **第二笔工具／审计提交**：扩展现有 `generate_bilingual_dialogue.py` 生成 19 个图鉴英文标签并保留地图对白 Bank `$62-$6F`、图鉴数据 Bank `$70` 的隔离；更新构建流水线和三个相关静态守卫；加入图鉴／玩家资料单元测试及阶段0／阶段1审计台账。没有另建重复生成器。
+- **用户反馈范围**：用户录像确认 Oak's Lab 图鉴评价与 Hall of Fame 所展示的 Seen／Owned／Rating 文字在 English 下正常，用户确认中文模式正常；用户另对玩家资料相关界面进行局部抽测并反馈未发现明显问题。该反馈不代表全部 16 档逐档、红／蓝、DMG／CGB 或所有存档重启路径均通过。
+- **未完成项**：Continue／Save 当前地点仍显示中文；地图名称系统首轮只读 crosswalk 已建立，但名称 variants、Fly 短名、CGB 英文图形 renderer、Route20／Seafoam 语义和 Bank-safe ABI 仍待设计评审。共用 YES／NO 继续按用户决定暂缓。
+- **静态验证（本轮实际执行）**：`python3 -m unittest discover -s tests -v` 为 22/22 PASS；`python3 scripts/prepare_build.py` 成功导入／同步 2,587 个文件，生成 1,942 条地图引用／1,941 个地图英文标签及 19 个图鉴英文标签，地图数据分配 ROMX `$62-$6F`、图鉴数据 `$70`；地图对白、图鉴评价、玩家资料 3 个专项静态守卫均 PASS。项目全部 17 个 `verify_*.py` 中 5 PASS／12 FAIL：11 个历史入口只因旧版号白名单不含 ROM-1.42 而失败；`verify_qol116_static.py` 的 11 项功能结构检查均 PASS，仅旧版号与旧 Options 对齐断言失败。未修改／弱化这些历史守卫。
+- **负向验证**：在临时副本中移除 Continue／Save 的 English 选择分支后，玩家资料专项静态守卫按预期失败；现有单元测试另覆盖缺失／重复英文标签、未知 token、未审查命令、超宽文本和阈值变更等 fail-closed 情况。
+- **构建边界**：本轮不运行 RGBDS／`rgblink`，不生成正式 ROM-1.42 红／蓝 ROM、新 MAP 或 ROM SHA。随包 ROM-1.42B MAP 只是开发快照证据，不作为本轮正式链接证明。维护者需本地红／蓝构建并保存 MAP／SHA。
+- **Git 边界**：按模式 A 交付清理增量、工具部分反向隔离、HEAD 累计全量，以及功能／工具两份中文提交日志；助手不执行 Git Commit／Push。
+
+---
+
+## ROM-1.42B — 玩家资料双语界面用户抽测反馈与 ROM-1.42C 撤销（2026-11-07；局部反馈，不是全量验收）
+
+- **用户反馈**：用户表示按此前建议抽测的其他项目没有发现明显问题。该反馈覆盖其实际查看的 Continue/Save 固定标签、Trainer Card、Hall of Fame 和图鉴评价相关界面；不扩大为红/蓝、DMG/CGB 或所有菜单/场景全矩阵通过。
+- **明确未完成项**：Continue／Save 页面当前地点仍显示中文。固定 UI 标签已切英文，不代表动态地图名称也走 LANGUAGE 分支；地点名称应归入地图名称系统，与 Town Map、Fly、Pokédex AREA、CGB 地名牌一并审计。
+- **ROM-1.42C 试验撤销**：`ROM-1.42C-current-location-fix.patch` 已按用户要求撤回，不应用、不叠加。试验版固定显示 `ROUTE 17`，不是可接受的修复。
+- **根因记录**：C 候选在 `ld a, [wCurMap]` 后直接 `farcall LoadTownMapEntry`。`farcall` 宏将目标 Bank 放入 B，`Bankswitch` 随后把 A 改写为 B 中的 Bank 编号再跳转；调用前的 map ID 因而丢失。目标 Bank `$1C` 恰好等于 `ROUTE_17` map ID `$1C`，造成固定 ROUTE 17。后续跨 Bank 调用必须明示寄存器契约并对参数保留做负向测试。
+- **后续行动**：不再做 Continue/Save 单页补丁。先完成 `docs/BILINGUAL_PROJECT_PLAN.md` 阶段1地点身份交叉表，再统一设计所有地图名称 renderer。
+- **本轮边界**：本条只记录用户反馈和失败试验教训；没有修改游戏运行代码，没有生成新 ROM/MAP/SHA，也没有 Git Commit/Push。
+
+---
+
 ## ROM-1.41 — 第一阶段地图脚本对白双语接入正式清理（2026-11-07）
 
 - **正式基线／版本**：`CHS_Mod` 正式 HEAD `bd091a28bf2e1f87de59c44be694b35d7d8b4405`（ROM-1.40）；目标正式版 `ROM-1.41`。从 ROM-1.41B Worktree 重建的增量路径与 HEAD 全量路径叠加 HF1 后，文件内容一致。

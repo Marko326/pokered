@@ -1,3 +1,51 @@
+## 当前双语项目状态 — ROM-1.42（2026-11-07；正式清理准备）
+
+> **当前正式版本目标**：`ROM-1.42`。开发候选 `ROM-1.42B` 已进入正式清理；版本清理只将版号改为 8 字符 `ROM-1.42` 并把 Options 版本绘制起点由 x=10 恢复 x=11，不改已经验收范围内的运行逻辑。
+> **Git 基线**：`CHS_Mod`，导出记录声明 HEAD `608a85501b97174401367f544427aaac60639e54`。ROM-1.42B ZIP 是包含未提交 Worktree 修改的快照，不是干净 HEAD；全量补丁以该 HEAD 的可重建源码树为基线，增量补丁以前述 ROM-1.42B Worktree（含已整合项目计划）为基线。尚未替用户执行 Git Commit／Push。
+
+- [x] **LANGUAGE 基础**：Options 中英文设置沿用 `wOptions` bit 5；不新增语言存档字段。
+- [x] **地图脚本对白**：1,944 条 `text_far` 引用中接入 1,942 条，覆盖 1,941 个唯一标签；另有 2 条既有 English pilot wrapper。源码接入完成；红／蓝构建和完整回归仍按项目要求单独留证。
+- [x] **图鉴统计／博士评价**：19 个双语标签（16 档评价及统计 wrapper）；用户录像确认所展示场景 English 正常，并反馈中文模式正常。此为录像所示范围，不代表全部阈值和平台矩阵。
+- [x] **玩家资料固定标签**：Continue／Save 的 PLAYER、BADGES、POKéDEX、TIME；Trainer Card 的 NAME、MONEY、TIME、BADGES；HOF 的 PLAY TIME、MONEY。用户抽测反馈已查看项目未见明显问题；此为局部反馈，不等于全平台矩阵验收。
+- [x] **ROM-1.42 正式清理静态复核**：22/22 单元测试 PASS；`prepare_build.py` 同步 2,587 个文件；3 个双语专项静态守卫 PASS；全部 17 个历史／专项 `verify_*.py` 为 5 PASS／12 FAIL，失败均定位为旧版号／Options 对齐守卫，未修改旧检查。负向移除 English selector 后专项守卫按预期失败。
+- [ ] **当前明确问题**：Continue／Save 当前地点名称仍显示中文。它属于地图名称数据／renderer 系统，不是固定 UI 标签；不得只修 Continue 或 Save 单页。
+- [x] **阶段0首轮盘点**：详见 `docs/BILINGUAL_PROJECT_AUDIT_ROM142B.md`、`docs/BILINGUAL_COVERAGE_MASTER.tsv`、`docs/BILINGUAL_SCREEN_COMPONENT_MATRIX.tsv`、`docs/DATA_XLSX_IMPORT_OPERATIONS.tsv`。
+- [ ] **阶段0关闭前复核**：确认 5 个没有直接 ASM 文本引用的候选标签；补充 manifest 以外的 inline literals 和特殊 renderer；把源码级引用扫描结果逐项核实为真实调用链／共享消费者。
+- [x] **阶段1首轮只读 crosswalk**：已建立 `docs/BILINGUAL_MAP_IDENTITY_CROSSWALK.tsv`（248 个物理 map ID）、52 个 TownMap selector、60 条内部范围、13 个特殊 Fly 目的地、13 条玩家 marker override、109 条 CGB map-id 映射及 107 个图形 label 台账；详见 `docs/MAP_NAME_SYSTEM_AUDIT_ROM142B.md`。
+- [ ] **阶段1设计评审（当前下一任务）**：确定 physical map ID／logical selector／CGB floor identity 接口；建立 Town Map 10 列、Fly 7 列、Save／Continue 13 列、CGB 18 tile 的名称 variants；明确 Route20／Seafoam 的 Continue／Save 语义；设计 Bank-safe English name copy，不复用 ROM-1.42C 代码。
+- [ ] **导入器质量门**：设计 stale-key、重复键冲突、条件未命中和 RB／RGB 过滤检查；复用现有导入器，不另建重复工具。
+- [ ] **后续模块**：地图名称兼容 → Pokédex 列表／条目／AREA → Battle → 菜单／PC／Bag／Mart → 事件／通信／图形文字 → 全局集成验收。共用 YES／NO 按用户既有决定继续暂缓。
+- [x] **ROM-1.42C 撤销**：`ROM-1.42C-current-location-fix.patch` 已撤回，不应用、不叠加、不作为基线。已确认其跨 Bank `farcall` 后把 A 改写的 Bank `$1C` 误读成 `ROUTE_17` map ID；该故障作为跨 Bank 寄存器契约负向案例保留。
+- [ ] **维护者构建／最终验收**：本轮未运行 RGBDS／`rgblink`，未生成 ROM-1.42 红／蓝 ROM、MAP 或 SHA。维护者构建与 Git Commit／Push 遵循项目生效要求。
+
+**总计划唯一入口：** `docs/BILINGUAL_PROJECT_PLAN.md`。
+**阶段0盘点证据：** `docs/BILINGUAL_PROJECT_AUDIT_ROM142B.md`。
+**阶段1地图名称审计：** `docs/MAP_NAME_SYSTEM_AUDIT_ROM142B.md`。
+**玩家资料技术记录：** `docs/ROM142B_PLAYER_INFO_BILINGUAL.md`。
+
+
+---
+
+## ROM-1.42A — 图鉴统计与博士评价双语接入（开发历史；已并入 ROM-1.42）
+
+- [x] **开发基线**：用户最新 `ROM-1.41.zip` 导出为 `CHS_Mod` 干净 HEAD `608a85501b97174401367f544427aaac60639e54`，正式版本 ROM-1.41；本轮不把旧 ROM-1.41C／ROM-1.41B Worktree 当作当前基线。
+- [x] **补丁基线**：导出记录标记 Worktree clean、无未提交 patch；因此 ROM-1.41 增量补丁与 HEAD `608a8550` 全量补丁从同一份快照起算，内容相同、二选一应用，不叠加。
+- [x] **接入范围**：`DisplayDexRating` 的 1 段 seen／owned 动态统计、16 档拥有数量评价，以及名人堂画面复用的 2 段 seen／owned 统计标签，共 19 个英文文本标签。
+- [x] **语言读取**：沿用既有 `text_bilingual`／`TX_BILINGUAL` 与 `wOptions` bit 5；不改 `DisplayDexRating` 计数、16 档阈值、声音、事件标志或流程，不改 YES／NO 菜单。
+- [x] **动态内容**：保留 `hDexRatingNumMonsSeen`、`hDexRatingNumMonsOwned`、`wDexRatingNumMonsSeen`、`wDexRatingNumMonsOwned` 的 `text_decimal` 实时值；英文文本字面量中的 `#MON`／`#DEX` 展开为 `POKéMON`／`POKéDEX`，避开 CHS `PlacePOKe` 扩展。
+- [x] **自动检查**：17/17 单元测试通过；`prepare_build.py` 生成 1,942 条地图引用／1,941 个地图英文标签及 19 个图鉴英文标签；地图双语与图鉴专用静态检查均通过；`git diff --check` 通过。
+- [x] **历史验证器审计**：项目现有 16 个 `verify_*.py` 中 4 PASS／12 FAIL；11 个旧脚本在历史版号白名单处停止，`verify_qol116_static.py` 仅因旧正式版号／Options 对齐断言失败，其功能项均 PASS。未修改或弱化这些旧检查。
+- [x] **空间方案**：新增英文数据估算 1,661 bytes，独立放入 ROMX `$70`；同时将地图对白英文 Bank 上限固定为 `$6F`，防止未来地图文本增长与图鉴数据冲突；ROM-1.41 MAP 基线显示 `$70` 空余 16,384 bytes。17 个图鉴评价 wrapper 在 Bank `$11` 预计增加 51 bytes，2 个 Hall of Fame wrapper 在 Bank `$1C` 预计增加 6 bytes；9 字符候选版号使 ROM0 字符串增加 1 byte。旧 MAP 的余量投影分别约为 Bank `$11` 3,346 bytes、Bank `$1C` 265 bytes、ROM0 430 bytes；不是 ROM-1.42A 新链接结果。
+- [ ] **维护者构建**：对正式 ROM-1.42 运行项目正式入口并分别构建红／蓝，确认 `$70` 实际 section 分配、Bank 空间、ROM0 版号长度和总 ROM 容量；保存新 MAP 与 ROM SHA。AI 不运行 RGBDS／`rgblink`。
+- [x] **用户实机反馈（录像 `1.42A.mp4` 与 `名人堂评价.mp4`）**：English 下 Oak's Lab 图鉴评价与 Hall of Fame 最终 Seen／Owned／Rating 文字均显示英文；用户另确认中文模式全程中文正常。名人堂动态 Seen／Owned 数量显示 151／151，评价正文与研究所相同。此反馈只覆盖录像展示的界面和用户明确确认的中文模式，不扩大为红／蓝、DMG／CGB 全矩阵验收。
+- [x] **本轮验收结论**：ROM-1.42A 图鉴统计与博士评价子项目已通过用户展示的场景测试；HOF 的 PLAY TIME／MONEY、Trainer Card 和 Continue／Save 信息标签尚未双语化，转入 ROM-1.42B 独立处理。
+- [ ] **后续仍独立处理**：图鉴列表／图鉴条目文字、图鉴地点、共用 YES／NO、战斗文字、宝可梦／技能／道具名称及其它 UI 不因本轮而宣称完成。
+- [x] **版本收口**：图鉴评价与玩家资料功能已随 ROM-1.42B 候选一并正式清理为 `ROM-1.42`；本条保留 ROM-1.42A 的开发历史。
+
+详见 `docs/ROM142_POKEDEX_RATING_BILINGUAL.md` 与更新后的 `docs/ROM141_NEXT_PHASE_POKEDEX_RATING_SCOPE.md`。
+
+---
+
 ## ROM-1.41 — 第一阶段地图脚本对白双语正式清理（2026-11-07；提交准备，最终 MAP 待维护者归档）
 
 - [x] **正式版号清理**：`ROM-1.41C` → 正式 `ROM-1.41`；8 字符 Options 版本文字起点恢复 x=11，右边缘仍为 x=18。

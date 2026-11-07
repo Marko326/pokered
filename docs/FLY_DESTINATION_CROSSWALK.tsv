@@ -1,0 +1,14 @@
+special_fly_list_index	fly_selector	selector_value	selector_is_physical_map_id	town_map_order_geographic_index	town_map_order_selector_at_anchor	special_fly_anchor_position_index	saved_unlock_bit	name_label	english_name_source_or_candidate	chinese_name	resolution_method	resolution_note
+0	VIRIDIAN_FOREST	$33	YES	4	VIRIDIAN_FOREST	4	0	ViridianForestName	VIRIDIAN FOREST	常青森林	INTERNAL_RANGE	first threshold VIRIDIAN_FOREST+1 = $34
+1	DIGLETTS_CAVE_ROUTE_2	$2E	YES	5	DIGLETTS_CAVE_ROUTE_2	5	1	DiglettsCaveName	DIGLETT's CAVE	地鼠洞穴	SPECIAL	实际地图 ID 特殊别名
+2	MT_MOON_1F	$3B	YES	8	MT_MOON_1F	8	2	MountMoonName	MT.MOON	月见山	INTERNAL_RANGE	first threshold MT_MOON_B2F+1 = $3E
+3	CERULEAN_CAVE_1F	$E4	YES	10	CERULEAN_CAVE_1F	10	3	CeruleanCaveName	CERULEAN CAVE	华蓝洞窟	INTERNAL_RANGE	first threshold CERULEAN_CAVE_1F+1 = $E5
+4	BILLS_HOUSE	$58	YES	14	BILLS_HOUSE	14	4	SeaCottageName	SEA COTTAGE	海角小屋	INTERNAL_RANGE	first threshold BILLS_HOUSE+1 = $59
+5	ROCK_TUNNEL_1F	$52	YES	21	ROCK_TUNNEL_POKECENTER	21	5	RockTunnelName	ROCK TUNNEL	岩山隧道	INTERNAL_RANGE	first threshold ROCK_TUNNEL_1F+1 = $53
+6	POWER_PLANT	$53	YES	23	POWER_PLANT	23	12	PowerPlantName	POWER PLANT	无人发电厂	INTERNAL_RANGE	first threshold POWER_PLANT+1 = $54
+7	DIGLETTS_CAVE_ROUTE_11	$55	YES	19	DIGLETTS_CAVE_ROUTE_11	19	7	DiglettsCaveName	DIGLETT's CAVE	地鼠洞穴	SPECIAL	实际地图 ID 特殊别名
+8	CELADON_MART_ROOF	$7E	YES	29	CELADON_MART_ROOF	29	6	CeladonMartRoofName	CELADON MART ROOF	百货屋顶（硬编码 CHS 字形）	SPECIAL	硬编码屋顶名称，不在 names.asm
+9	SAFARI_ZONE_GATE	$9C	YES	40	SAFARI_ZONE_EAST	40	8	SafariZoneName	SAFARI ZONE	狩猎地带	INTERNAL_RANGE	first threshold SAFARI_ZONE_GATE+1 = $9D
+10	SEAFOAM_ISLANDS_1F	$C0	YES	43	SEAFOAM_ISLANDS_B1F	43	10	SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	INTERNAL_RANGE	first threshold SEAFOAM_ISLANDS_1F+1 = $C1
+11	SPECIAL_FLY_SEAFOAM_WEST_SELECTOR	$FD	NO	44	UNUSED_MAP_F1	44	9	SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	SPECIAL	虚拟 Fly selector $FD
+12	VICTORY_ROAD_1F	$6C	YES	50	VICTORY_ROAD_3F	50	11	VictoryRoadName	VICTORY ROAD	冠军之路	INTERNAL_RANGE	first threshold VICTORY_ROAD_1F+1 = $6D

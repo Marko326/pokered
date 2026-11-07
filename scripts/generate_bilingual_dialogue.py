@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate bilingual far-text commands and isolated English map-dialogue data.
+"""Generate bilingual map-dialogue and Pokedex-rating English text resources.
 
 src/ is authoritative. The official root build pipeline runs this after the
 XLSX importers, writing only into buildRB/. English source bodies are copied
@@ -107,7 +107,49 @@ TEXT_REFLOW_SOURCE_SHA256 = {
 }
 SECTION_BUDGET = 0x3000  # leave at least 4 KiB headroom in each 16 KiB ROMX bank
 FIRST_ENGLISH_BANK = 0x62
-LAST_ENGLISH_BANK = 0x7F
+# Reserve $70 for the engine-driven Pokedex rating data below. Map-dialogue
+# generation must stop at $6F so future map growth cannot collide with it.
+LAST_ENGLISH_BANK = 0x6F
+
+# The Pokedex rating system is an engine-driven text path, not a map-script
+# text_far reference. Keep its 17 rating/completion labels plus the two Hall
+# of Fame summary labels in a separate, fixed high ROMX bank.
+POKEDEX_RATING_LABELS = (
+    "_DexCompletionText",
+    "_DexRatingText_Own0To9",
+    "_DexRatingText_Own10To19",
+    "_DexRatingText_Own20To29",
+    "_DexRatingText_Own30To39",
+    "_DexRatingText_Own40To49",
+    "_DexRatingText_Own50To59",
+    "_DexRatingText_Own60To69",
+    "_DexRatingText_Own70To79",
+    "_DexRatingText_Own80To89",
+    "_DexRatingText_Own90To99",
+    "_DexRatingText_Own100To109",
+    "_DexRatingText_Own110To119",
+    "_DexRatingText_Own120To129",
+    "_DexRatingText_Own130To139",
+    "_DexRatingText_Own140To149",
+    "_DexRatingText_Own150To151",
+    "_DexSeenOwnedText",
+    "_DexRatingText",
+)
+POKEDEX_RATING_BANK = 0x70
+POKEDEX_RATING_ALLOWED_COMMANDS = {
+    "text", "line", "cont", "para", "next", "text_decimal",
+    "text_start", "text_end", "done", "prompt",
+}
+POKEDEX_RATING_REQUIRED_DECIMALS = {
+    "_DexCompletionText": (
+        "text_decimal hDexRatingNumMonsSeen, 1, 3",
+        "text_decimal hDexRatingNumMonsOwned, 1, 3",
+    ),
+    "_DexSeenOwnedText": (
+        "text_decimal wDexRatingNumMonsSeen, 1, 3",
+        "text_decimal wDexRatingNumMonsOwned, 1, 3",
+    ),
+}
 
 
 @dataclass(frozen=True)
@@ -287,6 +329,68 @@ def line_width_metrics(body: str) -> tuple[int, int]:
     return checked, maximum
 
 
+def pokedex_dynamic_line_width_violations(
+    body: str,
+) -> list[tuple[int, int, str]]:
+    """Check combined text + text_decimal output on each Pokedex display line."""
+    violations: list[tuple[int, int, str]] = []
+    current_width = 0
+    for line_number, raw_line in enumerate(body.splitlines(), 1):
+        code = raw_line.split(";", 1)[0].strip()
+        if not code:
+            continue
+        command = code.split(None, 1)[0]
+        if command in {"line", "para", "cont", "next"}:
+            current_width = 0
+        if command in {"text", "line", "para", "cont", "next"}:
+            for literal in STRING_RE.findall(code):
+                value = literal[1:-1]
+                for token, english in SPECIAL_EXPANSIONS:
+                    value = value.replace(token, english)
+                current_width += visible_line_width(value)
+        elif command == "text_decimal":
+            match = re.search(r",\s*\d+\s*,\s*(\d+)\s*$", code)
+            if match is None:
+                raise ValueError(
+                    f"Cannot determine text_decimal width at line {line_number}: {code}"
+                )
+            current_width += int(match.group(1))
+        if current_width > MAX_TEXT_LINE_WIDTH:
+            violations.append((line_number, current_width, code))
+    return violations
+
+
+def pokedex_dynamic_line_width_metrics(body: str) -> int:
+    """Return the widest Pokedex line after adding maximum dynamic decimals."""
+    violations = pokedex_dynamic_line_width_violations(body)
+    if violations:
+        return max(width for _line, width, _code in violations)
+    current_width = 0
+    maximum = 0
+    for raw_line in body.splitlines():
+        code = raw_line.split(";", 1)[0].strip()
+        if not code:
+            continue
+        command = code.split(None, 1)[0]
+        if command in {"line", "para", "cont", "next"}:
+            current_width = 0
+        if command in {"text", "line", "para", "cont", "next"}:
+            for literal in STRING_RE.findall(code):
+                value = literal[1:-1]
+                for token, english in SPECIAL_EXPANSIONS:
+                    value = value.replace(token, english)
+                current_width += visible_line_width(value)
+        elif command == "text_decimal":
+            match = re.search(r",\s*\d+\s*,\s*(\d+)\s*$", code)
+            if match is None:
+                raise ValueError(
+                    f"Cannot determine text_decimal width in command: {code}"
+                )
+            current_width += int(match.group(1))
+        maximum = max(maximum, current_width)
+    return maximum
+
+
 def normalize_english_body(body: str) -> tuple[str, Counter[str]]:
     """Convert only confirmed shared dictionary expansions inside literals."""
     replacements: Counter[str] = Counter()
@@ -407,6 +511,115 @@ def generated_english_data(
             output.append(body.lstrip("\n").rstrip())
             output.append("")
     return "\n".join(output).rstrip() + "\n", replacements, total_estimate, bank_numbers
+
+
+def generated_pokedex_rating_data(
+    english_index: dict[str, EnglishLabel],
+    duplicate_labels: set[str] | None = None,
+) -> tuple[str, dict[str, int]]:
+    """Generate English copies for the engine-driven Pokedex rating path.
+
+    This deliberately does not route map scripts or modify the CHS source.
+    All 19 labels must exist exactly once, retain their runtime decimal
+    commands, and fit the normal 18-column text window after # expansion.
+    """
+    duplicate_labels = duplicate_labels or set()
+    missing = [label for label in POKEDEX_RATING_LABELS if label not in english_index]
+    duplicates = [label for label in POKEDEX_RATING_LABELS if label in duplicate_labels]
+    if missing or duplicates:
+        raise ValueError(
+            "Pokedex rating English source labels are incomplete: "
+            f"missing={missing}, duplicate={duplicates}"
+        )
+
+    output = [
+        "; AUTO-GENERATED by scripts/generate_bilingual_dialogue.py.",
+        "; Do not edit directly; source text is src/text/pokedex_ratings.asm",
+        "; and src/data/text/text_2.asm after the CHS XLSX import.",
+        "; # is expanded to literal POKé so English avoids the CHS PlacePOKe routine.",
+        f'SECTION "English Pokedex Ratings", ROMX, BANK[${POKEDEX_RATING_BANK:02X}]',
+        "",
+    ]
+    total_estimate = 0
+    checked_lines = 0
+    maximum_width = 0
+    special_replacements: Counter[str] = Counter()
+
+    for label in POKEDEX_RATING_LABELS:
+        expected_path = (
+            "text/pokedex_ratings.asm"
+            if label in POKEDEX_RATING_LABELS[:17]
+            else "data/text/text_2.asm"
+        )
+        if english_index[label].path != expected_path:
+            raise ValueError(
+                f"Pokedex rating source {label} must come from {expected_path}, "
+                f"found {english_index[label].path}"
+            )
+        source_body = english_index[label].body
+        unsupported = unsupported_tokens(source_body)
+        unsafe = unsupported_commands(source_body)
+        if unsupported or unsafe:
+            raise ValueError(
+                f"Pokedex rating source {label} contains unsupported tokens/commands: "
+                f"tokens={sorted(unsupported)}, commands={sorted(unsafe)}"
+            )
+
+        for raw_line in source_body.splitlines():
+            code = raw_line.split(";", 1)[0].strip()
+            if not code:
+                continue
+            command = code.split(None, 1)[0]
+            if command not in POKEDEX_RATING_ALLOWED_COMMANDS:
+                raise ValueError(
+                    f"Pokedex rating source {label} uses unreviewed command {command!r}"
+                )
+
+        for required in POKEDEX_RATING_REQUIRED_DECIMALS.get(label, ()):
+            if not any(
+                raw_line.split(";", 1)[0].strip() == required
+                for raw_line in source_body.splitlines()
+            ):
+                raise ValueError(
+                    f"Pokedex rating source {label} lost required live counter: {required}"
+                )
+
+        body, replacements = normalize_english_body(source_body)
+        violations = line_width_violations(body)
+        dynamic_violations = pokedex_dynamic_line_width_violations(body)
+        if violations or dynamic_violations:
+            line_number, width, value = (violations or dynamic_violations)[0]
+            raise ValueError(
+                f"Pokedex rating English text {label} line {line_number} is "
+                f"{width} columns (maximum {MAX_TEXT_LINE_WIDTH}): {value!r}"
+            )
+        checked, maximum = line_width_metrics(body)
+        dynamic_maximum = pokedex_dynamic_line_width_metrics(body)
+        checked_lines += checked
+        maximum_width = max(maximum_width, maximum, dynamic_maximum)
+        total_estimate += estimate_body_size(body)
+        special_replacements.update(replacements)
+
+        output.append(f"{label}_EN::")
+        output.append(body.lstrip("\n").rstrip())
+        output.append("")
+
+    if total_estimate > SECTION_BUDGET:
+        raise ValueError(
+            f"Pokedex rating English data estimates to {total_estimate} bytes; "
+            f"exceeds the ${SECTION_BUDGET:04X} section budget"
+        )
+
+    summary = {
+        "labels": len(POKEDEX_RATING_LABELS),
+        "estimated_bytes": total_estimate,
+        "checked_lines": checked_lines,
+        "max_line_width": maximum_width,
+        "max_dynamic_line_width": maximum_width,
+        "special_replacements": special_replacements.get("#", 0),
+        "bank": POKEDEX_RATING_BANK,
+    }
+    return "\n".join(output).rstrip() + "\n", summary
 
 
 def transform_build_scripts(
@@ -640,6 +853,13 @@ def generate(
     if not generated_path.is_file() or generated_path.read_text(encoding="utf-8") != english_asm:
         generated_path.write_text(english_asm, encoding="utf-8")
 
+    pokedex_asm, pokedex_summary = generated_pokedex_rating_data(
+        original_english_index, duplicate_english_labels
+    )
+    pokedex_path = build_root / "data" / "english_text" / "generated_pokedex_ratings.asm"
+    if not pokedex_path.is_file() or pokedex_path.read_text(encoding="utf-8") != pokedex_asm:
+        pokedex_path.write_text(pokedex_asm, encoding="utf-8")
+
     routed_refs, changed_scripts = transform_build_scripts(
         source_root, build_root, routed_labels
     )
@@ -693,9 +913,16 @@ def generate(
         "english_sections": len(bank_numbers),
         "english_banks": bank_numbers,
         "special_replacements": dict(special_replacements),
+        "pokedex_rating_labels": pokedex_summary["labels"],
+        "pokedex_rating_estimated_bytes": pokedex_summary["estimated_bytes"],
+        "pokedex_rating_checked_lines": pokedex_summary["checked_lines"],
+        "pokedex_rating_max_line_width": pokedex_summary["max_line_width"],
+        "pokedex_rating_special_replacements": pokedex_summary["special_replacements"],
+        "pokedex_rating_bank": pokedex_summary["bank"],
         "changed_scripts": len(changed_scripts),
         "generated_files": sorted(changed_scripts + [
-            "data/english_text/generated_dialogue.asm"
+            "data/english_text/generated_dialogue.asm",
+            "data/english_text/generated_pokedex_ratings.asm",
         ]),
         "unsafe_token_labels_in_map_scope": sum(
             bool(unsupported_tokens(english_index[label].body))

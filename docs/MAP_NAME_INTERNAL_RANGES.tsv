@@ -1,0 +1,61 @@
+map_id_start	map_id_end_inclusive	range_size	upper_bound_symbol	upper_exclusive	town_map_x	town_map_y	name_label	english_name_source_or_candidate	chinese_name	special_overrides_bypassing_range	source
+$25	$28	4	OAKS_LAB	$29	2	11	PalletTownName	PALLET TOWN	真新镇	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$29	$2D	5	VIRIDIAN_GYM	$2E	2	8	ViridianCityName	VIRIDIAN CITY	常青市	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$2E	$32	5	VIRIDIAN_FOREST_SOUTH_GATE	$33	2	6	Route2Name	ROUTE 2	2号道路	$2E DIGLETTS_CAVE_ROUTE_2	src/data/maps/town_map_entries.asm InternalMapEntries
+$33	$33	1	VIRIDIAN_FOREST	$34	2	5	ViridianForestName	VIRIDIAN FOREST	常青森林	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$34	$3A	7	PEWTER_POKECENTER	$3B	2	3	PewterCityName	PEWTER CITY	深灰市	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$3B	$3D	3	MT_MOON_B2F	$3E	6	2	MountMoonName	MT.MOON	月见山	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$3E	$43	6	CERULEAN_MART	$44	10	2	CeruleanCityName	CERULEAN CITY	华蓝市	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$44	$44	1	MT_MOON_POKECENTER	$45	5	2	Route4Name	ROUTE 4	4号道路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$45	$45	1	CERULEAN_TRASHED_HOUSE_COPY	$46	10	2	CeruleanCityName	CERULEAN CITY	华蓝市	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$46	$48	3	DAYCARE	$49	10	4	Route5Name	ROUTE 5	5号道路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$49	$4B	3	UNDERGROUND_PATH_ROUTE_6_COPY	$4C	10	6	Route6Name	ROUTE 6	6号道路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$4C	$4E	3	UNDERGROUND_PATH_ROUTE_7_COPY	$4F	9	5	Route7Name	ROUTE 7	7号道路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$4F	$50	2	UNDERGROUND_PATH_ROUTE_8	$51	11	5	Route8Name	ROUTE 8	8号道路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$51	$52	2	ROCK_TUNNEL_1F	$53	14	3	RockTunnelName	ROCK TUNNEL	岩山隧道	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$53	$53	1	POWER_PLANT	$54	15	4	PowerPlantName	POWER PLANT	无人发电厂	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$54	$56	3	ROUTE_11_GATE_2F	$57	13	9	Route11Name	ROUTE 11	11号道路	$55 DIGLETTS_CAVE_ROUTE_11	src/data/maps/town_map_entries.asm InternalMapEntries
+$57	$57	1	ROUTE_12_GATE_1F	$58	14	7	Route12Name	ROUTE 12	12号道路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$58	$58	1	BILLS_HOUSE	$59	12	0	SeaCottageName	SEA COTTAGE	海角小屋	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$59	$5E	6	VERMILION_DOCK	$5F	10	9	VermilionCityName	VERMILION CITY	枯叶市	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$5F	$68	10	SS_ANNE_B1F_ROOMS	$69	9	10	SSAnneName	S.S.ANNE	圣特安努号	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$69	$6C	4	VICTORY_ROAD_1F	$6D	0	4	VictoryRoadName	VICTORY ROAD	冠军之路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$6D	$76	10	HALL_OF_FAME	$77	0	2	PokemonLeagueName	#MON LEAGUE	#联盟	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$77	$77	1	UNDERGROUND_PATH_NORTH_SOUTH	$78	10	5	UndergroundPathName	UNDERGROUND PATH	地下通道	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$78	$78	1	CHAMPIONS_ROOM	$79	0	2	PokemonLeagueName	#MON LEAGUE	#联盟	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$79	$79	1	UNDERGROUND_PATH_WEST_EAST	$7A	10	5	UndergroundPathName	UNDERGROUND PATH	地下通道	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$7A	$8C	19	CELADON_HOTEL	$8D	7	5	CeladonCityName	CELADON CITY	玉虹市	$7E CELADON_MART_ROOF	src/data/maps/town_map_entries.asm InternalMapEntries
+$8D	$8D	1	LAVENDER_POKECENTER	$8E	14	5	LavenderTownName	LAVENDER TOWN	紫苑镇	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$8E	$94	7	POKEMON_TOWER_7F	$95	15	5	PokemonTowerName	#MON TOWER	#塔	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$95	$97	3	LAVENDER_CUBONE_HOUSE	$98	14	5	LavenderTownName	LAVENDER TOWN	紫苑镇	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$98	$9B	4	WARDENS_HOUSE	$9C	8	13	FuchsiaCityName	FUCHSIA CITY	浅红市	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$9C	$9C	1	SAFARI_ZONE_GATE	$9D	8	12	SafariZoneName	SAFARI ZONE	狩猎地带	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$9D	$9E	2	FUCHSIA_MEETING_ROOM	$9F	8	13	FuchsiaCityName	FUCHSIA CITY	浅红市	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$9F	$A2	4	SEAFOAM_ISLANDS_B4F	$A3	5	15	SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$A3	$A3	1	VERMILION_OLD_ROD_HOUSE	$A4	10	9	VermilionCityName	VERMILION CITY	枯叶市	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$A4	$A4	1	FUCHSIA_GOOD_ROD_HOUSE	$A5	8	13	FuchsiaCityName	FUCHSIA CITY	浅红市	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$A5	$A5	1	POKEMON_MANSION_1F	$A6	2	15	PokemonMansionName	<PKMN> MANSION	#屋	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$A6	$AD	8	CINNABAR_MART_COPY	$AE	2	15	CinnabarIslandName	CINNABAR ISLAND	红莲镇	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$AE	$AE	1	INDIGO_PLATEAU_LOBBY	$AF	0	2	IndigoPlateauName	INDIGO PLATEAU	石英高原	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$AF	$B7	9	MR_PSYCHICS_HOUSE	$B8	10	5	SaffronCityName	SAFFRON CITY	金黄市	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$B8	$B9	2	ROUTE_15_GATE_2F	$BA	9	13	Route15Name	ROUTE 15	15号道路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$BA	$BC	3	ROUTE_16_FLY_HOUSE	$BD	4	5	Route16Name	ROUTE 16	16号道路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$BD	$BD	1	ROUTE_12_SUPER_ROD_HOUSE	$BE	14	10	Route12Name	ROUTE 12	12号道路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$BE	$BF	2	ROUTE_18_GATE_2F	$C0	7	13	Route18Name	ROUTE 18	18号道路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$C0	$C0	1	SEAFOAM_ISLANDS_1F	$C1	5	15	SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$C1	$C1	1	ROUTE_22_GATE	$C2	0	7	Route22Name	ROUTE 22	22号道路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$C2	$C2	1	VICTORY_ROAD_2F	$C3	0	4	VictoryRoadName	VICTORY ROAD	冠军之路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$C3	$C3	1	ROUTE_12_GATE_2F	$C4	14	7	Route12Name	ROUTE 12	12号道路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$C4	$C4	1	VERMILION_TRADE_HOUSE	$C5	10	9	VermilionCityName	VERMILION CITY	枯叶市	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$C5	$C5	1	DIGLETTS_CAVE	$C6	3	4	DiglettsCaveName	DIGLETT's CAVE	地鼠洞穴	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$C6	$C6	1	VICTORY_ROAD_3F	$C7	0	4	VictoryRoadName	VICTORY ROAD	冠军之路	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$C7	$CE	8	UNUSED_MAP_CE	$CF	7	5	RocketHQName	ROCKET HQ	火箭队基地	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$CF	$D5	7	SILPH_CO_8F	$D6	10	5	SilphCoName	SILPH CO.	西尔佛公司	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$D6	$D8	3	POKEMON_MANSION_B1F	$D9	2	15	PokemonMansionName	<PKMN> MANSION	#屋	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$D9	$E1	9	SAFARI_ZONE_NORTH_REST_HOUSE	$E2	8	12	SafariZoneName	SAFARI ZONE	狩猎地带	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$E2	$E4	3	CERULEAN_CAVE_1F	$E5	9	1	CeruleanCaveName	CERULEAN CAVE	华蓝洞窟	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$E5	$E5	1	NAME_RATERS_HOUSE	$E6	14	5	LavenderTownName	LAVENDER TOWN	紫苑镇	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$E6	$E6	1	CERULEAN_BADGE_HOUSE	$E7	10	2	CeruleanCityName	CERULEAN CITY	华蓝市	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$E7	$E8	2	ROCK_TUNNEL_B1F	$E9	14	3	RockTunnelName	ROCK TUNNEL	岩山隧道	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$E9	$EC	4	SILPH_CO_ELEVATOR	$ED	10	5	SilphCoName	SILPH CO.	西尔佛公司	—	src/data/maps/town_map_entries.asm InternalMapEntries
+$ED	$F7	11	AGATHAS_ROOM	$F8	0	2	PokemonLeagueName	#MON LEAGUE	#联盟	$F1 UNUSED_MAP_F1; $F2 UNUSED_MAP_F2; $F3 UNUSED_MAP_F3	src/data/maps/town_map_entries.asm InternalMapEntries

@@ -1,0 +1,54 @@
+name_label	english_source	chinese_xlsx_replacement	town_map_order_used	town_map_order_indices	asm_reference_count	asm_references	note
+PalletTownName	PALLET TOWN	真新镇	YES	0	3	src/data/maps/town_map_entries.asm:10; src/data/maps/town_map_entries.asm:21; src/data/maps/town_map_entries.asm:59	—
+ViridianCityName	VIRIDIAN CITY	常青市	YES	2	2	src/data/maps/town_map_entries.asm:11; src/data/maps/town_map_entries.asm:60	—
+PewterCityName	PEWTER CITY	深灰市	YES	6	2	src/data/maps/town_map_entries.asm:12; src/data/maps/town_map_entries.asm:63	—
+CeruleanCityName	CERULEAN CITY	华蓝市	YES	11	4	src/data/maps/town_map_entries.asm:13; src/data/maps/town_map_entries.asm:65; src/data/maps/town_map_entries.asm:67; src/data/maps/town_map_entries.asm:115	—
+LavenderTownName	LAVENDER TOWN	紫苑镇	YES	24	4	src/data/maps/town_map_entries.asm:14; src/data/maps/town_map_entries.asm:85; src/data/maps/town_map_entries.asm:87; src/data/maps/town_map_entries.asm:114	—
+VermilionCityName	VERMILION CITY	枯叶市	YES	17	4	src/data/maps/town_map_entries.asm:15; src/data/maps/town_map_entries.asm:77; src/data/maps/town_map_entries.asm:92; src/data/maps/town_map_entries.asm:106	—
+CeladonCityName	CELADON CITY	玉虹市	YES	28	2	src/data/maps/town_map_entries.asm:16; src/data/maps/town_map_entries.asm:84	—
+FuchsiaCityName	FUCHSIA CITY	浅红市	YES	39	4	src/data/maps/town_map_entries.asm:17; src/data/maps/town_map_entries.asm:88; src/data/maps/town_map_entries.asm:90; src/data/maps/town_map_entries.asm:93	—
+CinnabarIslandName	CINNABAR ISLAND	红莲镇	YES	46	2	src/data/maps/town_map_entries.asm:18; src/data/maps/town_map_entries.asm:95	—
+IndigoPlateauName	INDIGO PLATEAU	石英高原	YES	51	2	src/data/maps/town_map_entries.asm:19; src/data/maps/town_map_entries.asm:96	—
+SaffronCityName	SAFFRON CITY	金黄市	YES	30	2	src/data/maps/town_map_entries.asm:20; src/data/maps/town_map_entries.asm:97	—
+Route1Name	ROUTE 1	1号道路	YES	1	1	src/data/maps/town_map_entries.asm:22	—
+Route2Name	ROUTE 2	2号道路	YES	3	2	src/data/maps/town_map_entries.asm:23; src/data/maps/town_map_entries.asm:61	—
+Route3Name	ROUTE 3	3号道路	YES	7	1	src/data/maps/town_map_entries.asm:24	—
+Route4Name	ROUTE 4	4号道路	YES	9	2	src/data/maps/town_map_entries.asm:25; src/data/maps/town_map_entries.asm:66	—
+Route5Name	ROUTE 5	5号道路	YES	15	2	src/data/maps/town_map_entries.asm:26; src/data/maps/town_map_entries.asm:68	—
+Route6Name	ROUTE 6	6号道路	YES	16	2	src/data/maps/town_map_entries.asm:27; src/data/maps/town_map_entries.asm:69	—
+Route7Name	ROUTE 7	7号道路	YES	27	2	src/data/maps/town_map_entries.asm:28; src/data/maps/town_map_entries.asm:70	—
+Route8Name	ROUTE 8	8号道路	YES	26	2	src/data/maps/town_map_entries.asm:29; src/data/maps/town_map_entries.asm:71	—
+Route9Name	ROUTE 9	9号道路	YES	20	1	src/data/maps/town_map_entries.asm:30	—
+Route10Name	ROUTE 10	10号道路	YES	22	1	src/data/maps/town_map_entries.asm:31	—
+Route11Name	ROUTE 11	11号道路	YES	31	2	src/data/maps/town_map_entries.asm:32; src/data/maps/town_map_entries.asm:74	—
+Route12Name	ROUTE 12	12号道路	YES	32	4	src/data/maps/town_map_entries.asm:33; src/data/maps/town_map_entries.asm:75; src/data/maps/town_map_entries.asm:100; src/data/maps/town_map_entries.asm:105	—
+Route13Name	ROUTE 13	13号道路	YES	33	1	src/data/maps/town_map_entries.asm:34	—
+Route14Name	ROUTE 14	14号道路	YES	34	1	src/data/maps/town_map_entries.asm:35	—
+Route15Name	ROUTE 15	15号道路	YES	35	2	src/data/maps/town_map_entries.asm:36; src/data/maps/town_map_entries.asm:98	—
+Route16Name	ROUTE 16	16号道路	YES	36	2	src/data/maps/town_map_entries.asm:37; src/data/maps/town_map_entries.asm:99	—
+Route17Name	ROUTE 17	17号道路	YES	37	1	src/data/maps/town_map_entries.asm:38	—
+Route18Name	ROUTE 18	18号道路	YES	38	2	src/data/maps/town_map_entries.asm:39; src/data/maps/town_map_entries.asm:101	—
+Route19Name	SEA ROUTE 19	19号水道	YES	41,42	2	src/engine/items/town_map.asm:888; src/data/maps/town_map_entries.asm:40	—
+Route20Name	SEA ROUTE 20	20号水道	YES	45	2	src/engine/items/town_map.asm:884; src/data/maps/town_map_entries.asm:41	—
+Route21Name	SEA ROUTE 21	21号水道	YES	47	1	src/data/maps/town_map_entries.asm:42	—
+Route22Name	ROUTE 22	22号道路	YES	48	2	src/data/maps/town_map_entries.asm:43; src/data/maps/town_map_entries.asm:103	—
+Route23Name	ROUTE 23	23号道路	YES	49	1	src/data/maps/town_map_entries.asm:44	—
+Route24Name	ROUTE 24	24号道路	YES	12	1	src/data/maps/town_map_entries.asm:45	—
+Route25Name	ROUTE 25	25号道路	YES	13	1	src/data/maps/town_map_entries.asm:46	—
+ViridianForestName	VIRIDIAN FOREST	常青森林	YES	4	1	src/data/maps/town_map_entries.asm:62	—
+MountMoonName	MT.MOON	月见山	YES	8	1	src/data/maps/town_map_entries.asm:64	—
+RockTunnelName	ROCK TUNNEL	岩山隧道	YES	21	2	src/data/maps/town_map_entries.asm:72; src/data/maps/town_map_entries.asm:116	—
+SeaCottageName	SEA COTTAGE	海角小屋	YES	14	1	src/data/maps/town_map_entries.asm:76	—
+SSAnneName	S.S.ANNE	圣特安努号	YES	18	1	src/data/maps/town_map_entries.asm:78	—
+PokemonLeagueName	#MON LEAGUE	#联盟	NO	—	3	src/data/maps/town_map_entries.asm:80; src/data/maps/town_map_entries.asm:82; src/data/maps/town_map_entries.asm:118	被内部地图范围使用；不在 TownMapOrder 直接选择列表
+UndergroundPathName	UNDERGROUND PATH	地下通道	NO	—	2	src/data/maps/town_map_entries.asm:81; src/data/maps/town_map_entries.asm:83	被内部地图范围使用；不在 TownMapOrder 直接选择列表
+PokemonTowerName	#MON TOWER	#塔	YES	25	1	src/data/maps/town_map_entries.asm:86	—
+SeafoamIslandsName	SEAFOAM ISLANDS	双子岛	YES	43,44	3	src/engine/items/town_map.asm:880; src/data/maps/town_map_entries.asm:91; src/data/maps/town_map_entries.asm:102	—
+VictoryRoadName	VICTORY ROAD	冠军之路	YES	50	3	src/data/maps/town_map_entries.asm:79; src/data/maps/town_map_entries.asm:104; src/data/maps/town_map_entries.asm:108	—
+DiglettsCaveName	DIGLETT's CAVE	地鼠洞穴	YES	5,19	3	src/engine/items/town_map.asm:868; src/engine/items/town_map.asm:872; src/data/maps/town_map_entries.asm:107	—
+RocketHQName	ROCKET HQ	火箭队基地	NO	—	1	src/data/maps/town_map_entries.asm:109	被内部地图范围使用；不在 TownMapOrder 直接选择列表
+SilphCoName	SILPH CO.	西尔佛公司	NO	—	2	src/data/maps/town_map_entries.asm:110; src/data/maps/town_map_entries.asm:117	被内部地图范围使用；不在 TownMapOrder 直接选择列表
+PokemonMansionName	<PKMN> MANSION	#屋	NO	—	2	src/data/maps/town_map_entries.asm:94; src/data/maps/town_map_entries.asm:111	被内部地图范围使用；不在 TownMapOrder 直接选择列表
+SafariZoneName	SAFARI ZONE	狩猎地带	YES	40	2	src/data/maps/town_map_entries.asm:89; src/data/maps/town_map_entries.asm:112	—
+CeruleanCaveName	CERULEAN CAVE	华蓝洞窟	YES	10	1	src/data/maps/town_map_entries.asm:113	—
+PowerPlantName	POWER PLANT	无人发电厂	YES	23	1	src/data/maps/town_map_entries.asm:73	—

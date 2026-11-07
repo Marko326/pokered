@@ -1,0 +1,17 @@
+excel_row	target_script	english_literal	chinese_replacement	classification
+61	scripts/PewterGym.asm	PEWTER CITY	深灰市	Gym script inline/static text; not Town Map name table
+62	scripts/PewterGym.asm	BROCK	小刚	Gym script inline/static text; not Town Map name table
+64	scripts/CeruleanGym.asm	CERULEAN CITY	华蓝市	Gym script inline/static text; not Town Map name table
+65	scripts/CeruleanGym.asm	MISTY	小霞	Gym script inline/static text; not Town Map name table
+67	scripts/VermilionGym.asm	VERMILION CITY	枯叶市	Gym script inline/static text; not Town Map name table
+68	scripts/VermilionGym.asm	LT.SURGE	马志士	Gym script inline/static text; not Town Map name table
+70	scripts/CeladonGym.asm	CELADON CITY	玉虹市	Gym script inline/static text; not Town Map name table
+71	scripts/CeladonGym.asm	ERIKA	莉佳	Gym script inline/static text; not Town Map name table
+73	scripts/FuchsiaGym.asm	FUCHSIA CITY	浅红市	Gym script inline/static text; not Town Map name table
+74	scripts/FuchsiaGym.asm	KOGA	阿桔	Gym script inline/static text; not Town Map name table
+76	scripts/SaffronGym.asm	SAFFRON CITY	金黄市	Gym script inline/static text; not Town Map name table
+77	scripts/SaffronGym.asm	SABRINA	娜姿	Gym script inline/static text; not Town Map name table
+79	scripts/CinnabarGym.asm	CINNABAR ISLAND	红莲镇	Gym script inline/static text; not Town Map name table
+80	scripts/CinnabarGym.asm	BLAINE	夏伯	Gym script inline/static text; not Town Map name table
+82	scripts/ViridianGym.asm	VIRIDIAN CITY	常青市	Gym script inline/static text; not Town Map name table
+83	scripts/ViridianGym.asm	GIOVANNI	坂木	Gym script inline/static text; not Town Map name table

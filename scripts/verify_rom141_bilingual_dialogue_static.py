@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static acceptance gate for the ROM-1.41 map-dialogue bilingual pipeline.
+"""Static acceptance gate for the carried-forward map-dialogue bilingual pipeline.
 
 Run after `python scripts/prepare_build.py`. This verifier checks source wiring,
 re-generates into a temporary directory, compares deterministic build outputs,
@@ -41,7 +41,7 @@ def asm_labels(paths: list[Path]) -> set[str]:
 
 def main() -> None:
     version = read(SRC / "data" / "game_version.asm")
-    require('db "ROM-1.41@"' in version, "game version is not ROM-1.41")
+    require('db "ROM-1.42@"' in version, "game version is not ROM-1.42")
 
     macros = read(SRC / "macros" / "scripts" / "text.asm")
     require("const TX_BILINGUAL ; $18" in macros, "TX_BILINGUAL opcode is not $18")
@@ -138,7 +138,7 @@ def main() -> None:
     require(summary["checked_text_lines"] == 6818 and summary["max_text_line_width"] == 18,
             "static line-width audit count or maximum width has changed")
 
-    print("PASS: ROM-1.41 version, opcode, runtime dispatch, and build-pipeline wiring")
+    print("PASS: ROM-1.42 version, carried-forward map opcode, runtime dispatch, and build-pipeline wiring")
     print("PASS: deterministic buildRB generation matches temporary regeneration")
     print("PASS: 1,942 bilingual refs resolve to 1,941 English labels and all CHS targets")
     print("PASS: 14 English ROMX sections occupy fixed banks $62-$6F")
