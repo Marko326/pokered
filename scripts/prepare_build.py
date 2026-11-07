@@ -21,8 +21,10 @@ import tempfile
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "src"
 BUILD = ROOT / "buildRB"
+GENERATOR = ROOT / "scripts" / "generate_bilingual_dialogue.py"
+AUDIT = ROOT / "scripts" / "audit_rom139_language.py"
 STATE = ".chs-build-state.json"
-VERSION = "CHS_Mod-incremental-v2"
+VERSION = "CHS_Mod-incremental-v3-bilingual-dialogue"
 
 # Keep this in step with the official-RGBDS option of _prepare.command.
 COMMANDS = [
@@ -79,6 +81,44 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def preparer_fingerprint() -> str:
+    """Invalidate buildRB when orchestration, audit parsing, or generation changes."""
+    digest = hashlib.sha256()
+    for path in (Path(__file__), GENERATOR, AUDIT):
+        digest.update(path.name.encode("utf-8"))
+        digest.update(bytes.fromhex(sha256(path)))
+    return digest.hexdigest()
+
+
+def run_dialogue_generator(build_root: Path) -> dict:
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(GENERATOR),
+            "--source-root",
+            str(SOURCE),
+            "--build-root",
+            str(build_root),
+        ],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    summary = json.loads(result.stdout)
+    banks = summary.get("english_banks", [])
+    bank_range = (
+        f"${banks[0]:02X}-${banks[-1]:02X}" if banks else "none"
+    )
+    print(
+        "[CHS] Bilingual dialogue generated: "
+        f"{summary['routed_refs']} references / "
+        f"{summary['routed_labels']} English labels; ROMX {bank_range}.",
+        flush=True,
+    )
+    return summary
+
+
 def source_manifest() -> dict[str, str]:
     return {rel: f"{sha256(path)}:{stat.S_IMODE(path.stat().st_mode):o}"
             for rel, path in files_under(SOURCE).items()}
@@ -90,6 +130,10 @@ def affects_translations(rel: str) -> bool:
         rel.startswith("xlsx/")
         or rel.startswith("tools/") and rel.endswith(".py")
         or rel == "charmap.txt"
+        or rel == "_G1RB.json"
+        or rel.startswith("text/")
+        or rel.startswith("data/text/")
+        or rel.startswith("data/english_text/")
         or rel.startswith("__exporterList/")
     )
 
@@ -133,7 +177,7 @@ def update_file(source: Path, dest: Path) -> bool:
 def write_state(manifest: dict[str, str], translated: set[str]) -> None:
     data = {
         "version": VERSION,
-        "preparer": sha256(Path(__file__)),
+        "preparer": preparer_fingerprint(),
         "sources": manifest,
         "translated": sorted(translated),
     }
@@ -184,6 +228,8 @@ def prepare_translations(previous: dict, manifest: dict[str, str]) -> None:
         for command in COMMANDS:
             subprocess.run([sys.executable, *command], cwd=stage, check=True,
                            stdout=subprocess.DEVNULL)
+        # Generate English dialogue only after the CHS XLSX import is complete.
+        run_dialogue_generator(stage)
         # No mutation of the real tree happens until every importer succeeds.
         BUILD.mkdir(exist_ok=True)
         updated, removed, translated = sync_stage(stage, previous, manifest)
@@ -198,7 +244,17 @@ def sync_sources(previous: dict, manifest: dict[str, str]) -> None:
     for rel in sorted(deleted):
         (BUILD / rel).unlink(missing_ok=True)
     updated = sum(update_file(SOURCE / rel, BUILD / rel) for rel in sorted(changed))
-    write_state(manifest, set(previous["translated"]))
+    generated = run_dialogue_generator(BUILD)
+    translated = {
+        rel for rel in previous["translated"]
+        if (BUILD / rel).is_file()
+        and (
+            not (SOURCE / rel).is_file()
+            or sha256(BUILD / rel) != sha256(SOURCE / rel)
+        )
+    }
+    translated.update(generated.get("generated_files", []))
+    write_state(manifest, translated)
     print(f"[CHS] Incremental sync: {updated} files updated, {len(deleted)} removed; .o kept.",
           flush=True)
 
@@ -211,9 +267,10 @@ def main() -> None:
     previous = load_state()
     ready = ((BUILD / "Makefile").is_file()
              and previous.get("version") == VERSION
-             and previous.get("preparer") == sha256(Path(__file__))
+             and previous.get("preparer") == preparer_fingerprint()
              and isinstance(previous.get("sources"), dict)
-             and isinstance(previous.get("translated"), list))
+             and isinstance(previous.get("translated"), list)
+             and all((BUILD / rel).is_file() for rel in previous.get("translated", [])))
     if ready and manifest == previous["sources"]:
         print("[CHS] Sources unchanged; reusing existing objects.", flush=True)
         return

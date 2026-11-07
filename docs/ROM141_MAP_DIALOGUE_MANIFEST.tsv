@@ -1,0 +1,2453 @@
+label	english_source	map_script_refs	dynamic_tokens	runtime_data_commands	special_expansions	unsupported_tokens	unsupported_commands	line_reflow	status
+ExplainBikeVoucherText	text/PokemonFanClub.asm	1						no	auto_routed
+FanClubBagFullText	text/PokemonFanClub.asm	1						no	auto_routed
+FanClubChairFinalText	text/PokemonFanClub.asm	1	<PLAYER>		#			no	auto_routed
+FanClubChairStoryText	text/PokemonFanClub.asm	1						no	auto_routed
+FanClubMeetChairText	text/PokemonFanClub.asm	1			#			no	auto_routed
+FanClubNoStoryText	text/PokemonFanClub.asm	1						no	auto_routed
+FanClubPikachuText	text/PokemonFanClub.asm	1						no	auto_routed
+FanClubSeelText	text/PokemonFanClub.asm	1						no	auto_routed
+FishingGuruGoodRodRepeatText	data/english_text/manual_dialogue_overrides.json	1	<PLAYER>					no	manual_english_override
+FishingGuruOldGoodRodRepeatTextNoBike	data/english_text/manual_dialogue_overrides.json	2	<PLAYER>					no	manual_english_override
+FishingGuruOldRodRepeatText	data/english_text/manual_dialogue_overrides.json	1	<PLAYER>					no	manual_english_override
+FishingGuruSuperRodRepeatText	data/english_text/manual_dialogue_overrides.json	1	<PLAYER>		#			no	manual_english_override
+FishingGuruSuperRodRepeatTextNoBike	data/english_text/manual_dialogue_overrides.json	1	<PLAYER>		#			no	manual_english_override
+FlyHouseExplanationWithSpecialFlyTips	data/english_text/manual_dialogue_overrides.json	1						no	manual_english_override
+PikachuFanBetterText	text/PokemonFanClub.asm	1						no	auto_routed
+PikachuFanText	text/PokemonFanClub.asm	1						no	auto_routed
+ReceivedBikeVoucherText	text/PokemonFanClub.asm	1	<PLAYER>	text_ram				no	auto_routed
+SafariZoneEntranceText_9e6e4	text/SafariZoneGate.asm	1			#			no	auto_routed
+SafariZoneEntranceText_9e747	text/SafariZoneGate.asm	1	<PLAYER>		#			no	auto_routed
+SafariZoneEntranceText_9e814	text/SafariZoneGate.asm	1						no	auto_routed
+SeelFanBetterText	text/PokemonFanClub.asm	1						no	auto_routed
+SeelFanText	text/PokemonFanClub.asm	1						no	auto_routed
+SurfFishingRepeatText	data/english_text/manual_dialogue_overrides.json	1			#			no	manual_english_override
+TMNotebookText	data/text/text_2.asm	0						no	outside_map_script_scope
+ViridianMartParcelQuestText	text/ViridianMart.asm	1	<PLAYER>					no	auto_routed
+_AIBattleUseItemText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_AIBattleWithdrawText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_AbandonLearningText	data/text/text_4.asm	0		text_ram				no	outside_map_script_scope
+_AccessedBillsPCText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_AccessedHoFPCText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_AccessedMyPCText	data/text/text_2.asm	0						no	outside_map_script_scope
+_AccessedOaksPCText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_AccessedSomeonesPCText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_AerodactylFossilText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_AfterTrade1Text	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_AfterTrade2Text	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_AfterTrade3Text	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_AgathaAfterBattleText	text/AgathasRoom.asm	1						no	auto_routed
+_AgathaBeforeBattleText	text/AgathasRoom.asm	1	<PLAYER>		#			no	auto_routed
+_AgathaDontRunAwayText	text/AgathasRoom.asm	1						no	auto_routed
+_AgathaEndBattleText	text/AgathasRoom.asm	1						no	auto_routed
+_AlreadyAsleepText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_AlreadyKnowsText	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_AlreadyOutText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_AntidoteText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_ArticunoBattleText	text/SeafoamIslandsB4F.asm	1						no	auto_routed
+_AttackContinuesText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_AttackMissedText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_AwakeningText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_BadlyPoisonedText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_BecameConfusedText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_BeforeReceivedTM34Text	text/PewterGym_2.asm	1						no	auto_routed
+_BeganToNapText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_BetHowManySlotMachineText	data/text/text_2.asm	0						no	outside_map_script_scope
+_BikeShopCantAffordText	text/BikeShop.asm	1						no	auto_routed
+_BikeShopComeAgainText	text/BikeShop.asm	1						no	auto_routed
+_BikeShopText_1d810	text/BikeShop.asm	1						no	auto_routed
+_BikeShopText_1d815	text/BikeShop.asm	1						no	auto_routed
+_BikeShopText_1d81f	text/BikeShop.asm	1						no	auto_routed
+_BikeShopText_1d824	text/BikeShop.asm	1	<PLAYER>					no	auto_routed
+_BikeShopText_1d82f	text/BikeShop.asm	1						no	auto_routed
+_BikeShopText_1d834	text/BikeShop.asm	1						no	auto_routed
+_BikeShopText_1d843	text/BikeShop.asm	1						no	auto_routed
+_BikeShopText_1d85c	text/BikeShop.asm	1						no	auto_routed
+_BikeShopText_1d861	text/BikeShop.asm	1						no	auto_routed
+_BillThankYouText	text/BillsHouse.asm	1			#			no	auto_routed
+_BillsHouseInitiatedText	data/text/text_2.asm	0	<PLAYER>					no	outside_map_script_scope
+_BillsHouseMonitorText	data/text/text_2.asm	0						no	outside_map_script_scope
+_BillsHousePokemonListText1	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_BillsHousePokemonListText2	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_BillsHouseText_1e865	text/BillsHouse.asm	1			#			no	auto_routed
+_BillsHouseText_1e86a	text/BillsHouse.asm	1						no	auto_routed
+_BillsHouseText_1e86f	text/BillsHouse.asm	1						no	auto_routed
+_BillsHouseText_1e8cb	text/BillsHouse.asm	1						no	auto_routed
+_BillsHouseText_1e8da	text/BillsHouse.asm	1			#			no	auto_routed
+_BinocularsNoSnorlaxText	text/Route11Gate2F.asm	1						no	auto_routed
+_BinocularsSnorlaxText	text/Route11Gate2F.asm	1			#			no	auto_routed
+_BlainePostBattleAdviceText	text/CinnabarGym.asm	1			#			no	auto_routed
+_BlainePreBattleText	text/CinnabarGym.asm	1			#			no	auto_routed
+_BlaineVolcanoBadgeInfoText	text/CinnabarGym.asm	1			#			no	auto_routed
+_BluesHouseDaisyWalkingText	text/BluesHouse.asm	1			#			no	auto_routed
+_BluesHouseTownMapText	text/BluesHouse.asm	1						no	auto_routed
+_BookcaseText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_BoostedText	data/text/text_2.asm	0						no	outside_map_script_scope
+_BootedUpHMText	data/text/text_6.asm	0						no	outside_map_script_scope
+_BootedUpTMText	data/text/text_6.asm	0						no	outside_map_script_scope
+_BoulderText	data/text/text_1.asm	0						no	outside_map_script_scope
+_BoxFullCannotThrowBallText	data/text/text_6.asm	0			#			no	outside_map_script_scope
+_BoxFullText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_BoxIsFullText	data/text/text_5.asm	0			#			no	outside_map_script_scope
+_BrockBoulerBadgeInfoText	text/PewterGym_2.asm	1			#			no	auto_routed
+_BrockPostBattleAdviceText	text/PewterGym_2.asm	1			#			no	auto_routed
+_BrockPreBattleText	text/PewterGym.asm	1			#			no	auto_routed
+_BrunoAfterBattleText	text/BrunosRoom.asm	1						no	auto_routed
+_BrunoBeforeBattleText	text/BrunosRoom.asm	1	<PLAYER>		#			no	auto_routed
+_BrunoDontRunAwayText	text/BrunosRoom.asm	1						no	auto_routed
+_BrunoEndBattleText	text/BrunosRoom.asm	1						no	auto_routed
+_BuildingRageText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_BurnHealText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_BurnedText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_ButItFailedText	data/text/text_3.asm	0						no	outside_map_script_scope
+_CableClubNPCAreaReservedFor2FriendsLinkedByCableText	data/text/text_4.asm	0						no	outside_map_script_scope
+_CableClubNPCLinkClosedBecauseOfInactivityText	data/text/text_4.asm	0						no	outside_map_script_scope
+_CableClubNPCMakingPreparationsText	data/text/text_5.asm	0						no	outside_map_script_scope
+_CableClubNPCPleaseApplyHereHaveToSaveText	data/text/text_4.asm	0						no	outside_map_script_scope
+_CableClubNPCPleaseComeAgainText	data/text/text_5.asm	0						no	outside_map_script_scope
+_CableClubNPCPleaseWaitText	data/text/text_4.asm	0						no	outside_map_script_scope
+_CableClubNPCWelcomeText	data/text/text_4.asm	0						no	outside_map_script_scope
+_CanMoveBouldersText	data/text/text_5.asm	0		text_ram				no	outside_map_script_scope
+_CanceledMasterBallText	text/SilphCo7F.asm	1						no	auto_routed
+_CannotFlyHereText	data/text/text_5.asm	0		text_ram				no	outside_map_script_scope
+_CannotGetOffHereText	data/text/text_5.asm	0						no	outside_map_script_scope
+_CannotUseItemsHereText	data/text/text_5.asm	0						no	outside_map_script_scope
+_CannotUseTeleportNowText	data/text/text_5.asm	0		text_ram				no	outside_map_script_scope
+_CantCarryMoreText	data/text/text_2.asm	0						no	outside_map_script_scope
+_CantDepositLastMonText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_CantEscapeText	data/text/text_2.asm	0						no	outside_map_script_scope
+_CantMoveText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_CantTakeMonText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_CardKeyFailText	data/text/text_1.asm	0						no	outside_map_script_scope
+_CardKeySuccessText1	data/text/text_1.asm	0						no	outside_map_script_scope
+_CardKeySuccessText2	data/text/text_1.asm	0						no	outside_map_script_scope
+_CeladonCityHotelText	data/text/text_2.asm	0						no	outside_map_script_scope
+_CeladonCityPokecenterGuyText	data/text/text_2.asm	0						no	outside_map_script_scope
+_CeladonCityText1	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText10	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText11	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText13	text/CeladonCity.asm	1			#			no	auto_routed
+_CeladonCityText14	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText15	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText16	text/CeladonCity.asm	1			#			no	auto_routed
+_CeladonCityText17	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText18	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText2	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText3	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText4	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText6	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText7	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText8	text/CeladonCity.asm	1						no	auto_routed
+_CeladonCityText9	text/CeladonCity.asm	1						no	auto_routed
+_CeladonDinerText1	text/CeladonDiner.asm	1						no	auto_routed
+_CeladonDinerText2	text/CeladonDiner.asm	1			#			no	auto_routed
+_CeladonDinerText3	text/CeladonDiner.asm	1						no	auto_routed
+_CeladonDinerText4	text/CeladonDiner.asm	1						no	auto_routed
+_CeladonDinerText_491a7	text/CeladonDiner.asm	1						no	auto_routed
+_CeladonDinerText_491b7	text/CeladonDiner.asm	1						no	auto_routed
+_CeladonGameCornerText1	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText3	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText4	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText6	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText8	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48d22	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48d27	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48d2c	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48d31	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48d36	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48d3b	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48d9c	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48da7	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48dac	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48dca	text/GameCorner.asm	1			#			no	auto_routed
+_CeladonGameCornerText_48dcf	text/GameCorner.asm	1			#			no	auto_routed
+_CeladonGameCornerText_48e26	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48e31	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48e36	text/GameCorner.asm	1			#			no	auto_routed
+_CeladonGameCornerText_48e88	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48e8d	text/GameCorner.asm	1	<PLAYER>					no	auto_routed
+_CeladonGameCornerText_48e93	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48e98	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48ece	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48ed3	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48ed8	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48f09	text/GameCorner.asm	1						no	auto_routed
+_CeladonGameCornerText_48f19	text/GameCorner.asm	1						no	auto_routed
+_CeladonGymAfterBattleText2	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymAfterBattleText3	text/CeladonGym.asm	1			#			no	auto_routed
+_CeladonGymAfterBattleText4	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymAfterBattleText5	text/CeladonGym.asm	1			#			no	auto_routed
+_CeladonGymAfterBattleText6	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymAfterBattleText7	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymAfterBattleText8	text/CeladonGym.asm	1			#			no	auto_routed
+_CeladonGymBattleText2	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymBattleText3	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymBattleText4	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymBattleText5	text/CeladonGym.asm	1			#			no	auto_routed
+_CeladonGymBattleText6	text/CeladonGym.asm	1			#			no	auto_routed
+_CeladonGymBattleText7	text/CeladonGym.asm	1			#			no	auto_routed
+_CeladonGymBattleText8	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymEndBattleText2	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymEndBattleText3	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymEndBattleText4	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymEndBattleText5	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymEndBattleText6	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymEndBattleText7	text/CeladonGym.asm	1						no	auto_routed
+_CeladonGymEndBattleText8	text/CeladonGym.asm	1						no	auto_routed
+_CeladonHotelText1	text/CeladonHotel.asm	1			#			no	auto_routed
+_CeladonHotelText2	text/CeladonHotel.asm	1						no	auto_routed
+_CeladonHotelText3	text/CeladonHotel.asm	1						no	auto_routed
+_CeladonHouseText1	text/CeladonChiefHouse.asm	1						no	auto_routed
+_CeladonHouseText2	text/CeladonChiefHouse.asm	1			#			no	auto_routed
+_CeladonHouseText3	text/CeladonChiefHouse.asm	1						no	auto_routed
+_CeladonMansion1Text1	text/CeladonMansion1F.asm	1						no	auto_routed
+_CeladonMansion1Text2	text/CeladonMansion1F.asm	1			#			no	auto_routed
+_CeladonMansion1Text3	text/CeladonMansion1F.asm	1						no	auto_routed
+_CeladonMansion1Text4	text/CeladonMansion1F.asm	1						no	auto_routed
+_CeladonMansion1Text5	text/CeladonMansion1F.asm	1						no	auto_routed
+_CeladonMansion2Text1	text/CeladonMansion2F.asm	1						no	auto_routed
+_CeladonMansion3Text5	text/CeladonMansion3F.asm	1						no	auto_routed
+_CeladonMansion3Text6	text/CeladonMansion3F.asm	1						no	auto_routed
+_CeladonMansion3Text7	text/CeladonMansion3F.asm	1						no	auto_routed
+_CeladonMansion3Text8	text/CeladonMansion3F.asm	1						no	auto_routed
+_CeladonMansion4Text1	text/CeladonMansionRoof.asm	1						no	auto_routed
+_CeladonMansion5Text1	text/CeladonMansionRoofHouse.asm	1			#			no	auto_routed
+_CeladonMart1Text1	text/CeladonMart1F.asm	1						no	auto_routed
+_CeladonMart1Text2	text/CeladonMart1F.asm	1						no	auto_routed
+_CeladonMart1Text3	text/CeladonMart1F.asm	1						no	auto_routed
+_CeladonMart2Text3	text/CeladonMart2F.asm	1			#			no	auto_routed
+_CeladonMart2Text4	text/CeladonMart2F.asm	1						no	auto_routed
+_CeladonMart2Text5	text/CeladonMart2F.asm	1						no	auto_routed
+_CeladonMart3Text11	text/CeladonMart3F.asm	1						no	auto_routed
+_CeladonMart3Text13	text/CeladonMart3F.asm	1						no	auto_routed
+_CeladonMart3Text14	text/CeladonMart3F.asm	1						no	auto_routed
+_CeladonMart3Text15	text/CeladonMart3F.asm	1			#			no	auto_routed
+_CeladonMart3Text2	text/CeladonMart3F.asm	1			#			no	auto_routed
+_CeladonMart3Text3	text/CeladonMart3F.asm	1						no	auto_routed
+_CeladonMart3Text4	text/CeladonMart3F.asm	1			#			no	auto_routed
+_CeladonMart3Text5	text/CeladonMart3F.asm	1			#			no	auto_routed
+_CeladonMart3Text6	text/CeladonMart3F.asm	1						no	auto_routed
+_CeladonMart3Text7	text/CeladonMart3F.asm	1						no	auto_routed
+_CeladonMart3Text9	text/CeladonMart3F.asm	1						no	auto_routed
+_CeladonMart4Text2	text/CeladonMart4F.asm	1			#			no	auto_routed
+_CeladonMart4Text3	text/CeladonMart4F.asm	1			#			no	auto_routed
+_CeladonMart4Text4	text/CeladonMart4F.asm	1						no	auto_routed
+_CeladonMart5Text1	text/CeladonMart5F.asm	1			#			no	auto_routed
+_CeladonMart5Text2	text/CeladonMart5F.asm	1			#			no	auto_routed
+_CeladonMart5Text5	text/CeladonMart5F.asm	1						no	auto_routed
+_CeladonMartRoofText1	text/CeladonMartRoof.asm	1						no	auto_routed
+_CeladonMartRoofText4	text/CeladonMartRoof.asm	1						no	auto_routed
+_CeladonMartRoofText6	text/CeladonMartRoof.asm	1						no	auto_routed
+_CeladonMartRoofText_484ee	text/CeladonMartRoof.asm	1						no	auto_routed
+_CeladonMartRoofText_484f3	text/CeladonMartRoof.asm	1						no	auto_routed
+_CeladonMartRoofText_484f9	text/CeladonMartRoof.asm	1	<PLAYER>	text_ram				no	auto_routed
+_CeladonMartRoofText_484fe	text/CeladonMartRoof.asm	1		text_ram				no	auto_routed
+_CeladonMartRoofText_48504	text/CeladonMartRoof.asm	1						no	auto_routed
+_CeladonMartRoofText_4850a	text/CeladonMartRoof.asm	1	<PLAYER>	text_ram				no	auto_routed
+_CeladonMartRoofText_4850f	text/CeladonMartRoof.asm	1		text_ram				no	auto_routed
+_CeladonMartRoofText_48515	text/CeladonMartRoof.asm	1						no	auto_routed
+_CeladonMartRoofText_48520	text/CeladonMartRoof.asm	1						no	auto_routed
+_CeladonMartRoofText_48526	text/CeladonMartRoof.asm	1						no	auto_routed
+_CeladonMartRoofText_4852c	text/CeladonMartRoof.asm	1						no	auto_routed
+_CeladonMartRoofText_48598	text/CeladonMartRoof.asm	1						no	auto_routed
+_CeladonPokecenterText2	text/CeladonPokecenter.asm	1			#			no	auto_routed
+_CeladonPokecenterText3	text/CeladonPokecenter.asm	1						no	auto_routed
+_CeladonPrizeRoomText1	text/GameCornerPrizeRoom.asm	1						no	auto_routed
+_CeladonPrizeRoomText2	text/GameCornerPrizeRoom.asm	1						no	auto_routed
+_CeruleanCityText10	text/CeruleanCity.asm	1			#			no	auto_routed
+_CeruleanCityText12	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText13	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText16	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText17	text/CeruleanCity.asm	1			#			no	auto_routed
+_CeruleanCityText3	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText4	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText5	text/CeruleanCity.asm	1			#			no	auto_routed
+_CeruleanCityText6	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText9	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText_19668	text/CeruleanCity.asm	1	<PLAYER>,<RIVAL>		#			no	auto_routed
+_CeruleanCityText_1966d	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText_19672	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText_19677	text/CeruleanCity.asm	1	<RIVAL>		#			no	auto_routed
+_CeruleanCityText_196d9	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText_196ee	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText_196f3	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText_19730	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText_19735	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText_1973a	text/CeruleanCity.asm	1			#			no	auto_routed
+_CeruleanCityText_1976f	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText_19774	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText_19779	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanCityText_1977e	text/CeruleanCity.asm	1						no	auto_routed
+_CeruleanGymAfterBattleText1	text/CeruleanGym.asm	1						no	auto_routed
+_CeruleanGymAfterBattleText2	text/CeruleanGym.asm	1						no	auto_routed
+_CeruleanGymBattleText1	text/CeruleanGym.asm	1						no	auto_routed
+_CeruleanGymBattleText2	text/CeruleanGym.asm	1						no	auto_routed
+_CeruleanGymEndBattleText1	text/CeruleanGym.asm	1						no	auto_routed
+_CeruleanGymEndBattleText2	text/CeruleanGym.asm	1						no	auto_routed
+_CeruleanGymGuidePostBattleText	text/CeruleanGym.asm	1						no	auto_routed
+_CeruleanGymGuidePreBattleText	text/CeruleanGym.asm	1			#			no	auto_routed
+_CeruleanHouse1Text1	text/CeruleanTradeHouse.asm	1			#			no	auto_routed
+_CeruleanHouse2Text_74e77	text/CeruleanBadgeHouse.asm	1			#			no	auto_routed
+_CeruleanHouse2Text_74e7c	text/CeruleanBadgeHouse.asm	1						no	auto_routed
+_CeruleanHouse2Text_74e81	text/CeruleanBadgeHouse.asm	1						no	auto_routed
+_CeruleanHouse2Text_74e96	text/CeruleanBadgeHouse.asm	1			#			no	auto_routed
+_CeruleanHouse2Text_74e9b	text/CeruleanBadgeHouse.asm	1			#			no	auto_routed
+_CeruleanHouse2Text_74ea0	text/CeruleanBadgeHouse.asm	1			#			no	auto_routed
+_CeruleanHouse2Text_74ea5	text/CeruleanBadgeHouse.asm	1			#			no	auto_routed
+_CeruleanHouse2Text_74eaa	text/CeruleanBadgeHouse.asm	1			#			no	auto_routed
+_CeruleanHouse2Text_74eaf	text/CeruleanBadgeHouse.asm	1			#			no	auto_routed
+_CeruleanHouse2Text_74eb4	text/CeruleanBadgeHouse.asm	1			#			no	auto_routed
+_CeruleanHouse2Text_74eb9	text/CeruleanBadgeHouse.asm	1			#			no	auto_routed
+_CeruleanHouseTrashedText2	text/CeruleanTrashedHouse.asm	1						no	auto_routed
+_CeruleanHouseTrashedText3	text/CeruleanTrashedHouse.asm	1						no	auto_routed
+_CeruleanMartText2	text/CeruleanMart.asm	1			#			no	auto_routed
+_CeruleanMartText3	text/CeruleanMart.asm	1			#			no	auto_routed
+_CeruleanPokecenterGuyText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_CeruleanPokecenterText2	text/CeruleanPokecenter.asm	1			#			no	auto_routed
+_CeruleanPokecenterText3	text/CeruleanPokecenter.asm	1			#			no	auto_routed
+_CeruleanTrashedText_1d6ab	text/CeruleanTrashedHouse.asm	1			#			no	auto_routed
+_CeruleanTrashedText_1d6b0	text/CeruleanTrashedHouse.asm	1						no	auto_routed
+_ChargeMoveEffectText	data/text/text_3.asm	0	<USER>					no	outside_map_script_scope
+_ChooseABoxText	data/text/text_3.asm	0				<PKMN>		no	manual_review
+_CinnabarGymAfterBattleText1	text/CinnabarGym.asm	1			#			no	auto_routed
+_CinnabarGymAfterBattleText2	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymAfterBattleText3	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymAfterBattleText4	text/CinnabarGym.asm	1			#			no	auto_routed
+_CinnabarGymAfterBattleText5	text/CinnabarGym.asm	1			#			no	auto_routed
+_CinnabarGymAfterBattleText6	text/CinnabarGym.asm	1			#			no	auto_routed
+_CinnabarGymAfterBattleText7	text/CinnabarGym.asm	1			#			no	auto_routed
+_CinnabarGymBattleText1	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymBattleText2	text/CinnabarGym.asm	1			#			no	auto_routed
+_CinnabarGymBattleText3	text/CinnabarGym.asm	1			#			no	auto_routed
+_CinnabarGymBattleText4	text/CinnabarGym.asm	1			#			no	auto_routed
+_CinnabarGymBattleText5	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymBattleText6	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymBattleText7	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymEndBattleText1	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymEndBattleText2	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymEndBattleText3	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymEndBattleText4	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymEndBattleText5	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymEndBattleText6	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymEndBattleText7	text/CinnabarGym.asm	1						no	auto_routed
+_CinnabarGymGuidePostBattleText	text/CinnabarGym.asm	1	<PLAYER>					no	auto_routed
+_CinnabarGymGuidePreBattleText	text/CinnabarGym.asm	1			#			no	auto_routed
+_CinnabarGymQuizCorrectText	data/text/text_2.asm	0						no	outside_map_script_scope
+_CinnabarGymQuizIncorrectText	data/text/text_2.asm	0						no	outside_map_script_scope
+_CinnabarGymQuizIntroText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_CinnabarIslandText1	text/CinnabarIsland.asm	1						no	auto_routed
+_CinnabarIslandText2	text/CinnabarIsland.asm	1						no	auto_routed
+_CinnabarIslandText3	text/CinnabarIsland.asm	1						no	auto_routed
+_CinnabarIslandText6	text/CinnabarIsland.asm	1			#			no	auto_routed
+_CinnabarIslandText7	text/CinnabarIsland.asm	1			#			no	auto_routed
+_CinnabarIslandText8	text/CinnabarIsland.asm	1						no	auto_routed
+_CinnabarMartText2	text/CinnabarMart.asm	1						no	auto_routed
+_CinnabarMartText3	text/CinnabarMart.asm	1						no	auto_routed
+_CinnabarPokecenterGuyText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_CinnabarPokecenterText2	text/CinnabarPokecenter.asm	1			#			no	auto_routed
+_CinnabarPokecenterText3	text/CinnabarPokecenter.asm	1			#			no	auto_routed
+_CinnabarQuizQuestionsText1	data/text/text_2.asm	0						no	outside_map_script_scope
+_CinnabarQuizQuestionsText2	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_CinnabarQuizQuestionsText3	data/text/text_2.asm	0						no	outside_map_script_scope
+_CinnabarQuizQuestionsText4	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_CinnabarQuizQuestionsText5	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_CinnabarQuizQuestionsText6	data/text/text_2.asm	0						no	outside_map_script_scope
+_ClearSaveDataText	data/text/text_2.asm	0						no	outside_map_script_scope
+_ClosedOaksPCText	data/text/text_2.asm	0						no	outside_map_script_scope
+_CoinCaseNoRoomText	text/CeladonDiner.asm	1						no	auto_routed
+_CoinCaseNumCoinsText	data/text/text_6.asm	0		text_bcd				no	outside_map_script_scope
+_CoinsScatteredText	data/text/text_3.asm	0						no	outside_map_script_scope
+_ColosseumText1	data/text/text_3.asm	1						no	auto_routed
+_ComeBackText	data/text/text_2.asm	0						no	outside_map_script_scope
+_CompletedDexText	text/CeladonMansion3F.asm	1			#			no	auto_routed
+_ConfusedNoMoreText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_ConnectCableText	data/text/text_7.asm	0						no	outside_map_script_scope
+_ContCharText	data/text/text_2.asm	0						no	outside_map_script_scope
+_ConvertedTypeText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_CopycatsHouse1FText1	text/CopycatsHouse1F.asm	1						no	auto_routed
+_CopycatsHouse1FText2	text/CopycatsHouse1F.asm	1						no	auto_routed
+_CopycatsHouse1FText3	text/CopycatsHouse1F.asm	1						no	auto_routed
+_CopycatsHouse2FText2	text/CopycatsHouse2F.asm	1						no	auto_routed
+_CopycatsHouse2FText3	text/CopycatsHouse2F.asm	1			#			no	auto_routed
+_CopycatsHouse2FText6	text/CopycatsHouse2F.asm	1						no	auto_routed
+_CopycatsHouse2FText_5ccd4	text/CopycatsHouse2F.asm	1	<PLAYER>		#			no	auto_routed
+_CopycatsHouse2FText_5cd17	text/CopycatsHouse2F.asm	1			#			no	auto_routed
+_CopycatsHouse2FText_5cd1c	text/CopycatsHouse2F.asm	1						no	auto_routed
+_CriticalHitText	data/text/text_2.asm	0						no	outside_map_script_scope
+_CurrentTooFastText	data/text/text_5.asm	0						no	outside_map_script_scope
+_CyclingIsFunText	data/text/text_5.asm	0						no	outside_map_script_scope
+_DaisyBagFullText	text/BluesHouse.asm	1						no	auto_routed
+_DaisyInitialText	text/BluesHouse.asm	1	<PLAYER>,<RIVAL>					no	auto_routed
+_DaisyOfferMapText	text/BluesHouse.asm	1						no	auto_routed
+_DaisyUseMapText	text/BluesHouse.asm	1						no	auto_routed
+_DayCareAllRightThenText	text/Daycare_2.asm	1						no	auto_routed
+_DayCareCantAcceptMonWithHMText	text/Daycare_2.asm	1			#			no	auto_routed
+_DayCareComeAgainText	text/Daycare_2.asm	1						no	auto_routed
+_DayCareComeSeeMeInAWhileText	text/Daycare.asm	1						no	auto_routed
+_DayCareGotMonBackText	text/Daycare.asm	1	<PLAYER>	text_ram				no	auto_routed
+_DayCareHeresYourMonText	text/Daycare_2.asm	1			#			no	auto_routed
+_DayCareIntroText	text/Daycare.asm	1			#			no	auto_routed
+_DayCareMonHasGrownText	text/Daycare.asm	1		text_decimal,text_ram				no	auto_routed
+_DayCareMonNeedsMoreTimeText	text/Daycare.asm	1		text_ram				no	auto_routed
+_DayCareNoRoomForMonText	text/Daycare_2.asm	1			#			no	auto_routed
+_DayCareNotEnoughMoneyText	text/Daycare_2.asm	1						no	auto_routed
+_DayCareOnlyHaveOneMonText	text/Daycare_2.asm	1			#			no	auto_routed
+_DayCareOweMoneyText	text/Daycare.asm	1		text_bcd	#			no	auto_routed
+_DayCareWhichMonText	text/Daycare.asm	1			#			no	auto_routed
+_DayCareWillLookAfterMonText	text/Daycare.asm	1		text_ram				no	auto_routed
+_DepositHowManyText	data/text/text_2.asm	0						no	outside_map_script_scope
+_DepositWhichMonText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_DexCompletionText	text/pokedex_ratings.asm	0		text_decimal	#			no	outside_map_script_scope
+_DexRatingText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_DexRatingText_Own0To9	text/pokedex_ratings.asm	0			#			no	outside_map_script_scope
+_DexRatingText_Own100To109	text/pokedex_ratings.asm	0						no	outside_map_script_scope
+_DexRatingText_Own10To19	text/pokedex_ratings.asm	0						no	outside_map_script_scope
+_DexRatingText_Own110To119	text/pokedex_ratings.asm	0			#			no	outside_map_script_scope
+_DexRatingText_Own120To129	text/pokedex_ratings.asm	0						no	outside_map_script_scope
+_DexRatingText_Own130To139	text/pokedex_ratings.asm	0						no	outside_map_script_scope
+_DexRatingText_Own140To149	text/pokedex_ratings.asm	0						no	outside_map_script_scope
+_DexRatingText_Own150To151	text/pokedex_ratings.asm	0			#			no	outside_map_script_scope
+_DexRatingText_Own20To29	text/pokedex_ratings.asm	0			#			no	outside_map_script_scope
+_DexRatingText_Own30To39	text/pokedex_ratings.asm	0						no	outside_map_script_scope
+_DexRatingText_Own40To49	text/pokedex_ratings.asm	0						no	outside_map_script_scope
+_DexRatingText_Own50To59	text/pokedex_ratings.asm	0						no	outside_map_script_scope
+_DexRatingText_Own60To69	text/pokedex_ratings.asm	0						no	outside_map_script_scope
+_DexRatingText_Own70To79	text/pokedex_ratings.asm	0			#			no	outside_map_script_scope
+_DexRatingText_Own80To89	text/pokedex_ratings.asm	0						no	outside_map_script_scope
+_DexRatingText_Own90To99	text/pokedex_ratings.asm	0						no	outside_map_script_scope
+_DexSeenOwnedText	data/text/text_2.asm	0		text_decimal	#			no	outside_map_script_scope
+_DidNotLearnText	data/text/text_4.asm	0		text_ram				no	outside_map_script_scope
+_DidntAffectText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_DiglettSculptureText	data/text/text_2.asm	0						no	outside_map_script_scope
+_DiglettsCaveEntRoute11Text1	text/DiglettsCaveRoute11.asm	1						no	auto_routed
+_DiglettsCaveRoute2Text1	text/DiglettsCaveRoute2.asm	1			#			no	auto_routed
+_DisabledNoMoreText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_DoItText	data/text/text_2.asm	0						no	outside_map_script_scope
+_DoYouWantToNicknameText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_DoesntAffectMonText	data/text/text_2.asm	0	<TARGET>					no	outside_map_script_scope
+_DreamWasEatenText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_DroppedHiddenCoinsText	data/text/text_2.asm	0						no	outside_map_script_scope
+_DugAHoleText	data/text/text_3.asm	0						no	outside_map_script_scope
+_ElevatorText	data/text/text_2.asm	0						no	outside_map_script_scope
+_EnemiesOnEverySideText	data/text/text_2.asm	0						no	outside_map_script_scope
+_EnemyAppearedText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_EnemyMonFaintedText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_EnemyRanText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_EnemysWeakText	data/text/text_2.asm	0						no	outside_map_script_scope
+_EnoughText	data/text/text_2.asm	0						no	outside_map_script_scope
+_ErikaPostBattleAdviceText	text/CeladonGym.asm	1			#			no	auto_routed
+_ErikaPreBattleText	text/CeladonGym.asm	1			#			no	auto_routed
+_ErikaRainbowBadgeInfoText	text/CeladonGym.asm	1			#			no	auto_routed
+_EvadedAttackText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_EvolvedText	data/text/text_3.asm	0		text_ram				no	outside_map_script_scope
+_ExchangeCoinsForPrizesText	data/text/text_2.asm	0						no	outside_map_script_scope
+_ExclamationPoint1Text	data/text/text_2.asm	0						no	outside_map_script_scope
+_ExclamationPoint2Text	data/text/text_2.asm	0						no	outside_map_script_scope
+_ExclamationPoint3Text	data/text/text_2.asm	0						no	outside_map_script_scope
+_ExclamationPoint4Text	data/text/text_2.asm	0						no	outside_map_script_scope
+_ExclamationPoint5Text	data/text/text_2.asm	0						no	outside_map_script_scope
+_ExclamationText	data/text/text_1.asm	0						no	outside_map_script_scope
+_ExpPointsText	data/text/text_2.asm	0		text_decimal				no	outside_map_script_scope
+_FanClubText6	text/PokemonFanClub.asm	1			#			no	auto_routed
+_FanClubText7	text/PokemonFanClub.asm	1						no	auto_routed
+_FanClubText8	text/PokemonFanClub.asm	1						no	auto_routed
+_FastAsleepText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_FellAsleepBecameHealthyText	data/text/text_3.asm	0	<USER>					no	outside_map_script_scope
+_FellAsleepText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_FellText	data/text/text_3.asm	0						no	outside_map_script_scope
+_FightingDojoAfterBattleText1	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoAfterBattleText2	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoAfterBattleText3	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoAfterBattleText4	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoBattleText1	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoBattleText2	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoBattleText3	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoBattleText4	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoEndBattleText1	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoEndBattleText2	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoEndBattleText3	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoEndBattleText4	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoText	data/text/text_2.asm	0						no	outside_map_script_scope
+_FightingDojoText_5ce8e	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoText_5ce93	text/FightingDojo.asm	1						no	auto_routed
+_FightingDojoText_5ce98	text/FightingDojo.asm	1			#			no	auto_routed
+_FightingDojoText_5ce9d	text/FightingDojo.asm	1						no	auto_routed
+_FileDataDestroyedText	data/text/text_3.asm	0						no	outside_map_script_scope
+_FireDefrostedText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_FlashLightsAreaText	data/text/text_5.asm	0						no	outside_map_script_scope
+_FlewUpHighText	data/text/text_3.asm	0						no	outside_map_script_scope
+_FlinchedText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_FluteExplanationText	text/MrFujisHouse.asm	1			#			no	auto_routed
+_FluteNoRoomText	text/MrFujisHouse.asm	1						no	auto_routed
+_FluteWokeUpText	data/text/text_6.asm	0			#			no	outside_map_script_scope
+_ForgotAndText	data/text/text_4.asm	0		text_ram				no	outside_map_script_scope
+_FoundHiddenCoins2Text	data/text/text_2.asm	0	<PLAYER>	text_bcd				no	outside_map_script_scope
+_FoundHiddenCoinsText	data/text/text_2.asm	0	<PLAYER>	text_bcd				no	outside_map_script_scope
+_FoundHiddenItemText	data/text/text_2.asm	0	<PLAYER>	text_ram				no	outside_map_script_scope
+_FoundItemText	data/text/text_1.asm	0	<PLAYER>	text_ram				no	outside_map_script_scope
+_FrozenText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_FuchsiaCityChanseyText	text/FuchsiaCity.asm	1						no	auto_routed
+_FuchsiaCityKabutoText	text/FuchsiaCity.asm	1			#			no	auto_routed
+_FuchsiaCityKangaskhanText	text/FuchsiaCity.asm	1			#			no	auto_routed
+_FuchsiaCityLaprasText	text/FuchsiaCity.asm	1						no	auto_routed
+_FuchsiaCityOmanyteText	text/FuchsiaCity.asm	1			#			no	auto_routed
+_FuchsiaCityPokecenterGuyText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_FuchsiaCitySlowpokeText	text/FuchsiaCity.asm	1						no	auto_routed
+_FuchsiaCityText1	text/FuchsiaCity.asm	1			#			no	auto_routed
+_FuchsiaCityText11	text/FuchsiaCity.asm	1						no	auto_routed
+_FuchsiaCityText13	text/FuchsiaCity.asm	1			#			no	auto_routed
+_FuchsiaCityText16	text/FuchsiaCity.asm	1						no	auto_routed
+_FuchsiaCityText17	text/FuchsiaCity.asm	1			#			no	auto_routed
+_FuchsiaCityText18	text/FuchsiaCity.asm	1			#			no	auto_routed
+_FuchsiaCityText2	text/FuchsiaCity.asm	1			#			no	auto_routed
+_FuchsiaCityText3	text/FuchsiaCity.asm	1						no	auto_routed
+_FuchsiaCityText4	text/FuchsiaCity.asm	1			#			no	auto_routed
+_FuchsiaCityText5	text/FuchsiaCity.asm	1						no	auto_routed
+_FuchsiaCityText_19b2a	text/FuchsiaCity.asm	1						no	auto_routed
+_FuchsiaCityVoltorbText	text/FuchsiaCity.asm	1			#			no	auto_routed
+_FuchsiaGymAfterBattleText1	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymAfterBattleText2	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymAfterBattleText3	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymAfterBattleText4	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymAfterBattleText5	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymAfterBattleText6	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymBattleText1	text/FuchsiaGym_2.asm	1			#			no	auto_routed
+_FuchsiaGymBattleText2	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymBattleText3	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymBattleText4	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymBattleText5	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymBattleText6	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymEndBattleText1	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymEndBattleText2	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymEndBattleText3	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymEndBattleText4	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymEndBattleText5	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymEndBattleText6	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymGuidePostBattleText	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaGymGuidePreBattleText	text/FuchsiaGym_2.asm	1						no	auto_routed
+_FuchsiaHouse1Text1	text/FuchsiaBillsGrandpasHouse.asm	1						no	auto_routed
+_FuchsiaHouse1Text2	text/FuchsiaBillsGrandpasHouse.asm	1						no	auto_routed
+_FuchsiaHouse1Text3	text/FuchsiaBillsGrandpasHouse.asm	1			#			no	auto_routed
+_FuchsiaHouse2Text_75176	text/WardensHouse.asm	1			#			no	auto_routed
+_FuchsiaHouse2Text_7517b	text/WardensHouse.asm	1			#			no	auto_routed
+_FuchsiaHouse3Text_561bd	text/FuchsiaGoodRodHouse.asm	1						no	auto_routed
+_FuchsiaHouse3Text_561c2	text/FuchsiaGoodRodHouse.asm	1	<PLAYER>	text_ram				no	auto_routed
+_FuchsiaHouse3Text_56212	text/FuchsiaGoodRodHouse.asm	1						no	auto_routed
+_FuchsiaHouse3Text_56217	text/FuchsiaGoodRodHouse.asm	0	<PLAYER>					no	outside_map_script_scope
+_FuchsiaHouse3Text_5621c	text/FuchsiaGoodRodHouse.asm	1						no	auto_routed
+_FuchsiaMartText2	text/FuchsiaMart.asm	1						no	auto_routed
+_FuchsiaMartText3	text/FuchsiaMart.asm	1			#			no	auto_routed
+_FuchsiaMeetingRoomText1	text/FuchsiaMeetingRoom.asm	1						no	auto_routed
+_FuchsiaMeetingRoomText2	text/FuchsiaMeetingRoom.asm	1			#			no	auto_routed
+_FuchsiaMeetingRoomText3	text/FuchsiaMeetingRoom.asm	1						no	auto_routed
+_FuchsiaPokecenterText1	text/FuchsiaPokecenter.asm	1			#			no	auto_routed
+_FuchsiaPokecenterText3	text/FuchsiaPokecenter.asm	1			#			no	auto_routed
+_FullHealText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_FullyParalyzedText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_GainedText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_GameCornerCoinCaseText	data/text/text_2.asm	0						no	outside_map_script_scope
+_GameCornerNoCoinsText	data/text/text_2.asm	0						no	outside_map_script_scope
+_GameCornerOutOfOrderText	data/text/text_2.asm	0						no	outside_map_script_scope
+_GameCornerOutToLunchText	data/text/text_2.asm	0						no	outside_map_script_scope
+_GameCornerSomeonesKeysText	data/text/text_2.asm	0						no	outside_map_script_scope
+_GameDesignerText	text/CeladonMansion3F.asm	1			#			no	auto_routed
+_GameOverText	data/text/text_2.asm	0						no	outside_map_script_scope
+_GameSavedText	data/text/text_3.asm	0	<PLAYER>					no	outside_map_script_scope
+_GaryChampionIntroText	text/ChampionsRoom.asm	1	<PLAYER>,<RIVAL>		#			no	auto_routed
+_GaryDefeatedText	text/ChampionsRoom.asm	1						no	auto_routed
+_GaryText2	text/ChampionsRoom.asm	1	<PLAYER>					no	auto_routed
+_GaryText_76103	text/ChampionsRoom.asm	1			#			no	auto_routed
+_GaryText_76120	text/ChampionsRoom.asm	1	<PLAYER>	text_ram	#			no	auto_routed
+_GaryText_76125	text/ChampionsRoom.asm	1	<RIVAL>		#			no	auto_routed
+_GaryText_7612a	text/ChampionsRoom.asm	1	<PLAYER>		#			no	auto_routed
+_GaryVictoryText	text/ChampionsRoom.asm	1	<PLAYER>,<RIVAL>		#			no	auto_routed
+_GetDexRatedText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_GetOutText	data/text/text_2.asm	0						no	outside_map_script_scope
+_GetmText	data/text/text_2.asm	0						no	outside_map_script_scope
+_GettingPumpedText	data/text/text_3.asm	0	<USER>					no	outside_map_script_scope
+_GhostCantBeIDdText	data/text/text_2.asm	0						no	outside_map_script_scope
+_GiovanniEarthBadgeInfoText	text/ViridianGym.asm	1			#			no	auto_routed
+_GiovanniPostBattleAdviceText	text/ViridianGym.asm	1			#			no	auto_routed
+_GiovanniPreBattleText	text/ViridianGym.asm	1						no	auto_routed
+_GoText	data/text/text_2.asm	0						no	outside_map_script_scope
+_GoodText	data/text/text_2.asm	0						no	outside_map_script_scope
+_GotAwayText	data/text/text_2.asm	0						no	outside_map_script_scope
+_GotMapText	text/BluesHouse.asm	1	<PLAYER>	text_ram				no	auto_routed
+_GotMonText	data/text/text_5.asm	0	<PLAYER>	text_ram				no	outside_map_script_scope
+_GotOffBicycleText1	data/text/text_7.asm	0	<PLAYER>					no	outside_map_script_scope
+_GotOffBicycleText2	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_GotOnBicycleText1	data/text/text_7.asm	0	<PLAYER>					no	outside_map_script_scope
+_GotOnBicycleText2	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_GraphicArtistText	text/CeladonMansion3F.asm	1						no	auto_routed
+_GreatlyFellText	data/text/text_3.asm	0						no	outside_map_script_scope
+_GreatlyRoseText	data/text/text_3.asm	0						no	outside_map_script_scope
+_GrewLevelText	data/text/text_2.asm	0		text_decimal,text_ram				no	outside_map_script_scope
+_GroundRoseText	data/text/text_1.asm	0						no	outside_map_script_scope
+_GymStatueText1	data/text/text_2.asm	0	<RIVAL>	text_ram	#			no	outside_map_script_scope
+_GymStatueText2	data/text/text_2.asm	0	<PLAYER>,<RIVAL>	text_ram	#			no	outside_map_script_scope
+_HM01NoRoomText	text/SSAnneCaptainsRoom.asm	1						no	auto_routed
+_HM02ExplanationText	text/Route16FlyHouse.asm	0						no	outside_map_script_scope
+_HM02NoRoomText	text/Route16FlyHouse.asm	1						no	auto_routed
+_HM03ExplanationText	text/SafariZoneSecretHouse.asm	0			#			no	outside_map_script_scope
+_HM03NoRoomText	text/SafariZoneSecretHouse.asm	1						no	auto_routed
+_HM04ExplanationText	text/WardensHouse.asm	1			#			no	auto_routed
+_HM04NoRoomText	text/WardensHouse.asm	1						no	auto_routed
+_HMCantDeleteText	data/text/text_4.asm	0						no	outside_map_script_scope
+_HallofFameRoomText1	text/HallOfFame.asm	1	<PLAYER>		#			no	auto_routed
+_HasSubstituteText	data/text/text_3.asm	0	<USER>					no	outside_map_script_scope
+_HereYouGoText	data/text/text_2.asm	0						no	outside_map_script_scope
+_HeresYourLaprasText	text/SilphCo7F.asm	1						no	auto_routed
+_HiddenItemBagFullText	data/text/text_2.asm	0	<PLAYER>					no	outside_map_script_scope
+_HisNameIsText	data/text/text_2.asm	0	<RIVAL>					no	outside_map_script_scope
+_HitWithRecoilText	data/text/text_3.asm	0	<USER>					no	outside_map_script_scope
+_HitXTimesText	data/text/text_2.asm	0		text_decimal				no	outside_map_script_scope
+_HookedMonAttackedText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_HurtByBurnText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_HurtByLeechSeedText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_HurtByPoisonText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_HurtItselfText	data/text/text_2.asm	0						no	outside_map_script_scope
+_IceHealText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_IgnoredOrdersText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_IndigoPlateauHQText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_IndigoPlateauLobbyText2	text/IndigoPlateauLobby.asm	1			#			no	auto_routed
+_IndigoPlateauLobbyText3	text/IndigoPlateauLobby.asm	1						no	auto_routed
+_IndigoPlateauStatuesText1	data/text/text_2.asm	0						no	outside_map_script_scope
+_IndigoPlateauStatuesText2	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_IndigoPlateauStatuesText3	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_InsteadText	data/text/text_2.asm	0						no	outside_map_script_scope
+_IntoText	data/text/text_3.asm	0		text_ram				no	outside_map_script_scope
+_IntroducePlayerText	data/text/text_2.asm	0						no	outside_map_script_scope
+_IntroduceRivalText	data/text/text_2.asm	0						no	outside_map_script_scope
+_IsConfusedText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_IsEvolvingText	data/text/text_3.asm	0		text_ram				no	outside_map_script_scope
+_IsFrozenText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_IsItOKToTossItemText	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_IsUnaffectedText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_ItemUseBallText00	data/text/text_6.asm	0			#			no	outside_map_script_scope
+_ItemUseBallText01	data/text/text_6.asm	0			#			no	outside_map_script_scope
+_ItemUseBallText02	data/text/text_6.asm	0			#			no	outside_map_script_scope
+_ItemUseBallText03	data/text/text_6.asm	0						no	outside_map_script_scope
+_ItemUseBallText04	data/text/text_6.asm	0						no	outside_map_script_scope
+_ItemUseBallText05	data/text/text_6.asm	0		text_ram				no	outside_map_script_scope
+_ItemUseBallText06	data/text/text_6.asm	0		text_ram	#			no	outside_map_script_scope
+_ItemUseBallText07	data/text/text_6.asm	0		text_ram				no	outside_map_script_scope
+_ItemUseBallText08	data/text/text_6.asm	0		text_ram				no	outside_map_script_scope
+_ItemUseNoEffectText	data/text/text_6.asm	0						no	outside_map_script_scope
+_ItemUseNotTimeText	data/text/text_6.asm	0	<PLAYER>					no	outside_map_script_scope
+_ItemUseNotYoursToUseText	data/text/text_6.asm	0						no	outside_map_script_scope
+_ItemUseText001	data/text/text_7.asm	0	<PLAYER>					no	outside_map_script_scope
+_ItemUseText002	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_ItemWasStoredText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_ItemfinderFoundItemText	data/text/text_6.asm	0						no	outside_map_script_scope
+_ItemfinderFoundNothingText	data/text/text_6.asm	0						no	outside_map_script_scope
+_ItemsCantBeUsedHereText	data/text/text_2.asm	0						no	outside_map_script_scope
+_ItsABiteText	data/text/text_1.asm	0						no	outside_map_script_scope
+_JustAMomentText	data/text/text_2.asm	0						no	outside_map_script_scope
+_KabutopsFossilText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_KeptGoingAndCrashedText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_KogaBeforeBattleText	text/FuchsiaGym.asm	1						no	auto_routed
+_KogaMarshBadgeInfoText	text/SaffronGym.asm	1			#			no	auto_routed
+_KogaPostBattleAdviceText	text/FuchsiaGym_2.asm	1			#			no	auto_routed
+_KogaSoulBadgeInfoText	text/FuchsiaGym_2.asm	1			#			no	auto_routed
+_LTSurgePostBattleAdviceText	text/VermilionGym_2.asm	1			#			no	auto_routed
+_LTSurgePreBattleText	text/VermilionGym.asm	1			#			no	auto_routed
+_LTSurgeThunderBadgeInfoText	text/VermilionGym_2.asm	1			#			no	auto_routed
+_Lab1Text1	text/CinnabarLab.asm	1			#			no	auto_routed
+_Lab1Text2	text/CinnabarLab.asm	1						no	auto_routed
+_Lab1Text3	text/CinnabarLab.asm	1			#			no	auto_routed
+_Lab1Text4	text/CinnabarLab.asm	1			#			no	auto_routed
+_Lab1Text5	text/CinnabarLab.asm	1			#			no	auto_routed
+_Lab2Text1	text/CinnabarLabTradeRoom.asm	1			#			no	auto_routed
+_Lab3Text2	text/CinnabarLabMetronomeRoom.asm	1			#			no	auto_routed
+_Lab3Text3	text/CinnabarLabMetronomeRoom.asm	1			#			no	auto_routed
+_Lab3Text5	text/CinnabarLabMetronomeRoom.asm	1						no	auto_routed
+_Lab4Text_610ae	text/CinnabarLabFossilRoom.asm	0		text_ram	#			no	outside_map_script_scope
+_Lab4Text_610b3	text/CinnabarLabFossilRoom.asm	0	<PLAYER>	text_ram				no	outside_map_script_scope
+_Lab4Text_610b8	text/CinnabarLabFossilRoom.asm	0						no	outside_map_script_scope
+_Lab4Text_610bd	text/CinnabarLabFossilRoom.asm	0						no	outside_map_script_scope
+_Lab4Text_75dc6	text/CinnabarLabFossilRoom.asm	1			#			no	auto_routed
+_Lab4Text_75dcb	text/CinnabarLabFossilRoom.asm	1						no	auto_routed
+_Lab4Text_75dd0	text/CinnabarLabFossilRoom.asm	1						no	auto_routed
+_Lab4Text_75dd5	text/CinnabarLabFossilRoom.asm	1		text_ram				no	auto_routed
+_LanceAfterBattleText	text/LancesRoom.asm	1	<PLAYER>,<RIVAL>		#			no	auto_routed
+_LanceBeforeBattleText	text/LancesRoom.asm	1	<PLAYER>		#			no	auto_routed
+_LanceEndBattleText	text/LancesRoom.asm	1			#			no	auto_routed
+_LaprasGuySavedText	text/SilphCo7F.asm	1						no	auto_routed
+_LaprasGuyText	text/SilphCo7F.asm	1						no	auto_routed
+_LavenderHouse1Text3	text/MrFujisHouse.asm	1						no	auto_routed
+_LavenderHouse1Text4	text/MrFujisHouse.asm	1						no	auto_routed
+_LavenderHouse1Text6	text/MrFujisHouse.asm	1			#			no	auto_routed
+_LavenderHouse1Text_1d8d1	text/MrFujisHouse.asm	1						yes	auto_routed
+_LavenderHouse1Text_1d8d6	text/MrFujisHouse.asm	1						no	auto_routed
+_LavenderHouse1Text_1d8f4	text/MrFujisHouse.asm	1			#			no	auto_routed
+_LavenderHouse1Text_1d8f9	text/MrFujisHouse.asm	1			#			no	auto_routed
+_LavenderHouse1Text_1d94c	text/MrFujisHouse.asm	1	<PLAYER>		#			no	auto_routed
+_LavenderHouse2Text1	text/LavenderCuboneHouse.asm	1						no	auto_routed
+_LavenderHouse2Text_1d9dc	text/LavenderCuboneHouse.asm	1						no	auto_routed
+_LavenderHouse2Text_1d9e1	text/LavenderCuboneHouse.asm	1			#			no	auto_routed
+_LavenderMartNuggetText	text/LavenderMart.asm	1						no	auto_routed
+_LavenderMartReviveText	text/LavenderMart.asm	1			#			no	auto_routed
+_LavenderMartText2	text/LavenderMart.asm	1			#			no	auto_routed
+_LavenderPokecenterGuyText	data/text/text_2.asm	0						no	outside_map_script_scope
+_LavenderPokecenterText2	text/LavenderPokecenter.asm	1						no	auto_routed
+_LavenderPokecenterText3	text/LavenderPokecenter.asm	1						no	auto_routed
+_LavenderTownText2	text/LavenderTown.asm	1			#			no	auto_routed
+_LavenderTownText3	text/LavenderTown.asm	1			#			no	auto_routed
+_LavenderTownText4	text/LavenderTown.asm	1						no	auto_routed
+_LavenderTownText5	text/LavenderTown.asm	1						no	auto_routed
+_LavenderTownText8	text/LavenderTown.asm	1			#			no	auto_routed
+_LavenderTownText9	text/LavenderTown.asm	1			#			no	auto_routed
+_LavenderTownText_4413c	text/LavenderTown.asm	1						no	auto_routed
+_LavenderTownText_44141	text/LavenderTown.asm	1						no	auto_routed
+_LavenderTownText_44146	text/LavenderTown.asm	1						no	auto_routed
+_LearnedMove1Text	data/text/text_4.asm	0		text_ram				no	outside_map_script_scope
+_LightScreenProtectedText	data/text/text_3.asm	0	<USER>					no	outside_map_script_scope
+_LinedUpText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_LinkBattleLostText	data/text/text_2.asm	0	<PLAYER>	text_ram				no	outside_map_script_scope
+_LinkCableHelpText1	data/text/text_2.asm	0						no	outside_map_script_scope
+_LinkCableHelpText2	data/text/text_2.asm	0						no	outside_map_script_scope
+_LinkCableInfoText1	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_LinkCableInfoText2	data/text/text_2.asm	0						no	outside_map_script_scope
+_LinkCableInfoText3	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_LinkCanceledText	data/text/text_2.asm	0						no	outside_map_script_scope
+_LoafingAroundText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_LoreleiAfterBattleText	text/LoreleisRoom.asm	1			#			no	auto_routed
+_LoreleiBeforeBattleText	text/LoreleisRoom.asm	1			#			no	auto_routed
+_LoreleiDontRunAwayText	text/LoreleisRoom.asm	1						no	auto_routed
+_LoreleiEndBattleText	text/LoreleisRoom.asm	1						no	auto_routed
+_LoweredItsHeadText	data/text/text_3.asm	0						no	outside_map_script_scope
+_MadeWhirlwindText	data/text/text_3.asm	0						no	outside_map_script_scope
+_MagazinesText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_MagikarpSalesmanNoMoneyText	text/MtMoonPokecenter.asm	1						no	auto_routed
+_MagikarpSalesmanNoText	text/MtMoonPokecenter.asm	1						no	auto_routed
+_MagikarpSalesmanText1	text/MtMoonPokecenter.asm	1						no	auto_routed
+_MagikarpSalesmanText2	text/MtMoonPokecenter.asm	1						no	auto_routed
+_Mansion1AfterBattleText2	text/PokemonMansion1F.asm	1						no	auto_routed
+_Mansion1BattleText2	text/PokemonMansion1F.asm	1						no	auto_routed
+_Mansion1EndBattleText2	text/PokemonMansion1F.asm	1						no	auto_routed
+_Mansion2AfterBattleText1	text/PokemonMansion2F.asm	1						no	auto_routed
+_Mansion2BattleText1	text/PokemonMansion2F.asm	1						no	auto_routed
+_Mansion2EndBattleText1	text/PokemonMansion2F.asm	1						no	auto_routed
+_Mansion2Text3	text/PokemonMansion2F.asm	1			#			no	auto_routed
+_Mansion2Text4	text/PokemonMansion2F.asm	1			#			no	auto_routed
+_Mansion2Text_520c2	text/PokemonMansion2F.asm	1						no	auto_routed
+_Mansion2Text_520c7	text/PokemonMansion2F.asm	1						no	auto_routed
+_Mansion2Text_520cc	text/PokemonMansion2F.asm	1						no	auto_routed
+_Mansion3AfterBattleText1	text/PokemonMansion3F.asm	1						no	auto_routed
+_Mansion3AfterBattleText2	text/PokemonMansion3F.asm	1						no	auto_routed
+_Mansion3BattleText1	text/PokemonMansion3F.asm	1						no	auto_routed
+_Mansion3BattleText2	text/PokemonMansion3F.asm	1						no	auto_routed
+_Mansion3EndBattleText1	text/PokemonMansion3F.asm	1						no	auto_routed
+_Mansion3EndBattleText2	text/PokemonMansion3F.asm	1						no	auto_routed
+_Mansion3Text5	text/PokemonMansion3F.asm	1						no	auto_routed
+_Mansion4AfterBattleText1	text/PokemonMansionB1F.asm	1						no	auto_routed
+_Mansion4AfterBattleText2	text/PokemonMansionB1F.asm	1						no	auto_routed
+_Mansion4BattleText1	text/PokemonMansionB1F.asm	1						no	auto_routed
+_Mansion4BattleText2	text/PokemonMansionB1F.asm	1						no	auto_routed
+_Mansion4EndBattleText1	text/PokemonMansionB1F.asm	1						no	auto_routed
+_Mansion4EndBattleText2	text/PokemonMansionB1F.asm	1						no	auto_routed
+_Mansion4Text7	text/PokemonMansionB1F.asm	1						no	auto_routed
+_MansionSwitchNotPressedText	text/PokemonMansion1F.asm	1						no	auto_routed
+_MansionSwitchPressedText	text/PokemonMansion1F.asm	1						no	auto_routed
+_MansionSwitchText	text/PokemonMansion1F.asm	1						no	auto_routed
+_MartSignText	data/text/text_1.asm	0			#			no	outside_map_script_scope
+_MeetLaprasGuyText	text/SilphCo7F.asm	1			#			no	auto_routed
+_MewtwoBattleText	text/CeruleanCaveB1F.asm	1						no	auto_routed
+_MimicLearnedMoveText	data/text/text_3.asm	0	<USER>	text_ram				no	outside_map_script_scope
+_MirrorMoveFailedText	data/text/text_2.asm	0						no	outside_map_script_scope
+_MistyCascadeBadgeInfoText	text/CeruleanGym.asm	1			#			no	auto_routed
+_MistyPreBattleText	text/CeruleanGym.asm	1			#			no	auto_routed
+_MoltresBattleText	text/VictoryRoad2F.asm	1						no	auto_routed
+_MomHealText1	text/RedsHouse1F.asm	1	<PLAYER>					no	auto_routed
+_MomHealText2	text/RedsHouse1F.asm	1			#			no	auto_routed
+_MomWakeUpText	text/RedsHouse1F.asm	1						no	auto_routed
+_MonCannotLearnMachineMoveText	data/text/text_6.asm	0		text_ram				no	outside_map_script_scope
+_MonIsTakenOutText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_MonName1Text	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_MonWasReleasedText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_MonWasStoredText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_MoneyForWinningText	data/text/text_2.asm	0	<PLAYER>	text_bcd				no	outside_map_script_scope
+_MonsStatsFellText	data/text/text_3.asm	0	<TARGET>	text_ram				no	outside_map_script_scope
+_MonsStatsRoseText	data/text/text_3.asm	0	<USER>	text_ram				no	outside_map_script_scope
+_MoveDisabledText	data/text/text_2.asm	0						no	outside_map_script_scope
+_MoveIsDisabledText	data/text/text_2.asm	0	<USER>	text_ram				no	outside_map_script_scope
+_MoveNameText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_MoveNoPPText	data/text/text_2.asm	0						no	outside_map_script_scope
+_MoveWasDisabledText	data/text/text_3.asm	0	<TARGET>	text_ram				no	outside_map_script_scope
+_MrFujiAfterFluteText	text/MrFujisHouse.asm	1						no	auto_routed
+_MtMoon1AfterBattleText2	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1AfterBattleText3	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1AfterBattleText4	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1AfterBattleText5	text/MtMoon1F.asm	1			#			no	auto_routed
+_MtMoon1AfterBattleText6	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1AfterBattleText7	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1AfterBattleText8	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1BattleText2	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1BattleText3	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1BattleText4	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1BattleText5	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1BattleText6	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1BattleText7	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1BattleText8	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1EndBattleText2	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1EndBattleText3	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1EndBattleText4	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1EndBattleText5	text/MtMoon1F.asm	1			#			no	auto_routed
+_MtMoon1EndBattleText6	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1EndBattleText7	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1EndBattleText8	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon1Text14	text/MtMoon1F.asm	1						no	auto_routed
+_MtMoon3AfterBattleText2	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3AfterBattleText3	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3AfterBattleText4	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3AfterBattleText5	text/MtMoonB2F.asm	1			#			no	auto_routed
+_MtMoon3BattleText2	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3BattleText3	text/MtMoonB2F.asm	1			#			no	auto_routed
+_MtMoon3BattleText4	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3BattleText5	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3EndBattleText2	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3EndBattleText3	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3EndBattleText4	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3EndBattleText5	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3Text_49f24	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3Text_49f64	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3Text_49f6f	text/MtMoonB2F.asm	1	<PLAYER>	text_ram				no	auto_routed
+_MtMoon3Text_49f7f	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3Text_49f85	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3Text_49f8a	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3Text_49f8f	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoon3Text_49f94	text/MtMoonB2F.asm	1			#			no	auto_routed
+_MtMoon3Text_49f99	text/MtMoonB2F.asm	1						no	auto_routed
+_MtMoonPokecenterBenchGuyText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_MtMoonPokecenterText1	text/MtMoonPokecenter.asm	1			#			no	auto_routed
+_MtMoonPokecenterText3	text/MtMoonPokecenter.asm	1						no	auto_routed
+_MtMoonPokecenterText5	text/MtMoonPokecenter.asm	1						no	auto_routed
+_MtMoonText1	text/MtMoonB1F.asm	1						no	auto_routed
+_MultiHitText	data/text/text_2.asm	0		text_decimal				no	outside_map_script_scope
+_Museum1FText_5c21a	text/Museum1F.asm	1						no	auto_routed
+_Museum1FText_5c21f	text/Museum1F.asm	1						no	auto_routed
+_Museum1FText_5c224	text/Museum1F.asm	1						no	auto_routed
+_Museum1FText_5c229	text/Museum1F.asm	1						no	auto_routed
+_Museum1FText_5c22e	text/Museum1F.asm	1						no	auto_routed
+_Museum1FText_5c233	text/Museum1F.asm	1			#			no	auto_routed
+_Museum1FText_5c238	text/Museum1F.asm	1						no	auto_routed
+_Museum1FText_5c23d	text/Museum1F.asm	1						no	auto_routed
+_Museum1FText_5c242	text/Museum1F.asm	1						no	auto_routed
+_Museum1FText_5c251	text/Museum1F.asm	1						no	auto_routed
+_Museum1FText_5c28e	text/Museum1F.asm	1			#			no	auto_routed
+_Museum1FText_5c299	text/Museum1F.asm	1						no	auto_routed
+_Museum1FText_5c29e	text/Museum1F.asm	1						no	auto_routed
+_Museum1FText_5c2ad	text/Museum1F.asm	1			#			no	auto_routed
+_Museum1FText_5c2bc	text/Museum1F.asm	1						no	auto_routed
+_Museum2FText1	text/Museum2F.asm	1						no	auto_routed
+_Museum2FText2	text/Museum2F.asm	1						no	auto_routed
+_Museum2FText3	text/Museum2F.asm	1						no	auto_routed
+_Museum2FText4	text/Museum2F.asm	1						no	auto_routed
+_Museum2FText5	text/Museum2F.asm	1						no	auto_routed
+_Museum2FText6	text/Museum2F.asm	1						no	auto_routed
+_Museum2FText7	text/Museum2F.asm	1						no	auto_routed
+_MustRechargeText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_NameRaterText_1dab3	text/NameRatersHouse.asm	1			#			no	auto_routed
+_NameRaterText_1dab8	text/NameRatersHouse.asm	1			#			no	auto_routed
+_NameRaterText_1dabd	text/NameRatersHouse.asm	1		text_ram				no	auto_routed
+_NameRaterText_1dac2	text/NameRatersHouse.asm	1						no	auto_routed
+_NameRaterText_1dac7	text/NameRatersHouse.asm	1		text_ram	#			no	auto_routed
+_NameRaterText_1dacc	text/NameRatersHouse.asm	1						no	auto_routed
+_NameRaterText_1dad1	text/NameRatersHouse.asm	1		text_ram				no	auto_routed
+_NeedYourPokemonText	data/text/text_4.asm	0			#			no	outside_map_script_scope
+_NewBadgeRequiredText	data/text/text_5.asm	0						no	outside_map_script_scope
+_NewBicycleText	data/text/text_2.asm	0						no	outside_map_script_scope
+_NoCyclingAllowedHereText	data/text/text_6.asm	0						no	outside_map_script_scope
+_NoEffectText	data/text/text_3.asm	0						no	outside_map_script_scope
+_NoMonText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_NoMoreRoomForItemText	data/text/text_1.asm	0						no	outside_map_script_scope
+_NoMovesLeftText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_NoNibbleText	data/text/text_1.asm	0						no	outside_map_script_scope
+_NoRoomToStoreText	data/text/text_2.asm	0						no	outside_map_script_scope
+_NoRunningText	data/text/text_2.asm	0						no	outside_map_script_scope
+_NoSurfingHereText	data/text/text_6.asm	0		text_ram				no	outside_map_script_scope
+_NoTrade1Text	data/text/text_7.asm	0						no	outside_map_script_scope
+_NoTrade2Text	data/text/text_7.asm	0						no	outside_map_script_scope
+_NoTrade3Text	data/text/text_7.asm	0						no	outside_map_script_scope
+_NoWillText	data/text/text_2.asm	0						no	outside_map_script_scope
+_NotEnoughCoinsSlotMachineText	data/text/text_2.asm	0						no	outside_map_script_scope
+_NotHealthyEnoughText	data/text/text_5.asm	0						no	outside_map_script_scope
+_NotThisTimeText	data/text/text_2.asm	0						no	outside_map_script_scope
+_NotVeryEffectiveText	data/text/text_2.asm	0						no	outside_map_script_scope
+_NothingHappenedText	data/text/text_3.asm	0						no	outside_map_script_scope
+_NothingHereText	data/text/text_1.asm	0						no	outside_map_script_scope
+_NothingStoredText	data/text/text_2.asm	0						no	outside_map_script_scope
+_NothingToCutText	data/text/text_7.asm	0						no	outside_map_script_scope
+_NothingToDepositText	data/text/text_2.asm	0						no	outside_map_script_scope
+_OHKOText	data/text/text_2.asm	0						no	outside_map_script_scope
+_OKExclamationText	data/text/text_2.asm	0						no	outside_map_script_scope
+_OakAppearsText	text/PalletTown.asm	1						no	auto_routed
+_OakLabEmailText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_OakSpeechText1	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_OakSpeechText2A	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_OakSpeechText2B	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_OakSpeechText3	data/text/text_2.asm	0	<PLAYER>		#			no	outside_map_script_scope
+_OakWalksUpText	text/PalletTown.asm	1			#			no	auto_routed
+_OaksAideComeBackText	data/text/text_1.asm	0		text_decimal,text_ram				no	outside_map_script_scope
+_OaksAideGotItemText	data/text/text_1.asm	0	<PLAYER>	text_ram				no	outside_map_script_scope
+_OaksAideHereYouGoText	data/text/text_1.asm	0		text_decimal	#			no	outside_map_script_scope
+_OaksAideHiText	data/text/text_1.asm	0	<PLAYER>	text_decimal,text_ram	#			no	outside_map_script_scope
+_OaksAideNoRoomText	data/text/text_1.asm	0		text_ram				no	outside_map_script_scope
+_OaksAideUhOhText	data/text/text_1.asm	0		text_decimal,text_ram	#			no	outside_map_script_scope
+_OaksLabAroundWorldText	text/OaksLab.asm	1	<PLAYER>		#			no	auto_routed
+_OaksLabBePatientText	text/OaksLab.asm	1	<RIVAL>					no	auto_routed
+_OaksLabBulbasaurText	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabCharmanderText	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabChooseMonText	text/OaksLab.asm	1	<PLAYER>,<RIVAL>		#			no	auto_routed
+_OaksLabDeliverParcelText1	text/OaksLab.asm	1	<PLAYER>		#			no	auto_routed
+_OaksLabDeliverParcelText2	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabGaryText1	text/OaksLab.asm	1	<PLAYER>,<RIVAL>					no	auto_routed
+_OaksLabGivePokeballsText1	text/OaksLab.asm	1	<PLAYER>		#			no	auto_routed
+_OaksLabGivePokeballsText2	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabHomePCUpdatedText	data/english_text/manual_dialogue_overrides.json	1			#			no	manual_english_override
+_OaksLabLastMonText	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabLeavingText	text/OaksLab.asm	1						no	auto_routed
+_OaksLabMonEnergeticText	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabPleaseVisitText	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabReceivedMonText	text/OaksLab.asm	1	<PLAYER>	text_ram				no	auto_routed
+_OaksLabRivalChallengeText	text/OaksLab.asm	1	<PLAYER>,<RIVAL>		#			no	auto_routed
+_OaksLabRivalInterjectionText	text/OaksLab.asm	1	<RIVAL>					no	auto_routed
+_OaksLabRivalPickingMonText	text/OaksLab.asm	1	<RIVAL>					no	auto_routed
+_OaksLabRivalReceivedMonText	text/OaksLab.asm	1	<RIVAL>	text_ram				no	auto_routed
+_OaksLabRivalToughenUpText	text/OaksLab.asm	1	<PLAYER>,<RIVAL>		#			no	auto_routed
+_OaksLabRivalWaitingText	text/OaksLab.asm	1	<RIVAL>					no	auto_routed
+_OaksLabSquirtleText	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabText21	text/OaksLab.asm	1	<RIVAL>					no	auto_routed
+_OaksLabText22	text/OaksLab.asm	1	<RIVAL>					no	auto_routed
+_OaksLabText23	text/OaksLab.asm	1						no	auto_routed
+_OaksLabText24	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabText25	text/OaksLab.asm	1	<PLAYER>,<RIVAL>		#			no	auto_routed
+_OaksLabText26	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabText27	text/OaksLab.asm	1	<PLAYER>,<RIVAL>					no	auto_routed
+_OaksLabText39	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabText40	text/OaksLab.asm	1	<PLAYER>,<RIVAL>					no	auto_routed
+_OaksLabText41	text/OaksLab.asm	1	<RIVAL>		#			no	auto_routed
+_OaksLabText8	text/OaksLab.asm	1						no	auto_routed
+_OaksLabText_1d2f0	text/OaksLab.asm	1	<PLAYER>		#			no	auto_routed
+_OaksLabText_1d2f5	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabText_1d2fa	text/OaksLab.asm	1	<PLAYER>		#			no	auto_routed
+_OaksLabText_1d31d	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabText_1d32c	text/OaksLab.asm	1						no	auto_routed
+_OaksLabText_1d340	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabText_1d3be	text/OaksLab.asm	1			#			no	auto_routed
+_OaksLabText_1d3c3	text/OaksLab.asm	1	<RIVAL>					no	auto_routed
+_OaksLabText_1d405	text/OaksLab.asm	1			#			no	auto_routed
+_OhFineThenText	data/text/text_2.asm	0						no	outside_map_script_scope
+_OlderFileWillBeErasedText	data/text/text_3.asm	0						no	outside_map_script_scope
+_OnceReleasedText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_OneMoreGoSlotMachineText	data/text/text_2.asm	0						no	outside_map_script_scope
+_OneTwoAndText	data/text/text_4.asm	0						no	outside_map_script_scope
+_OopsYouDontHaveEnoughRoomText	data/text/text_2.asm	0						no	outside_map_script_scope
+_OtherHitmonText	text/FightingDojo.asm	1						no	auto_routed
+_OutOfCoinsSlotMachineText	data/text/text_2.asm	0						no	outside_map_script_scope
+_OutOfSafariBallsText	data/text/text_2.asm	0						no	outside_map_script_scope
+_PPIncreasedText	data/text/text_6.asm	0		text_ram				no	outside_map_script_scope
+_PPMaxedOutText	data/text/text_6.asm	0		text_ram				no	outside_map_script_scope
+_PPRestoredText	data/text/text_6.asm	0						no	outside_map_script_scope
+_PalletTownText2	text/PalletTown.asm	1			#			no	auto_routed
+_PalletTownText3	text/PalletTown.asm	1			#			no	auto_routed
+_PalletTownText4	text/PalletTown.asm	1			#			no	auto_routed
+_PalletTownText5	text/PalletTown.asm	1						no	auto_routed
+_PalletTownText6	text/PalletTown.asm	1	<PLAYER>					no	auto_routed
+_PalletTownText7	text/PalletTown.asm	1	<RIVAL>					no	auto_routed
+_ParalyzedMayNotAttackText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_ParlyzHealText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_PartyMenuBattleText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_PartyMenuItemUseText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_PartyMenuNormalText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_PartyMenuSwapMonText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_PartyMenuUseTMText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_PewterCityPokecenterGuyText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_PewterCityText1	text/PewterCity.asm	1						no	auto_routed
+_PewterCityText10	text/PewterCity.asm	1						no	auto_routed
+_PewterCityText11	text/PewterCity.asm	1			#			no	auto_routed
+_PewterCityText12	text/PewterCity.asm	1						no	auto_routed
+_PewterCityText13	text/PewterCity.asm	1						no	auto_routed
+_PewterCityText14	text/PewterCity.asm	1						no	auto_routed
+_PewterCityText2	text/PewterCity.asm	1			#			no	auto_routed
+_PewterCityText6	text/PewterCity.asm	1			#			no	auto_routed
+_PewterCityText7	text/PewterCity.asm	1			#			no	auto_routed
+_PewterCityText_193f1	text/PewterCity.asm	1						no	auto_routed
+_PewterCityText_193f6	text/PewterCity.asm	1						no	auto_routed
+_PewterCityText_193fb	text/PewterCity.asm	1						no	auto_routed
+_PewterCityText_19427	text/PewterCity.asm	1						no	auto_routed
+_PewterCityText_1942c	text/PewterCity.asm	1						no	auto_routed
+_PewterCityText_19431	text/PewterCity.asm	1			#			no	auto_routed
+_PewterCityText_1945d	text/PewterCity.asm	1						no	auto_routed
+_PewterGymAfterBattleText1	text/PewterGym_2.asm	1						no	auto_routed
+_PewterGymBattleText1	text/PewterGym_2.asm	1						no	auto_routed
+_PewterGymEndBattleText1	text/PewterGym_2.asm	1						no	auto_routed
+_PewterGymGuideAdviceText	text/PewterGym_2.asm	1			#			no	auto_routed
+_PewterGymGuideBeginAdviceText	text/PewterGym_2.asm	1						no	auto_routed
+_PewterGymGuidePostBattleText	text/PewterGym_2.asm	1			#			no	auto_routed
+_PewterGymGuidePreAdviceText	text/PewterGym_2.asm	1			#			no	auto_routed
+_PewterGymText_5c524	text/PewterGym_2.asm	1						no	auto_routed
+_PewterHouse1Text1	text/PewterNidoranHouse.asm	1						no	auto_routed
+_PewterHouse1Text2	text/PewterNidoranHouse.asm	1						no	auto_routed
+_PewterHouse1Text3	text/PewterNidoranHouse.asm	1			#			no	auto_routed
+_PewterHouse2Text1	text/PewterSpeechHouse.asm	1			#			no	auto_routed
+_PewterHouse2Text2	text/PewterSpeechHouse.asm	1			#			no	auto_routed
+_PewterJigglypuffText	text/PewterPokecenter.asm	1						no	auto_routed
+_PewterMartText2	text/PewterMart.asm	1			#			no	auto_routed
+_PewterMartText3	text/PewterMart.asm	1			#			no	auto_routed
+_PewterPokecenterText2	text/PewterPokecenter.asm	1						no	auto_routed
+_PickUpPayDayMoneyText	data/text/text_2.asm	0	<PLAYER>	text_bcd				no	outside_map_script_scope
+_PlaySlotMachineText	data/text/text_2.asm	0						no	outside_map_script_scope
+_PlayedFluteHadEffectText	data/text/text_6.asm	0	<PLAYER>		#			no	outside_map_script_scope
+_PlayedFluteNoEffectText	data/text/text_6.asm	0			#			no	outside_map_script_scope
+_PlayerBlackedOutText	data/text/text_4.asm	0	<PLAYER>		#			no	outside_map_script_scope
+_PlayerBlackedOutText2	data/text/text_2.asm	0	<PLAYER>		#			no	outside_map_script_scope
+_PlayerMon1Text	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_PlayerMon2Text	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_PlayerMonFaintedText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_PleaseWaitText	data/text/text_2.asm	0						no	outside_map_script_scope
+_PoisonedText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_PokeCenterSignText	data/text/text_1.asm	0			#			no	outside_map_script_scope
+_PokemartAnythingElseText	data/text/text_4.asm	0						no	outside_map_script_scope
+_PokemartBoughtItemText	data/text/text_4.asm	0						no	outside_map_script_scope
+_PokemartBuyingGreetingText	data/text/text_4.asm	0						no	outside_map_script_scope
+_PokemartGreetingText	data/text/text_4.asm	0						no	outside_map_script_scope
+_PokemartItemBagEmptyText	data/text/text_4.asm	0						no	outside_map_script_scope
+_PokemartItemBagFullText	data/text/text_4.asm	0						no	outside_map_script_scope
+_PokemartNotEnoughMoneyText	data/text/text_4.asm	0						no	outside_map_script_scope
+_PokemartTellBuyPriceText	data/text/text_4.asm	0		text_bcd,text_ram				no	outside_map_script_scope
+_PokemartTellSellPriceText	data/text/text_4.asm	0		text_bcd				no	outside_map_script_scope
+_PokemartThankYouText	data/text/text_4.asm	0						no	outside_map_script_scope
+_PokemartUnsellableItemText	data/text/text_4.asm	0						no	outside_map_script_scope
+_PokemonBooksText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_PokemonCenterFarewellText	data/text/text_4.asm	0						no	outside_map_script_scope
+_PokemonCenterWelcomeText	data/text/text_4.asm	0			#			no	outside_map_script_scope
+_PokemonFaintedText	data/text/text_4.asm	0		text_ram				no	outside_map_script_scope
+_PokemonFightingFitText	data/text/text_4.asm	0			#			no	outside_map_script_scope
+_PokemonSellingGreetingText	data/text/text_4.asm	0						no	outside_map_script_scope
+_PokemonStuffText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_PokemonTower1Text1	text/PokemonTower1F.asm	1			#			no	auto_routed
+_PokemonTower1Text2	text/PokemonTower1F.asm	1						no	auto_routed
+_PokemonTower1Text3	text/PokemonTower1F.asm	1						no	auto_routed
+_PokemonTower1Text4	text/PokemonTower1F.asm	1						no	auto_routed
+_PokemonTower1Text5	text/PokemonTower1F.asm	1						no	auto_routed
+_PokemonTower2Text2	text/PokemonTower2F.asm	1						no	auto_routed
+_PokemonTower2Text_6062d	text/PokemonTower2F.asm	1	<PLAYER>,<RIVAL>		#			no	auto_routed
+_PokemonTower2Text_60632	text/PokemonTower2F.asm	1						no	auto_routed
+_PokemonTower2Text_60637	text/PokemonTower2F.asm	1	<RIVAL>		#			no	auto_routed
+_PokemonTower2Text_6063c	text/PokemonTower2F.asm	1			#			no	auto_routed
+_PokemonTower2Text_60c1f	text/PokemonTower6F.asm	1						no	auto_routed
+_PokemonTower2Text_60c24	text/PokemonTower6F.asm	1						no	auto_routed
+_PokemonTower3AfterBattleText1	text/PokemonTower3F.asm	1						no	auto_routed
+_PokemonTower3AfterBattleText2	text/PokemonTower3F.asm	1						no	auto_routed
+_PokemonTower3AfterBattleText3	text/PokemonTower3F.asm	1						no	auto_routed
+_PokemonTower3BattleText1	text/PokemonTower3F.asm	1						no	auto_routed
+_PokemonTower3BattleText2	text/PokemonTower3F.asm	1						no	auto_routed
+_PokemonTower3BattleText3	text/PokemonTower3F.asm	1						no	auto_routed
+_PokemonTower3EndBattleText1	text/PokemonTower3F.asm	1						no	auto_routed
+_PokemonTower3EndBattleText2	text/PokemonTower3F.asm	1						no	auto_routed
+_PokemonTower3EndBattleText3	text/PokemonTower3F.asm	1						no	auto_routed
+_PokemonTower4AfterBattleText1	text/PokemonTower4F.asm	1						no	auto_routed
+_PokemonTower4AfterBattleText2	text/PokemonTower4F.asm	1						no	auto_routed
+_PokemonTower4AfterBattleText3	text/PokemonTower4F.asm	1			#			no	auto_routed
+_PokemonTower4BattleText1	text/PokemonTower4F.asm	1						no	auto_routed
+_PokemonTower4BattleText2	text/PokemonTower4F.asm	1						no	auto_routed
+_PokemonTower4BattleText3	text/PokemonTower4F.asm	1						no	auto_routed
+_PokemonTower4EndBattleText1	text/PokemonTower4F.asm	1						no	auto_routed
+_PokemonTower4EndBattleText2	text/PokemonTower4F.asm	1						no	auto_routed
+_PokemonTower4EndBattleText3	text/PokemonTower4F.asm	1						no	auto_routed
+_PokemonTower5AfterBattleText1	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5AfterBattleText2	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5AfterBattleText3	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5AfterBattleText4	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5BattleText1	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5BattleText2	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5BattleText3	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5BattleText4	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5EndBattleText1	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5EndBattleText2	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5EndBattleText3	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5EndBattleText4	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5Text1	text/PokemonTower5F.asm	1						no	auto_routed
+_PokemonTower5Text7	text/PokemonTower5F.asm	1	<PLAYER>		#			no	auto_routed
+_PokemonTower6AfterBattleText1	text/PokemonTower6F.asm	1						no	auto_routed
+_PokemonTower6AfterBattleText2	text/PokemonTower6F.asm	1						no	auto_routed
+_PokemonTower6AfterBattleText3	text/PokemonTower6F.asm	1						no	auto_routed
+_PokemonTower6BattleText1	text/PokemonTower6F.asm	1						no	auto_routed
+_PokemonTower6BattleText2	text/PokemonTower6F.asm	1						no	auto_routed
+_PokemonTower6BattleText3	text/PokemonTower6F.asm	1						no	auto_routed
+_PokemonTower6EndBattleText1	text/PokemonTower6F.asm	1						no	auto_routed
+_PokemonTower6EndBattleText2	text/PokemonTower6F.asm	1						no	auto_routed
+_PokemonTower6EndBattleText3	text/PokemonTower6F.asm	1						no	auto_routed
+_PokemonTower6Text6	text/PokemonTower6F.asm	1						no	auto_routed
+_PokemonTower7AfterBattleText1	text/PokemonTower7F.asm	1						no	auto_routed
+_PokemonTower7AfterBattleText2	text/PokemonTower7F.asm	1			#			no	auto_routed
+_PokemonTower7AfterBattleText3	text/PokemonTower7F.asm	1						no	auto_routed
+_PokemonTower7BattleText1	text/PokemonTower7F.asm	1						no	auto_routed
+_PokemonTower7BattleText2	text/PokemonTower7F.asm	1			#			no	auto_routed
+_PokemonTower7BattleText3	text/PokemonTower7F.asm	1						no	auto_routed
+_PokemonTower7EndBattleText1	text/PokemonTower7F.asm	1						no	auto_routed
+_PokemonTower7EndBattleText2	text/PokemonTower7F.asm	1						no	auto_routed
+_PokemonTower7EndBattleText3	text/PokemonTower7F.asm	1						no	auto_routed
+_PoofText	data/text/text_4.asm	0						no	outside_map_script_scope
+_PotionText	data/text/text_2.asm	0		text_decimal,text_ram				no	outside_map_script_scope
+_ProgrammerText	text/CeladonMansion3F.asm	1						no	auto_routed
+_PushStartText	data/text/text_2.asm	0						no	outside_map_script_scope
+_RaisePPWhichTechniqueText	data/text/text_6.asm	0						no	outside_map_script_scope
+_RanAwayScaredText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_RanFromBattleText	data/text/text_3.asm	0	<USER>					no	outside_map_script_scope
+_RareCandyText	data/text/text_2.asm	0		text_decimal,text_ram				no	outside_map_script_scope
+_Received10CoinsText	text/GameCorner.asm	1	<PLAYER>					no	auto_routed
+_Received20CoinsText	text/GameCorner.asm	1	<PLAYER>					no	auto_routed
+_ReceivedBoulderBadgeText	text/PewterGym_2.asm	1	<PLAYER>					no	auto_routed
+_ReceivedCascadeBadgeText	text/CeruleanGym.asm	1						no	auto_routed
+_ReceivedCoinCaseText	text/CeladonDiner.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedEarthBadgeText	text/ViridianGym.asm	1						no	auto_routed
+_ReceivedFluteText	text/MrFujisHouse.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedHM01Text	text/SSAnneCaptainsRoom.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedHM02Text	text/Route16FlyHouse.asm	1	<PLAYER>					no	auto_routed
+_ReceivedHM03Text	text/SafariZoneSecretHouse.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedHM04Text	text/WardensHouse.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedMarshBadgeText	text/SaffronGym.asm	1						no	auto_routed
+_ReceivedOldAmberText	text/Museum1F.asm	1	<PLAYER>					no	auto_routed
+_ReceivedRainbowBadgeText	text/CeladonGym.asm	1						no	auto_routed
+_ReceivedSilphCoMasterBallText	text/SilphCo11F.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedSoulBadgeText	text/FuchsiaGym.asm	1						no	auto_routed
+_ReceivedTM06Text	text/FuchsiaGym_2.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedTM11Text	text/CeruleanGym.asm	1	<PLAYER>					no	auto_routed
+_ReceivedTM18Text	text/CeladonMart3F.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedTM21Text	text/CeladonGym.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedTM24Text	text/VermilionGym_2.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedTM27Text	text/ViridianGym.asm	1	<PLAYER>					no	auto_routed
+_ReceivedTM28Text	text/CeruleanCity.asm	1	<PLAYER>					no	auto_routed
+_ReceivedTM28Text2	text/CeruleanCity.asm	1						no	auto_routed
+_ReceivedTM29Text	text/MrPsychicsHouse.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedTM31Text	text/CopycatsHouse2F.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedTM34Text	text/PewterGym_2.asm	1	<PLAYER>					no	auto_routed
+_ReceivedTM35Text	text/CinnabarLabMetronomeRoom.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedTM36Text	text/SilphCo2F.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedTM38Text	text/CinnabarGym.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedTM39Text	text/Route12Gate2F.asm	1	<PLAYER>					no	auto_routed
+_ReceivedTM41Text	text/CeladonCity.asm	1	<PLAYER>	text_ram				no	auto_routed
+_ReceivedTM42Text	text/ViridianCity.asm	1	<PLAYER>					no	auto_routed
+_ReceivedTM46Text	text/SaffronGym.asm	1	<PLAYER>					no	auto_routed
+_ReceivedTM49Text	text/CeladonMartRoof.asm	1	<PLAYER>					no	auto_routed
+_ReceivedThunderBadgeText	text/VermilionGym_2.asm	1						no	auto_routed
+_ReceivedVolcanoBadgeText	text/CinnabarGym.asm	1						no	auto_routed
+_ReceivingHM01Text	text/SSAnneCaptainsRoom.asm	1			#			no	auto_routed
+_RedBedroomSNESText	data/text/text_2.asm	0	<PLAYER>					no	outside_map_script_scope
+_ReflectGainedArmorText	data/text/text_3.asm	0	<USER>					no	outside_map_script_scope
+_RegainedHealthText	data/text/text_3.asm	0	<USER>					no	outside_map_script_scope
+_ReleaseWhichMonText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_RepelWoreOffText	data/text/text_4.asm	0						no	outside_map_script_scope
+_RequireCoinCaseText	data/text/text_2.asm	0						no	outside_map_script_scope
+_RestorePPWhichTechniqueText	data/text/text_6.asm	0						no	outside_map_script_scope
+_ReviveText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_Rival1WinText	data/text/text_2.asm	0	<RIVAL>					no	outside_map_script_scope
+_RockTunnel1AfterBattleText1	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1AfterBattleText2	text/RockTunnel1F.asm	1			#			no	auto_routed
+_RockTunnel1AfterBattleText3	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1AfterBattleText4	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1AfterBattleText5	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1AfterBattleText6	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1AfterBattleText7	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1BattleText1	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1BattleText2	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1BattleText3	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1BattleText4	text/RockTunnel1F.asm	1			#			no	auto_routed
+_RockTunnel1BattleText5	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1BattleText6	text/RockTunnel1F.asm	1			#			no	auto_routed
+_RockTunnel1BattleText7	text/RockTunnel1F.asm	1			#			no	auto_routed
+_RockTunnel1EndBattleText1	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1EndBattleText2	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1EndBattleText3	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1EndBattleText4	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1EndBattleText5	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1EndBattleText6	text/RockTunnel1F.asm	1			#			no	auto_routed
+_RockTunnel1EndBattleText7	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel1Text8	text/RockTunnel1F.asm	1						no	auto_routed
+_RockTunnel2AfterBattleText2	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2AfterBattleText3	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2AfterBattleText4	text/RockTunnelB1F.asm	1			#			no	auto_routed
+_RockTunnel2AfterBattleText5	text/RockTunnelB1F.asm	1			#			no	auto_routed
+_RockTunnel2AfterBattleText6	text/RockTunnelB1F.asm	1			#			no	auto_routed
+_RockTunnel2AfterBattleText7	text/RockTunnelB1F.asm	1			#			no	auto_routed
+_RockTunnel2AfterBattleText8	text/RockTunnelB1F_2.asm	1			#			no	auto_routed
+_RockTunnel2AfterBattleText9	text/RockTunnelB1F_2.asm	1						no	auto_routed
+_RockTunnel2BattleText2	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2BattleText3	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2BattleText4	text/RockTunnelB1F.asm	1			#			no	auto_routed
+_RockTunnel2BattleText5	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2BattleText6	text/RockTunnelB1F.asm	1			#			no	auto_routed
+_RockTunnel2BattleText7	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2BattleText8	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2BattleText9	text/RockTunnelB1F_2.asm	1			#			no	auto_routed
+_RockTunnel2EndBattleText2	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2EndBattleText3	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2EndBattleText4	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2EndBattleText5	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2EndBattleText6	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2EndBattleText7	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2EndBattleText8	text/RockTunnelB1F.asm	1						no	auto_routed
+_RockTunnel2EndBattleText9	text/RockTunnelB1F_2.asm	1						no	auto_routed
+_RockTunnelPokecenterGuyText	data/text/text_2.asm	0						no	outside_map_script_scope
+_RockTunnelPokecenterText2	text/RockTunnelPokecenter.asm	1			#			no	auto_routed
+_RockTunnelPokecenterText3	text/RockTunnelPokecenter.asm	1						no	auto_routed
+_RocketElevatorText_4578b	text/RocketHideoutElevator.asm	1						no	auto_routed
+_RocketHide3AfterBattleText3	text/RocketHideoutB3F.asm	1						no	auto_routed
+_RocketHide4AfterBattleText2	text/RocketHideoutB4F.asm	1						no	auto_routed
+_RocketHide4AfterBattleText3	text/RocketHideoutB4F.asm	1						no	auto_routed
+_RocketHideout1AfterBattleTxt2	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1AfterBattleTxt3	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1AfterBattleTxt4	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1AfterBattleTxt5	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1AfterBattleTxt6	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1BattleText2	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1BattleText3	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1BattleText4	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1BattleText5	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1BattleText6	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1EndBattleText2	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1EndBattleText3	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1EndBattleText4	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1EndBattleText5	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout1EndBattleText6	text/RocketHideoutB1F.asm	1						no	auto_routed
+_RocketHideout2AfterBattleTxt2	text/RocketHideoutB2F.asm	1						no	auto_routed
+_RocketHideout2BattleText2	text/RocketHideoutB2F.asm	1						no	auto_routed
+_RocketHideout2EndBattleText2	text/RocketHideoutB2F.asm	1						no	auto_routed
+_RocketHideout3AfterBattleTxt2	text/RocketHideoutB3F.asm	1						no	auto_routed
+_RocketHideout3BattleText2	text/RocketHideoutB3F.asm	1						no	auto_routed
+_RocketHideout3BattleTxt	text/RocketHideoutB3F.asm	1						no	auto_routed
+_RocketHideout3EndBattleText2	text/RocketHideoutB3F.asm	1						no	auto_routed
+_RocketHideout3EndBattleText3	text/RocketHideoutB3F.asm	1						no	auto_routed
+_RocketHideout4BattleText2	text/RocketHideoutB4F.asm	1						no	auto_routed
+_RocketHideout4BattleText3	text/RocketHideoutB4F.asm	1						no	auto_routed
+_RocketHideout4BattleText4	text/RocketHideoutB4F.asm	1						no	auto_routed
+_RocketHideout4EndBattleText2	text/RocketHideoutB4F.asm	1						no	auto_routed
+_RocketHideout4EndBattleText3	text/RocketHideoutB4F.asm	1						no	auto_routed
+_RocketHideout4EndBattleText4	text/RocketHideoutB4F.asm	1						no	auto_routed
+_RocketHideout4Text_4557a	text/RocketHideoutB4F.asm	1						no	auto_routed
+_RocketHideout4Text_4557f	text/RocketHideoutB4F.asm	1						no	auto_routed
+_RocketHideout4Text_45584	text/RocketHideoutB4F.asm	1			#			no	auto_routed
+_RocketHideout4Text_455ec	text/RocketHideoutB4F.asm	1						no	auto_routed
+_RoseText	data/text/text_3.asm	0						no	outside_map_script_scope
+_Route10AfterBattleText1	text/Route10.asm	1			#			no	auto_routed
+_Route10AfterBattleText2	text/Route10.asm	1						no	auto_routed
+_Route10AfterBattleText3	text/Route10.asm	1						no	auto_routed
+_Route10AfterBattleText4	text/Route10.asm	1			#			no	auto_routed
+_Route10AfterBattleText5	text/Route10.asm	1						no	auto_routed
+_Route10AfterBattleText6	text/Route10.asm	1			#			no	auto_routed
+_Route10BattleText1	text/Route10.asm	1			#			no	auto_routed
+_Route10BattleText2	text/Route10.asm	1						no	auto_routed
+_Route10BattleText3	text/Route10.asm	1			#			no	auto_routed
+_Route10BattleText4	text/Route10.asm	1			#			no	auto_routed
+_Route10BattleText5	text/Route10.asm	1						no	auto_routed
+_Route10BattleText6	text/Route10.asm	1						no	auto_routed
+_Route10EndBattleText1	text/Route10.asm	1						no	auto_routed
+_Route10EndBattleText2	text/Route10.asm	1						no	auto_routed
+_Route10EndBattleText3	text/Route10.asm	1			#			no	auto_routed
+_Route10EndBattleText4	text/Route10.asm	1						no	auto_routed
+_Route10EndBattleText5	text/Route10.asm	1						no	auto_routed
+_Route10EndBattleText6	text/Route10.asm	1						no	auto_routed
+_Route10Text10	text/Route10.asm	1						no	auto_routed
+_Route10Text7	text/Route10.asm	1						no	auto_routed
+_Route11AfterBattleText1	text/Route11.asm	1			#			no	auto_routed
+_Route11AfterBattleText10	text/Route11_2.asm	1						no	auto_routed
+_Route11AfterBattleText2	text/Route11.asm	1			#			no	auto_routed
+_Route11AfterBattleText3	text/Route11.asm	1						no	auto_routed
+_Route11AfterBattleText4	text/Route11.asm	1						no	auto_routed
+_Route11AfterBattleText5	text/Route11.asm	1						no	auto_routed
+_Route11AfterBattleText6	text/Route11.asm	1						no	auto_routed
+_Route11AfterBattleText7	text/Route11.asm	1						no	auto_routed
+_Route11AfterBattleText8	text/Route11.asm	1			#			no	auto_routed
+_Route11AfterBattleText9	text/Route11_2.asm	1						no	auto_routed
+_Route11BattleText1	text/Route11.asm	1						no	auto_routed
+_Route11BattleText10	text/Route11_2.asm	1			#			no	auto_routed
+_Route11BattleText2	text/Route11.asm	1						no	auto_routed
+_Route11BattleText3	text/Route11.asm	1						no	auto_routed
+_Route11BattleText4	text/Route11.asm	1						no	auto_routed
+_Route11BattleText5	text/Route11.asm	1						no	auto_routed
+_Route11BattleText6	text/Route11.asm	1						no	auto_routed
+_Route11BattleText7	text/Route11.asm	1						no	auto_routed
+_Route11BattleText8	text/Route11.asm	1						no	auto_routed
+_Route11BattleText9	text/Route11.asm	1						no	auto_routed
+_Route11EndBattleText1	text/Route11.asm	1						no	auto_routed
+_Route11EndBattleText10	text/Route11_2.asm	1						no	auto_routed
+_Route11EndBattleText2	text/Route11.asm	1						no	auto_routed
+_Route11EndBattleText3	text/Route11.asm	1						no	auto_routed
+_Route11EndBattleText4	text/Route11.asm	1						no	auto_routed
+_Route11EndBattleText5	text/Route11.asm	1			#			no	auto_routed
+_Route11EndBattleText6	text/Route11.asm	1						no	auto_routed
+_Route11EndBattleText7	text/Route11.asm	1						no	auto_routed
+_Route11EndBattleText8	text/Route11.asm	1			#			no	auto_routed
+_Route11EndBattleText9	text/Route11_2.asm	1						no	auto_routed
+_Route11GateText1	text/Route11Gate1F.asm	1			#			no	auto_routed
+_Route11GateUpstairsText_494a3	text/Route11Gate2F.asm	1						no	auto_routed
+_Route11GateUpstairsText_494d5	text/Route11Gate2F.asm	1						no	auto_routed
+_Route11Text11	text/Route11_2.asm	1						no	auto_routed
+_Route12AfterBattleText1	text/Route12.asm	1						no	auto_routed
+_Route12AfterBattleText2	text/Route12.asm	1			#			no	auto_routed
+_Route12AfterBattleText3	text/Route12.asm	1			#			no	auto_routed
+_Route12AfterBattleText4	text/Route12.asm	1			#			no	auto_routed
+_Route12AfterBattleText5	text/Route12.asm	1			#			no	auto_routed
+_Route12AfterBattleText6	text/Route12.asm	1						no	auto_routed
+_Route12AfterBattleText7	text/Route12.asm	1						no	auto_routed
+_Route12BattleText1	text/Route12.asm	1						no	auto_routed
+_Route12BattleText2	text/Route12.asm	1						no	auto_routed
+_Route12BattleText3	text/Route12.asm	1						no	auto_routed
+_Route12BattleText4	text/Route12.asm	1						no	auto_routed
+_Route12BattleText5	text/Route12.asm	1			#			no	auto_routed
+_Route12BattleText6	text/Route12.asm	1						no	auto_routed
+_Route12BattleText7	text/Route12.asm	1						no	auto_routed
+_Route12EndBattleText1	text/Route12.asm	1						no	auto_routed
+_Route12EndBattleText2	text/Route12.asm	1						no	auto_routed
+_Route12EndBattleText3	text/Route12.asm	1						no	auto_routed
+_Route12EndBattleText4	text/Route12.asm	1						no	auto_routed
+_Route12EndBattleText5	text/Route12.asm	1						no	auto_routed
+_Route12EndBattleText6	text/Route12.asm	1						no	auto_routed
+_Route12EndBattleText7	text/Route12.asm	1						no	auto_routed
+_Route12GateText1	text/Route12Gate1F.asm	1						no	auto_routed
+_Route12GateUpstairsText_495b8	text/Route12Gate2F.asm	1						no	auto_routed
+_Route12GateUpstairsText_495c4	text/Route12Gate2F.asm	1			#			yes	auto_routed
+_Route12HouseText_564c0	text/Route12SuperRodHouse.asm	1						no	auto_routed
+_Route12HouseText_564c5	text/Route12SuperRodHouse.asm	1	<PLAYER>	text_ram				no	auto_routed
+_Route12HouseText_564ca	text/Route12SuperRodHouse.asm	1						no	auto_routed
+_Route12HouseText_564cf	text/Route12SuperRodHouse.asm	1						no	auto_routed
+_Route12HouseText_564d4	text/Route12SuperRodHouse.asm	0	<PLAYER>		#			no	outside_map_script_scope
+_Route12HouseText_564d9	text/Route12SuperRodHouse.asm	1						no	auto_routed
+_Route12Text1	text/Route12.asm	1			#			no	auto_routed
+_Route12Text11	text/Route12.asm	1						no	auto_routed
+_Route12Text12	text/Route12.asm	1						no	auto_routed
+_Route12Text13	text/Route12.asm	1						no	auto_routed
+_Route12Text14	text/Route12.asm	1						no	auto_routed
+_Route13AfterBattleText10	text/Route13.asm	1						no	auto_routed
+_Route13AfterBattleText11	text/Route13.asm	1						no	auto_routed
+_Route13AfterBattleText2	text/Route13.asm	1			#			no	auto_routed
+_Route13AfterBattleText3	text/Route13.asm	1						no	auto_routed
+_Route13AfterBattleText4	text/Route13.asm	1						no	auto_routed
+_Route13AfterBattleText5	text/Route13.asm	1			#			no	auto_routed
+_Route13AfterBattleText6	text/Route13.asm	1			#			no	auto_routed
+_Route13AfterBattleText7	text/Route13.asm	1						no	auto_routed
+_Route13AfterBattleText8	text/Route13.asm	1			#			no	auto_routed
+_Route13AfterBattleText9	text/Route13.asm	1			#			no	auto_routed
+_Route13BattleText10	text/Route13.asm	1						no	auto_routed
+_Route13BattleText11	text/Route13.asm	1			#			no	auto_routed
+_Route13BattleText2	text/Route13.asm	1			#			no	auto_routed
+_Route13BattleText3	text/Route13.asm	1						no	auto_routed
+_Route13BattleText4	text/Route13.asm	1						no	auto_routed
+_Route13BattleText5	text/Route13.asm	1			#			no	auto_routed
+_Route13BattleText6	text/Route13.asm	1						no	auto_routed
+_Route13BattleText7	text/Route13.asm	1						no	auto_routed
+_Route13BattleText8	text/Route13.asm	1						no	auto_routed
+_Route13BattleText9	text/Route13.asm	1			#			no	auto_routed
+_Route13EndBattleText10	text/Route13.asm	1						no	auto_routed
+_Route13EndBattleText11	text/Route13.asm	1						no	auto_routed
+_Route13EndBattleText2	text/Route13.asm	1						no	auto_routed
+_Route13EndBattleText3	text/Route13.asm	1						no	auto_routed
+_Route13EndBattleText4	text/Route13.asm	1						no	auto_routed
+_Route13EndBattleText5	text/Route13.asm	1						no	auto_routed
+_Route13EndBattleText6	text/Route13.asm	1						no	auto_routed
+_Route13EndBattleText7	text/Route13.asm	1						no	auto_routed
+_Route13EndBattleText8	text/Route13.asm	1						no	auto_routed
+_Route13EndBattleText9	text/Route13.asm	1						no	auto_routed
+_Route13Text11	text/Route13.asm	1						no	auto_routed
+_Route13Text12	text/Route13.asm	1						no	auto_routed
+_Route13Text13	text/Route13.asm	1						no	auto_routed
+_Route14AfterBattleText1	text/Route14.asm	1			#			no	auto_routed
+_Route14AfterBattleText10	text/Route14.asm	1						no	auto_routed
+_Route14AfterBattleText2	text/Route14.asm	1						no	auto_routed
+_Route14AfterBattleText3	text/Route14.asm	1			#			no	auto_routed
+_Route14AfterBattleText4	text/Route14.asm	1			#			no	auto_routed
+_Route14AfterBattleText5	text/Route14.asm	1			#			no	auto_routed
+_Route14AfterBattleText6	text/Route14.asm	1						no	auto_routed
+_Route14AfterBattleText7	text/Route14.asm	1						no	auto_routed
+_Route14AfterBattleText8	text/Route14.asm	1			#			no	auto_routed
+_Route14AfterBattleText9	text/Route14.asm	1			#			no	auto_routed
+_Route14BattleText1	text/Route14.asm	1			#			no	auto_routed
+_Route14BattleText10	text/Route14.asm	1			#			no	auto_routed
+_Route14BattleText2	text/Route14.asm	1			#			no	auto_routed
+_Route14BattleText3	text/Route14.asm	1						no	auto_routed
+_Route14BattleText4	text/Route14.asm	1			#			no	auto_routed
+_Route14BattleText5	text/Route14.asm	1			#			no	auto_routed
+_Route14BattleText6	text/Route14.asm	1						no	auto_routed
+_Route14BattleText7	text/Route14.asm	1						no	auto_routed
+_Route14BattleText8	text/Route14.asm	1						no	auto_routed
+_Route14BattleText9	text/Route14.asm	1						no	auto_routed
+_Route14EndBattleText1	text/Route14.asm	1						no	auto_routed
+_Route14EndBattleText10	text/Route14.asm	1						no	auto_routed
+_Route14EndBattleText2	text/Route14.asm	1						no	auto_routed
+_Route14EndBattleText3	text/Route14.asm	1						no	auto_routed
+_Route14EndBattleText4	text/Route14.asm	1						no	auto_routed
+_Route14EndBattleText5	text/Route14.asm	1						no	auto_routed
+_Route14EndBattleText6	text/Route14.asm	1						no	auto_routed
+_Route14EndBattleText7	text/Route14.asm	1						no	auto_routed
+_Route14EndBattleText8	text/Route14.asm	1						no	auto_routed
+_Route14EndBattleText9	text/Route14.asm	1						no	auto_routed
+_Route14Text11	text/Route14.asm	1						no	auto_routed
+_Route15AfterBattleText1	text/Route15.asm	1			#			no	auto_routed
+_Route15AfterBattleText10	text/Route15.asm	1						no	auto_routed
+_Route15AfterBattleText2	text/Route15.asm	1						no	auto_routed
+_Route15AfterBattleText3	text/Route15.asm	1						no	auto_routed
+_Route15AfterBattleText4	text/Route15.asm	1						no	auto_routed
+_Route15AfterBattleText5	text/Route15.asm	1						no	auto_routed
+_Route15AfterBattleText6	text/Route15.asm	1			#			no	auto_routed
+_Route15AfterBattleText7	text/Route15.asm	1						no	auto_routed
+_Route15AfterBattleText8	text/Route15.asm	1						no	auto_routed
+_Route15AfterBattleText9	text/Route15.asm	1			#			no	auto_routed
+_Route15BattleText1	text/Route15.asm	1			#			no	auto_routed
+_Route15BattleText10	text/Route15.asm	1			#			no	auto_routed
+_Route15BattleText2	text/Route15.asm	1						no	auto_routed
+_Route15BattleText3	text/Route15.asm	1			#			no	auto_routed
+_Route15BattleText4	text/Route15.asm	1						no	auto_routed
+_Route15BattleText5	text/Route15.asm	1						no	auto_routed
+_Route15BattleText6	text/Route15.asm	1			#			no	auto_routed
+_Route15BattleText7	text/Route15.asm	1						no	auto_routed
+_Route15BattleText8	text/Route15.asm	1						no	auto_routed
+_Route15BattleText9	text/Route15.asm	1			#			no	auto_routed
+_Route15EndBattleText1	text/Route15.asm	1						no	auto_routed
+_Route15EndBattleText10	text/Route15.asm	1						no	auto_routed
+_Route15EndBattleText2	text/Route15.asm	1						no	auto_routed
+_Route15EndBattleText3	text/Route15.asm	1						no	auto_routed
+_Route15EndBattleText4	text/Route15.asm	1						no	auto_routed
+_Route15EndBattleText5	text/Route15.asm	1						no	auto_routed
+_Route15EndBattleText6	text/Route15.asm	1						no	auto_routed
+_Route15EndBattleText7	text/Route15.asm	1						no	auto_routed
+_Route15EndBattleText8	text/Route15.asm	1						no	auto_routed
+_Route15EndBattleText9	text/Route15.asm	1						no	auto_routed
+_Route15GateText1	text/Route15Gate1F.asm	1			#			no	auto_routed
+_Route15GateUpstairsText_4968c	text/Route15Gate2F.asm	1			#			no	auto_routed
+_Route15GateUpstairsText_49698	text/Route15Gate2F.asm	1						no	auto_routed
+_Route15Text12	text/Route15.asm	1						no	auto_routed
+_Route15UpstairsBinocularsText	data/text/text_2.asm	0						no	outside_map_script_scope
+_Route16AfterBattleText1	text/Route16.asm	1						no	auto_routed
+_Route16AfterBattleText2	text/Route16.asm	1						no	auto_routed
+_Route16AfterBattleText3	text/Route16.asm	1						no	auto_routed
+_Route16AfterBattleText4	text/Route16.asm	1						no	auto_routed
+_Route16AfterBattleText5	text/Route16.asm	1			#			no	auto_routed
+_Route16AfterBattleText6	text/Route16.asm	1			#			no	auto_routed
+_Route16BattleText1	text/Route16.asm	1						no	auto_routed
+_Route16BattleText2	text/Route16.asm	1						no	auto_routed
+_Route16BattleText3	text/Route16.asm	1						no	auto_routed
+_Route16BattleText4	text/Route16.asm	1						no	auto_routed
+_Route16BattleText5	text/Route16.asm	1						no	auto_routed
+_Route16BattleText6	text/Route16.asm	1						no	auto_routed
+_Route16EndBattleText1	text/Route16.asm	1						no	auto_routed
+_Route16EndBattleText2	text/Route16.asm	1						no	auto_routed
+_Route16EndBattleText3	text/Route16.asm	1						no	auto_routed
+_Route16EndBattleText4	text/Route16.asm	1						no	auto_routed
+_Route16EndBattleText5	text/Route16.asm	1						no	auto_routed
+_Route16EndBattleText6	text/Route16.asm	1						no	auto_routed
+_Route16GateText2	text/Route16Gate1F.asm	1						no	auto_routed
+_Route16GateText_49777	text/Route16Gate1F.asm	1						no	auto_routed
+_Route16GateText_4977c	text/Route16Gate1F.asm	1						no	auto_routed
+_Route16GateText_49781	text/Route16Gate1F.asm	1						no	auto_routed
+_Route16GateUpstairsText_49820	text/Route16Gate2F.asm	1						no	auto_routed
+_Route16GateUpstairsText_4982f	text/Route16Gate2F.asm	1						no	auto_routed
+_Route16GateUpstairsText_4983b	text/Route16Gate2F.asm	1						no	auto_routed
+_Route16GateUpstairsText_49847	text/Route16Gate2F.asm	1						no	auto_routed
+_Route16HouseText3	text/Route16FlyHouse.asm	1						no	auto_routed
+_Route16HouseText_1e652	text/Route16FlyHouse.asm	1						no	auto_routed
+_Route16Text10	text/Route16.asm	1						no	auto_routed
+_Route16Text11	text/Route16.asm	1						no	auto_routed
+_Route16Text7	text/Route16.asm	1			#			no	auto_routed
+_Route16Text8	text/Route16.asm	1						no	auto_routed
+_Route16Text9	text/Route16.asm	1						no	auto_routed
+_Route17AfterBattleText1	text/Route17.asm	1						no	auto_routed
+_Route17AfterBattleText10	text/Route17.asm	1						no	auto_routed
+_Route17AfterBattleText2	text/Route17.asm	1						no	auto_routed
+_Route17AfterBattleText3	text/Route17.asm	1						no	auto_routed
+_Route17AfterBattleText4	text/Route17.asm	1						no	auto_routed
+_Route17AfterBattleText5	text/Route17.asm	1						no	auto_routed
+_Route17AfterBattleText6	text/Route17.asm	1			#			no	auto_routed
+_Route17AfterBattleText7	text/Route17.asm	1						no	auto_routed
+_Route17AfterBattleText8	text/Route17.asm	1						no	auto_routed
+_Route17AfterBattleText9	text/Route17.asm	1						no	auto_routed
+_Route17BattleText1	text/Route17.asm	1						no	auto_routed
+_Route17BattleText10	text/Route17.asm	1						no	auto_routed
+_Route17BattleText2	text/Route17.asm	1						no	auto_routed
+_Route17BattleText3	text/Route17.asm	1						no	auto_routed
+_Route17BattleText4	text/Route17.asm	1						no	auto_routed
+_Route17BattleText5	text/Route17.asm	1						no	auto_routed
+_Route17BattleText6	text/Route17.asm	1			#			no	auto_routed
+_Route17BattleText7	text/Route17.asm	1						no	auto_routed
+_Route17BattleText8	text/Route17.asm	1						no	auto_routed
+_Route17BattleText9	text/Route17.asm	1						no	auto_routed
+_Route17EndBattleText1	text/Route17.asm	1						no	auto_routed
+_Route17EndBattleText10	text/Route17.asm	1						no	auto_routed
+_Route17EndBattleText2	text/Route17.asm	1						no	auto_routed
+_Route17EndBattleText3	text/Route17.asm	1						no	auto_routed
+_Route17EndBattleText4	text/Route17.asm	1						no	auto_routed
+_Route17EndBattleText5	text/Route17.asm	1						no	auto_routed
+_Route17EndBattleText6	text/Route17.asm	1						no	auto_routed
+_Route17EndBattleText7	text/Route17.asm	1						no	auto_routed
+_Route17EndBattleText8	text/Route17.asm	1						no	auto_routed
+_Route17EndBattleText9	text/Route17.asm	1						no	auto_routed
+_Route17Text11	text/Route17.asm	1						no	auto_routed
+_Route17Text12	text/Route17.asm	1			#			no	auto_routed
+_Route17Text13	text/Route17.asm	1						no	auto_routed
+_Route17Text14	text/Route17.asm	1						no	auto_routed
+_Route17Text15	text/Route17.asm	1			#			no	auto_routed
+_Route17Text16	text/Route17.asm	1						no	auto_routed
+_Route18AfterBattleText1	text/Route18.asm	1						no	auto_routed
+_Route18AfterBattleText2	text/Route18.asm	1			#			no	auto_routed
+_Route18AfterBattleText3	text/Route18.asm	1			#			no	auto_routed
+_Route18BattleText1	text/Route18.asm	1			#			no	auto_routed
+_Route18BattleText2	text/Route18.asm	1						no	auto_routed
+_Route18BattleText3	text/Route18.asm	1						no	auto_routed
+_Route18EndBattleText1	text/Route18.asm	1						no	auto_routed
+_Route18EndBattleText2	text/Route18.asm	1						no	auto_routed
+_Route18EndBattleText3	text/Route18.asm	1						no	auto_routed
+_Route18GateText_49928	text/Route18Gate1F.asm	1						no	auto_routed
+_Route18GateText_4992d	text/Route18Gate1F.asm	1						no	auto_routed
+_Route18GateText_49932	text/Route18Gate1F.asm	1						no	auto_routed
+_Route18GateUpstairsText_49993	text/Route18Gate2F.asm	1						no	auto_routed
+_Route18GateUpstairsText_4999f	text/Route18Gate2F.asm	1						no	auto_routed
+_Route18Text4	text/Route18.asm	1						no	auto_routed
+_Route18Text5	text/Route18.asm	1						no	auto_routed
+_Route19AfterBattleText1	text/Route19.asm	1						no	auto_routed
+_Route19AfterBattleText10	text/Route19.asm	1						no	auto_routed
+_Route19AfterBattleText2	text/Route19.asm	1						no	auto_routed
+_Route19AfterBattleText3	text/Route19.asm	1			#			no	auto_routed
+_Route19AfterBattleText4	text/Route19.asm	1						no	auto_routed
+_Route19AfterBattleText5	text/Route19.asm	1			#			no	auto_routed
+_Route19AfterBattleText6	text/Route19.asm	1						no	auto_routed
+_Route19AfterBattleText7	text/Route19.asm	1						no	auto_routed
+_Route19AfterBattleText8	text/Route19.asm	1						no	auto_routed
+_Route19AfterBattleText9	text/Route19.asm	1						no	auto_routed
+_Route19BattleText1	text/Route19.asm	1						no	auto_routed
+_Route19BattleText10	text/Route19.asm	1						no	auto_routed
+_Route19BattleText2	text/Route19.asm	1						no	auto_routed
+_Route19BattleText3	text/Route19.asm	1						no	auto_routed
+_Route19BattleText4	text/Route19.asm	1						no	auto_routed
+_Route19BattleText5	text/Route19.asm	1			#			no	auto_routed
+_Route19BattleText6	text/Route19.asm	1						no	auto_routed
+_Route19BattleText7	text/Route19.asm	1						no	auto_routed
+_Route19BattleText8	text/Route19.asm	1						no	auto_routed
+_Route19BattleText9	text/Route19.asm	1						no	auto_routed
+_Route19EndBattleText1	text/Route19.asm	1						no	auto_routed
+_Route19EndBattleText10	text/Route19.asm	1						no	auto_routed
+_Route19EndBattleText2	text/Route19.asm	1						no	auto_routed
+_Route19EndBattleText3	text/Route19.asm	1						no	auto_routed
+_Route19EndBattleText4	text/Route19.asm	1						no	auto_routed
+_Route19EndBattleText5	text/Route19.asm	1						no	auto_routed
+_Route19EndBattleText6	text/Route19.asm	1						no	auto_routed
+_Route19EndBattleText7	text/Route19.asm	1						no	auto_routed
+_Route19EndBattleText8	text/Route19.asm	1						no	auto_routed
+_Route19EndBattleText9	text/Route19.asm	1						no	auto_routed
+_Route19Text11	text/Route19.asm	1						no	auto_routed
+_Route1Text2	text/Route1.asm	1						no	auto_routed
+_Route1Text3	text/Route1.asm	1						no	auto_routed
+_Route1Text_1cae8	text/Route1.asm	1	<PLAYER>	text_ram				no	auto_routed
+_Route1Text_1caee	text/Route1.asm	1			#			no	auto_routed
+_Route1Text_1caf3	text/Route1.asm	1						no	auto_routed
+_Route1ViridianMartSampleText	text/Route1.asm	1			#			no	auto_routed
+_Route20AfterBattleText1	text/Route20.asm	1			#			no	auto_routed
+_Route20AfterBattleText10	text/Route20.asm	1						no	auto_routed
+_Route20AfterBattleText2	text/Route20.asm	1						no	auto_routed
+_Route20AfterBattleText3	text/Route20.asm	1						no	auto_routed
+_Route20AfterBattleText4	text/Route20.asm	1						no	auto_routed
+_Route20AfterBattleText5	text/Route20.asm	1			#			no	auto_routed
+_Route20AfterBattleText6	text/Route20.asm	1			#			no	auto_routed
+_Route20AfterBattleText7	text/Route20.asm	1						no	auto_routed
+_Route20AfterBattleText8	text/Route20.asm	1						no	auto_routed
+_Route20AfterBattleText9	text/Route20.asm	1			#			no	auto_routed
+_Route20BattleText1	text/Route20.asm	1						no	auto_routed
+_Route20BattleText10	text/Route20.asm	1			#			no	auto_routed
+_Route20BattleText2	text/Route20.asm	1						no	auto_routed
+_Route20BattleText3	text/Route20.asm	1						no	auto_routed
+_Route20BattleText4	text/Route20.asm	1						no	auto_routed
+_Route20BattleText5	text/Route20.asm	1						no	auto_routed
+_Route20BattleText6	text/Route20.asm	1			#			no	auto_routed
+_Route20BattleText7	text/Route20.asm	1			#			no	auto_routed
+_Route20BattleText8	text/Route20.asm	1						no	auto_routed
+_Route20BattleText9	text/Route20.asm	1						no	auto_routed
+_Route20EndBattleText1	text/Route20.asm	1						no	auto_routed
+_Route20EndBattleText10	text/Route20.asm	1						no	auto_routed
+_Route20EndBattleText2	text/Route20.asm	1						no	auto_routed
+_Route20EndBattleText3	text/Route20.asm	1						no	auto_routed
+_Route20EndBattleText4	text/Route20.asm	1						no	auto_routed
+_Route20EndBattleText5	text/Route20.asm	1						no	auto_routed
+_Route20EndBattleText6	text/Route20.asm	1						no	auto_routed
+_Route20EndBattleText7	text/Route20.asm	1						no	auto_routed
+_Route20EndBattleText8	text/Route20.asm	1						no	auto_routed
+_Route20EndBattleText9	text/Route20.asm	1						no	auto_routed
+_Route20Text11	text/Route20.asm	1						no	auto_routed
+_Route21AfterBattleText1	text/Route21.asm	1						no	auto_routed
+_Route21AfterBattleText2	text/Route21.asm	1						no	auto_routed
+_Route21AfterBattleText3	text/Route21.asm	1						no	auto_routed
+_Route21AfterBattleText4	text/Route21.asm	1						no	auto_routed
+_Route21AfterBattleText5	text/Route21.asm	1			#			no	auto_routed
+_Route21AfterBattleText6	text/Route21.asm	1						no	auto_routed
+_Route21AfterBattleText7	text/Route21.asm	1						no	auto_routed
+_Route21AfterBattleText8	text/Route21.asm	1						no	auto_routed
+_Route21AfterBattleText9	text/Route21.asm	1						no	auto_routed
+_Route21BattleText1	text/Route21.asm	1						no	auto_routed
+_Route21BattleText2	text/Route21.asm	1						no	auto_routed
+_Route21BattleText3	text/Route21.asm	1						no	auto_routed
+_Route21BattleText4	text/Route21.asm	1						no	auto_routed
+_Route21BattleText5	text/Route21.asm	1			#			no	auto_routed
+_Route21BattleText6	text/Route21.asm	1						no	auto_routed
+_Route21BattleText7	text/Route21.asm	1						no	auto_routed
+_Route21BattleText8	text/Route21.asm	1						no	auto_routed
+_Route21BattleText9	text/Route21.asm	1						no	auto_routed
+_Route21EndBattleText1	text/Route21.asm	1						no	auto_routed
+_Route21EndBattleText2	text/Route21.asm	1						no	auto_routed
+_Route21EndBattleText3	text/Route21.asm	1						no	auto_routed
+_Route21EndBattleText4	text/Route21.asm	1						no	auto_routed
+_Route21EndBattleText5	text/Route21.asm	1						no	auto_routed
+_Route21EndBattleText6	text/Route21.asm	1						no	auto_routed
+_Route21EndBattleText7	text/Route21.asm	1						no	auto_routed
+_Route21EndBattleText8	text/Route21.asm	1						no	auto_routed
+_Route21EndBattleText9	text/Route21.asm	1						no	auto_routed
+_Route22FrontGateText	text/Route22.asm	1			#			no	auto_routed
+_Route22GateText_1e704	text/Route22Gate.asm	1						no	auto_routed
+_Route22GateText_1e715	text/Route22Gate.asm	1						no	auto_routed
+_Route22GateText_1e71a	text/Route22Gate.asm	1						no	auto_routed
+_Route22RivalAfterBattleText1	text/Route22.asm	1			#			no	auto_routed
+_Route22RivalAfterBattleText2	text/Route22.asm	1	<PLAYER>		#			no	auto_routed
+_Route22RivalBeforeBattleText1	text/Route22.asm	1	<PLAYER>,<RIVAL>		#			no	auto_routed
+_Route22RivalBeforeBattleText2	text/Route22.asm	1	<PLAYER>,<RIVAL>		#			no	auto_routed
+_Route22RivalDefeatedText1	text/Route22.asm	1						no	auto_routed
+_Route22RivalDefeatedText2	text/Route22.asm	1						no	auto_routed
+_Route22Text_511bc	text/Route22.asm	1	<RIVAL>		#			no	auto_routed
+_Route22Text_511d0	text/Route22.asm	1	<PLAYER>,<RIVAL>					no	auto_routed
+_Route23Text8	text/Route23.asm	1			#			no	auto_routed
+_Route24AfterBattleText1	text/Route24_2.asm	1						no	auto_routed
+_Route24AfterBattleText2	text/Route24_2.asm	1						no	auto_routed
+_Route24AfterBattleText3	text/Route24_2.asm	1						no	auto_routed
+_Route24AfterBattleText4	text/Route24_2.asm	1						no	auto_routed
+_Route24AfterBattleText5	text/Route24_2.asm	1						no	auto_routed
+_Route24AfterBattleText6	text/Route24_2.asm	1						no	auto_routed
+_Route24BattleText1	text/Route24.asm	1						no	auto_routed
+_Route24BattleText2	text/Route24_2.asm	1						no	auto_routed
+_Route24BattleText3	text/Route24_2.asm	1						no	auto_routed
+_Route24BattleText4	text/Route24_2.asm	1						no	auto_routed
+_Route24BattleText5	text/Route24_2.asm	1						no	auto_routed
+_Route24BattleText6	text/Route24_2.asm	1						no	auto_routed
+_Route24EndBattleText1	text/Route24_2.asm	1						no	auto_routed
+_Route24EndBattleText2	text/Route24_2.asm	1						no	auto_routed
+_Route24EndBattleText3	text/Route24_2.asm	1						no	auto_routed
+_Route24EndBattleText4	text/Route24_2.asm	1						no	auto_routed
+_Route24EndBattleText5	text/Route24_2.asm	1						no	auto_routed
+_Route24EndBattleText6	text/Route24_2.asm	1						no	auto_routed
+_Route24Text_51510	text/Route24.asm	1						no	auto_routed
+_Route24Text_51515	text/Route24.asm	1						no	auto_routed
+_Route24Text_5151a	text/Route24.asm	1	<PLAYER>	text_ram				no	auto_routed
+_Route24Text_51521	text/Route24.asm	1						no	auto_routed
+_Route24Text_51526	text/Route24.asm	1			#			no	auto_routed
+_Route24Text_5152b	text/Route24.asm	1						no	auto_routed
+_Route24Text_51530	text/Route24.asm	1						no	auto_routed
+_Route25AfterBattleText1	text/Route25.asm	1			#			no	auto_routed
+_Route25AfterBattleText2	text/Route25.asm	1						no	auto_routed
+_Route25AfterBattleText3	text/Route25.asm	1						no	auto_routed
+_Route25AfterBattleText4	text/Route25.asm	1						no	auto_routed
+_Route25AfterBattleText5	text/Route25.asm	1			#			no	auto_routed
+_Route25AfterBattleText6	text/Route25.asm	1						no	auto_routed
+_Route25AfterBattleText7	text/Route25.asm	1						no	auto_routed
+_Route25AfterBattleText8	text/Route25.asm	1			#			no	auto_routed
+_Route25AfterBattleText9	text/Route25.asm	1						no	auto_routed
+_Route25BattleText1	text/Route25.asm	1						no	auto_routed
+_Route25BattleText2	text/Route25.asm	1						no	auto_routed
+_Route25BattleText3	text/Route25.asm	1						no	auto_routed
+_Route25BattleText4	text/Route25.asm	1						no	auto_routed
+_Route25BattleText5	text/Route25.asm	1						no	auto_routed
+_Route25BattleText6	text/Route25.asm	1			#			no	auto_routed
+_Route25BattleText7	text/Route25.asm	1						no	auto_routed
+_Route25BattleText8	text/Route25.asm	1			#			no	auto_routed
+_Route25BattleText9	text/Route25.asm	1						no	auto_routed
+_Route25EndBattleText1	text/Route25.asm	1						no	auto_routed
+_Route25EndBattleText2	text/Route25.asm	1						no	auto_routed
+_Route25EndBattleText3	text/Route25.asm	1						no	auto_routed
+_Route25EndBattleText4	text/Route25.asm	1						no	auto_routed
+_Route25EndBattleText5	text/Route25.asm	1						no	auto_routed
+_Route25EndBattleText6	text/Route25.asm	1						no	auto_routed
+_Route25EndBattleText7	text/Route25.asm	1						no	auto_routed
+_Route25EndBattleText8	text/Route25.asm	1						no	auto_routed
+_Route25EndBattleText9	text/Route25.asm	1						no	auto_routed
+_Route25Text11	text/Route25.asm	1						no	auto_routed
+_Route2GateText2	text/Route2Gate.asm	1			#			no	auto_routed
+_Route2GateText_5d616	text/Route2Gate.asm	1						no	auto_routed
+_Route2HouseText1	text/Route2TradeHouse.asm	1			#			no	auto_routed
+_Route2Text3	text/Route2.asm	1						no	auto_routed
+_Route2Text4	text/Route2.asm	1						no	auto_routed
+_Route3AfterBattleText1	text/Route3.asm	1			#			no	auto_routed
+_Route3AfterBattleText2	text/Route3.asm	1			#			no	auto_routed
+_Route3AfterBattleText3	text/Route3.asm	1						no	auto_routed
+_Route3AfterBattleText4	text/Route3.asm	1			#			no	auto_routed
+_Route3AfterBattleText5	text/Route3.asm	1						no	auto_routed
+_Route3AfterBattleText6	text/Route3.asm	1						no	auto_routed
+_Route3AfterBattleText7	text/Route3.asm	1			#			no	auto_routed
+_Route3AfterBattleText8	text/Route3.asm	1						no	auto_routed
+_Route3BattleText1	text/Route3.asm	1						no	auto_routed
+_Route3BattleText2	text/Route3.asm	1						no	auto_routed
+_Route3BattleText3	text/Route3.asm	1						no	auto_routed
+_Route3BattleText4	text/Route3.asm	1						no	auto_routed
+_Route3BattleText5	text/Route3.asm	1						no	auto_routed
+_Route3BattleText6	text/Route3.asm	1						no	auto_routed
+_Route3BattleText7	text/Route3.asm	1			#			no	auto_routed
+_Route3BattleText8	text/Route3.asm	1						no	auto_routed
+_Route3EndBattleText1	text/Route3.asm	1						no	auto_routed
+_Route3EndBattleText2	text/Route3.asm	1						no	auto_routed
+_Route3EndBattleText3	text/Route3.asm	1						no	auto_routed
+_Route3EndBattleText4	text/Route3.asm	1			#			no	auto_routed
+_Route3EndBattleText5	text/Route3.asm	1						no	auto_routed
+_Route3EndBattleText6	text/Route3.asm	1						no	auto_routed
+_Route3EndBattleText7	text/Route3.asm	1						no	auto_routed
+_Route3EndBattleText8	text/Route3.asm	1						no	auto_routed
+_Route3Text1	text/Route3.asm	1						no	auto_routed
+_Route3Text10	text/Route3.asm	1						no	auto_routed
+_Route4AfterBattleText1	text/Route4.asm	1						no	auto_routed
+_Route4BattleText1	text/Route4.asm	1			#			no	auto_routed
+_Route4EndBattleText1	text/Route4.asm	1			#			no	auto_routed
+_Route4Text1	text/Route4.asm	1			#			no	auto_routed
+_Route4Text5	text/Route4.asm	1						no	auto_routed
+_Route4Text6	text/Route4.asm	1						no	auto_routed
+_Route5Text1	text/Route5.asm	1						no	auto_routed
+_Route6AfterBattleText1	text/Route6.asm	1						no	auto_routed
+_Route6AfterBattleText3	text/Route6.asm	1						no	auto_routed
+_Route6AfterBattleText4	text/Route6.asm	1			#			no	auto_routed
+_Route6AfterBattleText5	text/Route6.asm	1						no	auto_routed
+_Route6AfterBattleText6	text/Route6.asm	1			#			no	auto_routed
+_Route6BattleText1	text/Route6.asm	1						no	auto_routed
+_Route6BattleText2	text/Route6.asm	1						no	auto_routed
+_Route6BattleText3	text/Route6.asm	1						no	auto_routed
+_Route6BattleText4	text/Route6.asm	1						no	auto_routed
+_Route6BattleText5	text/Route6.asm	1						no	auto_routed
+_Route6BattleText6	text/Route6.asm	1						no	auto_routed
+_Route6EndBattleText1	text/Route6.asm	1						no	auto_routed
+_Route6EndBattleText2	text/Route6.asm	1						no	auto_routed
+_Route6EndBattleText3	text/Route6.asm	1						no	auto_routed
+_Route6EndBattleText4	text/Route6.asm	1						no	auto_routed
+_Route6EndBattleText5	text/Route6.asm	1						no	auto_routed
+_Route6EndBattleText6	text/Route6.asm	1						no	auto_routed
+_Route6Text7	text/Route6.asm	1						no	auto_routed
+_Route7Text1	text/Route7.asm	1						no	auto_routed
+_Route8AfterBattleText1	text/Route8.asm	1						no	auto_routed
+_Route8AfterBattleText2	text/Route8.asm	1						no	auto_routed
+_Route8AfterBattleText3	text/Route8.asm	1						no	auto_routed
+_Route8AfterBattleText4	text/Route8.asm	1			#			no	auto_routed
+_Route8AfterBattleText5	text/Route8.asm	1						no	auto_routed
+_Route8AfterBattleText6	text/Route8.asm	1						no	auto_routed
+_Route8AfterBattleText7	text/Route8.asm	1						no	auto_routed
+_Route8AfterBattleText8	text/Route8.asm	1			#			no	auto_routed
+_Route8AfterBattleText9	text/Route8.asm	1						no	auto_routed
+_Route8BattleText1	text/Route8.asm	1			#			no	auto_routed
+_Route8BattleText2	text/Route8.asm	1						no	auto_routed
+_Route8BattleText3	text/Route8.asm	1						no	auto_routed
+_Route8BattleText4	text/Route8.asm	1						no	auto_routed
+_Route8BattleText5	text/Route8.asm	1			#			no	auto_routed
+_Route8BattleText6	text/Route8.asm	1						no	auto_routed
+_Route8BattleText7	text/Route8.asm	1						no	auto_routed
+_Route8BattleText8	text/Route8.asm	1						no	auto_routed
+_Route8BattleText9	text/Route8.asm	1			#			no	auto_routed
+_Route8EndBattleText1	text/Route8.asm	1						no	auto_routed
+_Route8EndBattleText2	text/Route8.asm	1						no	auto_routed
+_Route8EndBattleText3	text/Route8.asm	1						no	auto_routed
+_Route8EndBattleText4	text/Route8.asm	1						no	auto_routed
+_Route8EndBattleText5	text/Route8.asm	1						no	auto_routed
+_Route8EndBattleText6	text/Route8.asm	1						no	auto_routed
+_Route8EndBattleText7	text/Route8.asm	1						no	auto_routed
+_Route8EndBattleText8	text/Route8.asm	1						no	auto_routed
+_Route8EndBattleText9	text/Route8.asm	1						no	auto_routed
+_Route8Text10	text/Route8.asm	1						no	auto_routed
+_Route9AfterBattleText1	text/Route9.asm	1						no	auto_routed
+_Route9AfterBattleText2	text/Route9.asm	1						no	auto_routed
+_Route9AfterBattleText3	text/Route9.asm	1						no	auto_routed
+_Route9AfterBattleText4	text/Route9.asm	1						no	auto_routed
+_Route9AfterBattleText5	text/Route9.asm	1						no	auto_routed
+_Route9AfterBattleText6	text/Route9.asm	1						no	auto_routed
+_Route9AfterBattleText7	text/Route9.asm	1						no	auto_routed
+_Route9AfterBattleText8	text/Route9.asm	1						no	auto_routed
+_Route9AfterBattleText9	text/Route9.asm	1			#			no	auto_routed
+_Route9BattleText1	text/Route9.asm	1			#			no	auto_routed
+_Route9BattleText2	text/Route9.asm	1			#			no	auto_routed
+_Route9BattleText3	text/Route9.asm	1						no	auto_routed
+_Route9BattleText4	text/Route9.asm	1						no	auto_routed
+_Route9BattleText5	text/Route9.asm	1						no	auto_routed
+_Route9BattleText6	text/Route9.asm	1						no	auto_routed
+_Route9BattleText7	text/Route9.asm	1			#			no	auto_routed
+_Route9BattleText8	text/Route9.asm	1						no	auto_routed
+_Route9BattleText9	text/Route9.asm	1			#			no	auto_routed
+_Route9EndBattleText1	text/Route9.asm	1						no	auto_routed
+_Route9EndBattleText2	text/Route9.asm	1						no	auto_routed
+_Route9EndBattleText3	text/Route9.asm	1						no	auto_routed
+_Route9EndBattleText4	text/Route9.asm	1						no	auto_routed
+_Route9EndBattleText5	text/Route9.asm	1			#			no	auto_routed
+_Route9EndBattleText6	text/Route9.asm	1						no	auto_routed
+_Route9EndBattleText7	text/Route9.asm	1						no	auto_routed
+_Route9EndBattleText8	text/Route9.asm	1						no	auto_routed
+_Route9EndBattleText9	text/Route9.asm	1						no	auto_routed
+_Route9Text11	text/Route9.asm	1						no	auto_routed
+_SSAnne10AfterBattleText1	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10AfterBattleText2	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10AfterBattleText3	text/SSAnneB1FRooms.asm	1			#			no	auto_routed
+_SSAnne10AfterBattleText4	text/SSAnneB1FRooms.asm	1			#			no	auto_routed
+_SSAnne10AfterBattleText5	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10AfterBattleText6	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10BattleText1	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10BattleText2	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10BattleText3	text/SSAnneB1FRooms.asm	1			#			no	auto_routed
+_SSAnne10BattleText4	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10BattleText5	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10BattleText6	text/SSAnneB1FRooms.asm	1			#			no	auto_routed
+_SSAnne10EndBattleText1	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10EndBattleText2	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10EndBattleText3	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10EndBattleText4	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10EndBattleText5	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10EndBattleText6	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10Text7	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne10Text8	text/SSAnneB1FRooms.asm	1						no	auto_routed
+_SSAnne1Text1	text/SSAnne1F.asm	1						no	auto_routed
+_SSAnne1Text2	text/SSAnne1F.asm	1						no	auto_routed
+_SSAnne2Text1	text/SSAnne2F.asm	1						no	auto_routed
+_SSAnne3Text1	text/SSAnne3F.asm	1			#			no	auto_routed
+_SSAnne5AfterBattleText1	text/SSAnneBow.asm	1			#			no	auto_routed
+_SSAnne5AfterBattleText2	text/SSAnneBow.asm	1			#			no	auto_routed
+_SSAnne5BattleText1	text/SSAnneBow.asm	1						no	auto_routed
+_SSAnne5BattleText2	text/SSAnneBow.asm	1						no	auto_routed
+_SSAnne5EndBattleText1	text/SSAnneBow.asm	1						no	auto_routed
+_SSAnne5EndBattleText2	text/SSAnneBow.asm	1						no	auto_routed
+_SSAnne5Text1	text/SSAnneBow.asm	1						no	auto_routed
+_SSAnne5Text2	text/SSAnneBow.asm	1						no	auto_routed
+_SSAnne5Text3	text/SSAnneBow.asm	1						no	auto_routed
+_SSAnne6Text1	text/SSAnneKitchen.asm	1						no	auto_routed
+_SSAnne6Text2	text/SSAnneKitchen.asm	1						no	auto_routed
+_SSAnne6Text3	text/SSAnneKitchen.asm	1						no	auto_routed
+_SSAnne6Text4	text/SSAnneKitchen.asm	1						no	auto_routed
+_SSAnne6Text5	text/SSAnneKitchen.asm	1						no	auto_routed
+_SSAnne6Text6	text/SSAnneKitchen.asm	1						no	auto_routed
+_SSAnne6Text_61807	text/SSAnneKitchen.asm	1						no	auto_routed
+_SSAnne6Text_6180c	text/SSAnneKitchen.asm	1						no	auto_routed
+_SSAnne6Text_61811	text/SSAnneKitchen.asm	1						no	auto_routed
+_SSAnne6Text_61816	text/SSAnneKitchen.asm	1						no	auto_routed
+_SSAnne7RubText	text/SSAnneCaptainsRoom.asm	1	<PLAYER>					no	auto_routed
+_SSAnne7Text2	text/SSAnneCaptainsRoom.asm	1						no	auto_routed
+_SSAnne7Text3	text/SSAnneCaptainsRoom.asm	1						no	auto_routed
+_SSAnne7Text_61932	text/SSAnneCaptainsRoom.asm	1						no	auto_routed
+_SSAnne8AfterBattleText1	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne8AfterBattleText2	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne8AfterBattleText3	text/SSAnne1FRooms.asm	1			#			no	auto_routed
+_SSAnne8AfterBattleText4	text/SSAnne1FRooms.asm	1			#			no	auto_routed
+_SSAnne8BattleText1	text/SSAnne1FRooms.asm	1			#			no	auto_routed
+_SSAnne8BattleText2	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne8BattleText3	text/SSAnne1FRooms.asm	1			#			no	auto_routed
+_SSAnne8BattleText4	text/SSAnne1FRooms.asm	1			#			no	auto_routed
+_SSAnne8EndBattleText1	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne8EndBattleText2	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne8EndBattleText3	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne8EndBattleText4	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne8Text11	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne8Text5	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne8Text6	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne8Text7	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne8Text8	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne8Text9	text/SSAnne1FRooms.asm	1						no	auto_routed
+_SSAnne9AfterBattleText1	text/SSAnne2FRooms.asm	1						no	auto_routed
+_SSAnne9AfterBattleText2	text/SSAnne2FRooms.asm	1						no	auto_routed
+_SSAnne9AfterBattleText3	text/SSAnne2FRooms.asm	1			#			no	auto_routed
+_SSAnne9AfterBattleText4	text/SSAnne2FRooms.asm	1			#			no	auto_routed
+_SSAnne9BattleText1	text/SSAnne2FRooms.asm	1						no	auto_routed
+_SSAnne9BattleText2	text/SSAnne2FRooms.asm	1						no	auto_routed
+_SSAnne9BattleText3	text/SSAnne2FRooms.asm	1			#			no	auto_routed
+_SSAnne9BattleText4	text/SSAnne2FRooms.asm	1						no	auto_routed
+_SSAnne9EndBattleText1	text/SSAnne2FRooms.asm	1						no	auto_routed
+_SSAnne9EndBattleText2	text/SSAnne2FRooms.asm	1						no	auto_routed
+_SSAnne9EndBattleText3	text/SSAnne2FRooms.asm	1						no	auto_routed
+_SSAnne9EndBattleText4	text/SSAnne2FRooms.asm	1						no	auto_routed
+_SSAnne9Text_61bf2	text/SSAnne2FRooms.asm	1			#			no	auto_routed
+_SSAnne9Text_61c01	text/SSAnne2FRooms.asm	1			#			no	auto_routed
+_SSAnne9Text_61c10	text/SSAnne2FRooms.asm	1			#			no	auto_routed
+_SSAnne9Text_61c1f	text/SSAnne2FRooms.asm	1			#			no	auto_routed
+_SSAnne9Text_61c2e	text/SSAnne2FRooms.asm	1						no	auto_routed
+_SSAnne9Text_61c3d	text/SSAnne2FRooms.asm	1						no	auto_routed
+_SSAnne9Text_61c4c	text/SSAnne2FRooms.asm	1						no	auto_routed
+_SSAnneFlashedTicketText	text/VermilionCity.asm	1	<PLAYER>					no	auto_routed
+_SSAnneNoTicketText	text/VermilionCity.asm	1	<PLAYER>					no	auto_routed
+_SSAnneNotHereText	text/VermilionCity.asm	1						no	auto_routed
+_SSAnneRivalBeforeBattleText	text/SSAnne2F.asm	1	<PLAYER>,<RIVAL>		#			no	auto_routed
+_SSAnneRivalCaptainText	text/SSAnne2F.asm	1	<RIVAL>					no	auto_routed
+_SSAnneRivalDefeatedText	text/SSAnne2F.asm	1			#			no	auto_routed
+_SSAnneRivalWonText	text/SSAnne2F.asm	1	<PLAYER>					no	auto_routed
+_SSAnneWelcomeText4	text/VermilionCity.asm	1						no	auto_routed
+_SSAnneWelcomeText9	text/VermilionCity.asm	1						no	auto_routed
+_SSTicketNoRoomText	text/BillsHouse.asm	1						no	auto_routed
+_SSTicketReceivedText	text/BillsHouse.asm	1	<PLAYER>	text_ram				no	auto_routed
+_SabrinaPostBattleAdviceText	text/SaffronGym.asm	1						no	auto_routed
+_SabrinaPreBattleText	text/SaffronGym.asm	1						no	auto_routed
+_SafariZoneAngryText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_SafariZoneCenterText2	text/SafariZoneCenter.asm	1						no	auto_routed
+_SafariZoneCenterText3	text/SafariZoneCenter.asm	1						no	auto_routed
+_SafariZoneEastText5	text/SafariZoneEast.asm	1						no	auto_routed
+_SafariZoneEastText6	text/SafariZoneEast.asm	1						no	auto_routed
+_SafariZoneEastText7	text/SafariZoneEast.asm	1						no	auto_routed
+_SafariZoneEatingText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_SafariZoneEntranceText1	text/SafariZoneGate.asm	1						no	auto_routed
+_SafariZoneEntranceText_75360	text/SafariZoneGate.asm	1						no	auto_routed
+_SafariZoneEntranceText_75365	text/SafariZoneGate.asm	1						no	auto_routed
+_SafariZoneEntranceText_7536a	text/SafariZoneGate.asm	1						no	auto_routed
+_SafariZoneEntranceText_753bb	text/SafariZoneGate.asm	1						no	auto_routed
+_SafariZoneEntranceText_753c0	text/SafariZoneGate.asm	1						no	auto_routed
+_SafariZoneEntranceText_753c5	text/SafariZoneGate.asm	1						no	auto_routed
+_SafariZoneEntranceText_753e6	text/SafariZoneGate.asm	1						no	auto_routed
+_SafariZoneEntranceText_753eb	text/SafariZoneGate.asm	1			#			no	auto_routed
+_SafariZoneEntranceText_753f0	text/SafariZoneGate.asm	1						no	auto_routed
+_SafariZoneNorthText3	text/SafariZoneNorth.asm	1						no	auto_routed
+_SafariZoneNorthText4	text/SafariZoneNorth.asm	1						no	auto_routed
+_SafariZoneNorthText5	text/SafariZoneNorth.asm	1						no	auto_routed
+_SafariZoneNorthText6	text/SafariZoneNorth.asm	1			#			no	auto_routed
+_SafariZoneNorthText7	text/SafariZoneNorth.asm	1						no	auto_routed
+_SafariZoneRestHouse1Text1	text/SafariZoneCenterRestHouse.asm	1						no	auto_routed
+_SafariZoneRestHouse1Text2	text/SafariZoneCenterRestHouse.asm	1			#			no	auto_routed
+_SafariZoneRestHouse2Text1	text/SafariZoneWestRestHouse.asm	1			#			no	auto_routed
+_SafariZoneRestHouse2Text2	text/SafariZoneWestRestHouse.asm	1			#			no	auto_routed
+_SafariZoneRestHouse2Text3	text/SafariZoneWestRestHouse.asm	1			#			no	auto_routed
+_SafariZoneRestHouse3Text1	text/SafariZoneEastRestHouse.asm	1						no	auto_routed
+_SafariZoneRestHouse3Text2	text/SafariZoneEastRestHouse.asm	1						no	auto_routed
+_SafariZoneRestHouse3Text3	text/SafariZoneEastRestHouse.asm	1						no	auto_routed
+_SafariZoneRestHouse4Text1	text/SafariZoneNorthRestHouse.asm	1						no	auto_routed
+_SafariZoneRestHouse4Text2	text/SafariZoneNorthRestHouse.asm	1						no	auto_routed
+_SafariZoneRestHouse4Text3	text/SafariZoneNorthRestHouse.asm	1						no	auto_routed
+_SafariZoneWestText5	text/SafariZoneWest.asm	1						no	auto_routed
+_SafariZoneWestText6	text/SafariZoneWest.asm	1						no	auto_routed
+_SafariZoneWestText7	text/SafariZoneWest.asm	1						no	auto_routed
+_SafariZoneWestText8	text/SafariZoneWest.asm	1						no	auto_routed
+_SaffronCityPokecenterGuyText1	data/text/text_2.asm	0						no	outside_map_script_scope
+_SaffronCityPokecenterGuyText2	data/text/text_2.asm	0						no	outside_map_script_scope
+_SaffronCityText1	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText10	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText11	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText12	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText13	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText14	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText15	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText16	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText17	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText18	text/SaffronCity.asm	1			#			no	auto_routed
+_SaffronCityText2	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText20	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText21	text/SaffronCity.asm	1			#			no	auto_routed
+_SaffronCityText22	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText24	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText25	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText3	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText4	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText5	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText6	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText7	text/SaffronCity.asm	1			#			no	auto_routed
+_SaffronCityText8	text/SaffronCity.asm	1						no	auto_routed
+_SaffronCityText9	text/SaffronCity.asm	1						no	auto_routed
+_SaffronGateText_1dfe7	text/SaffronGates.asm	1						no	auto_routed
+_SaffronGateText_1dff1	text/SaffronGates.asm	1						no	auto_routed
+_SaffronGateText_1dff6	text/SaffronGates.asm	1						no	auto_routed
+_SaffronGateText_8aaa9	text/SaffronGates.asm	1						no	auto_routed
+_SaffronGymAfterBattleText1	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymAfterBattleText2	text/SaffronGym.asm	1			#			no	auto_routed
+_SaffronGymAfterBattleText3	text/SaffronGym.asm	1			#			no	auto_routed
+_SaffronGymAfterBattleText4	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymAfterBattleText5	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymAfterBattleText6	text/SaffronGym.asm	1			#			no	auto_routed
+_SaffronGymAfterBattleText7	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymBattleText1	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymBattleText2	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymBattleText3	text/SaffronGym.asm	1			#			no	auto_routed
+_SaffronGymBattleText4	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymBattleText5	text/SaffronGym.asm	1			#			no	auto_routed
+_SaffronGymBattleText6	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymBattleText7	text/SaffronGym.asm	1			#			no	auto_routed
+_SaffronGymEndBattleText1	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymEndBattleText2	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymEndBattleText3	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymEndBattleText4	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymEndBattleText5	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymEndBattleText6	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymEndBattleText7	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymGuidePostBattleText	text/SaffronGym.asm	1						no	auto_routed
+_SaffronGymGuidePreBattleText	text/SaffronGym.asm	1			#			no	auto_routed
+_SaffronHouse1Text1	text/SaffronPidgeyHouse.asm	1						no	auto_routed
+_SaffronHouse1Text2	text/SaffronPidgeyHouse.asm	1						no	auto_routed
+_SaffronHouse1Text3	text/SaffronPidgeyHouse.asm	1			#			no	auto_routed
+_SaffronHouse1Text4	text/SaffronPidgeyHouse.asm	1						no	auto_routed
+_SaffronMartText2	text/SaffronMart.asm	1			#			no	auto_routed
+_SaffronMartText3	text/SaffronMart.asm	1			#			no	auto_routed
+_SaffronPokecenterText2	text/SaffronPokecenter.asm	1			#			no	auto_routed
+_SaffronPokecenterText3	text/SaffronPokecenter.asm	1						no	auto_routed
+_SaveOptionText	data/text/text_2.asm	0						no	outside_map_script_scope
+_SavingEnergyText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_ScaredText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_SchoolText1	text/ViridianSchoolHouse.asm	1						no	auto_routed
+_SchoolText2	text/ViridianSchoolHouse.asm	1						no	auto_routed
+_SeafoamIslands5Text4	text/SeafoamIslandsB4F.asm	1						no	auto_routed
+_SeafoamIslands5Text5	text/SeafoamIslandsB4F.asm	1						no	auto_routed
+_SecretHouseText_4a350	text/SafariZoneSecretHouse.asm	1						no	auto_routed
+_SentToBoxText	data/text/text_5.asm	0		text_ram	#			no	outside_map_script_scope
+_ShallWeHealYourPokemonText	data/text/text_4.asm	0			#			no	outside_map_script_scope
+_ShroudedInMistText	data/text/text_3.asm	0	<USER>					no	outside_map_script_scope
+_SilphCo10AfterBattleText1	text/SilphCo10F.asm	1						no	auto_routed
+_SilphCo10AfterBattleText2	text/SilphCo10F.asm	1						no	auto_routed
+_SilphCo10BattleText1	text/SilphCo10F.asm	1						no	auto_routed
+_SilphCo10BattleText2	text/SilphCo10F.asm	1						no	auto_routed
+_SilphCo10EndBattleText1	text/SilphCo10F.asm	1						no	auto_routed
+_SilphCo10EndBattleText2	text/SilphCo10F.asm	1						no	auto_routed
+_SilphCo10Text_5a1d3	text/SilphCo10F.asm	1						no	auto_routed
+_SilphCo10Text_5a1d8	text/SilphCo10F.asm	1						no	auto_routed
+_SilphCo10Text_6231c	text/SilphCo11F.asm	1			#			no	auto_routed
+_SilphCo10Text_62330	text/SilphCo11F.asm	1						no	auto_routed
+_SilphCo10Text_62335	text/SilphCo11F.asm	1	<PLAYER>		#			no	auto_routed
+_SilphCo10Text_6237b	text/SilphCo11F.asm	1			#			no	auto_routed
+_SilphCo11AfterBattleText1	text/SilphCo11F.asm	1						no	auto_routed
+_SilphCo11AfterBattleText2	text/SilphCo11F.asm	1			#			no	auto_routed
+_SilphCo11BattleText1	text/SilphCo11F.asm	1						no	auto_routed
+_SilphCo11BattleText2	text/SilphCo11F.asm	1						no	auto_routed
+_SilphCo11EndBattleText1	text/SilphCo11F.asm	1						no	auto_routed
+_SilphCo11EndBattleText2	text/SilphCo11F.asm	1						no	auto_routed
+_SilphCo11Text2	text/SilphCo11F.asm	1						no	auto_routed
+_SilphCo11Text3	text/SilphCo11F.asm	1	<PLAYER>					no	auto_routed
+_SilphCo1Text1	text/SilphCo1F.asm	1						no	auto_routed
+_SilphCo2AfterBattleText1	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo2AfterBattleText2	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo2AfterBattleText3	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo2AfterBattleText4	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo2BattleText1	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo2BattleText2	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo2BattleText3	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo2BattleText4	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo2EndBattleText1	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo2EndBattleText2	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo2EndBattleText3	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo2EndBattleText4	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo2Text_59ded	text/SilphCo2F.asm	1						no	auto_routed
+_SilphCo3AfterBattleText1	text/SilphCo3F.asm	1						no	auto_routed
+_SilphCo3AfterBattleText2	text/SilphCo3F.asm	1			#			no	auto_routed
+_SilphCo3BattleText1	text/SilphCo3F.asm	1						no	auto_routed
+_SilphCo3BattleText2	text/SilphCo3F.asm	1						no	auto_routed
+_SilphCo3EndBattleText1	text/SilphCo3F.asm	1						no	auto_routed
+_SilphCo3EndBattleText2	text/SilphCo3F.asm	1						no	auto_routed
+_SilphCo3Text_59ff9	text/SilphCo3F.asm	1						no	auto_routed
+_SilphCo3Text_59ffe	text/SilphCo3F.asm	1	<PLAYER>		#			no	auto_routed
+_SilphCo4AfterBattleText2	text/SilphCo4F.asm	1						no	auto_routed
+_SilphCo4AfterBattleText3	text/SilphCo4F.asm	1						no	auto_routed
+_SilphCo4AfterBattleText4	text/SilphCo4F.asm	1						no	auto_routed
+_SilphCo4BattleText2	text/SilphCo4F.asm	1						no	auto_routed
+_SilphCo4BattleText3	text/SilphCo4F.asm	1			#			no	auto_routed
+_SilphCo4BattleText4	text/SilphCo4F.asm	1						no	auto_routed
+_SilphCo4EndBattleText2	text/SilphCo4F.asm	1						no	auto_routed
+_SilphCo4EndBattleText3	text/SilphCo4F.asm	1			#			no	auto_routed
+_SilphCo4EndBattleText4	text/SilphCo4F.asm	1						no	auto_routed
+_SilphCo4Text_19de0	text/SilphCo4F.asm	1						no	auto_routed
+_SilphCo4Text_19de5	text/SilphCo4F.asm	1						no	auto_routed
+_SilphCo5AfterBattleText2	text/SilphCo5F.asm	1						no	auto_routed
+_SilphCo5AfterBattleText3	text/SilphCo5F.asm	1			#			no	auto_routed
+_SilphCo5AfterBattleText4	text/SilphCo5F_2.asm	1						no	auto_routed
+_SilphCo5AfterBattleText5	text/SilphCo5F_2.asm	1						no	auto_routed
+_SilphCo5BattleText2	text/SilphCo5F.asm	1						no	auto_routed
+_SilphCo5BattleText3	text/SilphCo5F.asm	1			#			no	auto_routed
+_SilphCo5BattleText4	text/SilphCo5F.asm	1						no	auto_routed
+_SilphCo5BattleText5	text/SilphCo5F_2.asm	1						no	auto_routed
+_SilphCo5EndBattleText2	text/SilphCo5F.asm	1						no	auto_routed
+_SilphCo5EndBattleText3	text/SilphCo5F.asm	1						no	auto_routed
+_SilphCo5EndBattleText4	text/SilphCo5F_2.asm	1						no	auto_routed
+_SilphCo5EndBattleText5	text/SilphCo5F_2.asm	1						no	auto_routed
+_SilphCo5Text10	text/SilphCo5F_2.asm	1			#			no	auto_routed
+_SilphCo5Text11	text/SilphCo5F_2.asm	1			#			no	auto_routed
+_SilphCo5Text9	text/SilphCo5F_2.asm	1			#			no	auto_routed
+_SilphCo5Text_1a010	text/SilphCo5F.asm	1						no	auto_routed
+_SilphCo5Text_1a015	text/SilphCo5F.asm	1						no	auto_routed
+_SilphCo6AfterBattleText2	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6AfterBattleText3	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6AfterBattleText4	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6BattleText2	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6BattleText3	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6BattleText4	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6EndBattleText2	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6EndBattleText3	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6EndBattleText4	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6Text_1a24a	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6Text_1a24f	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6Text_1a261	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6Text_1a266	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6Text_1a278	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6Text_1a27d	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6Text_1a28f	text/SilphCo6F.asm	1			#			no	auto_routed
+_SilphCo6Text_1a294	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo6Text_1a2a6	text/SilphCo6F.asm	1			#			no	auto_routed
+_SilphCo6Text_1a2ab	text/SilphCo6F.asm	1						no	auto_routed
+_SilphCo7AfterBattleText1	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7AfterBattleText2	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7AfterBattleText3	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7AfterBattleText4	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7BattleText1	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7BattleText2	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7BattleText3	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7BattleText4	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7EndBattleText1	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7EndBattleText2	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7EndBattleText3	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7EndBattleText4	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7Text_51e00	text/SilphCo7F.asm	1			#			no	auto_routed
+_SilphCo7Text_51e23	text/SilphCo7F.asm	1			#			no	auto_routed
+_SilphCo7Text_51e28	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7Text_51e46	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7Text_51e4b	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7Text_51ebe	text/SilphCo7F.asm	1	<PLAYER>,<RIVAL>					no	auto_routed
+_SilphCo7Text_51ec3	text/SilphCo7F.asm	1	<RIVAL>					no	auto_routed
+_SilphCo7Text_51ec8	text/SilphCo7F.asm	1						no	auto_routed
+_SilphCo7Text_51ecd	text/SilphCo7F.asm	1	<RIVAL>					no	auto_routed
+_SilphCo7Text_51ed2	text/SilphCo7F.asm	1	<PLAYER>		#			no	auto_routed
+_SilphCo8AfterBattleText1	text/SilphCo8F.asm	1						no	auto_routed
+_SilphCo8AfterBattleText2	text/SilphCo8F.asm	1						no	auto_routed
+_SilphCo8AfterBattleText3	text/SilphCo8F.asm	1						no	auto_routed
+_SilphCo8BattleText1	text/SilphCo8F.asm	1						no	auto_routed
+_SilphCo8BattleText2	text/SilphCo8F.asm	1						no	auto_routed
+_SilphCo8BattleText3	text/SilphCo8F.asm	1						no	auto_routed
+_SilphCo8EndBattleText1	text/SilphCo8F.asm	1						no	auto_routed
+_SilphCo8EndBattleText2	text/SilphCo8F.asm	1						no	auto_routed
+_SilphCo8EndBattleText3	text/SilphCo8F.asm	1						no	auto_routed
+_SilphCo8Text_565be	text/SilphCo8F.asm	1						no	auto_routed
+_SilphCo8Text_565c3	text/SilphCo8F.asm	1						no	auto_routed
+_SilphCo9AfterBattleText1	text/SilphCo9F.asm	1						no	auto_routed
+_SilphCo9AfterBattleText2	text/SilphCo9F.asm	1						no	auto_routed
+_SilphCo9AfterBattleText3	text/SilphCo9F.asm	1						no	auto_routed
+_SilphCo9BattleText1	text/SilphCo9F.asm	1			#			no	auto_routed
+_SilphCo9BattleText2	text/SilphCo9F.asm	1			#			no	auto_routed
+_SilphCo9BattleText3	text/SilphCo9F.asm	1						no	auto_routed
+_SilphCo9EndBattleText1	text/SilphCo9F.asm	1						no	auto_routed
+_SilphCo9EndBattleText2	text/SilphCo9F.asm	1						no	auto_routed
+_SilphCo9EndBattleText3	text/SilphCo9F.asm	1						no	auto_routed
+_SilphCo9Text_5d8e5	text/SilphCo9F.asm	1						no	auto_routed
+_SilphCo9Text_5d8ea	text/SilphCo9F.asm	1						no	auto_routed
+_SilphCo9Text_5d8ef	text/SilphCo9F.asm	1						no	auto_routed
+_SilphCoMasterBallNoRoomText	text/SilphCo11F.asm	1						no	auto_routed
+_SilphCoPresidentText	text/SilphCo11F.asm	1						no	auto_routed
+_SkyAttackGlowingText	data/text/text_3.asm	0						no	outside_map_script_scope
+_SoYouWantPrizeText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_SorryNeedMoreCoinsText	data/text/text_2.asm	0						no	outside_map_script_scope
+_StandByMeText	text/RedsHouse1F.asm	1						no	auto_routed
+_StartSlotMachineText	data/text/text_2.asm	0						no	outside_map_script_scope
+_StartedSleepingEffect	data/text/text_3.asm	0	<USER>					no	outside_map_script_scope
+_StatusChangesEliminatedText	data/text/text_3.asm	0						no	outside_map_script_scope
+_StoppedEvolvingText	data/text/text_3.asm	0		text_ram				no	outside_map_script_scope
+_StrengthsAndWeaknessesText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_SubstituteBrokeText	data/text/text_2.asm	0	<TARGET>					no	outside_map_script_scope
+_SubstituteText	data/text/text_3.asm	0						no	outside_map_script_scope
+_SubstituteTookDamageText	data/text/text_2.asm	0	<TARGET>					no	outside_map_script_scope
+_SuckedHealthText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_SuperEffectiveText	data/text/text_2.asm	0						no	outside_map_script_scope
+_SurfingGotOnText	data/text/text_6.asm	0	<PLAYER>	text_ram				no	outside_map_script_scope
+_SurfingNoPlaceToGetOffText	data/text/text_6.asm	0						no	outside_map_script_scope
+_SwitchOnText	data/text/text_2.asm	0						no	outside_map_script_scope
+_TM06ExplanationText	text/FuchsiaGym_2.asm	1						no	auto_routed
+_TM06NoRoomText	text/FuchsiaGym_2.asm	1						no	auto_routed
+_TM11ExplanationText	text/CeruleanGym.asm	1			#			no	auto_routed
+_TM11NoRoomText	text/CeruleanGym.asm	1						no	auto_routed
+_TM18ExplanationText	text/CeladonMart3F.asm	1						no	auto_routed
+_TM18NoRoomText	text/CeladonMart3F.asm	1						no	auto_routed
+_TM18PreReceiveText	text/CeladonMart3F.asm	1			#			no	auto_routed
+_TM21ExplanationText	text/CeladonGym.asm	1			#			no	auto_routed
+_TM21NoRoomText	text/CeladonGym.asm	1						no	auto_routed
+_TM24ExplanationText	text/VermilionGym_2.asm	1			#			no	auto_routed
+_TM24NoRoomText	text/VermilionGym_2.asm	1						no	auto_routed
+_TM27ExplanationText	text/ViridianGym.asm	1			#			no	auto_routed
+_TM27NoRoomText	text/ViridianGym.asm	1						no	auto_routed
+_TM28NoRoomText	text/CeruleanCity.asm	1						no	auto_routed
+_TM29ExplanationText	text/MrPsychicsHouse.asm	1						no	auto_routed
+_TM29NoRoomText	text/MrPsychicsHouse.asm	1						no	auto_routed
+_TM29PreReceiveText	text/MrPsychicsHouse.asm	1						no	auto_routed
+_TM31ExplanationText1	text/CopycatsHouse2F.asm	1			#			no	auto_routed
+_TM31ExplanationText2	text/CopycatsHouse2F.asm	1	<PLAYER>					no	auto_routed
+_TM31NoRoomText	text/CopycatsHouse2F.asm	1						no	auto_routed
+_TM31PreReceiveText	text/CopycatsHouse2F.asm	1			#			no	auto_routed
+_TM34ExplanationText	text/PewterGym_2.asm	1			#			no	auto_routed
+_TM34NoRoomText	text/PewterGym_2.asm	1						no	auto_routed
+_TM35ExplanationText	text/CinnabarLabMetronomeRoom.asm	1			#			no	auto_routed
+_TM35NoRoomText	text/CinnabarLabMetronomeRoom.asm	1						no	auto_routed
+_TM35PreReceiveText	text/CinnabarLabMetronomeRoom.asm	1						no	auto_routed
+_TM36ExplanationText	text/SilphCo2F.asm	1			#			no	auto_routed
+_TM36NoRoomText	text/SilphCo2F.asm	1						no	auto_routed
+_TM38ExplanationText	text/CinnabarGym.asm	1			#			no	auto_routed
+_TM38NoRoomText	text/CinnabarGym.asm	1						no	auto_routed
+_TM39ExplanationText	text/Route12Gate2F.asm	1						yes	auto_routed
+_TM39NoRoomText	text/Route12Gate2F.asm	1						no	auto_routed
+_TM39PreReceiveText	text/Route12Gate2F.asm	1			#			no	auto_routed
+_TM41ExplanationText	text/CeladonCity.asm	1			#			no	auto_routed
+_TM41NoRoomText	text/CeladonCity.asm	1						no	auto_routed
+_TM41PreText	text/CeladonCity.asm	1						no	auto_routed
+_TM42Explanation	text/ViridianCity.asm	1						no	auto_routed
+_TM42NoRoomText	text/ViridianCity.asm	1						no	auto_routed
+_TM46ExplanationText	text/SaffronGym.asm	1						no	auto_routed
+_TM46NoRoomText	text/SaffronGym.asm	1						no	auto_routed
+_TVWrongSideText	text/RedsHouse1F.asm	1						no	auto_routed
+_TeachMachineMoveText	data/text/text_6.asm	0		text_ram	#			no	outside_map_script_scope
+_TextIDErrorText	data/text/text_2.asm	0		text_decimal				no	outside_map_script_scope
+_Thanks1Text	data/text/text_7.asm	0						no	outside_map_script_scope
+_Thanks2Text	data/text/text_7.asm	0						no	outside_map_script_scope
+_Thanks3Text	data/text/text_7.asm	0						no	outside_map_script_scope
+_ThrashingAboutText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_ThrewAwayItemText	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_ThrewBaitText	data/text/text_6.asm	0	<PLAYER>					no	outside_map_script_scope
+_ThrewRockText	data/text/text_6.asm	0	<PLAYER>					no	outside_map_script_scope
+_ThrowBallAtTrainerMonText1	data/text/text_6.asm	0						no	outside_map_script_scope
+_ThrowBallAtTrainerMonText2	data/text/text_6.asm	0						no	outside_map_script_scope
+_TimesUpText	data/text/text_2.asm	0						no	outside_map_script_scope
+_TooImportantToTossText	data/text/text_7.asm	0						no	outside_map_script_scope
+_TooWeakSubstituteText	data/text/text_3.asm	0						no	outside_map_script_scope
+_TookInSunlightText	data/text/text_3.asm	0						no	outside_map_script_scope
+_TossHowManyText	data/text/text_2.asm	0						no	outside_map_script_scope
+_TowerRescueFujiText	text/PokemonTower7F.asm	1			#			no	auto_routed
+_TownMapText	data/text/text_2.asm	0						no	outside_map_script_scope
+_TradeCenterText1	data/text/text_3.asm	1						no	auto_routed
+_TradeForText	data/text/text_2.asm	0	<PLAYER>	text_ram				no	outside_map_script_scope
+_TradeSendsText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_TradeTakeCareText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_TradeTransferredText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_TradeWavesFarewellText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_TradeWentToText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_TradeWillTradeText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_TradedForText	data/text/text_7.asm	0	<PLAYER>	text_ram				no	outside_map_script_scope
+_TradeforText	data/text/text_2.asm	0	<PLAYER>	text_ram				no	outside_map_script_scope
+_TrainerAboutToUseText	data/text/text_2.asm	0	<PLAYER>	text_ram	#			no	outside_map_script_scope
+_TrainerDefeatedText	data/text/text_2.asm	0	<PLAYER>	text_ram				no	outside_map_script_scope
+_TrainerNameText	data/text/text_1.asm	0		text_ram				no	outside_map_script_scope
+_TrainerSentOutText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_TrainerWantsToFightText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_TransformedText	data/text/text_3.asm	0	<USER>	text_ram				no	outside_map_script_scope
+_TryingToLearnText	data/text/text_4.asm	0		text_ram				no	outside_map_script_scope
+_TurnPageText	data/text/text_2.asm	0						no	outside_map_script_scope
+_TurnedAwayText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_TurnedOnPC1Text	data/text/text_2.asm	0	<PLAYER>					no	outside_map_script_scope
+_TurnedOnPC2Text	data/text/text_2.asm	0	<PLAYER>					no	outside_map_script_scope
+_UGPathRoute7EntranceUnusedText_5d773	text/UndergroundPathRoute7Copy.asm	1						no	auto_routed
+_UGPathRoute7EntranceUnusedText_5d778	text/UndergroundPathRoute7Copy.asm	1						no	auto_routed
+_UGPathRoute7EntranceUnusedText_5d77d	text/UndergroundPathRoute7Copy.asm	1						no	auto_routed
+_UGPathRoute7EntranceUnusedText_5d782	text/UndergroundPathRoute7Copy.asm	1						no	auto_routed
+_UnaffectedText	data/text/text_2.asm	0	<TARGET>					no	outside_map_script_scope
+_UndergrdTunnelEntRoute6Text1	text/UndergroundPathRoute6.asm	1						no	auto_routed
+_UndergroundPathEntRoute7Text1	text/UndergroundPathRoute7.asm	1			#			no	auto_routed
+_UndergroundPathEntRoute8Text1	text/UndergroundPathRoute8.asm	1						no	auto_routed
+_UnleashedEnergyText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_UnusedBenchGuyText1	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_UnusedBenchGuyText2	data/text/text_2.asm	0						no	outside_map_script_scope
+_UnusedBenchGuyText3	data/text/text_2.asm	0						no	outside_map_script_scope
+_UnveiledGhostText	data/text/text_2.asm	0						no	outside_map_script_scope
+_UseNextMonText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_Used1Text	data/text/text_2.asm	0						no	outside_map_script_scope
+_Used2Text	data/text/text_2.asm	0						no	outside_map_script_scope
+_UsedCutText	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_UsedStrengthText	data/text/text_5.asm	0		text_ram				no	outside_map_script_scope
+_VendingMachineText1	text/CeladonMartRoof.asm	0						no	outside_map_script_scope
+_VendingMachineText4	text/CeladonMartRoof.asm	0						no	outside_map_script_scope
+_VendingMachineText5	text/CeladonMartRoof.asm	0		text_ram				no	outside_map_script_scope
+_VendingMachineText6	text/CeladonMartRoof.asm	0						no	outside_map_script_scope
+_VendingMachineText7	text/CeladonMartRoof.asm	0						no	outside_map_script_scope
+_VermilionCityText1	text/VermilionCity.asm	1						no	auto_routed
+_VermilionCityText11	text/VermilionCity.asm	1			#			no	auto_routed
+_VermilionCityText12	text/VermilionCity.asm	1			#			no	auto_routed
+_VermilionCityText13	text/VermilionCity.asm	1						no	auto_routed
+_VermilionCityText14	text/VermilionCity.asm	1						no	auto_routed
+_VermilionCityText4	text/VermilionCity.asm	1			#			no	auto_routed
+_VermilionCityText5	text/VermilionCity.asm	1						no	auto_routed
+_VermilionCityText6	text/VermilionCity.asm	1						no	auto_routed
+_VermilionCityText7	text/VermilionCity.asm	1						no	auto_routed
+_VermilionCityText8	text/VermilionCity.asm	1			#			no	auto_routed
+_VermilionCityTextDidYouSee	text/VermilionCity.asm	1						no	auto_routed
+_VermilionCityTextSSAnneDeparted	text/VermilionCity.asm	1						no	auto_routed
+_VermilionDockText1	text/VermilionDock.asm	1						no	auto_routed
+_VermilionGymAfterBattleText1	text/VermilionGym_2.asm	1						no	auto_routed
+_VermilionGymAfterBattleText2	text/VermilionGym_2.asm	1						no	auto_routed
+_VermilionGymAfterBattleText3	text/VermilionGym_2.asm	1						no	auto_routed
+_VermilionGymBattleText1	text/VermilionGym_2.asm	1						no	auto_routed
+_VermilionGymBattleText2	text/VermilionGym_2.asm	1						no	auto_routed
+_VermilionGymBattleText3	text/VermilionGym_2.asm	1						no	auto_routed
+_VermilionGymEndBattleText1	text/VermilionGym_2.asm	1						no	auto_routed
+_VermilionGymEndBattleText2	text/VermilionGym_2.asm	1						no	auto_routed
+_VermilionGymEndBattleText3	text/VermilionGym_2.asm	1						no	auto_routed
+_VermilionGymGuidePostBattleText	text/VermilionGym_2.asm	1						no	auto_routed
+_VermilionGymGuidePreBattleText	text/VermilionGym_2.asm	1			#			no	auto_routed
+_VermilionGymTrashFailText	data/text/text_2.asm	0						no	outside_map_script_scope
+_VermilionGymTrashSuccessText1	data/text/text_2.asm	0						no	outside_map_script_scope
+_VermilionGymTrashSuccessText2	data/text/text_2.asm	0						no	outside_map_script_scope
+_VermilionGymTrashSuccessText3	data/text/text_2.asm	0						no	outside_map_script_scope
+_VermilionGymTrashText	data/text/text_2.asm	0						no	outside_map_script_scope
+_VermilionHouse1Text1	text/VermilionPidgeyHouse.asm	1						no	auto_routed
+_VermilionHouse1Text2	text/VermilionPidgeyHouse.asm	1						no	auto_routed
+_VermilionHouse1Text3	text/VermilionPidgeyHouse.asm	1						no	auto_routed
+_VermilionHouse2Text_560b1	text/VermilionOldRodHouse.asm	1						no	auto_routed
+_VermilionHouse2Text_560b6	text/VermilionOldRodHouse.asm	1	<PLAYER>	text_ram				no	auto_routed
+_VermilionHouse2Text_560bb	text/VermilionOldRodHouse.asm	1						no	auto_routed
+_VermilionHouse2Text_560c0	text/VermilionOldRodHouse.asm	1						no	auto_routed
+_VermilionHouse2Text_560c5	text/VermilionOldRodHouse.asm	0	<PLAYER>					no	outside_map_script_scope
+_VermilionHouse2Text_560ca	text/VermilionOldRodHouse.asm	1						no	auto_routed
+_VermilionMartText2	text/VermilionMart.asm	1			#			no	auto_routed
+_VermilionMartText3	text/VermilionMart.asm	1			#			no	auto_routed
+_VermilionPokecenterGuyText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_VermilionPokecenterText2	text/VermilionPokecenter.asm	1			#			no	auto_routed
+_VermilionPokecenterText3	text/VermilionPokecenter.asm	1			#			no	auto_routed
+_VictoryRoad1AfterBattleText1	text/VictoryRoad1F.asm	1						no	auto_routed
+_VictoryRoad1AfterBattleText2	text/VictoryRoad1F.asm	1						no	auto_routed
+_VictoryRoad1BattleText1	text/VictoryRoad1F.asm	1						no	auto_routed
+_VictoryRoad1BattleText2	text/VictoryRoad1F.asm	1						no	auto_routed
+_VictoryRoad1EndBattleText1	text/VictoryRoad1F.asm	1						no	auto_routed
+_VictoryRoad1EndBattleText2	text/VictoryRoad1F.asm	1						no	auto_routed
+_VictoryRoad2AfterBattleText1	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad2AfterBattleText2	text/VictoryRoad2F.asm	1	<RIVAL>					no	auto_routed
+_VictoryRoad2AfterBattleText3	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad2AfterBattleText4	text/VictoryRoad2F.asm	1			#			no	auto_routed
+_VictoryRoad2AfterBattleText5	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad2BattleText1	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad2BattleText2	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad2BattleText3	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad2BattleText4	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad2BattleText5	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad2EndBattleText1	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad2EndBattleText2	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad2EndBattleText3	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad2EndBattleText4	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad2EndBattleText5	text/VictoryRoad2F.asm	1						no	auto_routed
+_VictoryRoad3AfterBattleText2	text/VictoryRoad3F.asm	1						no	auto_routed
+_VictoryRoad3AfterBattleText3	text/VictoryRoad3F.asm	1						no	auto_routed
+_VictoryRoad3AfterBattleText4	text/VictoryRoad3F.asm	1			#			no	auto_routed
+_VictoryRoad3AfterBattleText5	text/VictoryRoad3F.asm	1						no	auto_routed
+_VictoryRoad3BattleText2	text/VictoryRoad3F.asm	1						no	auto_routed
+_VictoryRoad3BattleText3	text/VictoryRoad3F.asm	1						no	auto_routed
+_VictoryRoad3BattleText4	text/VictoryRoad3F.asm	1						no	auto_routed
+_VictoryRoad3BattleText5	text/VictoryRoad3F.asm	1						no	auto_routed
+_VictoryRoad3EndBattleText2	text/VictoryRoad3F.asm	1						no	auto_routed
+_VictoryRoad3EndBattleText3	text/VictoryRoad3F.asm	1						no	auto_routed
+_VictoryRoad3EndBattleText4	text/VictoryRoad3F.asm	1						no	auto_routed
+_VictoryRoad3EndBattleText5	text/VictoryRoad3F.asm	1						no	auto_routed
+_VictoryRoadGuardText1	text/Route23.asm	1		text_ram	#			no	auto_routed
+_VictoryRoadGuardText2	text/Route23.asm	1		text_ram				no	auto_routed
+_VictoryRoadGuardText_513a3	text/Route23.asm	1						no	auto_routed
+_ViridianBlackboardBurnText	data/text/text_2.asm	0						no	outside_map_script_scope
+_ViridianBlackboardFrozenText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_ViridianBlackboardPoisonText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_ViridianBlackboardPrlzText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_ViridianBlackboardSleepText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_ViridianCityPokecenterGuyText	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_ViridianCityText1	text/ViridianCity.asm	1			#			no	auto_routed
+_ViridianCityText10	text/ViridianCity.asm	1			#			no	auto_routed
+_ViridianCityText13	text/ViridianCity.asm	1			#			no	auto_routed
+_ViridianCityText14	text/ViridianCity.asm	1						no	auto_routed
+_ViridianCityText8	text/ViridianCity.asm	1						no	auto_routed
+_ViridianCityText9	text/ViridianCity.asm	1			#			no	auto_routed
+_ViridianCityText_19122	text/ViridianCity.asm	1			#			no	auto_routed
+_ViridianCityText_19127	text/ViridianCity.asm	1						no	auto_routed
+_ViridianCityText_1914d	text/ViridianCity.asm	1			#			no	auto_routed
+_ViridianCityText_19152	text/ViridianCity.asm	1						no	auto_routed
+_ViridianCityText_19157	text/ViridianCity.asm	1						no	auto_routed
+_ViridianCityText_19175	text/ViridianCity.asm	1						no	auto_routed
+_ViridianCityText_1917a	text/ViridianCity.asm	1						no	auto_routed
+_ViridianCityText_19191	text/ViridianCity.asm	1						no	auto_routed
+_ViridianCityText_191ca	text/ViridianCity.asm	1						no	auto_routed
+_ViridianCityText_1920a	text/ViridianCity.asm	1						no	auto_routed
+_ViridianCityText_1920f	text/ViridianCity.asm	1			#			no	auto_routed
+_ViridianCityText_19214	text/ViridianCity.asm	1						no	auto_routed
+_ViridianCityText_19219	text/ViridianCity.asm	1			#			no	auto_routed
+_ViridianForestBattleText1	text/ViridianForest.asm	1			#			no	auto_routed
+_ViridianForestBattleText2	text/ViridianForest.asm	1			#			no	auto_routed
+_ViridianForestBattleText3	text/ViridianForest.asm	1						no	auto_routed
+_ViridianForestEndBattleText1	text/ViridianForest.asm	1						no	auto_routed
+_ViridianForestEndBattleText2	text/ViridianForest.asm	1			#			no	auto_routed
+_ViridianForestEndBattleText3	text/ViridianForest.asm	1						no	auto_routed
+_ViridianForestEntranceText1	text/ViridianForestSouthGate.asm	1						no	auto_routed
+_ViridianForestEntranceText2	text/ViridianForestSouthGate.asm	1						no	auto_routed
+_ViridianForestExitText1	text/ViridianForestNorthGate.asm	1			#			no	auto_routed
+_ViridianForestExitText2	text/ViridianForestNorthGate.asm	1			#			no	auto_routed
+_ViridianForestText1	text/ViridianForest.asm	1			#			no	auto_routed
+_ViridianForestText10	text/ViridianForest.asm	1			#			no	auto_routed
+_ViridianForestText11	text/ViridianForest.asm	1			#			no	auto_routed
+_ViridianForestText12	text/ViridianForest.asm	1			#			no	auto_routed
+_ViridianForestText13	text/ViridianForest.asm	1			#			no	auto_routed
+_ViridianForestText14	text/ViridianForest.asm	1						no	auto_routed
+_ViridianForestText8	text/ViridianForest.asm	1			#			no	auto_routed
+_ViridianForestText9	text/ViridianForest.asm	1						no	auto_routed
+_ViridianFrstAfterBattleText1	text/ViridianForest.asm	1						no	auto_routed
+_ViridianFrstAfterBattleText2	text/ViridianForest.asm	1						no	auto_routed
+_ViridianFrstAfterBattleText3	text/ViridianForest.asm	1						no	auto_routed
+_ViridianGymAfterBattleText1	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymAfterBattleText2	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymAfterBattleText3	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymAfterBattleText4	text/ViridianGym.asm	1			#			no	auto_routed
+_ViridianGymAfterBattleText5	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymAfterBattleText6	text/ViridianGym.asm	1			#			no	auto_routed
+_ViridianGymAfterBattleText7	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymAfterBattleText8	text/ViridianGym.asm	1			#			no	auto_routed
+_ViridianGymBattleText1	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymBattleText2	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymBattleText3	text/ViridianGym.asm	1			#			no	auto_routed
+_ViridianGymBattleText4	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymBattleText5	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymBattleText6	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymBattleText7	text/ViridianGym.asm	1			#			no	auto_routed
+_ViridianGymBattleText8	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymEndBattleText1	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymEndBattleText2	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymEndBattleText3	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymEndBattleText4	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymEndBattleText5	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymEndBattleText6	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymEndBattleText7	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymEndBattleText8	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymGuidePostBattleText	text/ViridianGym.asm	1						no	auto_routed
+_ViridianGymGuidePreBattleText	text/ViridianGym.asm	1			#			no	auto_routed
+_ViridianHouseText1	text/ViridianNicknameHouse.asm	1						no	auto_routed
+_ViridianHouseText2	text/ViridianNicknameHouse.asm	1			#			no	auto_routed
+_ViridianHouseText4	text/ViridianNicknameHouse.asm	1						no	auto_routed
+_ViridianHouseText_1d5b1	text/ViridianNicknameHouse.asm	1						no	auto_routed
+_ViridianMartText1	text/ViridianMart.asm	1						no	auto_routed
+_ViridianMartText2	text/ViridianMart.asm	1						no	auto_routed
+_ViridianMartText3	text/ViridianMart.asm	1						no	auto_routed
+_ViridianMartText4	text/ViridianMart.asm	1						no	auto_routed
+_ViridianPokeCenterText2	text/ViridianPokecenter.asm	1						no	auto_routed
+_ViridianPokeCenterText3	text/ViridianPokecenter.asm	1			#			no	auto_routed
+_ViridianSchoolBlackboardText1	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_ViridianSchoolBlackboardText2	data/text/text_2.asm	0						no	outside_map_script_scope
+_ViridianSchoolNotebookText1	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_ViridianSchoolNotebookText2	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_ViridianSchoolNotebookText3	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_ViridianSchoolNotebookText4	data/text/text_2.asm	0			#			no	outside_map_script_scope
+_ViridianSchoolNotebookText5	data/text/text_2.asm	0						no	outside_map_script_scope
+_VitaminNoEffectText	data/text/text_6.asm	0						no	outside_map_script_scope
+_VitaminStatRoseText	data/text/text_6.asm	0		text_ram				no	outside_map_script_scope
+_VoltorbBattleText	text/PowerPlant.asm	1						no	auto_routed
+_WannaTrade1Text	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_WannaTrade2Text	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_WannaTrade3Text	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_WantHitmonchanText	text/FightingDojo.asm	1						no	auto_routed
+_WantHitmonleeText	text/FightingDojo.asm	1						no	auto_routed
+_WardenGibberishText1	text/WardensHouse.asm	1						no	auto_routed
+_WardenGibberishText2	text/WardensHouse.asm	1						no	auto_routed
+_WardenGibberishText3	text/WardensHouse.asm	1						no	auto_routed
+_WardenTeethText1	text/WardensHouse.asm	1	<PLAYER>					no	auto_routed
+_WardenTeethText2	text/WardensHouse.asm	1						no	auto_routed
+_WardenThankYouText	text/WardensHouse.asm	1						no	auto_routed
+_WarpToLastPokemonCenterText	data/text/text_5.asm	0			#			no	outside_map_script_scope
+_WasBlownAwayText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_WasSeededText	data/text/text_3.asm	0	<TARGET>					no	outside_map_script_scope
+_WhatDoYouWantText	data/text/text_2.asm	0						no	outside_map_script_scope
+_WhatGoesAroundComesAroundText	data/text/text_2.asm	0						no	outside_map_script_scope
+_WhatText	data/text/text_2.asm	0						no	outside_map_script_scope
+_WhatToDepositText	data/text/text_2.asm	0						no	outside_map_script_scope
+_WhatToTossText	data/text/text_2.asm	0						no	outside_map_script_scope
+_WhatToWithdrawText	data/text/text_2.asm	0						no	outside_map_script_scope
+_WhenYouChangeBoxText	data/text/text_3.asm	0			#			no	outside_map_script_scope
+_WhereWouldYouLikeText	data/text/text_2.asm	0						no	outside_map_script_scope
+_WhichFloorText	data/text/text_2.asm	0						no	outside_map_script_scope
+_WhichMoveToForgetText	data/text/text_4.asm	0						no	outside_map_script_scope
+_WhichPrizeText	data/text/text_2.asm	0						no	outside_map_script_scope
+_WildMonAppearedText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_WildRanText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_WillBeTradedText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_WithExpAllText	data/text/text_2.asm	0						no	outside_map_script_scope
+_WithdrawHowManyText	data/text/text_2.asm	0						no	outside_map_script_scope
+_WithdrewItemText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_WokeUpText	data/text/text_2.asm	0	<USER>					no	outside_map_script_scope
+_WontObeyText	data/text/text_2.asm	0		text_ram				no	outside_map_script_scope
+_WouldYouLikeToSaveText	data/text/text_3.asm	0						no	outside_map_script_scope
+_WriterText	text/CeladonMansion3F.asm	1						no	auto_routed
+_WrongMon1Text	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_WrongMon2Text	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_WrongMon3Text	data/text/text_7.asm	0		text_ram				no	outside_map_script_scope
+_YeahText	data/text/text_2.asm	0						no	outside_map_script_scope
+_YourNameIsText	data/text/text_2.asm	0	<PLAYER>					no	outside_map_script_scope
+_ZapdosBattleText	text/PowerPlant.asm	1						no	auto_routed

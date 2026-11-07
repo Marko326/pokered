@@ -1,4 +1,76 @@
+## ROM-1.41 — 第一阶段地图脚本对白双语正式清理（2026-11-07；提交准备，最终 MAP 待维护者归档）
+
+- [x] **正式版号清理**：`ROM-1.41C` → 正式 `ROM-1.41`；8 字符 Options 版本文字起点恢复 x=11，右边缘仍为 x=18。
+- [x] **批量覆盖**：地图脚本 1,944 条 `text_far` 中接入 1,942 条／1,941 个唯一文本标签；2 条既有 English pilot wrapper 保持原样。所有接入引用均有 CHS 与 English 目标。
+- [x] **运行时故障修复**：HF1 修正 `TextCommand_BILINGUAL` 中文分支没有消费第二根 English far pointer 的问题；中文和 English 分支均完整消费 6-byte payload。普通 `text_far` 不变。
+- [x] **用户视频测试**：HF1 后 Viridian City NPC 的英文问题及英文 YES／NO 分支正常，中文模式对白正常；Fishing Guru 与 Fly House 视频中均出现相应英文对白。YES／NO 选项文字继续显示中文，按用户要求暂不改。
+- [x] **测试工具**：9/9 单元测试通过；构建前置脚本生成 1,942 references／1,941 English labels；专用静态检查通过；`git diff --check` 通过。
+- [x] **问题正确归类**：Oak's Lab 的地图开场白已切英文，但 `DisplayDexRating` 动态统计／评价文字仍为中文；这是 `src/engine/events/pokedex_rating.asm` 独立引擎入口，不属于 `src/scripts/` 地图对白接入。已登记到 `docs/ROM141_NEXT_PHASE_POKEDEX_RATING_SCOPE.md`，不在本阶段修复。
+- [ ] **正式红／蓝构建与 MAP**：用户提供的 08:07／08:08 ROM-1.41C MAP 属于 HF1 前版本，不能作为最终空间证明。需要对 HF1＋正式 ROM-1.41 重新构建红／蓝并归档 MAP／ROM SHA。
+- [ ] **剩余地图回归**：继续按 `docs/ROM141_MAP_DIALOGUE_BILINGUAL.md` 与此前测试计划抽查 Route 1、Oak's Lab（仅地图开场）、Safari Zone Gate、Viridian Mart、Pokémon Fan Club、训练家战前／战后对白；检查动态姓名、分页、切回中文和保存重启。录像只覆盖实际展示的分支，不把 1,942 条全部写成逐条实测通过。
+- [ ] **第一阶段最终关闭**：红／蓝新 MAP、Bank 空间和剩余实机回归确认前，状态为“源码接入及 HF1 修复完成，最终构建验收待完成”。
+- [ ] **下一阶段**：图鉴评价系统、共用 YES／NO 菜单、战斗内部文本、宝可梦／技能／道具名称和其他 UI 分系统处理；不扩大本阶段生成器范围。
+
+---
+
+## ROM-1.41C-HF1 — 双语对白运行时指针推进修复（历史热修；已纳入 ROM-1.41）
+
+- [x] **录像定位**：用户实测首次地图对话弹出空白框并卡住；录像最后可见空白对话框。录像只显示 Options 第 1 页，没有展示 LANGUAGE 第 2 页，因此不能据此确认录像中的语言位状态。
+- [x] **根因**：初版 `TextCommand_BILINGUAL` 在 CHS 分支读取第一根 3-byte CHS far pointer 后，没有跳过第二根 3-byte English pointer；返回外层脚本时 `NextTextCommand` 从 English pointer 中间继续读，把地址字节当成命令。
+- [x] **修复**：CHS 分支读完第一根指针后跳过 3 bytes；English 分支先跳过 CHS 指针再读取 English 指针；两条路径均在 6-byte payload 之后恢复外层脚本读取。原有 `text_far` 读取路径保持不变。
+- [x] **回归守卫**：单元测试和 `verify_rom141_bilingual_dialogue_static.py` 分别检查两条语言路径都会消费未选中的 3-byte 指针，避免再次只检查 English 分支。
+- [x] **验证**：单元测试 9/9 PASS；`prepare_build.py` 成功生成 1,942 references／1,941 English labels；专用静态验收脚本 PASS。没有 RGBDS／`rgblink`，本轮未重建 ROM/MAP。
+- [ ] **必须重建**：旧 ROM-1.41C 二进制和 2026-11-07 08:08 MAP 属于热修前版本，不能用于热修后验收。维护者需重新 `make red`、`make blue` 并提供新 MAP。
+- [x] **用户复测**：HF1 后视频显示 Viridian City English 提问及 YES／NO 两个回复可正常显示，中文模式也正常；YES／NO 选项框仍显示中文，按用户决定留待菜单系统独立处理。
+- [ ] **第一阶段关闭**：热修后红蓝 ROM 构建与手机实测通过前，第一阶段不得标记正式关闭。
+
+---
+
+## ROM-1.41C — 地图脚本对白批量双语接入（历史开发候选；已由 ROM-1.41 正式清理）
+
+- [x] **基线与前置状态**：Git 分支 `CHS_Mod`，本轮确认 HEAD `bd091a28bf2e1f87de59c44be694b35d7d8b4405`；上传的 Bundle 经 `git bundle verify` 通过并确认包含完整可达历史；ROM-1.41B ZIP 含 `current_worktree.patch`，本轮以它重建当前开发状态。`RPP_COMMIT_RESTORE/manifest.json` 标记 `exact_restore_allowed=false`，未重放 mbox。增量补丁从 ROM-1.41B 当前 Worktree 起算，全量补丁从上述 HEAD 起算。
+- [x] **批量读取架构**：新增 `TX_BILINGUAL`（`$18`），脚本载荷为 CHS／English 两个 3-byte far pointer；运行时读取 `wOptions` bit 5 后跳到所选指针，复用原 `TextCommand_FAR` 的 Bank 恢复及 `TextCommandProcessor` 路径。ROM0 新增代码静态估算 18 bytes；不新增 WRAM、SRAM、语言位或存档字段。
+- [x] **生成流程**：新增 `scripts/generate_bilingual_dialogue.py`，由 `scripts/prepare_build.py` 在 XLSX 导入后运行；英文原文来自同代 `src/text/` 与 `src/data/text/text_1..7.asm`，CHS 分支新增对白由独立 `manual_dialogue_overrides.json` 补充。生成内容只写入 `buildRB/`；`src/scripts/` 与 XLSX 不被生成器改写。增量同步也会重新生成，且保留未变化文件时间戳。
+- [x] **覆盖结果**：`src/scripts/` 共 1,944 条 `text_far`；其中 1,942 条接入、1,941 个唯一文本标签，另外 2 条已有 ROM-1.41A/B English pilot wrapper 保留原样。0 条未分类引用、0 条应接入但未路由。翻译索引中另有 511 个标签未被地图脚本 `text_far` 调用，不把它们算作已完成。
+- [x] **文本安全**：8 条人工英文补充（7 条 CHS 新增硬编码对白＋1 条 `_OaksLabHomePCUpdatedText` 缺少同代英文原文）；`#` 共 579 处改为普通英文 `POKé`，不再调用 CHS `PlacePOKe` 扩展。保留 117 个动态姓名标签、43 个运行时 RAM／数字命令标签。按玩家／劲敌最大 7 字符及标准文本框 18 列做静态行宽检查；3 条原版英文仅调整换行、不改词句。未知 token／`text_asm`／嵌套 `text_far` fail-closed；地图范围内 0 个未知 token，翻译索引另有 1 个 `<PKMN>` 标签在本轮范围外。
+- [x] **Bank 规划**：英文文本估算约 164,395 bytes，拆为 14 个固定 ROMX section `$62-$6F`；ROM-1.41B MAP 显示 `$62-$7F` 原有 30 个空物理 Bank。每条脚本引用增加 3 bytes，合计 5,826 bytes；旧 MAP 投影下最紧张的地图 Bank `$13` 仍约有 86 bytes。详见 `docs/ROM141C_MAP_SPACE_PROJECTION.md`。以上均是旧 MAP 投影，不是新链接结果。
+- [x] **验证**：9 项单元测试全部通过；`python scripts/prepare_build.py` 完整运行后再次运行可复用对象；`scripts/verify_rom141_bilingual_dialogue_static.py` PASS，核对 1,942 条 CHS／English 指针全部解析；`git diff --check` 与 Python 语法检查通过。原有 14 个 `verify_*.py` 结果仍为 2 PASS／12 FAIL：11 个历史脚本因旧版本号白名单失败，`verify_qol116_static.py` 的功能检查通过但正式版本／Options 坐标断言不接受 ROM-1.41C；没有修改这些历史守卫。原 `audit_rom139_language.py` 仍只统计 `src/text/`，新生成器额外纳入 `data/text/text_1..7`。
+- [ ] **维护者构建与手机验收**：由维护者在项目根目录运行 `make red`、`make blue`，检查新 MAP 的 ROM0、所有地图脚本 Bank、英文数据 `$62-$6F` 及 ROM 总容量；手机检查中文／English 切换、切回中文、保存重启、行宽分页、`POKéMON`／`POKé BALL`、玩家／劲敌名字、Fishing／Fly 教学和 trainer 前后对白。当前未运行 RGBDS／`rgblink`，未生成 ROM／MAP／SHA，未进行手机实测，不把源码候选记为 PASS。
+- [ ] **第一阶段关闭**：源码侧地图脚本对白批量接入已完成；只有维护者红／蓝构建及手机回归确认后，才将第一阶段标记为正式关闭。战斗引擎、菜单、图鉴、名称表及其它非 `src/scripts` 文本入口仍是后续范围。
+
+---
+
+## ROM-1.41B — 修正英文样本中的 CHS 特殊文字扩展（2026-11-07；开发候选，待维护者构建与手机复测）
+
+- [x] **用户录像复现**：ROM-1.41A 的 English Viridian City 对话仍显示“宝可梦 BALLs / 宝可梦 MON”；A 版不能验收通过。
+- [x] **根因确认**：`src/home/text.asm` 将 `#` 字符分派到 `PlacePOKe`，它不是普通文本字符；CHS 构建中的共享 POKé 扩展输出中文。`src/tools/_importText.py` 也有 `#MON`／`#`／`宝可梦` 的导入替换规则。A 版英文副本保留 `#MON`，因此仍调用 CHS 特殊扩展。
+- [x] **英文样本修正**：英文副本改用普通字符 `POKéMON` 与 `POKé BALLs`，避开 CHS `#` 特殊命令；中文源文本及 `PlacePOKe` 原行为不改。最长英文文本行 17 字符，仍需实机确认显示宽度和分页。
+- [x] **版号**：开发测试候选由 `ROM-1.41A` 递进为 `ROM-1.41B`；B 仍是测试标记，不是正式 ROM-1.41。
+- [x] **风险登记**：`<PC>`、`<ROCKET>`、`<TM>`、`<TRAINER>`、`<PKMN>` 等共享特殊扩展尚未逐项核实；`<PLAYER>`、`<RIVAL>`、`<USER>`、`<TARGET>` 等动态语义必须保留。详见 `docs/ROM141B_SPECIAL_TOKEN_AUDIT.md`。
+- [ ] **维护者构建与手机复测**：English 下 Viridian City 对话应完整显示 `POKé BALLs`、`POKéMON`，不得出现“宝可梦”或残留 `MON`；检查行宽、换行、分页、切回中文及保存重启。未接入内容仍保持原 CHS。
+- [x] **后续架构工作（地图脚本范围）**：ROM-1.41C 已建立批量双指针命令、`#` 特殊扩展处理和未知 token fail-closed；完整结果见 `docs/ROM141_MAP_DIALOGUE_BILINGUAL.md`。地图范围外的特殊文字入口仍需后续分系统审计。
+
+---
+
+## ROM-1.41A — 双语静态 NPC 文本读取原型（历史候选；实机录像发现特殊文字扩展错误，已由 ROM-1.41B 修正）
+
+- [x] **基线与版本**：以 `CHS_Mod` 干净 HEAD `bd091a28bf2e1f87de59c44be694b35d7d8b4405`（ROM-1.40）为本轮基线；测试候选使用 `ROM-1.41A`，正式提交时再按验收结果去掉字母并递增正式版本。
+- [x] **共享读取入口**：新增 `bilingual_text` 汇编宏，按现有 `wOptions` bit 5 选择 CHS／English far-text wrapper；不新增语言位、WRAM、SRAM 或存档字段。
+- [x] **静态 NPC 样本**：Route 1 原有第二位 NPC 改用共享宏；新增 Viridian City 第一位 NPC 的中英文样本（A 版误把 `#` 特殊指令当作静态字符；问题已记录并由 B 版修正）。CHS 指针仍指向原 XLSX 导入标签，English 指针指向独立英文副本。
+- [x] **英文资源隔离**：`src/data/english_text/english_pilot.asm` 统一存放当前两个英文副本，置于 ROMX Bank `$46`，不与任何 XLSX 工作表的输出路径重名，导入器不会覆盖此文件。原 Route 1 英文样本从 Options Bank `$45` 移出。
+- [x] **BANK 空间策略**：ROM-1.40 参考 MAP 中 Bank `$46` 为空；地图脚本所在 Bank `$06`／`$07` 有余量。本轮没有新增 ROM0 执行代码；仅测试版号字符串在 ROM0 增加 1 byte。最终空间仍须由维护者新 MAP 确认。
+- [x] **历史基线核查**：Bundle 完整性及 2914 条可达提交已核实；原版共同历史 2629 条，CHS 分叉基线 `17eaf761`，首个 CHS 独有提交 `b1fd6214`。详见 `docs/ROM140_GIT_HISTORY_AUDIT.md`。
+- [x] **补丁基线修正**：首次 ROM-1.41A 交付未把用户已应用的 `ROM-1.40.patch` 纳入增量基线，导致 `TODO.md` 上下文冲突及历史审计文档重复新增；已重制增量（从 `ROM-1.40.patch` 状态）与全量（从干净 HEAD `bd091a28`）补丁，并分别验证正向应用及反向恢复。详见 `docs/ROM141_LANGUAGE_STATIC_TEXT_PILOT.md` 的“补丁交付修正记录”。
+- [ ] **维护者构建**：由维护者运行项目正式构建入口，检查红／蓝版本、Bank `$06`／`$07`／`$45`／`$46`、ROM0 余量和 MAP；本环境不运行 RGBDS、不链接 ROM、不生成新 ROM/MAP/SHA。
+- [x] **A 版实测结果**：用户录像确认 English 的 Viridian City 样本仍将 `#` 展开为中文“宝可梦”；A 版失败原因与 B 版修正见 `docs/ROM141B_SPECIAL_TOKEN_AUDIT.md`。A 版不作为通过版本。
+- [ ] **下一阶段边界**：只有两个静态样本通过后，才从盘点 TSV 中分批选择 `complex_control_or_placeholder=no` 的其它 NPC。动态文本、战斗、图鉴、菜单、路牌和物品说明须分别分析，不能直接套用本宏。
+
+---
+
 ## ROM-1.40 正式清理候选（2026-11-06；待维护者构建与提交）
+
+- [x] **Git 历史与 Bundle 核查（2026-11-07）**：已验证 `pokeredCHS-CHS_Mod.bundle` 完整且 HEAD 与本项目导出记录一致；全分支可达历史 2914 条，其中原版共同历史 2629 条，CHS 分叉基线 `17eaf761`（2023-03-25），首个 CHS 独有提交 `b1fd6214`（2023-03-29），之后新增 285 条（Tom Choi 224、MKJ 61）。Bundle 为 30.87 MiB，属于完整历史正常体积；以后做 Git 历史／补丁工作时保留，无需重新生成。详见 `docs/ROM140_GIT_HISTORY_AUDIT.md`。
+
 
 - [x] **候选验收**：用户已对 ROM-1.39D 回复“没问题了”；本轮据此确认 Options 中文页脚残影修正符合预期，不把该反馈扩大为红／蓝版及 DMG／CGB 全矩阵验收。
 - [x] **正式版号**：`ROM-1.39D` 去测试后缀并递增为 `ROM-1.40`。正式字符串为 8 字符，Options 右上角从 x=11 绘制，右边缘保持 x=18。

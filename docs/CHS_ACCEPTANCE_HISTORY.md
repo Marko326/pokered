@@ -1,3 +1,50 @@
+## ROM-1.41 — 第一阶段地图脚本对白双语接入正式清理（2026-11-07）
+
+- **正式基线／版本**：`CHS_Mod` 正式 HEAD `bd091a28bf2e1f87de59c44be694b35d7d8b4405`（ROM-1.40）；目标正式版 `ROM-1.41`。从 ROM-1.41B Worktree 重建的增量路径与 HEAD 全量路径叠加 HF1 后，文件内容一致。
+- **实现范围**：1,942 条地图脚本对白引用接入双语读取，1,941 个唯一英文标签；保留 2 条既有 English pilot wrapper。语言选择沿用 `wOptions` bit 5，不增加 WRAM／SRAM／存档字段。8 条人工英文补充明确标记为非上游原文。
+- **HF1 修复与用户反馈**：初版 C 在中文分支未跳过第二根 English far pointer，导致空白对话框／卡死；HF1 已修复。用户后续 `1.41C优化.mp4` 显示 Viridian City 英文问题及 YES／NO 两个对话分支正常，中文模式仍正常。选择框「是／否」保持中文是用户明确决定，不属于本阶段缺陷。
+- **其他 NPC 视频**：`1.41C，其他三位NPC测试.mp4` 显示 Fly House、Fishing Guru 有中英文对白画面；Oak's Lab 的地图开场白为英文，但后续图鉴动态数量／评价仍为中文。源码核对确认其调用独立 `DisplayDexRating` 引擎文本，属于后续图鉴系统范围，详见 `docs/ROM141_NEXT_PHASE_POKEDEX_RATING_SCOPE.md`。
+- **静态验证**：9/9 单元测试通过；`prepare_build.py` 生成 1,942 references／1,941 labels；专用静态检查、Python 编译及 `git diff --check` 通过。原 14 个历史验证入口仍 2 PASS／12 FAIL，失败是旧版本／Options 坐标守卫，未修改历史守卫，也未声称总审计通过。
+- **证据限制**：用户提供的 ROM-1.41C MAP 为 HF1 前 08:07／08:08 构建，不可作为正式 ROM-1.41 的最终 MAP。HF1 后视频已提供，但尚无 HF1＋正式版号清理后的红／蓝 MAP／ROM SHA。没有把静态验证或单段录像扩大成全红蓝／DMG／CGB 全覆盖 PASS。
+- **提交准备**：因同时包含游戏功能和构建工具／测试改动，按模式 A 双提交。功能提交 `feat(text): 批量接入地图脚本中英文对白`；工具提交 `test(tool): 增加双语对白生成与回归检查`。交付 3 份补丁＋2 份日志；Commit／Push 由维护者在真实仓库执行。
+
+---
+
+## ROM-1.41C — 地图脚本对白批量双语接入（2026-11-07；开发候选，待维护者构建与手机验收）
+
+- **基线与工作区**：上传的 `pokeredCHS-CHS_Mod.bundle` 经 `git bundle verify` 通过，确认完整可达历史、分支 `CHS_Mod` 与 HEAD `bd091a28bf2e1f87de59c44be694b35d7d8b4405`。`ROM-1.41B.zip` 含未提交 `current_worktree.patch`，本轮先在 HEAD 上重放该 patch，再做 C 版改动。RPP commit restore manifest 明确 `exact_restore_allowed=false`，不把 mbox 记录当作可恢复 Git 历史。
+- **实现**：新增 `$18` `TX_BILINGUAL` 双 far-pointer 命令，按 `wOptions` bit 5 选择中文或英文；选择后沿用原 `TextCommand_FAR` Bank 恢复和文本处理路径。ROM0 新增代码静态估算 18 bytes，不增加 WRAM/SRAM/存档字段。
+- **覆盖**：`src/scripts/` 1,944 条 `text_far` 中接入 1,942 条／1,941 个唯一文本标签；两个既有 English pilot wrapper 保留。所有接入引用均找到 CHS 与 English 标签，0 未分类、0 漏接。
+- **文本处理**：英文原文来自 `src/text/` 和 `src/data/text/text_1..7.asm`；8 条人工补充不是上游原文。英文字符串中 579 个 `#` 改为普通 `POKé` 字符；117 个动态姓名标签及 43 个运行时数据标签保留；3 条英文只调整换行以满足 18 列检查。未知特殊 token、`text_asm`、嵌套 far-text fail-closed。
+- **空间规划**：英文文本估算 164,395 bytes，固定分为 14 个 ROMX 段 `$62-$6F`；地图脚本指针增加 5,826 bytes。ROM-1.41B 旧 MAP 投影下，最紧张地图 Bank `$13` 仍余约 86 bytes。该数字不是 C 版 MAP 结果。
+- **验证**：9/9 单元测试通过；`prepare_build.py` 完整运行并第二次复用对象；专用 `verify_rom141_bilingual_dialogue_static.py` PASS，全部 1,942 个指针解析。14 个历史 `verify_*.py` 仍是 2 PASS／12 FAIL，失败均为旧版本／Options 对齐断言；未修改旧守卫。未运行 RGBDS、未生成 ROM/MAP/SHA、未实机验收。
+- **阶段状态**：第一阶段地图脚本对白的源码批量接入已完成；维护者红／蓝构建、MAP 空间确认、人工英文复核和手机语言切换回归通过后，才能正式关闭第一阶段。战斗引擎、菜单、图鉴、名称表及非地图脚本文本入口留待后续。
+- **版本与提交**：测试版号 `ROM-1.41B → ROM-1.41C`；仅开发阶段增量／全量补丁，不制作 Commit 日志、不执行 Commit/Push。增量与全量互斥。
+
+---
+
+## ROM-1.41B — 修正英文特殊文字扩展（2026-11-07；开发候选，待构建与手机复测）
+
+- **版号／基线**：测试候选 `ROM-1.41B`，Git 基线 `bd091a28bf2e1f87de59c44be694b35d7d8b4405`；增量前置为用户已应用的 ROM-1.40 历史审计补丁及 ROM-1.41A。
+- **A 版失败证据**：用户录像中 English 模式的 Viridian City 样本出现“宝可梦 BALLs / 宝可梦 MON”。因此 A 版不通过。
+- **根因**：源文本 `#` 经 `src/home/text.asm` 的字典分派进入 `PlacePOKe`，使用共享的 CHS 本地化扩展；不是普通字面字符。翻译导入器还显式维护 `#MON`／`#`／“宝可梦”的替换规则。
+- **B 版修正**：英文副本使用普通英文字符 `POKéMON` 和 `POKé BALLs`，不再触发 `#` 扩展；中文文本及现有共享扩展不改。其他特殊扩展仍待逐项审计。
+- **验证边界**：静态确认 `é` 字符在 charmap 中存在、英文副本不再包含 `#` 特殊 token、最长行 17 字符；未 RGBDS 编译／链接，未生成新 ROM/MAP/SHA。尚无 B 版实机 PASS。
+- **待复测**：Viridian City 英文不出现中文或残留 `MON`；行宽／分页、切回中文、保存重启；Route 1 原样本回归。其余 `<PC>`、`<ROCKET>`、`<TM>`、`<TRAINER>`、`<PKMN>` 等共享扩展尚未验收。
+
+---
+
+## ROM-1.41A — 双语静态 NPC 文本读取原型（历史候选；录像确认特殊文字扩展错误，未通过验收）
+
+- **基线与版号**：本轮 `CHS_Mod` 干净 HEAD 为 `bd091a28bf2e1f87de59c44be694b35d7d8b4405`（ROM-1.40）；测试候选版号 `ROM-1.41A`。A 是开发测试标记，不是正式提交或已验收版本。
+- **共享选择路径**：新增 `bilingual_text` 宏读取 `wOptions` bit 5，选择 CHS／English 两个 far-text wrapper；保留现有 `PrintText`、`TextScriptEnd` 和原始 CHS 文本指针。
+- **样本范围**：Route 1 第二位 NPC 继续作为原有样本，但改用共享宏；Viridian City 第一位 NPC 新增第二个样本；A 版未识别其中 `#` 是动态特殊指令。动态文本、事件分支、战斗、图鉴、菜单、路牌及其它 NPC 不在本轮覆盖范围。
+- **资源与空间**：英文副本统一移至 `src/data/english_text/english_pilot.asm`，独立放入 Bank `$46`；原 Route 1 英文样本不再占用 Options Bank `$45`。ROM-1.40 参考 MAP 显示 Bank `$46` 原为空、脚本 Bank `$06`／`$07` 有余量。ROM0 没有新增执行代码，仅 9 字符测试版号使字符串增加 1 byte；无 WRAM/SRAM／存档结构变化。新 MAP 仍须维护者构建后确认。
+- **静态检查**：检查宏调用、CHS/English far-text 标签、原文内容一致性、导入隔离路径、无 WRAM/SRAM/工具脚本改动，并进行补丁正反应用。未 RGBDS 编译／链接、未生成 ROM/MAP/SHA，不将源码检查记为编译或实机 PASS。
+- **待验收**：中文／English 分别与两位 NPC 对话；A 版录像确认 `#MON`／`# BALL` 触发中文特殊扩展；修正和复测要求见 ROM-1.41B；确认未接入 NPC 仍保持 CHS。尚无红／蓝、DMG/CGB 手机实测结论。
+
+---
+
 ## ROM-1.40 — ROM-1.39D 双语 Options 正式清理（2026-11-06；待维护者构建与提交）
 
 - **基线与版本**：RPP 导出记录声明 `CHS_Mod` 正式 HEAD `04324e16a071d4a9972eb4d7b69d03d11ba26bcb`（ROM-1.39）。本轮把用户确认正常的 ROM-1.39D 开发候选收口为正式版本 `ROM-1.40`；A/B/C/D 是同一轮测试候选，不增加正式版本计数。
