@@ -44,17 +44,7 @@ Route1Text_1caf3:
 	text_end
 
 Route1Text2:
-    ; LANGUAGE phase 1 sample: reuse the global setting from OPTIONS.
-    ; 0 = xlsx-imported CHS text, 1 = preserved original English text.
-    text_asm
-    ld a, [wOptions]
-    bit 5, a
-    ld hl, Route1Text2CHS
-    jr z, .print
-    ld hl, Route1Text2EN
-.print
-    call PrintText
-    jp TextScriptEnd
+    bilingual_text Route1Text2CHS, Route1Text2EN
 
 Route1Text2CHS:
     text_far _Route1Text2

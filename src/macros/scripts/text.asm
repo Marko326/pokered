@@ -148,6 +148,27 @@ MACRO text_far
 	dab \1 ; address of text commands
 ENDM
 
+	const TX_BILINGUAL ; $18
+MACRO text_bilingual
+	db TX_BILINGUAL
+	dab \1 ; CHS far pointer
+	dab \2 ; English far pointer
+ENDM
+
+; Emit a map text script that chooses between existing CHS and English
+; far-text wrappers using the persisted global LANGUAGE option.
+MACRO bilingual_text
+	text_asm
+	ld a, [wOptions]
+	bit 5, a
+	ld hl, \1
+	jr z, .print
+	ld hl, \2
+.print
+	call PrintText
+	jp TextScriptEnd
+ENDM
+
 
 	const_next $50
 

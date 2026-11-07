@@ -639,3 +639,12 @@ INCLUDE "engine/items/single_bag_descriptions.asm"
 ; Keep code and the extra English sample out of full Bank $01.
 SECTION "Dual-Language Options", ROMX, BANK[$45]
 INCLUDE "engine/menus/options_bilingual.asm"
+
+; Keep original English text copies separate from the XLSX-translated CHS tree.
+; Bank $46 was empty in the ROM-1.40 reference MAP.
+SECTION "English Text Pilot", ROMX, BANK[$46]
+INCLUDE "data/english_text/english_pilot.asm"
+
+; Generated bilingual copies for all routed map-script text_far references.
+; scripts/prepare_build.py populates this file in buildRB after XLSX import.
+INCLUDE "data/english_text/generated_dialogue.asm"

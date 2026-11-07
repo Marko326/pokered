@@ -282,7 +282,7 @@ DisplayOptionMenuExpanded::
     ld c, 18
     jp TextBoxBorder
 .drawVersion
-    hlcoord 11, 0 ; ROM-1.40 is 8 characters; keep the right edge at x=18.
+    hlcoord 11, 0 ; ROM-1.41 is 8 characters; keep the right edge at x=18.
     ld de, GameVersionText
     jp PlaceString
 .drawPage1
@@ -543,15 +543,3 @@ TextSpeedOptionData:
     db  7, TEXT_DELAY_MEDIUM
     db  1, TEXT_DELAY_FAST
     db  7, -1
-
-; Route 1 English pilot text; other Route 1 texts keep their CHS pointers.
-_Route1Text2English::
-    text "See those ledges"
-    line "along the road?"
-    para "It's a bit scary,"
-    line "but you can jump"
-    cont "from them."
-    para "You can get back"
-    line "to PALLET TOWN"
-    cont "quicker that way."
-    done

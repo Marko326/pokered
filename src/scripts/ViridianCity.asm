@@ -142,7 +142,14 @@ ViridianCity_TextPointers:
 	dw ViridianCityText15
 
 ViridianCityText1:
+	bilingual_text ViridianCityText1CHS, ViridianCityText1EN
+
+ViridianCityText1CHS:
 	text_far _ViridianCityText1
+	text_end
+
+ViridianCityText1EN:
+	text_far _ViridianCityText1English
 	text_end
 
 ViridianCityText2:

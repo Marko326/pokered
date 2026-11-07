@@ -481,6 +481,8 @@ NextTextCommand::
 	push hl
 	cp TX_FAR
 	jp z, TextCommand_FAR
+	cp TX_BILINGUAL
+	jp z, TextCommand_BILINGUAL
 	cp TX_SOUND_POKEDEX_RATING
 	jp nc, TextCommand_SOUND
 	ld hl, TextCommandJumpTable
@@ -736,17 +738,49 @@ TextCommand_WAIT_BUTTON::
 	jp NextTextCommand
 
 TextCommand_FAR::
-; write text from a different bank (little endian)
 	pop hl
+	jr TextCommand_FAR_ReadPointer
+
+TextCommand_BILINGUAL::
+; Payload: CHS far pointer followed by English far pointer.
+; Whichever pointer is selected, consume the complete six-byte payload so
+; NextTextCommand resumes after the command rather than inside the other pointer.
+	pop hl
+	ld a, [wOptions]
+	bit 5, a
+	jr nz, .english
+
+; Chinese pointer is first. Read it, then skip the unused English pointer.
 	ldh a, [hLoadedROMBank]
 	push af
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	ld a, [hli]
+	inc hl
+	inc hl
+	inc hl
+	jr TextCommand_FAR_Load
 
+.english
+; English pointer is second; skip the unused Chinese pointer first.
+	inc hl
+	inc hl
+	inc hl
+	jr TextCommand_FAR_ReadPointer
+
+TextCommand_FAR_ReadPointer::
+; Existing text_far pointer reader (little endian).
+	ldh a, [hLoadedROMBank]
+	push af
 	ld a, [hli]
 	ld e, a
 	ld a, [hli]
 	ld d, a
 	ld a, [hli]
 
+TextCommand_FAR_Load::
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a
 

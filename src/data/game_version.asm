@@ -1,6 +1,6 @@
-; ROM-1.40 正式清理版：保留 ROM-1.39D 已确认的双语 Options 行为。
-; 继承 ROM-1.39 的 PC/商店道具说明与商店滚动箭头修复；不修改存档结构。
+; ROM-1.41 第一阶段：地图脚本对白中英文双语接入。
+; 正式版本保留既有 LANGUAGE bit 5；不新增 WRAM/SRAM 或存档字段。
 SECTION "Game Version", ROM0
 
 GameVersionText::
-	db "ROM-1.40@"
+	db "ROM-1.41@"
