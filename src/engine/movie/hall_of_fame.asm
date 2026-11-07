@@ -223,6 +223,11 @@ HoFDisplayPlayerStats:
 	call PlaceString
 	hlcoord 1, 6
 	ld de, HoFPlayTimeText
+	ld a, [wOptions]
+	bit 5, a
+	jr z, .playTimeLabelReady
+	ld de, HoFPlayTimeTextEnglish
+.playTimeLabelReady
 	call PlaceString
 	hlcoord 5, 7
 	ld de, wPlayTimeHours
@@ -235,6 +240,11 @@ HoFDisplayPlayerStats:
 	call PrintNumber
 	hlcoord 1, 9
 	ld de, HoFMoneyText
+	ld a, [wOptions]
+	bit 5, a
+	jr z, .moneyLabelReady
+	ld de, HoFMoneyTextEnglish
+.moneyLabelReady
 	call PlaceString
 	hlcoord 4, 10
 	ld de, wPlayerMoney
@@ -254,15 +264,23 @@ HoFPrintTextAndDelay:
 HoFPlayTimeText:
 	db "PLAY TIME@"
 
+; Split English literals so the data.xlsx CHS replacements only affect the
+; original labels above.
+HoFPlayTimeTextEnglish:
+	db "PLAY", " TIME@"
+
 HoFMoneyText:
 	db "MONEY@"
 
+HoFMoneyTextEnglish:
+	db "MON", "EY@"
+
 DexSeenOwnedText:
-	text_far _DexSeenOwnedText
+	text_bilingual _DexSeenOwnedText, _DexSeenOwnedText_EN
 	text_end
 
 DexRatingText:
-	text_far _DexRatingText
+	text_bilingual _DexRatingText, _DexRatingText_EN
 	text_end
 
 HoFRecordMonInfo:

@@ -377,6 +377,8 @@ wNPCMovementDirections:: ds 180
 NEXTU
 wDexRatingNumMonsSeen:: db
 wDexRatingNumMonsOwned:: db
+; Hall of Fame copies one text command wrapper here, including TX_BILINGUAL's
+; two far pointers (8 bytes total including TX_END); the 180-byte union is ample.
 wDexRatingText:: db
 
 NEXTU

@@ -755,9 +755,19 @@ DrawTrainerInfo:
 	call TrainerInfo_DrawVerticalLine
 	hlcoord 5, 9 ;hlcoord 6, 9
 	ld de, TrainerInfo_BadgesText
+	ld a, [wOptions]
+	bit 5, a
+	jr z, .badgesTextReady
+	ld de, TrainerInfo_BadgesTextEnglish
+.badgesTextReady
 	call PlaceString
 	hlcoord 2, 2
 	ld de, TrainerInfo_NameMoneyTimeText
+	ld a, [wOptions]
+	bit 5, a
+	jr z, .nameMoneyTimeTextReady
+	ld de, TrainerInfo_NameMoneyTimeTextEnglish
+.nameMoneyTimeTextReady
 	call PlaceString
 	hlcoord 8, 2 ;hlcoord 7, 2
 	ld de, wPlayerName
@@ -785,9 +795,19 @@ TrainerInfo_NameMoneyTimeText:
 	next "MONEY/"
 	next "TIME/@"
 
+; English copies are split across db operands so the CHS data.xlsx importer
+; only rewrites the original strings above.
+TrainerInfo_NameMoneyTimeTextEnglish:
+	db   "NA","ME/"
+	next "MO","NEY/"
+	next "TI","ME/@"
+
 ; $76 is a circle tile
 TrainerInfo_BadgesText:
 	db $76,"BADGES",$76,"@"
+
+TrainerInfo_BadgesTextEnglish:
+	db $76,"BAD","GES",$76,"@"
 
 ; draws a text box on the trainer info screen
 ; height is always 6

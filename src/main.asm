@@ -648,3 +648,7 @@ INCLUDE "data/english_text/english_pilot.asm"
 ; Generated bilingual copies for all routed map-script text_far references.
 ; scripts/prepare_build.py populates this file in buildRB after XLSX import.
 INCLUDE "data/english_text/generated_dialogue.asm"
+
+; Engine-driven Pokedex completion/rating and Hall of Fame counter text.
+; Generated from the same-generation English sources after the CHS XLSX import.
+INCLUDE "data/english_text/generated_pokedex_ratings.asm"

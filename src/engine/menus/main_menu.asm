@@ -372,7 +372,7 @@ DisplayContinueGameInfo:
 	decoord 5, 7
 	farcall PrintCurrentMapOnSaveScreen
 	hlcoord 5, 9
-	ld de, SaveScreenInfoText
+	call GetSaveScreenInfoText
 	call PlaceString
 	hlcoord 18, 9 ; exclusive right edge of the Continue info box
 	call PrintPlayerNameRightAligned
@@ -403,7 +403,7 @@ PrintSaveScreenText:
 	; underneath this overlay and still references its cached glyph tiles.
 	; Keep those mappings alive while the SAVE labels and prompt are drawn.
 	hlcoord 6, 4
-	ld de, SaveScreenInfoText
+	call GetSaveScreenInfoText
 	call PlaceString
 	hlcoord 19, 4 ; exclusive right edge of the Save info box
 	call PrintPlayerNameRightAligned
@@ -538,6 +538,22 @@ SaveScreenInfoText:
 	next "BADGES    "
 	next "#DEX    "
 	next "TIME@"
+
+; Keep the Excel-imported CHS strings above intact. Split English literals so
+; data.xlsx's exact CHS replacement keys cannot rewrite this alternate table.
+GetSaveScreenInfoText:
+	ld de, SaveScreenInfoText
+	ld a, [wOptions]
+	bit 5, a
+	ret z
+	ld de, SaveScreenInfoTextEnglish
+	ret
+
+SaveScreenInfoTextEnglish:
+	db   "PLAY","ER"
+	next "BAD","GES    "
+	next "POKé","DEX    "
+	next "TI","ME@"
 
 ; QOL-1.16D: START-only entry. A=1 is kept on the stack across initial
 ; construction so the completed Options screen can restore the palette only

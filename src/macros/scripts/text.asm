@@ -155,8 +155,9 @@ MACRO text_bilingual
 	dab \2 ; English far pointer
 ENDM
 
-; Emit a map text script that chooses between existing CHS and English
-; far-text wrappers using the persisted global LANGUAGE option.
+; Emit a text command that chooses between existing CHS and English
+; far-text wrappers using the persisted global LANGUAGE option. Used by map
+; scripts and engine-driven text wrappers.
 MACRO bilingual_text
 	text_asm
 	ld a, [wOptions]

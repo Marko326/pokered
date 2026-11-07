@@ -282,7 +282,7 @@ DisplayOptionMenuExpanded::
     ld c, 18
     jp TextBoxBorder
 .drawVersion
-    hlcoord 11, 0 ; ROM-1.41 is 8 characters; keep the right edge at x=18.
+    hlcoord 11, 0 ; ROM-1.42 is 8 characters; keep the right edge at x=18.
     ld de, GameVersionText
     jp PlaceString
 .drawPage1
